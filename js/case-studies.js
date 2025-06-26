@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Case Studies: DOM loaded');
-    
     const grid = document.getElementById('case-studies-grid');
     const tagContainer = document.getElementById('tag-filter-container');
     let allCases = [];
@@ -8,9 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let allTags = new Set();
     let currentPage = 1;
     const itemsPerPage = 12; // 1ページあたりの表示件数
-
-    console.log('Grid element:', grid ? 'Found' : 'Not found');
-    console.log('Tag container:', tagContainer ? 'Found' : 'Not found');
 
     if (!grid) {
         console.error('Error: Target element for case studies not found.');
@@ -23,18 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetch('data/case-studies.json')
         .then(response => {
-            console.log('Fetch status:', response.status);
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json();
         })
         .then(cases => {
-            console.log('Cases loaded:', cases.length);
             allCases = cases;
             
             if (cases.length === 0) {
-                grid.innerHTML = '<p style="text-align: center; padding: 2rem;">現在、公開中のご支援事例はありません。</p>';
+                grid.innerHTML = '<p>現在、公開中のご支援事例はありません。</p>';
                 return;
             }
 
@@ -58,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => {
-            console.error('Error loading case studies:', error);
-            grid.innerHTML = '<p style="text-align: center; padding: 2rem; color: red;">事例の読み込み中にエラーが発生しました。ページを再読み込みしてください。</p>';
+            console.error('Error fetching or parsing case studies:', error);
+            grid.innerHTML = '<p>事例の読み込み中にエラーが発生しました。時間をおいて再度お試しください。</p>';
         });
 
     function createTagFilter() {
@@ -150,10 +143,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayCases(cases) {
-        console.log('Displaying', cases.length, 'cases');
-        
         let html = '';
-        cases.forEach((study, index) => {
+        cases.forEach(study => {
             // タグを表示用HTML作成
             let tagsHTML = '';
             if (study.tags && Array.isArray(study.tags)) {
@@ -168,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             html += `
             <a href="${study.id}.html" class="case-study-card" data-aos="fade-up">
                 <div class="card-image-wrapper">
-                    <img src="${study.thumbnail}" alt="${study.title}" loading="lazy" onerror="this.style.display='none'">
+                    <img src="${study.thumbnail}" alt="${study.title}" loading="lazy">
                 </div>
                 <div class="card-content">
                     <div class="card-meta">
@@ -182,19 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
             `;
         });
-        
-        console.log('HTML generated, length:', html.length);
         grid.innerHTML = html;
-        
-        // 挿入確認
-        setTimeout(() => {
-            const insertedCards = grid.querySelectorAll('.case-study-card');
-            console.log('Cards inserted:', insertedCards.length);
-            
-            if (insertedCards.length === 0) {
-                console.error('No cards found after insertion. Grid innerHTML:', grid.innerHTML.substring(0, 200));
-            }
-        }, 100);
 
         // タグクリックイベントを追加
         const caseTags = grid.querySelectorAll('.case-tag');

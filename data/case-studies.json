@@ -6,7 +6,7 @@
     "industry": "飲食業",
     "date": "2024-03-20",
     "tags": ["飲食業", "簡易開発", "コスト削減", "多店舗運営", "業務効率化"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-001.jpg"
   },
   {
     "id": "case-002",
@@ -15,7 +15,7 @@
     "industry": "飲食業",
     "date": "2024-03-18",
     "tags": ["飲食業", "業務標準化", "品質管理", "人材育成", "多店舗運営"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-002.jpg"
   },
   {
     "id": "case-003",
@@ -24,7 +24,7 @@
     "industry": "飲食業",
     "date": "2024-03-15",
     "tags": ["飲食業", "集客・マーケティング", "AI活用", "業務効率化", "業務自動化"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-003.jpg"
   },
   {
     "id": "case-004",
@@ -33,7 +33,7 @@
     "industry": "飲食業",
     "date": "2024-03-12",
     "tags": ["飲食業", "集客・マーケティング", "業務自動化", "売上向上", "業務効率化"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-004.jpg"
   },
   {
     "id": "case-005",
@@ -42,7 +42,7 @@
     "industry": "小売業",
     "date": "2024-03-10",
     "tags": ["小売業", "在庫最適化", "データ活用", "コスト削減", "売上向上"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-005.jpg"
   },
   {
     "id": "case-006",
@@ -51,7 +51,7 @@
     "industry": "飲食業",
     "date": "2024-03-08",
     "tags": ["飲食業", "集客・マーケティング", "業務自動化", "顧客満足度向上", "売上向上"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-006.jpg"
   },
   {
     "id": "case-007",
@@ -60,7 +60,7 @@
     "industry": "飲食業",
     "date": "2024-03-05",
     "tags": ["飲食業", "業務効率化", "業務自動化", "多店舗運営", "DX推進"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-007.jpg"
   },
   {
     "id": "case-008",
@@ -69,7 +69,7 @@
     "industry": "飲食業",
     "date": "2024-03-02",
     "tags": ["飲食業", "顧客満足度向上", "集客・マーケティング", "業務標準化", "品質管理"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-008.jpg"
   },
   {
     "id": "case-009",
@@ -78,7 +78,7 @@
     "industry": "サービス業",
     "date": "2024-02-28",
     "tags": ["サービス業", "AI活用", "人材育成", "業務効率化", "DX推進"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-009.jpg"
   },
   {
     "id": "case-010",
@@ -87,7 +87,7 @@
     "industry": "サービス業",
     "date": "2024-02-25",
     "tags": ["サービス業", "人材育成", "業務標準化", "業務効率化", "品質管理"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-010.jpg"
   },
   {
     "id": "case-011",
@@ -96,7 +96,7 @@
     "industry": "サービス業",
     "date": "2024-02-20",
     "tags": ["サービス業", "業務効率化", "業務自動化", "DX推進", "生産性向上"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-011.jpg"
   },
   {
     "id": "case-012",
@@ -105,7 +105,7 @@
     "industry": "飲食業",
     "date": "2024-02-18",
     "tags": ["飲食業", "在庫最適化", "コスト削減", "業務効率化", "データ活用"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-012.jpg"
   },
   {
     "id": "case-013",
@@ -114,7 +114,7 @@
     "industry": "飲食業",
     "date": "2024-02-15",
     "tags": ["飲食業", "業務効率化", "多店舗運営", "人材育成", "DX推進"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-013.jpg"
   },
   {
     "id": "case-014",
@@ -123,7 +123,7 @@
     "industry": "飲食業",
     "date": "2024-02-12",
     "tags": ["飲食業", "AI活用", "売上向上", "人材育成", "顧客満足度向上"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-014.jpg"
   },
   {
     "id": "case-015",
@@ -132,7 +132,7 @@
     "industry": "サービス業",
     "date": "2024-02-10",
     "tags": ["サービス業", "AI活用", "顧客満足度向上", "業務標準化", "品質管理"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-015.jpg"
   },
   {
     "id": "case-016",
@@ -141,7 +141,7 @@
     "industry": "小売業",
     "date": "2024-02-08",
     "tags": ["小売業", "業務自動化", "集客・マーケティング", "業務効率化", "業務標準化"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-016.jpg"
   },
   {
     "id": "case-017",
@@ -150,7 +150,7 @@
     "industry": "サービス業",
     "date": "2024-02-05",
     "tags": ["サービス業", "AI活用", "顧客満足度向上", "人材育成", "売上向上"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-017.jpg"
   },
   {
     "id": "case-018",
@@ -159,7 +159,7 @@
     "industry": "サービス業",
     "date": "2024-02-02",
     "tags": ["サービス業", "データ活用", "売上向上", "業務自動化", "DX推進"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-018.jpg"
   },
   {
     "id": "case-019",
@@ -168,7 +168,7 @@
     "industry": "サービス業",
     "date": "2024-01-30",
     "tags": ["サービス業", "AI活用", "業務標準化", "顧客満足度向上", "品質管理"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-019.jpg"
   },
   {
     "id": "case-020",
@@ -177,7 +177,7 @@
     "industry": "サービス業",
     "date": "2024-01-28",
     "tags": ["サービス業", "AI活用", "集客・マーケティング", "業務自動化", "顧客満足度向上"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-020.jpg"
   },
   {
     "id": "case-021",
@@ -186,7 +186,7 @@
     "industry": "サービス業",
     "date": "2024-01-25",
     "tags": ["サービス業", "AI活用", "業務自動化", "売上向上", "DX推進"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-021.jpg"
   },
   {
     "id": "case-022",
@@ -195,24 +195,33 @@
     "industry": "サービス業",
     "date": "2024-01-22",
     "tags": ["サービス業", "集客・マーケティング", "業務標準化", "AI活用", "業務効率化"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "thumbnail": "images/case-thumbnail-022.jpg"
   },
   {
     "id": "case-023",
-    "title": "リピーター様を想定したタイムセール実施で〈価格×魅力×売上向上〉の三方良しを実現",
-    "summary": "売上向上とリピーター維持のバランスに苦労していた店舗に、AI分析によるタイムセール最適化システムを導入。顧客満足度と売上の両立を実現。",
-    "industry": "飲食業",
+    "title": "手書き管理から卒業。シフト・勤怠管理を自動化し月20時間の事務工数削減を実現",
+    "summary": "手書きでのシフト・勤怠管理に課題を抱えていた企業に、デジタル化と自動化システムを導入。月20時間の事務工数削減を実現。",
+    "industry": "サービス業",
     "date": "2024-01-20",
-    "tags": ["飲食業", "売上向上", "顧客満足度向上", "データ活用", "集客・マーケティング"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "tags": ["サービス業", "業務自動化", "業務効率化", "DX推進", "コスト削減"],
+    "thumbnail": "images/case-thumbnail-023.jpg"
   },
   {
     "id": "case-024",
-    "title": "配送ルート最適化で効率30%UP。物流コストを削減しつつサービス品質も向上",
-    "summary": "配送効率の悪さに悩んでいた物流企業に、AI活用の配送ルート最適化システムを導入。効率30%向上とサービス品質の両立を実現。",
-    "industry": "物流・運送業",
+    "title": "紙・FAX依存を卒業！デジタル化で福祉法人の勤怠管理が劇的改善",
+    "summary": "紙・FAXでの勤怠管理に課題を抱えていた福祉法人に、完全デジタル化システムを導入。業務効率化と正確性向上を実現。",
+    "industry": "サービス業",
     "date": "2024-01-18",
-    "tags": ["物流・運送業", "AI活用", "業務効率化", "コスト削減", "DX推進"],
-    "thumbnail": "images/企業ロゴ最終.png"
+    "tags": ["サービス業", "DX推進", "業務効率化", "業務自動化", "生産性向上"],
+    "thumbnail": "images/case-thumbnail-024.jpg"
+  },
+  {
+    "id": "case-025",
+    "title": "業務効率だけじゃない。属人化を解消し新人育成もラクにした事務DX",
+    "summary": "事務業務の属人化と新人育成に課題を抱えていた企業に、事務DXシステムを導入。業務効率化と人材育成の両方を実現。",
+    "industry": "サービス業",
+    "date": "2024-01-15",
+    "tags": ["サービス業", "DX推進", "業務標準化", "人材育成", "業務効率化"],
+    "thumbnail": "images/case-thumbnail-025.jpg"
   }
 ] 
