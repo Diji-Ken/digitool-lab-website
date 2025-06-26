@@ -1,0 +1,24 @@
+# サーバー設定情報テンプレート
+# このファイルをコピーして実際の値を入力してください
+# ⚠️ 実際の認証情報はGitにコミットしないでください
+
+## FTP接続情報
+FTP_HOST: sv16039.xserver.jp
+FTP_USER: [ユーザー名]
+FTP_PASS: [パスワード]
+
+## ディレクトリ構造
+MAIN_DOMAIN: digitool-lab.com/public_html/
+SHOP_SUBDOMAIN: shop.digitool-lab.com/
+CHAT_SUBDOMAIN: chattool.digitool-lab.com/
+MAIL_SUBDOMAIN: mail.digitool-lab.com/
+
+## GitHub情報
+REPO_NAME: digitool-lab.com
+MAIN_BRANCH: main
+DEPLOY_BRANCH: main
+
+## よく使用するコマンド例
+# FTP接続: curl -u [USER]:[PASS] ftp://[HOST]/
+# ファイルアップロード: curl -u [USER]:[PASS] -T [FILE] ftp://[HOST]/[PATH]
+# ディレクトリ一覧: curl -u [USER]:[PASS] ftp://[HOST]/[PATH]/ 

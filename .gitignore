@@ -22,4 +22,28 @@ npm-debug.log*
 # Environment variables
 .env
 .env.local
-.env.production 
+.env.production
+
+# 機密情報を含むファイル
+config/server-config
+server-config
+
+# FTP設定ファイル
+ftp-config.txt
+*.credentials
+
+# 一時ファイル
+temp/
+tmp/
+
+# ログファイル
+logs/
+
+# バックアップファイル
+*.backup
+*.bak
+*~
+
+# 作業用ファイル
+shop_robots.txt
+*_temp.txt 
