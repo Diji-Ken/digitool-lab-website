@@ -1,6 +1,10 @@
 # HTML拡張子の非表示化
 RewriteEngine On
 
+# Redirect .html extension to clean URLs (external requests only)
+RewriteCond %{THE_REQUEST} \s/+([^?\s]*?)\.html[\s?] [NC]
+RewriteRule ^ /%1? [R=301,L]
+
 # Internally rewrite clean URLs to .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
