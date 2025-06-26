@@ -1095,37 +1095,116 @@ footer {
   .legal-table th { width: 40%; }
   .header-buttons { display: none; }
   
-  /* Case Studies Grid Mobile Fix */
+  /* Case Studies Grid Mobile Fix - Enhanced */
   #case-studies-grid {
+    display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 1.5rem;
-    min-height: 200px; /* 最小高さを確保 */
+    gap: 1.5rem !important;
+    min-height: 200px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
-  /* Case Study Card Mobile Optimization */
+  /* Force visibility on mobile */
+  .content-section .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* Case Study Card Mobile Optimization - Enhanced */
   .case-study-card {
-    margin-bottom: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+    display: block !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    background-color: var(--white) !important;
+    border-radius: 8px !important;
+    box-shadow: var(--shadow-md) !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    color: inherit !important;
   }
   
   .card-image-wrapper {
-    height: 180px; /* スマホでは画像高さを少し低く */
+    width: 100% !important;
+    height: 180px !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
+  
+  .card-image-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
   }
   
   .card-content {
-    padding: 1.25rem; /* スマホではパディングを少し狭く */
+    padding: 1.25rem !important;
+    display: block !important;
+  }
+  
+  .card-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .card-category {
+    background-color: var(--orange-100) !important;
+    color: var(--orange-600) !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 9999px !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+  }
+  
+  .card-date {
+    color: var(--gray-600) !important;
   }
   
   .card-title {
-    font-size: 1.1rem; /* スマホでは文字サイズを少し小さく */
-    line-height: 1.3;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin: 0 0 0.5rem !important;
+    line-height: 1.3 !important;
+    display: block !important;
   }
   
   .card-summary {
-    font-size: 0.9rem; /* スマホでは文字サイズを少し小さく */
-    -webkit-line-clamp: 3; /* スマホでは3行に制限 */
-    height: calc(1.5em * 3);
+    font-size: 0.9rem !important;
+    color: var(--gray-800) !important;
+    line-height: 1.5 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    height: auto !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .card-tags {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid var(--gray-200) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  
+  .case-tag {
+    background-color: var(--orange-100) !important;
+    color: var(--orange-700) !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 12px !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    display: inline-block !important;
+    border: 1px solid var(--orange-200) !important;
   }
   
   /* 新しいレスポンシブ対応 */
