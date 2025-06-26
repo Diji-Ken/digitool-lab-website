@@ -1,0 +1,290 @@
+{
+  "articles": [
+    {
+      "number": "001",
+      "title": "顧客管理システムの効率化で売上15%向上",
+      "category": "製造業",
+      "filename": "case-001.html",
+      "image_prefix": "case-001",
+      "description": "月4時間の作業時間削減と顧客満足度向上を実現",
+      "created_date": "2024-01-15",
+      "status": "published"
+    },
+    {
+      "number": "002",
+      "title": "在庫管理の自動化で作業時間35%削減",
+      "category": "製造業",
+      "filename": "case-002.html",
+      "image_prefix": "case-002",
+      "description": "リアルタイム在庫把握とアラート機能で効率化",
+      "created_date": "2024-01-20",
+      "status": "published"
+    },
+    {
+      "number": "003",
+      "title": "予約システム導入で業務効率大幅改善",
+      "category": "製造業",
+      "filename": "case-003.html",
+      "image_prefix": "case-003",
+      "description": "24時間自動予約受付で顧客満足度向上",
+      "created_date": "2024-01-25",
+      "status": "published"
+    },
+    {
+      "number": "004",
+      "title": "経理業務デジタル化で月末作業時間80%短縮",
+      "category": "製造業",
+      "filename": "case-004.html",
+      "image_prefix": "case-004",
+      "description": "自動集計とレポート生成で大幅な効率化を実現",
+      "created_date": "2024-02-01",
+      "status": "published"
+    },
+    {
+      "number": "005",
+      "title": "営業活動のデジタル化で成約率20%向上",
+      "category": "製造業",
+      "filename": "case-005.html",
+      "image_prefix": "case-005",
+      "description": "顧客データ分析と自動フォローアップで成果向上",
+      "created_date": "2024-02-05",
+      "status": "published"
+    },
+    {
+      "number": "006",
+      "title": "生産管理システム導入で品質向上",
+      "category": "製造業",
+      "filename": "case-006.html",
+      "image_prefix": "case-006",
+      "description": "工程管理の見える化で不良品率50%削減",
+      "created_date": "2024-02-10",
+      "status": "published"
+    },
+    {
+      "number": "007",
+      "title": "人事管理システムで採用効率化",
+      "category": "製造業",
+      "filename": "case-007.html",
+      "image_prefix": "case-007",
+      "description": "応募者管理の自動化で採用プロセス大幅短縮",
+      "created_date": "2024-02-15",
+      "status": "published"
+    },
+    {
+      "number": "008",
+      "title": "配送管理システムで物流最適化",
+      "category": "製造業",
+      "filename": "case-008.html",
+      "image_prefix": "case-008",
+      "description": "ルート最適化とリアルタイム追跡で効率向上",
+      "created_date": "2024-02-20",
+      "status": "published"
+    },
+    {
+      "number": "009",
+      "title": "品質管理デジタル化で検査時間短縮",
+      "category": "製造業",
+      "filename": "case-009.html",
+      "image_prefix": "case-009",
+      "description": "自動検査システムで精度向上と時間削減を実現",
+      "created_date": "2024-02-25",
+      "status": "published"
+    },
+    {
+      "number": "010",
+      "title": "設備管理システムで保守効率化",
+      "category": "製造業",
+      "filename": "case-010.html",
+      "image_prefix": "case-010",
+      "description": "予防保全とスケジュール管理で稼働率向上",
+      "created_date": "2024-03-01",
+      "status": "published"
+    },
+    {
+      "number": "011",
+      "title": "安全管理システムで事故ゼロを実現",
+      "category": "製造業",
+      "filename": "case-011.html",
+      "image_prefix": "case-011",
+      "description": "リスク管理の見える化で安全性大幅向上",
+      "created_date": "2024-03-05",
+      "status": "published"
+    },
+    {
+      "number": "012",
+      "title": "環境管理システムで持続可能な経営",
+      "category": "製造業",
+      "filename": "case-012.html",
+      "image_prefix": "case-012",
+      "description": "エネルギー使用量の最適化でコスト削減",
+      "created_date": "2024-03-10",
+      "status": "published"
+    },
+    {
+      "number": "013",
+      "title": "研究開発効率化で新商品開発加速",
+      "category": "製造業",
+      "filename": "case-013.html",
+      "image_prefix": "case-013",
+      "description": "プロジェクト管理システムで開発期間短縮",
+      "created_date": "2024-03-15",
+      "status": "published"
+    },
+    {
+      "number": "014",
+      "title": "小売店舗運営の完全デジタル化",
+      "category": "小売業",
+      "filename": "case-014.html",
+      "image_prefix": "case-014",
+      "description": "POSシステムと在庫管理の統合で効率化",
+      "created_date": "2024-03-20",
+      "status": "published"
+    },
+    {
+      "number": "015",
+      "title": "飲食店の注文管理システム導入",
+      "category": "小売業",
+      "filename": "case-015.html",
+      "image_prefix": "case-015",
+      "description": "モバイルオーダーで顧客満足度向上",
+      "created_date": "2024-03-25",
+      "status": "published"
+    },
+    {
+      "number": "016",
+      "title": "美容サロンの予約管理システム",
+      "category": "小売業",
+      "filename": "case-016.html",
+      "image_prefix": "case-016",
+      "description": "自動予約とリマインダーで稼働率向上",
+      "created_date": "2024-04-01",
+      "status": "published"
+    },
+    {
+      "number": "017",
+      "title": "アパレル店の在庫分析システム",
+      "category": "小売業",
+      "filename": "case-017.html",
+      "image_prefix": "case-017",
+      "description": "売れ筋分析で仕入れ最適化を実現",
+      "created_date": "2024-04-05",
+      "status": "published"
+    },
+    {
+      "number": "018",
+      "title": "ペットショップの顧客管理強化",
+      "category": "小売業",
+      "filename": "case-018.html",
+      "image_prefix": "case-018",
+      "description": "ペット情報と飼い主データの一元管理",
+      "created_date": "2024-04-10",
+      "status": "published"
+    },
+    {
+      "number": "019",
+      "title": "書店の売上分析システム導入",
+      "category": "小売業",
+      "filename": "case-019.html",
+      "image_prefix": "case-019",
+      "description": "ジャンル別売上分析で品揃え最適化",
+      "created_date": "2024-04-15",
+      "status": "published"
+    },
+    {
+      "number": "020",
+      "title": "スポーツ用品店のEC連携システム",
+      "category": "小売業",
+      "filename": "case-020.html",
+      "image_prefix": "case-020",
+      "description": "実店舗とオンラインの在庫統合管理",
+      "created_date": "2024-04-20",
+      "status": "published"
+    },
+    {
+      "number": "021",
+      "title": "家電量販店の修理受付システム",
+      "category": "小売業",
+      "filename": "case-021.html",
+      "image_prefix": "case-021",
+      "description": "修理状況の見える化で顧客満足度向上",
+      "created_date": "2024-04-25",
+      "status": "published"
+    },
+    {
+      "number": "022",
+      "title": "雑貨店のPOSレジ分析活用",
+      "category": "小売業",
+      "filename": "case-022.html",
+      "image_prefix": "case-022",
+      "description": "時間帯別売上分析でスタッフ配置最適化",
+      "created_date": "2024-05-01",
+      "status": "published"
+    },
+    {
+      "number": "023",
+      "title": "カフェの原価管理システム",
+      "category": "小売業",
+      "filename": "case-023.html",
+      "image_prefix": "case-023",
+      "description": "食材コスト管理で収益性大幅改善",
+      "created_date": "2024-05-05",
+      "status": "published"
+    },
+    {
+      "number": "024",
+      "title": "花屋の季節商品管理システム",
+      "category": "小売業",
+      "filename": "case-024.html",
+      "image_prefix": "case-024",
+      "description": "シーズン予測と発注自動化で廃棄ロス削減",
+      "created_date": "2024-05-10",
+      "status": "published"
+    },
+    {
+      "number": "025",
+      "title": "薬局の在庫管理システム",
+      "category": "小売業",
+      "filename": "case-025.html",
+      "image_prefix": "case-025",
+      "description": "期限管理と自動発注で品切れ防止",
+      "created_date": "2024-05-15",
+      "status": "published"
+    }
+  ],
+  "image_naming_convention": {
+    "hero_image": "{image_prefix}-hero.jpg",
+    "before_image": "{image_prefix}-before.jpg",
+    "after_image": "{image_prefix}-after.jpg",
+    "process_image": "{image_prefix}-process.jpg",
+    "result_image": "{image_prefix}-result.jpg",
+    "thumbnail": "{image_prefix}-thumb.jpg"
+  },
+  "categories": {
+    "製造業": {
+      "color": "#3B82F6",
+      "icon": "factory"
+    },
+    "小売業": {
+      "color": "#10B981",
+      "icon": "store"
+    },
+    "サービス業": {
+      "color": "#F59E0B",
+      "icon": "service"
+    },
+    "建設業": {
+      "color": "#6366F1",
+      "icon": "construction"
+    },
+    "医療・介護": {
+      "color": "#EF4444",
+      "icon": "medical"
+    }
+  },
+  "meta_info": {
+    "last_updated": "2024-05-15",
+    "total_articles": 25,
+    "next_article_number": "026",
+    "version": "1.0"
+  }
+} 
