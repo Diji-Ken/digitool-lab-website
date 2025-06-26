@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Case Studies page: DOM loaded');
-    
     const grid = document.getElementById('case-studies-grid');
     const tagContainer = document.getElementById('tag-filter-container');
     let allCases = [];
@@ -8,9 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let allTags = new Set();
     let currentPage = 1;
     const itemsPerPage = 12; // 1ページあたりの表示件数
-
-    console.log('Grid element found:', !!grid);
-    console.log('Tag container found:', !!tagContainer);
 
     if (!grid) {
         console.error('Error: Target element for case studies not found.');
@@ -21,21 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const selectedTag = urlParams.get('tag');
 
-    console.log('Fetching case studies data...');
     fetch('data/case-studies.json')
         .then(response => {
-            console.log('Fetch response status:', response.status);
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json();
         })
         .then(cases => {
-            console.log('Cases loaded:', cases.length);
             allCases = cases;
             
             if (cases.length === 0) {
-                console.warn('No cases found');
                 grid.innerHTML = '<p>現在、公開中のご支援事例はありません。</p>';
                 return;
             }
@@ -47,18 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            console.log('Total tags found:', allTags.size);
-
             // タグフィルターを作成
             createTagFilter();
 
             // 初期表示（選択されたタグがある場合はフィルター適用）
             if (selectedTag) {
-                console.log('Selected tag from URL:', selectedTag);
                 filterByTag(selectedTag);
                 highlightSelectedTag(selectedTag);
             } else {
-                console.log('No selected tag, showing all cases');
                 filteredCases = [...allCases];
                 displayCasesWithPagination();
             }
@@ -141,8 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayCasesWithPagination() {
-        console.log('displayCasesWithPagination called, filteredCases:', filteredCases.length);
-        
         if (filteredCases.length === 0) {
             grid.innerHTML = '<p>該当する事例が見つかりませんでした。</p>';
             return;
@@ -153,14 +138,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const endIndex = startIndex + itemsPerPage;
         const casesToShow = filteredCases.slice(startIndex, endIndex);
 
-        console.log('Cases to show on current page:', casesToShow.length);
         displayCases(casesToShow);
         createPagination(totalPages);
     }
 
     function displayCases(cases) {
-        console.log('displayCases called with', cases.length, 'cases');
-        
         let html = '';
         cases.forEach(study => {
             // タグを表示用HTML作成
@@ -192,14 +174,11 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         });
         
-        console.log('Generated HTML length:', html.length);
-        console.log('Setting innerHTML to grid element');
         grid.innerHTML = html;
         
         // HTMLが実際に挿入されたかを確認
         setTimeout(() => {
             const cards = grid.querySelectorAll('.case-study-card');
-            console.log('Cards found in DOM after insertion:', cards.length);
         }, 100);
 
         // タグクリックイベントを追加
