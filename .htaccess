@@ -1,9 +1,6 @@
 # HTML拡張子の非表示化
 RewriteEngine On
 
-# Special case: if service.html exists, serve it instead of the directory
-RewriteRule ^service$ service.html [L]
-
 # Internally rewrite clean URLs to .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
