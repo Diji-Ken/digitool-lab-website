@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OToMo - 半社員型デジタル支援サービス | 株式会社デジタルツール研究所</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50">
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="./index.html" class="logo">
+        <img src="images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="./about.html">私たちについて</a>
+          <a href="./service.html" class="active">事業内容</a>
+          <a href="./case-studies.html">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="./contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="./about.html">私たちについて</a>
+        <a href="./service.html" class="active">事業内容</a>
+        <a href="./case-studies.html">ご支援事例</a>
+        <a href="./contact.html">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <section class="page-header" data-aos="fade-in">
+      <h1>OToMo - 半社員型デジタル支援</h1>
+      <p>外部のIT担当者のように、現場の業務改善をハンズオンで支援する<br>一番人気のプランです。</p>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
+          <div>
+            <h2>サービス概要</h2>
+            <p>OToMoは「もう一人のIT担当」として貴社のチームに参加し、業務の棚卸しからツールの導入、改善・定着までを一気通貫でご支援するサービスです。</p>
+            
+            <h3>こんな企業様におすすめ</h3>
+            <ul>
+              <li>IT専任担当者がいない、または手が回らない</li>
+              <li>デジタル化を進めたいが何から始めれば良いかわからない</li>
+              <li>ツールを導入しても定着しない経験がある</li>
+              <li>現場に寄り添った支援を求めている</li>
+            </ul>
+
+            <h3>サービス内容</h3>
+            <div class="service-features">
+              <div class="feature-item">
+                <h4>業務の棚卸し・現状分析</h4>
+                <p>現在の業務フローを詳細に調査し、非効率な部分や改善点を特定します。</p>
+              </div>
+              <div class="feature-item">
+                <h4>最適なツール選定・導入</h4>
+                <p>貴社の業務に最適なツールを選定し、導入から設定まで全面サポートします。</p>
+              </div>
+              <div class="feature-item">
+                <h4>社内教育・マニュアル作成</h4>
+                <p>全社員がツールを使いこなせるよう、研修やマニュアル作成を行います。</p>
+              </div>
+              <div class="feature-item">
+                <h4>継続的な改善・最適化</h4>
+                <p>導入後も定期的に効果を測定し、さらなる改善を継続的に実施します。</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="service-card" style="border: 2px solid var(--orange-500);">
+              <div class="service-card-header">
+                <h3>OToMo</h3>
+                <p class="price">月額 10万円〜</p>
+                <p style="font-size: 0.9rem; opacity: 0.9;">(社員数10名目安)</p>
+              </div>
+              <div class="service-card-body">
+                <ul>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                    半社員型パートナー支援
+                  </li>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                    現地訪問も可能（国内どこでも）
+                  </li>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                    月20時間程度の伴走支援
+                  </li>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                    現場と一緒になった改善・定着
+                  </li>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                    LINEでの無制限QA対応
+                  </li>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                    効果測定・レポート作成
+                  </li>
+                </ul>
+                <div style="margin-top: 2rem; text-align: center;">
+                  <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" style="background-color: var(--gray-100);">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">導入の流れ</h2>
+        <div class="training-section">
+          <div class="training-step" data-aos="fade-up" data-aos-delay="100">
+            <div class="training-step-number">1</div>
+            <div class="training-step-content">
+              <h4>初回ヒアリング</h4>
+              <p>現在の課題や目標を詳しくお聞きし、支援の方向性を決定します。</p>
+            </div>
+          </div>
+          <div class="training-step" data-aos="fade-up" data-aos-delay="200">
+            <div class="training-step-number">2</div>
+            <div class="training-step-content">
+              <h4>現状分析</h4>
+              <p>業務フローの詳細な調査を行い、改善ポイントを特定します。</p>
+            </div>
+          </div>
+          <div class="training-step" data-aos="fade-up" data-aos-delay="300">
+            <div class="training-step-number">3</div>
+            <div class="training-step-content">
+              <h4>改善計画策定</h4>
+              <p>優先順位を決めて、段階的な改善計画を作成します。</p>
+            </div>
+          </div>
+          <div class="training-step" data-aos="fade-up" data-aos-delay="400">
+            <div class="training-step-number">4</div>
+            <div class="training-step-content">
+              <h4>ツール導入・設定</h4>
+              <p>最適なツールの選定から導入、初期設定まで全面サポートします。</p>
+            </div>
+          </div>
+          <div class="training-step" data-aos="fade-up" data-aos-delay="500">
+            <div class="training-step-number">5</div>
+            <div class="training-step-content">
+              <h4>社内教育・定着支援</h4>
+              <p>全社員への研修とマニュアル作成で、確実な定着を図ります。</p>
+            </div>
+          </div>
+          <div class="training-step" data-aos="fade-up" data-aos-delay="600">
+            <div class="training-step-number">6</div>
+            <div class="training-step-content">
+              <h4>継続的改善</h4>
+              <p>効果測定と継続的な改善で、さらなる効率化を実現します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section cta-section">
+      <div class="container" data-aos="fade-up">
+        <h2>OToMoで業務効率化を始めませんか？</h2>
+        <p class="section-subtitle">まずは無料相談で、貴社の課題をお聞かせください。最適な改善プランをご提案いたします。</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="./contact.html" class="btn btn-primary">無料相談を申し込む</a>
+          <a href="./case-studies.html" class="btn btn-outline">導入事例を見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒153-0064<br>
+          東京都目黒区下目黒一丁目1番14号<br>
+          コノトラビル7F</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="./service.html">サービス一覧</a></li>
+          <li><a href="./case-studies.html">ご支援事例</a></li>
+          <li><a href="./about.html">会社情報</a></li>
+          <li><a href="./contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube" style="display:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Download Modal -->
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html> 
