@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モバイルデバッグ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .debug-info {
+            background: #000;
+            color: #0f0;
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .content {
+            margin-top: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div id="debug-info" class="debug-info">デバッグ情報を読み込み中...</div>
+    
+    <div class="content">
+        <h1>モバイルデバッグページ</h1>
+        <div id="case-studies-grid">
+            <!-- JavaScriptでカードが挿入されます -->
+        </div>
+    </div>
+
+    <script>
+        const debugDiv = document.getElementById('debug-info');
+        let debugLog = '';
+        
+        function addDebug(message) {
+            debugLog += new Date().toLocaleTimeString() + ': ' + message + '\n';
+            debugDiv.textContent = debugLog;
+            console.log(message);
+        }
+        
+        addDebug('ページ読み込み開始');
+        addDebug('画面幅: ' + window.innerWidth + 'px');
+        addDebug('画面高さ: ' + window.innerHeight + 'px');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            addDebug('DOM読み込み完了');
+            
+            const grid = document.getElementById('case-studies-grid');
+            addDebug('グリッド要素: ' + (grid ? '見つかった' : '見つからない'));
+            
+            if (!grid) {
+                addDebug('エラー: グリッド要素が見つかりません');
+                return;
+            }
+            
+            // CSS確認
+            const computedStyle = window.getComputedStyle(grid);
+            addDebug('グリッド display: ' + computedStyle.display);
+            addDebug('グリッド grid-template-columns: ' + computedStyle.gridTemplateColumns);
+            
+            // テストカード挿入
+            const testHTML = `
+                <a href="#" class="case-study-card">
+                    <div class="card-image-wrapper">
+                        <img src="images/case-placeholder.svg" alt="テスト">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">テストカード1</h3>
+                        <p class="card-summary">これはテスト用のカードです。</p>
+                    </div>
+                </a>
+                <a href="#" class="case-study-card">
+                    <div class="card-image-wrapper">
+                        <img src="images/case-placeholder.svg" alt="テスト">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">テストカード2</h3>
+                        <p class="card-summary">2番目のテストカードです。</p>
+                    </div>
+                </a>
+                <a href="#" class="case-study-card">
+                    <div class="card-image-wrapper">
+                        <img src="images/case-placeholder.svg" alt="テスト">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">テストカード3</h3>
+                        <p class="card-summary">3番目のテストカードです。</p>
+                    </div>
+                </a>
+            `;
+            
+            grid.innerHTML = testHTML;
+            addDebug('テストHTMLを挿入');
+            
+            // カード確認
+            const cards = grid.querySelectorAll('.case-study-card');
+            addDebug('挿入されたカード数: ' + cards.length);
+            
+            // 各カードのスタイル確認
+            cards.forEach((card, index) => {
+                const cardStyle = window.getComputedStyle(card);
+                addDebug(`カード${index + 1} display: ${cardStyle.display}`);
+                addDebug(`カード${index + 1} visibility: ${cardStyle.visibility}`);
+            });
+        });
+        
+        window.addEventListener('load', function() {
+            addDebug('ページ完全読み込み完了');
+        });
+        
+        window.addEventListener('error', function(e) {
+            addDebug('エラー: ' + e.message);
+        });
+    </script>
+</body>
+</html> 
