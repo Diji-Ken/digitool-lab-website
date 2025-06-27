@@ -128,15 +128,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayCasesWithPagination() {
+        console.log('displayCasesWithPagination called');
+        console.log('filteredCases.length:', filteredCases.length);
+        
         if (filteredCases.length === 0) {
             grid.innerHTML = '<p>該当する事例が見つかりませんでした。</p>';
             return;
         }
 
         const totalPages = Math.ceil(filteredCases.length / itemsPerPage);
+        console.log('totalPages calculated:', totalPages);
+        
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         const casesToShow = filteredCases.slice(startIndex, endIndex);
+        
+        console.log('casesToShow.length:', casesToShow.length);
 
         displayCases(casesToShow);
         createPagination(totalPages);
@@ -193,7 +200,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function createPagination(totalPages) {
-        if (totalPages <= 1) return;
+        console.log('createPagination called with totalPages:', totalPages);
+        console.log('filteredCases.length:', filteredCases.length);
+        console.log('itemsPerPage:', itemsPerPage);
+        console.log('currentPage:', currentPage);
+        
+        if (totalPages <= 1) {
+            console.log('Pagination skipped: totalPages <= 1');
+            return;
+        }
 
         const paginationContainer = document.createElement('div');
         paginationContainer.className = 'pagination-container';
@@ -250,7 +265,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // 新しいページネーションを追加
+        console.log('Adding pagination to:', grid.parentNode);
         grid.parentNode.appendChild(paginationContainer);
+        console.log('Pagination HTML:', paginationHTML);
 
         // ページネーションのクリックイベント
         const paginationBtns = paginationContainer.querySelectorAll('.pagination-btn');
