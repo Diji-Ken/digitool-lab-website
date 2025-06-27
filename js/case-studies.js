@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Case Studies JS loaded - Version: 2024120503');
+    console.log('Location:', window.location.href);
+    
     const grid = document.getElementById('case-studies-grid');
     const tagContainer = document.getElementById('tag-filter-container');
     let allCases = [];
