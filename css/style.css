@@ -131,7 +131,6 @@ nav.desktop-nav a.active { font-weight: 700; color: var(--orange-500); }
   border-radius: 6px;
   min-width: 44px;
   min-height: 44px;
-  display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s;
@@ -1039,7 +1038,6 @@ footer {
   }
   .contact-options { grid-template-columns: 1fr; }
   .legal-table th { width: 40%; }
-  .header-buttons { display: none; }
   
   /* 新しいレスポンシブ対応 */
   .footer-content {
@@ -1118,6 +1116,15 @@ footer {
     padding: 2rem 1rem;
     margin-top: 2rem;
   }
+}
+
+/* モバイルナビゲーション - 600px以下でハンバーガーボタンを表示 */
+@media (max-width: 600px) {
+  nav.desktop-nav { display: none; }
+  .menu-button { 
+    display: flex; 
+  }
+  .header-buttons { display: none; }
 }
 
 /* 小さいモバイル対応 (320px - 480px) */
