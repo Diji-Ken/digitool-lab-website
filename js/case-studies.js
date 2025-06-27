@@ -122,9 +122,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function filterByTag(tag) {
+        console.log('filterByTag called with tag:', tag);
+        console.log('allCases.length:', allCases.length);
+        
         filteredCases = allCases.filter(study => {
-            return study.tags && study.tags.includes(tag);
+            const hasTag = study.tags && study.tags.includes(tag);
+            if (hasTag) {
+                console.log('Study matches tag:', study.title, 'tags:', study.tags);
+            }
+            return hasTag;
         });
+        
+        console.log('filteredCases after filtering:', filteredCases.length);
     }
 
     function displayCasesWithPagination() {
@@ -191,10 +200,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 const tagName = this.getAttribute('data-tag');
                 
-                // URLを更新してページをリロード（フィルター適用）
+                console.log('Card tag clicked:', tagName);
+                
+                // フィルターボタンの状態を更新
+                if (tagContainer) {
+                    const tagButtons = tagContainer.querySelectorAll('.tag-button');
+                    tagButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.getAttribute('data-tag') === tagName) {
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+                
+                // URLを更新（ページリロードなし）
                 const url = new URL(window.location);
                 url.searchParams.set('tag', tagName);
-                window.location.href = url.toString();
+                window.history.pushState({}, '', url);
+                
+                // フィルター実行（フィルターボタンと同じ処理）
+                currentPage = 1; // ページをリセット
+                filterByTag(tagName);
+                displayCasesWithPagination();
             });
         });
     }
