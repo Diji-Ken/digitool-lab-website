@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト - カード表示</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div style="padding: 2rem;">
+        <h1>カード表示テスト</h1>
+        
+        <div id="case-studies-grid" style="border: 2px solid red; padding: 1rem;">
+            <a href="#" class="case-study-card">
+                <div class="card-image-wrapper">
+                    <img src="images/case-placeholder.svg" alt="テスト画像">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-category">テスト業界</span>
+                        <time class="card-date">2024-01-01</time>
+                    </div>
+                    <h3 class="card-title">テストタイトル1</h3>
+                    <p class="card-summary">これはテスト用のサマリーテキストです。カードが正しく表示されるかを確認するためのものです。</p>
+                </div>
+            </a>
+            
+            <a href="#" class="case-study-card">
+                <div class="card-image-wrapper">
+                    <img src="images/case-placeholder.svg" alt="テスト画像">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-category">テスト業界</span>
+                        <time class="card-date">2024-01-02</time>
+                    </div>
+                    <h3 class="card-title">テストタイトル2</h3>
+                    <p class="card-summary">これは2番目のテスト用のサマリーテキストです。グリッドレイアウトが正しく動作するかを確認します。</p>
+                </div>
+            </a>
+            
+            <a href="#" class="case-study-card">
+                <div class="card-image-wrapper">
+                    <img src="images/case-placeholder.svg" alt="テスト画像">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-category">テスト業界</span>
+                        <time class="card-date">2024-01-03</time>
+                    </div>
+                    <h3 class="card-title">テストタイトル3</h3>
+                    <p class="card-summary">これは3番目のテスト用のサマリーテキストです。3列表示が正しく動作するかを確認します。</p>
+                </div>
+            </a>
+            
+            <a href="#" class="case-study-card">
+                <div class="card-image-wrapper">
+                    <img src="images/case-placeholder.svg" alt="テスト画像">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-category">テスト業界</span>
+                        <time class="card-date">2024-01-04</time>
+                    </div>
+                    <h3 class="card-title">テストタイトル4</h3>
+                    <p class="card-summary">これは4番目のテスト用のサマリーテキストです。レスポンシブ対応が正しく動作するかを確認します。</p>
+                </div>
+            </a>
+        </div>
+        
+        <script>
+            console.log('Test page loaded');
+            console.log('Grid element:', document.getElementById('case-studies-grid'));
+            console.log('Cards found:', document.querySelectorAll('.case-study-card').length);
+        </script>
+    </div>
+</body>
+</html> 
