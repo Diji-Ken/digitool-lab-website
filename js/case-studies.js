@@ -143,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayCases(cases) {
-        console.log('Displaying cases:', cases.length);
         let html = '';
         cases.forEach(study => {
             // タグを表示用HTML作成
@@ -157,15 +156,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // 画像のパスを確認し、存在しない場合は最初からプレースホルダーを使用
-            const imageUrl = study.thumbnail || '/images/case-placeholder.svg';
-
             html += `
             <a href="${study.id}.html" class="case-study-card" data-aos="fade-up">
                 <div class="card-image-wrapper">
-                    <img src="${imageUrl}" alt="${study.title}" loading="lazy" 
-                         onerror="this.onerror=null; this.src='/images/case-placeholder.svg'; this.style.backgroundColor='#f3f4f6'; this.style.objectFit='contain';"
-                         onload="console.log('Image loaded:', this.src);">
+                    <img src="${study.thumbnail}" alt="${study.title}" loading="lazy" 
+                         onerror="this.onerror=null; this.src='images/case-placeholder.svg'; this.style.backgroundColor='#f3f4f6'; this.style.objectFit='contain';">
                 </div>
                 <div class="card-content">
                     <div class="card-meta">
@@ -180,9 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         });
         grid.innerHTML = html;
-        console.log('Grid innerHTML set, length:', html.length);
-        console.log('Grid element:', grid);
-        console.log('Grid computed style:', window.getComputedStyle(grid));
 
         // タグクリックイベントを追加
         const caseTags = grid.querySelectorAll('.case-tag');
