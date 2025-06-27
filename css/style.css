@@ -12,14 +12,27 @@
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body { 
   font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
   color: var(--gray-800); 
   line-height: 1.6; 
   background-color: var(--white); 
   margin: 0; 
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 .flex { display: flex; }
@@ -1166,21 +1179,24 @@ footer {
 
   /* ヒーロー */
   .hero { 
-    padding: 2rem 1rem; 
+    padding: 2rem 0.5rem !important; 
     text-align: center !important;
+    margin: 0 !important;
   }
   .hero .container {
-    padding: 0 1rem;
+    padding: 0 0.5rem !important;
     text-align: center !important;
     justify-content: center !important;
     align-items: center !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
   .hero-text {
     text-align: center !important;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1250,7 +1266,47 @@ footer {
 
 /* 超小型デバイス対応 (320px以下) */
 @media (max-width: 320px) {
-  .hero h1 { font-size: 1.6rem; }
+  .hero { 
+    padding: 1.5rem 0.5rem !important;
+    margin: 0 !important;
+  }
+  .hero .container {
+    padding: 0 0.5rem !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .hero-text {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .hero h1 { 
+    font-size: 1.6rem; 
+    padding: 0 !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .hero .subtitle {
+    padding: 0 !important;
+    margin: 0 auto 0.5rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .hero p {
+    padding: 0 !important;
+    margin: 1rem auto 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .hero-cta {
+    padding: 0 !important;
+    margin: 1.5rem auto 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
   .content-section h2 { font-size: 1.5rem; }
   .hero-character { width: 150px; }
 }
