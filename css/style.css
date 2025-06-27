@@ -1625,3 +1625,136 @@ footer {
   padding: 0;
   line-height: 1;
 }
+
+/* Company Profile Section */
+.company-profile {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.company-profile h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--orange-100);
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.profile-table th {
+  background-color: var(--gray-50);
+  color: var(--gray-800);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  vertical-align: top;
+  width: 25%;
+  border-bottom: 1px solid var(--gray-200);
+  border-right: 1px solid var(--gray-200);
+}
+
+.profile-table td {
+  padding: 1.25rem 1.5rem;
+  color: var(--gray-800);
+  font-size: 1rem;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+
+.profile-table tr:last-child th,
+.profile-table tr:last-child td {
+  border-bottom: none;
+}
+
+.profile-table tr:hover {
+  background-color: var(--orange-50);
+}
+
+.company-profile h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 2rem 0 1rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--orange-500);
+}
+
+/* Access Map Section */
+.access-map-container {
+  background-color: var(--gray-50);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.access-map-container iframe {
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive adjustments for company profile */
+@media (max-width: 768px) {
+  .company-profile {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+  
+  .profile-table th {
+    width: 35%;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .profile-table td {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .company-profile h2 {
+    font-size: 1.75rem;
+  }
+  
+  .company-profile h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-profile {
+    padding: 1rem;
+    margin: 0 0.25rem;
+  }
+  
+  .profile-table {
+    font-size: 0.875rem;
+  }
+  
+  .profile-table th,
+  .profile-table td {
+    padding: 0.75rem;
+  }
+  
+  .profile-table th {
+    width: 40%;
+  }
+}
