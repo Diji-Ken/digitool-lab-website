@@ -784,6 +784,8 @@ footer {
     min-height: 400px;
     visibility: visible !important;
     opacity: 1 !important;
+    position: relative;
+    z-index: 1;
 }
 .case-study-card:hover {
     transform: translateY(-5px);
@@ -1127,6 +1129,8 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    position: relative;
+    z-index: 10;
 }
 
 .case-tag {
@@ -1139,6 +1143,13 @@ footer {
     cursor: pointer;
     transition: all 0.2s;
     text-decoration: none;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .case-tag:hover {
@@ -1295,6 +1306,10 @@ footer {
     
     .case-tag {
         font-size: 0.7rem;
-        padding: 0.2rem 0.4rem;
+        padding: 0.3rem 0.6rem;
+        min-height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }

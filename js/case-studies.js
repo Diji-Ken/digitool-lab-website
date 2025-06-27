@@ -195,11 +195,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // タグクリックイベントを追加
         const caseTags = grid.querySelectorAll('.case-tag');
         caseTags.forEach(tag => {
-            tag.addEventListener('click', function(e) {
+            // マウスイベントとタッチイベントの両方に対応
+            const handleTagClick = function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                const tagName = this.getAttribute('data-tag');
+                e.stopImmediatePropagation(); // 他のイベントリスナーもブロック
                 
+                const tagName = this.getAttribute('data-tag');
                 console.log('Card tag clicked:', tagName);
                 
                 // フィルターボタンの状態を更新
@@ -222,7 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentPage = 1; // ページをリセット
                 filterByTag(tagName);
                 displayCasesWithPagination();
-            });
+                
+                return false; // 確実にイベント伝播を停止
+            };
+            
+            // クリックイベントとタッチイベントの両方を設定
+            tag.addEventListener('click', handleTagClick, true); // キャプチャフェーズで実行
+            tag.addEventListener('touchend', handleTagClick, true); // タッチ終了時も処理
         });
     }
 
