@@ -282,6 +282,17 @@ nav.mobile-nav a.active {
 .btn-outline:hover { background-color: var(--gray-50); }
 .btn-block { display: block; width: 100%; }
 
+.btn-outline-primary { 
+  background-color: transparent; 
+  color: var(--orange-600); 
+  border: 2px solid var(--orange-500);
+}
+.btn-outline-primary:hover { 
+  background-color: var(--orange-500); 
+  color: var(--white);
+  border-color: var(--orange-500);
+}
+
 /* --- Page-specific sections --- */
 /* Hero Section (index.html) */
 .hero { 
@@ -984,8 +995,16 @@ footer {
   nav.desktop-nav { display: none; }
   .menu-button { display: block; }
   .hero { text-align: center; padding: 4rem 1rem; }
-  .hero .container { flex-direction: column; gap: 3rem; }
-  .hero-text { max-width: 100%; }
+  .hero .container { 
+    flex-direction: column; 
+    gap: 3rem; 
+    padding: 0 1rem; /* パディングを明示的に設定 */
+  }
+  .hero-text { 
+    max-width: 100%; 
+    padding: 0; /* パディングをリセット */
+    margin: 0; /* マージンをリセット */
+  }
   .hero h1 { font-size: 2.5rem; }
   .hero .subtitle { font-size: 1.25rem; }
   .hero-character { width: 250px; max-width: 80%; }
@@ -1039,6 +1058,15 @@ footer {
   .bottom-cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .bottom-cta-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    text-align: center;
   }
   
   .bottom-cta-banner h2 {
@@ -1087,6 +1115,11 @@ footer {
   
   .logo img { 
     height: 45px; 
+  }
+  
+  /* ハンバーガーボタンの調整 */
+  .menu-button {
+    margin-right: -8px; /* 右端にぴったり合わせる */
   }
 
   /* ヒーロー */
