@@ -890,6 +890,7 @@ footer {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
     gap: 2rem !important;
+    margin-bottom: 1rem !important; /* ホバー効果用のスペースを確保 */
 }
 
 /* Desktop specific rules */
@@ -897,6 +898,7 @@ footer {
     #case-studies-grid {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
         gap: 2rem !important;
+        margin-bottom: 1rem !important; /* ホバー効果用のスペースを確保 */
     }
 }
 
@@ -905,6 +907,7 @@ footer {
     #case-studies-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
         gap: 1.5rem !important;
+        margin-bottom: 1rem !important; /* ホバー効果用のスペースを確保 */
     }
 }
 
@@ -913,6 +916,7 @@ footer {
     #case-studies-grid {
         grid-template-columns: 1fr !important;
         gap: 1rem !important;
+        margin-bottom: 0.5rem !important; /* モバイルでは少し小さめ */
     }
     
     .card-content {
@@ -1406,7 +1410,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
     padding: 2rem 0;
 }
 
