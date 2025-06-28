@@ -22,3 +22,4 @@ DEPLOY_BRANCH: main
 # FTP接続: curl -u [USER]:[PASS] ftp://[HOST]/
 # ファイルアップロード: curl -u [USER]:[PASS] -T [FILE] ftp://[HOST]/[PATH]
 # ディレクトリ一覧: curl -u [USER]:[PASS] ftp://[HOST]/[PATH]/ 
+ 

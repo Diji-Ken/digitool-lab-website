@@ -6,7 +6,7 @@
     "industry": "飲食業",
     "date": "2024-08-01",
     "tags": ["飲食業", "簡易開発", "コスト削減", "多店舗運営", "業務効率化"],
-    "thumbnail": "images/case-thumbnail-001.jpg"
+    "thumbnail": "images/case-studies/case-001.jpg"
   },
   {
     "id": "case-002",
@@ -15,7 +15,7 @@
     "industry": "飲食業",
     "date": "2024-07-20",
     "tags": ["飲食業", "業務標準化", "品質管理", "人材育成", "多店舗運営"],
-    "thumbnail": "images/case-thumbnail-002.jpg"
+    "thumbnail": "images/case-studies/case-002.jpg"
   },
   {
     "id": "case-003",
@@ -24,7 +24,7 @@
     "industry": "飲食業",
     "date": "2024-06-15",
     "tags": ["飲食業", "集客・マーケティング", "AI活用", "業務効率化", "業務自動化"],
-    "thumbnail": "images/case-thumbnail-003.jpg"
+    "thumbnail": "images/case-studies/case-003.jpg"
   },
   {
     "id": "case-004",
@@ -33,7 +33,7 @@
     "industry": "飲食業",
     "date": "2024-05-30",
     "tags": ["飲食業", "集客・マーケティング", "業務自動化", "売上向上", "業務効率化"],
-    "thumbnail": "images/case-thumbnail-004.jpg"
+    "thumbnail": "images/case-studies/case-004.jpg"
   },
   {
     "id": "case-005",
@@ -42,7 +42,7 @@
     "industry": "小売業",
     "date": "2024-04-10",
     "tags": ["小売業", "在庫最適化", "データ活用", "コスト削減", "売上向上"],
-    "thumbnail": "images/case-thumbnail-005.jpg"
+    "thumbnail": "images/case-studies/case-005.jpg"
   },
   {
     "id": "case-006",
@@ -51,7 +51,7 @@
     "industry": "飲食業",
     "date": "2024-03-15",
     "tags": ["飲食業", "集客・マーケティング", "業務自動化", "顧客満足度向上", "売上向上"],
-    "thumbnail": "images/case-thumbnail-006.jpg"
+    "thumbnail": "images/case-studies/case-006.jpg"
   },
   {
     "id": "case-007",
@@ -60,7 +60,7 @@
     "industry": "飲食業",
     "date": "2024-03-10",
     "tags": ["飲食業", "業務効率化", "業務自動化", "多店舗運営", "DX推進"],
-    "thumbnail": "images/case-thumbnail-007.jpg"
+    "thumbnail": "images/case-studies/case-007.jpg"
   },
   {
     "id": "case-008",
@@ -69,7 +69,7 @@
     "industry": "飲食業",
     "date": "2024-03-05",
     "tags": ["飲食業", "顧客満足度向上", "集客・マーケティング", "業務標準化", "品質管理"],
-    "thumbnail": "images/case-thumbnail-008.jpg"
+    "thumbnail": "images/case-studies/case-008.jpg"
   },
   {
     "id": "case-009",
@@ -78,7 +78,7 @@
     "industry": "サービス業",
     "date": "2024-02-28",
     "tags": ["サービス業", "AI活用", "人材育成", "業務効率化", "DX推進"],
-    "thumbnail": "images/case-thumbnail-009.jpg"
+    "thumbnail": "images/case-studies/case-009.jpg"
   },
   {
     "id": "case-010",
@@ -87,7 +87,7 @@
     "industry": "サービス業",
     "date": "2024-02-25",
     "tags": ["サービス業", "人材育成", "業務標準化", "業務効率化", "品質管理"],
-    "thumbnail": "images/case-thumbnail-010.jpg"
+    "thumbnail": "images/case-studies/case-010.jpg"
   },
   {
     "id": "case-011",
@@ -96,7 +96,7 @@
     "industry": "サービス業",
     "date": "2024-02-20",
     "tags": ["サービス業", "業務効率化", "業務自動化", "DX推進", "生産性向上"],
-    "thumbnail": "images/case-thumbnail-011.jpg"
+    "thumbnail": "images/case-studies/case-011.jpg"
   },
   {
     "id": "case-012",
@@ -105,7 +105,7 @@
     "industry": "飲食業",
     "date": "2024-02-18",
     "tags": ["飲食業", "在庫最適化", "コスト削減", "業務効率化", "データ活用"],
-    "thumbnail": "images/case-thumbnail-012.jpg"
+    "thumbnail": "images/case-studies/case-012.jpg"
   },
   {
     "id": "case-013",
@@ -114,7 +114,7 @@
     "industry": "飲食業",
     "date": "2024-02-15",
     "tags": ["飲食業", "業務効率化", "多店舗運営", "人材育成", "DX推進"],
-    "thumbnail": "images/case-thumbnail-013.jpg"
+    "thumbnail": "images/case-studies/case-013.jpg"
   },
   {
     "id": "case-014",
@@ -123,7 +123,7 @@
     "industry": "飲食業",
     "date": "2024-02-12",
     "tags": ["飲食業", "AI活用", "売上向上", "人材育成", "顧客満足度向上"],
-    "thumbnail": "images/case-thumbnail-014.jpg"
+    "thumbnail": "images/case-studies/case-014.jpg"
   },
   {
     "id": "case-015",
@@ -132,7 +132,7 @@
     "industry": "サービス業",
     "date": "2024-02-10",
     "tags": ["サービス業", "AI活用", "顧客満足度向上", "業務標準化", "品質管理"],
-    "thumbnail": "images/case-thumbnail-015.jpg"
+    "thumbnail": "images/case-studies/case-015.jpg"
   },
   {
     "id": "case-016",
@@ -141,7 +141,7 @@
     "industry": "小売業",
     "date": "2024-02-08",
     "tags": ["小売業", "業務自動化", "集客・マーケティング", "業務効率化", "業務標準化"],
-    "thumbnail": "images/case-thumbnail-016.jpg"
+    "thumbnail": "images/case-studies/case-016.jpg"
   },
   {
     "id": "case-017",
@@ -150,7 +150,7 @@
     "industry": "サービス業",
     "date": "2024-02-06",
     "tags": ["サービス業", "AI活用", "顧客満足度向上", "人材育成", "売上向上"],
-    "thumbnail": "images/case-thumbnail-017.jpg"
+    "thumbnail": "images/case-studies/case-017.jpg"
   },
   {
     "id": "case-018",
@@ -159,7 +159,7 @@
     "industry": "サービス業",
     "date": "2024-02-04",
     "tags": ["サービス業", "データ活用", "売上向上", "業務自動化", "DX推進"],
-    "thumbnail": "images/case-thumbnail-018.jpg"
+    "thumbnail": "images/case-studies/case-018.jpg"
   },
   {
     "id": "case-019",
@@ -168,7 +168,7 @@
     "industry": "サービス業",
     "date": "2024-02-02",
     "tags": ["サービス業", "AI活用", "業務標準化", "顧客満足度向上", "品質管理"],
-    "thumbnail": "images/case-thumbnail-019.jpg"
+    "thumbnail": "images/case-studies/case-019.jpg"
   },
   {
     "id": "case-020",
@@ -177,7 +177,7 @@
     "industry": "サービス業",
     "date": "2024-01-31",
     "tags": ["サービス業", "AI活用", "データ活用", "売上向上", "営業効率化"],
-    "thumbnail": "images/case-thumbnail-020.jpg"
+    "thumbnail": "images/case-studies/case-020.jpg"
   },
   {
     "id": "case-021",
@@ -186,7 +186,7 @@
     "industry": "サービス業",
     "date": "2024-01-29",
     "tags": ["サービス業", "AI活用", "人材育成", "データ活用", "組織運営"],
-    "thumbnail": "images/case-thumbnail-021.jpg"
+    "thumbnail": "images/case-studies/case-021.jpg"
   },
   {
     "id": "case-022",
@@ -195,7 +195,7 @@
     "industry": "サービス業",
     "date": "2024-01-27",
     "tags": ["サービス業", "AI活用", "業務自動化", "データ活用", "業務効率化"],
-    "thumbnail": "images/case-thumbnail-022.jpg"
+    "thumbnail": "images/case-studies/case-022.jpg"
   },
   {
     "id": "case-023",
@@ -204,7 +204,7 @@
     "industry": "製造業",
     "date": "2024-01-25",
     "tags": ["製造業", "AI活用", "在庫最適化", "コスト削減", "データ活用"],
-    "thumbnail": "images/case-thumbnail-023.jpg"
+    "thumbnail": "images/case-studies/case-023.jpg"
   },
   {
     "id": "case-024",
@@ -213,7 +213,7 @@
     "industry": "不動産業",
     "date": "2024-01-23",
     "tags": ["不動産業", "データ活用", "顧客管理", "売上向上", "業務効率化"],
-    "thumbnail": "images/case-thumbnail-024.jpg"
+    "thumbnail": "images/case-placeholder.svg"
   },
   {
     "id": "case-025",
@@ -222,6 +222,6 @@
     "industry": "サービス業",
     "date": "2024-01-21",
     "tags": ["サービス業", "AI活用", "組織運営", "人材育成", "DX推進"],
-    "thumbnail": "images/case-thumbnail-025.jpg"
+    "thumbnail": "images/case-studies/case-025.jpg"
   }
 ] 
