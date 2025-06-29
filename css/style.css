@@ -907,7 +907,7 @@ footer {
     #case-studies-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
         gap: 1.5rem !important;
-        margin-bottom: 1.5rem !important; /* ホバー効果用のスペースを増加 */
+        margin-bottom: 2.5rem !important; /* タブレットでホバー効果を考慮してスペースを増加 */
     }
 }
 
@@ -916,7 +916,7 @@ footer {
     #case-studies-grid {
         grid-template-columns: 1fr !important;
         gap: 1rem !important;
-        margin-bottom: 1rem !important; /* モバイルでは適度なスペース */
+        margin-bottom: 2rem !important; /* モバイルでホバー効果を考慮してスペースを増加 */
     }
     
     .card-content {
@@ -1521,6 +1521,7 @@ footer {
     .pagination-container {
         gap: 0.25rem;
         padding: 1.5rem 0;
+        margin-top: 3rem; /* モバイルでのマージンを調整 */
     }
     
     .pagination-btn {
