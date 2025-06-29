@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お問い合わせ - 株式会社デジタルツール研究所</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2024120510">
+  <link rel="stylesheet" href="css/style.css?v=2024120515">
 </head>
 <body class="bg-gray-50">
 <div class="flex flex-col min-h-screen">
@@ -79,8 +79,12 @@
               <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-              <label for="company">会社名</label>
-              <input type="text" id="company" name="company">
+              <label for="company">会社名 *</label>
+              <input type="text" id="company" name="company" required>
+            </div>
+            <div class="form-group">
+              <label for="department">部署・役職</label>
+              <input type="text" id="department" name="department" placeholder="例：営業部 部長">
             </div>
             <div class="form-group">
               <label for="email">メールアドレス *</label>
@@ -88,11 +92,64 @@
             </div>
             <div class="form-group">
               <label for="phone">電話番号</label>
-              <input type="tel" id="phone" name="phone">
+              <input type="tel" id="phone" name="phone" placeholder="例：03-1234-5678">
             </div>
             <div class="form-group">
-              <label for="message">お問い合わせ内容 *</label>
-              <textarea id="message" name="message" required></textarea>
+              <label for="employees">従業員数</label>
+              <select id="employees" name="employees">
+                <option value="">選択してください</option>
+                <option value="1-10">1〜10名</option>
+                <option value="11-50">11〜50名</option>
+                <option value="51-100">51〜100名</option>
+                <option value="101-300">101〜300名</option>
+                <option value="301-1000">301〜1,000名</option>
+                <option value="1001+">1,001名以上</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inquiry_type">ご相談内容 *</label>
+              <select id="inquiry_type" name="inquiry_type" required>
+                <option value="">選択してください</option>
+                <option value="dx-consulting">DX伴走サポートについて</option>
+                <option value="ai-training">AI研修について</option>
+                <option value="development">開発・デジタル支援について</option>
+                <option value="general">サービス全般について</option>
+                <option value="partnership">パートナーシップについて</option>
+                <option value="media">メディア取材・講演依頼</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">ご予算感</label>
+              <select id="budget" name="budget">
+                <option value="">選択してください</option>
+                <option value="under-50">50万円未満</option>
+                <option value="50-100">50〜100万円</option>
+                <option value="100-300">100〜300万円</option>
+                <option value="300-500">300〜500万円</option>
+                <option value="500-1000">500〜1,000万円</option>
+                <option value="1000+">1,000万円以上</option>
+                <option value="undecided">未定・相談したい</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact_method">希望連絡方法</label>
+              <select id="contact_method" name="contact_method">
+                <option value="email">メール</option>
+                <option value="phone">電話</option>
+                <option value="online">オンライン会議</option>
+                <option value="visit">訪問</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">詳細・ご質問内容 *</label>
+              <textarea id="message" name="message" required placeholder="現在の課題や導入を検討されている背景、ご質問などをお聞かせください。"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="privacy_agree" name="privacy_agree" required>
+                <a href="./privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する *
+              </label>
             </div>
             <button type="submit" class="btn btn-primary btn-block">送信する</button>
           </form>
@@ -187,23 +244,64 @@
 <div id="download-modal" class="modal-overlay" style="display: none;">
   <div class="modal-content">
     <button id="close-modal" class="modal-close">&times;</button>
-    <h3>サービス詳細資料</h3>
-    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <h3>サービス詳細資料のダウンロード</h3>
+    <p>以下の項目をご入力いただくと、サービス詳細資料をダウンロードできます。</p>
     <form id="download-form">
       <div class="form-group">
         <label for="modal-name">お名前 *</label>
         <input type="text" id="modal-name" name="name" required>
       </div>
       <div class="form-group">
+        <label for="modal-company">会社名 *</label>
+        <input type="text" id="modal-company" name="company" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-department">部署・役職</label>
+        <input type="text" id="modal-department" name="department" placeholder="例：営業部 部長">
+      </div>
+      <div class="form-group">
         <label for="modal-email">メールアドレス *</label>
         <input type="email" id="modal-email" name="email" required>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+      <div class="form-group">
+        <label for="modal-phone">電話番号</label>
+        <input type="tel" id="modal-phone" name="phone" placeholder="例：03-1234-5678">
+      </div>
+      <div class="form-group">
+        <label for="modal-employees">従業員数</label>
+        <select id="modal-employees" name="employees">
+          <option value="">選択してください</option>
+          <option value="1-10">1〜10名</option>
+          <option value="11-50">11〜50名</option>
+          <option value="51-100">51〜100名</option>
+          <option value="101-300">101〜300名</option>
+          <option value="301-1000">301〜1,000名</option>
+          <option value="1001+">1,001名以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="modal-interest">興味のあるサービス</label>
+        <select id="modal-interest" name="interest">
+          <option value="">選択してください</option>
+          <option value="dx-consulting">DX伴走サポート</option>
+          <option value="ai-training">AI研修</option>
+          <option value="development">開発・デジタル支援</option>
+          <option value="all">すべてのサービス</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="modal-privacy-agree" name="privacy_agree" required>
+          <a href="./privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する *
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">資料をダウンロード</button>
     </form>
   </div>
 </div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/modal-template.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html> 
