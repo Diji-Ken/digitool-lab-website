@@ -491,4 +491,184 @@ body {
 
 .nav-arrow.hidden {
     display: none;
+}
+
+/* ===== Responsive Styles ===== */
+
+@media (max-width: 1024px) {
+  /* For screens smaller than the design width but still large */
+  .presentation-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    display: block;
+    min-height: auto;
+    background-color: var(--bg-color);
+  }
+
+  .presentation-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: unset;
+    box-shadow: none;
+  }
+
+  .slide {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 88px); /* Account for nav arrows */
+    padding: 40px 20px;
+    opacity: 0;
+    transition: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .slide.active {
+    display: flex;
+    opacity: 1;
+  }
+  
+  .slide h1, .slide h2, .slide h3 {
+      line-height: 1.4;
+      hyphens: auto;
+  }
+  .slide h1 { font-size: 26px; }
+  .slide h2 { font-size: 22px; }
+  .slide h3 { font-size: 20px; }
+  .slide p { font-size: 16px; line-height: 1.7; }
+
+  /* --- Template specific adjustments --- */
+
+  .title-slide h1 { font-size: 28px; font-weight: 900; }
+  .title-slide p { font-size: 18px; }
+
+  .hero-quote-slide h2 { font-size: 24px; }
+  .hero-quote-slide .mascot { max-height: 120px; }
+
+  .step-flow-circle {
+    flex-direction: column;
+    position: static;
+    width: 100%;
+    height: auto;
+    gap: 0;
+    margin-top: 30px;
+  }
+  .step-flow-circle .step, .step-flow-circle .arrow {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    text-align: center;
+  }
+  .step-flow-circle .arrow { display: none; }
+  .step-flow-circle .step {
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 16px;
+  }
+  .step-flow-circle .step:not(:last-of-type)::after {
+    content: '↓';
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+  }
+
+  .points-3-slide .points { flex-direction: column; gap: 30px; }
+  .points-3-slide .point p { font-size: 16px; }
+  .case-study.points-3-slide h2.case-title { font-size: 22px; }
+
+  .before-after-container { flex-direction: column; }
+  .before-after-container .center-text { order: 2; }
+  .before-after-container .box { order: 1; width: 100%; padding: 20px; }
+  .before-after-container .box.after { order: 3; }
+
+  .big-numbers-slide .metrics { flex-direction: column; gap: 40px; }
+  .big-numbers-slide .number { font-size: 60px; }
+  .big-numbers-slide .unit { font-size: 30px; }
+  .big-numbers-slide .label { font-size: 18px; }
+
+  .profile-card-slide .profile-card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .profile-card .profile-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .profile-card .profile-text h3 { font-size: 20px; }
+  .profile-card .profile-text .name { font-size: 18px; }
+  .profile-card .profile-text p { font-size: 16px; }
+
+  .section-header-slide h2 { font-size: 30px; }
+
+  .case-study-result h2 { font-size: 22px; }
+  .case-study-result .caption { font-size: 15px; }
+
+  .bar-chart-slide h2 { font-size: 22px; }
+  .chart-container { gap: 20px; height: 250px; }
+  .bar { width: 60px; }
+  .bar-item .label { font-size: 13px; word-break: keep-all; }
+  
+  .comparison-table { border: 0; }
+  .comparison-table thead { display: none; }
+  .comparison-table tr {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  .comparison-table td {
+    display: block;
+    text-align: right !important;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding: 12px;
+    padding-left: 45%;
+    font-size: 15px;
+  }
+  .comparison-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    width: calc(45% - 24px);
+    text-align: left;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+  .comparison-table td:last-child { border-bottom: 0; }
+  .comparison-table-slide .caption { font-size: 15px; }
+
+  .cta-final-slide h2 { font-size: 24px; }
+  .cta-body { flex-direction: column; gap: 30px; }
+  .cta-text p { text-align: center; font-size: 18px; }
+  .cta-qr img { width: 150px; height: 150px; }
+  .cta-qr p { font-size: 15px; }
+
+  .faq-grid { grid-template-columns: 1fr; gap: 20px; }
+  .faq-item h4 { font-size: 18px; }
+  .faq-item p { font-size: 15px; }
+  .final-contact-slide p { font-size: 16px; }
+
+  .slide-nav { padding: 0 0.5rem; }
+  .nav-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 } 
