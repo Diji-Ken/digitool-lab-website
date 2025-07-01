@@ -54,3 +54,4 @@ console.log(`1. ${caseId}.html を編集して内容を入力`);
 console.log(`2. images/case-thumbnail-${caseNumber.padStart(3, '0')}.jpg を追加`);
 console.log(`3. data/case-studies.json のsummaryとtagsを更新`); 
  
+ 

@@ -23,3 +23,4 @@ DEPLOY_BRANCH: main
 # ファイルアップロード: curl -u [USER]:[PASS] -T [FILE] ftp://[HOST]/[PATH]
 # ディレクトリ一覧: curl -u [USER]:[PASS] ftp://[HOST]/[PATH]/ 
  
+ 

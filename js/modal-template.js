@@ -5,7 +5,7 @@ const DOWNLOAD_MODAL_HTML = `
     <button id="close-modal" class="modal-close">&times;</button>
     <h3>サービス詳細資料のダウンロード</h3>
     <p>以下の項目をご入力いただくと、サービス詳細資料をダウンロードできます。</p>
-    <form id="download-form" action="send_lead.php" method="POST">
+    <form id="download-form" action="https://digitool-lab.com/send_lead.php" method="POST">
       <div class="form-group">
         <label for="modal-name">お名前 *</label>
         <input type="text" id="modal-name" name="name" required>

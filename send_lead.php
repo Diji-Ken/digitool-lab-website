@@ -87,12 +87,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mb_send_mail($email, $user_encoded_subject, $user_body, $user_headers);
 
     // Redirect to the thank you page
-    header("Location: download_thanks.html");
+    header("Location: https://digitool-lab.com/download_thanks.html");
     exit;
 
 } else {
     // If not a POST request, redirect to the top page
     header("Location: index.html");
     exit;
-}
-?> 
+} 
