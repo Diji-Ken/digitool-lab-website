@@ -70,4 +70,29 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 新しいモーダルを挿入
   document.body.insertAdjacentHTML('beforeend', DOWNLOAD_MODAL_HTML);
+
+  // フォーム送信のイベントリスナーを追加
+  const downloadForm = document.getElementById('download-form');
+  if (downloadForm) {
+    downloadForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // フォームの本来の送信を停止
+      
+      // 入力されたデータを取得 (将来のバックエンド連携用)
+      const formData = new FormData(downloadForm);
+      const data = Object.fromEntries(formData.entries());
+      console.log('フォームが送信されました:', data);
+
+      // モーダルを閉じる
+      const modal = document.getElementById('download-modal');
+      if (modal) {
+        modal.style.display = 'none';
+      }
+
+      // プレゼンテーションを新しいタブで開く
+      window.open('presentation.html', '_blank');
+
+      // フォームをリセット
+      downloadForm.reset();
+    });
+  }
 }); 
