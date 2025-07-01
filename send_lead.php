@@ -46,17 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "------------------------------------------------------------\n\n";
     $body .= "送信日時: " . date("Y-m-d H:i:s") . "\n";
 
-    // Encode subject and from name for Japanese
-    $encoded_subject = mb_encode_mimeheader($subject, "UTF-8");
-    $encoded_from_name = mb_encode_mimeheader($from_name, "UTF-8");
-
     // Set email headers
-    $headers = "From: " . $encoded_from_name . " <" . $from_email . ">\r\n";
+    $headers = "From: " . $from_name . " <" . $from_email . ">\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8";
 
     // Send the email to the administrator
-    mb_send_mail($recipient_email, $encoded_subject, $body, $headers);
+    mb_send_mail($recipient_email, $subject, $body, $headers);
 
     // --- Send auto-reply email to the user ---
     $user_subject = "【株式会社デジタルツール研究所】資料ダウンロードのご請求ありがとうございます";
@@ -78,14 +74,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_body .= "Web: https://digitool-lab.com/\n";
     $user_body .= "------------------------------------------------------------\n";
 
-    $user_encoded_subject = mb_encode_mimeheader($user_subject, "UTF-8");
-    
     // Set user email headers
-    $user_headers = "From: " . $encoded_from_name . " <" . $from_email . ">\r\n";
+    $user_headers = "From: " . $from_name . " <" . $from_email . ">\r\n";
     $user_headers .= "Content-Type: text/plain; charset=UTF-8";
 
     // Send the auto-reply email to the user
-    mb_send_mail($email, $user_encoded_subject, $user_body, $user_headers);
+    mb_send_mail($email, $user_subject, $user_body, $user_headers);
 
     // Redirect to the thank you page
     header("Location: https://digitool-lab.com/download_thanks.html");
