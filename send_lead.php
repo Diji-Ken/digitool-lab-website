@@ -54,8 +54,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Reply-To: " . $email . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8";
 
-    // Send the email
-    $mail_sent = mb_send_mail($recipient_email, $encoded_subject, $body, $headers);
+    // Send the email to the administrator
+    mb_send_mail($recipient_email, $encoded_subject, $body, $headers);
+
+    // --- Send auto-reply email to the user ---
+    $user_subject = "【株式会社デジタルツール研究所】資料ダウンロードのご請求ありがとうございます";
+    $user_body = $name . " 様\n\n";
+    $user_body .= "この度は、株式会社デジタルツール研究所のサービス詳細資料にご請求いただき、誠にありがとうございます。\n\n";
+    $user_body .= "以下の内容でご入力情報を受け付けました。\n";
+    $user_body .= "------------------------------------------------------------\n";
+    $user_body .= "お名前: " . $name . "\n";
+    $user_body .= "会社名: " . $company . "\n";
+    $user_body .= "メールアドレス: " . $email . "\n";
+    $user_body .= "------------------------------------------------------------\n\n";
+    $user_body .= "資料は、以下のページよりご覧いただけます。\n";
+    $user_body .= "https://digitool-lab.com/download_thanks.html\n\n";
+    $user_body .= "※本メールは送信専用です。ご返信いただいてもお答えできませんのでご了承ください。\n";
+    $user_body .= "ご不明な点がございましたら、お手数ですが下記ウェブサイトのお問い合わせフォームよりご連絡ください。\n";
+    $user_body .= "https://digitool-lab.com/contact.html\n\n";
+    $user_body .= "------------------------------------------------------------\n";
+    $user_body .= "株式会社デジタルツール研究所\n";
+    $user_body .= "Web: https://digitool-lab.com/\n";
+    $user_body .= "------------------------------------------------------------\n";
+
+    $user_encoded_subject = mb_encode_mimeheader($user_subject, "UTF-8");
+    
+    // Set user email headers
+    $user_headers = "From: " . $encoded_from_name . " <" . $from_email . ">\r\n";
+    $user_headers .= "Content-Type: text/plain; charset=UTF-8";
+
+    // Send the auto-reply email to the user
+    mb_send_mail($email, $user_encoded_subject, $user_body, $user_headers);
 
     // Redirect to the thank you page
     header("Location: download_thanks.html");
