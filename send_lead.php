@@ -51,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send the email
     $mail_sent = mb_send_mail($recipient_email, $subject, $body, $headers);
 
-    // Redirect to the presentation after sending email, regardless of mail success
-    // This ensures the user gets the content. Mail sending issues can be checked on the server.
-    header("Location: presentation.html");
+    // Redirect to the presentation page
+    // header("Location: presentation.html");
+    header("Location: download_thanks.html");
     exit;
 
 } else {
