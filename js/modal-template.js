@@ -70,4 +70,48 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 新しいモーダルを挿入
   document.body.insertAdjacentHTML('beforeend', DOWNLOAD_MODAL_HTML);
+
+  // --- New Modal Control Logic ---
+  const modal = document.getElementById('download-modal');
+  const openModalButtons = document.querySelectorAll('.open-download-modal');
+  const closeModalButton = document.getElementById('close-modal');
+
+  if (modal && openModalButtons.length > 0 && closeModalButton) {
+    // Function to open the modal
+    const openModal = (e) => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+      const firstInput = modal.querySelector('input[type="text"]');
+      if (firstInput) {
+        firstInput.focus();
+      }
+    };
+
+    // Function to close the modal
+    const closeModal = () => {
+      modal.style.display = 'none';
+    };
+
+    // Attach event listeners to all open buttons
+    openModalButtons.forEach(button => {
+      button.addEventListener('click', openModal);
+    });
+
+    // Attach event listener to close button
+    closeModalButton.addEventListener('click', closeModal);
+
+    // Close modal on escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        closeModal();
+      }
+    });
+
+    // Close modal on overlay click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
 }); 
