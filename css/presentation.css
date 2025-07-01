@@ -11,21 +11,25 @@
 
 body {
   font-family: var(--font-family);
-  background-color: #f0f0f0;
+  background-color: #333;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .presentation-container {
   width: 1280px;
   height: 720px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
   overflow: hidden;
-  position: relative;
+  background-color: #000;
 }
 
 .slide {
@@ -457,15 +461,16 @@ body {
 }
 
 .slide-nav {
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 2rem;
     pointer-events: none;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 .nav-arrow {
@@ -493,7 +498,7 @@ body {
     display: none;
 }
 
-/* ===== Responsive Styles ===== */
+/* ===== Viewer & Responsive Scaling ===== */
 
 @media (max-width: 1024px) {
   /* For screens smaller than the design width but still large */

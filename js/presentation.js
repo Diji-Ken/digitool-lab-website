@@ -1,8 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.presentation-container');
     const slides = document.querySelectorAll('.slide');
     const prevButton = document.getElementById('prev-slide');
     const nextButton = document.getElementById('next-slide');
     let currentSlide = 0;
+
+    const nativeWidth = 1280;
+    const nativeHeight = 720;
+
+    function scalePresentation() {
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const scale = Math.min(
+            viewportWidth / nativeWidth,
+            viewportHeight / nativeHeight
+        );
+        container.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
 
     function updateNavButtons() {
         prevButton.classList.toggle('hidden', currentSlide === 0);
@@ -37,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial setup
     showSlide(currentSlide);
+    scalePresentation();
+
+    // Event Listeners
+    window.addEventListener('resize', scalePresentation);
 
     // Button navigation
     prevButton.addEventListener('click', (e) => {
