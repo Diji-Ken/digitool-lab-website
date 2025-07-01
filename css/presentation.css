@@ -445,4 +445,50 @@ body {
 .faq-item p {
     font-size: 18px;
     line-height: 1.6;
+}
+
+.slide.title-slide h1 {
+    font-size: 3.5rem;
+}
+
+.slide.title-slide .subtitle {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.slide-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.nav-arrow {
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.nav-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-arrow.hidden {
+    display: none;
 } 
