@@ -1,6 +1,7 @@
 <?php
-// Set character encoding for Japanese
-mb_language("Japanese");
+// Set character encoding
+date_default_timezone_set('Asia/Tokyo');
+mb_language("uni");
 mb_internal_encoding("UTF-8");
 
 // Check if it's a POST request
