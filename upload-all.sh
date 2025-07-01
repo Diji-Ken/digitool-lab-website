@@ -57,3 +57,4 @@ echo "✅ アップロード完了！"
 echo "🌐 Webサイトを確認: http://digitool-lab.com/" 
  
  
+ 

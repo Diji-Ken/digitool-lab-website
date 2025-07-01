@@ -24,3 +24,4 @@ DEPLOY_BRANCH: main
 # ディレクトリ一覧: curl -u [USER]:[PASS] ftp://[HOST]/[PATH]/ 
  
  
+ 
