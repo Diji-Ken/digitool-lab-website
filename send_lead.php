@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- Configuration ---
     // ▼▼▼【重要】通知を受け取りたいご自身のメールアドレスに変更してください ▼▼▼
     $recipient_email = "info@digitool-lab.com"; 
+    $from_email = "no-reply@digitool-lab.com";
+    $from_name = "株式会社デジタルツール研究所";
     $subject = "【digitool-lab.com】資料ダウンロード通知";
     // --- End Configuration ---
 
@@ -43,16 +45,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "------------------------------------------------------------\n\n";
     $body .= "送信日時: " . date("Y-m-d H:i:s") . "\n";
 
-    // Set email headers from a generic address on your domain
-    $headers = "From: no-reply@digitool-lab.com\r\n";
+    // Encode subject and from name for Japanese
+    $encoded_subject = mb_encode_mimeheader($subject, "UTF-8");
+    $encoded_from_name = mb_encode_mimeheader($from_name, "UTF-8");
+
+    // Set email headers
+    $headers = "From: " . $encoded_from_name . " <" . $from_email . ">\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8";
 
     // Send the email
-    $mail_sent = mb_send_mail($recipient_email, $subject, $body, $headers);
+    $mail_sent = mb_send_mail($recipient_email, $encoded_subject, $body, $headers);
 
-    // Redirect to the presentation page
-    // header("Location: presentation.html");
+    // Redirect to the thank you page
     header("Location: download_thanks.html");
     exit;
 
