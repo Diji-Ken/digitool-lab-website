@@ -4,34 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ご支援事例 - 株式会社デジタルツール研究所</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2024120510">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/style.css?v=2024120513">
 </head>
 <body class="bg-gray-50">
 <div class="flex flex-col min-h-screen">
   <header>
     <div class="container">
       <a href="./index.html" class="logo">
-        <img src="images/企業ロゴ.png" alt="株式会社デジタルツール研究所 ロゴ">
+        <img src="画像素材/企業ロゴ.png" alt="株式会社デジタルツール研究所 ロゴ">
         <span>デジタルツール研究所</span>
       </a>
-      <div class="header-right-panel">
       <nav class="desktop-nav">
         <a href="./about.html">私たちについて</a>
         <a href="./service.html">事業内容</a>
         <a href="./case.html" class="active">ご支援事例</a>
+        <a href="./contact.html">お問い合わせ</a>
       </nav>
-        <div class="header-buttons">
-          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
-            <span>資料ダウンロード</span>
-          </a>
-          <a href="./contact.html" class="btn btn-sm btn-dark">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span>お問い合わせ</span>
-          </a>
-        </div>
-      </div>
       <button class="menu-button" id="mobile-menu-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
       </button>
@@ -45,7 +41,7 @@
   </header>
 
   <main class="flex-grow">
-    <section class="page-header" data-aos="fade-in">
+    <section class="page-header">
       <h1>ご支援事例</h1>
       <p>業界も課題も様々な企業様と、伴走支援で成果を創出しています。<br>ここでは、お客様がどのように課題を乗り越え、成長を遂げたかをご紹介します。</p>
     </section>
@@ -53,7 +49,7 @@
     <section class="content-section">
       <div class="container" style="max-width: 1000px;">
         <!-- 事例1: 福祉法人A社 -->
-        <div class="case-card" data-aos="fade-up">
+        <div class="case-card">
           <div class="case-card-inner">
             <h3 class="case-title">紙とFAXベースのアナログ業務からの脱却</h3>
             <p class="case-client">福祉法人A社 様</p>
@@ -97,7 +93,7 @@
         </div>
 
         <!-- 事例2: 税理士事務所B社 -->
-        <div class="case-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="case-card">
           <div class="case-card-inner">
             <h3 class="case-title">業務プロセスの標準化と属人化の解消</h3>
             <p class="case-client">税理士事務所B社 様</p>
@@ -143,7 +139,7 @@
       </div>
     </section>
 
-    <section class="cta-section" data-aos="fade-up">
+    <section class="cta-section">
         <div class="container">
           <h2>貴社の課題も、きっと解決できます</h2>
           <p>私たちの支援は、特定のツールを売ることではありません。貴社の状況を深く理解し、最適な解決策を一緒に考え、実行し、成果が出るまで伴走することです。</p>
@@ -158,27 +154,6 @@
     </div>
   </footer>
 </div>
-
-<!-- Download Modal -->
-<div id="download-modal" class="modal-overlay" style="display: none;">
-  <div class="modal-content">
-    <button id="close-modal" class="modal-close">&times;</button>
-    <h3>サービス詳細資料</h3>
-    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
-    <form id="download-form">
-      <div class="form-group">
-        <label for="modal-name">お名前 *</label>
-        <input type="text" id="modal-name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="modal-email">メールアドレス *</label>
-        <input type="email" id="modal-email" name="email" required>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
-    </form>
-  </div>
-</div>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/main.js"></script>
 </body>
