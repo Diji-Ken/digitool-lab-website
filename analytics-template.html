@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Search Console 所有権確認 -->
+  <!-- 以下のコードを実際の確認コードに置き換えてください -->
+  <meta name="google-site-verification" content="XXXXXXXXXXXXXXXXXXXXXXXXX" />
+  
+  <!-- Google Analytics 4 -->
+  <!-- 以下のG-XXXXXXXXXXを実際の測定IDに置き換えてください -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-XXXXXXXXXX', {
+      // プライバシー設定
+      'anonymize_ip': true,
+      // カスタムディメンション（必要に応じて）
+      'custom_map': {
+        'dimension1': 'page_type',
+        'dimension2': 'user_type'
+      }
+    });
+    
+    // コンバージョンイベント設定例
+    function trackDownload() {
+      gtag('event', 'download', {
+        'event_category': 'engagement',
+        'event_label': 'resource_download'
+      });
+    }
+    
+    function trackContact() {
+      gtag('event', 'contact', {
+        'event_category': 'lead',
+        'event_label': 'contact_form'
+      });
+    }
+  </script>
+  
+  <!-- その他のメタタグ、CSS、構造化データはここに続く -->
+  
+</head>
+<body>
+  <!-- コンテンツ -->
+  
+  <!-- イベントトラッキング例 -->
+  <script>
+    // 資料ダウンロードボタンのクリック追跡
+    document.addEventListener('DOMContentLoaded', function() {
+      const downloadButtons = document.querySelectorAll('.open-download-modal, #header-download-button, #bottom-download-button');
+      downloadButtons.forEach(button => {
+        button.addEventListener('click', trackDownload);
+      });
+      
+      // お問い合わせフォーム送信追跡
+      const contactForm = document.querySelector('#contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', trackContact);
+      }
+    });
+  </script>
+</body>
+</html> 
