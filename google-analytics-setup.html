@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Analytics・Search Console設定ガイド</title>
+</head>
+<body>
+  <h1>Google Analytics・Search Console設定ガイド</h1>
+  
+  <h2>1. Google Analytics 4 設定</h2>
+  <p>以下のコードを各HTMLファイルの&lt;head&gt;タグ内に追加してください：</p>
+  <pre><code>
+&lt;!-- Google Analytics 4 --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+&lt;/script&gt;
+  </code></pre>
+  <p>※ GA_MEASUREMENT_ID は実際の測定IDに置き換えてください</p>
+  
+  <h2>2. Google Search Console設定</h2>
+  <p>以下のいずれかの方法で設定してください：</p>
+  
+  <h3>方法1: HTMLタグ（推奨）</h3>
+  <p>Google Search Consoleで生成されたメタタグを各HTMLファイルの&lt;head&gt;タグ内に追加：</p>
+  <pre><code>
+&lt;meta name="google-site-verification" content="VERIFICATION_CODE" /&gt;
+  </code></pre>
+  
+  <h3>方法2: HTMLファイルアップロード</h3>
+  <p>Google Search ConsoleからダウンロードしたHTMLファイルをルートディレクトリにアップロード</p>
+  
+  <h2>3. 設定対象ファイル</h2>
+  <ul>
+    <li>index.html</li>
+    <li>about.html</li>
+    <li>service.html</li>
+    <li>case-studies.html</li>
+    <li>contact.html</li>
+    <li>services/consulting.html</li>
+    <li>services/training.html</li>
+    <li>services/development.html</li>
+    <li>service-otomo.html</li>
+    <li>全ての事例ページ（case-001.html〜case-025.html）</li>
+    <li>privacy-policy.html</li>
+    <li>terms-of-service.html</li>
+    <li>tokutei.html</li>
+  </ul>
+  
+  <h2>4. 設定後の確認</h2>
+  <ol>
+    <li>Google Analytics：リアルタイムレポートでアクセスを確認</li>
+    <li>Google Search Console：「URL検査」でインデックス状況を確認</li>
+    <li>サイトマップ送信：sitemap.xmlを登録</li>
+  </ol>
+  
+  <h2>5. 追加推奨設定</h2>
+  <h3>Google Tag Manager（オプション）</h3>
+  <p>より高度な分析を行いたい場合は、Google Tag Managerの導入も検討してください。</p>
+  
+  <h3>Bing Webmaster Tools</h3>
+  <p>Bing検索エンジンでの表示も重要な場合は、Bing Webmaster Toolsにも登録してください。</p>
+  
+</body>
+</html> 
