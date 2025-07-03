@@ -1,0 +1,65 @@
+# 株式会社デジタルツール研究所
+
+## 会社概要
+株式会社デジタルツール研究所は、企業のデジタル変革（DX）を支援する専門会社です。
+所在地: 〒110-0004 東京都台東区下谷2丁目23番8号 リベール上野4F
+電話番号: 048-606-4504
+メールアドレス: contact@digitool-lab.com
+
+## 主要サービス
+
+### OToMo - 半社員型デジタル支援サービス
+外部のIT担当者として企業のチームに参加し、業務の棚卸しからツールの導入、改善・定着までを一気通貫で支援。月額10万円〜で提供。
+
+### DX伴走サポート
+企業の現状分析から改善計画策定、ツール導入・設定、社内教育・定着支援まで継続的にサポート。
+
+### フルオーダーメイドAI研修
+企業の業務に特化したAI活用研修を提供。ChatGPT、Claude、Geminiなどの実践的な活用方法を指導。
+
+### 開発・デジタル支援
+業務効率化ツールの開発、既存システムの改善、デジタル化支援を提供。
+
+## 主要ページ
+
+### 基本ページ
+- ホーム: https://digitool-lab.com/
+- 会社概要: https://digitool-lab.com/about.html
+- サービス一覧: https://digitool-lab.com/service.html
+- お問い合わせ: https://digitool-lab.com/contact.html
+
+### サービス詳細ページ
+- DX伴走サポート: https://digitool-lab.com/services/consulting.html
+- フルオーダーメイドAI研修: https://digitool-lab.com/services/training.html
+- 開発・デジタル支援: https://digitool-lab.com/services/development.html
+- OToMo: https://digitool-lab.com/service-otomo.html
+
+### 事例・実績
+- ご支援事例一覧: https://digitool-lab.com/case-studies.html
+- 飲食業レシピ標準化事例: https://digitool-lab.com/case-002.html
+- 美容サロンSNS自動化事例: https://digitool-lab.com/case-003.html
+
+### 法的ページ
+- 特定商取引法に基づく表記: https://digitool-lab.com/tokutei.html
+- プライバシーポリシー: https://digitool-lab.com/privacy-policy.html
+- 利用規約: https://digitool-lab.com/terms-of-service.html
+
+## 特徴・強み
+- IT専任担当者がいない中小企業向けの支援に特化
+- 現場に寄り添った実践的なデジタル化支援
+- 導入から定着まで一気通貫でサポート
+- 業界・業種問わず幅広い支援実績
+- 月20時間程度の伴走支援で継続的な改善を実現
+
+## 対象業界・業種
+飲食業、美容・サロン業、製造業、小売業、サービス業など幅広い業界に対応
+
+## 代表者
+松岡 哲平（運営統括責任者）
+
+## SNS
+- Instagram: https://www.instagram.com/digiken_dx/
+- YouTube: https://www.youtube.com/@デジ研DX
+
+## キーワード
+DX支援, デジタル変革, 業務効率化, AI研修, ChatGPT活用, ツール導入支援, 中小企業DX, 半社員型支援, OToMo, 伴走支援 
