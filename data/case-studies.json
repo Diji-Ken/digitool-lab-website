@@ -6,7 +6,8 @@
     "industry": "飲食業",
     "date": "2025-06-01",
     "tags": ["飲食業", "簡易開発", "コスト削減", "多店舗運営", "業務効率化"],
-    "thumbnail": "images/case-studies/case-001.jpg"
+    "thumbnail": "images/case-studies/case-001.jpg",
+    "url": "blog/restaurant-order-system-cost-reduction.html"
   },
   {
     "id": "case-002",
@@ -15,7 +16,8 @@
     "industry": "飲食業",
     "date": "2025-06-02",
     "tags": ["飲食業", "業務標準化", "品質管理", "人材育成", "多店舗運営"],
-    "thumbnail": "images/case-studies/case-002.jpg"
+    "thumbnail": "images/case-studies/case-002.jpg",
+    "url": "blog/restaurant-recipe-standardization.html"
   },
   {
     "id": "case-003",
@@ -24,7 +26,8 @@
     "industry": "美容・サロン業",
     "date": "2025-06-03",
     "tags": ["美容・サロン業", "集客・マーケティング", "AI活用", "業務効率化", "業務自動化"],
-    "thumbnail": "images/case-studies/case-003.jpg"
+    "thumbnail": "images/case-studies/case-003.jpg",
+    "url": "blog/salon-sns-automation.html"
   },
   {
     "id": "case-004",
@@ -33,7 +36,8 @@
     "industry": "飲食業",
     "date": "2025-06-04",
     "tags": ["飲食業", "集客・マーケティング", "業務自動化", "売上向上", "業務効率化"],
-    "thumbnail": "images/case-studies/case-004.jpg"
+    "thumbnail": "images/case-studies/case-004.jpg",
+    "url": "blog/restaurant-promotion-automation.html"
   },
   {
     "id": "case-005",
@@ -42,7 +46,8 @@
     "industry": "小売業",
     "date": "2025-06-05",
     "tags": ["小売業", "在庫最適化", "データ活用", "コスト削減", "売上向上"],
-    "thumbnail": "images/case-studies/case-005.jpg"
+    "thumbnail": "images/case-studies/case-005.jpg",
+    "url": "blog/retail-inventory-optimization.html"
   },
   {
     "id": "case-006",
@@ -51,7 +56,8 @@
     "industry": "飲食業",
     "date": "2025-06-06",
     "tags": ["飲食業", "集客・マーケティング", "業務自動化", "顧客満足度向上", "売上向上"],
-    "thumbnail": "images/case-studies/case-006.jpg"
+    "thumbnail": "images/case-studies/case-006.jpg",
+    "url": "blog/service-line-step-delivery.html"
   },
   {
     "id": "case-007",
@@ -60,7 +66,8 @@
     "industry": "飲食業",
     "date": "2025-06-07",
     "tags": ["飲食業", "業務効率化", "業務自動化", "多店舗運営", "DX推進"],
-    "thumbnail": "images/case-studies/case-007.jpg"
+    "thumbnail": "images/case-studies/case-007.jpg",
+    "url": "blog/restaurant-shift-management.html"
   },
   {
     "id": "case-008",
@@ -69,7 +76,8 @@
     "industry": "飲食業",
     "date": "2025-06-08",
     "tags": ["飲食業", "顧客満足度向上", "集客・マーケティング", "業務標準化", "品質管理"],
-    "thumbnail": "images/case-studies/case-008.jpg"
+    "thumbnail": "images/case-studies/case-008.jpg",
+    "url": "blog/service-review-improvement.html"
   },
   {
     "id": "case-009",
@@ -78,7 +86,8 @@
     "industry": "サービス業",
     "date": "2025-06-09",
     "tags": ["サービス業", "AI活用", "人材育成", "業務効率化", "DX推進"],
-    "thumbnail": "images/case-studies/case-009.jpg"
+    "thumbnail": "images/case-studies/case-009.jpg",
+    "url": "blog/recruitment-ai-copywriting.html"
   },
   {
     "id": "case-010",
@@ -87,7 +96,8 @@
     "industry": "サービス業",
     "date": "2025-06-10",
     "tags": ["サービス業", "人材育成", "業務標準化", "業務効率化", "品質管理"],
-    "thumbnail": "images/case-studies/case-010.jpg"
+    "thumbnail": "images/case-studies/case-010.jpg",
+    "url": "blog/service-manual-systematization.html"
   },
   {
     "id": "case-011",
@@ -96,7 +106,8 @@
     "industry": "サービス業",
     "date": "2025-06-11",
     "tags": ["サービス業", "業務効率化", "業務自動化", "DX推進", "生産性向上"],
-    "thumbnail": "images/case-studies/case-011.jpg"
+    "thumbnail": "images/case-studies/case-011.jpg",
+    "url": "blog/service-daily-report-automation.html"
   },
   {
     "id": "case-012",
@@ -105,7 +116,8 @@
     "industry": "飲食業",
     "date": "2025-06-12",
     "tags": ["飲食業", "在庫最適化", "コスト削減", "業務効率化", "データ活用"],
-    "thumbnail": "images/case-studies/case-012.jpg"
+    "thumbnail": "images/case-studies/case-012.jpg",
+    "url": "blog/restaurant-waste-cost-reduction.html"
   },
   {
     "id": "case-013",
@@ -114,7 +126,8 @@
     "industry": "飲食業",
     "date": "2025-06-13",
     "tags": ["飲食業", "業務効率化", "多店舗運営", "人材育成", "DX推進"],
-    "thumbnail": "images/case-studies/case-013.jpg"
+    "thumbnail": "images/case-studies/case-013.jpg",
+    "url": "blog/restaurant-staff-support-system.html"
   },
   {
     "id": "case-014",
@@ -123,7 +136,8 @@
     "industry": "飲食業",
     "date": "2025-06-14",
     "tags": ["飲食業", "AI活用", "売上向上", "人材育成", "顧客満足度向上"],
-    "thumbnail": "images/case-studies/case-014.jpg"
+    "thumbnail": "images/case-studies/case-014.jpg",
+    "url": "blog/restaurant-ai-training-upsell.html"
   },
   {
     "id": "case-015",
@@ -132,7 +146,8 @@
     "industry": "サービス業",
     "date": "2025-06-15",
     "tags": ["サービス業", "AI活用", "顧客満足度向上", "業務標準化", "品質管理"],
-    "thumbnail": "images/case-studies/case-015.jpg"
+    "thumbnail": "images/case-studies/case-015.jpg",
+    "url": "blog/service-complaint-handling-ai.html"
   },
   {
     "id": "case-016",
@@ -141,7 +156,8 @@
     "industry": "小売業",
     "date": "2025-06-16",
     "tags": ["小売業", "業務自動化", "集客・マーケティング", "業務効率化", "業務標準化"],
-    "thumbnail": "images/case-studies/case-016.jpg"
+    "thumbnail": "images/case-studies/case-016.jpg",
+    "url": "blog/retail-pop-automation.html"
   },
   {
     "id": "case-017",
@@ -150,7 +166,8 @@
     "industry": "サービス業",
     "date": "2025-06-17",
     "tags": ["サービス業", "AI活用", "顧客満足度向上", "人材育成", "売上向上"],
-    "thumbnail": "images/case-studies/case-017.jpg"
+    "thumbnail": "images/case-studies/case-017.jpg",
+    "url": "blog/beauty-salon-ai-training.html"
   },
   {
     "id": "case-018",
@@ -159,7 +176,8 @@
     "industry": "サービス業",
     "date": "2025-06-18",
     "tags": ["サービス業", "データ活用", "売上向上", "業務自動化", "DX推進"],
-    "thumbnail": "images/case-studies/case-018.jpg"
+    "thumbnail": "images/case-studies/case-018.jpg",
+    "url": "blog/hotel-dynamic-pricing.html"
   },
   {
     "id": "case-019",
@@ -168,7 +186,8 @@
     "industry": "サービス業",
     "date": "2025-06-19",
     "tags": ["サービス業", "AI活用", "業務標準化", "顧客満足度向上", "品質管理"],
-    "thumbnail": "images/case-studies/case-019.jpg"
+    "thumbnail": "images/case-studies/case-019.jpg",
+    "url": "blog/hotel-service-standardization.html"
   },
   {
     "id": "case-020",
@@ -177,7 +196,8 @@
     "industry": "サービス業",
     "date": "2025-06-20",
     "tags": ["サービス業", "AI活用", "データ活用", "売上向上", "営業効率化"],
-    "thumbnail": "images/case-studies/case-020.jpg"
+    "thumbnail": "images/case-studies/case-020.jpg",
+    "url": "blog/sales-customer-analysis-ai.html"
   },
   {
     "id": "case-021",
@@ -186,7 +206,8 @@
     "industry": "サービス業",
     "date": "2025-06-21",
     "tags": ["サービス業", "AI活用", "人材育成", "データ活用", "組織運営"],
-    "thumbnail": "images/case-studies/case-021.jpg"
+    "thumbnail": "images/case-studies/case-021.jpg",
+    "url": "blog/hr-turnover-prediction-ai.html"
   },
   {
     "id": "case-022",
@@ -195,7 +216,8 @@
     "industry": "サービス業",
     "date": "2025-06-22",
     "tags": ["サービス業", "AI活用", "業務自動化", "データ活用", "業務効率化"],
-    "thumbnail": "images/case-studies/case-022.jpg"
+    "thumbnail": "images/case-studies/case-022.jpg",
+    "url": "blog/management-data-aggregation-ai.html"
   },
   {
     "id": "case-023",
@@ -204,7 +226,8 @@
     "industry": "製造業",
     "date": "2025-06-23",
     "tags": ["製造業", "AI活用", "在庫最適化", "コスト削減", "データ活用"],
-    "thumbnail": "images/case-studies/case-023.jpg"
+    "thumbnail": "images/case-studies/case-023.jpg",
+    "url": "blog/manufacturing-demand-forecasting-ai.html"
   },
   {
     "id": "case-025",
@@ -213,6 +236,7 @@
     "industry": "サービス業",
     "date": "2025-06-25",
     "tags": ["サービス業", "AI活用", "組織運営", "人材育成", "DX推進"],
-    "thumbnail": "images/case-studies/case-025.jpg"
+    "thumbnail": "images/case-studies/case-025.jpg",
+    "url": "blog/internal-idea-generation-ai.html"
   }
 ] 

@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(cases => {
             allCases = cases;
             
+            // ★★★ 追加: 日付の降順（新しいものが先）にソート ★★★
+            allCases.sort((a, b) => new Date(b.date) - new Date(a.date));
+            // ★★★ ここまで ★★★
+
             if (cases.length === 0) {
                 grid.innerHTML = '<p>現在、公開中のご支援事例はありません。</p>';
                 return;
@@ -176,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             html += `
-            <a href="${study.id}.html" class="case-study-card" data-aos="fade-up">
+            <a href="${study.url}" class="case-study-card" data-aos="fade-up">
                 <div class="card-image-wrapper">
                     <img src="${study.thumbnail}" alt="${study.title}" loading="lazy" 
                          onerror="this.onerror=null; this.src='images/case-placeholder.svg'; this.style.backgroundColor='#f3f4f6'; this.style.objectFit='contain';">
