@@ -68,7 +68,7 @@ body {
     background: white;
     padding: 40px 0 30px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    /* position: sticky; */ /* 原因切り分けのため一時的に無効化 */
+    position: sticky;
     top: 0;
     z-index: 100;
     transition: all 0.3s ease-in-out;
@@ -84,9 +84,11 @@ body {
     margin-bottom: 15px;
 }
 
-.filter-section.mini-header .filter-content,
-.filter-section.mini-header .active-filters {
-    display: none;
+@media (min-width: 769px) {
+    .filter-section.mini-header .filter-content,
+    .filter-section.mini-header .active-filters {
+        display: none;
+    }
 }
 
 /* 検索ボックス */
