@@ -808,19 +808,16 @@ footer {
 
 /* New Case Study Card Styles */
 .case-study-card {
-    display: block !important;
     background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.2s, box-shadow 0.2s;
-    min-height: 400px;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 .case-study-card:hover {
     transform: translateY(-5px);
@@ -837,16 +834,16 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
-    display: block !important;
+    transition: transform 0.4s ease;
 }
 .case-study-card:hover .card-image-wrapper img {
     transform: scale(1.05);
 }
 .card-content {
     padding: 1.5rem;
-    min-height: 200px;
-    display: block !important;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 .card-meta {
     display: flex;
@@ -866,57 +863,47 @@ footer {
     color: var(--gray-600);
 }
 .card-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
-    margin: 0 0 0.5rem;
-    line-height: 1.4;
-    color: var(--gray-900);
-    display: block !important;
+    line-height: 1.5;
+    margin: 0.5rem 0 1rem;
 }
 .card-summary {
-    font-size: 1rem;
-    color: var(--gray-800);
+    color: var(--gray-600);
     line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    height: calc(1.6em * 4); /* 4行分の高さを固定 */
-    margin-bottom: 1rem;
+    margin: 0;
+    flex-grow: 1;
 }
 
 /* Case Studies Grid Responsive */
 #case-studies-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
-    gap: 2rem !important;
-    margin-bottom: 2rem !important; /* ホバー効果用のスペースを増加 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
 }
 
 /* Desktop specific rules */
 @media (min-width: 769px) {
     #case-studies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
-        gap: 2rem !important;
-        margin-bottom: 2rem !important; /* ホバー効果用のスペースを増加 */
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
     }
 }
 
 /* Tablet specific rules */
 @media (min-width: 481px) and (max-width: 768px) {
     #case-studies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-        gap: 1.5rem !important;
-        margin-bottom: 3rem !important; /* タブレットで十分なスペースを確保 */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
     }
 }
 
 /* Mobile specific rules */
 @media (max-width: 480px) {
     #case-studies-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-        margin-bottom: 4rem !important; /* モバイルで通常時の重なりを防ぐため大幅に増加 */
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .card-content {

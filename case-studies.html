@@ -46,6 +46,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=2024120601">
+    <link rel="stylesheet" href="css/case-studies-new.css?v=2025070801">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -94,11 +95,67 @@
       <p>「半社員型」デジタル支援を通じて、様々な業界の企業様が課題を乗り越え、成果を出されています。</p>
     </div>
 
-    <!-- タグフィルターセクション -->
-    <section class="tag-filter-section-wrapper">
+    <section class="filter-section">
       <div class="container">
-        <div id="tag-filter-container">
-          <!-- JavaScriptによってタグフィルターが挿入されます -->
+        <!-- Keyword Search -->
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" id="keyword-search" class="search-input" placeholder="キーワードで検索 (例: 削減, 効率化)">
+            <button id="search-button" class="search-button" aria-label="検索">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Desktop: Tab-based Filters -->
+        <div class="filter-tabs-container" id="desktop-filter-tabs">
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter-group="category">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7"/><path d="M14 14V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2z"/><path d="M18 8h4m-2-2v4"/></svg>
+              <span>課題から探す</span>
+            </button>
+            <button class="filter-tab" data-filter-group="industry">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>業界から探す</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Mobile: Dropdown-based Filters -->
+        <div class="filter-dropdowns-container" id="mobile-filter-dropdowns">
+          <div class="filter-dropdown-wrapper">
+            <select id="mobile-category-filter" class="filter-dropdown" aria-label="課題から探す">
+            </select>
+          </div>
+          <div class="filter-dropdown-wrapper">
+            <select id="mobile-industry-filter" class="filter-dropdown" aria-label="業界から探す">
+            </select>
+          </div>
+        </div>
+
+        <!-- Filter Content -->
+        <div class="filter-content">
+          <div class="filter-group active" id="filter-group-category">
+            <div class="filter-tags" id="category-tags">
+              <!-- JS will populate these -->
+            </div>
+          </div>
+          <div class="filter-group" id="filter-group-industry">
+            <div class="filter-tags" id="industry-tags">
+              <!-- JS will populate these -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Active Filters Display -->
+        <div class="active-filters" id="active-filters-container">
+            <div class="active-filters-header">
+                <span>選択中のフィルター:</span>
+                <button id="clear-filters-button" class="clear-filters-button">すべてクリア</button>
+            </div>
+            <div class="active-filters-list" id="active-filters-list">
+                <!-- JS will populate active filters -->
+            </div>
         </div>
       </div>
     </section>
@@ -108,6 +165,9 @@
       <div class="container">
           <div id="case-studies-grid" class="grid">
               <!-- JavaScriptによってコンテンツが挿入されます -->
+          </div>
+          <div id="no-results-message" class="no-results-message" style="display: none;">
+            <p>該当する事例が見つかりませんでした。別のキーワードや条件でお試しください。</p>
           </div>
       </div>
     </section>
@@ -133,9 +193,9 @@
       <div class="footer-services">
         <h4>事業内容</h4>
         <ul>
-          <li><a href="./services/consulting">DX伴走サポート</a></li>
-          <li><a href="./services/training">フルオーダーメイドAI研修</a></li>
-          <li><a href="./services/development">開発・デジタル支援</a></li>
+          <li><a href="./services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="./services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="./services/development.html">開発・デジタル支援</a></li>
         </ul>
       </div>
       
@@ -180,6 +240,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/modal-template.js"></script>
 <script src="js/main.js?v=2024120513"></script>
-<script src="js/case-studies.js?v=2025070701"></script>
+<script src="js/case-studies.js?v=2025070801"></script>
 </body>
 </html>
