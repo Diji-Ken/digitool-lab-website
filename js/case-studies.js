@@ -265,6 +265,8 @@ document.addEventListener('DOMContentLoaded', function() {
             elements.noResults.style.display = 'none';
             // Reusing the card rendering logic from the original file
             elements.grid.innerHTML = state.filteredCases.map(study => {
+                if (!study) return ''; // ガード節を追加：データが存在しない場合は何も描画しない
+
                 let tagsHTML = study.tags.slice(0, 3).map(tag => 
                     `<span class="case-tag">${tag}</span>`
                 ).join('');

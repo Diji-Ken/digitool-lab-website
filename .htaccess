@@ -1,3 +1,33 @@
+# BEGIN 301 Redirects for Case Studies
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    Redirect 301 /case-001.html https://digitool-lab.com/blog/restaurant-order-system-cost-reduction.html
+    Redirect 301 /case-002.html https://digitool-lab.com/blog/restaurant-recipe-standardization.html
+    Redirect 301 /case-003.html https://digitool-lab.com/blog/salon-sns-automation.html
+    Redirect 301 /case-004.html https://digitool-lab.com/blog/restaurant-promotion-automation.html
+    Redirect 301 /case-005.html https://digitool-lab.com/blog/retail-inventory-optimization.html
+    Redirect 301 /case-006.html https://digitool-lab.com/blog/service-line-step-delivery.html
+    Redirect 301 /case-007.html https://digitool-lab.com/blog/restaurant-shift-management.html
+    Redirect 301 /case-008.html https://digitool-lab.com/blog/service-review-improvement.html
+    Redirect 301 /case-009.html https://digitool-lab.com/blog/recruitment-ai-copywriting.html
+    Redirect 301 /case-010.html https://digitool-lab.com/blog/service-manual-systematization.html
+    Redirect 301 /case-011.html https://digitool-lab.com/blog/service-daily-report-automation.html
+    Redirect 301 /case-012.html https://digitool-lab.com/blog/restaurant-waste-cost-reduction.html
+    Redirect 301 /case-013.html https://digitool-lab.com/blog/restaurant-staff-support-system.html
+    Redirect 301 /case-014.html https://digitool-lab.com/blog/restaurant-ai-training-upsell.html
+    Redirect 301 /case-015.html https://digitool-lab.com/blog/service-complaint-handling-ai.html
+    Redirect 301 /case-016.html https://digitool-lab.com/blog/retail-pop-automation.html
+    Redirect 301 /case-017.html https://digitool-lab.com/blog/beauty-salon-ai-training.html
+    Redirect 301 /case-018.html https://digitool-lab.com/blog/hotel-dynamic-pricing.html
+    Redirect 301 /case-019.html https://digitool-lab.com/blog/hotel-service-standardization.html
+    Redirect 301 /case-020.html https://digitool-lab.com/blog/sales-customer-analysis-ai.html
+    Redirect 301 /case-021.html https://digitool-lab.com/blog/hr-turnover-prediction-ai.html
+    Redirect 301 /case-022.html https://digitool-lab.com/blog/management-data-aggregation-ai.html
+    Redirect 301 /case-023.html https://digitool-lab.com/blog/manufacturing-demand-forecasting-ai.html
+    Redirect 301 /case-025.html https://digitool-lab.com/blog/internal-idea-generation-ai.html
+</IfModule>
+# END 301 Redirects
+
 # HTML拡張子の非表示化
 RewriteEngine On
 
