@@ -9,257 +9,212 @@
     <loc>https://digitool-lab.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
 
   <!-- 基本ページ -->
   <url>
-    <loc>https://digitool-lab.com/about</loc>
+    <loc>https://digitool-lab.com/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/service</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://digitool-lab.com/case-studies.html</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/contact</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://digitool-lab.com/contact.html</loc>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
 
   <!-- サービス詳細ページ -->
   <url>
-    <loc>https://digitool-lab.com/services/consulting</loc>
+    <loc>https://digitool-lab.com/services/consulting.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/services/training</loc>
+    <loc>https://digitool-lab.com/services/development.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/services/development</loc>
+    <loc>https://digitool-lab.com/services/training.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
 
+  <!-- ブログ記事（旧：個別事例ページ） -->
   <url>
-    <loc>https://digitool-lab.com/service-otomo</loc>
+    <loc>https://digitool-lab.com/blog/restaurant-order-system-cost-reduction.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-01</lastmod>
   </url>
-
-  <!-- 事例ページ -->
   <url>
-    <loc>https://digitool-lab.com/case-studies</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2024-12-11</lastmod>
-  </url>
-
-  <!-- 個別事例ページ -->
-  <url>
-    <loc>https://digitool-lab.com/case-001</loc>
+    <loc>https://digitool-lab.com/blog/restaurant-recipe-standardization.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-02</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-002</loc>
+    <loc>https://digitool-lab.com/blog/salon-sns-automation.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-03</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-003</loc>
+    <loc>https://digitool-lab.com/blog/restaurant-promotion-automation.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-04</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-004</loc>
+    <loc>https://digitool-lab.com/blog/retail-inventory-optimization.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-05</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-005</loc>
+    <loc>https://digitool-lab.com/blog/service-line-step-delivery.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-06</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-006</loc>
+    <loc>https://digitool-lab.com/blog/restaurant-shift-management.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-07</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-007</loc>
+    <loc>https://digitool-lab.com/blog/service-review-improvement.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-08</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-008</loc>
+    <loc>https://digitool-lab.com/blog/recruitment-ai-copywriting.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-09</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-009</loc>
+    <loc>https://digitool-lab.com/blog/service-manual-systematization.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-10</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-010</loc>
+    <loc>https://digitool-lab.com/blog/service-daily-report-automation.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-11</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-011</loc>
+    <loc>https://digitool-lab.com/blog/restaurant-waste-cost-reduction.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-12</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-012</loc>
+    <loc>https://digitool-lab.com/blog/restaurant-staff-support-system.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-13</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-013</loc>
+    <loc>https://digitool-lab.com/blog/restaurant-ai-training-upsell.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-14</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-014</loc>
+    <loc>https://digitool-lab.com/blog/service-complaint-handling-ai.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-15</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-015</loc>
+    <loc>https://digitool-lab.com/blog/retail-pop-automation.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-16</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-016</loc>
+    <loc>https://digitool-lab.com/blog/beauty-salon-ai-training.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-17</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-017</loc>
+    <loc>https://digitool-lab.com/blog/hotel-dynamic-pricing.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-18</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-018</loc>
+    <loc>https://digitool-lab.com/blog/hotel-service-standardization.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-19</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-019</loc>
+    <loc>https://digitool-lab.com/blog/sales-customer-analysis-ai.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-20</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-020</loc>
+    <loc>https://digitool-lab.com/blog/hr-turnover-prediction-ai.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-21</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-021</loc>
+    <loc>https://digitool-lab.com/blog/management-data-aggregation-ai.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-22</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-022</loc>
+    <loc>https://digitool-lab.com/blog/manufacturing-demand-forecasting-ai.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-23</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/case-023</loc>
+    <loc>https://digitool-lab.com/blog/internal-idea-generation-ai.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
-  </url>
-
-  <url>
-    <loc>https://digitool-lab.com/case-025</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2024-12-11</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2025-06-25</lastmod>
   </url>
 
   <!-- 法的ページ -->
   <url>
-    <loc>https://digitool-lab.com/privacy-policy</loc>
+    <loc>https://digitool-lab.com/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/terms-of-service</loc>
+    <loc>https://digitool-lab.com/terms-of-service.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
-
   <url>
-    <loc>https://digitool-lab.com/tokutei</loc>
+    <loc>https://digitool-lab.com/tokutei.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2024-12-11</lastmod>
+    <lastmod>2025-07-07</lastmod>
   </url>
-
 </urlset> 
