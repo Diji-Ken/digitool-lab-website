@@ -878,16 +878,15 @@ footer {
 /* Case Studies Grid Responsive */
 #case-studies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    align-items: stretch;
+    padding: 2rem 0;
 }
 
 /* Desktop specific rules */
 @media (min-width: 769px) {
     #case-studies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -1873,5 +1872,13 @@ footer {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
     width: 100%;
+  }
+}
+
+/* Fix for case study cards not appearing on mobile */
+@media (max-width: 768px) {
+  .case-study-card {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
