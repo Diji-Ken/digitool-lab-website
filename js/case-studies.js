@@ -143,6 +143,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleScroll() {
+        // 画面幅が768px以下の場合は何もしない
+        if (window.innerWidth <= 768) {
+            // クラスが残っている可能性を考慮して削除
+            if (elements.filterSection.classList.contains('mini-header')) {
+                elements.filterSection.classList.remove('mini-header');
+            }
+            return;
+        }
+
+        // PC向けの既存処理
         if (window.scrollY > 150) {
             elements.filterSection.classList.add('mini-header');
         } else {
