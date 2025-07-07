@@ -84,9 +84,11 @@ body {
     margin-bottom: 15px;
 }
 
-.filter-section.mini-header .filter-content,
-.filter-section.mini-header .active-filters {
-    display: none;
+@media (min-width: 769px) {
+    .filter-section.mini-header .filter-content,
+    .filter-section.mini-header .active-filters {
+        display: none;
+    }
 }
 
 /* 検索ボックス */
