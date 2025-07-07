@@ -143,16 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleScroll() {
-        // 画面幅が768px以下の場合は何もしない
-        if (window.innerWidth <= 768) {
-            // クラスが残っている可能性を考慮して削除
-            if (elements.filterSection.classList.contains('mini-header')) {
-                elements.filterSection.classList.remove('mini-header');
-            }
-            return;
-        }
-
-        // PC向けの既存処理
         if (window.scrollY > 150) {
             elements.filterSection.classList.add('mini-header');
         } else {
@@ -274,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             elements.noResults.style.display = 'none';
             // Reusing the card rendering logic from the original file
-            elements.grid.innerHTML = state.filteredCases.map(study => {
+            elements.grid.innerHTML = state.filteredCases.map((study, index) => {
                 if (!study) return ''; // ガード節を追加：データが存在しない場合は何も描画しない
 
                 let tagsHTML = study.tags.slice(0, 3).map(tag => 
@@ -285,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 return `
-                <a href="${study.url}" class="case-study-card" data-aos="fade-up">
+                <a href="${study.url}" class="case-study-card" data-aos="fade-up" data-aos-delay="${index * 50}">
                     <div class="card-image-wrapper">
                         <img src="${study.thumbnail}" alt="${study.title}" loading="lazy" 
                              onerror="this.onerror=null; this.src='images/case-placeholder.svg';">
@@ -302,6 +292,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 </a>
                 `;
             }).join('');
+
+            // AOSを再初期化して、動的に追加された要素にアニメーションを適用
+            AOS.refresh();
         }
     }
 
