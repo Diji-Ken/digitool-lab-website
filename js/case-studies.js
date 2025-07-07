@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 state.allCases = data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 state.filteredCases = [...state.allCases];
                 populateFilters();
-                render();
+                applyFilters(); // 初回表示のためにフィルターを適用
             })
             .catch(error => {
                 console.error('Error fetching case studies:', error);
@@ -293,8 +293,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             }).join('');
 
-            // AOSを再初期化して、動的に追加された要素にアニメーションを適用
-            AOS.refresh();
+            // DOM更新後の次のフレームでAOSを再初期化
+            requestAnimationFrame(() => {
+                AOS.refresh();
+            });
         }
     }
 
