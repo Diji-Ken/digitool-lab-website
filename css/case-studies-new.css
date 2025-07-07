@@ -446,6 +446,7 @@ body {
     gap: 0.75rem;
     margin-top: 4rem;
     padding-bottom: 2rem;
+    width: 100%; /* Ensure the container is full-width */
 }
 
 .pagination-btn {
