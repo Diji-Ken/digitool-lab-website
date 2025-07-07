@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         activeCategory: 'all',
         activeIndustry: 'all',
         activeKeyword: '',
+        currentPage: 1,
     };
 
     const selectors = {
@@ -22,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         activeFiltersContainer: '#active-filters-container',
         activeFiltersList: '#active-filters-list',
         clearFiltersButton: '#clear-filters-button',
-        filterSection: '.filter-section', // Added selector
+        filterSection: '.filter-section',
+        paginationContainer: '#pagination-container', // Added selector
     };
 
     const elements = {};
@@ -235,6 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function applyFilters() {
+        state.currentPage = 1; // フィルター適用時に1ページ目に戻す
         const { activeKeyword, activeCategory, activeIndustry } = state;
 
         state.filteredCases = state.allCases.filter(c => {
@@ -254,18 +257,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function render() {
         renderCards();
+        renderPagination();
         updateActiveFiltersDisplay();
     }
 
     function renderCards() {
-        if (state.filteredCases.length === 0) {
+        const itemsPerPage = window.innerWidth <= 768 ? 5 : 12;
+        const startIndex = (state.currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const casesToShow = state.filteredCases.slice(startIndex, endIndex);
+
+        if (casesToShow.length === 0 && state.currentPage === 1) {
             elements.grid.innerHTML = '';
             elements.noResults.style.display = 'block';
         } else {
             elements.noResults.style.display = 'none';
-            // Reusing the card rendering logic from the original file
-            elements.grid.innerHTML = state.filteredCases.map((study, index) => {
-                if (!study) return ''; // ガード節を追加：データが存在しない場合は何も描画しない
+            elements.grid.innerHTML = casesToShow.map((study, index) => {
+                if (!study) return ''; 
 
                 let tagsHTML = study.tags.slice(0, 3).map(tag => 
                     `<span class="case-tag">${tag}</span>`
@@ -293,11 +301,78 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             }).join('');
 
-            // DOM更新後の次のフレームでAOSを再初期化
             requestAnimationFrame(() => {
                 AOS.refresh();
             });
         }
+    }
+
+    function renderPagination() {
+        const itemsPerPage = window.innerWidth <= 768 ? 5 : 12;
+        const totalPages = Math.ceil(state.filteredCases.length / itemsPerPage);
+        
+        elements.paginationContainer.innerHTML = '';
+        if (totalPages <= 1) return;
+
+        let paginationHTML = '';
+        const page = state.currentPage;
+
+        // Previous button
+        if (page > 1) {
+            paginationHTML += `<button class="pagination-btn" data-page="${page - 1}">前へ</button>`;
+        }
+
+        // Page numbers
+        const pagesToShow = 5;
+        let startPage = Math.max(1, page - Math.floor(pagesToShow / 2));
+        let endPage = Math.min(totalPages, startPage + pagesToShow - 1);
+        
+        if (endPage - startPage + 1 < pagesToShow) {
+            startPage = Math.max(1, endPage - pagesToShow + 1);
+        }
+
+        if (startPage > 1) {
+            paginationHTML += `<button class="pagination-btn" data-page="1">1</button>`;
+            if (startPage > 2) {
+                paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationHTML += `<button class="pagination-btn ${i === page ? 'active' : ''}" data-page="${i}">${i}</button>`;
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+            }
+            paginationHTML += `<button class="pagination-btn" data-page="${totalPages}">${totalPages}</button>`;
+        }
+
+        // Next button
+        if (page < totalPages) {
+            paginationHTML += `<button class="pagination-btn" data-page="${page + 1}">次へ</button>`;
+        }
+
+        elements.paginationContainer.innerHTML = paginationHTML;
+        addPaginationEventListeners();
+    }
+
+    function addPaginationEventListeners() {
+        elements.paginationContainer.addEventListener('click', e => {
+            const target = e.target.closest('.pagination-btn');
+            if (!target) return;
+
+            const newPage = parseInt(target.dataset.page);
+            if (newPage !== state.currentPage) {
+                state.currentPage = newPage;
+                render();
+                window.scrollTo({
+                    top: elements.filterSection.getBoundingClientRect().top + window.scrollY - 20,
+                    behavior: 'smooth'
+                });
+            }
+        });
     }
 
     function updateActiveFiltersDisplay() {

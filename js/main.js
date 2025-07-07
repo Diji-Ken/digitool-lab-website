@@ -154,10 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
   AOS.init({
     duration: 800, // アニメーションの時間を800msに設定
     once: true, // アニメーションを1回だけ実行
-    offset: 200, // アニメーションが始まるトリガーポイント
-    disable: function() {
-      // モバイルデバイスで画面が小さい場合は無効化（パフォーマンス向上）
-      return window.innerWidth < 480;
-    }
+    offset: 200 // アニメーションが始まるトリガーポイント
   });
 }); 
