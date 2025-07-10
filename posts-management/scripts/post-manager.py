@@ -117,6 +117,10 @@ class PostManager:
             print("❌ CSVデータが空です")
             return False
         
+        # Ensure the column type is object to avoid dtype issues with NaNs
+        if '投稿日時' in df.columns:
+            df['投稿日時'] = df['投稿日時'].astype(object)
+
         mask = df['投稿ID'] == post_id
         
         if not mask.any():
