@@ -808,85 +808,35 @@ footer {
 
 /* New Case Study Card Styles */
 .case-study-card {
-    background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
+
 .case-study-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-.card-image-wrapper {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    background-color: var(--gray-100);
-    display: block !important;
-}
-.card-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-.case-study-card:hover .card-image-wrapper img {
-    transform: scale(1.05);
-}
-.card-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-.card-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    font-size: 0.875rem;
-}
-.card-category {
-    background-color: var(--orange-100);
-    color: var(--orange-600);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-weight: 600;
-}
-.card-date {
-    color: var(--gray-600);
-}
-.card-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.5;
-    margin: 0.5rem 0 1rem;
-}
-.card-summary {
-    color: var(--gray-600);
-    line-height: 1.6;
-    margin: 0;
-    flex-grow: 1;
+    transform: translateY(-8px);
 }
 
 /* Case Studies Grid Responsive */
 #case-studies-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    padding: 2rem 0;
+    align-items: stretch;
 }
 
 /* Desktop specific rules */
 @media (min-width: 769px) {
     #case-studies-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
     }
 }
 
@@ -1869,16 +1819,8 @@ footer {
     font-size: 1rem;
   }
   .thank-you-cta .btn {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
     width: 100%;
-  }
-}
-
-/* Fix for case study cards not appearing on mobile */
-@media (max-width: 768px) {
-  .case-study-card {
-    opacity: 1 !important;
-    transform: none !important;
+    padding: 1rem;
+    font-size: 1rem;
   }
 }

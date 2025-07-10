@@ -1,0 +1,2 @@
+Post_ID,Source_No,Platform,Content,Status,Post_URL
+S001,TEST01,LinkedIn,"【テスト投稿】これは、新しく構築されたGitHub Actionsによる自動投稿システムのテストです。この投稿が正常に表示されれば、システムは正しく機能しています。",draft,

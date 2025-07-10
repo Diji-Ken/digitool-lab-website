@@ -1,0 +1,113 @@
+name: LinkedIn Auto Poster and Content Archiver
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      post_id:
+        description: '投稿する投稿ID (例: P001)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  post-and-archive:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/post'))
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests
+
+      - name: Extract Post ID from comment or input
+        id: get_post_id
+        run: |
+          if [[ "${{ github.event_name }}" == "issue_comment" ]]; then
+            POST_ID=$(echo "${{ github.event.comment.body }}" | grep -oP '/post\s+\K\w+')
+            echo "抽出した投稿ID: $POST_ID"
+            echo "post_id=$POST_ID" >> $GITHUB_OUTPUT
+          else
+            echo "手動実行の投稿ID: ${{ github.event.inputs.post_id }}"
+            echo "post_id=${{ github.event.inputs.post_id }}" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Validate Post ID
+        if: steps.get_post_id.outputs.post_id == ''
+        run: |
+          echo "エラー: 投稿IDを特定できませんでした。"
+          echo "Issueコメントの場合は '/post P001' のように入力してください。"
+          exit 1
+
+      - name: Set LinkedIn Credentials as Environment Variables
+        id: set_creds
+        run: |
+          # 認証情報JSONが空でないことを確認
+          if [[ -z '${{ secrets.LINKEDIN_CREDENTIALS_JSON }}' ]]; then
+            echo "エラー: GitHub Secret 'LINKEDIN_CREDENTIALS_JSON' が設定されていません。"
+            exit 1
+          fi
+          echo "LINKEDIN_ACCESS_TOKEN=$(echo '${{ secrets.LINKEDIN_CREDENTIALS_JSON }}' | jq -r .access_token)" >> $GITHUB_ENV
+          echo "LINKEDIN_PERSON_URN=$(echo '${{ secrets.LINKEDIN_CREDENTIALS_JSON }}' | jq -r .person_urn)" >> $GITHUB_ENV
+        env:
+          LINKEDIN_CREDENTIALS_JSON: ${{ secrets.LINKEDIN_CREDENTIALS_JSON }}
+
+      - name: Execute Post Manager Script
+        id: post_script
+        run: |
+          python posts-management/scripts/post-manager.py ${{ steps.get_post_id.outputs.post_id }}
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ env.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ env.LINKEDIN_PERSON_URN }}
+
+      - name: Get Content File Name for Archiving
+        if: success()
+        id: get_content_file
+        run: |
+          FILE_NAME=$(python -c "import pandas as pd; df = pd.read_csv('posts-management/posts-master.csv'); print(df[df['投稿ID'] == '${{ steps.get_post_id.outputs.post_id }}']['コンテンツファイル'].iloc[0])")
+          echo "content_file=$FILE_NAME" >> $GITHUB_OUTPUT
+          echo "アーカイブ対象ファイル: $FILE_NAME"
+
+      - name: Archive Content File
+        if: success() && steps.get_content_file.outputs.content_file != ''
+        run: |
+          ARCHIVE_DIR="posts-management/contents/archive"
+          SOURCE_FILE="posts-management/contents/${{ steps.get_content_file.outputs.content_file }}"
+          # ファイルが存在するか確認してから移動
+          if [ -f "$SOURCE_FILE" ]; then
+            mv "$SOURCE_FILE" "$ARCHIVE_DIR/"
+            echo "ファイルをアーカイブしました: ${{ steps.get_content_file.outputs.content_file }}"
+          else
+            echo "警告: アーカイブ対象のファイルが見つかりませんでした: $SOURCE_FILE"
+          fi
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and push changes
+        run: |
+          git add posts-management/posts-master.csv
+          git add posts-management/contents/
+          if ! git diff --cached --quiet; then
+            git commit -m "feat(${{ steps.get_post_id.outputs.post_id }}): Post and archive content" -m "Update status to 'posted' in posts-master.csv and move content file to archive for ID ${{ steps.get_post_id.outputs.post_id }}."
+            git push
+          else
+            echo "コミット対象の変更はありませんでした。"
+          fi 

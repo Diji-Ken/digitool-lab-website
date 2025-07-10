@@ -10,7 +10,7 @@
     <meta name="description" content="株式会社デジタルツール研究所のご支援事例をご紹介します。様々な業界で実現した業務効率化の成果をご覧ください。">
     <meta name="keywords" content="DX支援事例,業務効率化事例,AI活用事例,デジタル変革成功事例,中小企業,事務作業削減,コスト削減,売上向上,導入事例">
     <meta name="author" content="株式会社デジタルツール研究所">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://digitool-lab.com/case-studies">
     <meta property="og:title" content="ご支援事例 - 株式会社デジタルツール研究所">
     <meta property="og:description" content="事務作業80%削減、月20万円コストカット、売上向上など、様々な業界での成功事例をご紹介。中小企業のデジタル変革を実現した具体的な成果をご覧ください。">
@@ -26,7 +26,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
     <link rel="manifest" href="site.webmanifest">
@@ -44,11 +44,19 @@
       });
     </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2024120601">
-    <link rel="stylesheet" href="css/case-studies-new.css?v=2025070801">
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- External Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css?v=final_fix_20240705">
+    <link rel="stylesheet" href="/css/case-studies-new.css?v=final_fix_20240705">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
 <div class="flex flex-col min-h-screen">
@@ -166,7 +174,6 @@
           <div id="case-studies-grid" class="grid">
               <!-- JavaScriptによってコンテンツが挿入されます -->
           </div>
-          <div id="pagination-container"></div>
           <div id="no-results-message" class="no-results-message" style="display: none;">
             <p>該当する事例が見つかりませんでした。別のキーワードや条件でお試しください。</p>
           </div>

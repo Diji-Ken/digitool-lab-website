@@ -84,11 +84,9 @@ body {
     margin-bottom: 15px;
 }
 
-@media (min-width: 769px) {
-    .filter-section.mini-header .filter-content,
-    .filter-section.mini-header .active-filters {
-        display: none;
-    }
+.filter-section.mini-header .filter-content,
+.filter-section.mini-header .active-filters {
+    display: none;
 }
 
 /* 検索ボックス */
@@ -303,7 +301,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
 }
 
 .active-filter-tag {
@@ -435,49 +432,4 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Pagination Styles */
-#pagination-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 4rem;
-    padding-bottom: 2rem;
-    width: 100%; /* Ensure the container is full-width */
-}
-
-.pagination-btn {
-    border: 2px solid #E8E8E8;
-    background-color: white;
-    color: #5A6C7D;
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 0.6rem 1rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 0.9rem;
-    min-width: 44px;
-    text-align: center;
-}
-
-.pagination-btn:hover {
-    border-color: #FF8C42;
-    color: #FF8C42;
-    transform: translateY(-2px);
-}
-
-.pagination-btn.active {
-    background-color: #FF8C42;
-    border-color: #FF8C42;
-    color: white;
-    cursor: default;
-    transform: none;
-}
-
-.pagination-ellipsis {
-    color: #999;
-    padding: 0 0.5rem;
 }
