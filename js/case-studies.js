@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
         activeCategory: 'all',
         activeIndustry: 'all',
         activeKeyword: '',
+        currentPage: 1,
+        itemsPerPageDesktop: 12,
+        itemsPerPageMobile: 10,
     };
 
     const selectors = {
@@ -249,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             return keywordMatch && categoryMatch && industryMatch;
         });
+        state.currentPage = 1; // フィルター変更時はページを1に戻す
         render();
     }
 
@@ -263,8 +267,15 @@ document.addEventListener('DOMContentLoaded', function() {
             elements.noResults.style.display = 'block';
         } else {
             elements.noResults.style.display = 'none';
-            // Reusing the card rendering logic from the original file
-            elements.grid.innerHTML = state.filteredCases.map(study => {
+            
+            // ページネーション計算
+            const itemsPerPage = window.innerWidth <= 768 ? state.itemsPerPageMobile : state.itemsPerPageDesktop;
+            const startIndex = (state.currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedCases = state.filteredCases.slice(startIndex, endIndex);
+            
+            // カードの描画
+            elements.grid.innerHTML = paginatedCases.map(study => {
                 if (!study) return ''; // ガード節を追加：データが存在しない場合は何も描画しない
 
                 let tagsHTML = study.tags.slice(0, 3).map(tag => 
@@ -292,8 +303,87 @@ document.addEventListener('DOMContentLoaded', function() {
                 </a>
                 `;
             }).join('');
+            
+            // ページネーションの描画
+            renderPagination();
         }
     }
+    
+    function renderPagination() {
+        const itemsPerPage = window.innerWidth <= 768 ? state.itemsPerPageMobile : state.itemsPerPageDesktop;
+        const totalPages = Math.ceil(state.filteredCases.length / itemsPerPage);
+        
+        if (totalPages <= 1) {
+            // ページネーションコンテナがある場合は非表示にする
+            const existingPagination = document.querySelector('.pagination-container');
+            if (existingPagination) {
+                existingPagination.remove();
+            }
+            return;
+        }
+        
+        let paginationHTML = '<div class="pagination-container">';
+        
+        // 前へボタン
+        paginationHTML += `<button class="pagination-btn" onclick="changePage(${state.currentPage - 1})" ${state.currentPage === 1 ? 'disabled' : ''}>前へ</button>`;
+        
+        // ページ番号
+        const maxVisiblePages = window.innerWidth <= 768 ? 3 : 5;
+        let startPage = Math.max(1, state.currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+        
+        if (endPage - startPage < maxVisiblePages - 1) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+        
+        if (startPage > 1) {
+            paginationHTML += `<button class="pagination-btn" onclick="changePage(1)">1</button>`;
+            if (startPage > 2) {
+                paginationHTML += '<span class="pagination-dots">...</span>';
+            }
+        }
+        
+        for (let i = startPage; i <= endPage; i++) {
+            paginationHTML += `<button class="pagination-btn ${i === state.currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+        }
+        
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationHTML += '<span class="pagination-dots">...</span>';
+            }
+            paginationHTML += `<button class="pagination-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
+        }
+        
+        // 次へボタン
+        paginationHTML += `<button class="pagination-btn" onclick="changePage(${state.currentPage + 1})" ${state.currentPage === totalPages ? 'disabled' : ''}>次へ</button>`;
+        
+        paginationHTML += '</div>';
+        
+        // 既存のページネーションを削除してから新しいものを追加
+        const existingPagination = document.querySelector('.pagination-container');
+        if (existingPagination) {
+            existingPagination.remove();
+        }
+        
+        // コンテンツセクションの最後にページネーションを追加
+        const contentSection = document.querySelector('.content-section .container');
+        if (contentSection) {
+            contentSection.insertAdjacentHTML('beforeend', paginationHTML);
+        }
+    }
+    
+    // グローバル関数として定義（onclick用）
+    window.changePage = function(page) {
+        const itemsPerPage = window.innerWidth <= 768 ? state.itemsPerPageMobile : state.itemsPerPageDesktop;
+        const totalPages = Math.ceil(state.filteredCases.length / itemsPerPage);
+        
+        if (page >= 1 && page <= totalPages) {
+            state.currentPage = page;
+            renderCards();
+            // ページ変更時は上部にスクロール
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     function updateActiveFiltersDisplay() {
         const { activeKeyword, activeCategory, activeIndustry } = state;

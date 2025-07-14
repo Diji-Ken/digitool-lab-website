@@ -824,36 +824,36 @@ footer {
     transform: translateY(-8px);
 }
 
-/* Case Studies Grid Responsive */
-#case-studies-grid {
+/* Case Studies Grid Responsive - Disabled to use case-studies-new.css */
+/* #case-studies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     align-items: stretch;
-}
+} */
 
-/* Desktop specific rules */
-@media (min-width: 769px) {
+/* Desktop specific rules - Disabled to use case-studies-new.css */
+/* @media (min-width: 769px) {
     #case-studies-grid {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 2rem;
     }
-}
+} */
 
-/* Tablet specific rules */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Tablet specific rules - Disabled to use case-studies-new.css */
+/* @media (min-width: 481px) and (max-width: 768px) {
     #case-studies-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
     }
-}
+} */
 
-/* Mobile specific rules */
-@media (max-width: 480px) {
+/* Mobile specific rules - Disabled to use case-studies-new.css */
+/* @media (max-width: 480px) {
     #case-studies-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-    }
+    } */
     
     .card-content {
         padding: 1rem;
