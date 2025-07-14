@@ -12,6 +12,7 @@ import requests
 import pandas as pd
 import sys
 import argparse
+import re
 
 class PostManager:
     def __init__(self, base_dir, linkedin_token, linkedin_person_urn):
@@ -168,10 +169,16 @@ class PostManager:
             print(f"❌ コンテンツ '{content_file}' の読み込みに失敗しました。")
             return False
             
+        # ラベル除去と改行の正規化
+        # 「【任意の文字列】」や「**【任意の文字列】**」のようなラベルを除去
+        # `\\n` を `\n` に変換して、APIが正しく改行を認識できるようにする
+        cleaned_content = re.sub(r'(\*\*|)【.*?】(\*\*|)\s*', '', content)
+        cleaned_content = cleaned_content.replace('\\n', '\n').strip()
+
         print(f"📄 プラットフォーム '{platform}' への投稿を実行します...")
 
         if platform.lower() == 'linkedin':
-            result = self.post_to_linkedin(content)
+            result = self.post_to_linkedin(cleaned_content)
         else:
             print(f"❌ 未対応のプラットフォームです: {platform}")
             return False
@@ -196,6 +203,44 @@ class PostManager:
             print(f"❌ CSVのステータスを 'error' に更新しました。")
             return False
 
+    def preview_by_id(self, post_id):
+        """指定されたIDの投稿内容をプレビュー"""
+        df = self.load_posts_csv()
+        if df.empty:
+            return False
+
+        target_post = df[df['投稿ID'] == post_id]
+
+        if target_post.empty:
+            print(f"❌ 投稿ID '{post_id}' がCSV内に見つかりません。")
+            return False
+
+        post_data = target_post.iloc[0]
+        content_file = post_data.get('コンテンツファイル')
+
+        if not content_file or pd.isna(content_file):
+            print(f"❌ 投稿ID '{post_id}' にコンテンツファイルが紐付いていません。")
+            return False
+
+        content = self.load_content_from_markdown(content_file)
+        if not content:
+            print(f"❌ コンテンツ '{content_file}' の読み込みに失敗しました。")
+            return False
+        
+        # ラベル除去と改行の正規化
+        # 「【任意の文字列】」や「**【任意の文字列】**」のようなラベルを除去
+        # `\\n` を `\n` に変換して、APIが正しく改行を認識できるようにする
+        cleaned_content = re.sub(r'(\*\*|)【.*?】(\*\*|)\s*', '', content)
+        cleaned_content = cleaned_content.replace('\\n', '\n').strip()
+
+        print("--- DRY RUN PREVIEW ---")
+        print(f"Post ID: {post_id}")
+        print(f"Title: {post_data.get('投稿タイトル', 'N/A')}")
+        print("--- CONTENT (Processed) ---")
+        print(cleaned_content)
+        print("---------------------------------")
+        return True
+
 if __name__ == "__main__":
     # このスクリプトは posts-management/scripts/ の中にあることを前提とする
     # 基準となるディレクトリは posts-management/
@@ -207,6 +252,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='SNS投稿管理ツール')
     parser.add_argument('post_id', type=str, help='投稿を実行する投稿ID (例: P001)')
+    parser.add_argument('--dry-run', action='store_true', help='投稿せずに内容をプレビュー表示')
     args = parser.parse_args()
 
     try:
@@ -215,7 +261,12 @@ if __name__ == "__main__":
             linkedin_token=linkedin_token,
             linkedin_person_urn=linkedin_person_urn
         )
-        success = manager.post_by_id(args.post_id)
+        
+        if args.dry_run:
+            print("💧 ドライランモードで実行します。")
+            success = manager.preview_by_id(args.post_id)
+        else:
+            success = manager.post_by_id(args.post_id)
         
         if not success:
             sys.exit(1)
