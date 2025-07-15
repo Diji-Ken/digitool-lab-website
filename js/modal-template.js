@@ -113,5 +113,31 @@ document.addEventListener('DOMContentLoaded', function() {
         closeModal();
       }
     });
+
+    // Handle form submission
+    const downloadForm = document.getElementById('download-form');
+    if (downloadForm) {
+      downloadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Show success message
+        const formData = new FormData(downloadForm);
+        const name = formData.get('name');
+        
+        alert(`ありがとうございます、${name}様。\n資料のダウンロードを開始します。`);
+        
+        // Close modal
+        closeModal();
+        
+        // Start download
+        const downloadLink = document.createElement('a');
+        downloadLink.href = 'https://digitool-lab.com/documents/digitool-lab-service-guide.pdf';
+        downloadLink.download = 'デジタルツール研究所_サービス詳細資料.pdf';
+        downloadLink.click();
+        
+        // Reset form
+        downloadForm.reset();
+      });
+    }
   }
 }); 
