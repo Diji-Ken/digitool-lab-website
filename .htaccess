@@ -1,3 +1,11 @@
+# BEGIN HTTP to HTTPS Redirect
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+# END HTTP to HTTPS Redirect
+
 # BEGIN 301 Redirects for Case Studies
 <IfModule mod_rewrite.c>
     RewriteEngine On
@@ -41,5 +49,24 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L] 
+
+# BEGIN Security Headers
+<IfModule mod_headers.c>
+    # HSTS - HTTPS通信を強制
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    
+    # X-Frame-Options - クリックジャッキング対策
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # X-Content-Type-Options - MIME型スニッフィング対策
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer-Policy - リファラー情報の制御
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # CSP - 監視モード（安全な実装）
+    Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com;"
+</IfModule>
+# END Security Headers
  
  

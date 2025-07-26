@@ -229,4 +229,30 @@
     <priority>0.3</priority>
     <lastmod>2025-07-07</lastmod>
   </url>
+
+  <!-- その他のページ -->
+  <url>
+    <loc>https://digitool-lab.com/contact_success.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <lastmod>2025-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://digitool-lab.com/data-deletion.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <lastmod>2025-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://digitool-lab.com/facebook-data-deletion.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <lastmod>2025-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://digitool-lab.com/google-analytics-setup.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <lastmod>2025-07-07</lastmod>
+  </url>
 </urlset> 

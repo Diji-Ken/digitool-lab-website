@@ -238,5 +238,145 @@
     "tags": ["サービス業", "AI活用", "組織運営", "人材育成", "DX推進"],
     "thumbnail": "images/case-studies/case-024.jpg",
     "url": "blog/internal-idea-generation-ai.html"
+  },
+  {
+    "id": "case-025",
+    "title": "従業員40名のリフォーム業がGoogleフォーム創意工夫で品質管理90%改善",
+    "summary": "九州のリフォーム業が、Googleフォーム+GAS+ChatGPTによる現場管理システムで90%の業務効率化を実現。職人との連携を重視したデジタル化で品質向上と工期短縮を実現。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "リフォーム業", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "九州", "現場管理", "DX"],
+    "thumbnail": "images/case-studies/case-025.jpg",
+    "url": "blog/reform-quality-improvement.html"
+  },
+  {
+    "id": "case-026",
+    "title": "従業員12名の中部温泉施設がGoogleフォーム+GAS活用で業務効率70%向上",
+    "summary": "温泉施設が70%の業務効率化を実現。Googleフォーム+GAS+ChatGPTの組み合わせで手作業課題を解決し、顧客満足度とリピート率を大幅改善した成功事例。",
+    "industry": "飲食・サービス業",
+    "date": "2025-07-23",
+    "tags": ["飲食・サービス業", "温泉施設", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "顧客管理", "予約管理", "地方中小企業", "中部"],
+    "thumbnail": "images/case-studies/case-026.jpg",
+    "url": "blog/hot-spring-customer-management.html"
+  },
+  {
+    "id": "case-027",
+    "title": "警備業（従業員3名）が現場DXで安全性120%改善した成功事例",
+    "summary": "警備業が120%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる現場管理システムで、従来の手作業による課題を解決し、安全性と品質を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "警備業", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "東北", "現場管理", "DX"],
+    "thumbnail": "images/case-studies/case-027.jpg",
+    "url": "blog/security-property-management-dx.html"
+  },
+  {
+    "id": "case-028",
+    "title": "空き家管理（従業員15名）が現場DXで安全性150%改善した成功事例",
+    "summary": "空き家管理が150%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる現場管理システムで、従来の手作業による課題を解決し、安全性と品質を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "空き家管理", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "北海道", "現場管理", "DX"],
+    "thumbnail": "images/case-studies/case-028.jpg",
+    "url": "blog/vacant-house-management-dx.html"
+  },
+  {
+    "id": "case-029",
+    "title": "従業員25名のマンション管理がGoogleフォーム創意工夫で品質管理120%改善",
+    "summary": "マンション管理が120%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる現場管理システムで、従来の手作業による課題を解決し、安全性と品質を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "マンション管理", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "中国", "現場管理", "DX"],
+    "thumbnail": "images/case-studies/case-029.jpg",
+    "url": "blog/apartment-management-dx.html"
+  },
+  {
+    "id": "case-030",
+    "title": "従業員35名の不動産管理がGoogleフォーム創意工夫で物件管理80%改善",
+    "summary": "不動産管理が80%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる物件管理システムで、従来の手作業による課題を解決し、管理品質と顧客満足度を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "不動産管理", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "中部", "物件管理", "DX"],
+    "thumbnail": "images/case-studies/case-030.jpg",
+    "url": "blog/real-estate-property-management-dx.html"
+  },
+  {
+    "id": "case-031",
+    "title": "従業員12名の施工管理がGoogleフォーム創意工夫で営業事務150%改善",
+    "summary": "施工管理が150%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる営業事務システムで、従来の手作業による課題を解決し、受注率と営業効率を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "施工管理", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "関西", "営業事務", "DX"],
+    "thumbnail": "images/case-studies/case-031.jpg",
+    "url": "blog/construction-management-sales-administration-dx.html"
+  },
+  {
+    "id": "case-032",
+    "title": "従業員40名の駐車場経営がGoogleフォーム創意工夫で事務管理120%改善",
+    "summary": "駐車場経営が120%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる事務管理システムで、従来の手作業による課題を解決し、管理品質と収益性を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "駐車場経営", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "関東", "事務管理", "DX"],
+    "thumbnail": "images/case-studies/case-032.jpg",
+    "url": "blog/parking-management-administration-dx.html"
+  },
+  {
+    "id": "case-033",
+    "title": "従業員30名の不動産管理がGoogleフォーム創意工夫で営業事務90%改善",
+    "summary": "不動産管理が90%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる営業事務システムで、従来の手作業による課題を解決し、受注率と顧客満足度を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "不動産管理", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "東北", "営業事務", "DX"],
+    "thumbnail": "images/case-studies/case-033.jpg",
+    "url": "blog/real-estate-sales-administration-dx.html"
+  },
+  {
+    "id": "case-034",
+    "title": "従業員8名の施工管理がGoogleフォーム創意工夫で経営管理75%改善",
+    "summary": "施工管理が75%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる経営管理システムで、従来の手作業による課題を解決し、受注率と管理効率を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "施工管理", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "関東", "経営管理", "DX"],
+    "thumbnail": "images/case-studies/case-034.jpg",
+    "url": "blog/construction-management-business-administration-dx.html"
+  },
+  {
+    "id": "case-035",
+    "title": "従業員15名の民泊管理がGoogleフォーム創意工夫で物件管理85%改善",
+    "summary": "民泊管理が85%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる物件管理システムで、従来の手作業による課題を解決し、入居者満足度と管理効率を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "民泊管理", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "東北", "物件管理", "DX"],
+    "thumbnail": "images/case-studies/case-035.jpg",
+    "url": "blog/minpaku-property-management-dx.html"
+  },
+  {
+    "id": "case-036",
+    "title": "従業員40名のハウスクリーニングがGoogleフォーム創意工夫で営業管理80%改善",
+    "summary": "ハウスクリーニングが80%の業務効率化を実現。Googleフォーム+GAS+ChatGPTによる営業管理システムで、従来の手作業による課題を解決し、受注率と顧客満足度を大幅改善した成功事例。",
+    "industry": "建設・不動産業",
+    "date": "2025-07-23",
+    "tags": ["建設・不動産業", "ハウスクリーニング", "AI活用", "業務効率化", "Googleフォーム", "GAS", "ChatGPT", "地方中小企業", "中国", "営業管理", "DX"],
+    "thumbnail": "images/case-studies/case-036.jpg",
+    "url": "blog/house-cleaning-sales-management-dx.html"
+  },
+  {
+    "id": "case-037",
+    "title": "事務作業時間を75%削減！製造業の営業事務がGAS活用で業務効率化を実現",
+    "summary": "東京都中野区の金属加工業（従業員42名）が、GoogleフォームとGASを活用したバックオフィス業務最適化により、事務作業時間を1日4-5時間から1-1.5時間に短縮。ミス発生も月5-10件から月1-2件に削減した成功事例。",
+    "industry": "製造業",
+    "date": "2025-07-24",
+    "tags": ["製造業", "営業事務", "バックオフィス", "業務効率化", "GAS", "Googleフォーム", "事務作業", "DX"],
+    "thumbnail": "images/case-studies/case-037.jpg",
+    "url": "blog/manufacturing-backoffice-optimization.html"
+  },
+  {
+    "id": "case-038",
+    "title": "事務作業時間を75%削減！製造業の営業事務がGAS活用で業務効率化を実現",
+    "summary": "東京都中野区の金属加工業（従業員42名）が、GoogleフォームとGASを活用したバックオフィス業務最適化により、事務作業時間を1日4-5時間から1-1.5時間に短縮。ミス発生も月5-10件から月1-2件に削減した成功事例。",
+    "industry": "製造業",
+    "date": "2025-07-24",
+    "tags": ["製造業", "営業事務", "バックオフィス", "業務効率化", "GAS", "Googleフォーム", "事務作業", "DX"],
+    "thumbnail": "images/case-studies/case-038.jpg",
+    "url": "blog/manufacturing-backoffice-optimization.html"
   }
 ] 

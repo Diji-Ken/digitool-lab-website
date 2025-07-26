@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員20名の中国ネイルサロンがGoogleフォーム+GAS活用で業務効率50%向上 - ご支援事例 - 株式会社デジタルツール研究所</title>
+    <meta name="description" content="ネイルサロンが50%の業務効率化を実現。Googleフォーム+GAS+ChatGPTの組み合わせで予約管理・顧客管理の課題を解決し、リピート率を大幅改善した成功事例。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/nail-salon-customer-management.html">
+    <meta property="og:title" content="従業員20名の中国ネイルサロンがGoogleフォーム+GAS活用で業務効率50%向上 | デジタルツール研究所">
+    <meta property="og:description" content="ネイルサロンが50%の業務効率化を実現。Googleフォーム+GAS+ChatGPTの組み合わせで予約管理・顧客管理の課題を解決し、リピート率を大幅改善した成功事例。">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <!-- パンくずナビ -->
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">飲食・サービス業の事例</span>
+      </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--orange-100); color: var(--orange-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">飲食・サービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2025-07-23</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">従業員20名の中国ネイルサロンがGoogleフォーム+GAS活用で業務効率50%向上</h1>
+        
+        <!-- タグ表示エリア -->
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=飲食・サービス業" class="article-tag">飲食・サービス業</a>
+            <a href="../case-studies.html?tag=ネイルサロン" class="article-tag">ネイルサロン</a>
+            <a href="../case-studies.html?tag=AI活用" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=業務効率化" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Googleフォーム" class="article-tag">Googleフォーム</a>
+            <a href="../case-studies.html?tag=GAS" class="article-tag">GAS</a>
+            <a href="../case-studies.html?tag=ChatGPT" class="article-tag">ChatGPT</a>
+            <a href="../case-studies.html?tag=顧客管理" class="article-tag">顧客管理</a>
+            <a href="../case-studies.html?tag=予約管理" class="article-tag">予約管理</a>
+            <a href="../case-studies.html?tag=地方中小企業" class="article-tag">地方中小企業</a>
+            <a href="../case-studies.html?tag=中国" class="article-tag">中国</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 記事本文 -->
+    <article class="case-study-content" style="padding: 2rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <!-- 要約ボックス -->
+        <div style="background-color: var(--gray-50); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin-bottom: 3rem;">
+          <h2 style="margin-top: 0; font-size: 1.25rem;">導入効果の概要</h2>
+          <ul style="margin: 0;">
+            <li>予約管理時間：3時間→45分（75%削減）</li>
+            <li>顧客情報確認：8分→2分（75%短縮）</li>
+            <li>リピート率：15%→42%（27ポイント向上）</li>
+            <li>月額導入コスト：約3,000円（Googleワークスペース代のみ）</li>
+          </ul>
+        </div>
+
+        <!-- 企業プロフィール -->
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">企業プロフィール</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr style="border-bottom: 1px solid var(--gray-200);">
+              <th style="text-align: left; padding: 0.75rem 0; width: 30%; color: var(--gray-600);">業種</th>
+              <td style="padding: 0.75rem 0;">ネイルサロン</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--gray-200);">
+              <th style="text-align: left; padding: 0.75rem 0; color: var(--gray-600);">従業員数</th>
+              <td style="padding: 0.75rem 0;">20名</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--gray-200);">
+              <th style="text-align: left; padding: 0.75rem 0; color: var(--gray-600);">所在地</th>
+              <td style="padding: 0.75rem 0;">中国地方</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--gray-200);">
+              <th style="text-align: left; padding: 0.75rem 0; color: var(--gray-600);">課題</th>
+              <td style="padding: 0.75rem 0;">予約管理の非効率性、顧客情報の散在、スタッフ間の情報共有不足</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- 導入前の課題 -->
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">導入前の課題</h2>
+          
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">業界全体の構造的問題</h3>
+          <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            ネイルサロン業界では人手不足と競争激化により、限られた人員で多様な業務をこなす必要があり、従来の手作業では限界が見えていました。特に中国地域では大手チェーンとの差別化が急務となっていました。
+          </p>
+
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">具体的な課題</h3>
+          <ul style="line-height: 1.8; margin-bottom: 1.5rem;">
+            <li>予約管理が手書き台帳で重複・漏れが月5-8件発生</li>
+            <li>顧客情報が散在し過去の対応履歴確認に1人当たり週3時間</li>
+            <li>在庫管理が目視で過不足判断困難</li>
+            <li>売上集計が月末に丸2日必要</li>
+            <li>スタッフ間情報共有が口頭で引き継ぎミス頻発</li>
+          </ul>
+
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">経営者の声</h3>
+          <blockquote style="border-left: 3px solid var(--primary-color); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: var(--gray-700);">
+            「お客様をお待たせしながら過去の対応を思い出すのが申し訳ない」「手書きメモが増えて管理しきれない」「忙しい時の予約ミスが怖い」「売上数字の把握に時間がかかりすぎる」
+          </blockquote>
+        </section>
+
+        <!-- 導入したソリューション -->
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">導入したソリューション</h2>
+          
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">システム構成</h3>
+          <div style="background-color: var(--blue-50); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+            <p style="font-weight: 600; margin-bottom: 0.5rem;">Googleフォーム予約システム + GAS自動処理 + ChatGPT応対支援</p>
+            <p style="margin: 0; color: var(--gray-700);">
+              お客様が簡単に予約できるGoogleフォームを作成し、GASで自動的に予約管理・顧客情報を整理。ChatGPTで顧客への返信文面や施術提案を生成する仕組みを構築しました。
+            </p>
+          </div>
+
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">導入ステップ</h3>
+          <ol style="line-height: 1.8;">
+            <li>現状業務フロー詳細ヒアリング（2日）</li>
+            <li>Googleフォーム設計・カスタマイズ（3日）</li>
+            <li>GAS連携プログラム作成（4日）</li>
+            <li>ChatGPTプロンプト最適化（2日）</li>
+            <li>スタッフ研修実施（3日）</li>
+            <li>本格運用開始・調整（1週間）</li>
+          </ol>
+        </section>
+
+        <!-- 導入効果 -->
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">導入効果</h2>
+          
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">定量的効果</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="background-color: var(--green-50); padding: 1rem; border-radius: 8px;">
+              <p style="font-weight: 600; margin-bottom: 0.25rem;">予約管理時間</p>
+              <p style="font-size: 1.5rem; font-weight: 700; color: var(--green-600); margin: 0;">3時間→45分</p>
+              <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;">75%削減</p>
+            </div>
+            <div style="background-color: var(--blue-50); padding: 1rem; border-radius: 8px;">
+              <p style="font-weight: 600; margin-bottom: 0.25rem;">リピート率</p>
+              <p style="font-size: 1.5rem; font-weight: 700; color: var(--blue-600); margin: 0;">15%→42%</p>
+              <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;">27ポイント向上</p>
+            </div>
+            <div style="background-color: var(--orange-50); padding: 1rem; border-radius: 8px;">
+              <p style="font-weight: 600; margin-bottom: 0.25rem;">人件費削減</p>
+              <p style="font-size: 1.5rem; font-weight: 700; color: var(--orange-600); margin: 0;">月12万円</p>
+              <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;">業務効率化により</p>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">定性的効果</h3>
+          <ul style="line-height: 1.8;">
+            <li>スタッフのITスキル向上</li>
+            <li>データ分析習慣の定着</li>
+            <li>顧客とのコミュニケーション質向上</li>
+            <li>他店舗からの見学・相談増加</li>
+          </ul>
+        </section>
+
+        <!-- 顧客管理の改善点 -->
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">顧客管理の具体的な改善点</h2>
+          
+          <div style="background-color: var(--purple-50); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 0;">1. 顧客情報の一元管理</h3>
+            <p style="margin-bottom: 1rem;">
+              これまで手書きメモや複数のノートに散在していた顧客情報を、Googleスプレッドシート1つに集約。施術履歴、好みのデザイン、アレルギー情報などがすぐに確認できるようになりました。
+            </p>
+            
+            <h3 style="font-size: 1.125rem; font-weight: 600;">2. 自動リマインド機能</h3>
+            <p style="margin-bottom: 1rem;">
+              GASを活用して、予約日の前日に自動でリマインドメールを送信。ドタキャン率が30%から5%に激減しました。
+            </p>
+            
+            <h3 style="font-size: 1.125rem; font-weight: 600;">3. 施術提案の自動生成</h3>
+            <p style="margin-bottom: 0;">
+              ChatGPTと連携し、顧客の過去の施術履歴や季節を考慮した新しいデザイン提案を自動生成。接客の質が向上し、客単価も20%アップしました。
+            </p>
+          </div>
+        </section>
+
+        <!-- 導入のポイント -->
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">導入成功のポイント</h2>
+          
+          <div style="background-color: var(--yellow-50); padding: 1.5rem; border-radius: 8px;">
+            <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 0;">1. 段階的導入による現場への負担軽減</h3>
+            <p style="margin-bottom: 1rem;">最初は予約管理のみから始め、徐々に顧客管理機能を追加。無理のないペースで導入を進めました。</p>
+            
+            <h3 style="font-size: 1.125rem; font-weight: 600;">2. スタッフの意見を取り入れた柔軟なカスタマイズ</h3>
+            <p style="margin-bottom: 1rem;">現場スタッフの声を積極的に聞き、使いやすさを重視したシステムに調整しました。</p>
+            
+            <h3 style="font-size: 1.125rem; font-weight: 600;">3. 継続的な研修とフォローアップ</h3>
+            <p style="margin-bottom: 1rem;">導入後も定期的な研修を実施し、新しい機能の活用方法を共有しました。</p>
+            
+            <h3 style="font-size: 1.125rem; font-weight: 600;">4. 費用対効果を重視した現実的なツール選択</h3>
+            <p style="margin-bottom: 0;">高額な専用システムではなく、身近なGoogleツールを活用することで、月額3,000円程度で運用可能なシステムを実現しました。</p>
+          </div>
+        </section>
+
+        <!-- 今後の展開 -->
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">今後の展開</h2>
+          <ul style="line-height: 1.8;">
+            <li>AI活用範囲の拡大（トレンド分析、在庫最適化など）</li>
+            <li>他店舗への展開検討</li>
+            <li>より高度な顧客分析実装</li>
+            <li>業界内での知見共有・指導</li>
+          </ul>
+        </section>
+
+        <!-- まとめ -->
+        <section style="background-color: var(--gray-50); padding: 2rem; border-radius: 8px;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">まとめ</h2>
+          <p style="line-height: 1.8; margin-bottom: 1rem;">
+            中国地方のネイルサロンが、Googleフォームを中心とした低コストなデジタル化により、予約管理と顧客管理の効率を大幅に改善しました。
+            特に注目すべきは、月額わずか3,000円程度の投資で、人件費月12万円の削減とリピート率27ポイントの向上を実現した点です。
+          </p>
+          <p style="line-height: 1.8; margin: 0;">
+            この事例は、地方の中小サービス業でも身近なツールの活用により、大きな成果を生み出せることを証明しています。
+            高額なシステムを導入しなくても、工夫次第で顧客満足度と業務効率の両立が可能です。
+          </p>
+        </section>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin-top: 4rem; padding: 2rem; background-color: var(--primary-color); color: white; border-radius: 8px;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">貴社でも同様の効率化を実現しませんか？</h2>
+          <p style="margin-bottom: 1.5rem;">デジタルツール研究所では、中小企業様に最適な顧客管理・予約管理の仕組みづくりを支援しています。</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="../contact.html" class="btn btn-white" style="background-color: white; color: var(--primary-color);">
+              お問い合わせはこちら
+            </a>
+            <a href="#" id="article-download-button" class="btn btn-outline" style="border: 2px solid white; color: white;">
+              資料ダウンロード
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+          <p>地方・中小企業のデジタル化を支援し、<br>持続可能な成長を実現します。</p>
+        </div>
+        <div class="footer-section">
+          <h3>サービス</h3>
+          <ul>
+            <li><a href="../service.html#consulting">デジタル化コンサルティング</a></li>
+            <li><a href="../service.html#efficiency">業務効率化支援</a></li>
+            <li><a href="../service.html#automation">自動化ツール導入</a></li>
+            <li><a href="../service.html#support">運用サポート</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>会社情報</h3>
+          <ul>
+            <li><a href="../about.html">私たちについて</a></li>
+            <li><a href="../case-studies.html">ご支援事例</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>お問い合わせ</h3>
+          <p>平日 9:00-18:00</p>
+          <a href="../contact.html" class="btn btn-sm btn-outline">お問い合わせフォーム</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- モバイルメニューのJavaScript -->
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+
+  // メニュー外をクリックしたら閉じる
+  document.addEventListener('click', (e) => {
+    if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+      mobileMenu.classList.remove('active');
+    }
+  });
+</script>
+
+<!-- 資料ダウンロードモーダル -->
+<div id="download-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>資料ダウンロード</h2>
+      <button class="close-button" id="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-description">
+        デジタル化支援の詳細資料をお送りします。<br>
+        下記フォームにご入力ください。
+      </p>
+      <form id="download-form" class="download-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="company">会社名 <span class="required">必須</span></label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="tel">電話番号</label>
+            <input type="tel" id="tel" name="tel">
+          </div>
+        </div>
+        <div class="form-group" style="margin-top: 1rem;">
+          <label for="message">ご質問・ご要望など</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-block">
+            資料をダウンロード
+          </button>
+        </div>
+        <p class="privacy-note">
+          ※ご入力いただいた情報は、資料送付およびご案内にのみ使用いたします。<br>
+          <a href="../privacy.html" target="_blank">プライバシーポリシー</a>
+        </p>
+      </form>
+      <div id="download-success" class="success-message" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h3>資料ダウンロードありがとうございます</h3>
+        <p>ご登録いただいたメールアドレスに資料をお送りしました。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ダウンロードモーダル用JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // モーダル関連の要素を取得
+  const modal = document.getElementById('download-modal');
+  const headerDownloadBtn = document.getElementById('header-download-button');
+  const articleDownloadBtn = document.getElementById('article-download-button');
+  const closeBtn = document.getElementById('close-modal');
+  const downloadForm = document.getElementById('download-form');
+  const successMessage = document.getElementById('download-success');
+
+  // モーダルを開く関数
+  function openModal(e) {
+    e.preventDefault();
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  // モーダルを閉じる関数
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    // フォームをリセット
+    downloadForm.style.display = 'block';
+    successMessage.style.display = 'none';
+    downloadForm.reset();
+  }
+
+  // イベントリスナーの設定
+  if (headerDownloadBtn) {
+    headerDownloadBtn.addEventListener('click', openModal);
+  }
+  if (articleDownloadBtn) {
+    articleDownloadBtn.addEventListener('click', openModal);
+  }
+  
+  closeBtn.addEventListener('click', closeModal);
+
+  // モーダル外クリックで閉じる
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // フォーム送信処理
+  downloadForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // フォームデータを取得
+    const formData = new FormData(downloadForm);
+    const data = Object.fromEntries(formData.entries());
+    
+    // ここで実際の送信処理を行う（APIへの送信など）
+    console.log('Form data:', data);
+    
+    // 成功メッセージを表示
+    downloadForm.style.display = 'none';
+    successMessage.style.display = 'block';
+    
+    // 3秒後にモーダルを閉じる
+    setTimeout(closeModal, 3000);
+  });
+
+  // ESCキーでモーダルを閉じる
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      closeModal();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
