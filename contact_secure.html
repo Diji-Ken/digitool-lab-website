@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ - 株式会社デジタルツール研究所</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .captcha-container {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+    .captcha-question {
+      font-weight: bold;
+      color: #495057;
+      margin-bottom: 10px;
+    }
+    .captcha-input {
+      width: 100px;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .error-message {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>お問い合わせ</h1>
+    </header>
+
+    <main>
+      <!-- エラーメッセージ表示 -->
+      <?php if (isset($_GET['status'])): ?>
+        <?php if ($_GET['status'] === 'blocked'): ?>
+          <div class="error-message">
+            <strong>アクセスが制限されています</strong><br>
+            申し訳ございませんが、セキュリティ上の理由により、お住まいの地域からのアクセスは制限されています。
+          </div>
+        <?php elseif ($_GET['status'] === 'rate_limit'): ?>
+          <div class="error-message">
+            <strong>送信回数が上限に達しました</strong><br>
+            短時間での大量送信は制限されています。1時間後に再度お試しください。
+          </div>
+        <?php elseif ($_GET['status'] === 'captcha_error'): ?>
+          <div class="error-message">
+            <strong>認証に失敗しました</strong><br>
+            計算問題の答えが正しくありません。再度お試しください。
+          </div>
+        <?php elseif ($_GET['status'] === 'success'): ?>
+          <div class="success-message">
+            <strong>お問い合わせを受け付けました</strong><br>
+            ありがとうございます。内容を確認の上、1営業日以内にご返信いたします。
+          </div>
+        <?php endif; ?>
+      <?php endif; ?>
+
+      <div class="contact-form-section">
+        <h2>メールでお問い合わせ</h2>
+        <form action="contact_form_secure.php" method="POST" id="contactForm">
+          <!-- ホニーポットフィールド（隠しフィールド） -->
+          <div class="honeypot">
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="name">お名前 *</label>
+            <input type="text" id="name" name="name" required maxlength="50">
+            <small>50文字以内で入力してください</small>
+          </div>
+
+          <div class="form-group">
+            <label for="company">会社名</label>
+            <input type="text" id="company" name="company" maxlength="100">
+          </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone" placeholder="例：03-1234-5678">
+          </div>
+
+          <div class="form-group">
+            <label for="message">お問い合わせ内容 *</label>
+            <textarea id="message" name="message" rows="6" required maxlength="2000" placeholder="お問い合わせ内容を詳しくお書きください"></textarea>
+            <small>2000文字以内で入力してください（現在: <span id="charCount">0</span>文字）</small>
+          </div>
+
+          <!-- CAPTCHA -->
+          <div class="captcha-container">
+            <div class="captcha-question">
+              スパム防止のため、以下の計算をしてください：<br>
+              <?php echo $captcha_num1; ?> + <?php echo $captcha_num2; ?> = ?
+            </div>
+            <input type="number" name="captcha_answer" class="captcha-input" required placeholder="答え">
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">送信する</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // 文字数カウント
+    document.getElementById('message').addEventListener('input', function() {
+      const charCount = this.value.length;
+      document.getElementById('charCount').textContent = charCount;
+      
+      if (charCount > 2000) {
+        this.value = this.value.substring(0, 2000);
+        document.getElementById('charCount').textContent = '2000';
+      }
+    });
+
+    // フォーム送信時の追加チェック
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const captcha = document.querySelector('input[name="captcha_answer"]').value;
+
+      if (name.length < 2) {
+        alert('お名前は2文字以上で入力してください。');
+        e.preventDefault();
+        return;
+      }
+
+      if (message.length < 10) {
+        alert('お問い合わせ内容は10文字以上で入力してください。');
+        e.preventDefault();
+        return;
+      }
+
+      if (!captcha) {
+        alert('計算問題の答えを入力してください。');
+        e.preventDefault();
+        return;
+      }
+
+      // 送信ボタンを無効化（二重送信防止）
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+    });
+
+    // ページ読み込み時の自動フォーカス
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('name').focus();
+    });
+  </script>
+</body>
+</html>

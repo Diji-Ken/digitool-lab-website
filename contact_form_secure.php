@@ -6,99 +6,153 @@ mb_internal_encoding("UTF-8");
 // セッション開始
 session_start();
 
-// 基本的な迷惑メール対策
-function isSpamSubmission() {
-    $ip = $_SERVER['REMOTE_ADDR'];
+// 迷惑メール対策クラス
+class SpamProtection {
+    private $blocked_countries = ['RU', 'BY', 'KZ', 'KG', 'TJ', 'UZ', 'AM', 'AZ', 'GE', 'MD']; // ロシアとその周辺国
+    private $blocked_domains = ['mail.ru', 'yandex.ru', 'rambler.ru', 'gmail.com']; // ロシア系メールドメイン
+    private $spam_keywords = ['viagra', 'casino', 'loan', 'bitcoin', 'crypto', 'investment', 'profit'];
     
-    // ロシア系IPアドレスの簡易チェック（実際の実装ではより詳細なチェックが必要）
-    $blocked_ranges = [
-        '5.8.', '5.9.', '5.10.', '5.11.', '5.12.', '5.13.', '5.14.', '5.15.',
-        '31.40.', '31.41.', '31.42.', '31.43.', '31.44.', '31.45.', '31.46.', '31.47.',
-        '46.17.', '46.18.', '46.19.', '46.20.', '46.21.', '46.22.', '46.23.', '46.24.',
-        '77.88.', '77.89.', '77.90.', '77.91.', '77.92.', '77.93.', '77.94.', '77.95.',
-        '78.108.', '78.109.', '78.110.', '78.111.', '78.112.', '78.113.', '78.114.', '78.115.',
-        '85.26.', '85.27.', '85.28.', '85.29.', '85.30.', '85.31.', '85.32.', '85.33.',
-        '91.121.', '91.122.', '91.123.', '91.124.', '91.125.', '91.126.', '91.127.', '91.128.',
-        '95.84.', '95.85.', '95.86.', '95.87.', '95.88.', '95.89.', '95.90.', '95.91.',
-        '109.207.', '109.208.', '109.209.', '109.210.', '109.211.', '109.212.', '109.213.', '109.214.',
-        '176.59.', '176.60.', '176.61.', '176.62.', '176.63.', '176.64.', '176.65.', '176.66.',
-        '178.154.', '178.155.', '178.156.', '178.157.', '178.158.', '178.159.', '178.160.', '178.161.',
-        '185.4.', '185.5.', '185.6.', '185.7.', '185.8.', '185.9.', '185.10.', '185.11.',
-        '188.64.', '188.65.', '188.66.', '188.67.', '188.68.', '188.69.', '188.70.', '188.71.',
-        '195.211.', '195.212.', '195.213.', '195.214.', '195.215.', '195.216.', '195.217.', '195.218.',
-        '212.164.', '212.165.', '212.166.', '212.167.', '212.168.', '212.169.', '212.170.', '212.171.',
-        '213.87.', '213.88.', '213.89.', '213.90.', '213.91.', '213.92.', '213.93.', '213.94.',
-        '217.118.', '217.119.', '217.120.', '217.121.', '217.122.', '217.123.', '217.124.', '217.125.'
-    ];
-    
-    foreach ($blocked_ranges as $range) {
-        if (strpos($ip, $range) === 0) {
-            return true;
+    public function checkIP($ip) {
+        // IPアドレスから国を取得
+        $country = $this->getCountryFromIP($ip);
+        if (in_array($country, $this->blocked_countries)) {
+            return false;
         }
+        return true;
     }
     
-    // レート制限チェック
-    $rate_limit_file = 'rate_limit_' . md5($ip) . '.txt';
-    $current_time = time();
-    $limit_time = 3600; // 1時間
-    $max_attempts = 5; // 最大5回
+    public function checkEmail($email) {
+        $domain = substr(strrchr($email, "@"), 1);
+        return !in_array($domain, $this->blocked_domains);
+    }
     
-    if (file_exists($rate_limit_file)) {
-        $data = json_decode(file_get_contents($rate_limit_file), true);
-        if ($data['count'] >= $max_attempts && ($current_time - $data['last_attempt']) < $limit_time) {
-            return true;
+    public function checkContent($content) {
+        $content_lower = strtolower($content);
+        foreach ($this->spam_keywords as $keyword) {
+            if (strpos($content_lower, $keyword) !== false) {
+                return false;
+            }
         }
-        if (($current_time - $data['last_attempt']) >= $limit_time) {
+        return true;
+    }
+    
+    public function checkRateLimit($ip) {
+        $file = 'rate_limit_' . md5($ip) . '.txt';
+        $current_time = time();
+        $limit_time = 3600; // 1時間
+        $max_attempts = 3; // 最大3回
+        
+        if (file_exists($file)) {
+            $data = json_decode(file_get_contents($file), true);
+            if ($data['count'] >= $max_attempts && ($current_time - $data['last_attempt']) < $limit_time) {
+                return false;
+            }
+            if (($current_time - $data['last_attempt']) >= $limit_time) {
+                $data = ['count' => 0, 'last_attempt' => $current_time];
+            }
+        } else {
             $data = ['count' => 0, 'last_attempt' => $current_time];
         }
-    } else {
-        $data = ['count' => 0, 'last_attempt' => $current_time];
+        
+        $data['count']++;
+        $data['last_attempt'] = $current_time;
+        file_put_contents($file, json_encode($data));
+        
+        return $data['count'] <= $max_attempts;
     }
     
-    $data['count']++;
-    $data['last_attempt'] = $current_time;
-    file_put_contents($rate_limit_file, json_encode($data));
-    
-    return $data['count'] > $max_attempts;
+    private function getCountryFromIP($ip) {
+        // 簡易的な国コード取得（実際の実装では外部APIを使用）
+        $geoip_data = @file_get_contents("http://ip-api.com/json/{$ip}");
+        if ($geoip_data) {
+            $data = json_decode($geoip_data, true);
+            return $data['countryCode'] ?? 'US';
+        }
+        return 'US'; // デフォルト
+    }
 }
 
 // POSTデータを取得
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $spam_protection = new SpamProtection();
     
-    // 迷惑メールチェック
-    if (isSpamSubmission()) {
-        error_log("Spam submission blocked from IP: " . $_SERVER['REMOTE_ADDR']);
-        header("Location: contact_success.html"); // 成功ページにリダイレクトしてスパマーを騙す
+    // 基本的なセキュリティチェック
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+    
+    // 1. IPアドレスチェック
+    if (!$spam_protection->checkIP($ip)) {
+        error_log("Blocked submission from blocked country: {$ip}");
+        header("Location: contact.html?status=blocked");
         exit;
     }
     
-    // ホニーポットチェック（隠しフィールド）
+    // 2. レート制限チェック
+    if (!$spam_protection->checkRateLimit($ip)) {
+        error_log("Rate limit exceeded for IP: {$ip}");
+        header("Location: contact.html?status=rate_limit");
+        exit;
+    }
+    
+    // 3. ホニーポットチェック（隠しフィールド）
     if (!empty($_POST['website'])) {
-        error_log("Honeypot triggered for IP: " . $_SERVER['REMOTE_ADDR']);
-        header("Location: contact_success.html"); // 成功ページにリダイレクトしてスパマーを騙す
+        error_log("Honeypot triggered for IP: {$ip}");
+        header("Location: contact.html?status=success"); // 成功ページにリダイレクトしてスパマーを騙す
         exit;
     }
+    
+    // 4. CAPTCHAチェック（簡易版）
+    if (!isset($_POST['captcha_answer']) || $_POST['captcha_answer'] !== $_SESSION['captcha_answer']) {
+        error_log("CAPTCHA failed for IP: {$ip}");
+        header("Location: contact.html?status=captcha_error");
+        exit;
+    }
+    
+    // フォームデータの取得とサニタイズ
     $name = trim($_POST['name']);
     $company = trim($_POST['company']);
     $email = trim($_POST['email']);
     $phone = trim($_POST['phone']);
     $message = trim($_POST['message']);
     
+    // 5. メールアドレスチェック
+    if (!$spam_protection->checkEmail($email)) {
+        error_log("Blocked email domain: {$email} from IP: {$ip}");
+        header("Location: contact.html?status=blocked");
+        exit;
+    }
+    
+    // 6. コンテンツチェック
+    $full_content = $name . ' ' . $company . ' ' . $message;
+    if (!$spam_protection->checkContent($full_content)) {
+        error_log("Spam content detected from IP: {$ip}");
+        header("Location: contact.html?status=blocked");
+        exit;
+    }
+    
     // バリデーション
     $errors = [];
     
-    if (empty($name)) {
-        $errors[] = "お名前を入力してください。";
+    if (empty($name) || strlen($name) < 2) {
+        $errors[] = "お名前を正しく入力してください。";
     }
     
-    if (empty($email)) {
-        $errors[] = "メールアドレスを入力してください。";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "正しいメールアドレスを入力してください。";
     }
     
-    if (empty($message)) {
-        $errors[] = "お問い合わせ内容を入力してください。";
+    if (empty($message) || strlen($message) < 10) {
+        $errors[] = "お問い合わせ内容を10文字以上で入力してください。";
+    }
+    
+    // 名前の長さチェック（異常に長い名前はスパムの可能性）
+    if (strlen($name) > 50) {
+        $errors[] = "お名前が長すぎます。";
+    }
+    
+    // メッセージの長さチェック（異常に長いメッセージはスパムの可能性）
+    if (strlen($message) > 2000) {
+        $errors[] = "お問い合わせ内容が長すぎます。";
     }
     
     if (empty($errors)) {
@@ -107,14 +161,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $subject_admin = "お問い合わせフォームから新しいメッセージが届きました";
         
         $body_admin = "お問い合わせフォームから新しいメッセージが届きました。\n\n";
+        $body_admin .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        $body_admin .= "【送信者情報】\n";
+        $body_admin .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
         $body_admin .= "お名前: " . $name . "\n";
         $body_admin .= "会社名: " . ($company ? $company : "未入力") . "\n";
         $body_admin .= "メールアドレス: " . $email . "\n";
         $body_admin .= "電話番号: " . ($phone ? $phone : "未入力") . "\n";
-        $body_admin .= "お問い合わせ内容:\n" . $message . "\n\n";
+        $body_admin .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        $body_admin .= "【お問い合わせ内容】\n";
+        $body_admin .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        $body_admin .= $message . "\n";
+        $body_admin .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+        $body_admin .= "【システム情報】\n";
         $body_admin .= "送信日時: " . date('Y年m月d日 H:i:s') . "\n";
-        $body_admin .= "送信者IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
-        $body_admin .= "User-Agent: " . ($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown') . "\n";
+        $body_admin .= "送信者IP: " . $ip . "\n";
+        $body_admin .= "User-Agent: " . $user_agent . "\n";
+        $body_admin .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
         
         $headers_admin = "From: noreply@digitool-lab.com\r\n";
         $headers_admin .= "Reply-To: " . $email . "\r\n";
@@ -165,6 +228,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error_message = "メールの送信に失敗しました。しばらく時間をおいて再度お試しください。";
         }
     }
+} else {
+    // CAPTCHA生成
+    $captcha_num1 = rand(1, 10);
+    $captcha_num2 = rand(1, 10);
+    $captcha_answer = $captcha_num1 + $captcha_num2;
+    $_SESSION['captcha_answer'] = $captcha_answer;
 }
 ?>
 
@@ -201,8 +270,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p><a href="contact.html" class="btn btn-primary">お問い合わせフォームに戻る</a></p>
   </div>
 </body>
-</html> 
- 
- 
- 
- 
+</html>

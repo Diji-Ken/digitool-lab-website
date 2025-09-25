@@ -1,72 +1,169 @@
-# BEGIN HTTP to HTTPS Redirect
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
-# END HTTP to HTTPS Redirect
+# ロシアからのアクセスをブロック
+<RequireAll>
+    Require all granted
+    Require not ip 5.8.0.0/13
+    Require not ip 5.9.0.0/13
+    Require not ip 5.10.0.0/13
+    Require not ip 5.11.0.0/13
+    Require not ip 5.12.0.0/13
+    Require not ip 5.13.0.0/13
+    Require not ip 5.14.0.0/13
+    Require not ip 5.15.0.0/13
+    Require not ip 31.40.0.0/13
+    Require not ip 31.41.0.0/13
+    Require not ip 31.42.0.0/13
+    Require not ip 31.43.0.0/13
+    Require not ip 31.44.0.0/13
+    Require not ip 31.45.0.0/13
+    Require not ip 31.46.0.0/13
+    Require not ip 31.47.0.0/13
+    Require not ip 46.17.0.0/13
+    Require not ip 46.18.0.0/13
+    Require not ip 46.19.0.0/13
+    Require not ip 46.20.0.0/13
+    Require not ip 46.21.0.0/13
+    Require not ip 46.22.0.0/13
+    Require not ip 46.23.0.0/13
+    Require not ip 46.24.0.0/13
+    Require not ip 77.88.0.0/13
+    Require not ip 77.89.0.0/13
+    Require not ip 77.90.0.0/13
+    Require not ip 77.91.0.0/13
+    Require not ip 77.92.0.0/13
+    Require not ip 77.93.0.0/13
+    Require not ip 77.94.0.0/13
+    Require not ip 77.95.0.0/13
+    Require not ip 78.108.0.0/13
+    Require not ip 78.109.0.0/13
+    Require not ip 78.110.0.0/13
+    Require not ip 78.111.0.0/13
+    Require not ip 78.112.0.0/13
+    Require not ip 78.113.0.0/13
+    Require not ip 78.114.0.0/13
+    Require not ip 78.115.0.0/13
+    Require not ip 85.26.0.0/13
+    Require not ip 85.27.0.0/13
+    Require not ip 85.28.0.0/13
+    Require not ip 85.29.0.0/13
+    Require not ip 85.30.0.0/13
+    Require not ip 85.31.0.0/13
+    Require not ip 85.32.0.0/13
+    Require not ip 85.33.0.0/13
+    Require not ip 91.121.0.0/13
+    Require not ip 91.122.0.0/13
+    Require not ip 91.123.0.0/13
+    Require not ip 91.124.0.0/13
+    Require not ip 91.125.0.0/13
+    Require not ip 91.126.0.0/13
+    Require not ip 91.127.0.0/13
+    Require not ip 91.128.0.0/13
+    Require not ip 95.84.0.0/13
+    Require not ip 95.85.0.0/13
+    Require not ip 95.86.0.0/13
+    Require not ip 95.87.0.0/13
+    Require not ip 95.88.0.0/13
+    Require not ip 95.89.0.0/13
+    Require not ip 95.90.0.0/13
+    Require not ip 95.91.0.0/13
+    Require not ip 109.207.0.0/13
+    Require not ip 109.208.0.0/13
+    Require not ip 109.209.0.0/13
+    Require not ip 109.210.0.0/13
+    Require not ip 109.211.0.0/13
+    Require not ip 109.212.0.0/13
+    Require not ip 109.213.0.0/13
+    Require not ip 109.214.0.0/13
+    Require not ip 176.59.0.0/13
+    Require not ip 176.60.0.0/13
+    Require not ip 176.61.0.0/13
+    Require not ip 176.62.0.0/13
+    Require not ip 176.63.0.0/13
+    Require not ip 176.64.0.0/13
+    Require not ip 176.65.0.0/13
+    Require not ip 176.66.0.0/13
+    Require not ip 178.154.0.0/13
+    Require not ip 178.155.0.0/13
+    Require not ip 178.156.0.0/13
+    Require not ip 178.157.0.0/13
+    Require not ip 178.158.0.0/13
+    Require not ip 178.159.0.0/13
+    Require not ip 178.160.0.0/13
+    Require not ip 178.161.0.0/13
+    Require not ip 185.4.0.0/13
+    Require not ip 185.5.0.0/13
+    Require not ip 185.6.0.0/13
+    Require not ip 185.7.0.0/13
+    Require not ip 185.8.0.0/13
+    Require not ip 185.9.0.0/13
+    Require not ip 185.10.0.0/13
+    Require not ip 185.11.0.0/13
+    Require not ip 188.64.0.0/13
+    Require not ip 188.65.0.0/13
+    Require not ip 188.66.0.0/13
+    Require not ip 188.67.0.0/13
+    Require not ip 188.68.0.0/13
+    Require not ip 188.69.0.0/13
+    Require not ip 188.70.0.0/13
+    Require not ip 188.71.0.0/13
+    Require not ip 195.211.0.0/13
+    Require not ip 195.212.0.0/13
+    Require not ip 195.213.0.0/13
+    Require not ip 195.214.0.0/13
+    Require not ip 195.215.0.0/13
+    Require not ip 195.216.0.0/13
+    Require not ip 195.217.0.0/13
+    Require not ip 195.218.0.0/13
+    Require not ip 212.164.0.0/13
+    Require not ip 212.165.0.0/13
+    Require not ip 212.166.0.0/13
+    Require not ip 212.167.0.0/13
+    Require not ip 212.168.0.0/13
+    Require not ip 212.169.0.0/13
+    Require not ip 212.170.0.0/13
+    Require not ip 212.171.0.0/13
+    Require not ip 213.87.0.0/13
+    Require not ip 213.88.0.0/13
+    Require not ip 213.89.0.0/13
+    Require not ip 213.90.0.0/13
+    Require not ip 213.91.0.0/13
+    Require not ip 213.92.0.0/13
+    Require not ip 213.93.0.0/13
+    Require not ip 213.94.0.0/13
+    Require not ip 217.118.0.0/13
+    Require not ip 217.119.0.0/13
+    Require not ip 217.120.0.0/13
+    Require not ip 217.121.0.0/13
+    Require not ip 217.122.0.0/13
+    Require not ip 217.123.0.0/13
+    Require not ip 217.124.0.0/13
+    Require not ip 217.125.0.0/13
+</RequireAll>
 
-# BEGIN 301 Redirects for Case Studies
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    Redirect 301 /case-001.html https://digitool-lab.com/blog/restaurant-order-system-cost-reduction.html
-    Redirect 301 /case-002.html https://digitool-lab.com/blog/restaurant-recipe-standardization.html
-    Redirect 301 /case-003.html https://digitool-lab.com/blog/salon-sns-automation.html
-    Redirect 301 /case-004.html https://digitool-lab.com/blog/restaurant-promotion-automation.html
-    Redirect 301 /case-005.html https://digitool-lab.com/blog/retail-inventory-optimization.html
-    Redirect 301 /case-006.html https://digitool-lab.com/blog/service-line-step-delivery.html
-    Redirect 301 /case-007.html https://digitool-lab.com/blog/restaurant-shift-management.html
-    Redirect 301 /case-008.html https://digitool-lab.com/blog/service-review-improvement.html
-    Redirect 301 /case-009.html https://digitool-lab.com/blog/recruitment-ai-copywriting.html
-    Redirect 301 /case-010.html https://digitool-lab.com/blog/service-manual-systematization.html
-    Redirect 301 /case-011.html https://digitool-lab.com/blog/service-daily-report-automation.html
-    Redirect 301 /case-012.html https://digitool-lab.com/blog/restaurant-waste-cost-reduction.html
-    Redirect 301 /case-013.html https://digitool-lab.com/blog/restaurant-staff-support-system.html
-    Redirect 301 /case-014.html https://digitool-lab.com/blog/restaurant-ai-training-upsell.html
-    Redirect 301 /case-015.html https://digitool-lab.com/blog/service-complaint-handling-ai.html
-    Redirect 301 /case-016.html https://digitool-lab.com/blog/retail-pop-automation.html
-    Redirect 301 /case-017.html https://digitool-lab.com/blog/beauty-salon-ai-training.html
-    Redirect 301 /case-018.html https://digitool-lab.com/blog/hotel-dynamic-pricing.html
-    Redirect 301 /case-019.html https://digitool-lab.com/blog/hotel-service-standardization.html
-    Redirect 301 /case-020.html https://digitool-lab.com/blog/sales-customer-analysis-ai.html
-    Redirect 301 /case-021.html https://digitool-lab.com/blog/hr-turnover-prediction-ai.html
-    Redirect 301 /case-022.html https://digitool-lab.com/blog/management-data-aggregation-ai.html
-    Redirect 301 /case-023.html https://digitool-lab.com/blog/manufacturing-demand-forecasting-ai.html
-    Redirect 301 /case-025.html https://digitool-lab.com/blog/internal-idea-generation-ai.html
-</IfModule>
-# END 301 Redirects
-
-# HTML拡張子の非表示化
-RewriteEngine On
-
-# Redirect .html extension to clean URLs (external requests only)
-RewriteCond %{THE_REQUEST} \s/+([^?\s]*?)\.html[\s?] [NC]
-RewriteCond %{REQUEST_URI} !\.php$
-RewriteRule ^ /%1? [R=301,L]
-
-# Internally rewrite clean URLs to .html files
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L] 
-
-# BEGIN Security Headers
+# セキュリティヘッダーの追加
 <IfModule mod_headers.c>
-    # HSTS - HTTPS通信を強制
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    
-    # X-Frame-Options - クリックジャッキング対策
-    Header always set X-Frame-Options "SAMEORIGIN"
-    
-    # X-Content-Type-Options - MIME型スニッフィング対策
-    Header always set X-Content-Type-Options "nosniff"
-    
-    # Referrer-Policy - リファラー情報の制御
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # CSP - 監視モード（安全な実装）
-    Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com;"
 </IfModule>
-# END Security Headers
- 
- 
+
+# ファイルアップロードの制限
+<Files "*.php">
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_METHOD} POST
+        RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+        RewriteCond %{HTTP_USER_AGENT} ^(bot|crawler|spider|scraper) [NC]
+        RewriteRule ^(contact_form|send_lead)\.php$ - [F,L]
+    </IfModule>
+</Files>
+
+# レート制限（mod_evasiveが利用可能な場合）
+<IfModule mod_evasive24.c>
+    DOSHashTableSize    2048
+    DOSPageCount        3
+    DOSSiteCount        50
+    DOSPageInterval     1
+    DOSSiteInterval     1
+    DOSBlockingPeriod   600
+</IfModule>

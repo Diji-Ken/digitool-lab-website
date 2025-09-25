@@ -30,26 +30,60 @@
   <link rel="stylesheet" href="css/style.css?v=2024120601">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- FAQ構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "PCが苦手でも大丈夫ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、ご安心ください。操作説明の資料や動画マニュアルもご用意し、お客様のペースに合わせて何度でも丁寧にご説明します。私たちは「一緒に進める」ことを大切にしています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "セキュリティ体制はどのようになっていますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "お客様の情報を守るため、秘密保持契約（NDA）の締結はもちろん、使用するクラウドサービスの安全設計にも細心の注意を払っています。安心してご利用いただける体制を整えています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "導入までの期間はどれくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最短2週間でスタート可能です。まずはお客様の現状を一緒に整理し、最適なプランとスケジュールをご提案します。"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-gray-50">
 <div class="flex flex-col min-h-screen">
   <header>
     <div class="container">
-      <a href="./" class="logo">
-        <img src="images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      <a href="https://digitool-lab.com/" class="logo">
+        <img src="https://digitool-lab.com/images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
       </a>
       <div class="header-right-panel">
       <nav class="desktop-nav">
-        <a href="./about.html">私たちについて</a>
-        <a href="./service.html">事業内容</a>
-          <a href="./case-studies.html">ご支援事例</a>
+        <a href="https://digitool-lab.com/about.html">私たちについて</a>
+        <a href="https://digitool-lab.com/service.html">事業内容</a>
+          <a href="https://digitool-lab.com/case-studies.html">ご支援事例</a>
       </nav>
         <div class="header-buttons">
           <a href="#" id="header-download-button" class="btn btn-sm btn-primary open-download-modal">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
             <span>資料ダウンロード</span>
           </a>
-          <a href="./contact.html" class="btn btn-sm btn-dark active">
+          <a href="https://digitool-lab.com/contact.html" class="btn btn-sm btn-dark active">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             <span>お問い合わせ</span>
           </a>
@@ -98,6 +132,11 @@
         <div class="contact-form-section" data-aos="fade-up">
           <h2>メールでお問い合わせ</h2>
           <form action="contact_form.php" method="POST">
+            <!-- ホニーポットフィールド（隠しフィールド） -->
+            <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
+              <label for="website">Website:</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <div class="form-group">
               <label for="name">お名前 *</label>
               <input type="text" id="name" name="name" required>
