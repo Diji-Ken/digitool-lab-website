@@ -1,6 +1,8 @@
-# ロシアからのアクセスをブロック
+# 強化された迷惑メール対策 - IPアドレスブロック
 <RequireAll>
     Require all granted
+    
+    # ロシア系IPアドレス範囲
     Require not ip 5.8.0.0/13
     Require not ip 5.9.0.0/13
     Require not ip 5.10.0.0/13
@@ -137,6 +139,32 @@
     Require not ip 217.123.0.0/13
     Require not ip 217.124.0.0/13
     Require not ip 217.125.0.0/13
+    
+    # その他の迷惑メールが多い国・地域
+    Require not ip 103.21.0.0/13
+    Require not ip 103.22.0.0/13
+    Require not ip 103.23.0.0/13
+    Require not ip 103.24.0.0/13
+    Require not ip 103.25.0.0/13
+    Require not ip 103.26.0.0/13
+    Require not ip 103.27.0.0/13
+    Require not ip 103.28.0.0/13
+    Require not ip 104.16.0.0/13
+    Require not ip 104.17.0.0/13
+    Require not ip 104.18.0.0/13
+    Require not ip 104.19.0.0/13
+    Require not ip 104.20.0.0/13
+    Require not ip 104.21.0.0/13
+    Require not ip 104.22.0.0/13
+    Require not ip 104.23.0.0/13
+    Require not ip 104.24.0.0/13
+    Require not ip 104.25.0.0/13
+    Require not ip 104.26.0.0/13
+    Require not ip 104.27.0.0/13
+    Require not ip 104.28.0.0/13
+    Require not ip 104.29.0.0/13
+    Require not ip 104.30.0.0/13
+    Require not ip 104.31.0.0/13
 </RequireAll>
 
 # セキュリティヘッダーの追加
