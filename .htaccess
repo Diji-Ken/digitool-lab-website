@@ -1,3 +1,55 @@
+# BEGIN HTTP to HTTPS Redirect
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+# END HTTP to HTTPS Redirect
+
+# BEGIN 301 Redirects for Case Studies
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    Redirect 301 /case-001.html https://digitool-lab.com/blog/restaurant-order-system-cost-reduction.html
+    Redirect 301 /case-002.html https://digitool-lab.com/blog/restaurant-recipe-standardization.html
+    Redirect 301 /case-003.html https://digitool-lab.com/blog/salon-sns-automation.html
+    Redirect 301 /case-004.html https://digitool-lab.com/blog/restaurant-promotion-automation.html
+    Redirect 301 /case-005.html https://digitool-lab.com/blog/retail-inventory-optimization.html
+    Redirect 301 /case-006.html https://digitool-lab.com/blog/service-line-step-delivery.html
+    Redirect 301 /case-007.html https://digitool-lab.com/blog/restaurant-shift-management.html
+    Redirect 301 /case-008.html https://digitool-lab.com/blog/service-review-improvement.html
+    Redirect 301 /case-009.html https://digitool-lab.com/blog/recruitment-ai-copywriting.html
+    Redirect 301 /case-010.html https://digitool-lab.com/blog/service-manual-systematization.html
+    Redirect 301 /case-011.html https://digitool-lab.com/blog/service-daily-report-automation.html
+    Redirect 301 /case-012.html https://digitool-lab.com/blog/restaurant-waste-cost-reduction.html
+    Redirect 301 /case-013.html https://digitool-lab.com/blog/restaurant-staff-support-system.html
+    Redirect 301 /case-014.html https://digitool-lab.com/blog/restaurant-ai-training-upsell.html
+    Redirect 301 /case-015.html https://digitool-lab.com/blog/service-complaint-handling-ai.html
+    Redirect 301 /case-016.html https://digitool-lab.com/blog/retail-pop-automation.html
+    Redirect 301 /case-017.html https://digitool-lab.com/blog/beauty-salon-ai-training.html
+    Redirect 301 /case-018.html https://digitool-lab.com/blog/hotel-dynamic-pricing.html
+    Redirect 301 /case-019.html https://digitool-lab.com/blog/hotel-service-standardization.html
+    Redirect 301 /case-020.html https://digitool-lab.com/blog/sales-customer-analysis-ai.html
+    Redirect 301 /case-021.html https://digitool-lab.com/blog/hr-turnover-prediction-ai.html
+    Redirect 301 /case-022.html https://digitool-lab.com/blog/management-data-aggregation-ai.html
+    Redirect 301 /case-023.html https://digitool-lab.com/blog/manufacturing-demand-forecasting-ai.html
+    Redirect 301 /case-025.html https://digitool-lab.com/blog/internal-idea-generation-ai.html
+</IfModule>
+# END 301 Redirects
+
+# HTML拡張子の非表示化
+RewriteEngine On
+
+# Redirect .html extension to clean URLs (external requests only)
+RewriteCond %{THE_REQUEST} \s/+([^?\s]*?)\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} !\.php$
+RewriteRule ^ /%1? [R=301,L]
+
+# Internally rewrite clean URLs to .html files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L] 
+
 # 迷惑メール対策 - フォーム送信のみに制限
 <Files "contact_form.php">
     <RequireAll>
@@ -339,13 +391,24 @@
     </RequireAll>
 </Files>
 
-# セキュリティヘッダーの追加
+# BEGIN Security Headers
 <IfModule mod_headers.c>
-    Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
-    Header always set X-XSS-Protection "1; mode=block"
+    # HSTS - HTTPS通信を強制
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    
+    # X-Frame-Options - クリックジャッキング対策
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # X-Content-Type-Options - MIME型スニッフィング対策
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer-Policy - リファラー情報の制御
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # CSP - 監視モード（安全な実装）
+    Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com;"
 </IfModule>
+# END Security Headers
 
 # ファイルアップロードの制限
 <Files "*.php">
