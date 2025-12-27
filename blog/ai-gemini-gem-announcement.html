@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gemini Gemを活用して告知文章を標準化。担当者ごとの文体のばらつきを解消し、SNS・アプリ通知の品質を均一化した事例を解説します。">
+    <meta name="keywords" content="Gemini, Gem, 告知文章, 標準化, AI活用, SNS投稿, 業務効率化, 文章作成">
+    <title>Gemini Gem×告知文章標準化｜担当者が変わっても同じ品質でSNS・通知を作成</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Gemini Gem×告知文章標準化｜担当者が変わっても同じ品質でSNS・通知を作成</h1>
+            <p class="article-meta">
+                <time datetime="2024-12-27">2024年12月27日</time>
+                <span class="category">AI活用事例</span>
+                <span class="reading-time">読了時間：約7分</span>
+            </p>
+        </header>
+
+        <nav class="table-of-contents">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#introduction">はじめに</a></li>
+                <li><a href="#background">導入の背景と課題</a></li>
+                <li><a href="#solution">Gemini Gemを活用した告知文章標準化</a></li>
+                <li><a href="#results">導入効果と成果</a></li>
+                <li><a href="#applications">活用シーン別の設定例</a></li>
+                <li><a href="#tips">実践のコツ</a></li>
+                <li><a href="#summary">まとめ</a></li>
+            </ol>
+        </nav>
+
+        <section id="introduction">
+            <h2>はじめに</h2>
+            <p>「同じイベントの告知なのに、担当者によって文面の雰囲気が全然違う」「SNS投稿の書き方がバラバラで、ブランドの統一感がない」——社内で複数のメンバーが情報発信を担当している企業では、このような悩みを抱えていることが少なくありません。</p>
+
+            <p>告知文章には「伝えるべき情報」と「トーン＆マナー」の両方が重要です。しかし、担当者ごとに文章スタイルが異なると、読み手に与える印象がばらつき、ブランドイメージの一貫性が損なわれてしまいます。かといって、毎回チェックして修正するのも大きな負担です。</p>
+
+            <p>本記事では、Google Gemini の「Gem」機能を活用して、告知文章のスタイルを標準化した事例をご紹介します。Gemは「カスタムAIアシスタント」を作成できる機能で、あらかじめ設定したルールに従って一貫した文章を生成できます。</p>
+
+            <div class="point-box">
+                <h3>この記事でわかること</h3>
+                <ul>
+                    <li>告知文章のばらつきを解消する方法</li>
+                    <li>Gemini Gemの基本的な設定方法</li>
+                    <li>用途別のGem設定例（SNS・メルマガ・アプリ通知）</li>
+                    <li>チーム全体で品質を統一するためのポイント</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="background">
+            <h2>導入の背景と課題</h2>
+
+            <h3>企業プロフィール</h3>
+            <div class="company-profile">
+                <table>
+                    <tr>
+                        <th>業種</th>
+                        <td>イベント企画・運営</td>
+                    </tr>
+                    <tr>
+                        <th>従業員数</th>
+                        <td>18名</td>
+                    </tr>
+                    <tr>
+                        <th>告知チャネル</th>
+                        <td>Instagram、X（Twitter）、LINE公式アカウント、メルマガ</td>
+                    </tr>
+                    <tr>
+                        <th>発信担当者</th>
+                        <td>3名（マーケティングチーム）</td>
+                    </tr>
+                    <tr>
+                        <th>月間の告知回数</th>
+                        <td>約30〜40件</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>従来の告知作成プロセス</h3>
+            <p>同社では、自社主催イベントやクライアントイベントの告知を複数のSNSとメルマガで発信していました。担当者3名が持ち回りで投稿を作成していましたが、次のような課題が発生していました。</p>
+
+            <div class="process-flow">
+                <div class="process-step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <h5>イベント情報を確認</h5>
+                        <p>日時、場所、内容、参加費などの基本情報を整理</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <h5>告知文を作成</h5>
+                        <p>担当者が自分のスタイルで文章を作成（30分〜1時間）</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <h5>チームリーダーがチェック</h5>
+                        <p>トーンや必須情報の漏れがないか確認・修正指示</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <h5>修正・再確認</h5>
+                        <p>フィードバックを反映して再提出（1〜2往復）</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">5</span>
+                    <div class="step-content">
+                        <h5>各チャネルに投稿</h5>
+                        <p>SNSごとに文字数調整して投稿</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4>直面していた課題</h4>
+
+            <div class="challenge-box">
+                <h5>課題1：担当者ごとの文体のばらつき</h5>
+                <p>同じイベントの告知でも、担当者Aは「！」を多用したカジュアルな文体、担当者Bは敬語中心の硬い文体、担当者Cは絵文字多めのポップな文体と、雰囲気が全く異なっていました。フォロワーからは「投稿によって雰囲気が違う」という声も。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題2：必須情報の記載漏れ</h5>
+                <p>日時や場所は書いてあるのに、参加費の記載がない、申込締切が書かれていない、といった情報の抜け漏れが月に3〜4件発生。投稿後に追加情報を投稿することになり、フォロワーの混乱を招いていました。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題3：チェック・修正工数の増大</h5>
+                <p>文体を統一するために、チームリーダーが全ての告知文をチェック。ばらつきを指摘して修正を依頼する作業に、月10時間以上を費やしていました。チームリーダーがいないと投稿が滞ることも。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題4：過去の良い投稿を参照しづらい</h5>
+                <p>「前回のあのイベントの告知文が良かったから参考にしたい」と思っても、過去の投稿を探すのに時間がかかり、結局ゼロから書くことに。ナレッジが属人化していました。</p>
+            </div>
+
+            <div class="problem-impact">
+                <h4>課題による影響</h4>
+                <ul>
+                    <li>告知1件あたりの作成・チェック時間：平均1.5時間</li>
+                    <li>月間の告知関連工数：約45〜60時間（3名合計）</li>
+                    <li>情報漏れによる追加投稿：月3〜4回</li>
+                    <li>ブランドイメージの不統一感</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="solution">
+            <h2>Gemini Gemを活用した告知文章標準化</h2>
+
+            <h3>導入したソリューション</h3>
+            <p>同社では、Google Gemini の「Gem」機能を活用して、告知文章の作成プロセスを標準化しました。Gemとは、特定の目的に特化したカスタムAIアシスタントを作成できる機能です。あらかじめ「どんな文体で書くか」「何を必ず含めるか」を設定しておくことで、誰が使っても同じスタイルの告知文が生成されます。</p>
+
+            <div class="solution-overview">
+                <h4>システム構成</h4>
+                <ul>
+                    <li><strong>使用ツール：</strong>Google Gemini（Gemini Advanced推奨）</li>
+                    <li><strong>活用機能：</strong>Gem（カスタムAIアシスタント）</li>
+                    <li><strong>作成したGem：</strong>4種類（SNS用、メルマガ用、LINE用、緊急告知用）</li>
+                    <li><strong>利用者：</strong>マーケティングチーム3名全員</li>
+                </ul>
+            </div>
+
+            <h3>Gemの設定内容</h3>
+
+            <h4>基本情報の設定</h4>
+            <p>まず、Gemに設定する基本的な内容を整理しました。</p>
+
+            <div class="gem-settings">
+                <table class="settings-table">
+                    <tr>
+                        <th>設定項目</th>
+                        <th>設定内容</th>
+                    </tr>
+                    <tr>
+                        <td>Gem名</td>
+                        <td>「SNS告知作成アシスタント」など分かりやすい名前</td>
+                    </tr>
+                    <tr>
+                        <td>役割</td>
+                        <td>「あなたはイベント企画会社の広報担当です」</td>
+                    </tr>
+                    <tr>
+                        <td>文体</td>
+                        <td>親しみやすく、丁寧。絵文字は1投稿につき2〜3個まで</td>
+                    </tr>
+                    <tr>
+                        <td>必須情報</td>
+                        <td>イベント名、日時、場所、参加費、申込方法、締切日</td>
+                    </tr>
+                    <tr>
+                        <td>禁止事項</td>
+                        <td>過度な感嘆符、煽り表現、非公式な略語</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h4>Gemの作成手順</h4>
+
+            <div class="step-guide">
+                <div class="step-item">
+                    <h5>Step 1：Gemini にアクセス</h5>
+                    <p>Google Gemini（gemini.google.com）にアクセスし、左サイドバーの「Gem マネージャー」をクリックします。</p>
+                </div>
+
+                <div class="step-item">
+                    <h5>Step 2：新しいGemを作成</h5>
+                    <p>「新しいGemを作成」ボタンをクリック。Gem名と説明を入力します。</p>
+                </div>
+
+                <div class="step-item">
+                    <h5>Step 3：カスタム指示を設定</h5>
+                    <p>「カスタム指示」欄に、以下のような詳細な指示を記載します。</p>
+                </div>
+            </div>
+
+            <div class="prompt-example">
+                <h5>SNS告知用Gemの指示例</h5>
+                <pre>
+あなたは「イベント告知のプロ」として、以下のルールに従って
+告知文を作成してください。
+
+【文体ルール】
+- 親しみやすく、でも丁寧な口調（「です・ます」調）
+- 絵文字は1投稿につき2〜3個まで（🎉📍📅など情報を補助するもの）
+- 感嘆符（！）は1投稿につき最大2回まで
+- 煽り表現（「絶対」「必見」「今だけ」等）は使わない
+
+【必ず含める情報】
+1. イベント名（正式名称）
+2. 開催日時（曜日も明記）
+3. 開催場所（住所またはアクセス方法）
+4. 参加費（無料の場合も明記）
+5. 申込方法（URL、LINE、電話など）
+6. 申込締切日
+7. お問い合わせ先
+
+【文字数の目安】
+- X（Twitter）：140文字以内
+- Instagram：150〜200文字
+- LINE：100〜150文字
+
+【出力形式】
+入力された情報をもとに、上記ルールに従った告知文を
+各SNS向けに3パターン出力してください。
+                </pre>
+            </div>
+
+            <h4>Step 4：テスト実行</h4>
+            <p>作成したGemをテストします。サンプルのイベント情報を入力して、期待通りの出力が得られるか確認します。</p>
+
+            <div class="prompt-example">
+                <h5>入力例</h5>
+                <pre>
+以下のイベントの告知文を作成してください。
+
+イベント名：春のワークショップ「はじめてのハンドメイドアクセサリー」
+日時：2025年3月15日（土）13:00〜16:00
+場所：渋谷区民会館 第2会議室（渋谷駅徒歩5分）
+参加費：3,500円（材料費込み）
+定員：15名
+申込：公式LINEから「ワークショップ参加希望」と送信
+締切：3月10日（月）
+問い合わせ：info@example.com
+                </pre>
+            </div>
+
+            <div class="output-example">
+                <h5>X（Twitter）向け出力例</h5>
+                <pre>
+🎉 春のワークショップ開催！
+「はじめてのハンドメイドアクセサリー」
+
+📅 3/15(土) 13:00〜16:00
+📍 渋谷区民会館 第2会議室
+💰 3,500円（材料費込み）
+
+初心者大歓迎です。公式LINEからお申込みください✨
+締切：3/10(月)
+
+#ハンドメイド #ワークショップ #渋谷
+                </pre>
+            </div>
+
+            <h4>Step 5：チームで共有</h4>
+            <p>作成したGemは、チームメンバーに共有リンクを送ることで、全員が同じGemを使えるようになります。</p>
+
+            <div class="tip-highlight">
+                <strong>ポイント：</strong>Gemini Advancedでは、作成したGemを組織内で共有できます。無料版では個人利用のみとなりますが、同じ指示文をテンプレートとして共有することで対応可能です。
+            </div>
+        </section>
+
+        <section id="results">
+            <h2>導入効果と成果</h2>
+
+            <h3>定量的な効果</h3>
+            <div class="results-metrics">
+                <div class="metric-card">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-value">70%削減</div>
+                    <div class="metric-label">告知作成時間</div>
+                    <div class="metric-detail">1.5時間 → 約25分</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📝</div>
+                    <div class="metric-value">95%→0%</div>
+                    <div class="metric-label">文体修正率</div>
+                    <div class="metric-detail">ほぼ修正不要に</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">✓</div>
+                    <div class="metric-value">月3-4件→0件</div>
+                    <div class="metric-label">情報漏れ</div>
+                    <div class="metric-detail">必須項目チェック自動化</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-value">月10時間削減</div>
+                    <div class="metric-label">リーダーの確認工数</div>
+                    <div class="metric-detail">軽微な確認のみに</div>
+                </div>
+            </div>
+
+            <h3>Before / After 比較</h3>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>導入前</th>
+                            <th>導入後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>告知1件の作成時間</td>
+                            <td>約1.5時間</td>
+                            <td>約25分</td>
+                        </tr>
+                        <tr>
+                            <td>文体チェック・修正</td>
+                            <td>ほぼ毎回（1〜2往復）</td>
+                            <td>ほぼ不要</td>
+                        </tr>
+                        <tr>
+                            <td>必須情報の漏れ</td>
+                            <td>月3〜4件</td>
+                            <td>0件</td>
+                        </tr>
+                        <tr>
+                            <td>月間の告知関連工数</td>
+                            <td>45〜60時間</td>
+                            <td>15〜20時間</td>
+                        </tr>
+                        <tr>
+                            <td>担当者間の品質差</td>
+                            <td>大きい</td>
+                            <td>ほぼなし</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>定性的な効果</h3>
+
+            <div class="benefit-section">
+                <h4>ブランドイメージの統一</h4>
+                <p>誰が作成しても同じトーン＆マナーの告知文が出力されるため、SNSアカウント全体で統一感が生まれました。フォロワーからも「最近の投稿、読みやすくなった」という声が。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>新人でも即戦力に</h4>
+                <p>告知作成のルールを覚えなくても、Gemを使えば最初から品質の高い文章が作成できます。新しくチームに入ったメンバーも、初日から同じレベルのアウトプットが可能になりました。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>チームリーダーの負担軽減</h4>
+                <p>これまでチームリーダーが担っていた「文章の品質管理」がGemに委ねられ、リーダーはより戦略的な業務に集中できるようになりました。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>属人化の解消</h4>
+                <p>「この人がいないと告知が出せない」という状況がなくなりました。担当者が休暇中でも、他のメンバーが同じ品質で告知を作成できます。</p>
+            </div>
+
+            <div class="testimonial">
+                <blockquote>
+                    <p>「以前は『この告知、ちょっと雰囲気違うな』と思っても、どう直せばいいか伝えるのが難しかった。今はGemがルールを守ってくれるから、『Gemで作って』の一言で済む。チームの共通言語ができた感じです」</p>
+                    <cite>— マーケティングチーム リーダー</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="applications">
+            <h2>活用シーン別の設定例</h2>
+
+            <p>同社では用途に応じて4つのGemを使い分けています。それぞれの設定ポイントをご紹介します。</p>
+
+            <div class="application-grid">
+                <div class="application-card">
+                    <h4>🐦 X（Twitter）投稿用Gem</h4>
+                    <div class="gem-detail">
+                        <p><strong>特徴：</strong>140文字制限を意識したコンパクトな文章</p>
+                        <p><strong>設定ポイント：</strong></p>
+                        <ul>
+                            <li>文字数を140文字以内に収める</li>
+                            <li>ハッシュタグは2〜3個を自動提案</li>
+                            <li>絵文字で情報を視覚的に区分（📅📍💰）</li>
+                            <li>URLは別途貼る前提で本文を構成</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📸 Instagram投稿用Gem</h4>
+                    <div class="gem-detail">
+                        <p><strong>特徴：</strong>画像を補完する情報提供に特化</p>
+                        <p><strong>設定ポイント：</strong></p>
+                        <ul>
+                            <li>最初の1〜2行でイベントの魅力を伝える</li>
+                            <li>詳細情報は改行で見やすく整理</li>
+                            <li>関連ハッシュタグを10個程度提案</li>
+                            <li>「プロフィールのリンクから申込」を定型文に</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>💬 LINE公式アカウント用Gem</h4>
+                    <div class="gem-detail">
+                        <p><strong>特徴：</strong>スマホで読みやすい短文・段落構成</p>
+                        <p><strong>設定ポイント：</strong></p>
+                        <ul>
+                            <li>1メッセージ100〜150文字程度</li>
+                            <li>項目ごとに改行して箇条書き風に</li>
+                            <li>申込は「このトークに返信」を促す</li>
+                            <li>友だち限定感を出す表現を含める</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📧 メルマガ用Gem</h4>
+                    <div class="gem-detail">
+                        <p><strong>特徴：</strong>詳細な情報提供と丁寧な案内</p>
+                        <p><strong>設定ポイント：</strong></p>
+                        <ul>
+                            <li>件名のパターンを3案提示</li>
+                            <li>本文は導入→詳細→申込方法の構成</li>
+                            <li>過去参加者の声を入れる欄を設定</li>
+                            <li>P.S.欄に次回イベントの予告を含める</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>⚡ 緊急告知用Gem</h4>
+                    <div class="gem-detail">
+                        <p><strong>特徴：</strong>延期・中止・変更の迅速な告知</p>
+                        <p><strong>設定ポイント：</strong></p>
+                        <ul>
+                            <li>冒頭に【重要】【変更のお知らせ】を付与</li>
+                            <li>変更内容を明確に（before→after形式）</li>
+                            <li>お詫びの定型文を含める</li>
+                            <li>問い合わせ先を必ず記載</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>🎯 アプリプッシュ通知用Gem</h4>
+                    <div class="gem-detail">
+                        <p><strong>特徴：</strong>40文字以内で要点を伝える</p>
+                        <p><strong>設定ポイント：</strong></p>
+                        <ul>
+                            <li>タイトル：15文字以内</li>
+                            <li>本文：40文字以内</li>
+                            <li>アクションを促す動詞で終わる</li>
+                            <li>複数パターンを提示して選択</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips">
+            <h2>実践のコツ</h2>
+
+            <h3>Gem設定のポイント</h3>
+            <div class="tips-grid">
+                <div class="tip-item success">
+                    <h4>具体例を含める</h4>
+                    <p>「良い例」「悪い例」を指示に含めると、より精度の高い出力が得られます。過去の投稿で評判が良かったものをサンプルとして設定しましょう。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>禁止事項を明記する</h4>
+                    <p>「使わないでほしい表現」「避けるべきトーン」を明確に記載することで、ブランドイメージを損なう表現を防げます。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>必須項目をチェックリスト化</h4>
+                    <p>「必ず含める情報」を箇条書きで指定すると、情報漏れを防げます。足りない項目があればGemが確認を求めてくれます。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>段階的に改善する</h4>
+                    <p>最初から完璧を目指さず、運用しながら指示を調整していきましょう。「こういう表現が欲しい」「ここはもう少し短く」など、使いながら精度を上げていきます。</p>
+                </div>
+            </div>
+
+            <h3>チームでの運用ポイント</h3>
+            <div class="tips-grid">
+                <div class="tip-item success">
+                    <h4>Gemの指示は共同編集</h4>
+                    <p>Gemの指示内容はチームで共有し、改善点があれば随時更新。ドキュメントとして別途管理しておくと、変更履歴も追えます。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>出力は最終確認を</h4>
+                    <p>Gemが生成した文章はそのまま投稿せず、必ず人の目で最終確認を。固有名詞や日時の誤りがないかチェックしましょう。</p>
+                </div>
+
+                <div class="tip-item warning">
+                    <h4>定期的な見直しを</h4>
+                    <p>ブランドのトーン変更、新サービスの追加、SNSの仕様変更などに合わせて、Gemの設定も定期的に見直しましょう。四半期に1回程度の棚卸しがおすすめです。</p>
+                </div>
+            </div>
+
+            <h3>よくあるQ&A</h3>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <h4>Q：Gemは何個まで作れますか？</h4>
+                    <p>Gemini Advancedでは、必要な数だけGemを作成できます。用途別に分けて管理することをおすすめします。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q：無料版のGeminiでもできますか？</h4>
+                    <p>無料版ではGem機能が制限される場合があります。その場合は、同じ指示文をテンプレートとして保存し、毎回貼り付けて使う運用でも対応可能です。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q：出力された文章をそのまま使っていいですか？</h4>
+                    <p>基本的な品質は担保されますが、固有名詞、日時、URLなどは必ず人の目で確認してから投稿してください。AIは事実確認が苦手な場合があります。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary">
+            <h2>まとめ</h2>
+
+            <p>本記事では、Gemini Gemを活用して告知文章のスタイルを標準化した事例をご紹介しました。</p>
+
+            <div class="summary-points">
+                <h3>本記事のポイント</h3>
+                <ul>
+                    <li><strong>課題：</strong>担当者ごとの文体のばらつき、必須情報の漏れ、チェック工数の増大</li>
+                    <li><strong>解決策：</strong>Gemini Gemでルールを設定し、誰が作っても同じ品質の告知文を生成</li>
+                    <li><strong>効果：</strong>作成時間70%削減、情報漏れゼロ、リーダーの確認工数月10時間削減</li>
+                    <li><strong>応用：</strong>SNS別、用途別にGemを使い分けることで様々な告知に対応可能</li>
+                </ul>
+            </div>
+
+            <div class="next-action">
+                <h3>今日から試せるアクション</h3>
+                <ol>
+                    <li>Google Gemini（gemini.google.com）にアクセス</li>
+                    <li>「Gem マネージャー」から新しいGemを作成</li>
+                    <li>自社の告知で使う文体ルール・必須情報を整理して設定</li>
+                    <li>過去の告知で良かった投稿をサンプルとして指示に含める</li>
+                    <li>テスト生成して出力を確認、必要に応じて指示を調整</li>
+                </ol>
+            </div>
+
+            <p>告知文章の作成は「誰でもできる」業務に見えて、実は暗黙のルールやセンスに依存しがちです。Gemを活用することで、そのルールを形式知化し、チーム全体で共有できるようになります。「担当者が変わっても同じ品質」を実現する第一歩として、ぜひお試しください。</p>
+
+            <div class="cta-box">
+                <h3>AI活用による業務効率化のご相談</h3>
+                <p>「うちでもGemを使ってみたいけど設定が難しそう」「他にもAIで効率化できる業務がないか知りたい」という方は、お気軽にご相談ください。貴社の業務に合わせた活用方法をご提案いたします。</p>
+                <a href="/contact" class="cta-button">無料相談を申し込む</a>
+            </div>
+        </section>
+
+        <footer class="article-footer">
+            <div class="tag-list">
+                <span class="tag">Gemini</span>
+                <span class="tag">Gem</span>
+                <span class="tag">告知文章</span>
+                <span class="tag">SNS投稿</span>
+                <span class="tag">標準化</span>
+                <span class="tag">業務効率化</span>
+                <span class="tag">ブランド統一</span>
+                <span class="tag">文章作成</span>
+            </div>
+            <div class="share-buttons">
+                <span>この記事をシェア：</span>
+                <a href="#" class="share-button twitter">X</a>
+                <a href="#" class="share-button facebook">Facebook</a>
+                <a href="#" class="share-button linkedin">LinkedIn</a>
+            </div>
+        </footer>
+    </article>
+
+    <aside class="related-articles">
+        <h3>関連記事</h3>
+        <ul>
+            <li><a href="/blog/ai-gemini-survey-test">Gemini×アンケートテスト準備で準備時間75%削減</a></li>
+            <li><a href="/blog/ai-gemini-script-review">Gemini×スクリプトレビューでGASコードの品質向上</a></li>
+            <li><a href="/blog/ai-notebooklm-slack-reaction">NotebookLM×Slackスタンプ集計で出欠確認を自動化</a></li>
+        </ul>
+    </aside>
+</body>
+</html>
