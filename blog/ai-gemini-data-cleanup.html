@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Geminiを活用して複雑なデータの整理・整形を自動化。重複データの統合、時系列の並べ替え、フォーマット統一など、手作業では時間のかかるデータクレンジングを効率化します。">
+    <meta name="keywords" content="Gemini, データ整理, データクレンジング, AI活用, Excel, スプレッドシート, 業務効率化">
+    <title>Gemini×データ整理｜複雑な顧客・売上データの整形をAIで自動化</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Gemini×データ整理｜複雑な顧客・売上データの整形をAIで自動化</h1>
+            <p class="article-meta">
+                <time datetime="2024-12-27">2024年12月27日</time>
+                <span class="category">AI活用事例</span>
+                <span class="reading-time">読了時間：約7分</span>
+            </p>
+        </header>
+
+        <nav class="table-of-contents">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#introduction">はじめに</a></li>
+                <li><a href="#background">導入の背景と課題</a></li>
+                <li><a href="#solution">Geminiを活用したデータ整理・整形</a></li>
+                <li><a href="#results">導入効果と成果</a></li>
+                <li><a href="#applications">データ整理の応用パターン</a></li>
+                <li><a href="#tips">実践のコツ</a></li>
+                <li><a href="#summary">まとめ</a></li>
+            </ol>
+        </nav>
+
+        <section id="introduction">
+            <h2>はじめに</h2>
+            <p>「顧客データが重複していて、同じ人が複数行に分かれている」「売上データの日付形式がバラバラで集計しづらい」「担当者によって入力ルールが違っていて、データが汚い」——日々の業務で蓄積されたデータを活用しようとした時、このような「データの整理」に頭を悩ませた経験はないでしょうか。</p>
+
+            <p>Excelの関数やスプレッドシートの機能を駆使すれば対応できる場合もありますが、複雑な条件での整理や、パターンが一定しないデータの処理は、手作業に頼らざるを得ないことも多くあります。そして手作業は、時間がかかる上にミスも発生しやすい作業です。</p>
+
+            <p>本記事では、Google Geminiを活用して、複雑なデータの整理・整形を自動化した事例をご紹介します。データをGeminiに渡して指示するだけで、重複の統合、フォーマット統一、時系列整理などが短時間で完了します。</p>
+
+            <div class="point-box">
+                <h3>この記事でわかること</h3>
+                <ul>
+                    <li>複雑なデータ整理をAIで自動化する方法</li>
+                    <li>Geminiを使ったデータクレンジングの具体的な手順</li>
+                    <li>顧客データ、売上データ、在庫データへの応用パターン</li>
+                    <li>ミスなく効率的にデータを整理するコツ</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="background">
+            <h2>導入の背景と課題</h2>
+
+            <h3>企業プロフィール</h3>
+            <div class="company-profile">
+                <table>
+                    <tr>
+                        <th>業種</th>
+                        <td>住宅リフォーム業</td>
+                    </tr>
+                    <tr>
+                        <th>従業員数</th>
+                        <td>15名</td>
+                    </tr>
+                    <tr>
+                        <th>管理データ</th>
+                        <td>顧客台帳、工事履歴、見積・請求データ</td>
+                    </tr>
+                    <tr>
+                        <th>データ管理ツール</th>
+                        <td>Excel、Googleスプレッドシート</td>
+                    </tr>
+                    <tr>
+                        <th>データ件数</th>
+                        <td>顧客約800件、工事履歴約2,000件</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>データ管理の現状</h3>
+            <p>同社では、創業以来15年分の顧客データと工事履歴をExcelで管理していました。長年にわたり複数の担当者が入力を行ってきた結果、データの「汚れ」が蓄積し、以下のような状態になっていました。</p>
+
+            <div class="data-issues">
+                <div class="issue-example">
+                    <h4>顧客データの問題例</h4>
+                    <table class="example-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>顧客名</th>
+                                <th>住所</th>
+                                <th>電話番号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>山田太郎</td>
+                                <td>東京都新宿区西新宿1-1-1</td>
+                                <td>03-1234-5678</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>山田 太郎</td>
+                                <td>新宿区西新宿1丁目1番1号</td>
+                                <td>03(1234)5678</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>ヤマダタロウ</td>
+                                <td>東京都新宿区西新宿1-1-1</td>
+                                <td>0312345678</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="issue-note">↑ 同一人物が表記揺れにより3件に分散</p>
+                </div>
+            </div>
+
+            <h4>直面していた課題</h4>
+
+            <div class="challenge-box">
+                <h5>課題1：同一顧客の重複データ</h5>
+                <p>同じ顧客が「山田太郎」「山田 太郎」「ヤマダタロウ」など異なる表記で登録されており、顧客ごとの工事履歴を正確に把握できない状態でした。DMを送ると同じ人に複数届いてしまうことも。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題2：住所・電話番号のフォーマット不統一</h5>
+                <p>住所は「東京都」の有無、番地の書き方（1-1-1 vs 1丁目1番1号）がバラバラ。電話番号もハイフンの有無、カッコ書きなど形式が統一されておらず、検索や照合に支障をきたしていました。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題3：工事履歴の期間データが複雑</h5>
+                <p>同じ顧客への複数回の工事が、契約日・工事開始日・完了日でバラバラに管理されており、「この顧客への工事履歴を時系列で見たい」という単純な要望に応えるのにも時間がかかっていました。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題4：手作業での整理はミスが多い</h5>
+                <p>一度、手作業で重複データの統合を試みましたが、800件のデータを一つずつ確認して統合する作業は膨大で、結局ミスも多く発生。途中で断念してしまいました。</p>
+            </div>
+
+            <div class="problem-impact">
+                <h4>課題による影響</h4>
+                <ul>
+                    <li>正確な顧客数が把握できない（実質600件程度なのに800件と表示）</li>
+                    <li>リピート顧客の抽出に1件ずつ目視確認が必要</li>
+                    <li>DM発送で同一人物に複数送付（コスト増・信頼低下）</li>
+                    <li>データ分析による営業戦略立案ができない</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="solution">
+            <h2>Geminiを活用したデータ整理・整形</h2>
+
+            <h3>導入したソリューション</h3>
+            <p>同社では、Google Geminiを活用して、これまで手作業では困難だったデータの整理・整形を自動化しました。Excelのデータをコピー＆ペーストでGeminiに渡し、整理ルールを指示するだけで、クリーンなデータが出力されます。</p>
+
+            <div class="solution-overview">
+                <h4>システム構成</h4>
+                <ul>
+                    <li><strong>使用ツール：</strong>Google Gemini（無料版でも利用可能）</li>
+                    <li><strong>入力：</strong>Excelデータ（コピー＆ペースト）</li>
+                    <li><strong>出力：</strong>整理済みデータ（CSV形式など）</li>
+                    <li><strong>対応データ量：</strong>1回あたり100〜200行程度（分割処理で大量データも対応可）</li>
+                </ul>
+            </div>
+
+            <h3>具体的な手順</h3>
+
+            <h4>Step 1：データの準備</h4>
+            <p>整理したいデータをExcelやスプレッドシートで開き、ヘッダー行を含めてコピーします。</p>
+
+            <div class="tip-highlight">
+                <strong>ポイント：</strong>一度に処理するデータ量は100〜200行程度が推奨です。それ以上の場合は分割して処理し、後で結合します。AIの処理精度を保つためにも、適度なサイズに分けることが重要です。
+            </div>
+
+            <h4>Step 2：Geminiにデータを貼り付け</h4>
+            <p>Google Geminiを開き、コピーしたデータを貼り付けます。データの後に、整理ルールを指示します。</p>
+
+            <div class="prompt-example">
+                <h5>重複統合のプロンプト例</h5>
+                <pre>
+以下の顧客データを整理してください。
+
+【整理ルール】
+1. 同一人物と思われるデータを統合
+   - 氏名の表記揺れ（スペース有無、カタカナ/漢字）を考慮
+   - 住所が類似している場合も同一人物の可能性あり
+   - 電話番号が一致する場合は同一人物
+
+2. フォーマットの統一
+   - 氏名：姓名の間にスペースなし（例：山田太郎）
+   - 電話番号：ハイフン区切り（例：03-1234-5678）
+   - 住所：都道府県から記載、番地はハイフン区切り
+
+3. 出力形式
+   - CSV形式で出力
+   - 統合した場合は、最新の情報を採用
+   - 統合元のデータは「統合元ID」列に記録
+
+【データ】
+No.,顧客名,住所,電話番号
+1,山田太郎,東京都新宿区西新宿1-1-1,03-1234-5678
+2,山田 太郎,新宿区西新宿1丁目1番1号,03(1234)5678
+3,ヤマダタロウ,東京都新宿区西新宿1-1-1,0312345678
+...
+                </pre>
+            </div>
+
+            <h4>Step 3：整理済みデータを取得</h4>
+            <p>Geminiが整理ルールに従ってデータを処理し、クリーンなデータを出力します。</p>
+
+            <div class="output-example">
+                <h5>Geminiの出力例</h5>
+                <pre>
+【整理結果】
+
+統合No.,顧客名,住所,電話番号,統合元ID
+1,山田太郎,東京都新宿区西新宿1-1-1,03-1234-5678,"1,2,3"
+
+【処理サマリー】
+- 処理前データ数：3件
+- 処理後データ数：1件
+- 統合件数：3件 → 1件に統合
+- 統合理由：氏名の表記揺れ、電話番号一致、住所類似
+                </pre>
+            </div>
+
+            <h4>Step 4：複数の整理タスクを組み合わせる</h4>
+            <p>重複統合に加えて、時系列整理やカテゴリ分類なども依頼できます。</p>
+
+            <div class="prompt-example">
+                <h5>時系列整理のプロンプト例</h5>
+                <pre>
+以下の工事履歴データを整理してください。
+
+【整理ルール】
+1. 顧客ごとにグループ化
+2. 各顧客内で工事日の古い順にソート
+3. 連続する期間（完了日と次の開始日が近い）は一連の工事として統合
+4. 顧客ごとの工事回数と総額を集計
+
+【データ】
+顧客名,工事内容,開始日,完了日,金額
+山田太郎,屋根修理,2023-03-15,2023-03-20,150000
+山田太郎,外壁塗装,2023-08-01,2023-08-10,450000
+田中花子,キッチンリフォーム,2023-05-01,2023-05-15,800000
+...
+                </pre>
+            </div>
+
+            <div class="output-example">
+                <h5>時系列整理の出力例</h5>
+                <pre>
+【顧客別工事履歴】
+
+■ 山田太郎（工事回数：2回、累計：600,000円）
+  1. 2023-03-15〜03-20：屋根修理（150,000円）
+  2. 2023-08-01〜08-10：外壁塗装（450,000円）
+
+■ 田中花子（工事回数：1回、累計：800,000円）
+  1. 2023-05-01〜05-15：キッチンリフォーム（800,000円）
+
+【全体サマリー】
+- 総顧客数：2名
+- 総工事件数：3件
+- 総売上：1,400,000円
+                </pre>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2>導入効果と成果</h2>
+
+            <h3>定量的な効果</h3>
+            <div class="results-metrics">
+                <div class="metric-card">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-value">90%削減</div>
+                    <div class="metric-label">データ整理時間</div>
+                    <div class="metric-detail">8時間 → 45分</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📊</div>
+                    <div class="metric-value">200件削減</div>
+                    <div class="metric-label">重複データ</div>
+                    <div class="metric-detail">800件 → 600件に統合</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">✓</div>
+                    <div class="metric-value">ほぼゼロ</div>
+                    <div class="metric-label">整理ミス</div>
+                    <div class="metric-detail">手作業のミス解消</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💰</div>
+                    <div class="metric-value">¥0</div>
+                    <div class="metric-label">追加コスト</div>
+                    <div class="metric-detail">無料ツールで実現</div>
+                </div>
+            </div>
+
+            <h3>Before / After 比較</h3>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>導入前</th>
+                            <th>導入後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>800件のデータ整理</td>
+                            <td>約8時間（手作業）</td>
+                            <td>約45分（AI処理）</td>
+                        </tr>
+                        <tr>
+                            <td>重複の検出・統合</td>
+                            <td>目視確認が必要</td>
+                            <td>AIが自動判定</td>
+                        </tr>
+                        <tr>
+                            <td>フォーマット統一</td>
+                            <td>関数で対応（限界あり）</td>
+                            <td>自然言語で指示可能</td>
+                        </tr>
+                        <tr>
+                            <td>整理ミス</td>
+                            <td>5〜10%程度発生</td>
+                            <td>ほぼゼロ</td>
+                        </tr>
+                        <tr>
+                            <td>時系列の整理・集計</td>
+                            <td>Excel関数で複雑な処理</td>
+                            <td>日本語で指示するだけ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>定性的な効果</h3>
+
+            <div class="benefit-section">
+                <h4>正確な顧客数の把握</h4>
+                <p>重複を統合した結果、実際の顧客数は600件であることが判明。「800件の顧客がいる」という認識を改め、正確なデータに基づいた経営判断ができるようになりました。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>リピート顧客の可視化</h4>
+                <p>顧客ごとの工事履歴が正確に紐付けられたことで、「過去3年で2回以上工事をしてくれたリピート顧客」の抽出が簡単にできるようになりました。リピート促進施策の対象を明確に絞り込めます。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>DM発送コストの削減</h4>
+                <p>重複送付がなくなり、DM発送コストが約25%削減。また、「同じ人に何通も届く」という顧客からのクレームもなくなり、信頼性が向上しました。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>データ活用への意識変化</h4>
+                <p>「データは汚いから使えない」と諦めていた状態から、「AIで整理すれば活用できる」という前向きな意識に変化。定期的なデータメンテナンスを行う習慣ができました。</p>
+            </div>
+
+            <div class="testimonial">
+                <blockquote>
+                    <p>「15年分の汚れたデータを整理するなんて、以前は考えられませんでした。手作業で試したときは3日かかって途中で断念。Geminiを使ったら1時間足らずで終わって、正直驚きました。これでようやくデータを活用した営業ができます」</p>
+                    <cite>— 営業部 マネージャー</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="applications">
+            <h2>データ整理の応用パターン</h2>
+
+            <p>顧客データ以外にも、様々なデータ整理に応用できます。</p>
+
+            <div class="application-grid">
+                <div class="application-card">
+                    <h4>📦 在庫データの整理</h4>
+                    <div class="application-detail">
+                        <p><strong>課題：</strong>商品名の表記揺れ（「Tシャツ白M」「白Tシャツ Mサイズ」など）で在庫数が正確に把握できない</p>
+                        <p><strong>解決：</strong>AIが商品名を正規化し、同一商品の在庫を統合。正確な在庫数を算出</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>💰 売上データの集計</h4>
+                    <div class="application-detail">
+                        <p><strong>課題：</strong>日付形式のばらつき、商品カテゴリの不統一で集計に時間がかかる</p>
+                        <p><strong>解決：</strong>日付フォーマットを統一、カテゴリを自動判定して正確な売上分析を実現</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📇 名刺データの整理</h4>
+                    <div class="application-detail">
+                        <p><strong>課題：</strong>名刺管理アプリからエクスポートしたデータの表記揺れ、重複登録</p>
+                        <p><strong>解決：</strong>同一人物の重複を検出・統合し、連絡先リストをクリーンに整理</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📅 勤怠データの整理</h4>
+                    <div class="application-detail">
+                        <p><strong>課題：</strong>手書きタイムカードをExcelに転記したデータの入力ミス、形式不統一</p>
+                        <p><strong>解決：</strong>時刻形式を統一、異常値（25時など）を検出してデータ品質を向上</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📝 アンケート回答の整理</h4>
+                    <div class="application-detail">
+                        <p><strong>課題：</strong>自由記述のアンケート回答を分類・集計するのに時間がかかる</p>
+                        <p><strong>解決：</strong>AIが回答内容を分析し、カテゴリ分類と傾向分析を自動化</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>🏷️ 商品マスタの整備</h4>
+                    <div class="application-detail">
+                        <p><strong>課題：</strong>長年の運用で商品マスタに重複や不要データが蓄積</p>
+                        <p><strong>解決：</strong>類似商品の検出、廃番商品の特定、カテゴリ再整理を自動化</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips">
+            <h2>実践のコツ</h2>
+
+            <h3>データ準備のポイント</h3>
+            <div class="tips-grid">
+                <div class="tip-item success">
+                    <h4>ヘッダー行を必ず含める</h4>
+                    <p>データをコピーする際は、列名（ヘッダー）を必ず含めてください。AIがデータの意味を正確に理解するために重要です。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>適度なサイズに分割する</h4>
+                    <p>一度に処理するデータは100〜200行程度が推奨です。大量データは分割して処理し、最後に結合します。精度を保つために重要なポイントです。</p>
+                </div>
+
+                <div class="tip-item warning">
+                    <h4>機密情報の取り扱いに注意</h4>
+                    <p>個人情報や機密データを扱う場合は、社内のセキュリティポリシーを確認してください。必要に応じて、データを匿名化してから処理することも検討しましょう。</p>
+                </div>
+            </div>
+
+            <h3>プロンプトのコツ</h3>
+            <div class="tips-grid">
+                <div class="tip-item success">
+                    <h4>整理ルールを具体的に書く</h4>
+                    <p>「重複を削除」だけでなく、「氏名のスペース有無、カタカナ/漢字の違いを同一人物として統合」のように、具体的な判定基準を示すと精度が上がります。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>出力形式を指定する</h4>
+                    <p>「CSV形式で出力」「表形式で出力」など、出力形式を指定すると、そのままExcelに貼り付けて使える形式で返ってきます。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>処理サマリーを依頼する</h4>
+                    <p>「統合した件数と理由もあわせて出力してください」と依頼すると、何がどう変わったか確認できます。品質チェックに役立ちます。</p>
+                </div>
+            </div>
+
+            <h3>よくあるQ&A</h3>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <h4>Q：数千件のデータも処理できますか？</h4>
+                    <p>分割処理すれば対応可能です。100〜200件ずつに分けて処理し、結果を結合します。分割の際は、同一人物が複数のバッチに分かれないよう、事前にソートしておくと良いでしょう。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q：AIの判定は100%正確ですか？</h4>
+                    <p>高精度ですが、100%ではありません。特に微妙なケース（「山田太郎」と「山田太朗」は同一人物か？など）は、AIに「判定が難しいケースはリストアップして」と依頼し、最終的に人が確認することをおすすめします。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q：Excelの関数より良いのですか？</h4>
+                    <p>ケースバイケースです。単純な変換（日付フォーマット統一など）はExcel関数の方が効率的な場合も。一方、「表記揺れを考慮して同一人物を判定」のような複雑な条件はAIの方が得意です。使い分けが重要です。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary">
+            <h2>まとめ</h2>
+
+            <p>本記事では、Geminiを活用して複雑なデータの整理・整形を自動化した事例をご紹介しました。</p>
+
+            <div class="summary-points">
+                <h3>本記事のポイント</h3>
+                <ul>
+                    <li><strong>課題：</strong>長年蓄積されたデータの重複・フォーマット不統一で、データ活用ができない状態だった</li>
+                    <li><strong>解決策：</strong>GeminiにデータをコピペしてMK整理ルールを指示するだけで、クリーンなデータが出力される</li>
+                    <li><strong>効果：</strong>データ整理時間90%削減、重複200件を統合、整理ミスほぼゼロ</li>
+                    <li><strong>応用：</strong>顧客データ、在庫、売上、勤怠、アンケートなど様々なデータに適用可能</li>
+                </ul>
+            </div>
+
+            <div class="next-action">
+                <h3>今日から試せるアクション</h3>
+                <ol>
+                    <li>整理したいデータ（Excel）を1つ選ぶ</li>
+                    <li>100行程度をコピーしてGoogle Geminiに貼り付け</li>
+                    <li>「このデータの重複を検出して統合してください」と依頼</li>
+                    <li>出力結果を確認し、必要に応じてルールを調整</li>
+                    <li>うまくいったら、残りのデータも同様に処理</li>
+                </ol>
+            </div>
+
+            <p>「データは汚いから使えない」と諦めていた方も、AIを活用すれば短時間でクリーンなデータに整理できます。まずは手元の小さなデータで試してみて、効果を実感してください。</p>
+
+            <div class="cta-box">
+                <h3>AI活用による業務効率化のご相談</h3>
+                <p>「うちのデータも整理したい」「他にもAIで効率化できる業務がないか知りたい」という方は、お気軽にご相談ください。貴社の業務に合わせた活用方法をご提案いたします。</p>
+                <a href="/contact" class="cta-button">無料相談を申し込む</a>
+            </div>
+        </section>
+
+        <footer class="article-footer">
+            <div class="tag-list">
+                <span class="tag">Gemini</span>
+                <span class="tag">データ整理</span>
+                <span class="tag">データクレンジング</span>
+                <span class="tag">Excel</span>
+                <span class="tag">重複削除</span>
+                <span class="tag">業務効率化</span>
+                <span class="tag">顧客管理</span>
+            </div>
+            <div class="share-buttons">
+                <span>この記事をシェア：</span>
+                <a href="#" class="share-button twitter">X</a>
+                <a href="#" class="share-button facebook">Facebook</a>
+                <a href="#" class="share-button linkedin">LinkedIn</a>
+            </div>
+        </footer>
+    </article>
+
+    <aside class="related-articles">
+        <h3>関連記事</h3>
+        <ul>
+            <li><a href="/blog/ai-gemini-document-toc">Gemini×資料整理で目次作成・構成整理を自動化</a></li>
+            <li><a href="/blog/ai-gemini-gem-announcement">Gemini Gem×告知文章標準化で品質を統一</a></li>
+            <li><a href="/blog/ai-gemini-survey-test">Gemini×アンケートテスト準備で準備時間75%削減</a></li>
+        </ul>
+    </aside>
+</body>
+</html>
