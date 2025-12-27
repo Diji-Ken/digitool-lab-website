@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChatGPTとGoogle Apps Script（GAS）を活用し、非エンジニアでもGoogleカレンダー連動の工数管理ツールを自作。時間集計の自動化で業務効率化を実現した中小企業の成功事例をご紹介します。">
+    <meta name="keywords" content="ChatGPT, GAS, Google Apps Script, 工数管理, 時間管理, カレンダー連携, 非エンジニア, 業務効率化, AI活用, 中小企業DX">
+    <title>【実践事例】ChatGPT×GASで非エンジニアが工数管理ツールを自作！カレンダー連動で業務時間を自動集計 | AI活用事例</title>
+
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --accent-color: #FFC107;
+            --accent-light: #FFE082;
+            --text-color: #263238;
+            --text-light: #546E7A;
+            --bg-color: #FAFAFA;
+            --bg-accent: #E8F5E9;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(46, 125, 50, 0.08);
+            --shadow-md: 0 4px 16px rgba(46, 125, 50, 0.12);
+            --shadow-lg: 0 8px 32px rgba(46, 125, 50, 0.16);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ヘッダースタイル */
+        .article-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, #66BB6A 100%);
+            color: var(--white);
+            padding: 60px 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,193,7,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-label::before {
+            content: '⏱️';
+        }
+
+        .article-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-description {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        /* メインビジュアル */
+        .main-visual {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .visual-box {
+            background: var(--bg-accent);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .visual-box.before {
+            border: 2px dashed #BDBDBD;
+            background: #FAFAFA;
+        }
+
+        .visual-box.after {
+            border: 2px solid var(--primary-color);
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        }
+
+        .visual-box-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .visual-box-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .visual-box-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .visual-box.before .visual-box-value {
+            color: #E53935;
+        }
+
+        .visual-box.after .visual-box-value {
+            color: var(--primary-dark);
+        }
+
+        .visual-arrow {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* 企業紹介カード */
+        .company-profile {
+            background: linear-gradient(145deg, var(--white) 0%, #F5F5F5 100%);
+            border-radius: var(--border-radius);
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(46, 125, 50, 0.1);
+        }
+
+        .company-profile-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--bg-accent);
+        }
+
+        .company-profile-title::before {
+            content: '🏢';
+            font-size: 1.4rem;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .profile-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .profile-item-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--bg-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .profile-item-content {
+            flex: 1;
+        }
+
+        .profile-item-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .profile-item-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        /* セクションスタイル */
+        .content-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--bg-accent);
+        }
+
+        .section-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .section-title-group {
+            flex: 1;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .section-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* 課題カード */
+        .challenge-card {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 5px solid #FF9800;
+        }
+
+        .challenge-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #E65100;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .challenge-title::before {
+            content: '⚠️';
+        }
+
+        .challenge-list {
+            list-style: none;
+        }
+
+        .challenge-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px dashed rgba(230, 81, 0, 0.2);
+        }
+
+        .challenge-list li:last-child {
+            border-bottom: none;
+        }
+
+        .challenge-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #E65100;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* ソリューションボックス */
+        .solution-box {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 5px solid #1976D2;
+        }
+
+        .solution-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #1565C0;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .solution-title::before {
+            content: '💡';
+        }
+
+        /* ステップガイド */
+        .step-guide {
+            margin: 30px 0;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-number-box {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(145deg, var(--primary-light) 0%, var(--primary-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .step-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* コードブロック風 */
+        .code-style-box {
+            background: #263238;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 25px 0;
+            color: #ECEFF1;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-style-box::before {
+            content: 'ChatGPTへのプロンプト例';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .code-style-box .prompt-text {
+            color: #80CBC4;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+
+        /* AIサポートボックス */
+        .ai-support-box {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid var(--accent-color);
+        }
+
+        .ai-support-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #F57F17;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .ai-support-title::before {
+            content: '🤖';
+        }
+
+        /* 成果メトリクス */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(145deg, var(--white) 0%, var(--bg-accent) 100%);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(46, 125, 50, 0.2);
+            transition: var(--transition);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .metric-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* 声ボックス */
+        .voice-box {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .voice-box::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--bg-accent);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .voice-content {
+            position: relative;
+            z-index: 1;
+            padding-left: 30px;
+            font-style: italic;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .voice-author {
+            margin-top: 15px;
+            padding-left: 30px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* 機能リスト */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 20px;
+            background: var(--bg-accent);
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        /* ポイントカード */
+        .point-card {
+            background: linear-gradient(135deg, var(--bg-accent) 0%, #C8E6C9 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 25px 0;
+        }
+
+        .point-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .point-title::before {
+            content: '💎';
+        }
+
+        /* CTAボックス */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            text-align: center;
+            color: var(--white);
+            margin: 40px 0;
+        }
+
+        .cta-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        /* ワークフロー表示 */
+        .workflow-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            padding: 30px;
+            background: #F5F5F5;
+            border-radius: var(--border-radius);
+        }
+
+        .workflow-item {
+            background: var(--white);
+            padding: 18px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--text-color);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .workflow-item.highlight {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+            color: var(--white);
+        }
+
+        .workflow-arrow {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* ツール表示 */
+        .tools-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .tool-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .tool-role {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* スクロール効果 */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 15px;
+            }
+
+            .article-header {
+                padding: 40px 25px;
+            }
+
+            .article-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .main-visual {
+                padding: 25px;
+            }
+
+            .visual-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .visual-arrow {
+                transform: rotate(90deg);
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-display {
+                flex-direction: column;
+            }
+
+            .workflow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="article-container">
+        <!-- ヘッダー -->
+        <header class="article-header">
+            <div class="header-label">工数管理の自動化</div>
+            <h1>ChatGPT×GASで非エンジニアが<br>工数管理ツールを自作！<br>カレンダー連動で業務時間を自動集計</h1>
+            <p class="header-description">
+                プログラミング未経験でも、ChatGPTのサポートでGoogleカレンダー連携の工数管理ツールを開発。
+                毎月の業務時間集計を自動化し、正確な工数把握と改善サイクルの構築を実現した事例をご紹介します。
+            </p>
+        </header>
+
+        <!-- メインビジュアル -->
+        <div class="main-visual scroll-fade">
+            <div class="visual-grid">
+                <div class="visual-box before">
+                    <div class="visual-box-icon">📊</div>
+                    <div class="visual-box-label">導入前</div>
+                    <div class="visual-box-value">手作業で工数集計<br>月8時間かかる</div>
+                </div>
+                <div class="visual-arrow">→</div>
+                <div class="visual-box after">
+                    <div class="visual-box-icon">⚡</div>
+                    <div class="visual-box-label">導入後</div>
+                    <div class="visual-box-value">ボタン1つで完了<br>5分で集計完了</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 企業プロフィール -->
+        <div class="company-profile scroll-fade">
+            <div class="company-profile-title">導入企業プロフィール</div>
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <div class="profile-item-icon">🏭</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">業種</div>
+                        <div class="profile-item-value">広告代理店</div>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <div class="profile-item-icon">👥</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">従業員数</div>
+                        <div class="profile-item-value">14名</div>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <div class="profile-item-icon">🎯</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">対象業務</div>
+                        <div class="profile-item-value">工数管理・業務時間集計</div>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <div class="profile-item-icon">🔧</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">使用ツール</div>
+                        <div class="profile-item-value">ChatGPT + Google Apps Script</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 課題セクション -->
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Challenge</div>
+                    <h2 class="section-title">抱えていた課題</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <p>
+                    同社では、複数のクライアント案件を並行して進める中で、各プロジェクトにどれだけの時間を
+                    投入しているかを正確に把握する必要がありました。しかし、従来の方法では様々な課題が
+                    浮き彫りになっていました。
+                </p>
+
+                <div class="challenge-card">
+                    <div class="challenge-title">従来の工数管理における問題点</div>
+                    <ul class="challenge-list">
+                        <li>毎月どのプロジェクトに何時間かけているか把握したいが、手作業での集計は膨大な手間</li>
+                        <li>Excelへの入力漏れや記入ミスが頻発し、正確な工数データが取れない</li>
+                        <li>業務カテゴリ別（クライアント作業・社内作業・会議等）の時間配分が見えにくい</li>
+                        <li>エンジニアではないため、自分でツールを作成することは不可能だと諦めていた</li>
+                    </ul>
+                </div>
+
+                <p>
+                    特に問題だったのは、「工数管理の重要性は理解しているが、その集計作業自体に時間を
+                    取られてしまう」という矛盾でした。本来、工数を把握することで業務改善につなげたいのに、
+                    集計作業が負担となり、結局は「だいたいの感覚」で業務を進めてしまう状態が続いていました。
+                </p>
+
+                <div class="voice-box">
+                    <div class="voice-content">
+                        「Googleカレンダーには予定を細かく入れているのに、それを月末にExcelに転記するのが
+                        本当に面倒で...。カレンダーから自動で集計できたらいいのにと思っていましたが、
+                        プログラミングはまったくわからないので諦めていました。」
+                    </div>
+                    <div class="voice-author">― 営業企画担当者</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 施策セクション -->
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Solution</div>
+                    <h2 class="section-title">実施した施策</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <p>
+                    同社では、ChatGPTをプログラミングの「先生」として活用し、Google Apps Script（GAS）を
+                    使ったGoogleカレンダー連携の工数管理ツールを自作しました。プログラミング経験ゼロの
+                    担当者が、AIのサポートを受けながらツール開発に成功した事例です。
+                </p>
+
+                <div class="solution-box">
+                    <div class="solution-title">ChatGPT×GASで工数管理ツールを自作</div>
+                    <p>
+                        ChatGPTに「やりたいこと」を伝えると、必要なGASのコードを生成してくれます。
+                        エラーが発生した際も、そのエラー画面のスクリーンショットをChatGPTに送ることで、
+                        修正方法を教えてもらいながら開発を進められました。
+                    </p>
+                </div>
+
+                <h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark);">
+                    📋 使用したツールと役割
+                </h3>
+
+                <div class="tools-showcase">
+                    <div class="tool-card">
+                        <div class="tool-icon">🤖</div>
+                        <div class="tool-name">ChatGPT</div>
+                        <div class="tool-role">コード生成・エラー解決の先生役</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📝</div>
+                        <div class="tool-name">Google Apps Script</div>
+                        <div class="tool-role">カレンダーと連携した自動化処理</div>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark);">
+                    🔧 ツール開発の流れ
+                </h3>
+
+                <div class="step-guide">
+                    <div class="step-item">
+                        <div class="step-number-box">1</div>
+                        <div class="step-content">
+                            <div class="step-title">ChatGPTに「やりたいこと」を説明</div>
+                            <div class="step-description">
+                                「Googleカレンダーの予定から、タイトル・日付・時間・カテゴリを抽出して
+                                スプレッドシートに集計したい」という要望を自然な言葉で伝えました。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number-box">2</div>
+                        <div class="step-content">
+                            <div class="step-title">生成されたコードをGASにコピー</div>
+                            <div class="step-description">
+                                ChatGPTが生成したGASのコードをそのままコピーして、Googleスプレッドシートの
+                                スクリプトエディタに貼り付けました。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number-box">3</div>
+                        <div class="step-content">
+                            <div class="step-title">エラー発生時はスクショで相談</div>
+                            <div class="step-description">
+                                実行時にエラーが出たら、そのエラー画面をスクリーンショットでChatGPTに送信。
+                                「このエラーの意味と修正方法を教えて」と質問し、修正コードをもらいました。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number-box">4</div>
+                        <div class="step-content">
+                            <div class="step-title">動作確認・機能追加</div>
+                            <div class="step-description">
+                                基本機能が動いたら、「カテゴリ別に色分けしたい」「グラフも自動作成したい」など
+                                追加要望も同様にChatGPTに相談して機能を拡張していきました。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-style-box">
+                    <div class="prompt-text">Googleカレンダーの予定を使って、
+業務時間を自動集計するツールを作りたいです。
+
+以下の機能を実現するGASのコードを書いてください：
+・開始日と終了日を指定してカレンダーの予定を取得
+・予定のタイトル、日付、開始時間、終了時間を取得
+・予定の時間（分）を計算
+・カテゴリ（予定のタイトルから判定）ごとに集計
+・結果をスプレッドシートに出力
+・ボタン1つで実行できるようにしたい</div>
+                </div>
+
+                <div class="ai-support-box">
+                    <div class="ai-support-title">エラー解決もChatGPTにお任せ</div>
+                    <p>
+                        プログラミング初心者にとって最大の壁は「エラーが出たときの対処」です。
+                        ChatGPTを使えば、エラー画面のスクリーンショットを送るだけで、
+                        何が問題なのか・どう修正すればいいかを教えてもらえます。
+                        諦めずに相談すれば、必ず解決策が見つかります。
+                    </p>
+                </div>
+
+                <h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark);">
+                    📊 完成したツールでできること
+                </h3>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <div class="feature-text">期間を指定してカレンダー予定を自動取得</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏷️</div>
+                        <div class="feature-text">カテゴリ別に業務時間を自動分類</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-text">スプレッドシートへの自動出力</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔘</div>
+                        <div class="feature-text">ボタンワンクリックで集計実行</div>
+                    </div>
+                </div>
+
+                <div class="workflow-display">
+                    <div class="workflow-item">Googleカレンダー<br>予定入力</div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-item highlight">GAS<br>自動取得・集計</div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-item">スプレッドシート<br>結果出力</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 成果セクション -->
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Results</div>
+                    <h2 class="section-title">得られた成果</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <p>
+                    ChatGPTのサポートでGAS未経験者がツールを自作したことで、業務効率化だけでなく、
+                    「自分でもできる」という自信と新たな可能性が生まれました。
+                </p>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-value">95%削減</div>
+                        <div class="metric-label">集計作業時間<br>月8時間→30分</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">集計データ精度<br>転記ミスゼロに</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🛠️</div>
+                        <div class="metric-value">3日</div>
+                        <div class="metric-label">ツール開発期間<br>業務の合間で完成</div>
+                    </div>
+                </div>
+
+                <div class="point-card">
+                    <div class="point-title">定量的・定性的な成果</div>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li>毎月8時間かかっていた工数集計作業が、ボタン1つで5分に短縮</li>
+                        <li>Excel転記によるミス・漏れが完全に解消され、正確なデータが取得可能に</li>
+                        <li>業務カテゴリ別の時間配分が可視化され、改善点が明確に</li>
+                        <li>「非エンジニアでもツールが作れる」という成功体験で社内の意識が変化</li>
+                        <li>ChatGPTを「プログラミングの先生」として活用する文化が社内に定着</li>
+                    </ul>
+                </div>
+
+                <div class="voice-box">
+                    <div class="voice-content">
+                        「GASを一度も書いたことがなくても、ChatGPTにエラーを見せれば
+                        修正できるので、諦めずにツールを完成させることができました！
+                        今では他の業務の自動化も自分で挑戦しています。」
+                    </div>
+                    <div class="voice-author">― 営業企画担当者</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- まとめセクション -->
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Summary</div>
+                    <h2 class="section-title">まとめ</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <p>
+                    本事例は、プログラミング経験のない担当者がChatGPTをパートナーとして活用することで、
+                    従来は「専門家にしかできない」と思われていたツール開発を自ら実現した好例です。
+                </p>
+
+                <div class="point-card">
+                    <div class="point-title">成功のポイント</div>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>「やりたいこと」を明確に言語化</strong> - 技術的な知識がなくても、目的を伝えればAIが技術に変換</li>
+                        <li><strong>エラーを恐れない姿勢</strong> - エラーが出てもスクショで相談すれば解決策が見つかる</li>
+                        <li><strong>段階的な機能追加</strong> - まず基本機能を動かし、少しずつ拡張していく</li>
+                        <li><strong>既存ツール（Googleカレンダー）との連携</strong> - 新しい入力作業を増やさず自動化</li>
+                    </ul>
+                </div>
+
+                <p>
+                    工数管理ツールの導入により、同社では毎月の業務時間が可視化され、
+                    「どのプロジェクトに時間がかかりすぎているか」「会議の時間は適正か」といった
+                    改善の視点が生まれました。単なる集計自動化にとどまらず、
+                    業務改善サイクルの基盤として活用されています。
+                </p>
+
+                <p>
+                    「エンジニアじゃないから無理」と諦めていた業務自動化も、
+                    ChatGPTというAIパートナーの登場により、誰でも挑戦できる時代になりました。
+                    まずは小さなツールから始めて、AI活用の第一歩を踏み出してみてはいかがでしょうか。
+                </p>
+            </div>
+        </section>
+
+        <!-- CTAセクション -->
+        <div class="cta-box scroll-fade">
+            <div class="cta-title">ChatGPTで業務ツール開発、始めてみませんか？</div>
+            <p class="cta-description">
+                プログラミング未経験でも大丈夫。ChatGPT×GASで業務自動化を実現しましょう。
+                まずは無料相談で、貴社の業務効率化の可能性を探ってみませんか。
+            </p>
+            <a href="#contact" class="cta-button">
+                <span>無料相談を申し込む</span>
+                <span>→</span>
+            </a>
+        </div>
+    </article>
+
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
