@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vertex AI（Gemini）を活用して議事録を再要約し、Slackに自動共有する仕組みを構築。毎週の定例会議後の情報共有を完全自動化した事例を解説します。">
+    <meta name="keywords" content="Gemini, Vertex AI, 議事録, Slack, 自動共有, 中小企業DX, AI活用">
+    <title>Gemini×Vertex AIで議事録を再要約！Slackへの自動共有を実現 | デジタルツール研究所</title>
+    <style>
+        :root {
+            --primary-color: #059669;
+            --secondary-color: #34d399;
+            --accent-color: #d1fae5;
+            --background-color: #ecfdf5;
+            --text-color: #064e3b;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Gemini×Vertex AIで議事録を再要約！Slackへの自動共有を実現</h1>
+            <p class="lead">20名規模のSaaS企業が、Vertex AI（Gemini API）を活用して会議議事録の再要約からSlack共有までを自動化。週次定例会議の情報共有を完全自動化し、チームの情報格差を解消した事例をご紹介します。</p>
+        </header>
+
+        <nav class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#challenge">課題：議事録共有が属人化し情報格差が発生</a></li>
+                <li><a href="#solution">施策：Vertex AI×GASで自動要約・Slack共有</a></li>
+                <li><a href="#result">成果：情報共有の確実性と速度が向上</a></li>
+                <li><a href="#summary">まとめ：会議情報の民主化をAIで実現</a></li>
+            </ol>
+        </nav>
+
+        <section id="challenge">
+            <h2>課題：議事録共有が属人化し情報格差が発生</h2>
+
+            <h3>企業プロフィール</h3>
+            <table>
+                <tr>
+                    <th>業種</th>
+                    <td>SaaS企業（BtoB）</td>
+                </tr>
+                <tr>
+                    <th>従業員数</th>
+                    <td>20名</td>
+                </tr>
+                <tr>
+                    <th>定例会議</th>
+                    <td>週1回（部門横断ミーティング）</td>
+                </tr>
+                <tr>
+                    <th>主な課題</th>
+                    <td>議事録の共有が遅れ、情報格差が発生</td>
+                </tr>
+            </table>
+
+            <h3>会議運営の現状</h3>
+            <p>同社では毎週月曜日に部門横断の定例会議を実施しています。各部門（開発・営業・カスタマーサクセス・管理）の進捗共有と課題協議を行う重要な場ですが、議事録の共有に課題がありました。</p>
+
+            <h4>情報共有の問題点</h4>
+            <ul>
+                <li><strong>共有の遅延</strong>：担当者の業務状況により1〜2日遅れることも</li>
+                <li><strong>品質のばらつき</strong>：担当者によって詳細度や形式が異なる</li>
+                <li><strong>読まれない問題</strong>：長文の議事録は後回しにされがち</li>
+                <li><strong>検索性の低さ</strong>：ドキュメントが増え、過去の決定事項を探しにくい</li>
+            </ul>
+
+            <div class="problem-box">
+                <h4>従来の議事録共有フロー</h4>
+                <ol>
+                    <li>会議中にメモを取る（リアルタイム）</li>
+                    <li>会議後に議事録を整形（30分〜1時間）</li>
+                    <li>Googleドキュメントにアップロード</li>
+                    <li>Slackでリンクを共有（手動）</li>
+                    <li>質問があれば個別対応</li>
+                </ol>
+                <p><strong>問題点：担当者が忙しいと共有が翌日以降になり、会議内容を忘れてしまう人も</strong></p>
+            </div>
+
+            <h4>担当者の声（導入前）</h4>
+            <blockquote>
+                <p>「議事録当番の日は、午後の予定をブロックしておかないと対応できません。特に会議で重い議題があった日は、内容を整理するのに時間がかかります。みんなに早く共有したいけど、質も落としたくないし...」</p>
+                <cite>— プロダクトマネージャー</cite>
+            </blockquote>
+        </section>
+
+        <section id="solution">
+            <h2>施策：Vertex AI×GASで自動要約・Slack共有</h2>
+
+            <h3>自動化システムの全体像</h3>
+            <p>Google Meetの自動文字起こし機能とVertex AI（Gemini API）、Google Apps Scriptを組み合わせて、議事録の要約からSlack共有までを自動化しました。</p>
+
+            <div class="flow-diagram">
+                <h4>システム構成</h4>
+                <ol>
+                    <li><strong>Google Meet</strong>：会議の自動文字起こし・議事録生成</li>
+                    <li><strong>Google Drive</strong>：議事録ドキュメントの保存</li>
+                    <li><strong>GAS（トリガー）</strong>：会議終了後に自動実行</li>
+                    <li><strong>Vertex AI（Gemini）</strong>：議事録の再要約・構造化</li>
+                    <li><strong>Slack</strong>：要約結果の自動投稿</li>
+                </ol>
+            </div>
+
+            <h3>ステップ1：Vertex AI APIの設定</h3>
+            <p>Google Cloud PlatformでVertex AIを有効化し、APIを利用可能にします。</p>
+
+            <div class="step-guide">
+                <h4>Vertex AI設定手順</h4>
+                <ol>
+                    <li>Google Cloud Consoleにアクセス</li>
+                    <li>プロジェクトを作成または選択</li>
+                    <li>Vertex AI APIを有効化</li>
+                    <li>サービスアカウントを作成し、認証情報を取得</li>
+                </ol>
+                <p>※ 無料枠内での利用も可能（月間一定量まで）</p>
+            </div>
+
+            <h3>ステップ2：GASスクリプトの構築</h3>
+            <p>Google Apps Scriptで議事録を取得し、Vertex AIで要約、Slackに投稿する処理を実装します。</p>
+
+            <div class="code-example">
+                <h4>GASスクリプト概要</h4>
+                <pre>
+function processAndShareMeetingNotes() {
+  // 1. 当日の会議議事録を取得
+  const meetingDoc = getMeetingDocument();
+  if (!meetingDoc) {
+    Logger.log('議事録が見つかりません');
+    return;
+  }
+
+  // 2. 議事録の内容を取得
+  const content = meetingDoc.getBody().getText();
+
+  // 3. Vertex AI（Gemini）で要約
+  const summary = summarizeWithVertexAI(content);
+
+  // 4. Slackチャンネルに投稿
+  postToSlack(summary, meetingDoc.getUrl());
+
+  // 5. 完了ログ
+  Logger.log('議事録共有完了');
+}
+
+function summarizeWithVertexAI(content) {
+  const projectId = 'your-project-id';
+  const location = 'asia-northeast1';
+  const model = 'gemini-1.5-flash';
+
+  const endpoint = `https://${location}-aiplatform.googleapis.com/v1/projects/${projectId}/locations/${location}/publishers/google/models/${model}:generateContent`;
+
+  const prompt = `
+以下の週次定例会議の議事録を、チームメンバーが3分で把握できる形式に要約してください。
+
+【出力形式】
+## 今週の主要トピック
+- [重要度順に3〜5項目]
+
+## 各部門の状況
+### 開発
+- [主な進捗・課題]
+
+### 営業
+- [主な進捗・課題]
+
+### カスタマーサクセス
+- [主な進捗・課題]
+
+## 決定事項・アクションアイテム
+- [担当者]: [内容] (期限: [日付])
+
+## 来週の注目ポイント
+- [次週に向けて注意すべき事項]
+
+---
+議事録:
+${content}
+  `;
+
+  const payload = {
+    contents: [{
+      role: 'user',
+      parts: [{ text: prompt }]
+    }]
+  };
+
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    headers: {
+      'Authorization': 'Bearer ' + ScriptApp.getOAuthToken()
+    },
+    payload: JSON.stringify(payload)
+  };
+
+  const response = UrlFetchApp.fetch(endpoint, options);
+  const json = JSON.parse(response.getContentText());
+  return json.candidates[0].content.parts[0].text;
+}
+
+function postToSlack(summary, docUrl) {
+  const webhookUrl = PropertiesService.getScriptProperties()
+                      .getProperty('SLACK_WEBHOOK_URL');
+
+  const message = {
+    blocks: [
+      {
+        type: 'header',
+        text: {
+          type: 'plain_text',
+          text: '📋 週次定例会議サマリー'
+        }
+      },
+      {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: summary
+        }
+      },
+      {
+        type: 'divider'
+      },
+      {
+        type: 'context',
+        elements: [
+          {
+            type: 'mrkdwn',
+            text: `📄 <${docUrl}|詳細議事録はこちら>`
+          }
+        ]
+      }
+    ]
+  };
+
+  UrlFetchApp.fetch(webhookUrl, {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(message)
+  });
+}
+                </pre>
+            </div>
+
+            <h3>ステップ3：要約プロンプトの設計</h3>
+            <p>チームが求める情報構造に合わせて、出力フォーマットを詳細に指定しています。</p>
+
+            <div class="prompt-example">
+                <h4>プロンプト設計のポイント</h4>
+                <ul>
+                    <li><strong>部門別の構造化</strong>：各部門の状況を分離して把握しやすく</li>
+                    <li><strong>アクションアイテムの明確化</strong>：担当者と期限を必ず記載</li>
+                    <li><strong>重要度順の並べ替え</strong>：優先度の高い情報から表示</li>
+                    <li><strong>来週への橋渡し</strong>：次週の注目ポイントで継続性を確保</li>
+                </ul>
+            </div>
+
+            <h3>Slack投稿の工夫</h3>
+            <p>Block Kitを使用して、視覚的に見やすいフォーマットで投稿しています。</p>
+
+            <div class="slack-preview">
+                <h4>実際のSlack投稿例</h4>
+                <div class="slack-message">
+                    <p><strong>📋 週次定例会議サマリー</strong></p>
+
+                    <p><strong>## 今週の主要トピック</strong></p>
+                    <p>- 新機能「ダッシュボード2.0」の開発完了、来週リリース予定<br>
+                    - Q4の売上目標達成に向けた営業施策の承認<br>
+                    - カスタマーサクセスのオンボーディング改善提案</p>
+
+                    <p><strong>## 決定事項・アクションアイテム</strong></p>
+                    <p>- 田中: リリースノート作成 (期限: 11/15)<br>
+                    - 佐藤: 販促資料の更新 (期限: 11/16)<br>
+                    - 鈴木: オンボーディング動画の制作開始 (期限: 11/20)</p>
+
+                    <p>📄 <a href="#">詳細議事録はこちら</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="result">
+            <h2>成果：情報共有の確実性と速度が向上</h2>
+
+            <h3>定量的な成果</h3>
+            <table class="result-table">
+                <tr>
+                    <th>指標</th>
+                    <th>導入前</th>
+                    <th>導入後</th>
+                    <th>改善</th>
+                </tr>
+                <tr>
+                    <td>共有までの時間</td>
+                    <td>2〜24時間</td>
+                    <td>約15分</td>
+                    <td>大幅短縮</td>
+                </tr>
+                <tr>
+                    <td>議事録閲覧率</td>
+                    <td>約60%</td>
+                    <td>約95%</td>
+                    <td>+35pt</td>
+                </tr>
+                <tr>
+                    <td>担当者の作業時間</td>
+                    <td>45分/回</td>
+                    <td>0分/回</td>
+                    <td>100%削減</td>
+                </tr>
+            </table>
+
+            <h3>年間での効果</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li>45分/週 × 52週 = <strong>年間約39時間の作業時間削減</strong></li>
+                    <li>議事録当番のローテーション管理が<strong>不要</strong>に</li>
+                    <li>会議終了15分後には全員が情報を把握 → <strong>情報格差ゼロ</strong></li>
+                </ul>
+            </div>
+
+            <h3>定性的な成果</h3>
+
+            <h4>情報共有の改善</h4>
+            <ul>
+                <li><strong>即時性</strong>：会議直後に要約が届くため、記憶が新鮮なうちに確認できる</li>
+                <li><strong>可読性</strong>：構造化された要約で、必要な情報にすぐアクセス</li>
+                <li><strong>確実性</strong>：自動化により共有漏れがなくなった</li>
+            </ul>
+
+            <h4>チーム運営への効果</h4>
+            <ul>
+                <li><strong>アクションアイテムの可視化</strong>：誰が何をいつまでにやるか明確に</li>
+                <li><strong>欠席者のキャッチアップ</strong>：会議に出られなくても内容を把握</li>
+                <li><strong>過去の検索性向上</strong>：Slackで過去の決定事項を検索可能</li>
+            </ul>
+
+            <h4>担当者の声（導入後）</h4>
+            <blockquote>
+                <p>「議事録当番という概念がなくなりました。会議が終わったら自動で共有されるので、次の業務にすぐ移れます。しかも要約の質が安定していて、以前よりも分かりやすいと好評です」</p>
+                <cite>— プロダクトマネージャー</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>「Slackに要約が届いたら、まずアクションアイテムを確認して自分のタスクリストに追加しています。会議に出ていない日も、これを見れば何をすべきか分かります」</p>
+                <cite>— 開発エンジニア</cite>
+            </blockquote>
+        </section>
+
+        <section id="summary">
+            <h2>まとめ：会議情報の民主化をAIで実現</h2>
+
+            <h3>成功のポイント</h3>
+            <ol>
+                <li><strong>即時共有の実現</strong>
+                    <p>会議終了後すぐに情報が届くことで、アクションへの移行がスムーズに。</p>
+                </li>
+                <li><strong>構造化された出力</strong>
+                    <p>部門別・項目別に整理されることで、必要な情報にすぐアクセスできる。</p>
+                </li>
+                <li><strong>完全自動化</strong>
+                    <p>人の介入なしで完結するため、属人化を排除し確実性を担保。</p>
+                </li>
+                <li><strong>Slackへの直接投稿</strong>
+                    <p>普段使うツールに情報が届くことで、閲覧率が大幅向上。</p>
+                </li>
+            </ol>
+
+            <h3>他会議への展開</h3>
+            <ul>
+                <li><strong>1on1ミーティング</strong>：上司・部下間の面談内容を要約・蓄積</li>
+                <li><strong>プロジェクト定例</strong>：各プロジェクトの進捗共有を自動化</li>
+                <li><strong>経営会議</strong>：重要決定事項を全社に即時共有</li>
+                <li><strong>外部ミーティング</strong>：顧客との打ち合わせ内容をチームに共有</li>
+            </ul>
+
+            <h3>導入のステップ</h3>
+            <ol>
+                <li><strong>対象会議の選定</strong>：定期開催で情報共有が重要な会議を選ぶ</li>
+                <li><strong>要約フォーマットの設計</strong>：チームが求める情報構造を定義</li>
+                <li><strong>Vertex AI環境の構築</strong>：GCPでAPIを有効化</li>
+                <li><strong>GASスクリプトの作成</strong>：自動化処理を実装</li>
+                <li><strong>テスト・調整</strong>：実際の会議で試し、プロンプトを改善</li>
+            </ol>
+
+            <h3>導入を検討される企業様へ</h3>
+            <div class="cta-box">
+                <p>Vertex AI×GASを活用した会議情報の自動共有について、詳しいご相談を承っております。</p>
+                <ul>
+                    <li>議事録自動化システムの構築</li>
+                    <li>Vertex AI（Gemini）の活用方法</li>
+                    <li>GASスクリプトの開発サポート</li>
+                </ul>
+                <p>まずはお気軽にお問い合わせください。</p>
+            </div>
+
+            <h3>関連記事</h3>
+            <ul>
+                <li><a href="ai-gemini-meeting-summary-slack.html">Gemini×GASで議事録を自動要約！Slack共有まで完全自動化</a></li>
+                <li><a href="ai-meeting-minutes-automation.html">Google Gemini×議事録自動化で会議効率を劇的改善</a></li>
+                <li><a href="ai-gemini-report-automation.html">Geminiで報告資料を自動作成</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p class="update-date">最終更新日：2025年1月</p>
+            <p class="category">カテゴリ：AI活用事例 / 業務自動化 / 会議効率化</p>
+            <p class="tags">タグ：#Gemini #VertexAI #議事録 #Slack #中小企業DX</p>
+        </footer>
+    </article>
+</body>
+</html>
