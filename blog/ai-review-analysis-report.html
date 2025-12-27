@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ネット上の口コミ調査を自動化。週次レポート作成が4時間→30分に短縮した方法 - 株式会社デジタルツール研究所</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+<link rel="stylesheet" href="../css/style.css?v=2024120513">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- OGP / Social Media Meta -->
+    <meta property="og:title" content="ネット上の口コミ調査を自動化。週次レポート作成が4時間→30分に短縮した方法 | デジタルツール研究所">
+    <meta property="og:description" content="GeminiのDeepResearch機能でネット上の口コミを網羅的に調査・分析。週次報告レポートの作成時間を87%削減した事例をご紹介。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-review-analysis-report.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-ai-review.jpg">
+    <meta property="og:site_name" content="株式会社デジタルツール研究所">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ネット上の口コミ調査を自動化。週次レポート作成が4時間→30分に短縮した方法">
+    <meta name="twitter:description" content="GeminiのDeepResearch機能で口コミ調査を自動化。レポート作成時間87%削減の事例。">
+    <meta name="twitter:image" content="https://digitool-lab.com/images/case-studies/case-ai-review.jpg">
+
+    <meta name="description" content="GeminiのDeepResearch機能でネット上の口コミを網羅的に調査・分析。週次報告レポートの作成時間を87%削減した事例をご紹介。">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-review-analysis-report.html">
+</head>
+
+<body class="bg-gray-100">
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <!-- パンくずナビ -->
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">AI活用事例</span>
+      </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--orange-100); color: var(--orange-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">マーケティング</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2025-12-27</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">ネット上の口コミ調査を自動化。週次レポート作成が4時間→30分に短縮した方法</h1>
+
+        <!-- タグ表示エリア -->
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI活用" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=マーケティング" class="article-tag">マーケティング</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=口コミ分析" class="article-tag">口コミ分析</a>
+            <a href="../case-studies.html?tag=レポート作成" class="article-tag">レポート作成</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メイン画像 -->
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-ai-review.jpg" alt="AIによる口コミ調査自動化の事例" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <!-- 記事本文 -->
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">1. 支援前の課題</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">従業員30名規模のサービス業の会社で、週次の口コミ報告レポート作成に多大な時間を費やしていました。自社サービスや競合他社に関するネット上の口コミを収集・分析し、経営陣に報告する業務が、マーケティング担当者の大きな負担となっていたのです。</p>
+
+          <div style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--gray-500); margin: 2rem 0;">
+            <p style="margin: 0; font-weight: 600; color: var(--gray-800);">「毎週の口コミ収集に3時間、要約と資料作成に1時間かかっている」<br>「複数のサイトを巡回するのが手間で、見落としが心配」<br>「口コミの傾向を客観的に分析するのが難しい」</p>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">担当者は毎週、Googleマップ、食べログ、X（旧Twitter）、Instagram、各種レビューサイトなど、<strong>複数のプラットフォームを手作業で巡回</strong>して口コミを収集していました。関連するキーワードで検索し、新しい口コミを見つけてはスプレッドシートに転記するという作業の繰り返しです。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">収集した口コミは、ポジティブ・ネガティブに分類し、主要なトピックごとに要約してレポートにまとめる必要がありました。この一連の作業に<strong>毎週4時間程度</strong>を費やしており、他のマーケティング業務を圧迫していました。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">また、担当者の主観が入りやすく、口コミの傾向分析に一貫性がないという問題もありました。「今週はネガティブな口コミが多い」といった判断が、担当者の感覚に依存してしまい、客観的なデータとして活用しにくい状況でした。</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">2. 行った施策</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 2rem;">GeminiのDeepResearch機能を活用して、<strong>ネット上の口コミを網羅的に調査・分析・要約する仕組み</strong>を構築しました。AIが複数のサイトを横断的に調査し、結果をトピックごとに整理してくれます。</p>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 1：DeepResearchへの調査指示</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">Geminiの「DeepResearch」モードを選択し、「〇〇（サービス名）に関する直近1週間の口コミをネット上から網羅的に調査してください」と指示します。AIが自動的に複数のサイトを巡回し、関連する口コミを収集してくれます。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 2：トピック別の分類・要約</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">収集した口コミを「サービス品質」「価格」「接客」「施設・設備」などのトピックごとに分類し、それぞれの傾向を要約させます。ポジティブな意見とネガティブな意見を分けて整理することで、改善ポイントが明確になります。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 3：レポートフォーマットへの整形</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">AIが出力した調査結果を、あらかじめ用意したレポートフォーマットに沿って整形します。「サマリー」「詳細分析」「推奨アクション」といった構成で、経営陣にも理解しやすいレポートが完成します。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 4：定型プロンプトのテンプレート化</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">毎週同じ形式でレポートを作成できるよう、調査指示のプロンプトをテンプレート化しました。日付部分だけを変更すれば、一貫性のある調査が継続的に実行できます。</p>
+          </div>
+
+          <div style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+            <h4 style="font-size: 1rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">導入のポイント</h4>
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 1rem; line-height: 1.8; color: var(--gray-700);">
+              <li>DeepResearch機能で複数サイトを自動巡回</li>
+              <li>トピック別の分類で傾向分析が容易に</li>
+              <li>プロンプトのテンプレート化で作業を標準化</li>
+              <li>AIの客観的な分析で一貫性のあるレポートに</li>
+            </ul>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">3. 施策後の成果</h2>
+
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+              <thead>
+                <tr style="background-color: var(--gray-100);">
+                  <th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600;">指標</th>
+                  <th style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); font-weight: 600;">導入前</th>
+                  <th style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); font-weight: 600;">導入後</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">週次レポート作成時間</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">約4時間</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">約30分（▲87％削減）</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">口コミ収集の網羅性</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">主要サイト3〜4つ</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">10サイト以上を横断調査</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">分析の客観性</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">担当者の主観に依存</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">AIによる一貫した分析</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">月あたりの削減時間</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">-</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">約14時間（週3.5時間×4週）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">週次レポートの作成時間が<strong>約87%削減</strong>され、月に約14時間の業務時間を他の業務に充てられるようになりました。年間に換算すると約170時間、人件費に換算すると数十万円相当の効率化効果が得られています。</p>
+
+          <div style="background-color: var(--gray-50); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--gray-500); margin: 2rem 0;">
+            <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1rem;">削減された時間は、<strong>口コミへの返信対応や改善施策の検討</strong>など、より付加価値の高い業務に充てられるようになりました。</p>
+            <p style="font-size: 1.125rem; line-height: 1.7;">また、レポートの品質が安定したことで、経営陣からの信頼も向上しています。</p>
+          </div>
+
+          <div style="background-color: var(--gray-100); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--gray-500); margin: 2rem 0;">
+            <p style="margin: 0; font-size: 1.125rem; line-height: 1.6; color: var(--gray-800); font-weight: 500;">「要約された情報をスライドにコピペするだけで、高品質なレポートが完成する」「今まで見落としていたサイトの口コミも拾えるようになった」「AIの分析は客観的で、経営陣への説明がしやすくなった」</p>
+            <p style="margin-top: 1rem; font-size: 1rem; color: var(--gray-600);">といった現場からの評価を得ています。</p>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">特に好評だったのは、口コミ収集の網羅性が向上した点です。手作業では時間の制約から主要なサイトしか確認できませんでしたが、AIを活用することで、ブログ記事や個人のSNS投稿など、これまで見落としていた口コミも拾えるようになりました。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">また、競合他社の口コミ調査も同様の方法で実施できるようになり、競合分析の精度も向上しています。</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">4. まとめ</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">ネット上の口コミ調査は、顧客の声を把握する重要な業務ですが、手作業で行うには多大な時間と労力がかかります。また、担当者の主観が入りやすく、分析の一貫性を保つことも課題でした。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">今回の事例では、GeminiのDeepResearch機能を活用することで、<strong>週4時間かかっていたレポート作成を30分に短縮</strong>しました。AIが複数のサイトを横断的に調査し、客観的な分析を提供してくれるため、品質の高いレポートを効率的に作成できます。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">重要なのは、<strong>AIの調査結果を鵜呑みにしないこと</strong>です。AIは広範囲の情報を素早く収集・整理してくれますが、重要な口コミについては原文を確認し、文脈を理解した上で対応を検討することが大切です。AIは「下調べ」を効率化するツールとして活用するのが最適です。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7;">口コミや評判の調査を定期的に行っている企業、競合分析のためにネット上の情報を収集している企業には、ぜひ試していただきたいアプローチです。マーケティング担当者の負担を軽減しながら、より深い顧客理解を実現できます。</p>
+        </section>
+      </div>
+    </article>
+
+    <!-- 関連事例・CTA -->
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Download Modal (全ページ共通) -->
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
