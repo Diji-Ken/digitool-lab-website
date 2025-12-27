@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTで社内規程作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="ChatGPTを使って社内規程を効率的に作成・整備する方法を解説。従業員10-25名規模の中小企業向けに、規程整備を80%効率化した実践事例をご紹介します。">
+    <meta name="keywords" content="ChatGPT, 社内規程, 就業規則, AI活用, 中小企業, 総務">
+    <style>
+        :root {
+            --primary-color: #37474f;
+            --secondary-color: #607d8b;
+            --accent-color: #90a4ae;
+            --background-color: #eceff1;
+            --text-color: #263238;
+            --white: #ffffff;
+            --border-color: #cfd8dc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #1c252b;
+            color: #90a4ae;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3e0;
+            border: 1px solid #ffcc80;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #083</span>
+            <h1>ChatGPTで社内規程作成<br>規程整備を80%効率化</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜総務・人事部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：社内規程が整備されていない</h2>
+            <p>従業員23名の建設会社では、社内規程の整備に以下の課題がありました。</p>
+            <ul>
+                <li>創業時の規程がそのままで法改正に対応できていない</li>
+                <li>テレワーク規程など新しい働き方への対応がない</li>
+                <li>規程作成のノウハウがなく外部依頼は高コスト</li>
+                <li>社員からの問い合わせに都度対応している</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>リスク：</strong>規程の不備により労務トラブルのリスクが潜在。また、助成金申請時に規程の整備を求められ、急な対応を迫られることもありました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：ChatGPTで社内規程のドラフトを効率作成</h2>
+            <h3>ステップ1：必要な規程の洗い出し</h3>
+            <p>まず、自社に必要な規程の全体像を把握します。</p>
+            <div class="prompt-example">プロンプト例：
+「従業員25名の建設会社に必要な社内規程の一覧を
+作成してください。
+
+【分類】
+1. 必須（法的に義務付けられているもの）
+2. 推奨（整備しておくべきもの）
+3. 任意（あると望ましいもの）
+
+各規程について、概要と主な記載事項を
+簡潔に説明してください。」</div>
+
+            <h3>ステップ2：規程のドラフト作成</h3>
+            <p>必要な規程のドラフトをChatGPTで作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「中小建設会社向けのテレワーク規程のドラフトを
+作成してください。
+
+【含める項目】
+1. 目的・適用範囲
+2. テレワークの定義・種類
+3. 申請・承認手続き
+4. 勤務時間・休憩の取り扱い
+5. 通信費・機器の取り扱い
+6. セキュリティ・情報管理
+7. 労災・安全衛生
+8. その他の留意事項
+
+2024年時点の法令に準拠し、
+実務で使いやすい形式でお願いします。」</div>
+
+            <h3>ステップ3：既存規程の改訂ポイント整理</h3>
+            <p>既存規程の問題点をAIで洗い出し、改訂案を作成。</p>
+
+            <div class="warning-box">
+                <p><strong>重要な注意点：</strong>ChatGPTで作成した規程ドラフトは、必ず社会保険労務士や弁護士にリーガルチェックを依頼してください。AIはあくまでドラフト作成の効率化ツールです。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>成果：規程整備80%効率化、コスト70%削減</h2>
+            <div class="result-box">
+                <p><span class="number">80%</span> 規程作成時間削減</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">70%</span> 外部委託コスト削減</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">15種類</span> 規程を3ヶ月で整備完了</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>規程1本あたりの作成期間が2週間→3日に</li>
+                <li>社労士への依頼は「チェック」のみで費用削減</li>
+                <li>社員からの問い合わせが規程参照で解決</li>
+                <li>助成金申請がスムーズに</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで規程整備の第一歩を踏み出す</h2>
+            <p>ChatGPTを活用した社内規程作成により、中小企業でも体系的な規程整備が実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>まず必要な規程の全体像を把握</li>
+                <li>優先度の高いものから順次作成</li>
+                <li>AIドラフト→専門家チェックの流れを確立</li>
+                <li>定期的な見直しサイクルを設ける</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>次のステップ：</strong>作成した規程を社内ポータルで公開し、ChatGPTを使ったFAQ作成で社員からの問い合わせ対応も効率化しています。</p>
+            </div>
+            <p>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">社内規程</span>
+                <span class="tag">就業規則</span>
+                <span class="tag">総務効率化</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTで展示会案内作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="ChatGPTを使って展示会の案内状・販促物を効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、来場者数を40%増加させた実践事例をご紹介します。">
+    <meta name="keywords" content="ChatGPT, 展示会, 案内状, AI活用, 中小企業, マーケティング">
+    <style>
+        :root {
+            --primary-color: #00796b;
+            --secondary-color: #009688;
+            --accent-color: #80cbc4;
+            --background-color: #e0f2f1;
+            --text-color: #004d40;
+            --white: #ffffff;
+            --border-color: #b2dfdb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #0a1f1c;
+            color: #80cbc4;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #093</span>
+            <h1>ChatGPTで展示会案内作成<br>来場者40%増加の秘訣</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜営業・マーケティング部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：展示会の集客に苦戦</h2>
+            <p>従業員17名の機械部品メーカーでは、展示会出展に以下の課題がありました。</p>
+            <ul>
+                <li>案内状の作成に時間がかかる</li>
+                <li>毎年似たような内容で新鮮味がない</li>
+                <li>ターゲットに響くメッセージが作れない</li>
+                <li>出展準備に追われ集客活動が後回し</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>過去の課題：</strong>年2回の展示会出展で、目標来場者数を達成できたのは過去3年で1回のみ。出展費用に見合う成果が得られていませんでした。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：ChatGPTで展示会集客ツールを効率作成</h2>
+            <h3>ステップ1：ターゲット別案内状の作成</h3>
+            <p>顧客セグメント別に響く案内状を作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「製造業向け展示会の案内状を作成してください。
+
+【展示会情報】
+展示会名：第15回製造業DX展
+日時：2024年5月15日-17日 10:00-18:00
+場所：東京ビッグサイト 西ホール
+ブース番号：A-25
+
+【出展内容】
+・省人化ロボットの新製品発表
+・既存設備のIoT化デモ
+・無料相談コーナー
+
+【ターゲット】
+製造業の生産技術部門責任者
+
+【案内状構成】
+1. 注目を引く件名
+2. 来場メリット
+3. 見どころ3つ
+4. 特典（アンケート回答でノベルティ）
+5. 申込方法」</div>
+
+            <h3>ステップ2：フォローアップメールの作成</h3>
+            <p>案内状送付後のフォローアップ文面を用意します。</p>
+            <div class="prompt-example">プロンプト例：
+「展示会案内のフォローアップメールを
+3パターン作成してください。
+
+【パターン】
+1. 1週間前リマインド
+2. 前日リマインド
+3. 当日朝の案内
+
+各メールは簡潔に、来場を後押しする内容で
+お願いします。」</div>
+
+            <h3>ステップ3：ブース来場時のトークスクリプト</h3>
+            <p>ブース対応のトークスクリプトを作成。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：来場者40%増加、商談数2倍</h2>
+            <div class="result-box">
+                <p><span class="number">40%</span> 招待者来場率向上</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">2倍</span> 商談獲得数増加</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">70%</span> 案内作成時間削減</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>ターゲット別のメッセージで響く案内に</li>
+                <li>計画的なフォローで来場率アップ</li>
+                <li>ブース対応の質が向上</li>
+                <li>展示会後のフォローも効率化</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで展示会の投資対効果を最大化</h2>
+            <p>ChatGPTを活用した展示会案内作成により、限られたリソースでも効果的な集客が実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>ターゲット別にメッセージをカスタマイズ</li>
+                <li>複数回のフォローで来場を後押し</li>
+                <li>ブース対応も含めた一貫した準備</li>
+                <li>展示会後のフォローアップも計画的に</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>応用例：</strong>展示会後のお礼メール、アンケート結果の分析、商談フォローのメール作成にも同じ手法を活用しています。</p>
+            </div>
+            <p>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">展示会</span>
+                <span class="tag">案内状</span>
+                <span class="tag">マーケティング</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

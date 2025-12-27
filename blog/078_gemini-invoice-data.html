@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで請求書データ整理 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使って請求書データを効率的に整理・分析する方法を解説。従業員10-25名規模の中小企業向けに、経理業務を50%効率化した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 請求書, データ整理, AI活用, 中小企業, 経理効率化">
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --accent-color: #81c784;
+            --background-color: #e8f5e9;
+            --text-color: #1b5e20;
+            --white: #ffffff;
+            --border-color: #a5d6a7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #1a1a2e;
+            color: #90ee90;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #078</span>
+            <h1>Geminiで請求書データ整理<br>経理業務50%効率化</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜経理・総務部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：請求書の整理・入力に膨大な時間</h2>
+            <p>従業員20名の卸売業では、毎月届く請求書の処理に以下の課題を抱えていました。</p>
+            <ul>
+                <li>月間200枚以上の請求書を手作業で入力</li>
+                <li>取引先ごとに請求書フォーマットが異なる</li>
+                <li>入力ミスによる支払い遅延リスク</li>
+                <li>月末に経理担当者が残業続き</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>現状の問題：</strong>請求書1枚あたり平均5分の入力作業で、月間約17時間を費やしていました。繁忙期には経理担当者の残業が月30時間を超えることも。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで請求書データの整理を自動化</h2>
+            <h3>ステップ1：請求書情報の抽出フォーマット作成</h3>
+            <p>Geminiに請求書画像を読み込ませ、必要な情報を構造化して抽出します。</p>
+            <div class="prompt-example">プロンプト例：
+「この請求書画像から以下の情報を抽出し、
+CSV形式で出力してください。
+
+抽出項目：
+- 請求書番号
+- 発行日
+- 支払期限
+- 取引先名
+- 請求金額（税抜）
+- 消費税額
+- 請求金額（税込）
+- 振込先口座情報
+
+不明な項目は「要確認」と記載してください。」</div>
+
+            <h3>ステップ2：取引先マスタとの照合</h3>
+            <p>抽出したデータと取引先マスタを照合し、不一致を検出します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の請求書データと取引先マスタを照合し、
+不一致や注意点があれば指摘してください。
+
+請求書データ：
+取引先名：株式会社ABC商事
+請求金額：550,000円
+
+取引先マスタ：
+株式会社ABC商事
+月間平均取引額：480,000円
+支払条件：月末締め翌月末払い」</div>
+
+            <h3>ステップ3：支払スケジュール表の自動生成</h3>
+            <p>整理したデータから支払スケジュール表を自動作成し、資金繰り管理に活用。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：経理業務50%効率化、ミス削減</h2>
+            <div class="result-box">
+                <p><span class="number">50%</span> 経理業務時間削減（17時間→8.5時間）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">95%</span> 入力ミス削減（ダブルチェック効果）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">0件</span> 支払遅延（3ヶ月連続達成）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>月末の経理残業がほぼゼロに</li>
+                <li>支払スケジュールの可視化で資金繰りが改善</li>
+                <li>取引先別の支出分析が容易に</li>
+                <li>税理士への資料提出がスムーズに</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで経理業務の負担を軽減</h2>
+            <p>Geminiを活用した請求書データ整理により、中小企業の経理業務を大幅に効率化できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>抽出項目を標準化してフォーマットを統一</li>
+                <li>取引先マスタとの照合で異常値を検出</li>
+                <li>支払スケジュール表で期限管理を徹底</li>
+                <li>最終確認は必ず人の目で行う</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>注意点：</strong>AIによる抽出結果は必ず目視確認を行い、重要な数値は原本と照合することが大切です。AIは「アシスタント」として活用しましょう。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">請求書</span>
+                <span class="tag">経理効率化</span>
+                <span class="tag">データ整理</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

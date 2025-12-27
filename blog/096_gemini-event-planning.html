@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで社内イベント企画書作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使って社内イベントの企画書を効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、イベント準備時間を60%削減した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 社内イベント, 企画書, AI活用, 中小企業, 総務">
+    <style>
+        :root {
+            --primary-color: #d81b60;
+            --secondary-color: #ec407a;
+            --accent-color: #f48fb1;
+            --background-color: #fce4ec;
+            --text-color: #880e4f;
+            --white: #ffffff;
+            --border-color: #f8bbd0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #1f0a14;
+            color: #f48fb1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #096</span>
+            <h1>Geminiで社内イベント企画書作成<br>準備時間60%削減を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜総務・人事部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：イベント企画に時間がかかりすぎる</h2>
+            <p>従業員23名のIT企業では、社内イベントの企画に以下の課題がありました。</p>
+            <ul>
+                <li>毎回ゼロから企画を考えている</li>
+                <li>予算管理やスケジュール作成が煩雑</li>
+                <li>参加者のニーズを把握できていない</li>
+                <li>担当者の通常業務に支障が出る</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>時間の問題：</strong>年4回の社内イベント（忘年会、新年会、創立記念、納涼会）の準備に、各回20時間以上を費やしていました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで社内イベント企画を効率化</h2>
+            <h3>ステップ1：イベント企画書の作成</h3>
+            <p>イベントの概要と目的に合わせた企画書を作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「社内忘年会の企画書を作成してください。
+
+【基本情報】
+参加人数：25名
+予算：15万円（1人6,000円）
+日時：12月第3金曜日 18:30-21:00
+場所：会社近くの居酒屋またはレストラン
+
+【目的】
+・1年の労をねぎらう
+・部署間のコミュニケーション促進
+・来年に向けたモチベーション向上
+
+【企画書に含める内容】
+1. イベント概要
+2. タイムスケジュール
+3. 予算内訳
+4. 会場選定の条件
+5. 余興・ゲームのアイデア
+6. 準備タスクと担当分担
+7. 当日の運営体制」</div>
+
+            <h3>ステップ2：参加者アンケートの設計</h3>
+            <p>参加者のニーズを把握するアンケートを作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「社内忘年会の事前アンケートを作成してください。
+
+【確認項目】
+・参加可否
+・食事の制限（アレルギー等）
+・余興の希望
+・会場の希望（駅近、個室等）
+・その他リクエスト
+
+回答しやすい選択式を中心にしてください。」</div>
+
+            <h3>ステップ3：当日の進行台本作成</h3>
+            <p>司会者用の進行台本を作成。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：準備時間60%削減、満足度向上</h2>
+            <div class="result-box">
+                <p><span class="number">60%</span> 準備時間削減（20時間→8時間）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">25%</span> 参加者満足度向上</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">95%</span> 参加率（前年比+10%）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>企画書のテンプレート化で品質安定</li>
+                <li>事前アンケートでニーズを反映</li>
+                <li>進行台本で当日の運営がスムーズ</li>
+                <li>担当者の負担が大幅軽減</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで社内イベントをもっと楽しく</h2>
+            <p>Geminiを活用した社内イベント企画により、準備の負担を減らしつつ満足度の高いイベントが実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>目的と制約条件を明確に設定</li>
+                <li>参加者のニーズを事前に把握</li>
+                <li>当日の進行まで含めた準備</li>
+                <li>終了後の振り返りを次回に活かす</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>応用例：</strong>歓迎会、送別会、社員旅行、研修合宿など、様々な社内イベントの企画に同じ手法を活用しています。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">社内イベント</span>
+                <span class="tag">企画書</span>
+                <span class="tag">総務効率化</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

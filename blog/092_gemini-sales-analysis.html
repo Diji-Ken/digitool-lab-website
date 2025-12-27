@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで売上分析レポート作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使って売上分析レポートを効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、分析精度を向上させた実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 売上分析, レポート, AI活用, 中小企業, 経営分析">
+    <style>
+        :root {
+            --primary-color: #bf360c;
+            --secondary-color: #e64a19;
+            --accent-color: #ff8a65;
+            --background-color: #fbe9e7;
+            --text-color: #bf360c;
+            --white: #ffffff;
+            --border-color: #ffccbc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #1f0c08;
+            color: #ff8a65;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #092</span>
+            <h1>Geminiで売上分析レポート作成<br>データドリブン経営を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜経営・営業部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：売上データを分析できていない</h2>
+            <p>従業員19名の小売業では、売上分析に以下の課題がありました。</p>
+            <ul>
+                <li>売上データはあるが分析する時間がない</li>
+                <li>Excelでの集計に限界を感じている</li>
+                <li>経営判断が「勘と経験」に頼りがち</li>
+                <li>月次報告が数字の羅列で終わっている</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>機会損失：</strong>売れ筋商品の把握遅れ、在庫の偏り、販促タイミングのミスなど、データ分析不足による機会損失が年間推定300万円発生していました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで売上データを多角的に分析</h2>
+            <h3>ステップ1：売上データの傾向分析</h3>
+            <p>売上データをGeminiに読み込ませ、傾向とインサイトを抽出します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の月次売上データを分析し、
+経営レポートを作成してください。
+
+【分析項目】
+1. 売上推移と成長率
+2. カテゴリ別構成比の変化
+3. 前年同月比較
+4. 上位10商品の動向
+5. 季節変動の傾向
+
+【出力形式】
+・エグゼクティブサマリー（3行）
+・各分析項目の詳細
+・注目すべきポイント3つ
+・推奨アクション
+
+【売上データ】
+（CSVデータを貼り付け）」</div>
+
+            <h3>ステップ2：顧客セグメント別の分析</h3>
+            <p>顧客層別の購買傾向を分析し、施策に活かします。</p>
+            <div class="prompt-example">プロンプト例：
+「顧客の購買データを分析し、
+セグメント別のレポートを作成してください。
+
+【分析観点】
+1. 購入頻度別の顧客分布
+2. 客単価の分布
+3. リピート率
+4. 離脱傾向のある顧客
+5. 優良顧客の特徴
+
+【データ】
+（顧客別購買データを貼り付け）」</div>
+
+            <h3>ステップ3：予測と施策提案</h3>
+            <p>データに基づく来月の予測と施策を提案。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：分析時間80%削減、売上5%向上</h2>
+            <div class="result-box">
+                <p><span class="number">80%</span> 分析・レポート作成時間削減</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">5%</span> 売上向上（データ活用施策効果）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">週次</span> 分析頻度向上（月次→週次）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>売れ筋・死に筋の早期発見</li>
+                <li>在庫適正化によるロス削減</li>
+                <li>販促タイミングの最適化</li>
+                <li>経営会議の議論が具体的に</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIでデータドリブン経営を実現</h2>
+            <p>Geminiを活用した売上分析により、中小企業でもデータに基づく意思決定が可能になります。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>分析項目を標準化してテンプレート化</li>
+                <li>定期的な分析サイクルを確立</li>
+                <li>分析結果を施策に落とし込む</li>
+                <li>効果測定で改善サイクルを回す</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>発展活用：</strong>過去データを蓄積し、需要予測や最適価格設定へのAI活用を検討しています。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">売上分析</span>
+                <span class="tag">レポート</span>
+                <span class="tag">経営分析</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

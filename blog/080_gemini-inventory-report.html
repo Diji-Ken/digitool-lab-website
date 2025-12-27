@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで在庫レポート作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使って在庫レポートを効率的に作成・分析する方法を解説。従業員10-25名規模の中小企業向けに、在庫管理を最適化した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 在庫管理, レポート, AI活用, 中小企業, 業務効率化">
+    <style>
+        :root {
+            --primary-color: #1565c0;
+            --secondary-color: #42a5f5;
+            --accent-color: #90caf9;
+            --background-color: #e3f2fd;
+            --text-color: #0d47a1;
+            --white: #ffffff;
+            --border-color: #bbdefb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #0a1929;
+            color: #90caf9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #080</span>
+            <h1>Geminiで在庫レポート作成<br>過剰在庫30%削減を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜物流・在庫管理部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：在庫状況の把握に時間がかかる</h2>
+            <p>従業員16名の部品商社では、在庫管理に以下の課題を抱えていました。</p>
+            <ul>
+                <li>週次の在庫レポート作成に半日かかる</li>
+                <li>在庫データの分析が属人化している</li>
+                <li>過剰在庫や欠品のリスクを早期発見できない</li>
+                <li>経営層への報告資料作成が負担</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>ビジネスへの影響：</strong>在庫の見える化が不十分で、年間約500万円の過剰在庫廃棄と、欠品による機会損失が発生していました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで在庫データを分析・レポート化</h2>
+            <h3>ステップ1：在庫データの分析レポート生成</h3>
+            <p>Excelの在庫データをGeminiに読み込ませ、分析レポートを自動生成します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の在庫データを分析し、週次レポートを作成してください。
+
+【分析項目】
+1. 在庫回転率（品目別）
+2. 過剰在庫リスト（適正在庫の150%超）
+3. 欠品リスクリスト（発注点以下）
+4. ABC分析（売上貢献度別）
+5. 前週比の増減サマリー
+
+【出力形式】
+・エグゼクティブサマリー（3行程度）
+・各分析項目の詳細
+・推奨アクション
+
+【在庫データ】
+（CSVデータを貼り付け）」</div>
+
+            <h3>ステップ2：異常値の自動検出と警告</h3>
+            <p>在庫データの異常値をGeminiに検出させ、早期対応につなげます。</p>
+            <div class="prompt-example">プロンプト例：
+「このデータから以下の異常を検出してください。
+1. 急激な在庫増加（前週比200%超）
+2. 長期滞留在庫（90日以上動きなし）
+3. 季節商品の在庫過多リスク
+4. 発注漏れの可能性がある品目
+
+各異常について、原因の推測と対応策を提案してください。」</div>
+
+            <h3>ステップ3：経営向けダッシュボード用サマリー</h3>
+            <p>経営会議で使える簡潔なサマリーを自動生成。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：過剰在庫30%削減、レポート時間80%短縮</h2>
+            <div class="result-box">
+                <p><span class="number">30%</span> 過剰在庫削減（年間150万円相当）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">80%</span> レポート作成時間短縮（4時間→45分）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">98%</span> 欠品率改善（適正発注の実現）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>週次レポートが30分で完成</li>
+                <li>異常検出で問題の早期発見が可能に</li>
+                <li>経営判断のスピードが向上</li>
+                <li>在庫担当者の分析スキル向上</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで在庫管理を最適化</h2>
+            <p>Geminiを活用した在庫レポート作成により、データドリブンな在庫管理が実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>分析観点を標準化してプロンプトをテンプレート化</li>
+                <li>異常検出の閾値を自社に合わせてカスタマイズ</li>
+                <li>経営層向けと現場向けでレポートを使い分け</li>
+                <li>AIの分析結果を現場知識で補完する</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>発展活用：</strong>過去データを蓄積し、需要予測や最適発注量の提案にAIを活用する取り組みも開始しています。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">在庫管理</span>
+                <span class="tag">レポート作成</span>
+                <span class="tag">データ分析</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

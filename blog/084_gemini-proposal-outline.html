@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで提案書アウトライン作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使って提案書のアウトラインを効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、提案書作成時間を65%短縮した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 提案書, アウトライン, AI活用, 中小企業, 営業支援">
+    <style>
+        :root {
+            --primary-color: #00695c;
+            --secondary-color: #26a69a;
+            --accent-color: #80cbc4;
+            --background-color: #e0f2f1;
+            --text-color: #004d40;
+            --white: #ffffff;
+            --border-color: #b2dfdb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #0a1f1c;
+            color: #80cbc4;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #084</span>
+            <h1>Geminiで提案書アウトライン作成<br>作成時間65%短縮を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜営業・企画部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：提案書作成に時間がかかりすぎる</h2>
+            <p>従業員17名のシステム開発会社では、提案書作成に以下の課題がありました。</p>
+            <ul>
+                <li>案件ごとにゼロから提案書の構成を考えている</li>
+                <li>顧客の課題に合った提案ストーリーが作れない</li>
+                <li>提案書の品質が担当者によって大きく異なる</li>
+                <li>提案準備に追われ、本質的な提案内容の検討時間が不足</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>時間の問題：</strong>提案書1件あたり平均8時間を費やしており、月10件の提案で80時間（実質10営業日相当）が提案書作成だけで消費されていました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで提案書アウトラインを自動生成</h2>
+            <h3>ステップ1：ヒアリング情報からアウトライン生成</h3>
+            <p>顧客ヒアリング内容をもとに、最適な提案書アウトラインを生成します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下のヒアリング内容から、提案書のアウトラインを
+作成してください。
+
+【顧客情報】
+業種：製造業（自動車部品）
+従業員数：150名
+課題：生産管理システムの老朽化
+
+【ヒアリング内容】
+・現システムは15年前に導入、保守契約切れ
+・Excel併用で二重入力が発生
+・在庫の正確な把握ができていない
+・月末の棚卸作業に3日かかっている
+
+【提案書アウトライン】
+1. 表紙
+2. エグゼクティブサマリー
+3. 現状の課題整理
+4. 解決策の提案
+5. 導入効果（定量・定性）
+6. 実施スケジュール
+7. 概算費用
+8. 会社概要・実績
+9. Q&A
+
+各章の記載ポイントも含めてください。」</div>
+
+            <h3>ステップ2：訴求ポイントの整理</h3>
+            <p>顧客タイプに合わせた訴求ポイントを洗い出します。</p>
+            <div class="prompt-example">プロンプト例：
+「製造業向け生産管理システム提案で、
+以下の決裁者タイプ別に響く訴求ポイントを
+3つずつ挙げてください。
+
+1. 経営者（コスト削減・経営効率）
+2. 製造部長（現場の生産性）
+3. 情報システム担当（運用・保守性）
+4. 経理担当（在庫管理・原価計算）」</div>
+
+            <h3>ステップ3：競合との差別化ポイント整理</h3>
+            <p>競合他社との差別化ポイントを明確化。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：作成時間65%短縮、提案採用率25%向上</h2>
+            <div class="result-box">
+                <p><span class="number">65%</span> 提案書作成時間短縮（8時間→2.8時間）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">25%</span> 提案採用率向上</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">52時間/月</span> 戦略的業務への時間創出</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>アウトライン作成が30分で完了</li>
+                <li>提案ストーリーの一貫性が向上</li>
+                <li>若手でも質の高い提案書を作成可能</li>
+                <li>顧客課題への理解度が深まった</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで提案力を底上げ</h2>
+            <p>Geminiを活用した提案書アウトライン作成により、効率と品質の両立が実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>ヒアリング情報を構造化してAIに渡す</li>
+                <li>決裁者タイプに合わせた訴求設計</li>
+                <li>差別化ポイントを明確に打ち出す</li>
+                <li>AIアウトライン＋人間の洞察で完成度を高める</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>さらなる活用：</strong>過去の成功提案書をAIに学習させ、業界別・規模別の提案テンプレートライブラリを構築中です。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">提案書</span>
+                <span class="tag">アウトライン</span>
+                <span class="tag">営業効率化</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

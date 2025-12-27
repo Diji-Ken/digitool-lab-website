@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで予算計画書作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使って予算計画書を効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、予算策定時間を65%削減した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 予算計画, 経営計画, AI活用, 中小企業, 財務">
+    <style>
+        :root {
+            --primary-color: #0277bd;
+            --secondary-color: #0288d1;
+            --accent-color: #4fc3f7;
+            --background-color: #e1f5fe;
+            --text-color: #01579b;
+            --white: #ffffff;
+            --border-color: #b3e5fc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #051c2c;
+            color: #4fc3f7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #098</span>
+            <h1>Geminiで予算計画書作成<br>策定時間65%削減を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜経営・財務部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：予算策定に時間がかかりすぎる</h2>
+            <p>従業員20名のサービス業では、予算策定に以下の課題がありました。</p>
+            <ul>
+                <li>年度予算の策定に2ヶ月かかる</li>
+                <li>過去データの分析が不十分</li>
+                <li>部門別予算の調整が煩雑</li>
+                <li>予算と実績の差異分析ができていない</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>経営への影響：</strong>予算策定の遅れにより、期初からの計画的な経営ができず、場当たり的な判断が増えていました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで予算計画書を効率作成</h2>
+            <h3>ステップ1：過去データの分析と予測</h3>
+            <p>過去の財務データをGeminiで分析し、来期の予測を立てます。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の3年分の売上・経費データを分析し、
+来期の予算策定の基礎資料を作成してください。
+
+【分析項目】
+1. 売上のトレンド分析
+2. 経費率の推移
+3. 季節変動の傾向
+4. 来期の売上予測（楽観/標準/悲観）
+5. コスト削減の余地
+
+【データ】
+（過去3年分の月次データを貼り付け）
+
+予測の根拠も含めて説明してください。」</div>
+
+            <h3>ステップ2：部門別予算の配分案作成</h3>
+            <p>全社予算を部門別に配分する案を作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「全社年間予算を部門別に配分する案を
+3パターン作成してください。
+
+【全社予算枠】
+売上目標：2億円
+経費予算：1億6000万円
+
+【部門構成】
+・営業部（8名）
+・技術部（7名）
+・管理部（5名）
+
+【配分パターン】
+1. 売上拡大重視（営業強化）
+2. 品質重視（技術投資）
+3. バランス型
+
+各パターンの配分根拠とメリット・デメリットを
+含めてください。」</div>
+
+            <h3>ステップ3：予算計画書のドラフト作成</h3>
+            <p>経営会議用の予算計画書を作成。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：策定時間65%削減、予実管理強化</h2>
+            <div class="result-box">
+                <p><span class="number">65%</span> 予算策定時間削減（2ヶ月→3週間）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">月次</span> 予実分析頻度向上（四半期→月次）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">15%</span> 予算精度向上（差異率減少）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>データ分析に基づく合理的な予算策定</li>
+                <li>複数シナリオの検討が容易に</li>
+                <li>月次での予実管理が定着</li>
+                <li>経営判断のスピードアップ</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIでデータドリブンな予算策定を</h2>
+            <p>Geminiを活用した予算計画書作成により、根拠に基づく予算策定と迅速な予実管理が実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>過去データを構造化して分析</li>
+                <li>複数シナリオで柔軟性を確保</li>
+                <li>部門との合意形成を効率化</li>
+                <li>月次での予実管理を習慣化</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>発展活用：</strong>AIによる月次予実分析の自動化、差異の原因分析と対策提案の自動生成に取り組んでいます。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">予算計画</span>
+                <span class="tag">経営計画</span>
+                <span class="tag">財務</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

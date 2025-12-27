@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiでリスク管理文書作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使ってリスク管理文書を効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、リスク対応力を強化した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, リスク管理, BCP, AI活用, 中小企業, 経営管理">
+    <style>
+        :root {
+            --primary-color: #455a64;
+            --secondary-color: #607d8b;
+            --accent-color: #90a4ae;
+            --background-color: #eceff1;
+            --text-color: #37474f;
+            --white: #ffffff;
+            --border-color: #cfd8dc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #1c2528;
+            color: #90a4ae;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #094</span>
+            <h1>Geminiでリスク管理文書作成<br>BCP対応力を強化</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜経営・総務部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：リスク管理体制が整っていない</h2>
+            <p>従業員21名の製造業では、リスク管理に以下の課題がありました。</p>
+            <ul>
+                <li>BCP（事業継続計画）が策定されていない</li>
+                <li>リスクの洗い出しができていない</li>
+                <li>有事の際の対応手順が不明確</li>
+                <li>取引先からリスク管理体制の質問を受けるが回答できない</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>ビジネスリスク：</strong>大手取引先から「BCP策定状況の確認」が来るようになり、未整備のままでは取引継続に影響が出る可能性がありました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiでリスク管理文書を効率整備</h2>
+            <h3>ステップ1：リスクの洗い出しと評価</h3>
+            <p>自社に関連するリスクを体系的に洗い出します。</p>
+            <div class="prompt-example">プロンプト例：
+「従業員20名規模の製造業（金属加工）における
+事業リスクを網羅的に洗い出してください。
+
+【リスクカテゴリ】
+1. 自然災害リスク
+2. 感染症リスク
+3. サプライチェーンリスク
+4. 設備・システムリスク
+5. 人的リスク
+6. 情報セキュリティリスク
+7. 法令・コンプライアンスリスク
+
+各リスクについて：
+・発生可能性（高/中/低）
+・影響度（高/中/低）
+・具体的な想定シナリオ
+を含めてください。」</div>
+
+            <h3>ステップ2：BCPの基本方針作成</h3>
+            <p>事業継続計画の基本方針をAIで作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「中小製造業向けのBCP基本方針書のドラフトを
+作成してください。
+
+【含める項目】
+1. 目的
+2. 適用範囲
+3. 重要業務の特定
+4. 目標復旧時間（RTO）
+5. 緊急連絡体制
+6. 代替手段の確保
+7. 教育・訓練計画
+8. 見直し・改善
+
+実践的で運用しやすい内容でお願いします。」</div>
+
+            <h3>ステップ3：緊急時対応マニュアル作成</h3>
+            <p>有事の際の行動手順を明確化。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：BCP整備完了、取引先信頼度向上</h2>
+            <div class="result-box">
+                <p><span class="number">85%</span> 文書作成時間削減</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">2ヶ月</span> BCP策定完了（通常6ヶ月→2ヶ月）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">100%</span> 取引先からのBCP確認に対応完了</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>リスクの「見える化」で経営判断が迅速に</li>
+                <li>有事の際の行動手順が明確化</li>
+                <li>取引先からの信頼度向上</li>
+                <li>社員の危機管理意識が向上</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIでリスク管理を「見える化」</h2>
+            <p>Geminiを活用したリスク管理文書作成により、中小企業でも体系的なリスク管理が実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>リスクを網羅的に洗い出す</li>
+                <li>優先順位をつけて対策を立案</li>
+                <li>実際に運用可能な文書にする</li>
+                <li>定期的な見直しと訓練を実施</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>注意点：</strong>AIで作成したBCPは必ず専門家（中小企業診断士等）にレビューを依頼し、自社の実情に合わせてカスタマイズしてください。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">リスク管理</span>
+                <span class="tag">BCP</span>
+                <span class="tag">経営管理</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

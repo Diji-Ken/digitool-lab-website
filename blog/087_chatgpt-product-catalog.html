@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTで商品カタログ作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="ChatGPTを使って魅力的な商品カタログを効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、カタログ作成時間を60%削減した実践事例をご紹介します。">
+    <meta name="keywords" content="ChatGPT, 商品カタログ, マーケティング, AI活用, 中小企業, 販促">
+    <style>
+        :root {
+            --primary-color: #ad1457;
+            --secondary-color: #e91e63;
+            --accent-color: #f48fb1;
+            --background-color: #fce4ec;
+            --text-color: #880e4f;
+            --white: #ffffff;
+            --border-color: #f8bbd0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #1f0a14;
+            color: #f48fb1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #087</span>
+            <h1>ChatGPTで商品カタログ作成<br>作成時間60%削減の方法</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜マーケティング・販売部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：商品カタログの更新が追いつかない</h2>
+            <p>従業員15名の食品卸売会社では、商品カタログ作成に以下の課題がありました。</p>
+            <ul>
+                <li>新商品追加のたびにカタログ全体を更新する必要</li>
+                <li>商品説明文のクオリティにばらつきがある</li>
+                <li>季節商品の入れ替えが間に合わない</li>
+                <li>紙カタログとWebカタログで二重作業が発生</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>機会損失：</strong>カタログ更新の遅れにより、新商品の販売機会を逃すことがあり、年間で推定200万円の機会損失が発生していました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：ChatGPTで商品カタログコンテンツを効率作成</h2>
+            <h3>ステップ1：商品情報の統一フォーマット作成</h3>
+            <p>商品情報を構造化し、カタログ用コンテンツを生成します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の商品情報から、カタログ掲載用の
+コンテンツを作成してください。
+
+【商品情報】
+商品名：プレミアム黒毛和牛ハンバーグ
+カテゴリ：冷凍食品
+内容量：150g×4個
+価格：2,980円（税込）
+特徴：
+・A5ランク黒毛和牛100%使用
+・つなぎ不使用
+・自家製デミグラスソース付き
+
+【出力内容】
+1. キャッチコピー（15字以内）
+2. 商品紹介文（100字程度）
+3. おすすめポイント3つ
+4. 想定利用シーン
+5. スペック表用テキスト」</div>
+
+            <h3>ステップ2：カテゴリ別の導入文作成</h3>
+            <p>カタログの各カテゴリページの導入文を作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「食品卸売カタログの「冷凍食品」カテゴリ用の
+導入文を作成してください。
+
+【含める要素】
+・カテゴリの特徴・強み
+・品質へのこだわり
+・ターゲット顧客へのメッセージ
+・取り扱い商品数
+
+150字程度で、飲食店オーナー向けに
+響く内容でお願いします。」</div>
+
+            <h3>ステップ3：Web・紙両対応のコンテンツ生成</h3>
+            <p>同じ商品情報からWeb用・紙用の両方を一度に作成。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：作成時間60%削減、売上10%増</h2>
+            <div class="result-box">
+                <p><span class="number">60%</span> カタログ作成時間削減</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">10%</span> カタログ経由売上増</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">月2回</span> カタログ更新頻度向上（四半期→月2回）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>新商品のカタログ掲載が即日可能に</li>
+                <li>商品説明の品質が均一化</li>
+                <li>季節商品の入れ替えがスムーズ</li>
+                <li>Web・紙の同時更新で一貫性確保</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで販促物の鮮度を保つ</h2>
+            <p>ChatGPTを活用した商品カタログ作成により、常に最新の情報を顧客に届けられます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>商品情報のインプットを構造化</li>
+                <li>キャッチコピー・説明文・スペックを一括生成</li>
+                <li>Web・紙両対応でワンソース運用</li>
+                <li>定期的な更新サイクルを確立</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>発展活用：</strong>顧客属性に合わせたパーソナライズカタログの作成にもAIを活用し、さらなる販売促進を目指しています。</p>
+            </div>
+            <p>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">商品カタログ</span>
+                <span class="tag">マーケティング</span>
+                <span class="tag">販促</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

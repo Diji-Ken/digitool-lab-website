@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiでプロジェクト進捗報告 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使ってプロジェクト進捗報告を効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、報告作成時間を75%削減した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, プロジェクト管理, 進捗報告, AI活用, 中小企業, 業務効率化">
+    <style>
+        :root {
+            --primary-color: #303f9f;
+            --secondary-color: #5c6bc0;
+            --accent-color: #9fa8da;
+            --background-color: #e8eaf6;
+            --text-color: #1a237e;
+            --white: #ffffff;
+            --border-color: #c5cae9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #0d1033;
+            color: #9fa8da;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #086</span>
+            <h1>Geminiでプロジェクト進捗報告<br>報告作成時間75%削減</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜プロジェクト管理部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：進捗報告に時間を取られすぎる</h2>
+            <p>従業員18名のWeb制作会社では、プロジェクト進捗報告に以下の課題がありました。</p>
+            <ul>
+                <li>週次報告書の作成に毎回2時間以上かかる</li>
+                <li>複数プロジェクトの状況を把握するのが大変</li>
+                <li>報告フォーマットが統一されていない</li>
+                <li>リスクや課題の整理が後手に回る</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>時間の浪費：</strong>プロジェクトマネージャー3名で、週に合計12時間を報告書作成に費やしており、本来の管理業務に支障が出ていました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで進捗報告を自動生成</h2>
+            <h3>ステップ1：プロジェクト状況の整理</h3>
+            <p>各プロジェクトの情報をGeminiで整理・要約します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下のプロジェクト情報から、
+週次進捗報告書を作成してください。
+
+【プロジェクト情報】
+プロジェクト名：A社コーポレートサイトリニューアル
+期間：2024/4/1～2024/6/30
+今週の実施内容：
+・デザインカンプ最終版完成
+・トップページコーディング着手
+・CMS選定の検討会議実施
+
+【報告書フォーマット】
+1. 進捗サマリー（3行程度）
+2. 今週の成果物
+3. 進捗率（予定vs実績）
+4. 来週の予定
+5. 課題・リスク
+6. 依頼事項
+
+分かりやすく簡潔にまとめてください。」</div>
+
+            <h3>ステップ2：複数プロジェクトの統合報告</h3>
+            <p>複数プロジェクトを横断した報告書を作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の3プロジェクトの進捗を統合し、
+経営層向けのサマリーレポートを作成してください。
+
+【観点】
+1. 全体の健康状態（赤黄青で評価）
+2. 売上・利益への影響
+3. リソース配分の状況
+4. 優先対応が必要な課題
+5. 今月の見通し
+
+【プロジェクト情報】
+（各プロジェクトの情報を貼り付け）」</div>
+
+            <h3>ステップ3：リスク・課題の分析</h3>
+            <p>プロジェクトリスクを洗い出し、対策を提案。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：報告作成75%削減、プロジェクト成功率向上</h2>
+            <div class="result-box">
+                <p><span class="number">75%</span> 報告作成時間削減（2時間→30分）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">20%</span> プロジェクト成功率向上</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">9時間/週</span> 戦略的業務への時間創出</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>報告フォーマットが統一され読みやすく</li>
+                <li>リスクの早期発見・対応が可能に</li>
+                <li>経営層への報告が迅速化</li>
+                <li>PMがプロジェクト管理に集中できる</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIでプロジェクト管理を効率化</h2>
+            <p>Geminiを活用したプロジェクト進捗報告により、報告業務の負担を大幅に軽減できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>報告フォーマットを標準化</li>
+                <li>プロジェクト情報を構造化して入力</li>
+                <li>複数プロジェクトの統合分析を活用</li>
+                <li>リスク分析でプロアクティブな管理</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>発展活用：</strong>過去のプロジェクトデータをAIに学習させ、類似案件のリスク予測や工数見積もりの精度向上に取り組んでいます。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">プロジェクト管理</span>
+                <span class="tag">進捗報告</span>
+                <span class="tag">業務効率化</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTで製品マニュアル作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="ChatGPTを使って分かりやすい製品マニュアルを効率的に作成する方法を解説。従業員10-25名規模の中小企業向けに、問い合わせを40%削減した実践事例をご紹介します。">
+    <meta name="keywords" content="ChatGPT, 製品マニュアル, 取扱説明書, AI活用, 中小企業, 技術文書">
+    <style>
+        :root {
+            --primary-color: #4527a0;
+            --secondary-color: #673ab7;
+            --accent-color: #b39ddb;
+            --background-color: #ede7f6;
+            --text-color: #311b92;
+            --white: #ffffff;
+            --border-color: #d1c4e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #1a0f2e;
+            color: #b39ddb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #097</span>
+            <h1>ChatGPTで製品マニュアル作成<br>問い合わせ40%削減を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜技術・サポート部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：マニュアルが分かりにくい</h2>
+            <p>従業員16名の機器メーカーでは、製品マニュアルに以下の課題がありました。</p>
+            <ul>
+                <li>技術者が書くマニュアルが難解</li>
+                <li>ユーザーからの問い合わせが減らない</li>
+                <li>新製品のたびにマニュアル作成が遅延</li>
+                <li>多言語対応ができていない</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>サポートコスト：</strong>「マニュアルを読んでもわからない」という問い合わせが月50件以上あり、サポートスタッフの負担が大きくなっていました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：ChatGPTで分かりやすいマニュアルを作成</h2>
+            <h3>ステップ1：技術文書をユーザー向けに書き換え</h3>
+            <p>技術仕様書をもとに、ユーザーが理解しやすいマニュアルを作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の技術仕様を、一般ユーザー向けの
+製品マニュアルに書き換えてください。
+
+【技術仕様】
+・電源入力：AC100-240V 50/60Hz
+・消費電力：最大45W（待機時0.5W）
+・動作温度：5-35℃
+・動作湿度：20-80%RH（結露なきこと）
+
+【書き換えのポイント】
+1. 専門用語を避ける
+2. 具体的な使用シーンで説明
+3. 注意事項を分かりやすく
+4. 図解の説明も追加
+
+想定読者：家電製品を普通に使う一般消費者」</div>
+
+            <h3>ステップ2：トラブルシューティングの作成</h3>
+            <p>よくある問い合わせをもとにFAQ形式のセクションを作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「以下のよくある問い合わせから、
+トラブルシューティングセクションを作成してください。
+
+【よくある問い合わせ】
+1. 電源が入らない
+2. 動作が遅い
+3. エラーランプが点滅する
+4. 接続が切れる
+
+各項目について：
+・症状の説明
+・考えられる原因（複数）
+・対処方法（ステップバイステップ）
+・解決しない場合の対応」</div>
+
+            <h3>ステップ3：クイックスタートガイドの作成</h3>
+            <p>開封から使い始めまでを簡潔にまとめたガイドを作成。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：問い合わせ40%削減、満足度向上</h2>
+            <div class="result-box">
+                <p><span class="number">40%</span> 問い合わせ件数削減</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">70%</span> マニュアル作成時間削減</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">30%</span> 顧客満足度向上</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>ユーザー視点の分かりやすい説明</li>
+                <li>トラブル時の自己解決率向上</li>
+                <li>サポートスタッフの負担軽減</li>
+                <li>新製品のマニュアル作成が迅速化</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで「読まれる」マニュアルを作成</h2>
+            <p>ChatGPTを活用した製品マニュアル作成により、ユーザーの自己解決を促進し、サポートコストを削減できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>ユーザー目線で専門用語を排除</li>
+                <li>よくある質問を先回りで解決</li>
+                <li>クイックスタートで導入ハードルを下げる</li>
+                <li>問い合わせ内容をもとに継続改善</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>発展活用：</strong>AIで作成したマニュアルをもとに、多言語対応やチャットボットによる自動応答システムの構築も検討しています。</p>
+            </div>
+            <p>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">製品マニュアル</span>
+                <span class="tag">取扱説明書</span>
+                <span class="tag">技術文書</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

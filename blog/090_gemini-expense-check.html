@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで経費精算チェック - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="Google Geminiを使って経費精算のチェック作業を効率化する方法を解説。従業員10-25名規模の中小企業向けに、チェック時間を70%削減した実践事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 経費精算, チェック, AI活用, 中小企業, 経理効率化">
+    <style>
+        :root {
+            --primary-color: #558b2f;
+            --secondary-color: #7cb342;
+            --accent-color: #aed581;
+            --background-color: #f1f8e9;
+            --text-color: #33691e;
+            --white: #ffffff;
+            --border-color: #c5e1a5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #0f1a0a;
+            color: #aed581;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #f1f8e9 0%, #c5e1a5 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #090</span>
+            <h1>Geminiで経費精算チェック<br>チェック時間70%削減を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜経理部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：経費精算のチェックに時間がかかる</h2>
+            <p>従業員22名の営業会社では、経費精算のチェックに以下の課題がありました。</p>
+            <ul>
+                <li>月末に経費精算が集中し、チェックが追いつかない</li>
+                <li>規程違反や入力ミスの発見が遅れる</li>
+                <li>同じようなミスが繰り返し発生</li>
+                <li>経理担当者1名で全員分をチェック</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>時間の問題：</strong>月間約150件の経費精算申請に対し、1件あたり10分のチェック時間が必要で、月25時間を経費精算チェックだけに費やしていました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：Geminiで経費精算の事前チェックを自動化</h2>
+            <h3>ステップ1：経費データの規程チェック</h3>
+            <p>経費精算データをGeminiで規程に照らし合わせてチェックします。</p>
+            <div class="prompt-example">プロンプト例：
+「以下の経費精算データを、当社の経費規程に照らして
+チェックしてください。
+
+【経費規程（抜粋）】
+・交通費：公共交通機関の実費精算
+・タクシー代：1回3,000円以上は事前承認必要
+・接待交際費：1人5,000円まで、事前承認必要
+・日当：日帰り出張3,000円、宿泊出張5,000円
+
+【経費精算データ】
+日付,科目,金額,摘要
+2024/3/15,タクシー代,4,500,顧客訪問
+2024/3/18,接待交際費,28,000,4名での会食
+2024/3/20,日当,5,000,大阪日帰り出張
+
+【チェック観点】
+1. 規程違反の有無
+2. 承認要否
+3. 不自然な点
+4. 確認すべき事項」</div>
+
+            <h3>ステップ2：異常値・パターンの検出</h3>
+            <p>過去データと比較して異常なパターンを検出します。</p>
+            <div class="prompt-example">プロンプト例：
+「この社員の過去3ヶ月の経費データを分析し、
+今月の申請で異常な点がないかチェックしてください。
+
+【分析観点】
+1. 月間合計の急増減
+2. 特定科目の急増
+3. 頻度の異常
+4. 利用店舗・ルートの不自然さ
+
+【過去データ】
+（過去の経費データを貼り付け）
+
+【今月データ】
+（今月の経費データを貼り付け）」</div>
+
+            <h3>ステップ3：チェック結果のサマリー作成</h3>
+            <p>チェック結果を承認者向けにまとめます。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：チェック時間70%削減、不正発見率向上</h2>
+            <div class="result-box">
+                <p><span class="number">70%</span> チェック時間削減（25時間→7.5時間）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">95%</span> 規程違反の検出率</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">80%</span> 入力ミス削減（事前チェック効果）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>月末の経理残業がほぼゼロに</li>
+                <li>問題のある申請を早期発見</li>
+                <li>申請者への差し戻しが迅速化</li>
+                <li>承認者の確認負担も軽減</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで経理業務の品質と効率を両立</h2>
+            <p>Geminiを活用した経費精算チェックにより、少人数の経理でも確実な管理が可能になります。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>経費規程を明文化してAIに入力</li>
+                <li>過去データとの比較で異常を検出</li>
+                <li>AIチェック後に人間が最終確認</li>
+                <li>よくあるミスを社内に周知</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>重要な注意点：</strong>AIのチェック結果はあくまで参考情報です。最終判断は必ず経理担当者が行い、判断に迷う場合は上長に相談してください。</p>
+            </div>
+            <p>
+                <span class="tag">Gemini</span>
+                <span class="tag">経費精算</span>
+                <span class="tag">チェック</span>
+                <span class="tag">経理効率化</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>

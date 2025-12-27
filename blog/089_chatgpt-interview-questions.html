@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTで面接質問作成 - 中小企業のAI活用術 | digitool-lab.com</title>
+    <meta name="description" content="ChatGPTを使って効果的な採用面接の質問を作成する方法を解説。従業員10-25名規模の中小企業向けに、採用精度を30%向上させた実践事例をご紹介します。">
+    <meta name="keywords" content="ChatGPT, 面接質問, 採用, AI活用, 中小企業, 人事">
+    <style>
+        :root {
+            --primary-color: #00838f;
+            --secondary-color: #00acc1;
+            --accent-color: #80deea;
+            --background-color: #e0f7fa;
+            --text-color: #006064;
+            --white: #ffffff;
+            --border-color: #b2ebf2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .prompt-example {
+            background-color: #0a1a1c;
+            color: #80deea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="article-number">AI活用術 #089</span>
+            <h1>ChatGPTで面接質問作成<br>採用精度30%向上を実現</h1>
+            <p class="header-meta">従業員10-25名の中小企業向け｜人事・採用部門</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>課題：採用のミスマッチが多い</h2>
+            <p>従業員20名の広告代理店では、採用活動に以下の課題がありました。</p>
+            <ul>
+                <li>面接での質問が毎回場当たり的</li>
+                <li>面接官によって評価基準がバラバラ</li>
+                <li>入社後のミスマッチで早期退職が発生</li>
+                <li>中途採用で求める人材像が明確でない</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>コストの問題：</strong>入社1年以内の退職率が30%で、採用・教育コストの損失は年間約500万円に上っていました。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>施策：ChatGPTで体系的な面接質問を設計</h2>
+            <h3>ステップ1：職種別の質問リスト作成</h3>
+            <p>募集職種に合わせた質問リストを作成します。</p>
+            <div class="prompt-example">プロンプト例：
+「広告代理店のアカウントプランナー採用面接用の
+質問リストを作成してください。
+
+【募集要件】
+・経験3年以上
+・クライアント折衝経験
+・企画提案経験
+
+【評価したいポイント】
+1. コミュニケーション能力
+2. 課題発見・解決能力
+3. ストレス耐性
+4. 成長意欲
+5. カルチャーフィット
+
+各ポイントについて：
+・質問文（具体的に）
+・良い回答例
+・注意すべき回答例
+を含めてください。」</div>
+
+            <h3>ステップ2：深掘り質問の準備</h3>
+            <p>回答に応じた深掘り質問を事前に準備します。</p>
+            <div class="prompt-example">プロンプト例：
+「「これまでで最も困難だったプロジェクトは？」
+という質問に対する深掘り質問を5つ作成してください。
+
+【深掘りの観点】
+・具体的な行動
+・思考プロセス
+・周囲との協力
+・結果からの学び
+・現在への活かし方」</div>
+
+            <h3>ステップ3：評価シートの作成</h3>
+            <p>面接評価を標準化するシートを作成。</p>
+        </section>
+
+        <section class="section">
+            <h2>成果：採用精度30%向上、早期退職率半減</h2>
+            <div class="result-box">
+                <p><span class="number">30%</span> 採用精度向上（適性マッチ率）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">50%</span> 早期退職率減少（30%→15%）</p>
+            </div>
+            <div class="result-box">
+                <p><span class="number">250万円</span> 採用コスト削減（年間）</p>
+            </div>
+
+            <h3>具体的な改善ポイント</h3>
+            <ul>
+                <li>面接の質が標準化され評価ブレが減少</li>
+                <li>深掘り質問で候補者の本質を見極め</li>
+                <li>入社後の活躍予測が向上</li>
+                <li>面接官の育成にも活用</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>まとめ：AIで採用の質を高める</h2>
+            <p>ChatGPTを活用した面接質問作成により、限られたリソースでも質の高い採用が実現できます。</p>
+            <h3>成功のポイント</h3>
+            <ol>
+                <li>求める人材像を明確に定義</li>
+                <li>評価ポイント別に質問を設計</li>
+                <li>深掘り質問で回答の信憑性を確認</li>
+                <li>評価シートで判断を標準化</li>
+            </ol>
+            <div class="highlight-box">
+                <p><strong>注意点：</strong>AIが生成した質問は必ず法的観点（差別につながる質問がないか等）をチェックし、自社の状況に合わせてカスタマイズしてください。</p>
+            </div>
+            <p>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">面接質問</span>
+                <span class="tag">採用</span>
+                <span class="tag">人事</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 digitool-lab.com - 中小企業のAI活用を支援</p>
+    </footer>
+</body>
+</html>
