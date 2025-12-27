@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotebookLMでSlackスタンプを集計分析！チーム感情の可視化事例 - 株式会社デジタルツール研究所</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <meta property="og:title" content="NotebookLMでSlackスタンプを集計分析！チーム感情の可視化事例 | デジタルツール研究所">
+    <meta property="og:description" content="Slackのリアクションスタンプデータを活用し、チームの感情やエンゲージメントを可視化。NotebookLMで傾向分析を行った事例。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-notebooklm-slack-reaction.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-ai-slack.jpg">
+    <meta property="og:site_name" content="株式会社デジタルツール研究所">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NotebookLMでSlackスタンプを集計分析！チーム感情の可視化事例">
+    <meta name="twitter:description" content="NotebookLMでSlackスタンプを分析した事例。">
+    <meta name="twitter:image" content="https://digitool-lab.com/images/case-studies/case-ai-slack.jpg">
+
+    <meta name="description" content="Slackのリアクションスタンプデータを活用し、チームの感情やエンゲージメントを可視化。NotebookLMで傾向分析を行った中小企業の事例。">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-notebooklm-slack-reaction.html">
+
+    <style>
+        :root {
+            --article-primary: #ef4444;
+            --article-primary-light: #fee2e2;
+            --article-primary-dark: #dc2626;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo"><img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ"></a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav"><a href="../about.html">私たちについて</a><a href="../service.html">事業内容</a><a href="../case-studies.html">ご支援事例</a></nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg><span>資料ダウンロード</span></a>
+          <a href="../contact.html" class="btn btn-sm btn-dark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>お問い合わせ</span></a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu"><a href="../about.html">私たちについて</a><a href="../service.html">事業内容</a><a href="../case-studies.html">ご支援事例</a><a href="../contact.html">お問い合わせ</a></nav>
+  </header>
+
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">AI活用事例</span>
+      </div>
+    </nav>
+
+    <div class="page-header" style="padding: 3rem 1rem; background: linear-gradient(135deg, var(--article-primary-light) 0%, #fef2f2 100%);">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--article-primary); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">チーム分析</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2025-01-10</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0; color: var(--article-primary-dark);">NotebookLMでSlackスタンプを集計分析！チーム感情の可視化事例</h1>
+
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI活用" class="article-tag" style="background-color: var(--article-primary-light); color: var(--article-primary-dark);">AI活用</a>
+            <a href="../case-studies.html?tag=NotebookLM" class="article-tag" style="background-color: var(--article-primary-light); color: var(--article-primary-dark);">NotebookLM</a>
+            <a href="../case-studies.html?tag=Slack" class="article-tag" style="background-color: var(--article-primary-light); color: var(--article-primary-dark);">Slack</a>
+            <a href="../case-studies.html?tag=チーム分析" class="article-tag" style="background-color: var(--article-primary-light); color: var(--article-primary-dark);">チーム分析</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--article-primary); padding-left: 1rem;">1. 支援前の課題</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">従業員20名のIT企業L社では、リモートワーク環境でチームの雰囲気や士気を把握することが難しくなっていました。対面でのやり取りが減り、メンバーの状態が見えにくい状況でした。</p>
+
+          <div style="background-color: var(--article-primary-light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--article-primary); margin: 2rem 0;">
+            <p style="margin: 0; font-weight: 600; color: var(--article-primary-dark);">「リモートでチームの雰囲気が分からない」<br>「1on1では本音が聞けないことがある」<br>「離職の予兆を早期に察知したい」</p>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">同社ではSlackを主要なコミュニケーションツールとして使用しており、日々多くのリアクションスタンプが付けられていました。この<strong>リアクションデータにはチームの感情が表れている</strong>のではないかと考え、分析を試みることにしました。</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--article-primary); padding-left: 1rem;">2. 行った施策</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 2rem;">Slackのリアクションデータをエクスポートし、NotebookLMで<strong>傾向分析とインサイト抽出</strong>を行う仕組みを構築しました。</p>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--article-primary-dark); margin-bottom: 1rem;">Step 1：Slackデータのエクスポート</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">Slackの管理画面からワークスペースのデータをエクスポート。リアクションの種類、付けた人、付けられた投稿、日時などのデータを取得しました。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--article-primary-dark); margin-bottom: 1rem;">Step 2：NotebookLMにデータを読み込み</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">エクスポートしたデータ（CSV形式）をNotebookLMにアップロード。「このデータからチームの傾向を分析してください」と指示しました。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--article-primary-dark); margin-bottom: 1rem;">Step 3：リアクション傾向の分析</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">NotebookLMは、ポジティブなリアクション（いいね、ありがとう等）とネガティブなリアクション（困った顔等）の比率、時系列での変化、チャンネル別の傾向などを分析してくれます。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--article-primary-dark); margin-bottom: 1rem;">Step 4：定期的なモニタリング</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">月次でデータを更新し、傾向の変化をチェック。特定のメンバーのリアクション数が急減した場合などは、早期にフォローアップを行う体制を整えました。</p>
+          </div>
+
+          <div style="background-color: var(--article-primary-light); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+            <h4 style="font-size: 1rem; font-weight: 600; color: var(--article-primary-dark); margin-bottom: 0.75rem;">導入のポイント</h4>
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 1rem; line-height: 1.8; color: var(--gray-700);">
+              <li>Slackデータは管理者がエクスポート可能</li>
+              <li>NotebookLMが自動で傾向を分析</li>
+              <li>ポジティブ/ネガティブの比率を可視化</li>
+              <li>月次モニタリングで変化を早期察知</li>
+            </ul>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--article-primary); padding-left: 1rem;">3. 施策後の成果</h2>
+
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+              <thead>
+                <tr style="background-color: var(--article-primary-light);">
+                  <th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600;">指標</th>
+                  <th style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); font-weight: 600;">導入前</th>
+                  <th style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); font-weight: 600;">導入後</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">チーム状況の把握度</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">感覚的</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--article-primary-dark); font-weight: 600;">データに基づく</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">問題の早期発見</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">事後対応</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--article-primary-dark); font-weight: 600;">予兆段階でフォロー</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">月次分析工数</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">—</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--article-primary-dark); font-weight: 600;">約30分/月</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">リアクションデータの分析により、<strong>チームの状況を客観的に把握</strong>できるようになりました。あるメンバーのリアクション数が減少傾向にあることを早期に察知し、1on1でフォローしたところ、業務上の悩みを抱えていたことが判明。早期に対応できました。</p>
+
+          <div style="background-color: var(--gray-100); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--article-primary); margin: 2rem 0;">
+            <p style="margin: 0; font-size: 1.125rem; line-height: 1.6; color: var(--gray-800); font-weight: 500;">「数字で傾向が見えるようになった」「問題が大きくなる前に気づけるようになった」「1on1の質が上がった」</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--article-primary); padding-left: 1rem;">4. まとめ</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">Slackのリアクションスタンプは、メンバーの感情が表れるデータです。NotebookLMを活用すれば、<strong>このデータからチームの状態を可視化</strong>できます。</p>
+
+          <ul style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.5rem;">
+            <li><strong>既存データを活用</strong>：新たなアンケート不要</li>
+            <li><strong>自動分析</strong>：NotebookLMが傾向を抽出</li>
+            <li><strong>早期発見</strong>：問題の予兆を察知</li>
+            <li><strong>低工数</strong>：月30分程度で運用可能</li>
+          </ul>
+
+          <p style="font-size: 1.125rem; line-height: 1.7;">「リモートでチームの状態が見えない」という課題をお持ちの方は、Slackデータの分析を試してみてください。</p>
+        </section>
+      </div>
+    </article>
+
+    <section style="background-color: var(--article-primary-light); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; color: var(--article-primary-dark);">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem; border-color: var(--article-primary); color: var(--article-primary);">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem; background-color: var(--article-primary);">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company"><img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo"><div class="footer-company-info"><h3>株式会社デジタルツール研究所</h3><p>〒110-0004<br>東京都台東区下谷2丁目23番8号<br>リベール上野4F</p></div></div>
+      <div></div><div></div><div></div>
+      <div class="footer-services"><h4>事業内容</h4><ul><li><a href="../services/consulting.html">DX伴走サポート</a></li><li><a href="../services/training.html">フルオーダーメイドAI研修</a></li><li><a href="../services/development.html">開発・デジタル支援</a></li></ul></div>
+      <div class="footer-site-links"><ul><li><a href="../case-studies.html">ご支援事例</a></li><li><a href="../about.html">会社情報</a></li><li><a href="../service.html">サービス一覧</a></li><li><a href="../contact.html">お問い合わせ</a></li></ul></div>
+      <div class="footer-social"><h4>SNS</h4><div class="social-links"><a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path><circle cx="12" cy="12" r="3"></circle><circle cx="17.5" cy="6.5" r="1.5"></circle></svg><span>Instagram</span></a><a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon></svg><span>YouTube</span></a></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p></div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;"><div class="modal-content"><button id="close-modal" class="modal-close">&times;</button><h3>サービス詳細資料</h3><p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。</p><form id="download-form"><div class="form-group"><label for="modal-name">お名前 *</label><input type="text" id="modal-name" name="name" required></div><div class="form-group"><label for="modal-email">メールアドレス *</label><input type="email" id="modal-email" name="email" required></div><button type="submit" class="btn btn-primary btn-block">ダウンロード</button></form></div></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
