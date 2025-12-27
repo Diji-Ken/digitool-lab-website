@@ -3,48 +3,28 @@
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
-// セッション開始
-session_start();
-
-// 強化された迷惑メール対策を読み込み
-require_once 'enhanced_spam_protection.php';
-
 // POSTデータを取得
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    $spam_protection = new EnhancedSpamProtection();
-    
-    // フォームデータの取得
-    $form_data = [
-        'name' => trim($_POST['name'] ?? ''),
-        'company' => trim($_POST['company'] ?? ''),
-        'email' => trim($_POST['email'] ?? ''),
-        'phone' => trim($_POST['phone'] ?? ''),
-        'message' => trim($_POST['message'] ?? ''),
-        'website' => trim($_POST['website'] ?? '') // ホニーポット
-    ];
-    
-    // 強化された迷惑メールチェック
-    if ($spam_protection->isSpamSubmission($form_data)) {
-        error_log("Enhanced spam submission blocked from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown'));
-        header("Location: contact_success.html"); // 成功ページにリダイレクトしてスパマーを騙す
-        exit;
-    }
+    $name = trim($_POST['name']);
+    $company = trim($_POST['company']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $message = trim($_POST['message']);
     
     // バリデーション
     $errors = [];
     
-    if (empty($form_data['name'])) {
+    if (empty($name)) {
         $errors[] = "お名前を入力してください。";
     }
     
-    if (empty($form_data['email'])) {
+    if (empty($email)) {
         $errors[] = "メールアドレスを入力してください。";
-    } elseif (!filter_var($form_data['email'], FILTER_VALIDATE_EMAIL)) {
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "正しいメールアドレスを入力してください。";
     }
     
-    if (empty($form_data['message'])) {
+    if (empty($message)) {
         $errors[] = "お問い合わせ内容を入力してください。";
     }
     
@@ -54,35 +34,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $subject_admin = "お問い合わせフォームから新しいメッセージが届きました";
         
         $body_admin = "お問い合わせフォームから新しいメッセージが届きました。\n\n";
-        $body_admin .= "お名前: " . $form_data['name'] . "\n";
-        $body_admin .= "会社名: " . ($form_data['company'] ? $form_data['company'] : "未入力") . "\n";
-        $body_admin .= "メールアドレス: " . $form_data['email'] . "\n";
-        $body_admin .= "電話番号: " . ($form_data['phone'] ? $form_data['phone'] : "未入力") . "\n";
-        $body_admin .= "お問い合わせ内容:\n" . $form_data['message'] . "\n\n";
+        $body_admin .= "お名前: " . $name . "\n";
+        $body_admin .= "会社名: " . ($company ? $company : "未入力") . "\n";
+        $body_admin .= "メールアドレス: " . $email . "\n";
+        $body_admin .= "電話番号: " . ($phone ? $phone : "未入力") . "\n";
+        $body_admin .= "お問い合わせ内容:\n" . $message . "\n\n";
         $body_admin .= "送信日時: " . date('Y年m月d日 H:i:s') . "\n";
-        $body_admin .= "送信者IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
-        $body_admin .= "User-Agent: " . ($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown') . "\n";
         
         $headers_admin = "From: noreply@digitool-lab.com\r\n";
-        $headers_admin .= "Reply-To: " . $form_data['email'] . "\r\n";
+        $headers_admin .= "Reply-To: " . $email . "\r\n";
         $headers_admin .= "Content-Type: text/plain; charset=UTF-8\r\n";
         
         // お客様への受領メール送信
-        $to_customer = $form_data['email'];
+        $to_customer = $email;
         $subject_customer = "お問い合わせありがとうございます - 株式会社デジタルツール研究所";
         
-        $body_customer = $form_data['name'] . " 様\n\n";
+        $body_customer = $name . " 様\n\n";
         $body_customer .= "この度は、株式会社デジタルツール研究所にお問い合わせいただき、誠にありがとうございます。\n\n";
         $body_customer .= "以下の内容でお問い合わせを承りました。\n";
         $body_customer .= "内容を確認の上、1営業日以内にご返信させていただきます。\n\n";
         $body_customer .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
         $body_customer .= "【お問い合わせ内容】\n";
         $body_customer .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
-        $body_customer .= "お名前: " . $form_data['name'] . "\n";
-        $body_customer .= "会社名: " . ($form_data['company'] ? $form_data['company'] : "未入力") . "\n";
-        $body_customer .= "メールアドレス: " . $form_data['email'] . "\n";
-        $body_customer .= "電話番号: " . ($form_data['phone'] ? $form_data['phone'] : "未入力") . "\n";
-        $body_customer .= "お問い合わせ内容:\n" . $form_data['message'] . "\n";
+        $body_customer .= "お名前: " . $name . "\n";
+        $body_customer .= "会社名: " . ($company ? $company : "未入力") . "\n";
+        $body_customer .= "メールアドレス: " . $email . "\n";
+        $body_customer .= "電話番号: " . ($phone ? $phone : "未入力") . "\n";
+        $body_customer .= "お問い合わせ内容:\n" . $message . "\n";
         $body_customer .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
         $body_customer .= "もしお急ぎの場合は、以下の方法でもご連絡いただけます：\n";
         $body_customer .= "・無料オンライン相談：https://timerex.net/s/digi-ken/07b69f6b\n";
