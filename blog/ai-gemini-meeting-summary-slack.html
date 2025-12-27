@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Google MeetとGeminiを連携させ、議事録の再要約からSlack共有までを自動化する方法。毎日の朝会後の議事録共有を完全自動化した事例を解説します。">
+    <meta name="keywords" content="Gemini, Google Meet, 議事録, Slack, GAS, 自動化, 業務効率化, 中小企業DX">
+    <title>Gemini×GASで議事録を自動要約！Slack共有まで完全自動化 | デジタルツール研究所</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Gemini×GASで議事録を自動要約！Slack共有まで完全自動化</h1>
+            <p class="lead">25名規模のIT企業が、Google MeetとGeminiを連携させて議事録の自動共有を実現。毎日の朝会議事録がAIで再要約され、自動でSlackに投稿される仕組みを構築した事例をご紹介します。</p>
+        </header>
+
+        <nav class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#challenge">課題：議事録の整理と共有に毎日時間がかかる</a></li>
+                <li><a href="#solution">施策：GAS×Geminiで議事録共有を完全自動化</a></li>
+                <li><a href="#result">成果：毎日5分の作業がゼロに</a></li>
+                <li><a href="#summary">まとめ：小さな自動化の大きな効果</a></li>
+            </ol>
+        </nav>
+
+        <section id="challenge">
+            <h2>課題：議事録の整理と共有に毎日時間がかかる</h2>
+
+            <h3>企業プロフィール</h3>
+            <table>
+                <tr>
+                    <th>業種</th>
+                    <td>IT企業（受託開発）</td>
+                </tr>
+                <tr>
+                    <th>従業員数</th>
+                    <td>25名</td>
+                </tr>
+                <tr>
+                    <th>朝会の頻度</th>
+                    <td>毎日9:00〜9:15（15分）</td>
+                </tr>
+                <tr>
+                    <th>主な課題</th>
+                    <td>朝会議事録の整理・共有に毎回手間がかかる</td>
+                </tr>
+            </table>
+
+            <h3>朝会と議事録の現状</h3>
+            <p>同社では毎朝Google Meetで15分間の朝会を実施しています。各メンバーが昨日の進捗と今日の予定を共有し、困りごとがあれば相談する場として活用されていました。</p>
+
+            <h4>Google Meetの自動議事録機能</h4>
+            <p>Google Workspace Business Standard以上のプランでは、Google Meetに自動議事録作成機能が搭載されています。会議終了後、AIが自動で文字起こしと要約を行い、Googleドキュメントとして保存してくれます。</p>
+
+            <h4>自動議事録の問題点</h4>
+            <p>便利な機能ですが、実際の運用では以下の問題がありました。</p>
+            <ul>
+                <li><strong>要約精度のばらつき</strong>：求める形式で要約されないことが多い</li>
+                <li><strong>情報過多</strong>：詳細すぎて、重要なポイントが埋もれてしまう</li>
+                <li><strong>共有の手間</strong>：ドキュメントのリンクをSlackに投稿する作業が必要</li>
+                <li><strong>フォーマットの不統一</strong>：会議によって出力形式が異なる</li>
+            </ul>
+
+            <div class="problem-box">
+                <h4>毎日発生する作業</h4>
+                <ol>
+                    <li>Google Meetの議事録ドキュメントを開く（1分）</li>
+                    <li>内容を確認し、重要ポイントを抽出（2分）</li>
+                    <li>Slackに投稿する形式に整形（1分）</li>
+                    <li>Slackに投稿（1分）</li>
+                </ol>
+                <p><strong>合計：約5分/日</strong></p>
+                <p>たかが5分ですが、年間で約20時間。これを誰かが毎日やる必要がありました。</p>
+            </div>
+
+            <h4>担当者の声（導入前）</h4>
+            <blockquote>
+                <p>「朝会が終わったら、議事録を整理してSlackに投稿するのが日課でした。内容自体は自動生成されるんですが、そのままだと読みにくいので、結局手直しが必要で...毎日の積み重ねで地味にストレスでした」</p>
+                <cite>— チームリーダー（入社3年目）</cite>
+            </blockquote>
+        </section>
+
+        <section id="solution">
+            <h2>施策：GAS×Geminiで議事録共有を完全自動化</h2>
+
+            <h3>自動化の全体像</h3>
+            <p>同社が構築した仕組みは、以下の流れで動作します。</p>
+
+            <div class="flow-diagram">
+                <ol>
+                    <li><strong>Google Meet終了</strong>：自動議事録がGoogleドキュメントに保存される</li>
+                    <li><strong>GAS（トリガー）</strong>：毎日9:30に自動実行</li>
+                    <li><strong>議事録取得</strong>：当日の議事録ドキュメントを取得</li>
+                    <li><strong>Gemini API</strong>：議事録内容を指定フォーマットで再要約</li>
+                    <li><strong>Slack投稿</strong>：要約結果をSlackの指定チャンネルに自動投稿</li>
+                </ol>
+            </div>
+
+            <h3>ステップ1：Gemini APIの準備</h3>
+            <p>まず、Google AI StudioでGemini APIキーを取得します。</p>
+
+            <div class="step-guide">
+                <h4>APIキー取得の手順</h4>
+                <ol>
+                    <li><a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>にアクセス</li>
+                    <li>Googleアカウントでログイン</li>
+                    <li>「Create API Key」をクリック</li>
+                    <li>生成されたAPIキーを安全に保管</li>
+                </ol>
+                <p>※ 無料枠で1分あたり60リクエストまで利用可能</p>
+            </div>
+
+            <h3>ステップ2：GASスクリプトの作成</h3>
+            <p>Google Apps Scriptで、議事録の取得→Gemini要約→Slack投稿を行うスクリプトを作成します。</p>
+
+            <div class="code-example">
+                <h4>GASスクリプトの概要</h4>
+                <pre>
+function summarizeAndPostToSlack() {
+  // 1. 当日の議事録ドキュメントを取得
+  const docId = getTodayMeetingDoc();
+  if (!docId) {
+    Logger.log('本日の議事録が見つかりません');
+    return;
+  }
+
+  // 2. 議事録の内容を取得
+  const doc = DocumentApp.openById(docId);
+  const content = doc.getBody().getText();
+
+  // 3. Geminiで再要約
+  const summary = summarizeWithGemini(content);
+
+  // 4. Slackに投稿
+  postToSlack(summary);
+}
+
+function summarizeWithGemini(content) {
+  const apiKey = PropertiesService.getScriptProperties()
+                  .getProperty('GEMINI_API_KEY');
+  const url = 'https://generativelanguage.googleapis.com/v1/models/'
+            + 'gemini-1.5-flash:generateContent?key=' + apiKey;
+
+  const prompt = `
+以下の朝会議事録を、チームメンバーが素早く把握できる形式で要約してください。
+
+【出力形式】
+■ 本日のトピック
+・[重要な決定事項や共有事項を箇条書き]
+
+■ 各メンバーの予定
+・[名前]: [今日の主な予定]
+
+■ 相談・依頼事項
+・[対応が必要な事項があれば記載]
+
+---
+議事録内容:
+${content}
+  `;
+
+  const payload = {
+    contents: [{ parts: [{ text: prompt }] }]
+  };
+
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(payload)
+  };
+
+  const response = UrlFetchApp.fetch(url, options);
+  const json = JSON.parse(response.getContentText());
+  return json.candidates[0].content.parts[0].text;
+}
+
+function postToSlack(message) {
+  const webhookUrl = PropertiesService.getScriptProperties()
+                      .getProperty('SLACK_WEBHOOK_URL');
+
+  const payload = {
+    text: '📝 *本日の朝会まとめ*\n\n' + message
+  };
+
+  UrlFetchApp.fetch(webhookUrl, {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(payload)
+  });
+}
+                </pre>
+            </div>
+
+            <h3>ステップ3：トリガーの設定</h3>
+            <p>GASのトリガー機能を使い、毎日指定時刻に自動実行されるように設定します。</p>
+
+            <div class="step-guide">
+                <h4>トリガー設定の手順</h4>
+                <ol>
+                    <li>GASエディタで「トリガー」アイコンをクリック</li>
+                    <li>「トリガーを追加」をクリック</li>
+                    <li>実行する関数：summarizeAndPostToSlack</li>
+                    <li>イベントのソース：時間主導型</li>
+                    <li>時間ベースのトリガータイプ：日付ベースのタイマー</li>
+                    <li>時刻：午前9時〜10時（朝会終了後）</li>
+                </ol>
+            </div>
+
+            <h3>Geminiへのプロンプト設計</h3>
+            <p>要約の品質を安定させるため、プロンプトを工夫しています。</p>
+
+            <div class="prompt-example">
+                <h4>実際に使用しているプロンプト</h4>
+                <pre>
+以下の朝会議事録を、チームメンバーが素早く把握できる形式で要約してください。
+
+【出力ルール】
+1. 冗長な表現は削除し、要点のみを記載
+2. アクションが必要な項目は【要対応】と明記
+3. 人名は省略せず正確に記載
+4. 不明な部分は「要確認」と記載
+
+【出力形式】
+■ 本日のトピック（重要度順）
+・[トピック1]
+・[トピック2]
+
+■ 各メンバーの予定
+・[名前1]: [予定]
+・[名前2]: [予定]
+
+■ 要対応事項
+・[担当者] → [対応内容]
+
+■ 共有事項
+・[その他の共有事項]
+                </pre>
+            </div>
+
+            <h3>Slack投稿のフォーマット</h3>
+            <p>Slackに投稿する際、見やすさを考慮したフォーマットにしています。</p>
+
+            <div class="slack-preview">
+                <h4>実際のSlack投稿例</h4>
+                <div class="slack-message">
+                    <p><strong>📝 本日の朝会まとめ</strong></p>
+                    <p><strong>■ 本日のトピック</strong></p>
+                    <p>・来週の顧客デモに向けた準備状況確認<br>
+                    ・新機能のリリーススケジュール調整<br>
+                    ・採用面接の日程調整</p>
+
+                    <p><strong>■ 各メンバーの予定</strong></p>
+                    <p>・田中: デモ資料作成、午後クライアントMTG<br>
+                    ・佐藤: バグ修正、コードレビュー<br>
+                    ・鈴木: 面接対応、採用資料更新</p>
+
+                    <p><strong>■ 要対応事項</strong></p>
+                    <p>・【要対応】田中 → デモ環境のデータ準備（本日中）<br>
+                    ・【要対応】佐藤 → #456の修正PRを本日中にマージ</p>
+                </div>
+            </div>
+
+            <h3>運用上の工夫</h3>
+
+            <h4>エラーハンドリング</h4>
+            <ul>
+                <li>議事録が見つからない場合のスキップ処理</li>
+                <li>API呼び出し失敗時のリトライ処理</li>
+                <li>エラー発生時の管理者へのメール通知</li>
+            </ul>
+
+            <h4>セキュリティ対策</h4>
+            <ul>
+                <li>APIキーはスクリプトプロパティに保存（ハードコーディングしない）</li>
+                <li>Slack Webhook URLも同様に保護</li>
+                <li>機密情報を含む可能性がある場合は、マスキング処理を追加</li>
+            </ul>
+        </section>
+
+        <section id="result">
+            <h2>成果：毎日5分の作業がゼロに</h2>
+
+            <h3>定量的な成果</h3>
+            <table class="result-table">
+                <tr>
+                    <th>指標</th>
+                    <th>導入前</th>
+                    <th>導入後</th>
+                    <th>改善</th>
+                </tr>
+                <tr>
+                    <td>議事録共有作業時間</td>
+                    <td>5分/日</td>
+                    <td>0分/日</td>
+                    <td>100%削減</td>
+                </tr>
+                <tr>
+                    <td>共有までのタイムラグ</td>
+                    <td>10〜30分</td>
+                    <td>約5分（自動）</td>
+                    <td>大幅短縮</td>
+                </tr>
+                <tr>
+                    <td>要約の品質</td>
+                    <td>担当者による</td>
+                    <td>安定した品質</td>
+                    <td>標準化</td>
+                </tr>
+            </table>
+
+            <h3>年間での効果</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li>5分/日 × 約240営業日 = <strong>年間約20時間の削減</strong></li>
+                    <li>議事録共有の<strong>遅延・漏れゼロ</strong>を達成</li>
+                    <li>担当者のローテーション管理も<strong>不要</strong>に</li>
+                </ul>
+            </div>
+
+            <h3>定性的な成果</h3>
+
+            <h4>業務品質の向上</h4>
+            <ul>
+                <li><strong>共有の確実性</strong>：人に依存しないため、共有漏れがなくなった</li>
+                <li><strong>フォーマットの統一</strong>：毎日同じ形式で共有され、読みやすい</li>
+                <li><strong>即時性の向上</strong>：朝会終了後すぐに共有されるようになった</li>
+            </ul>
+
+            <h4>チームへの波及効果</h4>
+            <ul>
+                <li><strong>参加できなかったメンバーのキャッチアップ</strong>が容易に</li>
+                <li><strong>過去の朝会内容の検索</strong>がSlack上で可能に</li>
+                <li><strong>「議事録当番」という概念</strong>がなくなり、負担が均等化</li>
+            </ul>
+
+            <h4>他の会議への展開</h4>
+            <p>朝会での成功を受けて、他の定例会議にも同様の仕組みを展開しています。</p>
+            <ul>
+                <li>週次チームミーティング → Slackの#team-weeklyチャンネルに投稿</li>
+                <li>月次全体会議 → Slackの#company-allチャンネルに投稿</li>
+            </ul>
+
+            <h3>担当者の声（導入後）</h3>
+            <blockquote>
+                <p>「これまで議事録の確認や整理にかけていた時間がゼロになり、朝会で決まった事項へのアクションにすぐ移れるようになりました。チームのスピード感が向上したと実感しています」</p>
+                <cite>— チームリーダー（入社3年目）</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>「朝会に出られなかった日も、Slackを見ればすぐにキャッチアップできるのがありがたいです。しかも自動で投稿されるから、『今日の議事録まだ？』と聞く必要もなくなりました」</p>
+                <cite>— エンジニア</cite>
+            </blockquote>
+        </section>
+
+        <section id="summary">
+            <h2>まとめ：小さな自動化の大きな効果</h2>
+
+            <h3>成功のポイント</h3>
+            <ol>
+                <li><strong>「毎日の小さな手間」にフォーカス</strong>
+                    <p>1回5分の作業でも、毎日続けば年間20時間。小さな自動化が大きな効果を生みます。</p>
+                </li>
+                <li><strong>既存ツールの組み合わせ</strong>
+                    <p>Google Meet、Gemini、Slack、GASという既存のツールを組み合わせることで、新たなシステム投資なく実現できました。</p>
+                </li>
+                <li><strong>プロンプトの標準化</strong>
+                    <p>要約の品質を安定させるため、出力形式を明確に指定したプロンプトを設計しました。</p>
+                </li>
+                <li><strong>エラーハンドリングの実装</strong>
+                    <p>自動化は「動かなくなった時」が問題。エラー時の通知機能で早期発見できるようにしました。</p>
+                </li>
+            </ol>
+
+            <h3>他業務への応用</h3>
+            <p>今回の「議事録→AI要約→チャット投稿」のパターンは、様々な業務に応用可能です。</p>
+            <ul>
+                <li><strong>日報の自動集約</strong>：各メンバーの日報をAIで要約してまとめ共有</li>
+                <li><strong>問い合わせ対応の要約</strong>：カスタマーサポートの対応内容を定期的に要約</li>
+                <li><strong>SNS監視レポート</strong>：自社に関する投稿を収集・要約して共有</li>
+                <li><strong>競合情報の収集</strong>：ニュース記事を要約して定期共有</li>
+            </ul>
+
+            <h3>導入のステップ</h3>
+            <ol>
+                <li><strong>対象業務の選定</strong>：毎日・毎週繰り返す「小さな手間」を探す</li>
+                <li><strong>ツールの確認</strong>：既存で使えるツール（GAS、API等）を確認</li>
+                <li><strong>小さく始める</strong>：まず1つの会議で試してみる</li>
+                <li><strong>プロンプトの調整</strong>：出力品質を見ながらプロンプトを改善</li>
+                <li><strong>横展開</strong>：成功したら他の会議・業務に展開</li>
+            </ol>
+
+            <h3>導入を検討される企業様へ</h3>
+            <div class="cta-box">
+                <p>GAS×Geminiを活用した業務自動化について、詳しいご相談を承っております。</p>
+                <ul>
+                    <li>自社業務への自動化適用のご相談</li>
+                    <li>GASスクリプトの開発サポート</li>
+                    <li>Gemini APIの活用方法レクチャー</li>
+                </ul>
+                <p>まずはお気軽にお問い合わせください。</p>
+            </div>
+
+            <h3>関連記事</h3>
+            <ul>
+                <li><a href="ai-meeting-minutes-automation.html">Google Gemini×議事録自動化で会議効率を劇的改善</a></li>
+                <li><a href="ai-gemini-gas-file-rename.html">Gemini×GASでファイル名を自動変更！手作業から解放</a></li>
+                <li><a href="ai-gemini-report-automation.html">Geminiで報告資料を自動作成！情報収集から要約まで一気に効率化</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p class="update-date">最終更新日：2025年1月</p>
+            <p class="category">カテゴリ：AI活用事例 / 業務自動化 / 会議効率化</p>
+            <p class="tags">タグ：#Gemini #GAS #Slack #議事録自動化 #中小企業DX</p>
+        </footer>
+    </article>
+</body>
+</html>
