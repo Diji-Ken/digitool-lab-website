@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NotebookLMでWebサイトの法令・ガイドライン参照を爆速化。15名製造業が法令遵守業務を月10時間から2時間に短縮した実践事例をご紹介。">
+    <meta name="keywords" content="NotebookLM, AI活用, 法令参照, ガイドライン, 業務効率化, 中小企業, 製造業, コンプライアンス">
+    <title>NotebookLMで法令参照を爆速化 - 15名製造業が月10時間→2時間に短縮した方法 | AI活用事例</title>
+    <style>
+        :root {
+            --primary-color: #00695C;
+            --primary-light: #E0F2F1;
+            --primary-dark: #004D40;
+            --accent-color: #26A69A;
+            --text-primary: #263238;
+            --text-secondary: #546E7A;
+            --bg-light: #F5F5F5;
+            --white: #FFFFFF;
+            --shadow: 0 2px 12px rgba(0,105,92,0.10);
+            --shadow-hover: 0 4px 20px rgba(0,105,92,0.18);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .header-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            backdrop-filter: blur(8px);
+        }
+        
+        .header h1 {
+            font-size: clamp(1.6rem, 4vw, 2.3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+        
+        .header-description {
+            font-size: 1.05rem;
+            opacity: 0.92;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .company-profile {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 36px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+        
+        .company-profile h2 {
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .company-profile h2::before {
+            content: '🏭';
+        }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        
+        .profile-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: var(--white);
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .profile-item .label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+        
+        .profile-item .value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        
+        .section-number {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        
+        .challenge-box {
+            background: #FFF3E0;
+            border-left: 4px solid #FF9800;
+            border-radius: 0 10px 10px 0;
+            padding: 18px 22px;
+            margin: 20px 0;
+        }
+        
+        .challenge-box h4 {
+            color: #E65100;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .challenge-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .challenge-box li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #5D4037;
+        }
+        
+        .challenge-box li::before {
+            content: '△';
+            position: absolute;
+            left: 0;
+            color: #FF9800;
+            font-weight: bold;
+        }
+        
+        .solution-box {
+            background: var(--primary-light);
+            border-radius: 10px;
+            padding: 22px;
+            margin: 20px 0;
+        }
+        
+        .solution-box h4 {
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        
+        .step-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .step-list li {
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+        
+        .step-list li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            padding: 22px;
+            border-radius: 14px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .result-card .metric {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .result-card .unit {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .result-card .description {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-top: 8px;
+        }
+        
+        .voice-box {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            border-radius: 14px;
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+        }
+        
+        .voice-box::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            font-family: Georgia, serif;
+        }
+        
+        .voice-box p {
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 35px;
+            margin-bottom: 10px;
+        }
+        
+        .voice-box .role {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: normal;
+        }
+        
+        .point-box {
+            background: #E3F2FD;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 20px 0;
+        }
+        
+        .point-box h4 {
+            color: #1565C0;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .point-box p {
+            font-size: 0.95rem;
+            color: #37474F;
+            margin: 0;
+        }
+        
+        .use-case-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .use-case-list li {
+            background: var(--bg-light);
+            padding: 14px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .use-case-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            background: var(--primary-light);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+        
+        .summary-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .summary-section h2::before {
+            content: '📋';
+        }
+        
+        .summary-section p {
+            opacity: 0.95;
+            margin-bottom: 16px;
+        }
+        
+        .key-points {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-points li {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            backdrop-filter: blur(4px);
+        }
+        
+        .key-points li::before {
+            content: '★';
+            color: #FFEB3B;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 36px 20px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+        
+        .cta-section h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+        }
+        
+        .cta-section p {
+            color: var(--text-secondary);
+            margin-bottom: 22px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,105,92,0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,105,92,0.4);
+        }
+        
+        .tool-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 6px;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefit-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--primary-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .benefit-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .benefit-list li::before {
+            content: '◎';
+            color: var(--accent-color);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 40px 16px;
+            }
+            
+            .container {
+                padding: 24px 16px;
+            }
+            
+            .section {
+                padding: 24px 18px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-card .metric {
+                font-size: 1.9rem;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <span class="header-label">📚 AI活用事例 #35</span>
+            <h1>NotebookLMで法令参照を爆速化<br>月10時間の調査業務を2時間に短縮</h1>
+            <p class="header-description">法令やガイドラインの参照・理解に時間をかけていた製造業が、NotebookLMを導入して情報収集を劇的に効率化した実践事例</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="company-profile">
+            <h2>導入企業プロフィール</h2>
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <div>
+                        <span class="label">業種</span><br>
+                        <span class="value">精密機器製造業</span>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <div>
+                        <span class="label">従業員数</span><br>
+                        <span class="value">15名</span>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <div>
+                        <span class="label">担当者</span><br>
+                        <span class="value">総務・品質管理兼任</span>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <div>
+                        <span class="label">使用ツール</span><br>
+                        <span class="value">NotebookLM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                <h2 class="section-title">抱えていた課題</h2>
+            </div>
+            
+            <p>
+                精密機器を製造する15名規模の製造業では、製品安全規格や環境関連法令、業界ガイドラインなど、参照すべき法令・規制が多岐にわたります。総務と品質管理を兼任するAさんは、これらの法令調査と対応に毎月約10時間を費やしていました。
+            </p>
+            
+            <div class="challenge-box">
+                <h4>⚠️ 具体的な課題</h4>
+                <ul>
+                    <li>複数の法令・ガイドラインを横断して調べる必要があり、情報収集に時間がかかる</li>
+                    <li>法令文書は難解で、該当箇所を特定するのに何度も読み返す必要がある</li>
+                    <li>改正情報の確認や新規制の把握に追われ、本業に集中できない</li>
+                    <li>専門用語の解釈に自信が持てず、外部への問い合わせが増加</li>
+                    <li>法令参照作業が属人化しており、担当者不在時に対応できない</li>
+                </ul>
+            </div>
+            
+            <p>
+                特に困っていたのは、官公庁のWebサイトに掲載されている法令やガイドラインの内容理解です。「この規制は自社製品に該当するのか」「具体的にどのような対応が必要か」といった判断のために、複数のページを行き来しながら情報を照合する作業は、非常に時間がかかるものでした。
+            </p>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                <h2 class="section-title">実施した施策</h2>
+            </div>
+            
+            <p>
+                <span class="tool-tag">NotebookLM</span>
+                GoogleのNotebookLMを活用し、Webサイトの法令・ガイドライン情報を効率的に参照・理解する仕組みを構築しました。
+            </p>
+            
+            <div class="solution-box">
+                <h4>📌 導入ステップ</h4>
+                <ol class="step-list">
+                    <li><strong>ソース登録</strong>：参照したい法令やガイドラインが掲載されているWebサイトのURLをNotebookLMにソースとして追加</li>
+                    <li><strong>質問形式で検索</strong>：「製品Xに関する安全基準は？」「○○規制の対象となる条件は？」など、知りたい内容を質問として入力</li>
+                    <li><strong>要約の確認</strong>：NotebookLMが該当箇所を抽出し、わかりやすく要約して回答を生成</li>
+                    <li><strong>原文への参照</strong>：必要に応じてソース元の該当箇所を確認し、正確性を担保</li>
+                    <li><strong>ナレッジ蓄積</strong>：よく参照する法令情報をプロジェクトとして整理し、社内で共有</li>
+                </ol>
+            </div>
+            
+            <div class="point-box">
+                <h4>💡 工夫したポイント</h4>
+                <p>
+                    単に法令文書を登録するだけでなく、業界団体が発行する解説資料や、官公庁のFAQページも一緒にソースとして追加しました。これにより、法令の条文だけでなく、実務的な解釈や具体例も含めた回答が得られるようになりました。また、「中小企業向け」「製造業向け」といったキーワードを質問に含めることで、より自社に関連性の高い情報を抽出できるようになりました。
+                </p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">3</span>
+                <h2 class="section-title">得られた成果</h2>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <span class="metric">80%</span>
+                    <span class="unit">削減</span>
+                    <span class="description">法令調査時間</span>
+                </div>
+                <div class="result-card">
+                    <span class="metric">10→2</span>
+                    <span class="unit">時間/月</span>
+                    <span class="description">情報収集業務</span>
+                </div>
+                <div class="result-card">
+                    <span class="metric">90%</span>
+                    <span class="unit">削減</span>
+                    <span class="description">外部問い合わせ</span>
+                </div>
+            </div>
+            
+            <div class="voice-box">
+                <p>
+                    「法律の参照がこんなに簡単になるなんて驚きです。以前は1つの法令を理解するのに半日かかることもありましたが、今は質問を入力するだけで必要な情報にすぐアクセスできます。もちろん最終確認は必須ですが、下調べの時間が劇的に短縮されました。」
+                </p>
+                <span class="role">— 総務・品質管理担当 Aさん</span>
+            </div>
+            
+            <h3 style="font-size: 1.1rem; margin: 28px 0 16px; color: var(--text-primary);">その他の定性的効果</h3>
+            <ul class="benefit-list">
+                <li>法令の読解に対する心理的ハードルが下がり、主体的に調査できるようになった</li>
+                <li>複数の法令を横断的に比較・参照することが容易になった</li>
+                <li>新しい規制情報もすぐにソースに追加でき、最新情報の把握が迅速化</li>
+                <li>ナレッジが蓄積され、担当者以外でも法令情報を確認できる体制が構築された</li>
+                <li>節約できた時間を品質管理業務の改善活動に充てられるようになった</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">4</span>
+                <h2 class="section-title">活用シーンの広がり</h2>
+            </div>
+            
+            <p>
+                NotebookLMによるWebサイト参照の効率化は、法令調査以外にも様々な場面で活用できます。この企業では以下のような用途にも展開しています。
+            </p>
+            
+            <ul class="use-case-list">
+                <li>業界動向レポートの要約と情報収集</li>
+                <li>競合他社の公開情報の整理・分析</li>
+                <li>技術資料・マニュアルの検索効率化</li>
+                <li>補助金・助成金情報の条件確認</li>
+                <li>取引先が公開している品質基準の把握</li>
+                <li>海外規格の概要理解と日本語での要約</li>
+            </ul>
+            
+            <div class="point-box">
+                <h4>📖 導入のしやすさ</h4>
+                <p>
+                    NotebookLMはGoogleアカウントがあれば無料で利用開始できます。特別な設定やシステム導入は不要で、Webブラウザからすぐに使い始められます。まずは1つの法令やガイドラインのURLを登録して、質問形式で情報を引き出す便利さを体感してみることをお勧めします。
+                </p>
+            </div>
+        </section>
+        
+        <section class="summary-section">
+            <h2>まとめ</h2>
+            <p>
+                15名規模の製造業において、NotebookLMを活用した法令・ガイドライン参照の効率化により、月10時間かかっていた調査業務を2時間に短縮することができました。専門知識がなくても、質問形式で必要な情報を素早く得られる点が、中小企業の限られたリソースにマッチしています。
+            </p>
+            <ul class="key-points">
+                <li>WebサイトのURLをソースとして登録するだけで、AI による情報抽出・要約が可能</li>
+                <li>質問形式で必要な情報を引き出せるため、法令文書の読解負担が大幅軽減</li>
+                <li>複数のソースを横断的に参照でき、関連情報の比較・整理が容易に</li>
+                <li>ナレッジの蓄積・共有により、担当者への属人化を解消</li>
+            </ul>
+        </section>
+        
+        <section class="cta-section">
+            <h3>法令調査・情報収集の効率化を検討していますか？</h3>
+            <p>NotebookLMを活用した業務改善について、お気軽にご相談ください。</p>
+            <a href="/contact" class="cta-button">無料相談を予約する</a>
+        </section>
+    </main>
+</body>
+</html>
