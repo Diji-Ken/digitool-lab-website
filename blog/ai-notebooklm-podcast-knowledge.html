@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社内ルールや業界知識を「聴いて学べる」形式に。NotebookLMで音声ナレッジ化 - 株式会社デジタルツール研究所</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+<link rel="stylesheet" href="../css/style.css?v=2024120513">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- OGP / Social Media Meta -->
+    <meta property="og:title" content="社内ルールや業界知識を「聴いて学べる」形式に。NotebookLMで音声ナレッジ化 | デジタルツール研究所">
+    <meta property="og:description" content="難解な業界規制やマニュアルをAIポッドキャストに変換。移動中や作業中にも学習でき、新人教育の時間を半減させた事例をご紹介。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-ai-podcast.jpg">
+    <meta property="og:site_name" content="株式会社デジタルツール研究所">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="社内ルールや業界知識を「聴いて学べる」形式に。NotebookLMで音声ナレッジ化">
+    <meta name="twitter:description" content="難解な業界規制やマニュアルをAIポッドキャストに変換。新人教育の時間を半減させた事例。">
+    <meta name="twitter:image" content="https://digitool-lab.com/images/case-studies/case-ai-podcast.jpg">
+
+    <meta name="description" content="難解な業界規制やマニュアルをAIポッドキャストに変換。移動中や作業中にも学習でき、新人教育の時間を半減させた事例をご紹介。">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge.html">
+</head>
+
+<body class="bg-gray-100">
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <!-- パンくずナビ -->
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">AI活用事例</span>
+      </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--orange-100); color: var(--orange-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">ナレッジ共有</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2025-12-27</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">社内ルールや業界知識を「聴いて学べる」形式に。NotebookLMで音声ナレッジ化</h1>
+
+        <!-- タグ表示エリア -->
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI活用" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=ナレッジ共有" class="article-tag">ナレッジ共有</a>
+            <a href="../case-studies.html?tag=NotebookLM" class="article-tag">NotebookLM</a>
+            <a href="../case-studies.html?tag=社内教育" class="article-tag">社内教育</a>
+            <a href="../case-studies.html?tag=ポッドキャスト" class="article-tag">ポッドキャスト</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メイン画像 -->
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-ai-podcast.jpg" alt="NotebookLMによる音声ナレッジ化事例" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <!-- 記事本文 -->
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">1. 支援前の課題</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">従業員40名規模の建設関連企業B社では、業界特有の法規制や安全基準、社内の業務手順など、覚えるべき知識が膨大にありました。特に新入社員や中途採用者への教育において、これらの知識を効率的に伝達することが課題となっていました。</p>
+
+          <div style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--gray-500); margin: 2rem 0;">
+            <p style="margin: 0; font-weight: 600; color: var(--gray-800);">「マニュアルが分厚くて読む気が起きない」<br>「法規制の解釈を先輩に何度も聞いてしまう」<br>「担当者が変わると、同じ説明を最初からやり直し」</p>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">同社の課題は主に3点ありました。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;"><strong>1つ目は、マニュアルや規程類の読解に時間がかかること</strong>です。建設業に関連する法令（建設業法、労働安全衛生法など）や自社の業務手順書は文章量が多く、内容も専門的です。新入社員がこれらを読んで理解するまでには相当な時間がかかり、その間は先輩社員のサポートも必要でした。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;"><strong>2つ目は、引継ぎ時の知識ロス</strong>です。担当者が異動や退職で変わる際、過去に調べた法令の解釈や業務上の判断基準が適切に引き継がれないことがありました。結果として、後任者が同じ内容を一から調べ直すという非効率が発生していました。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;"><strong>3つ目は、学習時間の確保が難しいこと</strong>です。現場作業や打ち合わせが多い業種のため、デスクに座ってじっくりマニュアルを読む時間がなかなか取れません。移動時間や待機時間を有効活用したいというニーズがありました。</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">2. 行った施策</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 2rem;">GoogleのNotebookLMを活用し、社内のマニュアルや法令解釈をQ&A形式で整理した上で、<strong>音声コンテンツ（ポッドキャスト形式）に変換</strong>する仕組みを構築しました。</p>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 1：NotebookLMに関連資料を登録</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">まず、社内で使用しているマニュアル、業務手順書、法令の解釈メモなどをNotebookLMにアップロードしました。NotebookLMはPDFやGoogle ドキュメント、Webサイトなど様々な形式の資料を読み込むことができます。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 2：よくある質問（FAQ）の整理</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">登録した資料をもとに、NotebookLMに「新入社員がよく質問する内容をQ&A形式でまとめて」と指示。実務で頻繁に参照される内容や、過去に何度も説明が求められた項目を中心に、分かりやすいFAQを自動生成しました。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 3：音声コンテンツ（ポッドキャスト）の生成</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">NotebookLMの「Audio Overview」機能を使い、整理したQ&AやFAQを<strong>対話形式の音声コンテンツ</strong>に変換しました。2人のAIホストが会話形式で内容を説明してくれるため、聴くだけで自然と理解が深まります。</p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem;">Step 4：テーマ別にコンテンツを整理・配信</h3>
+            <p style="font-size: 1.125rem; line-height: 1.7;">「安全管理の基本」「現場での法令遵守ポイント」「社内申請手続きの流れ」など、テーマごとに10〜15分程度のポッドキャストを複数作成。社員はスマートフォンで好きな時間に聴けるようにしました。</p>
+          </div>
+
+          <div style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+            <h4 style="font-size: 1rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">導入のポイント</h4>
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 1rem; line-height: 1.8; color: var(--gray-700);">
+              <li>NotebookLMは無料で利用可能（追加コストなし）</li>
+              <li>音声生成は数分で完了、専門知識不要</li>
+              <li>対話形式なので単調にならず聴きやすい</li>
+              <li>Q&Aと音声の両方を用意し、学習スタイルに合わせて選択可能</li>
+            </ul>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">3. 施策後の成果</h2>
+
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+              <thead>
+                <tr style="background-color: var(--gray-100);">
+                  <th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600;">指標</th>
+                  <th style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); font-weight: 600;">導入前</th>
+                  <th style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); font-weight: 600;">導入後</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">新人研修（基礎知識習得）期間</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">約2週間</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">約1週間（▲50％短縮）</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">先輩社員への質問回数（月間）</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">約40回</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">約15回（▲60％削減）</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">引継ぎ時の説明工数</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">約8時間</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">約3時間（▲60％削減）</td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid var(--gray-200); font-weight: 600;">知識習得の満足度（社員アンケート）</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200);">3.2点/5点</td>
+                  <td style="padding: 1rem; text-align: center; border: 1px solid var(--gray-200); color: var(--green-600); font-weight: 600;">4.3点/5点</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">新人研修にかかる時間が<strong>約50%短縮</strong>されました。これは、移動時間や休憩時間にもポッドキャストで学習できるようになったことで、「学習のための時間」を別途確保する必要が減ったためです。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">また、先輩社員への質問回数が約60%減少しました。基本的な内容はQ&Aやポッドキャストで確認できるため、「ちょっと聞きたいだけの質問」が大幅に減り、先輩社員が本来の業務に集中できるようになりました。</p>
+
+          <div style="background-color: var(--gray-100); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--gray-500); margin: 2rem 0;">
+            <p style="margin: 0; font-size: 1.125rem; line-height: 1.6; color: var(--gray-800); font-weight: 500;">「難しい法令の話も、ポッドキャストだと頭に入りやすい」「通勤電車の中で聴けるのがいい」「文字を読むより、聴く方が楽で続けられる」</p>
+            <p style="margin-top: 1rem; font-size: 1rem; color: var(--gray-600);">といった社員からの声が寄せられています。</p>
+          </div>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">特に好評だったのは、対話形式の音声コンテンツです。2人のAIホストが「この法令、なぜ重要なんですか？」「例えば現場ではこういうケースがありますよね」といった形で会話しながら説明してくれるため、堅い内容でも飽きずに聴けると評価されました。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7;">また、引継ぎの際にも「まずこのポッドキャストを聴いてください」と案内できるようになり、説明にかかる時間が大幅に削減されました。知識の属人化が解消され、誰が担当しても一定水準の対応ができる体制が整いました。</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--gray-500); padding-left: 1rem;">4. まとめ</h2>
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">NotebookLMの音声生成機能を活用することで、<strong>「読む」から「聴く」への学習スタイルの転換</strong>を実現しました。文字を読むのが苦手な人や、まとまった学習時間が取れない人でも、スキマ時間を活用して知識を習得できるようになります。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">この事例で特に重要なポイントは以下の3点です。</p>
+
+          <ul style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.5rem;">
+            <li><strong>追加コストゼロ</strong>：NotebookLMは無料で利用可能。音声生成も無料。</li>
+            <li><strong>スキル不要</strong>：資料をアップロードして、音声生成ボタンを押すだけ。</li>
+            <li><strong>汎用性が高い</strong>：法令以外にも、業務マニュアル、製品知識、営業トークなど様々な用途に応用可能。</li>
+          </ul>
+
+          <p style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">社内に「読まれていないマニュアル」や「活用されていない資料」があれば、それらをNotebookLMに取り込んでポッドキャスト化することをお勧めします。<strong>眠っている知識を「使える形」に変える</strong>ことで、組織全体の知識レベルの底上げが期待できます。</p>
+
+          <p style="font-size: 1.125rem; line-height: 1.7;">まずは小さく始めて、効果を確認しながら対象範囲を広げていくアプローチが成功の鍵です。</p>
+        </section>
+      </div>
+    </article>
+
+    <!-- 関連事例・CTA -->
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Download Modal (全ページ共通) -->
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
