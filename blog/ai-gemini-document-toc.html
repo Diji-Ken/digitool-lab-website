@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Geminiを活用して大量ページの資料から目次を自動作成し、構成の整理・再編成を効率化。手作業では時間のかかる資料全体像の把握がAIで即座に完了します。">
+    <meta name="keywords" content="Gemini, 資料整理, 目次作成, PDF, AI活用, ページ構成, 業務効率化, ドキュメント管理">
+    <title>Gemini×資料整理｜大量ページの目次作成・構成整理をAIで自動化</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Gemini×資料整理｜大量ページの目次作成・構成整理をAIで自動化</h1>
+            <p class="article-meta">
+                <time datetime="2024-12-27">2024年12月27日</time>
+                <span class="category">AI活用事例</span>
+                <span class="reading-time">読了時間：約7分</span>
+            </p>
+        </header>
+
+        <nav class="table-of-contents">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#introduction">はじめに</a></li>
+                <li><a href="#background">導入の背景と課題</a></li>
+                <li><a href="#solution">Geminiを活用した資料整理・目次作成</a></li>
+                <li><a href="#results">導入効果と成果</a></li>
+                <li><a href="#applications">応用パターン</a></li>
+                <li><a href="#tips">実践のコツ</a></li>
+                <li><a href="#summary">まとめ</a></li>
+            </ol>
+        </nav>
+
+        <section id="introduction">
+            <h2>はじめに</h2>
+            <p>「この60ページの提案資料、どこに何が書いてあるか把握するだけで時間がかかる」「マニュアルの構成を見直したいけど、全体像を整理するのが大変」——大量のページ数がある資料を扱う際、このような悩みを抱えている方は多いのではないでしょうか。</p>
+
+            <p>特に、資料の修正や再編成を行う際には、まず現状の構成を正確に把握する必要があります。しかし、数十ページにわたる資料を一つずつ確認して目次を作成し、構成を整理する作業は、地味ながら多くの時間を消費します。</p>
+
+            <p>本記事では、Google Geminiを活用して、大量ページの資料から目次を自動生成し、構成の整理・再編成を効率化した事例をご紹介します。PDFファイルをGeminiに読み込ませるだけで、資料全体の構成が可視化され、修正作業が格段にスムーズになります。</p>
+
+            <div class="point-box">
+                <h3>この記事でわかること</h3>
+                <ul>
+                    <li>大量ページの資料から目次を自動作成する方法</li>
+                    <li>Geminiを使った資料構成の可視化手順</li>
+                    <li>ページの入れ替え・再編成を効率化するコツ</li>
+                    <li>様々な資料への応用パターン</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="background">
+            <h2>導入の背景と課題</h2>
+
+            <h3>企業プロフィール</h3>
+            <div class="company-profile">
+                <table>
+                    <tr>
+                        <th>業種</th>
+                        <td>建設コンサルティング</td>
+                    </tr>
+                    <tr>
+                        <th>従業員数</th>
+                        <td>22名</td>
+                    </tr>
+                    <tr>
+                        <th>主な資料</th>
+                        <td>提案書、報告書、業務マニュアル</td>
+                    </tr>
+                    <tr>
+                        <th>平均ページ数</th>
+                        <td>40〜80ページ/資料</td>
+                    </tr>
+                    <tr>
+                        <th>月間の資料修正件数</th>
+                        <td>10〜15件</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>従来の資料整理プロセス</h3>
+            <p>同社では、クライアント向けの提案書や報告書、社内の業務マニュアルなど、数十ページに及ぶ資料を日常的に作成・修正していました。資料の構成変更や内容追加を行う際の従来のプロセスは以下の通りでした。</p>
+
+            <div class="process-flow">
+                <div class="process-step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <h5>資料を一通り確認</h5>
+                        <p>全ページをざっと目を通して内容を把握（30分〜1時間）</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <h5>手作業で目次・構成表を作成</h5>
+                        <p>ページ番号と見出しをExcelに手入力（30分〜1時間）</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <h5>構成の問題点を洗い出し</h5>
+                        <p>順序の不自然さ、重複、不足を確認（15〜30分）</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <h5>修正案を検討</h5>
+                        <p>ページの入れ替え、統合、分割の案を作成（30分〜1時間）</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">5</span>
+                    <div class="step-content">
+                        <h5>実際に修正作業</h5>
+                        <p>PowerPointやPDFを編集（修正量による）</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4>直面していた課題</h4>
+
+            <div class="challenge-box">
+                <h5>課題1：全体像の把握に時間がかかる</h5>
+                <p>60ページの資料の場合、内容を把握して目次を作成するだけで1〜2時間かかっていました。特に、自分が作成したものではない資料や、以前作成して内容を忘れてしまった資料では、「どこに何が書いてあるか」を把握するだけで大きな工数が発生していました。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題2：目次と実際のページがずれる</h5>
+                <p>手作業で目次を作成すると、ページ番号の入力ミスや、後からの修正で目次と実際の内容がずれてしまうことがありました。資料提出後に「目次と中身が違う」と指摘されることも。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題3：構成の改善案を出すのが難しい</h5>
+                <p>「この資料、もっと分かりやすく構成できないか」と思っても、どう直せばいいか案を出すのに時間がかかりました。特に、他人が作成した資料の場合、作成者の意図を汲み取りながら改善案を考えるのは困難でした。</p>
+            </div>
+
+            <div class="challenge-box">
+                <h5>課題4：修正作業が属人化</h5>
+                <p>資料の構成整理ができる人が限られており、その人に作業が集中。他のメンバーは「どこから手を付けていいか分からない」と手が止まってしまうことが多く、業務のボトルネックになっていました。</p>
+            </div>
+
+            <div class="problem-impact">
+                <h4>課題による影響</h4>
+                <ul>
+                    <li>資料1件あたりの構成整理時間：平均2〜3時間</li>
+                    <li>月間の資料整理関連工数：約30〜40時間</li>
+                    <li>目次ミスによる手戻り：月2〜3件</li>
+                    <li>構成整理ができる人への業務集中</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="solution">
+            <h2>Geminiを活用した資料整理・目次作成</h2>
+
+            <h3>導入したソリューション</h3>
+            <p>同社では、Google Geminiを活用して、資料の構成把握と目次作成を自動化しました。PDFファイルをそのままGeminiに読み込ませ、各ページの内容を解析してもらうことで、手作業では時間のかかる全体像の把握が数分で完了するようになりました。</p>
+
+            <div class="solution-overview">
+                <h4>システム構成</h4>
+                <ul>
+                    <li><strong>使用ツール：</strong>Google Gemini（無料版でも利用可能）</li>
+                    <li><strong>入力：</strong>PDF形式の資料ファイル</li>
+                    <li><strong>出力：</strong>目次リスト、構成分析、改善提案</li>
+                    <li><strong>対応ページ数：</strong>100ページ程度まで（ファイルサイズによる）</li>
+                </ul>
+            </div>
+
+            <h3>具体的な手順</h3>
+
+            <h4>Step 1：PDFファイルをGeminiにアップロード</h4>
+            <p>Google Geminiを開き、整理したい資料のPDFファイルをドラッグ＆ドロップでアップロードします。</p>
+
+            <div class="tip-highlight">
+                <strong>ポイント：</strong>ファイルサイズが大きい場合（20MB以上）は、圧縮するか分割してアップロードしてください。また、スキャンした画像PDFではなく、テキスト選択可能なPDFの方が精度が高くなります。
+            </div>
+
+            <h4>Step 2：目次・ページ構成の作成を依頼</h4>
+            <p>アップロード後、以下のようなプロンプトで目次の作成を依頼します。</p>
+
+            <div class="prompt-example">
+                <h5>目次作成プロンプト例</h5>
+                <pre>
+アップロードした資料を分析し、以下の形式で目次（ページリスト）を
+作成してください。
+
+【出力形式】
+ページ番号 | 見出し（タイトル） | 内容の概要（20文字程度）
+
+すべてのページについて、上記の形式で一覧化してください。
+                </pre>
+            </div>
+
+            <h4>Step 3：目次リストを取得</h4>
+            <p>Geminiが各ページの内容を解析し、目次形式で出力します。</p>
+
+            <div class="output-example">
+                <h5>Geminiの出力例</h5>
+                <pre>
+【目次（ページリスト）】
+
+P.1  | 表紙                    | プロジェクト名・提出日
+P.2  | 目次                    | 章立ての一覧
+P.3  | はじめに                | 本資料の目的と構成説明
+P.4  | 会社概要                | 当社の基本情報と実績
+P.5  | プロジェクト概要        | 対象業務の背景と目的
+P.6  | 現状分析（1）           | 現行システムの課題整理
+P.7  | 現状分析（2）           | 業務フローの問題点
+P.8  | 提案内容（1）           | 解決策の全体像
+P.9  | 提案内容（2）           | システム構成図
+P.10 | 提案内容（3）           | 導入ステップ
+...
+P.58 | 概算費用                | 費用項目と金額
+P.59 | スケジュール            | 導入までの工程表
+P.60 | おわりに                | まとめと今後の進め方
+                </pre>
+            </div>
+
+            <h4>Step 4：構成の分析・改善提案を依頼</h4>
+            <p>目次が出力されたら、続けて構成の分析と改善提案を依頼します。</p>
+
+            <div class="prompt-example">
+                <h5>構成分析プロンプト例</h5>
+                <pre>
+作成した目次をもとに、以下の観点で資料の構成を分析してください。
+
+1. 論理的な流れの確認
+   - 順序が不自然な箇所はないか
+   - 関連する内容が離れて配置されていないか
+
+2. 重複・不足の確認
+   - 同じ内容が複数ページにまたがっていないか
+   - 説明が不足している箇所はないか
+
+3. 改善提案
+   - ページの入れ替え案があれば提示
+   - 統合した方がよいページの提案
+   - 新たに追加すべき内容の提案
+
+分析結果と改善案を具体的に教えてください。
+                </pre>
+            </div>
+
+            <div class="output-example">
+                <h5>構成分析の出力例</h5>
+                <pre>
+【構成分析結果】
+
+■ 論理的な流れの確認
+- P.4「会社概要」がP.5「プロジェクト概要」の前にありますが、
+  読み手の関心としてはプロジェクト概要を先に知りたい可能性があります。
+  → P.5とP.4の順序入れ替えを検討
+
+- P.20-22の「リスク分析」がP.45の「スケジュール」の後にある方が
+  自然な流れになります。
+
+■ 重複・不足の確認
+- P.12とP.35に類似した「システム構成図」があります。
+  → 統合または役割の明確化を推奨
+
+- 「導入後のサポート体制」に関する記載が見当たりません。
+  → P.57「運用体制」の後に追加を検討
+
+■ 改善提案（ページ入れ替え案）
+現状: P.1→P.2→P.3→P.4→P.5...
+提案: P.1→P.2→P.3→P.5→P.4...（会社概要を後に）
+                </pre>
+            </div>
+
+            <h4>Step 5：出力結果を活用して修正</h4>
+            <p>Geminiの分析結果をもとに、実際の資料修正を行います。目次リストはそのままExcelやスプレッドシートに貼り付けて管理表として活用できます。</p>
+        </section>
+
+        <section id="results">
+            <h2>導入効果と成果</h2>
+
+            <h3>定量的な効果</h3>
+            <div class="results-metrics">
+                <div class="metric-card">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-value">80%削減</div>
+                    <div class="metric-label">構成把握時間</div>
+                    <div class="metric-detail">2時間 → 20分</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📋</div>
+                    <div class="metric-value">数分</div>
+                    <div class="metric-label">目次作成時間</div>
+                    <div class="metric-detail">手作業1時間 → AI数分</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">✓</div>
+                    <div class="metric-value">0件</div>
+                    <div class="metric-label">目次ミス</div>
+                    <div class="metric-detail">月2-3件 → ほぼゼロ</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-value">全員対応可</div>
+                    <div class="metric-label">作業の属人化</div>
+                    <div class="metric-detail">特定の人 → 誰でも</div>
+                </div>
+            </div>
+
+            <h3>Before / After 比較</h3>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>導入前</th>
+                            <th>導入後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>資料全体像の把握</td>
+                            <td>1〜2時間（目視確認）</td>
+                            <td>5〜10分（AI分析）</td>
+                        </tr>
+                        <tr>
+                            <td>目次リスト作成</td>
+                            <td>30分〜1時間（手入力）</td>
+                            <td>数分（自動生成）</td>
+                        </tr>
+                        <tr>
+                            <td>構成の問題点発見</td>
+                            <td>経験者のみ可能</td>
+                            <td>AIが客観的に指摘</td>
+                        </tr>
+                        <tr>
+                            <td>改善案の作成</td>
+                            <td>30分〜1時間</td>
+                            <td>AIが複数案を提示</td>
+                        </tr>
+                        <tr>
+                            <td>月間の資料整理工数</td>
+                            <td>30〜40時間</td>
+                            <td>8〜12時間</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>定性的な効果</h3>
+
+            <div class="benefit-section">
+                <h4>誰でも構成整理ができるように</h4>
+                <p>これまで「資料構成が得意な人」に頼っていた作業が、AIのサポートにより誰でも取り組めるようになりました。新人でも「まずGeminiに分析させてから取り掛かる」という流れで、効率的に作業を進められています。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>客観的な視点が得られる</h4>
+                <p>自分で作成した資料は、どうしても「分かりやすいはず」というバイアスがかかりがち。AIに分析させることで、読み手視点での問題点を客観的に指摘してもらえるようになりました。</p>
+            </div>
+
+            <div class="benefit-section">
+                <h4>修正作業のゴールが明確に</h4>
+                <p>「何をどう直せばいいか分からない」という状態から、AIの改善提案をもとに「ここを入れ替える」「ここを統合する」という具体的なアクションが明確になりました。作業の手戻りも減少しています。</p>
+            </div>
+
+            <div class="testimonial">
+                <blockquote>
+                    <p>「以前は60ページの報告書の構成を整理するだけで半日かかっていました。今はGeminiに読み込ませて20分程度で全体像が把握できるので、本来の『内容をどう改善するか』という検討に時間を使えるようになりました」</p>
+                    <cite>— 技術部 チームリーダー</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="applications">
+            <h2>応用パターン</h2>
+
+            <p>資料の目次作成・構成整理以外にも、同様のアプローチで様々な業務に応用できます。</p>
+
+            <div class="application-grid">
+                <div class="application-card">
+                    <h4>📚 業務マニュアルの更新</h4>
+                    <div class="application-detail">
+                        <p><strong>活用方法：</strong>既存マニュアルをGeminiに読み込ませ、「古い情報」「説明不足の箇所」「重複している内容」を洗い出してもらう。</p>
+                        <p><strong>効果：</strong>マニュアル改訂の優先順位が明確になり、効率的に更新作業を進められる。</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📝 議事録の整理・要約</h4>
+                    <div class="application-detail">
+                        <p><strong>活用方法：</strong>複数回の会議の議事録をまとめてGeminiに読み込ませ、「決定事項」「未決事項」「次回までのTODO」を抽出。</p>
+                        <p><strong>効果：</strong>長期プロジェクトの議論の流れを可視化し、漏れを防止できる。</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📊 報告書のテンプレート化</h4>
+                    <div class="application-detail">
+                        <p><strong>活用方法：</strong>過去の優秀な報告書をGeminiに分析させ、「標準的な構成」「含めるべき項目」をテンプレート化。</p>
+                        <p><strong>効果：</strong>報告書の品質が均一化され、新人でも一定レベルの資料が作成できる。</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📑 契約書・規程のチェック</h4>
+                    <div class="application-detail">
+                        <p><strong>活用方法：</strong>契約書や社内規程をGeminiに読み込ませ、「矛盾している条項」「定義が不明確な用語」を指摘してもらう。</p>
+                        <p><strong>効果：</strong>法務チェックの事前準備として活用でき、専門家への確認ポイントが明確になる。</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>🎓 研修資料の体系化</h4>
+                    <div class="application-detail">
+                        <p><strong>活用方法：</strong>部署ごとにバラバラに作られた研修資料をGeminiに分析させ、重複を排除して体系的なカリキュラムに再編成。</p>
+                        <p><strong>効果：</strong>研修の効率が上がり、必要な知識を網羅的に学べる構成になる。</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h4>📖 書籍・論文の要約</h4>
+                    <div class="application-detail">
+                        <p><strong>活用方法：</strong>参考にしたい書籍や論文のPDFをGeminiに読み込ませ、章ごとの要約と全体の論点を整理してもらう。</p>
+                        <p><strong>効果：</strong>必要な情報へのアクセスが早くなり、インプットの効率が向上する。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips">
+            <h2>実践のコツ</h2>
+
+            <h3>PDFファイルの準備</h3>
+            <div class="tips-grid">
+                <div class="tip-item success">
+                    <h4>テキスト選択可能なPDFを使う</h4>
+                    <p>スキャンした画像PDFよりも、テキストが選択できるPDFの方が認識精度が高くなります。PowerPointやWordから直接PDF出力したものがベストです。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>ファイルサイズは20MB以下に</h4>
+                    <p>ファイルサイズが大きすぎるとアップロードに失敗することがあります。画像が多い資料は圧縮するか、章ごとに分割してアップロードしてください。</p>
+                </div>
+
+                <div class="tip-item warning">
+                    <h4>機密情報の取り扱いに注意</h4>
+                    <p>クラウドサービスを利用するため、機密性の高い情報を含む資料のアップロードは社内ルールを確認してください。必要に応じて機密部分をマスキングしてからアップロードしましょう。</p>
+                </div>
+            </div>
+
+            <h3>プロンプトのコツ</h3>
+            <div class="tips-grid">
+                <div class="tip-item success">
+                    <h4>出力形式を具体的に指定する</h4>
+                    <p>「ページ番号 | 見出し | 概要」のように、表形式で出力を指定すると、そのままスプレッドシートに貼り付けて使えます。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>分析の観点を明示する</h4>
+                    <p>「論理的な流れ」「重複・不足」「改善提案」など、どのような観点で分析してほしいかを明示すると、より有用な出力が得られます。</p>
+                </div>
+
+                <div class="tip-item success">
+                    <h4>段階的に依頼する</h4>
+                    <p>一度に全てを依頼するより、「まず目次を作成して」→「次に構成を分析して」→「改善案を出して」と段階的に依頼する方が、精度の高い出力が得られます。</p>
+                </div>
+            </div>
+
+            <h3>よくあるQ&A</h3>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <h4>Q：何ページまでの資料に対応できますか？</h4>
+                    <p>テキスト量やファイルサイズによりますが、100ページ程度までは問題なく処理できることが多いです。それ以上の場合は、章ごとに分割してアップロードすることをおすすめします。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q：画像中心のスライド資料でも使えますか？</h4>
+                    <p>テキストが少ない画像中心の資料でも、Geminiは画像を認識して内容を把握できます。ただし、テキストが多い資料に比べると精度は下がる場合があります。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q：出力された目次はそのまま使えますか？</h4>
+                    <p>そのまま使えることが多いですが、固有名詞や専門用語の認識ミスがある場合もあります。最終的には人の目で確認してから使用してください。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary">
+            <h2>まとめ</h2>
+
+            <p>本記事では、Geminiを活用して大量ページの資料から目次を自動作成し、構成整理を効率化した事例をご紹介しました。</p>
+
+            <div class="summary-points">
+                <h3>本記事のポイント</h3>
+                <ul>
+                    <li><strong>課題：</strong>数十ページの資料の構成把握に時間がかかり、目次作成や改善案の検討が属人化していた</li>
+                    <li><strong>解決策：</strong>PDFファイルをGeminiに読み込ませ、目次作成・構成分析・改善提案を自動化</li>
+                    <li><strong>効果：</strong>構成把握時間80%削減、目次ミスほぼゼロ、誰でも資料整理が可能に</li>
+                    <li><strong>応用：</strong>マニュアル更新、議事録整理、報告書テンプレート化など幅広く活用可能</li>
+                </ul>
+            </div>
+
+            <div class="next-action">
+                <h3>今日から試せるアクション</h3>
+                <ol>
+                    <li>整理したい資料（PDF）を1つ選ぶ</li>
+                    <li>Google Gemini（gemini.google.com）にアクセス</li>
+                    <li>PDFファイルをアップロード</li>
+                    <li>「この資料の目次を一覧形式で作成してください」と依頼</li>
+                    <li>続けて「構成の改善点があれば教えてください」と依頼</li>
+                </ol>
+            </div>
+
+            <p>資料の構成整理は「本質的な作業」ではなく「準備作業」です。AIにこの部分を任せることで、本来時間をかけるべき「内容の検討」や「品質の向上」に集中できるようになります。まずは手元の資料で試してみてください。</p>
+
+            <div class="cta-box">
+                <h3>AI活用による業務効率化のご相談</h3>
+                <p>「うちでも資料整理を効率化したい」「他にもAIで効率化できる業務がないか知りたい」という方は、お気軽にご相談ください。貴社の業務に合わせた活用方法をご提案いたします。</p>
+                <a href="/contact" class="cta-button">無料相談を申し込む</a>
+            </div>
+        </section>
+
+        <footer class="article-footer">
+            <div class="tag-list">
+                <span class="tag">Gemini</span>
+                <span class="tag">資料整理</span>
+                <span class="tag">目次作成</span>
+                <span class="tag">PDF</span>
+                <span class="tag">構成分析</span>
+                <span class="tag">業務効率化</span>
+                <span class="tag">ドキュメント管理</span>
+            </div>
+            <div class="share-buttons">
+                <span>この記事をシェア：</span>
+                <a href="#" class="share-button twitter">X</a>
+                <a href="#" class="share-button facebook">Facebook</a>
+                <a href="#" class="share-button linkedin">LinkedIn</a>
+            </div>
+        </footer>
+    </article>
+
+    <aside class="related-articles">
+        <h3>関連記事</h3>
+        <ul>
+            <li><a href="/blog/ai-gemini-gem-announcement">Gemini Gem×告知文章標準化で品質を統一</a></li>
+            <li><a href="/blog/ai-gemini-survey-test">Gemini×アンケートテスト準備で準備時間75%削減</a></li>
+            <li><a href="/blog/ai-notebooklm-slack-reaction">NotebookLM×Slackスタンプ集計で出欠確認を自動化</a></li>
+        </ul>
+    </aside>
+</body>
+</html>
