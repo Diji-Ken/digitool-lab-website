@@ -3,753 +3,799 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Geminiで過去の議事録を分析し、議論の抜け漏れや課題を自動抽出。会議のアジェンダ品質を向上させた中小企業の事例をご紹介します。">
-    <title>【Gemini×議事録分析】過去の会議記録から議論の抜け漏れを抽出！アジェンダ品質が向上した事例 | AI活用事例</title>
+    <meta name="description" content="Geminiで過去数ヶ月分の議事録を分析し、議論の抜け漏れや課題を抽出。会議のアジェンダを再整理し、より質の高い議論を実現した中小企業の成功事例をご紹介します。">
+    <meta name="keywords" content="Gemini, 議事録分析, アジェンダ, 会議効率化, AI活用, 議論品質向上, プロジェクト管理, 中小企業DX">
+    <title>【実践事例】Geminiで議事録を分析しアジェンダを再整理！議論の抜け漏れを防ぎ会議品質を向上 | AI活用事例</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-color: #0277BD;
+            --primary-light: #039BE5;
+            --primary-dark: #01579B;
+            --accent-color: #FF6F00;
+            --accent-light: #FF8F00;
+            --text-color: #263238;
+            --text-light: #546E7A;
+            --bg-color: #FAFAFA;
+            --bg-accent: #E1F5FE;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(2, 119, 189, 0.08);
+            --shadow-md: 0 4px 16px rgba(2, 119, 189, 0.12);
+            --shadow-lg: 0 8px 32px rgba(2, 119, 189, 0.16);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
             line-height: 1.8;
-            color: #333;
-            background-color: #f5f5f5;
+            color: var(--text-color);
+            background-color: var(--bg-color);
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .article-container { max-width: 900px; margin: 0 auto; padding: 20px; }
         .article-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 60px 40px;
+            border-radius: var(--border-radius);
             margin-bottom: 40px;
-            border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
         }
-        .article-header h1 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            line-height: 1.4;
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,111,0,0.2) 0%, transparent 70%);
+            border-radius: 50%;
         }
-        .article-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-        .tag {
+        .header-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-        }
-        .section {
-            background: white;
-            padding: 35px;
-            margin-bottom: 25px;
-            border-radius: 15px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-        }
-        .section h2 {
-            color: #667eea;
-            font-size: 1.4em;
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            position: relative;
+            z-index: 1;
         }
-        .section h3 {
-            color: #444;
-            font-size: 1.15em;
-            margin: 25px 0 15px 0;
-            padding-left: 15px;
-            border-left: 4px solid #764ba2;
+        .header-label::before { content: '📋'; }
+        .article-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
-        .section p {
-            margin-bottom: 16px;
-            text-align: justify;
+        .header-description {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
         }
-        .highlight-box {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf3 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 5px solid #667eea;
+        .main-visual {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-color);
         }
-        .highlight-box-warning {
-            background: linear-gradient(135deg, #fef9e7 0%, #fef3c7 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 5px solid #f59e0b;
-        }
-        .highlight-box-success {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 5px solid #10b981;
-        }
-        .metric-cards {
+        .visual-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 25px;
+            align-items: center;
         }
-        .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
+        .visual-box {
+            background: var(--bg-accent);
+            padding: 30px;
+            border-radius: var(--border-radius);
             text-align: center;
         }
-        .metric-card .number {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .visual-box.before {
+            border: 2px dashed #BDBDBD;
+            background: #FAFAFA;
         }
-        .metric-card .label {
-            font-size: 0.9em;
-            opacity: 0.9;
+        .visual-box.after {
+            border: 2px solid var(--primary-color);
+            background: linear-gradient(135deg, #E1F5FE 0%, #B3E5FC 100%);
         }
-        .process-flow {
+        .visual-box-icon { font-size: 3rem; margin-bottom: 15px; }
+        .visual-box-label { font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; }
+        .visual-box-value { font-size: 1.3rem; font-weight: 700; color: var(--text-color); }
+        .visual-box.before .visual-box-value { color: #E53935; }
+        .visual-box.after .visual-box-value { color: var(--primary-dark); }
+        .visual-arrow { font-size: 2.5rem; color: var(--primary-color); font-weight: bold; }
+        .company-profile {
+            background: linear-gradient(145deg, var(--white) 0%, #F5F5F5 100%);
+            border-radius: var(--border-radius);
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(2, 119, 189, 0.1);
+        }
+        .company-profile-title {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 25px 0;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--bg-accent);
         }
-        .process-step {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 18px;
-            background: #f8fafc;
+        .company-profile-title::before { content: '🏢'; font-size: 1.4rem; }
+        .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .profile-item { display: flex; align-items: flex-start; gap: 12px; }
+        .profile-item-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--bg-accent);
             border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
-        .step-number {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 35px;
-            height: 35px;
+        .profile-item-content { flex: 1; }
+        .profile-item-label { font-size: 0.8rem; color: var(--text-light); margin-bottom: 4px; }
+        .profile-item-value { font-size: 1rem; font-weight: 600; color: var(--text-color); }
+        .content-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--bg-accent);
+        }
+        .section-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
             flex-shrink: 0;
         }
-        .step-content {
-            flex: 1;
-        }
-        .step-content strong {
-            color: #667eea;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.95em;
-        }
-        .comparison-table th,
-        .comparison-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .comparison-table th {
-            background: #667eea;
-            color: white;
+        .section-title-group { flex: 1; }
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--primary-color);
             font-weight: 600;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
-        .comparison-table tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        .prompt-example {
-            background: #1a1a2e;
-            color: #a5f3fc;
-            padding: 25px;
-            border-radius: 10px;
+        .section-title { font-size: 1.4rem; font-weight: 700; color: var(--text-color); }
+        .section-content p { margin-bottom: 20px; text-align: justify; }
+        .challenge-card {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
             margin: 25px 0;
-            font-family: 'Monaco', 'Consolas', monospace;
-            font-size: 0.9em;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            line-height: 1.6;
+            border-left: 5px solid var(--accent-color);
         }
-        .prompt-label {
-            color: #fbbf24;
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
-        ul, ol {
-            margin: 15px 0 15px 25px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .case-info {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-        .case-info h3 {
-            color: #92400e;
+        .challenge-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #E65100;
             margin-bottom: 15px;
-            padding-left: 0;
-            border-left: none;
+            font-size: 1.05rem;
         }
-        .case-info p {
-            margin-bottom: 8px;
-            color: #78350f;
+        .challenge-title::before { content: '⚠️'; }
+        .challenge-list { list-style: none; }
+        .challenge-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px dashed rgba(230, 81, 0, 0.2);
         }
-        .voice-box {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 25px;
-            border-radius: 10px;
+        .challenge-list li:last-child { border-bottom: none; }
+        .challenge-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #E65100;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .solution-box {
+            background: linear-gradient(135deg, #E1F5FE 0%, #B3E5FC 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
             margin: 25px 0;
+            border-left: 5px solid var(--primary-color);
+        }
+        .solution-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .solution-title::before { content: '💡'; }
+        .ai-persona-box {
+            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid #9C27B0;
+        }
+        .ai-persona-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #7B1FA2;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .ai-persona-title::before { content: '🎭'; }
+        .persona-badge {
+            display: inline-block;
+            background: #9C27B0;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 25px 0; }
+        .insight-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--primary-color);
+        }
+        .insight-icon { font-size: 2rem; margin-bottom: 12px; }
+        .insight-title { font-size: 1rem; font-weight: 700; color: var(--text-color); margin-bottom: 8px; }
+        .insight-description { font-size: 0.9rem; color: var(--text-light); }
+        .prompt-box {
+            background: #263238;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 25px 0;
+            color: #ECEFF1;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            position: relative;
+            overflow-x: auto;
+        }
+        .prompt-box::before {
+            content: 'Geminiへのプロンプト例';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .prompt-text { color: #80DEEA; white-space: pre-wrap; line-height: 1.8; }
+        .output-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(2, 119, 189, 0.2);
+        }
+        .output-card-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-accent);
+        }
+        .output-list { list-style: none; }
+        .output-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            border-bottom: 1px solid rgba(2, 119, 189, 0.1);
+        }
+        .output-list li:last-child { border-bottom: none; }
+        .output-list li::before { content: '▸'; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+        .flow-diagram {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 30px;
+            background: #F5F5F5;
+            border-radius: var(--border-radius);
+        }
+        .flow-step {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            min-width: 140px;
+        }
+        .flow-step.ai {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+            color: var(--white);
+        }
+        .flow-step-icon { font-size: 2rem; margin-bottom: 10px; }
+        .flow-step-label { font-size: 0.9rem; font-weight: 600; }
+        .flow-arrow { font-size: 1.5rem; color: var(--primary-color); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 30px 0; }
+        .metric-card {
+            background: linear-gradient(145deg, var(--white) 0%, var(--bg-accent) 100%);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(2, 119, 189, 0.2);
+            transition: var(--transition);
+        }
+        .metric-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .metric-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .metric-value { font-size: 2rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px; }
+        .metric-label { font-size: 0.9rem; color: var(--text-light); }
+        .voice-box {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-color);
             position: relative;
         }
         .voice-box::before {
             content: '"';
-            font-size: 4em;
-            color: #f59e0b;
             position: absolute;
-            top: -10px;
-            left: 15px;
-            opacity: 0.3;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--bg-accent);
+            font-family: Georgia, serif;
+            line-height: 1;
         }
-        .voice-box p {
-            padding-left: 20px;
-            font-style: italic;
-            color: #92400e;
-        }
-        .analysis-example {
-            background: #f1f5f9;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-        }
-        .analysis-category {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid #667eea;
-        }
-        .analysis-category h4 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        .analysis-category ul {
-            margin-bottom: 0;
-        }
-        .checklist {
-            list-style: none;
-            margin-left: 0;
-        }
-        .checklist li {
-            padding-left: 30px;
+        .voice-content {
             position: relative;
+            z-index: 1;
+            padding-left: 30px;
+            font-style: italic;
+            color: var(--text-color);
+            line-height: 1.8;
         }
-        .checklist li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-        .timeline-visual {
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-            padding: 25px;
-            border-radius: 10px;
+        .voice-author { margin-top: 15px; padding-left: 30px; font-size: 0.9rem; color: var(--text-light); font-style: normal; }
+        .point-card {
+            background: linear-gradient(135deg, var(--bg-accent) 0%, #B3E5FC 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
             margin: 25px 0;
         }
-        .timeline-item {
+        .point-title {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #8b5cf6;
-        }
-        .timeline-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        .timeline-week {
-            background: #667eea;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            flex-shrink: 0;
-            height: fit-content;
-        }
-        .cta-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 35px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .cta-box h3 {
-            border: none;
-            padding-left: 0;
-            color: white;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--primary-dark);
             margin-bottom: 15px;
+            font-size: 1.05rem;
         }
-        .cta-box p {
-            opacity: 0.95;
+        .point-title::before { content: '💎'; }
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            text-align: center;
+            color: var(--white);
+            margin: 40px 0;
         }
-        @media (max-width: 600px) {
-            .article-header h1 {
-                font-size: 1.4em;
-            }
-            .section {
-                padding: 25px 20px;
-            }
-            .metric-cards {
-                grid-template-columns: 1fr;
-            }
-            .comparison-table {
-                font-size: 0.85em;
-            }
-            .comparison-table th,
-            .comparison-table td {
-                padding: 10px 8px;
-            }
+        .cta-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 15px; }
+        .cta-description { font-size: 1.05rem; opacity: 0.95; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+        .scroll-fade { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .scroll-fade.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) {
+            .article-container { padding: 15px; }
+            .article-header { padding: 40px 25px; }
+            .article-header h1 { font-size: 1.6rem; }
+            .main-visual { padding: 25px; }
+            .visual-grid { grid-template-columns: 1fr; gap: 20px; }
+            .visual-arrow { transform: rotate(90deg); }
+            .profile-grid { grid-template-columns: 1fr; }
+            .content-section { padding: 25px; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            .insight-grid { grid-template-columns: 1fr; }
+            .flow-diagram { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); }
         }
     </style>
 </head>
 <body>
-    <article class="container">
+    <article class="article-container">
         <header class="article-header">
-            <h1>【Gemini×議事録分析】過去の会議記録から議論の抜け漏れを自動抽出！アジェンダ品質が大幅向上した精密機械製造業の事例</h1>
-            <div class="article-meta">
-                <span class="tag">Gemini</span>
-                <span class="tag">議事録分析</span>
-                <span class="tag">アジェンダ作成</span>
-                <span class="tag">会議効率化</span>
-                <span class="tag">製造業</span>
-            </div>
+            <div class="header-label">会議品質の向上</div>
+            <h1>Geminiで議事録を分析し<br>アジェンダを再整理！<br>議論の抜け漏れを防ぎ会議品質を向上</h1>
+            <p class="header-description">
+                過去数ヶ月分の議事録をGeminiに分析させ、議論の抜け漏れや見落としているリスクを
+                客観的に洗い出し。次回の会議アジェンダをより良くするAI活用事例をご紹介します。
+            </p>
         </header>
-
-        <div class="case-info">
-            <h3>導入企業プロフィール</h3>
-            <p><strong>業種：</strong>精密機械部品製造業</p>
-            <p><strong>従業員数：</strong>18名</p>
-            <p><strong>所在地：</strong>愛知県</p>
-            <p><strong>課題：</strong>週次の生産会議で議論の抜け漏れが頻発、重要課題の見落としが発生</p>
+        <div class="main-visual scroll-fade">
+            <div class="visual-grid">
+                <div class="visual-box before">
+                    <div class="visual-box-icon">🗣️</div>
+                    <div class="visual-box-label">導入前</div>
+                    <div class="visual-box-value">議論が白熱すると<br>論点が散漫に</div>
+                </div>
+                <div class="visual-arrow">→</div>
+                <div class="visual-box after">
+                    <div class="visual-box-icon">🎯</div>
+                    <div class="visual-box-label">導入後</div>
+                    <div class="visual-box-value">抜け漏れなく<br>網羅的な議論へ</div>
+                </div>
+            </div>
         </div>
-
-        <section class="section">
-            <h2>導入前の課題</h2>
-
-            <h3>週次会議の運営における構造的な問題</h3>
-            <p>愛知県で精密機械部品の製造を手がけるA社では、毎週月曜日に生産進捗会議を開催していました。製造部門、品質管理部門、営業部門のリーダーが参加し、約1時間半の会議で生産状況の確認と課題の共有を行っていましたが、いくつかの深刻な問題を抱えていました。</p>
-
-            <div class="highlight-box-warning">
-                <h4>会議運営で発生していた主な問題</h4>
-                <ul>
-                    <li><strong>議論の脱線と時間超過</strong>：緊急の話題に時間を取られ、本来議論すべき事項が後回しに</li>
-                    <li><strong>過去の議論の積み残し</strong>：「前回持ち越し」のまま放置される議題が増加</li>
-                    <li><strong>リスクの見落とし</strong>：目先の対応に追われ、中長期的な課題が議題に上がらない</li>
-                    <li><strong>議事録の活用不足</strong>：記録はしているが、振り返りに使われていない</li>
-                </ul>
-            </div>
-
-            <h3>議事録は残っているのに活かせていない状態</h3>
-            <p>同社では過去2年分の議事録がGoogle ドキュメントに蓄積されていました。週次会議の議事録が約100件以上、各議事録は2〜3ページ程度。この膨大な記録を人力で読み返して、議論の傾向を分析したり、見落としている課題を洗い出すのは現実的に不可能でした。</p>
-
-            <p>製造部門のリーダーは「議事録は『書いて終わり』になっていた。本当は過去の議論を振り返って、同じ問題が繰り返し発生していないかチェックしたいが、日々の業務に追われてそんな時間は取れない」と当時の状況を振り返ります。</p>
-
-            <h3>専任のPMがいない中での会議運営の限界</h3>
-            <p>従業員18名規模の同社では、専任のプロジェクトマネージャーや会議ファシリテーターを置く余裕はありません。各部門のリーダーが持ち回りで司会を担当していましたが、全員が自分の業務を抱えながらの運営となるため、会議の質を高める取り組みに手が回らない状況でした。</p>
-
-            <div class="metric-cards">
-                <div class="metric-card">
-                    <div class="number">100+</div>
-                    <div class="label">蓄積された議事録数</div>
-                </div>
-                <div class="metric-card">
-                    <div class="number">30%</div>
-                    <div class="label">持ち越し議題の割合</div>
-                </div>
-                <div class="metric-card">
-                    <div class="number">90分</div>
-                    <div class="label">平均会議時間</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>解決策：Geminiで議事録を横断分析しアジェンダを再構築</h2>
-
-            <h3>Geminiに「優秀なPM」として議事録を分析させる</h3>
-            <p>A社が取り入れた解決策は、Google の生成AI「Gemini」を活用して過去の議事録を横断的に分析し、議論の抜け漏れや潜在的なリスクを自動で抽出するというものでした。</p>
-
-            <p>具体的には、Geminiに「優秀なプロジェクトマネージャー」としてのペルソナを設定し、過去数ヶ月分の議事録を読み込ませた上で、会議のアジェンダ改善に必要な分析を依頼しました。</p>
-
-            <div class="process-flow">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <strong>議事録データの準備</strong>
-                        Google ドキュメントに蓄積された過去3ヶ月分（約12件）の議事録をまとめてGeminiに読み込ませる
+        <div class="company-profile scroll-fade">
+            <div class="company-profile-title">導入企業プロフィール</div>
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <div class="profile-item-icon">🏭</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">業種</div>
+                        <div class="profile-item-value">ITサービス業</div>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <strong>コンテキスト情報の提供</strong>
-                        会議の目的、参加者の役割、会社の事業内容など背景情報をGeminiに説明
+                <div class="profile-item">
+                    <div class="profile-item-icon">👥</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">従業員数</div>
+                        <div class="profile-item-value">18名</div>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <strong>分析指示の実行</strong>
-                        「次回議論すべき事項」「見落としているリスク」「繰り返し発生している課題」などを分析・整理させる
+                <div class="profile-item">
+                    <div class="profile-item-icon">🎯</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">対象業務</div>
+                        <div class="profile-item-value">プロジェクト定例会議</div>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <strong>アジェンダへの反映</strong>
-                        Geminiの分析結果を基に、次回会議のアジェンダを再構築
+                <div class="profile-item">
+                    <div class="profile-item-icon">🔧</div>
+                    <div class="profile-item-content">
+                        <div class="profile-item-label">使用ツール</div>
+                        <div class="profile-item-value">Gemini</div>
                     </div>
                 </div>
             </div>
-
-            <h3>実際に使用したプロンプトの構成</h3>
-            <p>Geminiへの指示は、以下のような構成で行いました。ポイントは「ペルソナの設定」と「具体的な分析観点の提示」です。</p>
-
-            <div class="prompt-example">
-<span class="prompt-label">【Geminiへの指示プロンプト例】</span>
-
-あなたは製造業に精通した優秀なプロジェクトマネージャーです。
-以下の背景情報と過去3ヶ月分の議事録を読み込んだ上で、
-次回の生産会議をより実りあるものにするための分析を行ってください。
-
-【背景情報】
-・会社概要：精密機械部品製造業、従業員18名
-・会議名：週次生産進捗会議（毎週月曜日開催）
-・参加者：製造部門リーダー、品質管理リーダー、営業リーダー、社長
-・会議の目的：生産状況の共有、品質課題の対応、納期調整
-
-【分析してほしい内容】
-1. 議論が中途半端なまま放置されている議題の洗い出し
-2. 繰り返し発生している課題パターンの特定
-3. 議論されていないが検討すべき潜在リスク
-4. 次回会議で優先的に議論すべき事項のリスト
-5. 現在の会議運営における改善提案
-
-【出力形式】
-各項目について、具体的な根拠（どの議事録のどの記述から判断したか）を
-添えて整理してください。
+        </div>
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Challenge</div>
+                    <h2 class="section-title">抱えていた課題</h2>
+                </div>
             </div>
-
-            <h3>Geminiが出力した分析結果の例</h3>
-            <p>上記のプロンプトに対して、Geminiは以下のような構造化された分析結果を出力しました。</p>
-
-            <div class="analysis-example">
-                <h4>【Gemini分析結果サンプル】</h4>
-
-                <div class="analysis-category">
-                    <h4>1. 放置されている議題</h4>
-                    <ul>
-                        <li>〇〇工程の設備メンテナンス計画（10/7の議事録で「来週検討」としたまま3週間経過）</li>
-                        <li>△△部品の代替サプライヤー選定（9/23の議事録で課題提起後、進展なし）</li>
-                        <li>新人作業者の技能習得フォローアップ（言及が途絶えている）</li>
+            <div class="section-content">
+                <p>
+                    同社では、クライアント向けプロジェクトの定例会議を週次で実施していましたが、
+                    会議の質に関する課題を抱えていました。議論が白熱するあまり、重要な論点が
+                    抜け落ちてしまうことが度々発生していたのです。
+                </p>
+                <div class="challenge-card">
+                    <div class="challenge-title">従来の会議運営における問題点</div>
+                    <ul class="challenge-list">
+                        <li>議論が白熱すると、本来話し合うべきだった論点を忘れてしまう</li>
+                        <li>タスクの進捗確認に時間を取られ、戦略的な議論ができない</li>
+                        <li>過去の議事録を振り返る時間がなく、議論が堂々巡りになることも</li>
+                        <li>「あの時決めたはず」という認識のずれが後から発覚する</li>
+                        <li>プロジェクト全体を俯瞰した課題の洗い出しができていない</li>
                     </ul>
                 </div>
+                <p>
+                    特に問題だったのは、「議論の抜け漏れに気づくのが後になってから」という点でした。
+                    会議中は目の前の話題に集中するあまり、本来議論すべきだった重要な論点を
+                    見落としてしまい、後から「あの時話しておけばよかった」という事態が
+                    繰り返し発生していました。
+                </p>
+                <div class="voice-box">
+                    <div class="voice-content">
+                        「毎週の定例会議で、タスクの確認と目の前の課題対応に追われて、
+                        プロジェクト全体を見渡した議論ができていませんでした。後から振り返ると
+                        『なぜあの時点で気づかなかったのか』と思うことが多くて...。」
+                    </div>
+                    <div class="voice-author">― プロジェクトマネージャー</div>
+                </div>
+            </div>
+        </section>
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Solution</div>
+                    <h2 class="section-title">実施した施策</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <p>
+                    同社では、Geminiに過去数ヶ月分の議事録と会議の背景情報を提供し、
+                    「優秀なコンサルタント・PM」としての視点から議論の分析を依頼しました。
+                    人間だけでは見落としがちな論点を、AIの客観的な視点で洗い出す取り組みです。
+                </p>
+                <div class="solution-box">
+                    <div class="solution-title">Geminiに「コンサルタント・PM」役を依頼</div>
+                    <p>
+                        Geminiに参加者属性・プロジェクト背景・過去の議事録を提供し、
+                        「次回のMTGで議論すべきこと」「今後検討すべきこと」「見落としているリスク」
+                        などを客観的な意見として出力してもらいました。
+                    </p>
+                </div>
+                <div class="ai-persona-box">
+                    <div class="ai-persona-title">AIに設定したペルソナ</div>
+                    <p style="margin-bottom: 15px;">
+                        Geminiに対して、以下のようなペルソナ（役割）を設定することで、
+                        より質の高いアウトプットを得られるようにしました。
+                    </p>
+                    <div>
+                        <span class="persona-badge">コンサルタント</span>
+                        <span class="persona-badge">優秀なPM</span>
+                        <span class="persona-badge">客観的な第三者</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #7B1FA2;">
+                        ペルソナを設定することで、単なる要約ではなく、
+                        「プロジェクトを成功に導くために何を議論すべきか」という
+                        視点からのアドバイスを引き出すことができました。
+                    </p>
+                </div>
+                <h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark);">
+                    📋 Geminiに提供した情報
+                </h3>
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <div class="insight-icon">👥</div>
+                        <div class="insight-title">参加者属性</div>
+                        <div class="insight-description">会議参加者の役割・責任範囲・関心事項など</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">📊</div>
+                        <div class="insight-title">プロジェクト背景</div>
+                        <div class="insight-description">目的・スケジュール・制約条件・成功基準など</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">📝</div>
+                        <div class="insight-title">過去の議事録</div>
+                        <div class="insight-description">過去2-3ヶ月分の会議内容と決定事項</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">🎯</div>
+                        <div class="insight-title">現在の課題</div>
+                        <div class="insight-description">認識している問題点やボトルネック</div>
+                    </div>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">あなたは優秀なコンサルタント/PMとして、
+以下のプロジェクトの会議をサポートしてください。
 
-                <div class="analysis-category">
-                    <h4>2. 繰り返し発生している課題</h4>
-                    <ul>
-                        <li>〇〇ライン品の納期遅延：過去3ヶ月で4回発生、いずれも同じ工程がボトルネック</li>
-                        <li>検査工程での手戻り：品質基準の解釈ずれが原因の可能性あり</li>
+【プロジェクト背景】
+（プロジェクトの概要・目的・スケジュールを記載）
+
+【参加者属性】
+（参加者の役割・責任範囲を記載）
+
+【過去の議事録】
+（過去2-3ヶ月分の議事録を添付）
+
+【依頼事項】
+以下の観点で分析・提案をお願いします：
+1. 次回のMTGで議論すべきこと
+2. 今後検討すべきこと（中長期的な課題）
+3. 見落としているリスク
+4. 議論が堂々巡りになっている論点
+5. 決定事項の認識ずれが起きそうな箇所</div>
+                </div>
+                <h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark);">
+                    📊 Geminiからのアウトプット例
+                </h3>
+                <div class="output-card">
+                    <div class="output-card-title">🔴 次回MTGで必ず議論すべき事項</div>
+                    <ul class="output-list">
+                        <li>〇〇機能の仕様確定（前回保留のまま）</li>
+                        <li>テスト環境の準備状況確認</li>
+                        <li>クライアント側承認者の最終確認</li>
                     </ul>
                 </div>
-
-                <div class="analysis-category">
-                    <h4>3. 議論すべき潜在リスク</h4>
-                    <ul>
-                        <li>主要設備の稼働年数が10年を超えており、更新計画の議論が見当たらない</li>
-                        <li>特定の熟練工への依存度が高く、技能継承の議論が不足</li>
+                <div class="output-card">
+                    <div class="output-card-title">🟡 見落としているリスク</div>
+                    <ul class="output-list">
+                        <li>△△との連携テストが未計画</li>
+                        <li>リリース後の運用体制が未定義</li>
+                        <li>想定ユーザー数の再確認が必要</li>
                     </ul>
                 </div>
-
-                <div class="analysis-category">
-                    <h4>4. 次回優先議題の提案</h4>
-                    <ul>
-                        <li>【緊急】〇〇工程のボトルネック解消策の具体検討</li>
-                        <li>【重要】設備メンテナンス計画の確定</li>
-                        <li>【中期】技能継承プログラムの立案</li>
+                <div class="output-card">
+                    <div class="output-card-title">🟢 認識ずれが起きそうな箇所</div>
+                    <ul class="output-list">
+                        <li>「〇月リリース」の定義（開発完了 or 本番稼働）</li>
+                        <li>「基本機能」の範囲（参加者間で認識差あり）</li>
                     </ul>
                 </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>導入効果と具体的な成果</h2>
-
-            <h3>数値で見る改善効果</h3>
-            <p>Geminiを活用した議事録分析を導入してから3ヶ月が経過し、会議の運営品質に明確な改善が見られました。</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th>導入前</th>
-                        <th>導入後</th>
-                        <th>改善率</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>持ち越し議題の割合</td>
-                        <td>約30%</td>
-                        <td>約8%</td>
-                        <td>73%減</td>
-                    </tr>
-                    <tr>
-                        <td>平均会議時間</td>
-                        <td>90分</td>
-                        <td>60分</td>
-                        <td>33%短縮</td>
-                    </tr>
-                    <tr>
-                        <td>議事録分析時間</td>
-                        <td>実施せず</td>
-                        <td>15分/週</td>
-                        <td>新規実現</td>
-                    </tr>
-                    <tr>
-                        <td>繰り返し問題の発生</td>
-                        <td>月4件程度</td>
-                        <td>月1件程度</td>
-                        <td>75%減</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>会議の質的変化</h3>
-            <p>数値面の改善に加えて、会議の進め方そのものにも大きな変化がありました。</p>
-
-            <div class="highlight-box-success">
-                <h4>質的な改善ポイント</h4>
-                <ul class="checklist">
-                    <li>過去の議論を踏まえた「続き」から会議を始められるようになった</li>
-                    <li>「また同じ話をしている」という不毛な繰り返しが激減</li>
-                    <li>中長期的な課題が定期的にアジェンダに上がるようになった</li>
-                    <li>各部門リーダーの当事者意識が向上（自部門の課題が可視化されるため）</li>
-                    <li>社長が戦略的な議論に時間を使えるようになった</li>
-                </ul>
-            </div>
-
-            <h3>予期せぬ副次効果</h3>
-            <p>Geminiによる議事録分析には、当初想定していなかった効果もありました。</p>
-
-            <p>ひとつは「議事録の書き方が改善された」ことです。Geminiに分析させることを意識するようになった結果、議事録担当者が「後で分析しやすいように」と考えて記録するようになり、議事録自体の品質が向上しました。</p>
-
-            <p>もうひとつは「部門間の認識ズレが早期に発見できるようになった」ことです。Geminiが「この議題について、製造部門と品質管理部門で異なる認識を持っている可能性があります」といった指摘を出すことがあり、問題が大きくなる前に認識合わせができるようになりました。</p>
-
-            <div class="metric-cards">
-                <div class="metric-card">
-                    <div class="number">73%</div>
-                    <div class="label">持ち越し議題減少</div>
-                </div>
-                <div class="metric-card">
-                    <div class="number">30分</div>
-                    <div class="label">会議時間短縮</div>
-                </div>
-                <div class="metric-card">
-                    <div class="number">15分</div>
-                    <div class="label">週次分析作業時間</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>実践のポイントと注意事項</h2>
-
-            <h3>効果的な活用のための3つのポイント</h3>
-
-            <div class="highlight-box">
-                <h4>ポイント1：ペルソナ設定の重要性</h4>
-                <p>Geminiに「優秀なPM」「コンサルタント」といったペルソナを設定することで、単なる要約ではなく、分析的・提案的な出力が得られます。自社の業界に詳しいという設定を加えると、より実践的な分析結果になります。</p>
-            </div>
-
-            <div class="highlight-box">
-                <h4>ポイント2：背景情報の充実</h4>
-                <p>会社の事業内容、会議の目的、参加者の役割といった背景情報を丁寧に伝えることで、分析の精度が大幅に向上します。「何を知りたいか」だけでなく「なぜ知りたいか」まで伝えるとより良い結果が得られます。</p>
-            </div>
-
-            <div class="highlight-box">
-                <h4>ポイント3：段階的な分析範囲</h4>
-                <p>最初から過去1年分を分析するのではなく、まずは直近3ヶ月程度から始めることを推奨します。分析の精度を確認しながら、徐々に範囲を広げていくアプローチが効果的です。</p>
-            </div>
-
-            <h3>注意すべき点</h3>
-            <p>Geminiを活用する際には、以下の点に注意が必要です。</p>
-
-            <div class="highlight-box-warning">
-                <h4>活用上の注意事項</h4>
-                <ul>
-                    <li><strong>機密情報の取り扱い</strong>：顧客名や具体的な金額など、機密性の高い情報は匿名化してから読み込ませる</li>
-                    <li><strong>AIの分析は「たたき台」</strong>：出力結果をそのまま鵜呑みにせず、必ず人間がレビューして判断する</li>
-                    <li><strong>定期的なプロンプト見直し</strong>：分析精度を維持するため、月1回程度プロンプトの改善を検討する</li>
-                    <li><strong>議事録フォーマットの統一</strong>：分析精度を上げるため、議事録の書き方をある程度統一しておく</li>
-                </ul>
-            </div>
-
-            <h3>週次の運用フロー</h3>
-            <p>A社では、以下のような週次ルーティンでGeminiによる議事録分析を運用しています。</p>
-
-            <div class="timeline-visual">
-                <div class="timeline-item">
-                    <span class="timeline-week">金曜午後</span>
-                    <div>
-                        <strong>分析実行</strong><br>
-                        過去3ヶ月分の議事録をGeminiに読み込ませ、分析を実行（約15分）
+                <div class="flow-diagram">
+                    <div class="flow-step">
+                        <div class="flow-step-icon">📄</div>
+                        <div class="flow-step-label">議事録を<br>収集</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-week">金曜夕方</span>
-                    <div>
-                        <strong>結果レビュー</strong><br>
-                        担当者がGeminiの分析結果を確認し、アジェンダ案を作成（約20分）
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step ai">
+                        <div class="flow-step-icon">🤖</div>
+                        <div class="flow-step-label">Gemini<br>分析</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-week">月曜朝</span>
-                    <div>
-                        <strong>アジェンダ共有</strong><br>
-                        参加者にアジェンダを事前共有、会議を実施
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">📋</div>
+                        <div class="flow-step-label">アジェンダ<br>再整理</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-week">月曜夕方</span>
-                    <div>
-                        <strong>議事録作成</strong><br>
-                        会議内容を議事録化し、次週の分析対象に追加
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">🎯</div>
+                        <div class="flow-step-label">質の高い<br>会議へ</div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="section">
-            <h2>活用できる場面と応用例</h2>
-
-            <h3>この方法が有効な会議の特徴</h3>
-            <p>Geminiによる議事録分析は、以下のような特徴を持つ会議で特に効果を発揮します。</p>
-
-            <ul>
-                <li><strong>定期開催の会議</strong>：週次・月次など継続的に開催され、議事録が蓄積される会議</li>
-                <li><strong>複数議題を扱う会議</strong>：様々なトピックを扱うため、議論の抜け漏れが発生しやすい会議</li>
-                <li><strong>部門横断の会議</strong>：複数の視点が必要で、認識ズレが起きやすい会議</li>
-                <li><strong>意思決定を伴う会議</strong>：過去の決定事項のフォローアップが必要な会議</li>
-            </ul>
-
-            <h3>他の業種・場面への応用</h3>
-            <p>今回紹介した議事録分析の手法は、製造業以外でも幅広く応用可能です。</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>業種・場面</th>
-                        <th>分析対象</th>
-                        <th>期待される効果</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>営業部門</td>
-                        <td>営業会議の議事録</td>
-                        <td>案件フォローの抜け漏れ防止</td>
-                    </tr>
-                    <tr>
-                        <td>プロジェクト管理</td>
-                        <td>進捗会議の記録</td>
-                        <td>リスクの早期発見</td>
-                    </tr>
-                    <tr>
-                        <td>経営会議</td>
-                        <td>役員会議事録</td>
-                        <td>中長期課題の可視化</td>
-                    </tr>
-                    <tr>
-                        <td>建設業</td>
-                        <td>現場定例会議の記録</td>
-                        <td>安全・品質リスクの抽出</td>
-                    </tr>
-                    <tr>
-                        <td>医療・介護</td>
-                        <td>カンファレンス記録</td>
-                        <td>継続課題の見落とし防止</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="section">
-            <h2>担当者の声</h2>
-
-            <div class="voice-box">
-                <p>「人間が過去の議事録を遡って議論を整理すると数時間以上かかるものが、Geminiを使えば15分程度で要点や課題点をまとめることができました。しかも、人間だと見落としがちな『3週間前に持ち越しになったまま放置されている議題』なども、AIは確実に拾い上げてくれます。会議の準備が劇的に楽になっただけでなく、会議の質そのものが向上したのを実感しています」</p>
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Results</div>
+                    <h2 class="section-title">得られた成果</h2>
+                </div>
             </div>
-
-            <p style="text-align: right; color: #666;">― 製造部門リーダー（40代）</p>
-
-            <div class="voice-box">
-                <p>「正直、最初は『AIに議事録を読ませて何がわかるんだ』と半信半疑でした。でも実際にやってみると、自分たちでは気づけなかった『繰り返し発生している課題のパターン』を指摘されて驚きました。客観的な視点で会議を振り返ってくれる存在は、小さな会社にとって本当にありがたいです」</p>
-            </div>
-
-            <p style="text-align: right; color: #666;">― 代表取締役（50代）</p>
-        </section>
-
-        <section class="section">
-            <h2>まとめ</h2>
-
-            <h3>Gemini×議事録分析で実現できること</h3>
-            <p>今回の事例では、Geminiを活用した議事録分析により、以下の成果を実現しました。</p>
-
-            <div class="highlight-box-success">
-                <ul class="checklist">
-                    <li>持ち越し議題を73%削減し、会議の実効性が向上</li>
-                    <li>会議時間を30分短縮し、生産的な議論に集中</li>
-                    <li>週15分の分析作業で、専任PMがいなくても会議品質を維持</li>
-                    <li>繰り返し発生する問題パターンを特定し、根本解決に着手</li>
-                    <li>中長期的なリスクや課題が定期的に議論されるように</li>
-                </ul>
-            </div>
-
-            <h3>中小企業でも実践できる理由</h3>
-            <p>この取り組みは、以下の理由から中小企業でも実践しやすいものとなっています。</p>
-
-            <ul>
-                <li><strong>特別なツールが不要</strong>：Google Gemini（無料版でも可能）とGoogle ドキュメントがあれば始められる</li>
-                <li><strong>専門知識が不要</strong>：プロンプトの工夫次第で、技術的な知識がなくても活用可能</li>
-                <li><strong>段階的に始められる</strong>：まずは直近3ヶ月の議事録から小さく始めて、効果を確認しながら拡大できる</li>
-                <li><strong>時間投資が少ない</strong>：週15分程度の作業で、会議運営の質を大幅に改善できる</li>
-            </ul>
-
-            <p>会議の議事録は多くの企業で作成されていますが、「書いて終わり」になっているケースがほとんどです。Geminiを活用することで、この蓄積された情報資産を有効活用し、会議の質を継続的に改善することが可能になります。</p>
-
-            <div class="cta-box">
-                <h3>議事録分析でお悩みの方へ</h3>
-                <p>「会議の質を上げたいが、何から始めればよいかわからない」「議事録が活用できていない」といったお悩みをお持ちの方は、ぜひGeminiを活用した議事録分析をお試しください。まずは直近3ヶ月分の議事録を読み込ませるところから始めてみましょう。</p>
+            <div class="section-content">
+                <p>
+                    Geminiによる議事録分析を導入したことで、会議の質が大きく向上しました。
+                    客観的な視点からの指摘により、議論の抜け漏れを事前に防げるようになりました。
+                </p>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-value">80%減</div>
+                        <div class="metric-label">議論の抜け漏れ<br>事前検知で激減</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-value">30分</div>
+                        <div class="metric-label">会議時間短縮<br>論点整理済みで効率化</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-value">3倍</div>
+                        <div class="metric-label">戦略的議論の時間<br>タスク確認削減で確保</div>
+                    </div>
+                </div>
+                <div class="point-card">
+                    <div class="point-title">具体的な改善効果</div>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li>議論点の見落としがGeminiの指摘で事前に発覚し、会議前に対策を準備できるように</li>
+                        <li>「あの時決めたはず」という認識ずれが、議事録の横断分析で可視化</li>
+                        <li>人間が過去の議事録を遡って整理すると数時間かかるところ、数分で完了</li>
+                        <li>客観的な第三者視点による指摘で、社内では言いにくかった課題も浮き彫りに</li>
+                        <li>アジェンダの質が向上し、会議参加者の準備も効率化</li>
+                    </ul>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-content">
+                        「人間が過去の議事録を遡って議論を整理すると数時間以上かかるものが、
+                        Geminiならすぐに要点や課題点をまとめてくれます。しかも、人間だと
+                        見落としがちな視点からの指摘もあって、会議のアジェンダがより良くなりました。」
+                    </div>
+                    <div class="voice-author">― プロジェクトマネージャー</div>
+                </div>
             </div>
         </section>
+        <section class="content-section scroll-fade">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <div class="section-title-group">
+                    <div class="section-subtitle">Summary</div>
+                    <h2 class="section-title">まとめ</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <p>
+                    本事例は、AIを「客観的な第三者」「優秀なコンサルタント」として活用することで、
+                    会議の質を向上させた好例です。人間だけでは気づきにくい視点をAIが補完し、
+                    より網羅的で質の高い議論を実現しました。
+                </p>
+                <div class="point-card">
+                    <div class="point-title">成功のポイント</div>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>ペルソナの設定</strong> - 「コンサルタント/PM」という役割を与えることで、より有用なアドバイスを引き出す</li>
+                        <li><strong>十分なコンテキスト提供</strong> - 背景情報・参加者属性・過去の議事録をセットで提供</li>
+                        <li><strong>具体的なアウトプット指示</strong> - 「次回議論すべきこと」「見落としリスク」など項目を明確に</li>
+                        <li><strong>定期的な活用</strong> - 毎回の会議前にルーティン化することで効果を最大化</li>
+                    </ul>
+                </div>
+                <p>
+                    この手法は、プロジェクト会議に限らず、営業会議、経営会議、チーム定例など
+                    様々な会議に応用可能です。「議事録は作っているけど振り返りの時間がない」
+                    「会議で大事な論点を話し忘れることがある」という課題をお持ちの方は、
+                    ぜひGeminiによる議事録分析を試してみてください。
+                </p>
+                <p>
+                    AIは人間の代わりに会議をするのではなく、人間がより質の高い会議を行うための
+                    サポート役として活躍します。会議の「準備」にAIを活用することで、
+                    会議本番では人間ならではの創造的な議論に集中できるようになります。
+                </p>
+            </div>
+        </section>
+        <div class="cta-box scroll-fade">
+            <div class="cta-title">会議の質を向上させませんか？</div>
+            <p class="cta-description">
+                Geminiを活用した議事録分析で、抜け漏れのない質の高い会議を実現しましょう。
+                まずは無料相談で、貴社の会議改善の可能性を探ってみませんか。
+            </p>
+            <a href="#contact" class="cta-button">
+                <span>無料相談を申し込む</span>
+                <span>→</span>
+            </a>
+        </div>
     </article>
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.scroll-fade').forEach(el => { observer.observe(el); });
+    </script>
 </body>
 </html>
