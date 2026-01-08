@@ -5,201 +5,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>利用規約（アプリケーション） - 株式会社デジタルツール研究所</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
   <link rel="stylesheet" href="../css/style.css?v=2024120517">
-  <style>
-    .terms-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    .terms-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .terms-header h1 {
-      font-size: 28px;
-      margin-bottom: 16px;
-      color: #333;
-    }
-    .terms-header p {
-      color: #666;
-      font-size: 14px;
-    }
-    .terms-section {
-      background: #fff;
-      border-radius: 8px;
-      padding: 32px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .terms-section h2 {
-      font-size: 18px;
-      margin-bottom: 16px;
-      color: #333;
-      border-left: 4px solid #4A90A4;
-      padding-left: 12px;
-    }
-    .terms-section p, .terms-section li {
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-    .terms-section ul, .terms-section ol {
-      padding-left: 20px;
-      margin-bottom: 16px;
-    }
-    .terms-section li {
-      margin-bottom: 8px;
-    }
-    .terms-nav {
-      display: flex;
-      gap: 16px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-    .terms-nav a {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #f5f5f5;
-      color: #333;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-    .terms-nav a:hover {
-      background: #e5e5e5;
-    }
-  </style>
 </head>
 <body>
-<div class="terms-container">
-  <div class="terms-header">
-    <h1>利用規約</h1>
-    <p>アプリケーション向け - 最終更新日: 2025年1月8日</p>
-  </div>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+      <a href="../about.html">私たちについて</a>
+      <a href="../service.html">事業内容</a>
+      <a href="../case-studies.html">ご支援事例</a>
+      <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-  <div class="terms-section">
-    <h2>第1条（適用）</h2>
-    <p>本規約は、株式会社デジタルツール研究所（以下「当社」）が提供するアプリケーション（以下「本アプリ」）の利用条件を定めるものです。ユーザーの皆様には、本規約に従って本アプリをご利用いただきます。</p>
-    <p>本アプリを利用することにより、ユーザーは本規約に同意したものとみなされます。</p>
-  </div>
+  <main class="flex-grow">
+    <section class="page-header">
+      <h1>利用規約</h1>
+      <p>アプリケーション向け</p>
+    </section>
 
-  <div class="terms-section">
-    <h2>第2条（定義）</h2>
-    <p>本規約において使用する用語の定義は、以下のとおりとします。</p>
-    <ol>
-      <li>「本アプリ」とは、当社が提供する業務自動化・連携アプリケーションの総称をいいます。</li>
-      <li>「ユーザー」とは、本アプリを利用するすべての方をいいます。</li>
-      <li>「連携サービス」とは、Google、YouTube、その他当社アプリが連携するサードパーティサービスをいいます。</li>
-    </ol>
-  </div>
+    <section class="content-section">
+      <div class="legal-content">
+        <p style="text-align: right; color: #666;">最終更新日: 2025年1月8日</p>
 
-  <div class="terms-section">
-    <h2>第3条（利用登録）</h2>
-    <p>本アプリの利用にあたり、ユーザーは以下の事項に同意するものとします。</p>
-    <ol>
-      <li>連携サービスのアカウント情報を用いた認証（OAuth認証）を行うこと</li>
-      <li>本アプリが必要とする権限を許可すること</li>
-      <li>正確かつ最新の情報を提供すること</li>
-    </ol>
-  </div>
+        <h2>第1条（適用）</h2>
+        <p>本規約は、株式会社デジタルツール研究所（以下「当社」）が提供するアプリケーション（以下「本アプリ」）の利用条件を定めるものです。ユーザーの皆様には、本規約に従って本アプリをご利用いただきます。</p>
+        <p>本アプリを利用することにより、ユーザーは本規約に同意したものとみなされます。</p>
 
-  <div class="terms-section">
-    <h2>第4条（禁止事項）</h2>
-    <p>ユーザーは、本アプリの利用にあたり、以下の行為をしてはなりません。</p>
-    <ol>
-      <li>法令または公序良俗に違反する行為</li>
-      <li>犯罪行為に関連する行為</li>
-      <li>当社または第三者の知的財産権、プライバシー権、名誉権その他の権利を侵害する行為</li>
-      <li>本アプリのサーバーまたはネットワークに過度な負担をかける行為</li>
-      <li>本アプリの運営を妨害するおそれのある行為</li>
-      <li>不正アクセス、またはこれを試みる行為</li>
-      <li>他のユーザーになりすます行為</li>
-      <li>当社のサービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為</li>
-      <li>連携サービスの利用規約に違反する行為</li>
-      <li>その他、当社が不適切と判断する行為</li>
-    </ol>
-  </div>
+        <h2>第2条（定義）</h2>
+        <p>本規約において使用する用語の定義は、以下のとおりとします。</p>
+        <ol>
+          <li>「本アプリ」とは、当社が提供する業務自動化・連携アプリケーションの総称をいいます。</li>
+          <li>「ユーザー」とは、本アプリを利用するすべての方をいいます。</li>
+          <li>「連携サービス」とは、Google、YouTube、その他当社アプリが連携するサードパーティサービスをいいます。</li>
+        </ol>
 
-  <div class="terms-section">
-    <h2>第5条（本アプリの提供の停止等）</h2>
-    <p>当社は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本アプリの全部または一部の提供を停止または中断することができるものとします。</p>
-    <ol>
-      <li>本アプリにかかるシステムの保守点検または更新を行う場合</li>
-      <li>地震、落雷、火災、停電または天災などの不可抗力により、本アプリの提供が困難となった場合</li>
-      <li>コンピュータまたは通信回線等が事故により停止した場合</li>
-      <li>連携サービスの停止または変更があった場合</li>
-      <li>その他、当社が本アプリの提供が困難と判断した場合</li>
-    </ol>
-    <p>当社は、本アプリの提供の停止または中断により、ユーザーまたは第三者が被ったいかなる不利益または損害についても、一切の責任を負わないものとします。</p>
-  </div>
+        <h2>第3条（利用登録）</h2>
+        <p>本アプリの利用にあたり、ユーザーは以下の事項に同意するものとします。</p>
+        <ol>
+          <li>連携サービスのアカウント情報を用いた認証（OAuth認証）を行うこと</li>
+          <li>本アプリが必要とする権限を許可すること</li>
+          <li>正確かつ最新の情報を提供すること</li>
+        </ol>
 
-  <div class="terms-section">
-    <h2>第6条（利用制限および登録抹消）</h2>
-    <p>当社は、ユーザーが以下のいずれかに該当する場合には、事前の通知なく、ユーザーに対して本アプリの全部もしくは一部の利用を制限し、またはユーザーとしての登録を抹消することができるものとします。</p>
-    <ol>
-      <li>本規約のいずれかの条項に違反した場合</li>
-      <li>登録事項に虚偽の事実があることが判明した場合</li>
-      <li>当社からの連絡に対し、一定期間返答がない場合</li>
-      <li>本アプリについて、最終の利用から一定期間利用がない場合</li>
-      <li>その他、当社が本アプリの利用を適当でないと判断した場合</li>
-    </ol>
-  </div>
+        <h2>第4条（禁止事項）</h2>
+        <p>ユーザーは、本アプリの利用にあたり、以下の行為をしてはなりません。</p>
+        <ol>
+          <li>法令または公序良俗に違反する行為</li>
+          <li>犯罪行為に関連する行為</li>
+          <li>当社または第三者の知的財産権、プライバシー権、名誉権その他の権利を侵害する行為</li>
+          <li>本アプリのサーバーまたはネットワークに過度な負担をかける行為</li>
+          <li>本アプリの運営を妨害するおそれのある行為</li>
+          <li>不正アクセス、またはこれを試みる行為</li>
+          <li>他のユーザーになりすます行為</li>
+          <li>当社のサービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為</li>
+          <li>連携サービスの利用規約に違反する行為</li>
+          <li>その他、当社が不適切と判断する行為</li>
+        </ol>
 
-  <div class="terms-section">
-    <h2>第7条（免責事項）</h2>
-    <p>当社は、本アプリに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます）がないことを明示的にも黙示的にも保証しておりません。</p>
-    <p>当社は、本アプリに起因してユーザーに生じたあらゆる損害について、当社の故意または重過失による場合を除き、一切の責任を負いません。</p>
-    <p>本アプリは、連携サービス（Google、YouTube等）のAPIを利用しています。連携サービスの仕様変更、停止等により本アプリの機能が制限または停止される場合がありますが、当社はこれについて責任を負いません。</p>
-  </div>
+        <h2>第5条（本アプリの提供の停止等）</h2>
+        <p>当社は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本アプリの全部または一部の提供を停止または中断することができるものとします。</p>
+        <ol>
+          <li>本アプリにかかるシステムの保守点検または更新を行う場合</li>
+          <li>地震、落雷、火災、停電または天災などの不可抗力により、本アプリの提供が困難となった場合</li>
+          <li>コンピュータまたは通信回線等が事故により停止した場合</li>
+          <li>連携サービスの停止または変更があった場合</li>
+          <li>その他、当社が本アプリの提供が困難と判断した場合</li>
+        </ol>
+        <p>当社は、本アプリの提供の停止または中断により、ユーザーまたは第三者が被ったいかなる不利益または損害についても、一切の責任を負わないものとします。</p>
 
-  <div class="terms-section">
-    <h2>第8条（サービス内容の変更等）</h2>
-    <p>当社は、ユーザーへの事前の告知をもって、本アプリの内容を変更、追加または廃止することがあり、ユーザーはこれを承諾するものとします。</p>
-  </div>
+        <h2>第6条（利用制限および登録抹消）</h2>
+        <p>当社は、ユーザーが以下のいずれかに該当する場合には、事前の通知なく、ユーザーに対して本アプリの全部もしくは一部の利用を制限し、またはユーザーとしての登録を抹消することができるものとします。</p>
+        <ol>
+          <li>本規約のいずれかの条項に違反した場合</li>
+          <li>登録事項に虚偽の事実があることが判明した場合</li>
+          <li>当社からの連絡に対し、一定期間返答がない場合</li>
+          <li>本アプリについて、最終の利用から一定期間利用がない場合</li>
+          <li>その他、当社が本アプリの利用を適当でないと判断した場合</li>
+        </ol>
 
-  <div class="terms-section">
-    <h2>第9条（利用規約の変更）</h2>
-    <p>当社は、必要と判断した場合には、ユーザーに通知することなく、いつでも本規約を変更することができるものとします。なお、本規約の変更後、本アプリの利用を開始した場合には、当該ユーザーは変更後の規約に同意したものとみなします。</p>
-  </div>
+        <h2>第7条（免責事項）</h2>
+        <p>当社は、本アプリに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます）がないことを明示的にも黙示的にも保証しておりません。</p>
+        <p>当社は、本アプリに起因してユーザーに生じたあらゆる損害について、当社の故意または重過失による場合を除き、一切の責任を負いません。</p>
+        <p>本アプリは、連携サービス（Google、YouTube等）のAPIを利用しています。連携サービスの仕様変更、停止等により本アプリの機能が制限または停止される場合がありますが、当社はこれについて責任を負いません。</p>
 
-  <div class="terms-section">
-    <h2>第10条（個人情報の取扱い）</h2>
-    <p>本アプリの利用によって取得する個人情報については、当社「プライバシーポリシー」に従い適切に取り扱うものとします。</p>
-  </div>
+        <h2>第8条（サービス内容の変更等）</h2>
+        <p>当社は、ユーザーへの事前の告知をもって、本アプリの内容を変更、追加または廃止することがあり、ユーザーはこれを承諾するものとします。</p>
 
-  <div class="terms-section">
-    <h2>第11条（通知または連絡）</h2>
-    <p>ユーザーと当社との間の通知または連絡は、当社の定める方法によって行うものとします。当社は、ユーザーから、当社が別途定める方式に従った変更届け出がない限り、現在登録されている連絡先が有効なものとみなして当該連絡先へ通知または連絡を行い、これらは、発信時にユーザーへ到達したものとみなします。</p>
-  </div>
+        <h2>第9条（利用規約の変更）</h2>
+        <p>当社は、必要と判断した場合には、ユーザーに通知することなく、いつでも本規約を変更することができるものとします。なお、本規約の変更後、本アプリの利用を開始した場合には、当該ユーザーは変更後の規約に同意したものとみなします。</p>
 
-  <div class="terms-section">
-    <h2>第12条（権利義務の譲渡の禁止）</h2>
-    <p>ユーザーは、当社の書面による事前の承諾なく、利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し、または担保に供することはできません。</p>
-  </div>
+        <h2>第10条（個人情報の取扱い）</h2>
+        <p>本アプリの利用によって取得する個人情報については、当社「<a href="privacy.html">プライバシーポリシー</a>」に従い適切に取り扱うものとします。</p>
 
-  <div class="terms-section">
-    <h2>第13条（準拠法・裁判管轄）</h2>
-    <p>本規約の解釈にあたっては、日本法を準拠法とします。</p>
-    <p>本アプリに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。</p>
-  </div>
+        <h2>第11条（通知または連絡）</h2>
+        <p>ユーザーと当社との間の通知または連絡は、当社の定める方法によって行うものとします。当社は、ユーザーから、当社が別途定める方式に従った変更届け出がない限り、現在登録されている連絡先が有効なものとみなして当該連絡先へ通知または連絡を行い、これらは、発信時にユーザーへ到達したものとみなします。</p>
 
-  <div class="terms-section">
-    <h2>お問い合わせ</h2>
-    <p>本規約に関するご質問やお問い合わせは、以下までご連絡ください。</p>
-    <p><strong>株式会社デジタルツール研究所</strong></p>
-    <p>メール: info@digitool-lab.com</p>
-    <p>ウェブサイト: <a href="https://digitool-lab.com/">https://digitool-lab.com/</a></p>
-  </div>
+        <h2>第12条（権利義務の譲渡の禁止）</h2>
+        <p>ユーザーは、当社の書面による事前の承諾なく、利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し、または担保に供することはできません。</p>
 
-  <div class="terms-nav">
-    <a href="index.html">アプリケーション情報</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="https://digitool-lab.com/">会社ホームページ</a>
-  </div>
+        <h2>第13条（準拠法・裁判管轄）</h2>
+        <p>本規約の解釈にあたっては、日本法を準拠法とします。</p>
+        <p>本アプリに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。</p>
+
+        <h2>お問い合わせ</h2>
+        <p>本規約に関するご質問やお問い合わせは、以下までご連絡ください。</p>
+        <p>
+          株式会社デジタルツール研究所<br>
+          〒110-0004 東京都台東区下谷2丁目23番8号 リベール上野4F<br>
+          E-mail：info@digitool-lab.com<br>
+          ウェブサイト：<a href="https://digitool-lab.com/">https://digitool-lab.com/</a>
+        </p>
+
+        <h2>関連ページ</h2>
+        <ul>
+          <li><a href="index.html">アプリケーション情報</a></li>
+          <li><a href="privacy.html">プライバシーポリシー（アプリケーション向け）</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
 </div>
+
+<script src="../js/main.js"></script>
 </body>
 </html>
