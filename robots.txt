@@ -1,33 +1,41 @@
 User-agent: *
 Allow: /
+Disallow: /apps/
 
 # AI Crawlers
 User-agent: GPTBot
 Allow: /
+Disallow: /apps/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /apps/
 
 User-agent: CCBot
 Allow: /
+Disallow: /apps/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /apps/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /apps/
 
 # Google AI
 User-agent: Google-Extended
 Allow: /
+Disallow: /apps/
 
 # Bing AI
 User-agent: BingBot
 Allow: /
+Disallow: /apps/
 
 # Sitemap
 Sitemap: https://digitool-lab.com/sitemap.xml
 
 # LLMO files
 # llms.txt: https://digitool-lab.com/llms.txt
-# llms_full.txt: https://digitool-lab.com/llms_full.txt 
+# llms_full.txt: https://digitool-lab.com/llms_full.txt
