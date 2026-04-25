@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fetchData() {
-        fetch('data/case-studies.json?v=' + Date.now())
+        fetch('data/case-studies.json?v=2026042503')
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok.');
                 return response.json();
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return `
                 <a href="${study.url}" class="case-study-card" data-aos="fade-up">
                     <div class="card-image-wrapper">
-                        <img src="${study.thumbnail}" alt="${study.title}" loading="eager" ${index < 3 ? 'fetchpriority="high"' : ''}
+                        <img src="${study.thumbnail}" alt="${study.title}" width="800" height="450" loading="eager" decoding="async" ${index < 3 ? 'fetchpriority="high"' : ''}
                              onerror="this.onerror=null; this.src='images/case-placeholder.svg';">
                     </div>
                     <div class="card-content">

@@ -2173,6 +2173,39 @@ footer {
   line-height: 1.7;
 }
 
+.service-faq-section {
+  background: var(--white);
+}
+
+.service-faq-section h2 {
+  margin-bottom: 2rem;
+}
+
+.service-faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.service-faq-list > div {
+  padding: 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  background: var(--gray-50);
+}
+
+.service-faq-list h3 {
+  margin: 0 0 0.75rem;
+  color: var(--gray-900);
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+
+.service-faq-list p {
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.85;
+}
+
 @media (max-width: 768px) {
   .selector-heading,
   .selector-grid,
