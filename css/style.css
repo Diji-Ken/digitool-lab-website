@@ -1671,7 +1671,6 @@ footer {
 }
 
 .hero-proof span,
-.trust-strip .container > div,
 .contact-lead-strip .container > div,
 .intro-points > div {
   background: rgba(255, 255, 255, 0.82);
@@ -1683,7 +1682,6 @@ footer {
 }
 
 .hero-proof strong,
-.trust-strip strong,
 .contact-lead-strip strong,
 .intro-points strong {
   display: block;
@@ -1692,14 +1690,12 @@ footer {
   line-height: 1.2;
 }
 
-.trust-strip,
 .contact-lead-strip,
 .service-intro-strip {
   padding: 1.5rem 1rem 0;
   background: var(--gray-50);
 }
 
-.trust-strip .container,
 .contact-lead-strip .container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1978,7 +1974,6 @@ footer {
   }
 
   .hero-proof,
-  .trust-strip .container,
   .contact-lead-strip .container,
   .service-intro-strip .container {
     grid-template-columns: 1fr;
@@ -2029,7 +2024,6 @@ footer {
   }
 
   .hero-proof span,
-  .trust-strip .container > div,
   .contact-lead-strip .container > div,
   .intro-points > div {
     padding: 0.75rem;
