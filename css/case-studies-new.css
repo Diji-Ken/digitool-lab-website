@@ -212,6 +212,57 @@ body {
     /* Styles for the container of filter groups */
 }
 
+.case-consult-strip {
+    background: #2B3E50;
+    color: white;
+    padding: 48px 0;
+}
+
+.case-consult-strip .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 32px;
+}
+
+.case-consult-strip span {
+    display: inline-block;
+    color: #FFB37A;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.case-consult-strip h2 {
+    font-size: 1.85rem;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.case-consult-strip p {
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 720px;
+}
+
+.case-consult-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 8px;
+    background: #FF8C42;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.case-consult-button:hover {
+    background: #FF7A2B;
+    transform: translateY(-2px);
+}
+
 .filter-group {
     display: none; /* Hide groups by default */
     animation: fadeIn 0.3s ease;
@@ -628,4 +679,23 @@ body {
     color: #999;
     font-size: 0.75rem;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .case-consult-strip {
+        padding: 36px 0;
+    }
+
+    .case-consult-strip .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .case-consult-strip h2 {
+        font-size: 1.45rem;
+    }
+
+    .case-consult-button {
+        width: 100%;
+    }
 }
