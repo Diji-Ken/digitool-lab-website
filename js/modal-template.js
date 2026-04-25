@@ -51,7 +51,7 @@ const DOWNLOAD_MODAL_HTML = `
       <div class="form-group">
         <label class="checkbox-label">
           <input type="checkbox" id="modal-privacy-agree" name="privacy_agree" required>
-          <a href="./privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する *
+          <a href="https://digitool-lab.com/privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する *
         </label>
       </div>
       <button type="submit" class="btn btn-primary btn-block">資料をダウンロード</button>
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- New Modal Control Logic ---
   const modal = document.getElementById('download-modal');
-  const openModalButtons = document.querySelectorAll('.open-download-modal');
+  const openModalButtons = document.querySelectorAll('.open-download-modal, #header-download-button, #bottom-download-button, #article-download-button');
   const closeModalButton = document.getElementById('close-modal');
 
   if (modal && openModalButtons.length > 0 && closeModalButton) {

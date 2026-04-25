@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const paginatedCases = state.filteredCases.slice(startIndex, endIndex);
             
             // カードの描画
-            elements.grid.innerHTML = paginatedCases.map(study => {
+            elements.grid.innerHTML = paginatedCases.map((study, index) => {
                 if (!study) return ''; // ガード節を追加：データが存在しない場合は何も描画しない
 
                 let tagsHTML = study.tags.slice(0, 3).map(tag => 
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return `
                 <a href="${study.url}" class="case-study-card" data-aos="fade-up">
                     <div class="card-image-wrapper">
-                        <img src="${study.thumbnail}" alt="${study.title}" loading="lazy" 
+                        <img src="${study.thumbnail}" alt="${study.title}" loading="eager" ${index < 3 ? 'fetchpriority="high"' : ''}
                              onerror="this.onerror=null; this.src='images/case-placeholder.svg';">
                     </div>
                     <div class="card-content">
