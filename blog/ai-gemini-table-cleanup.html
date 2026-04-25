@@ -3,112 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで表データを整理！バラバラなデータを一括クリーニング - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="Geminiを活用して表データを効率的に整理・クリーニングする方法。バラバラな形式のデータを統一し、分析しやすい状態に整えた事例を解説します。">
-    <meta name="keywords" content="Gemini, データ整理, 表データ, クリーニング, 中小企業DX, AI活用">
-    <title>Geminiで表データを整理！バラバラなデータを一括クリーニング | デジタルツール研究所</title>
-    <style>
-        :root {
-            --primary-color: #0d9488;
-            --secondary-color: #2dd4bf;
-            --accent-color: #99f6e4;
-            --background-color: #f0fdfa;
-            --text-color: #134e4a;
-        }
-    </style>
+    <meta name="keywords" content="ITサービス業, AI活用, 業務効率化, Gemini, GAS, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-gemini-table-cleanup.html">
+    <meta property="og:title" content="Geminiで表データを整理！バラバラなデータを一括クリーニング | デジタルツール研究所">
+    <meta property="og:description" content="Geminiを活用して表データを効率的に整理・クリーニングする方法。バラバラな形式のデータを統一し、分析しやすい状態に整えた事例を解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-gemini-table-cleanup.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-115.png">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <article>
-        <header>
-            <h1>Geminiで表データを整理！バラバラなデータを一括クリーニング</h1>
-            <p class="lead">12名規模の不動産管理会社が、Geminiを活用して複数ソースから集まる表データを効率的に整理・統一。手作業で数時間かかっていたデータクリーニングを大幅に効率化した事例をご紹介します。</p>
-        </header>
-
-        <nav class="toc">
-            <h2>目次</h2>
-            <ol>
-                <li><a href="#challenge">課題：形式がバラバラなデータの整理に時間がかかる</a></li>
-                <li><a href="#solution">施策：Geminiでデータ整理を効率化</a></li>
-                <li><a href="#result">成果：データ整理時間が大幅削減</a></li>
-                <li><a href="#summary">まとめ：AIでデータ品質を維持する</a></li>
-            </ol>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
         </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-        <section id="challenge">
-            <h2>課題：形式がバラバラなデータの整理に時間がかかる</h2>
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">ITサービス業の事例</span>
+      </div>
+    </nav>
 
-            <h3>企業プロフィール</h3>
-            <table>
-                <tr>
-                    <th>業種</th>
-                    <td>不動産管理</td>
-                </tr>
-                <tr>
-                    <th>従業員数</th>
-                    <td>12名</td>
-                </tr>
-                <tr>
-                    <th>管理物件数</th>
-                    <td>約200件</td>
-                </tr>
-                <tr>
-                    <th>主な課題</th>
-                    <td>複数ソースからのデータ形式統一に手間がかかる</td>
-                </tr>
-            </table>
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--cyan-100); color: var(--cyan-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">ITサービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-03-09</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">Geminiで表データを整理！バラバラなデータを一括クリーニング</h1>
 
-            <h3>データ管理の現状</h3>
-            <p>同社では物件情報、入居者情報、取引先情報など多くのデータを管理しています。これらのデータは異なるソースから入手するため、形式がバラバラで統一作業に多くの時間がかかっていました。</p>
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=GAS" class="article-tag">GAS</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <h4>データ形式の問題例</h4>
-            <ul>
-                <li><strong>日付形式</strong>：「2025/1/15」「2025年1月15日」「25-01-15」が混在</li>
-                <li><strong>住所表記</strong>：全角・半角、丁目の有無などが統一されていない</li>
-                <li><strong>電話番号</strong>：ハイフンあり/なし、全角/半角が混在</li>
-                <li><strong>金額表記</strong>：「50000」「50,000」「5万」が混在</li>
-                <li><strong>会社名</strong>：「株式会社」「(株)」「㈱」が混在</li>
-            </ul>
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-115.png" alt="Geminiで表データを整理！バラバラなデータを一括クリーニング" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
 
-            <div class="problem-box">
-                <h4>データ整理にかかる時間（月次）</h4>
-                <ol>
-                    <li>新規物件データの形式統一（2時間）</li>
-                    <li>入居者情報の住所・連絡先整理（3時間）</li>
-                    <li>取引先リストのクリーニング（1時間）</li>
-                    <li>月次報告用データの整形（2時間）</li>
-                </ol>
-                <p><strong>合計：約8時間/月</strong></p>
-                <p>しかも手作業のため、見落としや入力ミスも発生...</p>
-            </div>
-
-            <h4>担当者の声（導入前）</h4>
-            <blockquote>
-                <p>「各不動産会社から届くデータの形式がバラバラで、そのままでは使えません。Excelで一つずつ直していくのですが、単純作業なのに神経を使うし、量が多いと本当に疲れます」</p>
-                <cite>— 管理部門担当者</cite>
-            </blockquote>
-        </section>
-
-        <section id="solution">
-            <h2>施策：Geminiでデータ整理を効率化</h2>
-
-            <h3>Geminiをデータ整理アシスタントとして活用</h3>
-            <p>表データをGeminiに渡し、形式の統一やクリーニングを依頼する仕組みを構築しました。</p>
-
-            <div class="flow-diagram">
-                <h4>データ整理フロー</h4>
-                <ol>
-                    <li><strong>データ収集</strong>：各ソースからデータを取得</li>
-                    <li><strong>Geminiに整理依頼</strong>：統一したい形式を指定して依頼</li>
-                    <li><strong>結果確認</strong>：整理されたデータをチェック</li>
-                    <li><strong>システム投入</strong>：統一されたデータを管理システムに入力</li>
-                </ol>
-            </div>
-
-            <h3>活用パターン1：日付形式の統一</h3>
-            <p>バラバラな日付表記を統一形式に変換します。</p>
-
-            <div class="prompt-example">
-                <h4>Geminiへの指示例</h4>
-                <pre>
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section id="challenge" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">課題：形式がバラバラなデータの整理に時間がかかる</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">企業プロフィール</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">業種</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">不動産管理</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">従業員数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">12名</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">管理物件数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約200件</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">主な課題</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">複数ソースからのデータ形式統一に手間がかかる</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">データ管理の現状</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">同社では物件情報、入居者情報、取引先情報など多くのデータを管理しています。これらのデータは異なるソースから入手するため、形式がバラバラで統一作業に多くの時間がかかっていました。</p>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">データ形式の問題例</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>日付形式</strong>：「2025/1/15」「2025年1月15日」「25-01-15」が混在</li>
+<li style="margin-bottom: 0.5rem;"><strong>住所表記</strong>：全角・半角、丁目の有無などが統一されていない</li>
+<li style="margin-bottom: 0.5rem;"><strong>電話番号</strong>：ハイフンあり/なし、全角/半角が混在</li>
+<li style="margin-bottom: 0.5rem;"><strong>金額表記</strong>：「50000」「50,000」「5万」が混在</li>
+<li style="margin-bottom: 0.5rem;"><strong>会社名</strong>：「株式会社」「(株)」「㈱」が混在</li>
+</ul>
+<div class="problem-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">データ整理にかかる時間（月次）</h4>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">新規物件データの形式統一（2時間）</li>
+<li style="margin-bottom: 0.5rem;">入居者情報の住所・連絡先整理（3時間）</li>
+<li style="margin-bottom: 0.5rem;">取引先リストのクリーニング（1時間）</li>
+<li style="margin-bottom: 0.5rem;">月次報告用データの整形（2時間）</li>
+</ol>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>合計：約8時間/月</strong></p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">しかも手作業のため、見落としや入力ミスも発生...</p>
+</div>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">担当者の声（導入前）</h4>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「各不動産会社から届くデータの形式がバラバラで、そのままでは使えません。Excelで一つずつ直していくのですが、単純作業なのに神経を使うし、量が多いと本当に疲れます」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; 管理部門担当者</cite>
+</blockquote>
+</section>
+<section id="solution" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">施策：Geminiでデータ整理を効率化</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">Geminiをデータ整理アシスタントとして活用</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">表データをGeminiに渡し、形式の統一やクリーニングを依頼する仕組みを構築しました。</p>
+<div class="flow-diagram" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">データ整理フロー</h4>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>データ収集</strong>：各ソースからデータを取得</li>
+<li style="margin-bottom: 0.5rem;"><strong>Geminiに整理依頼</strong>：統一したい形式を指定して依頼</li>
+<li style="margin-bottom: 0.5rem;"><strong>結果確認</strong>：整理されたデータをチェック</li>
+<li style="margin-bottom: 0.5rem;"><strong>システム投入</strong>：統一されたデータを管理システムに入力</li>
+</ol>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">活用パターン1：日付形式の統一</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">バラバラな日付表記を統一形式に変換します。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiへの指示例</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 以下の表データの「契約日」列を「YYYY/MM/DD」形式に統一してください。
 元データをそのまま変換し、表形式で出力してください。
 
@@ -118,25 +184,22 @@
 サンライズ301, 2024.07.15, 90000
 パークビュー402, R6.8.10, 68000
                 </pre>
-            </div>
-
-            <div class="output-example">
-                <h4>Geminiの出力</h4>
-                <pre>
+</div>
+<div class="output-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiの出力</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 物件名, 契約日, 賃料
 アーバンハイツ101, 2024/05/20, 85000
 グリーンコート202, 2024/06/01, 72000
 サンライズ301, 2024/07/15, 90000
 パークビュー402, 2024/08/10, 68000
                 </pre>
-            </div>
-
-            <h3>活用パターン2：住所の正規化</h3>
-            <p>表記揺れのある住所を統一します。</p>
-
-            <div class="prompt-example">
-                <h4>Geminiへの指示例</h4>
-                <pre>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">活用パターン2：住所の正規化</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">表記揺れのある住所を統一します。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiへの指示例</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 以下の住所を正規化してください。
 ルール：
 - 都道府県は省略せず記載
@@ -149,22 +212,19 @@
 港区赤坂1-2-3ABCビル201
 東京都港区赤坂一丁目二番三号　ＡＢＣビル２０１
                 </pre>
-            </div>
-
-            <div class="output-example">
-                <h4>Geminiの出力</h4>
-                <pre>
+</div>
+<div class="output-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiの出力</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 すべて以下の形式に統一しました：
 東京都港区赤坂1丁目-2番-3号 ABCビル201
                 </pre>
-            </div>
-
-            <h3>活用パターン3：電話番号・金額の統一</h3>
-            <p>形式がバラバラな電話番号や金額を統一します。</p>
-
-            <div class="prompt-example">
-                <h4>電話番号の統一</h4>
-                <pre>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">活用パターン3：電話番号・金額の統一</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">形式がバラバラな電話番号や金額を統一します。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">電話番号の統一</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 以下の電話番号を「XXX-XXXX-XXXX」形式（半角ハイフン区切り）に統一してください。
 
 03-1234-5678
@@ -172,11 +232,10 @@
 03 1234 5678
 031234-5678
                 </pre>
-            </div>
-
-            <div class="prompt-example">
-                <h4>金額の統一</h4>
-                <pre>
+</div>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">金額の統一</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 以下の金額を「カンマ区切り・円表記」に統一してください。
 
 50000
@@ -185,14 +244,12 @@
 ５万
 50000円
                 </pre>
-            </div>
-
-            <h3>活用パターン4：会社名の表記統一</h3>
-            <p>法人格の表記を統一します。</p>
-
-            <div class="prompt-example">
-                <h4>Geminiへの指示例</h4>
-                <pre>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">活用パターン4：会社名の表記統一</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">法人格の表記を統一します。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiへの指示例</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 以下の会社名の法人格表記を「株式会社」「有限会社」の正式表記に統一してください。
 前株・後株の位置は元のまま維持してください。
 
@@ -202,25 +259,22 @@
 山田工業（株）
 株式会社佐藤産業
                 </pre>
-            </div>
-
-            <div class="output-example">
-                <h4>Geminiの出力</h4>
-                <pre>
+</div>
+<div class="output-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiの出力</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 株式会社山田商事
 株式会社鈴木不動産
 有限会社田中建設
 山田工業株式会社
 株式会社佐藤産業
                 </pre>
-            </div>
-
-            <h3>活用パターン5：重複データの検出</h3>
-            <p>同一と思われる重複データを検出します。</p>
-
-            <div class="prompt-example">
-                <h4>Geminiへの指示例</h4>
-                <pre>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">活用パターン5：重複データの検出</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">同一と思われる重複データを検出します。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiへの指示例</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 以下の顧客リストで、同一人物と思われる重複レコードを特定してください。
 名前の表記揺れ、住所の微妙な違いを考慮して判定してください。
 
@@ -230,11 +284,10 @@ ID, 名前, 住所, 電話
 3, 鈴木花子, 東京都渋谷区渋谷2-3-4, 03-2345-6789
 4, 山田 太郎, 東京都新宿区西新宿1-2-3, 0312345678
                 </pre>
-            </div>
-
-            <div class="output-example">
-                <h4>Geminiの出力</h4>
-                <pre>
+</div>
+<div class="output-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiの出力</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 重複の可能性があるレコードを検出しました：
 
 【グループ1】同一人物と推定
@@ -247,14 +300,12 @@ ID, 名前, 住所, 電話
 - 住所が同一（表記の違いのみ）
 - 名前が読みとして一致
                 </pre>
-            </div>
-
-            <h3>GASとの連携で自動化</h3>
-            <p>定型的なデータ整理は、Google Apps Scriptと連携して自動化することも可能です。</p>
-
-            <div class="code-example">
-                <h4>GAS連携の概要</h4>
-                <pre>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">GASとの連携で自動化</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">定型的なデータ整理は、Google Apps Scriptと連携して自動化することも可能です。</p>
+<div class="code-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">GAS連携の概要</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 function cleanupData() {
   // 1. スプレッドシートからデータを取得
   const sheet = SpreadsheetApp.getActiveSheet();
@@ -270,137 +321,213 @@ function cleanupData() {
               .setValues(cleanedData);
 }
                 </pre>
-            </div>
-        </section>
-
-        <section id="result">
-            <h2>成果：データ整理時間が大幅削減</h2>
-
-            <h3>定量的な成果</h3>
-            <table class="result-table">
-                <tr>
-                    <th>指標</th>
-                    <th>導入前</th>
-                    <th>導入後</th>
-                    <th>改善</th>
-                </tr>
-                <tr>
-                    <td>月間データ整理時間</td>
-                    <td>8時間</td>
-                    <td>2時間</td>
-                    <td>75%削減</td>
-                </tr>
-                <tr>
-                    <td>形式統一の精度</td>
-                    <td>約95%</td>
-                    <td>約99%</td>
-                    <td>+4pt</td>
-                </tr>
-                <tr>
-                    <td>重複データ検出率</td>
-                    <td>約60%</td>
-                    <td>約90%</td>
-                    <td>+30pt</td>
-                </tr>
-            </table>
-
-            <h3>年間での効果</h3>
-            <div class="highlight-box">
-                <ul>
-                    <li>月6時間削減 × 12ヶ月 = <strong>年間72時間の削減</strong></li>
-                    <li>データ品質向上により<strong>報告書の作り直しが減少</strong></li>
-                    <li>重複検出により<strong>無駄な郵送コストを削減</strong></li>
-                </ul>
-            </div>
-
-            <h3>定性的な成果</h3>
-
-            <h4>業務品質の向上</h4>
-            <ul>
-                <li><strong>ミスの減少</strong>：手作業による見落としがなくなった</li>
-                <li><strong>データ品質の均一化</strong>：誰が作業しても同じ品質に</li>
-                <li><strong>検索性の向上</strong>：形式統一によりデータ検索が容易に</li>
-            </ul>
-
-            <h4>担当者への効果</h4>
-            <ul>
-                <li><strong>ストレス軽減</strong>：単純作業からの解放</li>
-                <li><strong>本来業務への集中</strong>：データ分析や顧客対応に時間を使える</li>
-                <li><strong>スキル向上</strong>：AIの使い方を学ぶ機会に</li>
-            </ul>
-
-            <h4>担当者の声（導入後）</h4>
-            <blockquote>
-                <p>「以前は半日かけていたデータ整理が、今は30分で終わります。しかも精度が上がって、後から『これ違う形式だった』と気づくことがなくなりました。月末の繁忙期が楽になりました」</p>
-                <cite>— 管理部門担当者</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>「重複データの検出が特に助かっています。名前や住所の表記揺れって人間では見逃しやすいんですが、AIは拾ってくれるので、データベースがきれいに保てるようになりました」</p>
-                <cite>— システム管理担当</cite>
-            </blockquote>
-        </section>
-
-        <section id="summary">
-            <h2>まとめ：AIでデータ品質を維持する</h2>
-
-            <h3>成功のポイント</h3>
-            <ol>
-                <li><strong>統一ルールの明確化</strong>
-                    <p>「どの形式に統一するか」を事前に決めておくことで、AIへの指示が明確に。</p>
-                </li>
-                <li><strong>パターン別のプロンプト用意</strong>
-                    <p>日付、住所、電話番号など、よくある整理パターンのプロンプトをテンプレート化。</p>
-                </li>
-                <li><strong>結果の確認は人間が行う</strong>
-                    <p>AIの出力を鵜呑みにせず、サンプルチェックを実施。</p>
-                </li>
-                <li><strong>定型作業はGAS連携で自動化</strong>
-                    <p>繰り返し行う作業は、スクリプト化して効率化。</p>
-                </li>
-            </ol>
-
-            <h3>他業務への応用</h3>
-            <ul>
-                <li><strong>顧客データベースの整理</strong>：CRMデータのクリーニング</li>
-                <li><strong>商品マスタの統一</strong>：商品名・型番の表記統一</li>
-                <li><strong>アンケート回答の整理</strong>：自由記述の分類・整理</li>
-                <li><strong>請求データの統一</strong>：取引先から届くデータの形式統一</li>
-            </ul>
-
-            <h3>導入のステップ</h3>
-            <ol>
-                <li><strong>整理対象データの洗い出し</strong>：形式がバラバラなデータを特定</li>
-                <li><strong>統一ルールの策定</strong>：どの形式に統一するか決定</li>
-                <li><strong>プロンプトの作成・テスト</strong>：小さなデータで試行</li>
-                <li><strong>業務フローへの組み込み</strong>：日常業務に組み込み</li>
-                <li><strong>必要に応じてGAS連携</strong>：定型作業を自動化</li>
-            </ol>
-
-            <h3>導入を検討される企業様へ</h3>
-            <div class="cta-box">
-                <p>Geminiを活用したデータ整理・クリーニングについて、詳しいご相談を承っております。</p>
-                <ul>
-                    <li>データ整理業務の効率化</li>
-                    <li>GASとの連携による自動化</li>
-                    <li>データ品質管理の仕組み構築</li>
-                </ul>
-                <p>まずはお気軽にお問い合わせください。</p>
-            </div>
-
-            <h3>関連記事</h3>
-            <ul>
-                <li><a href="ai-gemini-hr-data-organization.html">Geminiで人事データを整理</a></li>
-                <li><a href="ai-gemini-document-organization.html">Geminiで文書を整理・構造化</a></li>
-                <li><a href="ai-gemini-email-sorting.html">Geminiでメール整理を効率化</a></li>
-            </ul>
-        </section>
-
-        <footer>
-            <p class="update-date">最終更新日：2025年1月</p>
-            <p class="category">カテゴリ：AI活用事例 / データ管理 / 業務効率化</p>
-            <p class="tags">タグ：#Gemini #データ整理 #クリーニング #中小企業DX</p>
-        </footer>
+</div>
+</section>
+<section id="result" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">成果：データ整理時間が大幅削減</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">定量的な成果</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table class="result-table" style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">指標</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入後</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">改善</th>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">月間データ整理時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">8時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">2時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">75%削減</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">形式統一の精度</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約95%</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約99%</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">+4pt</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">重複データ検出率</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約60%</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約90%</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">+30pt</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">年間での効果</h3>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">月6時間削減 &times; 12ヶ月 = <strong>年間72時間の削減</strong></li>
+<li style="margin-bottom: 0.5rem;">データ品質向上により<strong>報告書の作り直しが減少</strong></li>
+<li style="margin-bottom: 0.5rem;">重複検出により<strong>無駄な郵送コストを削減</strong></li>
+</ul>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">定性的な成果</h3>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">業務品質の向上</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>ミスの減少</strong>：手作業による見落としがなくなった</li>
+<li style="margin-bottom: 0.5rem;"><strong>データ品質の均一化</strong>：誰が作業しても同じ品質に</li>
+<li style="margin-bottom: 0.5rem;"><strong>検索性の向上</strong>：形式統一によりデータ検索が容易に</li>
+</ul>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">担当者への効果</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>ストレス軽減</strong>：単純作業からの解放</li>
+<li style="margin-bottom: 0.5rem;"><strong>本来業務への集中</strong>：データ分析や顧客対応に時間を使える</li>
+<li style="margin-bottom: 0.5rem;"><strong>スキル向上</strong>：AIの使い方を学ぶ機会に</li>
+</ul>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">担当者の声（導入後）</h4>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「以前は半日かけていたデータ整理が、今は30分で終わります。しかも精度が上がって、後から『これ違う形式だった』と気づくことがなくなりました。月末の繁忙期が楽になりました」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; 管理部門担当者</cite>
+</blockquote>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「重複データの検出が特に助かっています。名前や住所の表記揺れって人間では見逃しやすいんですが、AIは拾ってくれるので、データベースがきれいに保てるようになりました」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; システム管理担当</cite>
+</blockquote>
+</section>
+<section id="summary" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">まとめ：AIでデータ品質を維持する</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">成功のポイント</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>統一ルールの明確化</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「どの形式に統一するか」を事前に決めておくことで、AIへの指示が明確に。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>パターン別のプロンプト用意</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">日付、住所、電話番号など、よくある整理パターンのプロンプトをテンプレート化。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>結果の確認は人間が行う</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">AIの出力を鵜呑みにせず、サンプルチェックを実施。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>定型作業はGAS連携で自動化</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">繰り返し行う作業は、スクリプト化して効率化。</p>
+</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">他業務への応用</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>顧客データベースの整理</strong>：CRMデータのクリーニング</li>
+<li style="margin-bottom: 0.5rem;"><strong>商品マスタの統一</strong>：商品名・型番の表記統一</li>
+<li style="margin-bottom: 0.5rem;"><strong>アンケート回答の整理</strong>：自由記述の分類・整理</li>
+<li style="margin-bottom: 0.5rem;"><strong>請求データの統一</strong>：取引先から届くデータの形式統一</li>
+</ul>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">導入のステップ</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>整理対象データの洗い出し</strong>：形式がバラバラなデータを特定</li>
+<li style="margin-bottom: 0.5rem;"><strong>統一ルールの策定</strong>：どの形式に統一するか決定</li>
+<li style="margin-bottom: 0.5rem;"><strong>プロンプトの作成・テスト</strong>：小さなデータで試行</li>
+<li style="margin-bottom: 0.5rem;"><strong>業務フローへの組み込み</strong>：日常業務に組み込み</li>
+<li style="margin-bottom: 0.5rem;"><strong>必要に応じてGAS連携</strong>：定型作業を自動化</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">導入を検討される企業様へ</h3>
+<div class="cta-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Geminiを活用したデータ整理・クリーニングについて、詳しいご相談を承っております。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">データ整理業務の効率化</li>
+<li style="margin-bottom: 0.5rem;">GASとの連携による自動化</li>
+<li style="margin-bottom: 0.5rem;">データ品質管理の仕組み構築</li>
+</ul>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">まずはお気軽にお問い合わせください。</p>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">関連記事</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><a href="ai-gemini-hr-data-organization.html" style="color: var(--cyan-600); font-weight: 600;">Geminiで人事データを整理</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="ai-gemini-document-organization.html" style="color: var(--cyan-600); font-weight: 600;">Geminiで文書を整理・構造化</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="ai-gemini-email-sorting.html" style="color: var(--cyan-600); font-weight: 600;">Geminiでメール整理を効率化</a></li>
+</ul>
+</section>
+      </div>
     </article>
+
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

@@ -3,263 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTで日報・週報を要約！大量レポートから重要ポイントを抽出 - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="ChatGPTを活用して日報・週報を効率的に要約する方法。大量のレポートから重要ポイントを抽出し、経営判断に活用した中小企業の事例を解説します。">
-    <meta name="keywords" content="ChatGPT, 日報要約, 週報, レポート分析, 中小企業DX, AI活用">
-    <title>ChatGPTで日報・週報を要約！大量レポートから重要ポイントを抽出 | デジタルツール研究所</title>
-    <style>
-        :root {
-            --primary-color: #059669;
-            --secondary-color: #34d399;
-            --accent-color: #a7f3d0;
-            --background-color: #ecfdf5;
-            --text-color: #064e3b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        .lead {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            opacity: 0.9;
-        }
-
-        nav.toc {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        nav.toc h2 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        nav.toc ol {
-            padding-left: 25px;
-        }
-
-        nav.toc li {
-            margin-bottom: 8px;
-        }
-
-        nav.toc a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        nav.toc a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin: 25px 0 15px 0;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--accent-color);
-        }
-
-        th {
-            background-color: var(--accent-color);
-            font-weight: bold;
-            width: 30%;
-        }
-
-        .highlight-box {
-            background: var(--accent-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .result-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .prompt-example {
-            background: #1e1e1e;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            overflow-x: auto;
-        }
-
-        .prompt-example code {
-            white-space: pre-wrap;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-        }
-
-        ul, ol {
-            padding-left: 25px;
-            margin: 15px 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        blockquote {
-            border-left: 4px solid var(--secondary-color);
-            padding-left: 20px;
-            margin: 20px 0;
-            font-style: italic;
-            color: var(--text-color);
-            opacity: 0.9;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid var(--accent-color);
-        }
-    </style>
+    <meta name="keywords" content="サービス業, AI活用, 業務効率化, ChatGPT, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-chatgpt-report-summary.html">
+    <meta property="og:title" content="ChatGPTで日報・週報を要約！大量レポートから重要ポイントを抽出 | デジタルツール研究所">
+    <meta property="og:description" content="ChatGPTを活用して日報・週報を効率的に要約する方法。大量のレポートから重要ポイントを抽出し、経営判断に活用した中小企業の事例を解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-chatgpt-report-summary.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-072.jpg">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <article>
-        <header>
-            <h1>ChatGPTで日報・週報を要約！大量レポートから重要ポイントを抽出</h1>
-            <p class="lead">24名規模の営業会社が、ChatGPTを活用して日報・週報を効率的に要約。大量のレポートから経営判断に必要な情報を素早く抽出し、意思決定のスピードを向上させた事例をご紹介します。</p>
-        </header>
-
-        <nav class="toc">
-            <h2>目次</h2>
-            <ol>
-                <li><a href="#challenge">課題：日報・週報を読む時間がない</a></li>
-                <li><a href="#solution">施策：ChatGPTでレポートを要約</a></li>
-                <li><a href="#result">成果：経営判断のスピードが向上</a></li>
-                <li><a href="#summary">まとめ：AIで情報収集を効率化</a></li>
-            </ol>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
         </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-        <section id="challenge">
-            <h2>課題：日報・週報を読む時間がない</h2>
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">サービス業の事例</span>
+      </div>
+    </nav>
 
-            <h3>企業プロフィール</h3>
-            <table>
-                <tr>
-                    <th>業種</th>
-                    <td>法人向け保険代理店</td>
-                </tr>
-                <tr>
-                    <th>従業員数</th>
-                    <td>24名（営業18名）</td>
-                </tr>
-                <tr>
-                    <th>日報提出数</th>
-                    <td>毎日18件</td>
-                </tr>
-                <tr>
-                    <th>週報提出数</th>
-                    <td>毎週18件</td>
-                </tr>
-            </table>
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--green-100); color: var(--green-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">サービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2025-11-22</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">ChatGPTで日報・週報を要約！大量レポートから重要ポイントを抽出</h1>
 
-            <h3>レポート確認の悩み</h3>
-            <p>営業メンバー全員が日報・週報を提出していますが、経営層や管理職がすべてに目を通すことが困難でした。</p>
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=ChatGPT" class="article-tag">ChatGPT</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <ul>
-                <li>18名分の日報を読むのに毎日1時間以上かかる</li>
-                <li>重要な情報が埋もれてしまう</li>
-                <li>週報の確認が溜まりがちになる</li>
-                <li>せっかくの報告が活かされていない</li>
-            </ul>
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-072.jpg" alt="ChatGPTで日報・週報を要約！大量レポートから重要ポイントを抽出" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
 
-            <blockquote>
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section id="challenge" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">課題：日報・週報を読む時間がない</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">企業プロフィール</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">業種</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">法人向け保険代理店</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">従業員数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">24名（営業18名）</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">日報提出数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">毎日18件</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">週報提出数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">毎週18件</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">レポート確認の悩み</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">営業メンバー全員が日報・週報を提出していますが、経営層や管理職がすべてに目を通すことが困難でした。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">18名分の日報を読むのに毎日1時間以上かかる</li>
+<li style="margin-bottom: 0.5rem;">重要な情報が埋もれてしまう</li>
+<li style="margin-bottom: 0.5rem;">週報の確認が溜まりがちになる</li>
+<li style="margin-bottom: 0.5rem;">せっかくの報告が活かされていない</li>
+</ul>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
                 「日報を書く側も読む側も、正直『形骸化している』と感じていました。でも、やめるわけにもいかない。どうにかして活かせないかと考えていました。」（営業部長）
             </blockquote>
-        </section>
-
-        <section id="solution">
-            <h2>施策：ChatGPTでレポートを要約</h2>
-
-            <h3>導入したAIツール</h3>
-            <table>
-                <tr>
-                    <th>ツール</th>
-                    <td>ChatGPT（GPT-4）</td>
-                </tr>
-                <tr>
-                    <th>用途</th>
-                    <td>日報・週報の要約・分析</td>
-                </tr>
-                <tr>
-                    <th>月額コスト</th>
-                    <td>約3,000円</td>
-                </tr>
-            </table>
-
-            <h3>日報の一括要約</h3>
-            <p>その日の日報をまとめてChatGPTに入力し、重要ポイントを抽出します。</p>
-
-            <div class="prompt-example">
-                <code>あなたは営業マネージャーのアシスタントです。
+</section>
+<section id="solution" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">施策：ChatGPTでレポートを要約</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">導入したAIツール</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">ツール</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">ChatGPT（GPT-4）</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">用途</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">日報・週報の要約・分析</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">月額コスト</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約3,000円</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">日報の一括要約</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">その日の日報をまとめてChatGPTに入力し、重要ポイントを抽出します。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<code>あなたは営業マネージャーのアシスタントです。
 以下の日報から、経営層・管理職が把握すべき重要情報を抽出してください。
 
 【日報データ】
@@ -276,11 +178,10 @@
 ・カテゴリごとに箇条書き
 ・報告者名を明記
 ・重要度が高いものにはマークをつける</code>
-            </div>
-
-            <h3>週報からのトレンド分析</h3>
-            <div class="prompt-example">
-                <code>以下の週報（18名分）を分析し、
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">週報からのトレンド分析</h3>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<code>以下の週報（18名分）を分析し、
 今週の営業活動の傾向と課題を整理してください。
 
 【分析の観点】
@@ -294,17 +195,15 @@
 ・各観点について3〜5行で簡潔に
 ・具体的なデータや事例を交えて
 ・経営会議で報告できるレベルの内容で</code>
-            </div>
-
-            <h3>個別フォローが必要なメンバーの抽出</h3>
-            <div class="highlight-box">
-                <h4>フォロー対象の検出プロンプト</h4>
-                <p>「この日報の中で、モチベーション低下やストレスを感じていそうなメンバーはいますか？根拠となる記述も教えてください」とChatGPTに依頼し、早期のフォローアップにつなげています。</p>
-            </div>
-
-            <h3>月次レポートの自動生成</h3>
-            <div class="prompt-example">
-                <code>今月の週報4週分をもとに、月次営業レポートを作成してください。
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">個別フォローが必要なメンバーの抽出</h3>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">フォロー対象の検出プロンプト</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「この日報の中で、モチベーション低下やストレスを感じていそうなメンバーはいますか？根拠となる記述も教えてください」とChatGPTに依頼し、早期のフォローアップにつなげています。</p>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">月次レポートの自動生成</h3>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<code>今月の週報4週分をもとに、月次営業レポートを作成してください。
 
 【レポート構成】
 1. エグゼクティブサマリー（5行以内）
@@ -318,102 +217,185 @@
 ・数字は正確に
 ・具体的な顧客名・案件名は伏せ字に
 ・経営会議で使用する資料として</code>
-            </div>
-        </section>
-
-        <section id="result">
-            <h2>成果：経営判断のスピードが向上</h2>
-
-            <h3>定量的な効果</h3>
-            <div class="highlight-box">
-                <table>
-                    <tr>
-                        <th>指標</th>
-                        <th>導入前</th>
-                        <th>導入後</th>
-                    </tr>
-                    <tr>
-                        <td>日報確認時間</td>
-                        <td>60分/日</td>
-                        <td><span class="result-number">15分/日</span></td>
-                    </tr>
-                    <tr>
-                        <td>週報確認時間</td>
-                        <td>2時間/週</td>
-                        <td><span class="result-number">30分/週</span></td>
-                    </tr>
-                    <tr>
-                        <td>重要情報の見落とし</td>
-                        <td>月3〜4件</td>
-                        <td><span class="result-number">ほぼゼロ</span></td>
-                    </tr>
-                </table>
-            </div>
-
-            <h3>定性的な効果</h3>
-            <ul>
-                <li>トラブル案件への早期対応が可能に</li>
-                <li>営業戦略の見直しが迅速になった</li>
-                <li>日報を書く側のモチベーションも向上</li>
-                <li>経営会議の準備時間が短縮</li>
-            </ul>
-
-            <blockquote>
+</div>
+</section>
+<section id="result" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">成果：経営判断のスピードが向上</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">定量的な効果</h3>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">指標</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入後</th>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">日報確認時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">60分/日</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="result-number">15分/日</span></td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">週報確認時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">2時間/週</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="result-number">30分/週</span></td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">重要情報の見落とし</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">月3〜4件</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="result-number">ほぼゼロ</span></td>
+</tr>
+</table></div>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">定性的な効果</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">トラブル案件への早期対応が可能に</li>
+<li style="margin-bottom: 0.5rem;">営業戦略の見直しが迅速になった</li>
+<li style="margin-bottom: 0.5rem;">日報を書く側のモチベーションも向上</li>
+<li style="margin-bottom: 0.5rem;">経営会議の準備時間が短縮</li>
+</ul>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
                 「以前は日報を書いても『読まれているのかな？』と思っていました。今は要約レポートを見て社長から直接コメントが来ることもあり、ちゃんと見てもらえていると実感できます。」（営業担当者）
             </blockquote>
-
-            <h3>具体的な活用シーン</h3>
-            <table>
-                <tr>
-                    <th>シーン</th>
-                    <th>活用方法</th>
-                </tr>
-                <tr>
-                    <td>朝の経営会議</td>
-                    <td>前日の日報要約を共有</td>
-                </tr>
-                <tr>
-                    <td>週次営業会議</td>
-                    <td>週報のトレンド分析を報告</td>
-                </tr>
-                <tr>
-                    <td>1on1ミーティング</td>
-                    <td>個別の課題・成果を事前把握</td>
-                </tr>
-                <tr>
-                    <td>月次経営会議</td>
-                    <td>月次レポートを自動生成</td>
-                </tr>
-            </table>
-        </section>
-
-        <section id="summary">
-            <h2>まとめ：AIで情報収集を効率化</h2>
-
-            <h3>成功のポイント</h3>
-            <ol>
-                <li><strong>抽出観点を明確に</strong>：何を知りたいかをChatGPTに具体的に伝える</li>
-                <li><strong>フォーマットを統一</strong>：日報・週報のフォーマットを統一すると、AI処理の精度が上がる</li>
-                <li><strong>定期的なルーティン化</strong>：毎日・毎週のタイミングで自動的に要約を作成する習慣をつける</li>
-                <li><strong>フィードバックを返す</strong>：要約を活かしたアクションを取ることで、報告者のモチベーションも向上</li>
-            </ol>
-
-            <h3>今後の展開</h3>
-            <ul>
-                <li>日報データの長期トレンド分析</li>
-                <li>優秀な営業手法のナレッジ化</li>
-                <li>日報フォーマットの最適化</li>
-            </ul>
-
-            <div class="highlight-box">
-                <h4>レポート確認にお悩みの経営者・管理職の方へ</h4>
-                <p>「報告は集まるけど、見る時間がない」という悩みはAIで解決できます。大切な情報を見落とさず、素早く経営判断につなげませんか？</p>
-            </div>
-        </section>
-
-        <footer>
-            <p>本記事に関するお問い合わせ、AI活用に関するご相談は、お気軽にデジタルツール研究所までご連絡ください。</p>
-        </footer>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">具体的な活用シーン</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">シーン</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">活用方法</th>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">朝の経営会議</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">前日の日報要約を共有</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">週次営業会議</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">週報のトレンド分析を報告</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">1on1ミーティング</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">個別の課題・成果を事前把握</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">月次経営会議</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">月次レポートを自動生成</td>
+</tr>
+</table></div>
+</section>
+<section id="summary" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">まとめ：AIで情報収集を効率化</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">成功のポイント</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>抽出観点を明確に</strong>：何を知りたいかをChatGPTに具体的に伝える</li>
+<li style="margin-bottom: 0.5rem;"><strong>フォーマットを統一</strong>：日報・週報のフォーマットを統一すると、AI処理の精度が上がる</li>
+<li style="margin-bottom: 0.5rem;"><strong>定期的なルーティン化</strong>：毎日・毎週のタイミングで自動的に要約を作成する習慣をつける</li>
+<li style="margin-bottom: 0.5rem;"><strong>フィードバックを返す</strong>：要約を活かしたアクションを取ることで、報告者のモチベーションも向上</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">今後の展開</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">日報データの長期トレンド分析</li>
+<li style="margin-bottom: 0.5rem;">優秀な営業手法のナレッジ化</li>
+<li style="margin-bottom: 0.5rem;">日報フォーマットの最適化</li>
+</ul>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">レポート確認にお悩みの経営者・管理職の方へ</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「報告は集まるけど、見る時間がない」という悩みはAIで解決できます。大切な情報を見落とさず、素早く経営判断につなげませんか？</p>
+</div>
+</section>
+      </div>
     </article>
+
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

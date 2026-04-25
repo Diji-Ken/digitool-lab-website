@@ -3,120 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで報告資料を自動作成！情報収集から要約まで一気に効率化 - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="Google Geminiを活用して月次報告資料を自動作成する方法。複数ドキュメントからの情報収集と要約をAIに任せることで、報告業務の効率化を実現した事例を解説します。">
-    <meta name="keywords" content="Gemini, 報告書作成, AI活用, 業務効率化, 月次報告, 資料作成自動化, 中小企業DX">
-    <title>Geminiで報告資料を自動作成！情報収集から要約まで一気に効率化 | デジタルツール研究所</title>
+    <meta name="keywords" content="サービス業, AI活用, 業務効率化, Gemini, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-gemini-report-automation.html">
+    <meta property="og:title" content="Geminiで報告資料を自動作成！情報収集から要約まで一気に効率化 | デジタルツール研究所">
+    <meta property="og:description" content="Google Geminiを活用して月次報告資料を自動作成する方法。複数ドキュメントからの情報収集と要約をAIに任せることで、報告業務の効率化を実現した事例を解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-gemini-report-automation.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-108.png">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <article>
-        <header>
-            <h1>Geminiで報告資料を自動作成！情報収集から要約まで一気に効率化</h1>
-            <p class="lead">30名規模のマーケティング支援会社が、Google Geminiを活用して月次報告資料の作成を効率化。複数のドキュメントに散らばった情報をAIが自動で収集・要約し、報告書の作成時間を70%削減した事例をご紹介します。</p>
-        </header>
-
-        <nav class="toc">
-            <h2>目次</h2>
-            <ol>
-                <li><a href="#challenge">課題：散らばった情報を集めて報告資料を作る苦労</a></li>
-                <li><a href="#solution">施策：Geminiで情報収集と要約を自動化</a></li>
-                <li><a href="#result">成果：報告資料作成時間を70%削減</a></li>
-                <li><a href="#summary">まとめ：AIで報告業務の負担を解消</a></li>
-            </ol>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
         </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-        <section id="challenge">
-            <h2>課題：散らばった情報を集めて報告資料を作る苦労</h2>
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">サービス業の事例</span>
+      </div>
+    </nav>
 
-            <h3>企業プロフィール</h3>
-            <table>
-                <tr>
-                    <th>業種</th>
-                    <td>マーケティング支援会社</td>
-                </tr>
-                <tr>
-                    <th>従業員数</th>
-                    <td>30名</td>
-                </tr>
-                <tr>
-                    <th>支援クライアント数</th>
-                    <td>15社（常時）</td>
-                </tr>
-                <tr>
-                    <th>主な課題</th>
-                    <td>月次報告資料の作成に膨大な時間がかかっていた</td>
-                </tr>
-            </table>
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--green-100); color: var(--green-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">サービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-02-19</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">Geminiで報告資料を自動作成！情報収集から要約まで一気に効率化</h1>
 
-            <h3>月次報告資料作成の現実</h3>
-            <p>マーケティング支援会社では、クライアントへの月次報告が重要な業務の一つです。しかし、報告資料を作成するためには、複数の場所に散らばった情報を集める必要がありました。</p>
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <h4>情報が散らばっている状況</h4>
-            <ul>
-                <li><strong>Googleドキュメント</strong>：各プロジェクトの進捗メモ、打ち合わせ記録</li>
-                <li><strong>スプレッドシート</strong>：KPI数値、広告運用データ、売上推移</li>
-                <li><strong>Notion</strong>：チーム内の作業記録、タスク完了状況</li>
-                <li><strong>Slack</strong>：日々のやり取り、クライアントからのフィードバック</li>
-            </ul>
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-108.png" alt="Geminiで報告資料を自動作成！情報収集から要約まで一気に効率化" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
 
-            <h4>報告資料作成の作業負担</h4>
-            <p>月初になると、各担当者は以下の作業に追われていました。</p>
-            <ol>
-                <li>複数のドキュメントを開いて情報を探す（約1時間）</li>
-                <li>必要な情報をコピー＆ペーストで集める（約30分）</li>
-                <li>数値データをグラフや表に整形する（約1時間）</li>
-                <li>集めた情報を報告書フォーマットに落とし込む（約1時間）</li>
-                <li>文章を整えて、クライアント向けに仕上げる（約30分）</li>
-            </ol>
-
-            <div class="problem-box">
-                <h4>数値で見る課題</h4>
-                <ul>
-                    <li>1クライアントあたりの報告書作成時間：<strong>約4時間</strong></li>
-                    <li>月間15クライアント × 4時間 = <strong>月60時間</strong></li>
-                    <li>担当者3名で分担しても、一人あたり<strong>月20時間</strong></li>
-                </ul>
-            </div>
-
-            <h4>担当者の声（導入前）</h4>
-            <blockquote>
-                <p>「月初の1週間は報告書作成でほぼ潰れます。情報を集めるだけで疲れてしまって、本来やりたい分析や提案の時間が取れないのが悩みでした」</p>
-                <cite>— アカウントマネージャー（入社4年目）</cite>
-            </blockquote>
-
-            <h3>なぜこの問題が発生していたのか</h3>
-            <ul>
-                <li><strong>情報の分散</strong>：プロジェクトごとに使うツールが異なり、情報が散らばっていた</li>
-                <li><strong>フォーマットの不統一</strong>：メモの書き方が人によって異なり、要点を把握しにくい</li>
-                <li><strong>手作業の多さ</strong>：コピー＆ペースト、表の整形など、単純だが時間のかかる作業が多い</li>
-            </ul>
-        </section>
-
-        <section id="solution">
-            <h2>施策：Geminiで情報収集と要約を自動化</h2>
-
-            <h3>導入のアプローチ</h3>
-            <p>同社が選んだ解決策は、Google Geminiを活用した「情報収集→要約→報告書生成」の効率化でした。完全自動化ではなく、「人間の作業を大幅に減らす」ことを目標にしました。</p>
-
-            <h4>なぜGeminiを選んだのか</h4>
-            <ul>
-                <li>Google Workspaceを既に利用しており、追加コストが抑えられる</li>
-                <li>長文の入力・出力に対応しており、複数ドキュメントの情報を一括処理できる</li>
-                <li>日本語の文章生成品質が高い</li>
-            </ul>
-
-            <h3>ステップ1：情報のマークダウン化</h3>
-            <p>まず、散らばった情報をGeminiに渡せる形式に整理します。各ドキュメントの内容をテキストとしてコピーし、簡易的なマークダウン形式にまとめます。</p>
-
-            <div class="prompt-example">
-                <h4>情報整理のフォーマット例</h4>
-                <pre>
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section id="challenge" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">課題：散らばった情報を集めて報告資料を作る苦労</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">企業プロフィール</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">業種</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">マーケティング支援会社</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">従業員数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">30名</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">支援クライアント数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">15社（常時）</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">主な課題</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">月次報告資料の作成に膨大な時間がかかっていた</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">月次報告資料作成の現実</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">マーケティング支援会社では、クライアントへの月次報告が重要な業務の一つです。しかし、報告資料を作成するためには、複数の場所に散らばった情報を集める必要がありました。</p>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">情報が散らばっている状況</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>Googleドキュメント</strong>：各プロジェクトの進捗メモ、打ち合わせ記録</li>
+<li style="margin-bottom: 0.5rem;"><strong>スプレッドシート</strong>：KPI数値、広告運用データ、売上推移</li>
+<li style="margin-bottom: 0.5rem;"><strong>Notion</strong>：チーム内の作業記録、タスク完了状況</li>
+<li style="margin-bottom: 0.5rem;"><strong>Slack</strong>：日々のやり取り、クライアントからのフィードバック</li>
+</ul>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">報告資料作成の作業負担</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">月初になると、各担当者は以下の作業に追われていました。</p>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">複数のドキュメントを開いて情報を探す（約1時間）</li>
+<li style="margin-bottom: 0.5rem;">必要な情報をコピー＆ペーストで集める（約30分）</li>
+<li style="margin-bottom: 0.5rem;">数値データをグラフや表に整形する（約1時間）</li>
+<li style="margin-bottom: 0.5rem;">集めた情報を報告書フォーマットに落とし込む（約1時間）</li>
+<li style="margin-bottom: 0.5rem;">文章を整えて、クライアント向けに仕上げる（約30分）</li>
+</ol>
+<div class="problem-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">数値で見る課題</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">1クライアントあたりの報告書作成時間：<strong>約4時間</strong></li>
+<li style="margin-bottom: 0.5rem;">月間15クライアント &times; 4時間 = <strong>月60時間</strong></li>
+<li style="margin-bottom: 0.5rem;">担当者3名で分担しても、一人あたり<strong>月20時間</strong></li>
+</ul>
+</div>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">担当者の声（導入前）</h4>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「月初の1週間は報告書作成でほぼ潰れます。情報を集めるだけで疲れてしまって、本来やりたい分析や提案の時間が取れないのが悩みでした」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; アカウントマネージャー（入社4年目）</cite>
+</blockquote>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">なぜこの問題が発生していたのか</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>情報の分散</strong>：プロジェクトごとに使うツールが異なり、情報が散らばっていた</li>
+<li style="margin-bottom: 0.5rem;"><strong>フォーマットの不統一</strong>：メモの書き方が人によって異なり、要点を把握しにくい</li>
+<li style="margin-bottom: 0.5rem;"><strong>手作業の多さ</strong>：コピー＆ペースト、表の整形など、単純だが時間のかかる作業が多い</li>
+</ul>
+</section>
+<section id="solution" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">施策：Geminiで情報収集と要約を自動化</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">導入のアプローチ</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">同社が選んだ解決策は、Google Geminiを活用した「情報収集&rarr;要約&rarr;報告書生成」の効率化でした。完全自動化ではなく、「人間の作業を大幅に減らす」ことを目標にしました。</p>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">なぜGeminiを選んだのか</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">Google Workspaceを既に利用しており、追加コストが抑えられる</li>
+<li style="margin-bottom: 0.5rem;">長文の入力・出力に対応しており、複数ドキュメントの情報を一括処理できる</li>
+<li style="margin-bottom: 0.5rem;">日本語の文章生成品質が高い</li>
+</ul>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">ステップ1：情報のマークダウン化</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">まず、散らばった情報をGeminiに渡せる形式に整理します。各ドキュメントの内容をテキストとしてコピーし、簡易的なマークダウン形式にまとめます。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">情報整理のフォーマット例</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 ## クライアント名：〇〇株式会社
 ## 期間：2025年1月
 
 ### 実施した施策
 - SNS広告運用（Instagram, Facebook）
 - LP改善（CTAボタンの色変更、コピー修正）
-- メルマガ配信（週2回 → 週3回に増加）
+- メルマガ配信（週2回 &rarr; 週3回に増加）
 
 ### KPI実績
 - PV数：45,000（前月比+12%）
@@ -133,16 +205,13 @@
 - LP追加制作（新商品用）
 - 広告クリエイティブの刷新
                 </pre>
-            </div>
-
-            <p>この作業は、元のドキュメントを開いて該当箇所をコピー＆ペーストするだけなので、5〜10分程度で完了します。</p>
-
-            <h3>ステップ2：Geminiに要約と報告書生成を依頼</h3>
-            <p>整理した情報をGeminiに渡し、クライアント向けの報告書形式にまとめてもらいます。</p>
-
-            <div class="prompt-example">
-                <h4>報告書生成のプロンプト例</h4>
-                <pre>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">この作業は、元のドキュメントを開いて該当箇所をコピー＆ペーストするだけなので、5〜10分程度で完了します。</p>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">ステップ2：Geminiに要約と報告書生成を依頼</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">整理した情報をGeminiに渡し、クライアント向けの報告書形式にまとめてもらいます。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">報告書生成のプロンプト例</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 以下の活動情報を元に、クライアント向けの月次報告資料を作成してください。
 
 【出力形式】
@@ -160,208 +229,271 @@
 ---
 [ここに整理した情報を貼り付け]
                 </pre>
-            </div>
-
-            <h4>Geminiの出力例</h4>
-            <div class="output-example">
-                <h5>〇〇株式会社様 2025年1月 月次報告</h5>
-
-                <p><strong>■ 今月のハイライト</strong></p>
-                <p>クリスマスセールにおいて過去最高のCV数230件を達成しました。SNS広告とメルマガ配信強化の相乗効果により、前月比+8%の成長を実現。広告CPAも目標値を下回る2,800円で推移しています。</p>
-
-                <p><strong>■ 実施施策と結果</strong></p>
-                <ul>
-                    <li>SNS広告運用：Instagram/Facebookで新クリエイティブを投入、CTR1.2%達成</li>
-                    <li>LP改善：CTAボタンの色変更とコピー修正でCVR0.3%改善</li>
-                    <li>メルマガ強化：週3回配信に増加、開封率23%を維持</li>
-                </ul>
-
-                <p><strong>■ KPI達成状況</strong></p>
-                <table>
-                    <tr><th>指標</th><th>目標</th><th>実績</th><th>達成率</th></tr>
-                    <tr><td>PV数</td><td>40,000</td><td>45,000</td><td>112%</td></tr>
-                    <tr><td>CV数</td><td>200</td><td>230</td><td>115%</td></tr>
-                    <tr><td>広告CPA</td><td>3,000円</td><td>2,800円</td><td>107%</td></tr>
-                </table>
-
-                <p>（以下省略）</p>
-            </div>
-
-            <h3>ステップ3：人間によるチェックと調整</h3>
-            <p>Geminiの出力をそのまま使うのではなく、担当者が以下の点をチェック・調整します。</p>
-
-            <ul>
-                <li><strong>数値の正確性</strong>：元データと照合して誤りがないか確認</li>
-                <li><strong>表現の適切さ</strong>：クライアントの社風に合わせた言い回しに調整</li>
-                <li><strong>追加情報の補足</strong>：AIが拾いきれなかった重要な情報を追記</li>
-                <li><strong>グラフ・図の追加</strong>：必要に応じてビジュアル要素を追加</li>
-            </ul>
-
-            <h3>工夫したポイント</h3>
-
-            <h4>プロンプトのテンプレート化</h4>
-            <p>報告書の品質を安定させるため、プロンプトをテンプレート化し、社内で共有しています。</p>
-
-            <div class="tip-box">
-                <h5>テンプレート管理のコツ</h5>
-                <ul>
-                    <li>Googleドキュメントにプロンプトテンプレートを保存</li>
-                    <li>クライアントの業種・規模別にバリエーションを用意</li>
-                    <li>効果的だった修正点を随時テンプレートに反映</li>
-                </ul>
-            </div>
-
-            <h4>情報収集の効率化</h4>
-            <p>情報を集める段階でも、効率化の工夫を行いました。</p>
-
-            <ul>
-                <li><strong>記録フォーマットの統一</strong>：日々の作業記録を後で集めやすい形式で書く</li>
-                <li><strong>週次での小まとめ</strong>：月末にまとめて集めるのではなく、週次で簡単な振り返りを記録</li>
-                <li><strong>KPIダッシュボードの活用</strong>：数値データはスプレッドシートで自動集計</li>
-            </ul>
-        </section>
-
-        <section id="result">
-            <h2>成果：報告資料作成時間を70%削減</h2>
-
-            <h3>定量的な成果</h3>
-            <table class="result-table">
-                <tr>
-                    <th>指標</th>
-                    <th>導入前</th>
-                    <th>導入後</th>
-                    <th>改善率</th>
-                </tr>
-                <tr>
-                    <td>情報収集時間</td>
-                    <td>90分/件</td>
-                    <td>15分/件</td>
-                    <td>83%削減</td>
-                </tr>
-                <tr>
-                    <td>報告書作成時間</td>
-                    <td>150分/件</td>
-                    <td>45分/件</td>
-                    <td>70%削減</td>
-                </tr>
-                <tr>
-                    <td>合計作成時間</td>
-                    <td>240分（4時間）/件</td>
-                    <td>60分（1時間）/件</td>
-                    <td>75%削減</td>
-                </tr>
-                <tr>
-                    <td>月間合計</td>
-                    <td>60時間</td>
-                    <td>15時間</td>
-                    <td>75%削減</td>
-                </tr>
-            </table>
-
-            <h3>年間での効果</h3>
-            <div class="highlight-box">
-                <ul>
-                    <li>月間45時間の削減 × 12ヶ月 = <strong>年間540時間の削減</strong></li>
-                    <li>担当者一人あたり<strong>年間180時間</strong>の余裕が生まれた</li>
-                    <li>創出した時間で新規クライアント2社の獲得に成功</li>
-                </ul>
-            </div>
-
-            <h3>定性的な成果</h3>
-
-            <h4>業務品質の向上</h4>
-            <ul>
-                <li><strong>報告書の品質が安定</strong>：テンプレート活用により、担当者による品質のばらつきが減少</li>
-                <li><strong>抜け漏れの防止</strong>：AIが情報を網羅的に拾うため、重要事項の記載漏れが減った</li>
-                <li><strong>提案内容の充実</strong>：作業時間が減った分、分析や提案の検討に時間を使えるようになった</li>
-            </ul>
-
-            <h4>働き方の改善</h4>
-            <ul>
-                <li><strong>月初の残業が大幅減少</strong>：報告書作成のための残業がほぼなくなった</li>
-                <li><strong>メンタル面の改善</strong>：「月初は報告書地獄」というプレッシャーから解放</li>
-                <li><strong>創造的業務への集中</strong>：単純作業から解放され、本来の業務に集中できるように</li>
-            </ul>
-
-            <h4>組織としての成長</h4>
-            <ul>
-                <li><strong>ナレッジの蓄積</strong>：効果的なプロンプトやテンプレートが社内資産として蓄積</li>
-                <li><strong>他業務への展開</strong>：報告書以外の資料作成にもAI活用が広がった</li>
-                <li><strong>若手の即戦力化</strong>：新人でも一定品質の報告書が作れるようになった</li>
-            </ul>
-
-            <h3>担当者の声（導入後）</h3>
-            <blockquote>
-                <p>「散らばっていた情報をAIが一瞬で集約し、分かりやすいレポートにまとめてくれるので、報告業務の負担が劇的に軽くなりました。今は報告書を『作る』のではなく『仕上げる』という感覚です」</p>
-                <cite>— アカウントマネージャー（入社4年目）</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>「月初の憂鬱がなくなりました。以前は『また報告書か...』と思っていたのが、今は1時間あれば終わるので、むしろ達成感があります。空いた時間でクライアントへの提案内容を練れるようになったのが一番の成果です」</p>
-                <cite>— チームリーダー</cite>
-            </blockquote>
-        </section>
-
-        <section id="summary">
-            <h2>まとめ：AIで報告業務の負担を解消</h2>
-
-            <h3>成功のポイント</h3>
-            <ol>
-                <li><strong>完全自動化を目指さない</strong>
-                    <p>AIに任せる部分と人間が担当する部分を明確に分け、現実的な効率化を実現しました。</p>
-                </li>
-                <li><strong>情報整理の仕組み化</strong>
-                    <p>日々の記録を後で集めやすい形式で残すことで、月次の情報収集が大幅に楽になりました。</p>
-                </li>
-                <li><strong>プロンプトのテンプレート化</strong>
-                    <p>効果的なプロンプトを社内で共有し、誰でも同じ品質の出力を得られるようにしました。</p>
-                </li>
-                <li><strong>人間によるチェックの徹底</strong>
-                    <p>AIの出力を鵜呑みにせず、必ず人間が確認・調整することで、品質を担保しています。</p>
-                </li>
-            </ol>
-
-            <h3>他業種への応用</h3>
-            <p>今回の「情報収集→要約→資料生成」のパターンは、様々な業務に応用可能です。</p>
-            <ul>
-                <li><strong>営業部門</strong>：商談記録から週報・月報を自動生成</li>
-                <li><strong>人事部門</strong>：面接記録から候補者評価レポートを作成</li>
-                <li><strong>経営企画</strong>：各部門の報告を集約して経営会議資料を作成</li>
-                <li><strong>プロジェクト管理</strong>：作業ログから進捗報告書を自動生成</li>
-            </ul>
-
-            <h3>導入のステップ</h3>
-            <ol>
-                <li><strong>現状の棚卸し</strong>：どこにどんな情報があるか整理する</li>
-                <li><strong>小さく始める</strong>：まず1種類の報告書から試してみる</li>
-                <li><strong>プロンプトを磨く</strong>：何度か試して、最適なプロンプトを見つける</li>
-                <li><strong>チームに展開</strong>：効果が確認できたら、テンプレートを共有して展開</li>
-            </ol>
-
-            <h3>導入を検討される企業様へ</h3>
-            <div class="cta-box">
-                <p>Google Geminiを活用した報告業務の効率化について、詳しいご相談を承っております。</p>
-                <ul>
-                    <li>現在の報告業務の課題分析</li>
-                    <li>効果的なプロンプト設計のサポート</li>
-                    <li>情報管理の仕組み化コンサルティング</li>
-                </ul>
-                <p>まずはお気軽にお問い合わせください。</p>
-            </div>
-
-            <h3>関連記事</h3>
-            <ul>
-                <li><a href="ai-meeting-minutes-automation.html">Google Gemini×議事録自動化で会議効率を劇的改善</a></li>
-                <li><a href="ai-gemini-event-planning.html">Geminiでイベント運営を効率化！企画から実行までAIがサポート</a></li>
-                <li><a href="ai-review-analysis-report.html">Gemini Deep Researchで口コミ分析レポートを自動作成</a></li>
-            </ul>
-        </section>
-
-        <footer>
-            <p class="update-date">最終更新日：2025年1月</p>
-            <p class="category">カテゴリ：AI活用事例 / 業務効率化 / 資料作成</p>
-            <p class="tags">タグ：#Gemini #報告書作成 #業務効率化 #AI活用 #中小企業DX</p>
-        </footer>
+</div>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiの出力例</h4>
+<div class="output-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h5>〇〇株式会社様 2025年1月 月次報告</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>■ 今月のハイライト</strong></p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">クリスマスセールにおいて過去最高のCV数230件を達成しました。SNS広告とメルマガ配信強化の相乗効果により、前月比+8%の成長を実現。広告CPAも目標値を下回る2,800円で推移しています。</p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>■ 実施施策と結果</strong></p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">SNS広告運用：Instagram/Facebookで新クリエイティブを投入、CTR1.2%達成</li>
+<li style="margin-bottom: 0.5rem;">LP改善：CTAボタンの色変更とコピー修正でCVR0.3%改善</li>
+<li style="margin-bottom: 0.5rem;">メルマガ強化：週3回配信に増加、開封率23%を維持</li>
+</ul>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>■ KPI達成状況</strong></p>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr><th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">指標</th><th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">目標</th><th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">実績</th><th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">達成率</th></tr>
+<tr><td style="padding: 1rem; border: 1px solid var(--gray-200);">PV数</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">40,000</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">45,000</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">112%</td></tr>
+<tr><td style="padding: 1rem; border: 1px solid var(--gray-200);">CV数</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">200</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">230</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">115%</td></tr>
+<tr><td style="padding: 1rem; border: 1px solid var(--gray-200);">広告CPA</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">3,000円</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">2,800円</td><td style="padding: 1rem; border: 1px solid var(--gray-200);">107%</td></tr>
+</table></div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">（以下省略）</p>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">ステップ3：人間によるチェックと調整</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Geminiの出力をそのまま使うのではなく、担当者が以下の点をチェック・調整します。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>数値の正確性</strong>：元データと照合して誤りがないか確認</li>
+<li style="margin-bottom: 0.5rem;"><strong>表現の適切さ</strong>：クライアントの社風に合わせた言い回しに調整</li>
+<li style="margin-bottom: 0.5rem;"><strong>追加情報の補足</strong>：AIが拾いきれなかった重要な情報を追記</li>
+<li style="margin-bottom: 0.5rem;"><strong>グラフ・図の追加</strong>：必要に応じてビジュアル要素を追加</li>
+</ul>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">工夫したポイント</h3>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">プロンプトのテンプレート化</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">報告書の品質を安定させるため、プロンプトをテンプレート化し、社内で共有しています。</p>
+<div class="tip-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h5>テンプレート管理のコツ</h5>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">Googleドキュメントにプロンプトテンプレートを保存</li>
+<li style="margin-bottom: 0.5rem;">クライアントの業種・規模別にバリエーションを用意</li>
+<li style="margin-bottom: 0.5rem;">効果的だった修正点を随時テンプレートに反映</li>
+</ul>
+</div>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">情報収集の効率化</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">情報を集める段階でも、効率化の工夫を行いました。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>記録フォーマットの統一</strong>：日々の作業記録を後で集めやすい形式で書く</li>
+<li style="margin-bottom: 0.5rem;"><strong>週次での小まとめ</strong>：月末にまとめて集めるのではなく、週次で簡単な振り返りを記録</li>
+<li style="margin-bottom: 0.5rem;"><strong>KPIダッシュボードの活用</strong>：数値データはスプレッドシートで自動集計</li>
+</ul>
+</section>
+<section id="result" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">成果：報告資料作成時間を70%削減</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">定量的な成果</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table class="result-table" style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">指標</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入後</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">改善率</th>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">情報収集時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">90分/件</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">15分/件</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">83%削減</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">報告書作成時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">150分/件</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">45分/件</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">70%削減</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">合計作成時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">240分（4時間）/件</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">60分（1時間）/件</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">75%削減</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">月間合計</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">60時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">15時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">75%削減</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">年間での効果</h3>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">月間45時間の削減 &times; 12ヶ月 = <strong>年間540時間の削減</strong></li>
+<li style="margin-bottom: 0.5rem;">担当者一人あたり<strong>年間180時間</strong>の余裕が生まれた</li>
+<li style="margin-bottom: 0.5rem;">創出した時間で新規クライアント2社の獲得に成功</li>
+</ul>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">定性的な成果</h3>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">業務品質の向上</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>報告書の品質が安定</strong>：テンプレート活用により、担当者による品質のばらつきが減少</li>
+<li style="margin-bottom: 0.5rem;"><strong>抜け漏れの防止</strong>：AIが情報を網羅的に拾うため、重要事項の記載漏れが減った</li>
+<li style="margin-bottom: 0.5rem;"><strong>提案内容の充実</strong>：作業時間が減った分、分析や提案の検討に時間を使えるようになった</li>
+</ul>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">働き方の改善</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>月初の残業が大幅減少</strong>：報告書作成のための残業がほぼなくなった</li>
+<li style="margin-bottom: 0.5rem;"><strong>メンタル面の改善</strong>：「月初は報告書地獄」というプレッシャーから解放</li>
+<li style="margin-bottom: 0.5rem;"><strong>創造的業務への集中</strong>：単純作業から解放され、本来の業務に集中できるように</li>
+</ul>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">組織としての成長</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>ナレッジの蓄積</strong>：効果的なプロンプトやテンプレートが社内資産として蓄積</li>
+<li style="margin-bottom: 0.5rem;"><strong>他業務への展開</strong>：報告書以外の資料作成にもAI活用が広がった</li>
+<li style="margin-bottom: 0.5rem;"><strong>若手の即戦力化</strong>：新人でも一定品質の報告書が作れるようになった</li>
+</ul>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">担当者の声（導入後）</h3>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「散らばっていた情報をAIが一瞬で集約し、分かりやすいレポートにまとめてくれるので、報告業務の負担が劇的に軽くなりました。今は報告書を『作る』のではなく『仕上げる』という感覚です」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; アカウントマネージャー（入社4年目）</cite>
+</blockquote>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「月初の憂鬱がなくなりました。以前は『また報告書か...』と思っていたのが、今は1時間あれば終わるので、むしろ達成感があります。空いた時間でクライアントへの提案内容を練れるようになったのが一番の成果です」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; チームリーダー</cite>
+</blockquote>
+</section>
+<section id="summary" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">まとめ：AIで報告業務の負担を解消</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">成功のポイント</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>完全自動化を目指さない</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">AIに任せる部分と人間が担当する部分を明確に分け、現実的な効率化を実現しました。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>情報整理の仕組み化</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">日々の記録を後で集めやすい形式で残すことで、月次の情報収集が大幅に楽になりました。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>プロンプトのテンプレート化</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">効果的なプロンプトを社内で共有し、誰でも同じ品質の出力を得られるようにしました。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>人間によるチェックの徹底</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">AIの出力を鵜呑みにせず、必ず人間が確認・調整することで、品質を担保しています。</p>
+</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">他業種への応用</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">今回の「情報収集&rarr;要約&rarr;資料生成」のパターンは、様々な業務に応用可能です。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>営業部門</strong>：商談記録から週報・月報を自動生成</li>
+<li style="margin-bottom: 0.5rem;"><strong>人事部門</strong>：面接記録から候補者評価レポートを作成</li>
+<li style="margin-bottom: 0.5rem;"><strong>経営企画</strong>：各部門の報告を集約して経営会議資料を作成</li>
+<li style="margin-bottom: 0.5rem;"><strong>プロジェクト管理</strong>：作業ログから進捗報告書を自動生成</li>
+</ul>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">導入のステップ</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>現状の棚卸し</strong>：どこにどんな情報があるか整理する</li>
+<li style="margin-bottom: 0.5rem;"><strong>小さく始める</strong>：まず1種類の報告書から試してみる</li>
+<li style="margin-bottom: 0.5rem;"><strong>プロンプトを磨く</strong>：何度か試して、最適なプロンプトを見つける</li>
+<li style="margin-bottom: 0.5rem;"><strong>チームに展開</strong>：効果が確認できたら、テンプレートを共有して展開</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">導入を検討される企業様へ</h3>
+<div class="cta-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Google Geminiを活用した報告業務の効率化について、詳しいご相談を承っております。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">現在の報告業務の課題分析</li>
+<li style="margin-bottom: 0.5rem;">効果的なプロンプト設計のサポート</li>
+<li style="margin-bottom: 0.5rem;">情報管理の仕組み化コンサルティング</li>
+</ul>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">まずはお気軽にお問い合わせください。</p>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">関連記事</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><a href="ai-meeting-minutes-automation.html" style="color: var(--green-600); font-weight: 600;">Google Gemini&times;議事録自動化で会議効率を劇的改善</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="ai-gemini-event-planning.html" style="color: var(--green-600); font-weight: 600;">Geminiでイベント運営を効率化！企画から実行までAIがサポート</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="ai-review-analysis-report.html" style="color: var(--green-600); font-weight: 600;">Gemini Deep Researchで口コミ分析レポートを自動作成</a></li>
+</ul>
+</section>
+      </div>
     </article>
+
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

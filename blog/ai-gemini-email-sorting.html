@@ -3,974 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini×GASでメール自動仕分け：12名中古車販売会社のメール管理効率化事例 | AI活用事例</title>
+    <title>Gemini×GASでメール自動仕分け：12名中古車販売会社のメール管理効率化事例 - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="12名規模の中古車販売会社がGeminiとGASを活用してメールの重要度別自動仕分けを実現。毎日1時間かかっていたメール確認を15分に短縮し、見落としゼロを達成した事例をご紹介します。">
-    <meta name="keywords" content="Gemini, GAS, メール自動化, AI活用, メール仕分け, 業務効率化, 中古車販売">
-    <meta property="og:title" content="Gemini×GASでメール自動仕分け：12名中古車販売会社のメール管理効率化事例">
-    <meta property="og:description" content="AIでメールを重要度別に自動仕分け。朝夕のサマリ通知で見落としゼロ、確認時間70%削減を実現した事例です。">
+    <meta name="keywords" content="ITサービス業, AI活用, 業務効率化, Gemini, GAS, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-gemini-email-sorting.html">
+    <meta property="og:title" content="Gemini×GASでメール自動仕分け：12名中古車販売会社のメール管理効率化事例 | デジタルツール研究所">
+    <meta property="og:description" content="12名規模の中古車販売会社がGeminiとGASを活用してメールの重要度別自動仕分けを実現。毎日1時間かかっていたメール確認を15分に短縮し、見落としゼロを達成した事例をご紹介します。">
     <meta property="og:type" content="article">
-    <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%);
-            --accent-color: #2563EB;
-            --accent-light: #DBEAFE;
-            --accent-soft: #EFF6FF;
-            --text-primary: #1F2937;
-            --text-secondary: #4B5563;
-            --text-muted: #6B7280;
-            --bg-white: #FFFFFF;
-            --bg-light: #F9FAFB;
-            --border-color: #E5E7EB;
-            --shadow-sm: 0 1px 2px rgba(37, 99, 235, 0.05);
-            --shadow-md: 0 4px 12px rgba(37, 99, 235, 0.1);
-            --shadow-lg: 0 12px 28px rgba(37, 99, 235, 0.15);
-            --priority-a: #DC2626;
-            --priority-b: #D97706;
-            --priority-c: #6B7280;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-primary);
-            background: var(--bg-light);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .article-header {
-            background: var(--primary-gradient);
-            border-radius: 20px;
-            padding: 48px 40px;
-            margin-bottom: 40px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10h40v30H5z' fill='none' stroke='%23FFFFFF' stroke-opacity='0.06' stroke-width='2'/%3E%3Cpath d='M5 15h30' stroke='%23FFFFFF' stroke-opacity='0.04' stroke-width='2'/%3E%3Cpath d='M5 22h25' stroke='%23FFFFFF' stroke-opacity='0.04' stroke-width='2'/%3E%3C/svg%3E") repeat;
-        }
-
-        .header-label {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-
-        .article-title {
-            font-size: 1.9rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .article-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.9rem;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .summary-card {
-            background: var(--bg-white);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 32px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .summary-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .summary-grid {
-            display: grid;
-            gap: 20px;
-        }
-
-        .summary-item {
-            display: flex;
-            gap: 16px;
-            padding: 16px;
-            background: var(--accent-soft);
-            border-radius: 12px;
-            transition: transform 0.2s ease;
-        }
-
-        .summary-item:hover {
-            transform: translateX(4px);
-        }
-
-        .summary-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: var(--primary-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .summary-icon svg {
-            width: 22px;
-            height: 22px;
-            fill: white;
-        }
-
-        .summary-content h4 {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-
-        .summary-content p {
-            font-size: 1rem;
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .content-section {
-            background: var(--bg-white);
-            border-radius: 16px;
-            padding: 36px;
-            margin-bottom: 28px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--accent-light);
-            color: var(--accent-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        .section-content p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 1rem;
-            line-height: 2;
-        }
-
-        .section-content ul {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .section-content ul li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 14px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .section-content ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 8px;
-            height: 8px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-        }
-
-        .highlight-box {
-            background: var(--accent-soft);
-            border-left: 4px solid var(--accent-color);
-            padding: 20px 24px;
-            border-radius: 0 12px 12px 0;
-            margin: 24px 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .process-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin: 28px 0;
-        }
-
-        .process-step {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            box-shadow: var(--shadow-md);
-        }
-
-        .step-content {
-            flex: 1;
-            padding-top: 6px;
-        }
-
-        .step-content h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-        }
-
-        .step-content p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-
-        .email-inbox-visual {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            border-radius: 16px;
-            padding: 24px;
-            margin: 28px 0;
-        }
-
-        .inbox-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .inbox-header h4 {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .inbox-count {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .email-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: var(--bg-white);
-            border-radius: 8px;
-            margin-bottom: 8px;
-        }
-
-        .priority-badge {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 0.85rem;
-        }
-
-        .priority-a { background: var(--priority-a); }
-        .priority-b { background: var(--priority-b); }
-        .priority-c { background: var(--priority-c); }
-
-        .email-info {
-            flex: 1;
-        }
-
-        .email-info h5 {
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            margin-bottom: 2px;
-        }
-
-        .email-info p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .prompt-box {
-            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-            border: 2px solid var(--accent-color);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 24px 0;
-        }
-
-        .prompt-box h4 {
-            color: var(--accent-color);
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .prompt-box h4::before {
-            content: '✉️';
-            font-size: 1.2rem;
-        }
-
-        .prompt-content {
-            background: var(--bg-white);
-            padding: 20px;
-            border-radius: 12px;
-            font-family: 'Monaco', 'Consolas', monospace;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.9;
-            white-space: pre-wrap;
-        }
-
-        .priority-legend {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin: 24px 0;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px;
-            background: var(--bg-white);
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-        }
-
-        .legend-badge {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .legend-text h5 {
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            margin-bottom: 2px;
-        }
-
-        .legend-text p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 28px 0;
-        }
-
-        .result-card {
-            background: var(--accent-soft);
-            border-radius: 14px;
-            padding: 24px;
-            text-align: center;
-            border: 1px solid var(--accent-light);
-            transition: all 0.3s ease;
-        }
-
-        .result-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .result-number {
-            font-size: 2.4rem;
-            font-weight: 700;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .result-unit {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .result-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 8px;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            font-size: 0.95rem;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .comparison-table th {
-            background: var(--accent-soft);
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .comparison-table th:first-child {
-            border-radius: 10px 0 0 0;
-        }
-
-        .comparison-table th:last-child {
-            border-radius: 0 10px 0 0;
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .badge-before {
-            display: inline-block;
-            background: #FEE2E2;
-            color: #DC2626;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .badge-after {
-            display: inline-block;
-            background: #D1FAE5;
-            color: #059669;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .voice-box {
-            background: linear-gradient(to right, var(--accent-soft), var(--bg-white));
-            border-radius: 14px;
-            padding: 26px;
-            margin: 24px 0;
-            border: 1px solid var(--accent-light);
-        }
-
-        .voice-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .voice-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .voice-info h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .voice-info span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .voice-text {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.9;
-            font-style: italic;
-            padding-left: 20px;
-            border-left: 3px solid var(--accent-color);
-        }
-
-        .notification-example {
-            background: var(--bg-white);
-            border: 2px solid var(--accent-light);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 24px 0;
-        }
-
-        .notification-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .notification-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--accent-color);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
-        }
-
-        .notification-header h5 {
-            font-size: 0.95rem;
-            color: var(--text-primary);
-        }
-
-        .notification-content {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .notification-content strong {
-            color: var(--accent-color);
-        }
-
-        .key-points {
-            background: var(--accent-soft);
-            border-radius: 14px;
-            padding: 26px;
-            margin: 24px 0;
-        }
-
-        .key-points h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 16px;
-        }
-
-        .key-points ul {
-            list-style: none;
-            margin: 0;
-        }
-
-        .key-points ul li {
-            position: relative;
-            padding-left: 32px;
-            margin-bottom: 12px;
-            color: var(--text-secondary);
-        }
-
-        .key-points ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 22px;
-            height: 22px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-            color: white;
-            font-size: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .related-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 32px;
-        }
-
-        .related-tag {
-            background: var(--accent-soft);
-            color: var(--accent-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .related-tag:hover {
-            background: var(--accent-light);
-        }
-
-        .cta-section {
-            background: var(--primary-gradient);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-        }
-
-        .cta-section h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            font-size: 1rem;
-            opacity: 0.95;
-            margin-bottom: 24px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: var(--accent-color);
-            padding: 14px 36px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        @media (max-width: 768px) {
-            .article-container {
-                padding: 16px;
-            }
-
-            .article-header {
-                padding: 32px 24px;
-            }
-
-            .article-title {
-                font-size: 1.5rem;
-            }
-
-            .content-section {
-                padding: 26px 22px;
-            }
-
-            .section-title {
-                font-size: 1.2rem;
-            }
-
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .priority-legend {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-gemini-email-sorting.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-090.png">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <article class="article-container">
-        <header class="article-header">
-            <div class="header-label">AI活用事例</div>
-            <h1 class="article-title">Gemini×GASでメール自動仕分け：12名中古車販売会社のメール管理効率化事例</h1>
-            <div class="article-meta">
-                <span class="meta-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"/>
-                        <path d="M16 3v4M8 3v4M3 11h18"/>
-                    </svg>
-                    2025年1月
-                </span>
-                <span class="meta-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="1" y="3" width="15" height="13" rx="2"/>
-                        <path d="m16 8 5 3-5 3V8z"/>
-                    </svg>
-                    中古車販売業
-                </span>
-                <span class="meta-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                    従業員12名
-                </span>
-            </div>
-        </header>
-
-        <div class="summary-card">
-            <h2 class="summary-title">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                </svg>
-                事例サマリー
-            </h2>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
-                    <div class="summary-content">
-                        <h4>導入ツール</h4>
-                        <p>Gemini × Google Apps Script（GAS）</p>
-                    </div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                    </div>
-                    <div class="summary-content">
-                        <h4>対象業務</h4>
-                        <p>メールの重要度仕分けとサマリ通知</p>
-                    </div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/>
-                        </svg>
-                    </div>
-                    <div class="summary-content">
-                        <h4>主な効果</h4>
-                        <p>確認時間70%削減・見落としゼロ</p>
-                    </div>
-                </div>
-            </div>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
         </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-        <section class="content-section">
-            <div class="section-label">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 6v6l4 2"/>
-                </svg>
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">ITサービス業の事例</span>
+      </div>
+    </nav>
+
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--cyan-100); color: var(--cyan-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">ITサービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-01-06</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">Gemini×GASでメール自動仕分け：12名中古車販売会社のメール管理効率化事例</h1>
+
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=GAS" class="article-tag">GAS</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-090.png" alt="Gemini×GASでメール自動仕分け：12名中古車販売会社のメール管理効率化事例" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section class="content-section" style="margin-bottom: 3rem;">
+<div class="section-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 6v6l4 2"></path>
+</svg>
                 BEFORE
             </div>
-            <h2 class="section-title">毎日100件のメール確認に1時間、それでも重要メールを見落とす</h2>
-
-            <p>埼玉県で中古車販売店を2店舗運営するこの会社は、従業員12名で月間80台以上の販売を手がけています。顧客からの問い合わせ、オークション会場からの通知、整備工場との連絡、保険会社とのやり取りなど、<strong>1日あたり100件以上のメール</strong>が届く状態でした。</p>
-
-            <div class="email-inbox-visual">
-                <div class="inbox-header">
-                    <h4>受信トレイ（朝の状態）</h4>
-                    <span class="inbox-count">未読 87件</span>
-                </div>
-                <div class="email-item">
-                    <div class="priority-badge priority-a">A</div>
-                    <div class="email-info">
-                        <h5>【至急】納車日変更のご相談</h5>
-                        <p>田中様 - 9:15</p>
-                    </div>
-                </div>
-                <div class="email-item">
-                    <div class="priority-badge priority-c">C</div>
-                    <div class="email-info">
-                        <h5>今週のオークション出品リスト</h5>
-                        <p>オークション会場 - 9:12</p>
-                    </div>
-                </div>
-                <div class="email-item">
-                    <div class="priority-badge priority-b">B</div>
-                    <div class="email-info">
-                        <h5>車両整備完了のお知らせ</h5>
-                        <p>提携整備工場 - 9:08</p>
-                    </div>
-                </div>
-                <div class="email-item">
-                    <div class="priority-badge priority-c">C</div>
-                    <div class="email-info">
-                        <h5>メルマガ：中古車市場動向</h5>
-                        <p>業界紙 - 8:55</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <p>「朝出社してメールを確認するだけで1時間。その間、お客様からの電話対応もあるので、結局午前中はメール処理で終わってしまう。しかも大事なメールを見落として、お客様に迷惑をかけたことも…」</p>
-            </div>
-
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary);">具体的な問題点</h3>
-
-            <ul>
-                <li><strong>優先度の判断に時間がかかる</strong>：100件のメールを1件ずつ開いて重要度を判断するだけで30分以上</li>
-                <li><strong>重要メールの埋没</strong>：広告メールや定型連絡に紛れて、顧客からの緊急連絡を見落とすことがあった</li>
-                <li><strong>対応漏れの発生</strong>：見落としにより、商談機会の損失やクレームに発展したケースが月2〜3件</li>
-                <li><strong>精神的負担</strong>：「見落としていないか」という不安から、何度もメールを確認する悪循環</li>
-            </ul>
-
-            <p>特に問題だったのは<strong>週末・連休明けの月曜日</strong>です。土日の間に溜まったメールが150件以上になり、午前中いっぱいメール処理に追われることも珍しくありませんでした。</p>
-
-            <p>「営業の仕事は車を売ること。メール確認に時間を取られて、肝心の接客や商談に集中できない」と、営業リーダーは悩んでいました。</p>
-        </section>
-
-        <section class="content-section">
-            <div class="section-label">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                </svg>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">毎日100件のメール確認に1時間、それでも重要メールを見落とす</h2>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">埼玉県で中古車販売店を2店舗運営するこの会社は、従業員12名で月間80台以上の販売を手がけています。顧客からの問い合わせ、オークション会場からの通知、整備工場との連絡、保険会社とのやり取りなど、<strong>1日あたり100件以上のメール</strong>が届く状態でした。</p>
+<div class="email-inbox-visual" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="inbox-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">受信トレイ（朝の状態）</h4>
+<span class="inbox-count">未読 87件</span>
+</div>
+<div class="email-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="priority-badge priority-a" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">A</div>
+<div class="email-info" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>【至急】納車日変更のご相談</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">田中様 - 9:15</p>
+</div>
+</div>
+<div class="email-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="priority-badge priority-c" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">C</div>
+<div class="email-info" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>今週のオークション出品リスト</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">オークション会場 - 9:12</p>
+</div>
+</div>
+<div class="email-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="priority-badge priority-b" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">B</div>
+<div class="email-info" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>車両整備完了のお知らせ</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">提携整備工場 - 9:08</p>
+</div>
+</div>
+<div class="email-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="priority-badge priority-c" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">C</div>
+<div class="email-info" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>メルマガ：中古車市場動向</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">業界紙 - 8:55</p>
+</div>
+</div>
+</div>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「朝出社してメールを確認するだけで1時間。その間、お客様からの電話対応もあるので、結局午前中はメール処理で終わってしまう。しかも大事なメールを見落として、お客様に迷惑をかけたことも&hellip;」</p>
+</div>
+<h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary); font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">具体的な問題点</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>優先度の判断に時間がかかる</strong>：100件のメールを1件ずつ開いて重要度を判断するだけで30分以上</li>
+<li style="margin-bottom: 0.5rem;"><strong>重要メールの埋没</strong>：広告メールや定型連絡に紛れて、顧客からの緊急連絡を見落とすことがあった</li>
+<li style="margin-bottom: 0.5rem;"><strong>対応漏れの発生</strong>：見落としにより、商談機会の損失やクレームに発展したケースが月2〜3件</li>
+<li style="margin-bottom: 0.5rem;"><strong>精神的負担</strong>：「見落としていないか」という不安から、何度もメールを確認する悪循環</li>
+</ul>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">特に問題だったのは<strong>週末・連休明けの月曜日</strong>です。土日の間に溜まったメールが150件以上になり、午前中いっぱいメール処理に追われることも珍しくありませんでした。</p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「営業の仕事は車を売ること。メール確認に時間を取られて、肝心の接客や商談に集中できない」と、営業リーダーは悩んでいました。</p>
+</section>
+<section class="content-section" style="margin-bottom: 3rem;">
+<div class="section-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14">
+<path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+</svg>
                 SOLUTION
             </div>
-            <h2 class="section-title">GeminiとGASでメールを重要度別に自動仕分け、朝夕にサマリ通知</h2>
-
-            <p>解決策として導入したのが、<strong>Gemini API × Google Apps Script（GAS）</strong>によるメール自動仕分けシステムです。受信メールを自動で重要度A・B・Cに分類し、朝夕にサマリを通知します。</p>
-
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary);">重要度の分類ルール</h3>
-
-            <div class="priority-legend">
-                <div class="legend-item">
-                    <div class="legend-badge priority-a">A</div>
-                    <div class="legend-text">
-                        <h5>最重要</h5>
-                        <p>顧客からの連絡、クレーム</p>
-                    </div>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-badge priority-b">B</div>
-                    <div class="legend-text">
-                        <h5>重要</h5>
-                        <p>取引先、整備工場からの連絡</p>
-                    </div>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-badge priority-c">C</div>
-                    <div class="legend-text">
-                        <h5>通常</h5>
-                        <p>メルマガ、広告、その他</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary);">システム構築の流れ</h3>
-
-            <div class="process-flow">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Geminiへの要件説明</h4>
-                        <p>「未読メールを重要度別に仕分けし、サマリを通知するGASスクリプトを作成したい」と依頼</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>仕分けルールの設定</h4>
-                        <p>重要度A：特定の顧客ドメイン、「至急」「緊急」キーワード<br>
-                        重要度B：取引先ドメイン、整備・保険関連キーワード<br>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">GeminiとGASでメールを重要度別に自動仕分け、朝夕にサマリ通知</h2>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">解決策として導入したのが、<strong>Gemini API &times; Google Apps Script（GAS）</strong>によるメール自動仕分けシステムです。受信メールを自動で重要度A・B・Cに分類し、朝夕にサマリを通知します。</p>
+<h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary); font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">重要度の分類ルール</h3>
+<div class="priority-legend" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="legend-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="legend-badge priority-a" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">A</div>
+<div class="legend-text" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>最重要</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">顧客からの連絡、クレーム</p>
+</div>
+</div>
+<div class="legend-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="legend-badge priority-b" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">B</div>
+<div class="legend-text" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>重要</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">取引先、整備工場からの連絡</p>
+</div>
+</div>
+<div class="legend-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="legend-badge priority-c" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">C</div>
+<div class="legend-text" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>通常</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">メルマガ、広告、その他</p>
+</div>
+</div>
+</div>
+<h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary); font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">システム構築の流れ</h3>
+<div class="process-flow" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="process-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="step-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">1</div>
+<div class="step-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiへの要件説明</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「未読メールを重要度別に仕分けし、サマリを通知するGASスクリプトを作成したい」と依頼</p>
+</div>
+</div>
+<div class="process-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="step-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">2</div>
+<div class="step-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">仕分けルールの設定</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">重要度A：特定の顧客ドメイン、「至急」「緊急」キーワード<br/>
+                        重要度B：取引先ドメイン、整備・保険関連キーワード<br/>
                         重要度C：それ以外</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>GASスクリプトの生成</h4>
-                        <p>Geminiが生成したスクリプトをGoogle Apps Scriptにコピー＆ペースト</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>定期実行の設定</h4>
-                        <p>朝8時と夕方17時にサマリメールを自動送信するトリガーを設定</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prompt-box">
-                <h4>Geminiへの指示内容</h4>
-                <div class="prompt-content">GASで以下の機能を持つスクリプトを作成してください。
+</div>
+</div>
+<div class="process-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="step-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">3</div>
+<div class="step-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">GASスクリプトの生成</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Geminiが生成したスクリプトをGoogle Apps Scriptにコピー＆ペースト</p>
+</div>
+</div>
+<div class="process-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="step-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">4</div>
+<div class="step-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">定期実行の設定</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">朝8時と夕方17時にサマリメールを自動送信するトリガーを設定</p>
+</div>
+</div>
+</div>
+<div class="prompt-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Geminiへの指示内容</h4>
+<div class="prompt-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">GASで以下の機能を持つスクリプトを作成してください。
 
 【機能要件】
 1. 未読メールのサマリーを朝8時・夕方17時に定期送信
@@ -986,180 +250,257 @@
 - 重要度別の未読件数
 - 重要度A・Bのメールは送信者と件名の一覧
 - 重要度Cは件数のみ</div>
-            </div>
-
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary);">朝のサマリ通知イメージ</h3>
-
-            <div class="notification-example">
-                <div class="notification-header">
-                    <div class="notification-icon">📧</div>
-                    <h5>朝のメールサマリ（8:00）</h5>
-                </div>
-                <div class="notification-content">
-                    <strong>■ 重要度A（3件）- 要即時対応</strong><br>
-                    ・田中様「【至急】納車日変更のご相談」<br>
-                    ・佐藤様「契約内容の確認について」<br>
-                    ・鈴木様「車両不具合のご連絡」<br><br>
-                    <strong>■ 重要度B（8件）- 本日中に確認</strong><br>
-                    ・提携整備工場「車両整備完了のお知らせ」<br>
-                    ・保険代理店「保険更新のご案内」<br>
-                    ・他6件<br><br>
-                    <strong>■ 重要度C（42件）</strong><br>
+</div>
+<h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary); font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">朝のサマリ通知イメージ</h3>
+<div class="notification-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="notification-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="notification-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">📧</div>
+<h5>朝のメールサマリ（8:00）</h5>
+</div>
+<div class="notification-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<strong>■ 重要度A（3件）- 要即時対応</strong><br/>
+                    ・田中様「【至急】納車日変更のご相談」<br/>
+                    ・佐藤様「契約内容の確認について」<br/>
+                    ・鈴木様「車両不具合のご連絡」<br/><br/>
+<strong>■ 重要度B（8件）- 本日中に確認</strong><br/>
+                    ・提携整備工場「車両整備完了のお知らせ」<br/>
+                    ・保険代理店「保険更新のご案内」<br/>
+                    ・他6件<br/><br/>
+<strong>■ 重要度C（42件）</strong><br/>
                     メルマガ・広告等（後回しでOK）
                 </div>
-            </div>
-
-            <div class="key-points">
-                <h4>運用のコツ</h4>
-                <ul>
-                    <li>重要度Aのメールはスマートフォンにもプッシュ通知を設定し、外出中でも即座に確認</li>
-                    <li>仕分けルールは月1回見直し、新規取引先やよく問い合わせがある顧客を追加</li>
-                    <li>サマリ通知は全営業スタッフに同報し、対応の漏れを相互チェック</li>
-                    <li>重要度Cのメールは週末にまとめて処理し、日常業務への影響を最小化</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="section-label">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
+</div>
+<div class="key-points" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">運用のコツ</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">重要度Aのメールはスマートフォンにもプッシュ通知を設定し、外出中でも即座に確認</li>
+<li style="margin-bottom: 0.5rem;">仕分けルールは月1回見直し、新規取引先やよく問い合わせがある顧客を追加</li>
+<li style="margin-bottom: 0.5rem;">サマリ通知は全営業スタッフに同報し、対応の漏れを相互チェック</li>
+<li style="margin-bottom: 0.5rem;">重要度Cのメールは週末にまとめて処理し、日常業務への影響を最小化</li>
+</ul>
+</div>
+</section>
+<section class="content-section" style="margin-bottom: 3rem;">
+<div class="section-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
                 RESULTS
             </div>
-            <h2 class="section-title">メール確認時間70%削減、重要メール見落としゼロを達成</h2>
-
-            <p>システム導入から2ヶ月後、メール管理業務に劇的な変化が現れました。</p>
-
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-number">70<span class="result-unit">%</span></div>
-                    <div class="result-label">確認時間削減</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-number">0<span class="result-unit">件</span></div>
-                    <div class="result-label">重要メール見落とし</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-number">30<span class="result-unit">分</span></div>
-                    <div class="result-label">1日あたり時間創出</div>
-                </div>
-            </div>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th>導入前</th>
-                        <th>導入後</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>朝のメール確認時間</td>
-                        <td><span class="badge-before">60分</span></td>
-                        <td><span class="badge-after">15分</span></td>
-                    </tr>
-                    <tr>
-                        <td>重要メール見落とし</td>
-                        <td><span class="badge-before">月2〜3件</span></td>
-                        <td><span class="badge-after">0件</span></td>
-                    </tr>
-                    <tr>
-                        <td>対応漏れによるクレーム</td>
-                        <td><span class="badge-before">月1〜2件</span></td>
-                        <td><span class="badge-after">0件</span></td>
-                    </tr>
-                    <tr>
-                        <td>メール確認の精神的負担</td>
-                        <td><span class="badge-before">高い</span></td>
-                        <td><span class="badge-after">大幅軽減</span></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary);">副次的な効果</h3>
-
-            <ul>
-                <li><strong>顧客対応スピードの向上</strong>：重要度Aのメールに即座に対応できるようになり、顧客満足度が向上</li>
-                <li><strong>営業活動への集中</strong>：メール処理に追われる時間が減り、商談や接客に集中できるように</li>
-                <li><strong>チーム連携の改善</strong>：サマリ通知を共有することで、誰がどのメールに対応しているか可視化</li>
-                <li><strong>週末明けのストレス軽減</strong>：月曜朝もサマリで優先順位がわかるため、落ち着いて対応可能に</li>
-            </ul>
-
-            <div class="voice-box">
-                <div class="voice-header">
-                    <div class="voice-avatar">T</div>
-                    <div class="voice-info">
-                        <h4>営業担当 Tさん</h4>
-                        <span>入社5年目</span>
-                    </div>
-                </div>
-                <p class="voice-text">「以前は『メールを見落としていないか』が常に頭の片隅にあって、お客様との商談中も気になっていました。今はサマリで重要なメールが一目でわかるので、安心して接客に集中できます。月曜の憂鬱も半減しました（笑）」</p>
-            </div>
-
-            <div class="voice-box">
-                <div class="voice-header">
-                    <div class="voice-avatar">S</div>
-                    <div class="voice-info">
-                        <h4>店長 Sさん</h4>
-                        <span>経営層</span>
-                    </div>
-                </div>
-                <p class="voice-text">「スタッフ全員に同じサマリが届くので、『あのメール見た？』という確認が不要になりました。チーム全体で情報共有ができて、対応の抜け漏れがなくなったのが一番の成果です。システム構築もGeminiのおかげで半日でできました。」</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="section-label">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
-                </svg>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">メール確認時間70%削減、重要メール見落としゼロを達成</h2>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">システム導入から2ヶ月後、メール管理業務に劇的な変化が現れました。</p>
+<div class="results-grid" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="result-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="result-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">70<span class="result-unit">%</span></div>
+<div class="result-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">確認時間削減</div>
+</div>
+<div class="result-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="result-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">0<span class="result-unit">件</span></div>
+<div class="result-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">重要メール見落とし</div>
+</div>
+<div class="result-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="result-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">30<span class="result-unit">分</span></div>
+<div class="result-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">1日あたり時間創出</div>
+</div>
+</div>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table class="comparison-table" style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<thead>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">項目</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">朝のメール確認時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-before">60分</span></td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-after">15分</span></td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">重要メール見落とし</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-before">月2〜3件</span></td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-after">0件</span></td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">対応漏れによるクレーム</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-before">月1〜2件</span></td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-after">0件</span></td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">メール確認の精神的負担</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-before">高い</span></td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="badge-after">大幅軽減</span></td>
+</tr>
+</tbody>
+</table></div>
+<h3 style="font-size: 1.1rem; font-weight: 600; margin: 24px 0 16px; color: var(--text-primary); font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">副次的な効果</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>顧客対応スピードの向上</strong>：重要度Aのメールに即座に対応できるようになり、顧客満足度が向上</li>
+<li style="margin-bottom: 0.5rem;"><strong>営業活動への集中</strong>：メール処理に追われる時間が減り、商談や接客に集中できるように</li>
+<li style="margin-bottom: 0.5rem;"><strong>チーム連携の改善</strong>：サマリ通知を共有することで、誰がどのメールに対応しているか可視化</li>
+<li style="margin-bottom: 0.5rem;"><strong>週末明けのストレス軽減</strong>：月曜朝もサマリで優先順位がわかるため、落ち着いて対応可能に</li>
+</ul>
+<div class="voice-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="voice-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="voice-avatar" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">T</div>
+<div class="voice-info" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">営業担当 Tさん</h4>
+<span>入社5年目</span>
+</div>
+</div>
+<p class="voice-text" style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「以前は『メールを見落としていないか』が常に頭の片隅にあって、お客様との商談中も気になっていました。今はサマリで重要なメールが一目でわかるので、安心して接客に集中できます。月曜の憂鬱も半減しました（笑）」</p>
+</div>
+<div class="voice-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="voice-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="voice-avatar" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">S</div>
+<div class="voice-info" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">店長 Sさん</h4>
+<span>経営層</span>
+</div>
+</div>
+<p class="voice-text" style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「スタッフ全員に同じサマリが届くので、『あのメール見た？』という確認が不要になりました。チーム全体で情報共有ができて、対応の抜け漏れがなくなったのが一番の成果です。システム構築もGeminiのおかげで半日でできました。」</p>
+</div>
+</section>
+<section class="content-section" style="margin-bottom: 3rem;">
+<div class="section-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                 SUMMARY
             </div>
-            <h2 class="section-title">まとめ：AIとGASで「メール洪水」から解放される</h2>
-
-            <p>この事例から、<strong>Gemini × GASによるメール自動仕分け</strong>が、日々のメール管理業務を大幅に効率化できることがわかります。</p>
-
-            <div class="key-points">
-                <h4>成功のポイント</h4>
-                <ul>
-                    <li>重要度を3段階に明確に定義し、判断基準をルール化</li>
-                    <li>朝夕2回のサマリ通知で、1日を通じたメール管理をカバー</li>
-                    <li>チーム全員に同報することで、対応の可視化と相互チェックを実現</li>
-                    <li>GeminiにGASコード生成を依頼し、非エンジニアでも実装可能に</li>
-                    <li>月次のルール見直しで、常に最適な仕分けを維持</li>
-                </ul>
-            </div>
-
-            <div class="highlight-box">
-                <p>💡 GASはGoogleアカウントがあれば無料で利用可能。Geminiに「こんな機能のGASを作って」と依頼するだけで、プログラミング経験がなくても自動化が実現できます。</p>
-            </div>
-
-            <p>メール対応は多くの業種で共通の課題です。<strong>「確認」という作業をAIに任せ、人間は「対応」に集中する</strong>。この分業により、業務効率と顧客満足度の両方を向上させることができます。</p>
-
-            <p>御社でも、まずは「どのメールが重要か」のルールを整理し、GeminiにGASスクリプトの作成を依頼してみてはいかがでしょうか。</p>
-
-            <div class="related-tags">
-                <span class="related-tag"># Gemini</span>
-                <span class="related-tag"># GAS</span>
-                <span class="related-tag"># メール自動化</span>
-                <span class="related-tag"># 業務効率化</span>
-                <span class="related-tag"># 中古車販売</span>
-                <span class="related-tag"># 自動仕分け</span>
-                <span class="related-tag"># 中小企業DX</span>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <h3>AI活用による業務改善をお考えですか？</h3>
-            <p>御社の課題に合わせた最適なAI活用方法をご提案いたします。まずはお気軽にご相談ください。</p>
-            <a href="/contact" class="cta-button">無料相談はこちら</a>
-        </section>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">まとめ：AIとGASで「メール洪水」から解放される</h2>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">この事例から、<strong>Gemini &times; GASによるメール自動仕分け</strong>が、日々のメール管理業務を大幅に効率化できることがわかります。</p>
+<div class="key-points" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">成功のポイント</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">重要度を3段階に明確に定義し、判断基準をルール化</li>
+<li style="margin-bottom: 0.5rem;">朝夕2回のサマリ通知で、1日を通じたメール管理をカバー</li>
+<li style="margin-bottom: 0.5rem;">チーム全員に同報することで、対応の可視化と相互チェックを実現</li>
+<li style="margin-bottom: 0.5rem;">GeminiにGASコード生成を依頼し、非エンジニアでも実装可能に</li>
+<li style="margin-bottom: 0.5rem;">月次のルール見直しで、常に最適な仕分けを維持</li>
+</ul>
+</div>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">💡 GASはGoogleアカウントがあれば無料で利用可能。Geminiに「こんな機能のGASを作って」と依頼するだけで、プログラミング経験がなくても自動化が実現できます。</p>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">メール対応は多くの業種で共通の課題です。<strong>「確認」という作業をAIに任せ、人間は「対応」に集中する</strong>。この分業により、業務効率と顧客満足度の両方を向上させることができます。</p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">御社でも、まずは「どのメールが重要か」のルールを整理し、GeminiにGASスクリプトの作成を依頼してみてはいかがでしょうか。</p>
+<div class="related-tags" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="related-tag"># Gemini</span>
+<span class="related-tag"># GAS</span>
+<span class="related-tag"># メール自動化</span>
+<span class="related-tag"># 業務効率化</span>
+<span class="related-tag"># 中古車販売</span>
+<span class="related-tag"># 自動仕分け</span>
+<span class="related-tag"># 中小企業DX</span>
+</div>
+</section>
+<section class="cta-section" style="margin-bottom: 3rem;">
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">AI活用による業務改善をお考えですか？</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">御社の課題に合わせた最適なAI活用方法をご提案いたします。まずはお気軽にご相談ください。</p>
+<a class="cta-button" href="/contact" style="color: var(--cyan-600); font-weight: 600;">無料相談はこちら</a>
+</section>
+      </div>
     </article>
+
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

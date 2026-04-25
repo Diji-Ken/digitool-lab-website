@@ -3,126 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex AIで定例会議の議事録を再要約。Slack自動共有で情報格差をゼロに - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="Vertex AI（Gemini）を活用して議事録を再要約し、Slackに自動共有する仕組みを構築。毎週の定例会議後の情報共有を完全自動化した事例を解説します。">
-    <meta name="keywords" content="Gemini, Vertex AI, 議事録, Slack, 自動共有, 中小企業DX, AI活用">
-    <title>Gemini×Vertex AIで議事録を再要約！Slackへの自動共有を実現 | デジタルツール研究所</title>
-    <style>
-        :root {
-            --primary-color: #059669;
-            --secondary-color: #34d399;
-            --accent-color: #d1fae5;
-            --background-color: #ecfdf5;
-            --text-color: #064e3b;
-        }
-    </style>
+    <meta name="keywords" content="ITサービス業, AI活用, 業務効率化, Gemini, GAS, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-gemini-slack-summary.html">
+    <meta property="og:title" content="Vertex AIで定例会議の議事録を再要約。Slack自動共有で情報格差をゼロに | デジタルツール研究所">
+    <meta property="og:description" content="Vertex AI（Gemini）を活用して議事録を再要約し、Slackに自動共有する仕組みを構築。毎週の定例会議後の情報共有を完全自動化した事例を解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-gemini-slack-summary.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-111.png">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <article>
-        <header>
-            <h1>Gemini×Vertex AIで議事録を再要約！Slackへの自動共有を実現</h1>
-            <p class="lead">20名規模のSaaS企業が、Vertex AI（Gemini API）を活用して会議議事録の再要約からSlack共有までを自動化。週次定例会議の情報共有を完全自動化し、チームの情報格差を解消した事例をご紹介します。</p>
-        </header>
-
-        <nav class="toc">
-            <h2>目次</h2>
-            <ol>
-                <li><a href="#challenge">課題：議事録共有が属人化し情報格差が発生</a></li>
-                <li><a href="#solution">施策：Vertex AI×GASで自動要約・Slack共有</a></li>
-                <li><a href="#result">成果：情報共有の確実性と速度が向上</a></li>
-                <li><a href="#summary">まとめ：会議情報の民主化をAIで実現</a></li>
-            </ol>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
         </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-        <section id="challenge">
-            <h2>課題：議事録共有が属人化し情報格差が発生</h2>
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">ITサービス業の事例</span>
+      </div>
+    </nav>
 
-            <h3>企業プロフィール</h3>
-            <table>
-                <tr>
-                    <th>業種</th>
-                    <td>SaaS企業（BtoB）</td>
-                </tr>
-                <tr>
-                    <th>従業員数</th>
-                    <td>20名</td>
-                </tr>
-                <tr>
-                    <th>定例会議</th>
-                    <td>週1回（部門横断ミーティング）</td>
-                </tr>
-                <tr>
-                    <th>主な課題</th>
-                    <td>議事録の共有が遅れ、情報格差が発生</td>
-                </tr>
-            </table>
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--cyan-100); color: var(--cyan-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">ITサービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-02-27</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">Vertex AIで定例会議の議事録を再要約。Slack自動共有で情報格差をゼロに</h1>
 
-            <h3>会議運営の現状</h3>
-            <p>同社では毎週月曜日に部門横断の定例会議を実施しています。各部門（開発・営業・カスタマーサクセス・管理）の進捗共有と課題協議を行う重要な場ですが、議事録の共有に課題がありました。</p>
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=GAS" class="article-tag">GAS</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <h4>情報共有の問題点</h4>
-            <ul>
-                <li><strong>共有の遅延</strong>：担当者の業務状況により1〜2日遅れることも</li>
-                <li><strong>品質のばらつき</strong>：担当者によって詳細度や形式が異なる</li>
-                <li><strong>読まれない問題</strong>：長文の議事録は後回しにされがち</li>
-                <li><strong>検索性の低さ</strong>：ドキュメントが増え、過去の決定事項を探しにくい</li>
-            </ul>
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-111.png" alt="Vertex AIで定例会議の議事録を再要約。Slack自動共有で情報格差をゼロに" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
 
-            <div class="problem-box">
-                <h4>従来の議事録共有フロー</h4>
-                <ol>
-                    <li>会議中にメモを取る（リアルタイム）</li>
-                    <li>会議後に議事録を整形（30分〜1時間）</li>
-                    <li>Googleドキュメントにアップロード</li>
-                    <li>Slackでリンクを共有（手動）</li>
-                    <li>質問があれば個別対応</li>
-                </ol>
-                <p><strong>問題点：担当者が忙しいと共有が翌日以降になり、会議内容を忘れてしまう人も</strong></p>
-            </div>
-
-            <h4>担当者の声（導入前）</h4>
-            <blockquote>
-                <p>「議事録当番の日は、午後の予定をブロックしておかないと対応できません。特に会議で重い議題があった日は、内容を整理するのに時間がかかります。みんなに早く共有したいけど、質も落としたくないし...」</p>
-                <cite>— プロダクトマネージャー</cite>
-            </blockquote>
-        </section>
-
-        <section id="solution">
-            <h2>施策：Vertex AI×GASで自動要約・Slack共有</h2>
-
-            <h3>自動化システムの全体像</h3>
-            <p>Google Meetの自動文字起こし機能とVertex AI（Gemini API）、Google Apps Scriptを組み合わせて、議事録の要約からSlack共有までを自動化しました。</p>
-
-            <div class="flow-diagram">
-                <h4>システム構成</h4>
-                <ol>
-                    <li><strong>Google Meet</strong>：会議の自動文字起こし・議事録生成</li>
-                    <li><strong>Google Drive</strong>：議事録ドキュメントの保存</li>
-                    <li><strong>GAS（トリガー）</strong>：会議終了後に自動実行</li>
-                    <li><strong>Vertex AI（Gemini）</strong>：議事録の再要約・構造化</li>
-                    <li><strong>Slack</strong>：要約結果の自動投稿</li>
-                </ol>
-            </div>
-
-            <h3>ステップ1：Vertex AI APIの設定</h3>
-            <p>Google Cloud PlatformでVertex AIを有効化し、APIを利用可能にします。</p>
-
-            <div class="step-guide">
-                <h4>Vertex AI設定手順</h4>
-                <ol>
-                    <li>Google Cloud Consoleにアクセス</li>
-                    <li>プロジェクトを作成または選択</li>
-                    <li>Vertex AI APIを有効化</li>
-                    <li>サービスアカウントを作成し、認証情報を取得</li>
-                </ol>
-                <p>※ 無料枠内での利用も可能（月間一定量まで）</p>
-            </div>
-
-            <h3>ステップ2：GASスクリプトの構築</h3>
-            <p>Google Apps Scriptで議事録を取得し、Vertex AIで要約、Slackに投稿する処理を実装します。</p>
-
-            <div class="code-example">
-                <h4>GASスクリプト概要</h4>
-                <pre>
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section id="challenge" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">課題：議事録共有が属人化し情報格差が発生</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">企業プロフィール</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">業種</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">SaaS企業（BtoB）</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">従業員数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">20名</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">定例会議</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">週1回（部門横断ミーティング）</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">主な課題</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">議事録の共有が遅れ、情報格差が発生</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">会議運営の現状</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">同社では毎週月曜日に部門横断の定例会議を実施しています。各部門（開発・営業・カスタマーサクセス・管理）の進捗共有と課題協議を行う重要な場ですが、議事録の共有に課題がありました。</p>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">情報共有の問題点</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>共有の遅延</strong>：担当者の業務状況により1〜2日遅れることも</li>
+<li style="margin-bottom: 0.5rem;"><strong>品質のばらつき</strong>：担当者によって詳細度や形式が異なる</li>
+<li style="margin-bottom: 0.5rem;"><strong>読まれない問題</strong>：長文の議事録は後回しにされがち</li>
+<li style="margin-bottom: 0.5rem;"><strong>検索性の低さ</strong>：ドキュメントが増え、過去の決定事項を探しにくい</li>
+</ul>
+<div class="problem-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">従来の議事録共有フロー</h4>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">会議中にメモを取る（リアルタイム）</li>
+<li style="margin-bottom: 0.5rem;">会議後に議事録を整形（30分〜1時間）</li>
+<li style="margin-bottom: 0.5rem;">Googleドキュメントにアップロード</li>
+<li style="margin-bottom: 0.5rem;">Slackでリンクを共有（手動）</li>
+<li style="margin-bottom: 0.5rem;">質問があれば個別対応</li>
+</ol>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>問題点：担当者が忙しいと共有が翌日以降になり、会議内容を忘れてしまう人も</strong></p>
+</div>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">担当者の声（導入前）</h4>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「議事録当番の日は、午後の予定をブロックしておかないと対応できません。特に会議で重い議題があった日は、内容を整理するのに時間がかかります。みんなに早く共有したいけど、質も落としたくないし...」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; プロダクトマネージャー</cite>
+</blockquote>
+</section>
+<section id="solution" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">施策：Vertex AI&times;GASで自動要約・Slack共有</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">自動化システムの全体像</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Google Meetの自動文字起こし機能とVertex AI（Gemini API）、Google Apps Scriptを組み合わせて、議事録の要約からSlack共有までを自動化しました。</p>
+<div class="flow-diagram" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">システム構成</h4>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>Google Meet</strong>：会議の自動文字起こし・議事録生成</li>
+<li style="margin-bottom: 0.5rem;"><strong>Google Drive</strong>：議事録ドキュメントの保存</li>
+<li style="margin-bottom: 0.5rem;"><strong>GAS（トリガー）</strong>：会議終了後に自動実行</li>
+<li style="margin-bottom: 0.5rem;"><strong>Vertex AI（Gemini）</strong>：議事録の再要約・構造化</li>
+<li style="margin-bottom: 0.5rem;"><strong>Slack</strong>：要約結果の自動投稿</li>
+</ol>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">ステップ1：Vertex AI APIの設定</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Google Cloud PlatformでVertex AIを有効化し、APIを利用可能にします。</p>
+<div class="step-guide" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">Vertex AI設定手順</h4>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">Google Cloud Consoleにアクセス</li>
+<li style="margin-bottom: 0.5rem;">プロジェクトを作成または選択</li>
+<li style="margin-bottom: 0.5rem;">Vertex AI APIを有効化</li>
+<li style="margin-bottom: 0.5rem;">サービスアカウントを作成し、認証情報を取得</li>
+</ol>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">※ 無料枠内での利用も可能（月間一定量まで）</p>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">ステップ2：GASスクリプトの構築</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Google Apps Scriptで議事録を取得し、Vertex AIで要約、Slackに投稿する処理を実装します。</p>
+<div class="code-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">GASスクリプト概要</h4>
+<pre style="background-color: var(--gray-900); color: var(--white); padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap;">
 function processAndShareMeetingNotes() {
   // 1. 当日の会議議事録を取得
   const meetingDoc = getMeetingDocument();
@@ -228,7 +292,7 @@ function postToSlack(summary, docUrl) {
         elements: [
           {
             type: 'mrkdwn',
-            text: `📄 <${docUrl}|詳細議事録はこちら>`
+            text: `📄 &lt;${docUrl}|詳細議事録はこちら&gt;`
           }
         ]
       }
@@ -242,172 +306,241 @@ function postToSlack(summary, docUrl) {
   });
 }
                 </pre>
-            </div>
-
-            <h3>ステップ3：要約プロンプトの設計</h3>
-            <p>チームが求める情報構造に合わせて、出力フォーマットを詳細に指定しています。</p>
-
-            <div class="prompt-example">
-                <h4>プロンプト設計のポイント</h4>
-                <ul>
-                    <li><strong>部門別の構造化</strong>：各部門の状況を分離して把握しやすく</li>
-                    <li><strong>アクションアイテムの明確化</strong>：担当者と期限を必ず記載</li>
-                    <li><strong>重要度順の並べ替え</strong>：優先度の高い情報から表示</li>
-                    <li><strong>来週への橋渡し</strong>：次週の注目ポイントで継続性を確保</li>
-                </ul>
-            </div>
-
-            <h3>Slack投稿の工夫</h3>
-            <p>Block Kitを使用して、視覚的に見やすいフォーマットで投稿しています。</p>
-
-            <div class="slack-preview">
-                <h4>実際のSlack投稿例</h4>
-                <div class="slack-message">
-                    <p><strong>📋 週次定例会議サマリー</strong></p>
-
-                    <p><strong>## 今週の主要トピック</strong></p>
-                    <p>- 新機能「ダッシュボード2.0」の開発完了、来週リリース予定<br>
-                    - Q4の売上目標達成に向けた営業施策の承認<br>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">ステップ3：要約プロンプトの設計</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">チームが求める情報構造に合わせて、出力フォーマットを詳細に指定しています。</p>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">プロンプト設計のポイント</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>部門別の構造化</strong>：各部門の状況を分離して把握しやすく</li>
+<li style="margin-bottom: 0.5rem;"><strong>アクションアイテムの明確化</strong>：担当者と期限を必ず記載</li>
+<li style="margin-bottom: 0.5rem;"><strong>重要度順の並べ替え</strong>：優先度の高い情報から表示</li>
+<li style="margin-bottom: 0.5rem;"><strong>来週への橋渡し</strong>：次週の注目ポイントで継続性を確保</li>
+</ul>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">Slack投稿の工夫</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Block Kitを使用して、視覚的に見やすいフォーマットで投稿しています。</p>
+<div class="slack-preview" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">実際のSlack投稿例</h4>
+<div class="slack-message" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>📋 週次定例会議サマリー</strong></p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>## 今週の主要トピック</strong></p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">- 新機能「ダッシュボード2.0」の開発完了、来週リリース予定<br/>
+                    - Q4の売上目標達成に向けた営業施策の承認<br/>
                     - カスタマーサクセスのオンボーディング改善提案</p>
-
-                    <p><strong>## 決定事項・アクションアイテム</strong></p>
-                    <p>- 田中: リリースノート作成 (期限: 11/15)<br>
-                    - 佐藤: 販促資料の更新 (期限: 11/16)<br>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;"><strong>## 決定事項・アクションアイテム</strong></p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">- 田中: リリースノート作成 (期限: 11/15)<br/>
+                    - 佐藤: 販促資料の更新 (期限: 11/16)<br/>
                     - 鈴木: オンボーディング動画の制作開始 (期限: 11/20)</p>
-
-                    <p>📄 <a href="#">詳細議事録はこちら</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="result">
-            <h2>成果：情報共有の確実性と速度が向上</h2>
-
-            <h3>定量的な成果</h3>
-            <table class="result-table">
-                <tr>
-                    <th>指標</th>
-                    <th>導入前</th>
-                    <th>導入後</th>
-                    <th>改善</th>
-                </tr>
-                <tr>
-                    <td>共有までの時間</td>
-                    <td>2〜24時間</td>
-                    <td>約15分</td>
-                    <td>大幅短縮</td>
-                </tr>
-                <tr>
-                    <td>議事録閲覧率</td>
-                    <td>約60%</td>
-                    <td>約95%</td>
-                    <td>+35pt</td>
-                </tr>
-                <tr>
-                    <td>担当者の作業時間</td>
-                    <td>45分/回</td>
-                    <td>0分/回</td>
-                    <td>100%削減</td>
-                </tr>
-            </table>
-
-            <h3>年間での効果</h3>
-            <div class="highlight-box">
-                <ul>
-                    <li>45分/週 × 52週 = <strong>年間約39時間の作業時間削減</strong></li>
-                    <li>議事録当番のローテーション管理が<strong>不要</strong>に</li>
-                    <li>会議終了15分後には全員が情報を把握 → <strong>情報格差ゼロ</strong></li>
-                </ul>
-            </div>
-
-            <h3>定性的な成果</h3>
-
-            <h4>情報共有の改善</h4>
-            <ul>
-                <li><strong>即時性</strong>：会議直後に要約が届くため、記憶が新鮮なうちに確認できる</li>
-                <li><strong>可読性</strong>：構造化された要約で、必要な情報にすぐアクセス</li>
-                <li><strong>確実性</strong>：自動化により共有漏れがなくなった</li>
-            </ul>
-
-            <h4>チーム運営への効果</h4>
-            <ul>
-                <li><strong>アクションアイテムの可視化</strong>：誰が何をいつまでにやるか明確に</li>
-                <li><strong>欠席者のキャッチアップ</strong>：会議に出られなくても内容を把握</li>
-                <li><strong>過去の検索性向上</strong>：Slackで過去の決定事項を検索可能</li>
-            </ul>
-
-            <h4>担当者の声（導入後）</h4>
-            <blockquote>
-                <p>「議事録当番という概念がなくなりました。会議が終わったら自動で共有されるので、次の業務にすぐ移れます。しかも要約の質が安定していて、以前よりも分かりやすいと好評です」</p>
-                <cite>— プロダクトマネージャー</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>「Slackに要約が届いたら、まずアクションアイテムを確認して自分のタスクリストに追加しています。会議に出ていない日も、これを見れば何をすべきか分かります」</p>
-                <cite>— 開発エンジニア</cite>
-            </blockquote>
-        </section>
-
-        <section id="summary">
-            <h2>まとめ：会議情報の民主化をAIで実現</h2>
-
-            <h3>成功のポイント</h3>
-            <ol>
-                <li><strong>即時共有の実現</strong>
-                    <p>会議終了後すぐに情報が届くことで、アクションへの移行がスムーズに。</p>
-                </li>
-                <li><strong>構造化された出力</strong>
-                    <p>部門別・項目別に整理されることで、必要な情報にすぐアクセスできる。</p>
-                </li>
-                <li><strong>完全自動化</strong>
-                    <p>人の介入なしで完結するため、属人化を排除し確実性を担保。</p>
-                </li>
-                <li><strong>Slackへの直接投稿</strong>
-                    <p>普段使うツールに情報が届くことで、閲覧率が大幅向上。</p>
-                </li>
-            </ol>
-
-            <h3>他会議への展開</h3>
-            <ul>
-                <li><strong>1on1ミーティング</strong>：上司・部下間の面談内容を要約・蓄積</li>
-                <li><strong>プロジェクト定例</strong>：各プロジェクトの進捗共有を自動化</li>
-                <li><strong>経営会議</strong>：重要決定事項を全社に即時共有</li>
-                <li><strong>外部ミーティング</strong>：顧客との打ち合わせ内容をチームに共有</li>
-            </ul>
-
-            <h3>導入のステップ</h3>
-            <ol>
-                <li><strong>対象会議の選定</strong>：定期開催で情報共有が重要な会議を選ぶ</li>
-                <li><strong>要約フォーマットの設計</strong>：チームが求める情報構造を定義</li>
-                <li><strong>Vertex AI環境の構築</strong>：GCPでAPIを有効化</li>
-                <li><strong>GASスクリプトの作成</strong>：自動化処理を実装</li>
-                <li><strong>テスト・調整</strong>：実際の会議で試し、プロンプトを改善</li>
-            </ol>
-
-            <h3>導入を検討される企業様へ</h3>
-            <div class="cta-box">
-                <p>Vertex AI×GASを活用した会議情報の自動共有について、詳しいご相談を承っております。</p>
-                <ul>
-                    <li>議事録自動化システムの構築</li>
-                    <li>Vertex AI（Gemini）の活用方法</li>
-                    <li>GASスクリプトの開発サポート</li>
-                </ul>
-                <p>まずはお気軽にお問い合わせください。</p>
-            </div>
-
-            <h3>関連記事</h3>
-            <ul>
-                <li><a href="ai-gemini-meeting-summary-slack.html">Gemini×GASで議事録を自動要約！Slack共有まで完全自動化</a></li>
-                <li><a href="ai-meeting-minutes-automation.html">Google Gemini×議事録自動化で会議効率を劇的改善</a></li>
-                <li><a href="ai-gemini-report-automation.html">Geminiで報告資料を自動作成</a></li>
-            </ul>
-        </section>
-
-        <footer>
-            <p class="update-date">最終更新日：2025年1月</p>
-            <p class="category">カテゴリ：AI活用事例 / 業務自動化 / 会議効率化</p>
-            <p class="tags">タグ：#Gemini #VertexAI #議事録 #Slack #中小企業DX</p>
-        </footer>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">📄 <a href="#" style="color: var(--cyan-600); font-weight: 600;">詳細議事録はこちら</a></p>
+</div>
+</div>
+</section>
+<section id="result" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">成果：情報共有の確実性と速度が向上</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">定量的な成果</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table class="result-table" style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">指標</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入後</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">改善</th>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">共有までの時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">2〜24時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約15分</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">大幅短縮</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">議事録閲覧率</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約60%</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約95%</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">+35pt</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">担当者の作業時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">45分/回</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">0分/回</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">100%削減</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">年間での効果</h3>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">45分/週 &times; 52週 = <strong>年間約39時間の作業時間削減</strong></li>
+<li style="margin-bottom: 0.5rem;">議事録当番のローテーション管理が<strong>不要</strong>に</li>
+<li style="margin-bottom: 0.5rem;">会議終了15分後には全員が情報を把握 &rarr; <strong>情報格差ゼロ</strong></li>
+</ul>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">定性的な成果</h3>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">情報共有の改善</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>即時性</strong>：会議直後に要約が届くため、記憶が新鮮なうちに確認できる</li>
+<li style="margin-bottom: 0.5rem;"><strong>可読性</strong>：構造化された要約で、必要な情報にすぐアクセス</li>
+<li style="margin-bottom: 0.5rem;"><strong>確実性</strong>：自動化により共有漏れがなくなった</li>
+</ul>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">チーム運営への効果</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>アクションアイテムの可視化</strong>：誰が何をいつまでにやるか明確に</li>
+<li style="margin-bottom: 0.5rem;"><strong>欠席者のキャッチアップ</strong>：会議に出られなくても内容を把握</li>
+<li style="margin-bottom: 0.5rem;"><strong>過去の検索性向上</strong>：Slackで過去の決定事項を検索可能</li>
+</ul>
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">担当者の声（導入後）</h4>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「議事録当番という概念がなくなりました。会議が終わったら自動で共有されるので、次の業務にすぐ移れます。しかも要約の質が安定していて、以前よりも分かりやすいと好評です」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; プロダクトマネージャー</cite>
+</blockquote>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「Slackに要約が届いたら、まずアクションアイテムを確認して自分のタスクリストに追加しています。会議に出ていない日も、これを見れば何をすべきか分かります」</p>
+<cite style="display: block; margin-top: 1rem; color: var(--gray-600); font-style: normal;">&mdash; 開発エンジニア</cite>
+</blockquote>
+</section>
+<section id="summary" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">まとめ：会議情報の民主化をAIで実現</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">成功のポイント</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>即時共有の実現</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">会議終了後すぐに情報が届くことで、アクションへの移行がスムーズに。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>構造化された出力</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">部門別・項目別に整理されることで、必要な情報にすぐアクセスできる。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>完全自動化</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">人の介入なしで完結するため、属人化を排除し確実性を担保。</p>
+</li>
+<li style="margin-bottom: 0.5rem;"><strong>Slackへの直接投稿</strong>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">普段使うツールに情報が届くことで、閲覧率が大幅向上。</p>
+</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">他会議への展開</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>1on1ミーティング</strong>：上司・部下間の面談内容を要約・蓄積</li>
+<li style="margin-bottom: 0.5rem;"><strong>プロジェクト定例</strong>：各プロジェクトの進捗共有を自動化</li>
+<li style="margin-bottom: 0.5rem;"><strong>経営会議</strong>：重要決定事項を全社に即時共有</li>
+<li style="margin-bottom: 0.5rem;"><strong>外部ミーティング</strong>：顧客との打ち合わせ内容をチームに共有</li>
+</ul>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">導入のステップ</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>対象会議の選定</strong>：定期開催で情報共有が重要な会議を選ぶ</li>
+<li style="margin-bottom: 0.5rem;"><strong>要約フォーマットの設計</strong>：チームが求める情報構造を定義</li>
+<li style="margin-bottom: 0.5rem;"><strong>Vertex AI環境の構築</strong>：GCPでAPIを有効化</li>
+<li style="margin-bottom: 0.5rem;"><strong>GASスクリプトの作成</strong>：自動化処理を実装</li>
+<li style="margin-bottom: 0.5rem;"><strong>テスト・調整</strong>：実際の会議で試し、プロンプトを改善</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">導入を検討される企業様へ</h3>
+<div class="cta-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Vertex AI&times;GASを活用した会議情報の自動共有について、詳しいご相談を承っております。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">議事録自動化システムの構築</li>
+<li style="margin-bottom: 0.5rem;">Vertex AI（Gemini）の活用方法</li>
+<li style="margin-bottom: 0.5rem;">GASスクリプトの開発サポート</li>
+</ul>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">まずはお気軽にお問い合わせください。</p>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">関連記事</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><a href="ai-gemini-meeting-summary-slack.html" style="color: var(--cyan-600); font-weight: 600;">Gemini&times;GASで議事録を自動要約！Slack共有まで完全自動化</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="ai-meeting-minutes-automation.html" style="color: var(--cyan-600); font-weight: 600;">Google Gemini&times;議事録自動化で会議効率を劇的改善</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="ai-gemini-report-automation.html" style="color: var(--cyan-600); font-weight: 600;">Geminiで報告資料を自動作成</a></li>
+</ul>
+</section>
+      </div>
     </article>
+
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

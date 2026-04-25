@@ -3,261 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeminiでKPIレポートを効率作成！数値の解釈とコメントを自動化 - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="GeminiとGoogleスプレッドシートを活用してKPIダッシュボードのレポートを効率的に作成する方法。数値の解釈とコメント作成を自動化した中小企業の事例を解説します。">
-    <meta name="keywords" content="Gemini, KPIダッシュボード, レポート作成, データ分析, 中小企業DX, AI活用">
-    <title>GeminiでKPIレポートを効率作成！数値の解釈とコメントを自動化 | デジタルツール研究所</title>
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #60a5fa;
-            --accent-color: #bfdbfe;
-            --background-color: #eff6ff;
-            --text-color: #1e3a8a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        .lead {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            opacity: 0.9;
-        }
-
-        nav.toc {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        nav.toc h2 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        nav.toc ol {
-            padding-left: 25px;
-        }
-
-        nav.toc li {
-            margin-bottom: 8px;
-        }
-
-        nav.toc a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        nav.toc a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin: 25px 0 15px 0;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--accent-color);
-        }
-
-        th {
-            background-color: var(--accent-color);
-            font-weight: bold;
-            width: 30%;
-        }
-
-        .highlight-box {
-            background: var(--accent-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .result-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .prompt-example {
-            background: #1e1e1e;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            overflow-x: auto;
-        }
-
-        .prompt-example code {
-            white-space: pre-wrap;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-        }
-
-        ul, ol {
-            padding-left: 25px;
-            margin: 15px 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        blockquote {
-            border-left: 4px solid var(--secondary-color);
-            padding-left: 20px;
-            margin: 20px 0;
-            font-style: italic;
-            color: var(--text-color);
-            opacity: 0.9;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid var(--accent-color);
-        }
-    </style>
+    <meta name="keywords" content="サービス業, AI活用, 業務効率化, Gemini, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-gemini-kpi-dashboard.html">
+    <meta property="og:title" content="GeminiでKPIレポートを効率作成！数値の解釈とコメントを自動化 | デジタルツール研究所">
+    <meta property="og:description" content="GeminiとGoogleスプレッドシートを活用してKPIダッシュボードのレポートを効率的に作成する方法。数値の解釈とコメント作成を自動化した中小企業の事例を解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-gemini-kpi-dashboard.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-100.png">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <article>
-        <header>
-            <h1>GeminiでKPIレポートを効率作成！数値の解釈とコメントを自動化</h1>
-            <p class="lead">23名規模のECサイト運営会社が、GeminiとGoogleスプレッドシートを連携してKPIレポートの作成を効率化。数値の解釈やコメント作成を自動化し、経営判断のスピードを向上させた事例をご紹介します。</p>
-        </header>
-
-        <nav class="toc">
-            <h2>目次</h2>
-            <ol>
-                <li><a href="#challenge">課題：レポート作成に時間がかかる</a></li>
-                <li><a href="#solution">施策：Geminiで数値解釈を自動化</a></li>
-                <li><a href="#result">成果：レポート作成時間の大幅削減</a></li>
-                <li><a href="#summary">まとめ：AIでデータ活用を加速する</a></li>
-            </ol>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
         </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-        <section id="challenge">
-            <h2>課題：レポート作成に時間がかかる</h2>
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">サービス業の事例</span>
+      </div>
+    </nav>
 
-            <h3>企業プロフィール</h3>
-            <table>
-                <tr>
-                    <th>業種</th>
-                    <td>ECサイト運営（雑貨・インテリア）</td>
-                </tr>
-                <tr>
-                    <th>従業員数</th>
-                    <td>23名</td>
-                </tr>
-                <tr>
-                    <th>月間売上</th>
-                    <td>約3,000万円</td>
-                </tr>
-                <tr>
-                    <th>レポート種類</th>
-                    <td>日次・週次・月次の3種類</td>
-                </tr>
-            </table>
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--green-100); color: var(--green-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">サービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-01-31</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">GeminiでKPIレポートを効率作成！数値の解釈とコメントを自動化</h1>
 
-            <h3>レポート作成の悩み</h3>
-            <p>ECサイト運営では、売上・アクセス数・コンバージョン率など、多くのKPIを追跡する必要があります。同社では以下のような課題がありました。</p>
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <ul>
-                <li>数値の集計はできても、解釈に時間がかかる</li>
-                <li>「なぜこの数値が上がった/下がったか」のコメントを書くのが大変</li>
-                <li>週次・月次レポートの作成に毎回数時間かかる</li>
-                <li>担当者によってコメントの質にばらつきがある</li>
-            </ul>
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-100.png" alt="GeminiでKPIレポートを効率作成！数値の解釈とコメントを自動化" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
 
-            <blockquote>
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section id="challenge" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">課題：レポート作成に時間がかかる</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">企業プロフィール</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">業種</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">ECサイト運営（雑貨・インテリア）</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">従業員数</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">23名</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">月間売上</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約3,000万円</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">レポート種類</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">日次・週次・月次の3種類</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">レポート作成の悩み</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">ECサイト運営では、売上・アクセス数・コンバージョン率など、多くのKPIを追跡する必要があります。同社では以下のような課題がありました。</p>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">数値の集計はできても、解釈に時間がかかる</li>
+<li style="margin-bottom: 0.5rem;">「なぜこの数値が上がった/下がったか」のコメントを書くのが大変</li>
+<li style="margin-bottom: 0.5rem;">週次・月次レポートの作成に毎回数時間かかる</li>
+<li style="margin-bottom: 0.5rem;">担当者によってコメントの質にばらつきがある</li>
+</ul>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
                 「数値をグラフにするところまではできるんですが、『だから何なのか』『どうすべきか』を書くのに一番時間がかかります。経営層からも『数字だけじゃなくて、示唆が欲しい』と言われていました。」（マーケティング担当）
             </blockquote>
-        </section>
-
-        <section id="solution">
-            <h2>施策：Geminiで数値解釈を自動化</h2>
-
-            <h3>導入したAIツール</h3>
-            <table>
-                <tr>
-                    <th>ツール</th>
-                    <td>Gemini Advanced + Googleスプレッドシート</td>
-                </tr>
-                <tr>
-                    <th>用途</th>
-                    <td>KPIの数値解釈・コメント作成</td>
-                </tr>
-                <tr>
-                    <th>月額コスト</th>
-                    <td>約2,900円</td>
-                </tr>
-            </table>
-
-            <h3>基本的なレポートコメント作成</h3>
-            <div class="prompt-example">
-                <code>あなたはECサイトのデータアナリストです。
+</section>
+<section id="solution" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">施策：Geminiで数値解釈を自動化</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">導入したAIツール</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">ツール</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">Gemini Advanced + Googleスプレッドシート</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">用途</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">KPIの数値解釈・コメント作成</td>
+</tr>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">月額コスト</th>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">約2,900円</td>
+</tr>
+</table></div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">基本的なレポートコメント作成</h3>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<code>あなたはECサイトのデータアナリストです。
 以下のKPIデータをもとに、経営層向けの週次レポートのコメントを作成してください。
 
 【今週のKPI】
@@ -278,11 +181,10 @@
 2. 好調だったポイントとその要因
 3. 課題・改善が必要なポイント
 4. 来週への示唆・アクション提案</code>
-            </div>
-
-            <h3>前月比・前年比の分析</h3>
-            <div class="prompt-example">
-                <code>以下の月次データを分析し、
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">前月比・前年比の分析</h3>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<code>以下の月次データを分析し、
 経営会議で報告するためのサマリーコメントを作成してください。
 
 【月次KPI推移】
@@ -300,17 +202,15 @@
 ・売上増の要因分解（セッション増 vs CVR改善 vs 客単価向上）
 ・季節要因と施策効果の切り分け
 ・来期に向けた示唆</code>
-            </div>
-
-            <h3>異常値・アラートの解釈</h3>
-            <div class="highlight-box">
-                <h4>異常値検知とコメント</h4>
-                <p>「昨日のコンバージョン率が通常より1%低下しています。考えられる原因を5つ挙げ、調査すべき順番を教えてください」とGeminiに依頼し、素早く原因究明を行います。</p>
-            </div>
-
-            <h3>グラフ・ダッシュボードへのコメント追加</h3>
-            <div class="prompt-example">
-                <code>以下のグラフの説明文を作成してください。
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">異常値・アラートの解釈</h3>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">異常値検知とコメント</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「昨日のコンバージョン率が通常より1%低下しています。考えられる原因を5つ挙げ、調査すべき順番を教えてください」とGeminiに依頼し、素早く原因究明を行います。</p>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">グラフ・ダッシュボードへのコメント追加</h3>
+<div class="prompt-example" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<code>以下のグラフの説明文を作成してください。
 経営層が見て、一目で状況を理解できるようにしてください。
 
 【グラフの内容】
@@ -322,102 +222,185 @@
 ・3行以内で簡潔に
 ・ポジティブな要素を先に
 ・改善ポイントも触れる</code>
-            </div>
-        </section>
-
-        <section id="result">
-            <h2>成果：レポート作成時間の大幅削減</h2>
-
-            <h3>定量的な効果</h3>
-            <div class="highlight-box">
-                <table>
-                    <tr>
-                        <th>指標</th>
-                        <th>導入前</th>
-                        <th>導入後</th>
-                    </tr>
-                    <tr>
-                        <td>週次レポート作成時間</td>
-                        <td>3時間</td>
-                        <td><span class="result-number">45分</span></td>
-                    </tr>
-                    <tr>
-                        <td>月次レポート作成時間</td>
-                        <td>8時間</td>
-                        <td><span class="result-number">2時間</span></td>
-                    </tr>
-                    <tr>
-                        <td>レポートの質（経営層評価）</td>
-                        <td>3.2/5</td>
-                        <td><span class="result-number">4.5/5</span></td>
-                    </tr>
-                </table>
-            </div>
-
-            <h3>定性的な効果</h3>
-            <ul>
-                <li>数値の「意味」を素早く言語化できるように</li>
-                <li>担当者によるコメントの質のばらつきが減少</li>
-                <li>経営層からの「示唆が欲しい」というリクエストに対応</li>
-                <li>レポート作成から分析・改善提案に時間をシフト</li>
-            </ul>
-
-            <blockquote>
+</div>
+</section>
+<section id="result" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">成果：レポート作成時間の大幅削減</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">定量的な効果</h3>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">指標</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入後</th>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">週次レポート作成時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">3時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="result-number">45分</span></td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">月次レポート作成時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">8時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="result-number">2時間</span></td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">レポートの質（経営層評価）</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">3.2/5</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);"><span class="result-number">4.5/5</span></td>
+</tr>
+</table></div>
+</div>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">定性的な効果</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">数値の「意味」を素早く言語化できるように</li>
+<li style="margin-bottom: 0.5rem;">担当者によるコメントの質のばらつきが減少</li>
+<li style="margin-bottom: 0.5rem;">経営層からの「示唆が欲しい」というリクエストに対応</li>
+<li style="margin-bottom: 0.5rem;">レポート作成から分析・改善提案に時間をシフト</li>
+</ul>
+<blockquote style="background-color: var(--gray-100); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
                 「以前は数字をまとめるだけで精一杯でしたが、今は『だから何をすべきか』まで提案できるようになりました。経営会議での議論も活発になっています。」（マーケティング担当）
             </blockquote>
-
-            <h3>レポートの改善例</h3>
-            <table>
-                <tr>
-                    <th>項目</th>
-                    <th>改善前</th>
-                    <th>改善後</th>
-                </tr>
-                <tr>
-                    <td>サマリー</td>
-                    <td>「売上は720万円でした」</td>
-                    <td>「セール効果で売上8%増。新規よりリピーターが好調」</td>
-                </tr>
-                <tr>
-                    <td>分析</td>
-                    <td>数値の羅列のみ</td>
-                    <td>要因分析と因果関係の説明</td>
-                </tr>
-                <tr>
-                    <td>提案</td>
-                    <td>なし</td>
-                    <td>具体的なアクション項目を3つ提示</td>
-                </tr>
-            </table>
-        </section>
-
-        <section id="summary">
-            <h2>まとめ：AIでデータ活用を加速する</h2>
-
-            <h3>成功のポイント</h3>
-            <ol>
-                <li><strong>背景情報を伝える</strong>：実施した施策や外部要因をGeminiに伝えることで、的確な解釈ができる</li>
-                <li><strong>出力形式を指定</strong>：サマリー・分析・提案など、構成を指定すると使いやすいコメントが得られる</li>
-                <li><strong>経営層の視点を意識</strong>：「経営層向け」と指定することで、適切な粒度のコメントになる</li>
-                <li><strong>定型化する</strong>：よく使うプロンプトはテンプレート化して効率化</li>
-            </ol>
-
-            <h3>今後の展開</h3>
-            <ul>
-                <li>日次レポートの自動配信</li>
-                <li>異常値検知とアラートの自動化</li>
-                <li>予測分析への拡張</li>
-            </ul>
-
-            <div class="highlight-box">
-                <h4>KPIレポート作成にお悩みの企業様へ</h4>
-                <p>「数値はあるけど活かせていない」「レポート作成に時間がかかりすぎる」という悩みは、AIで解決できます。Geminiを活用して、データドリブンな経営を加速しませんか？</p>
-            </div>
-        </section>
-
-        <footer>
-            <p>本記事に関するお問い合わせ、AI活用に関するご相談は、お気軽にデジタルツール研究所までご連絡ください。</p>
-        </footer>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">レポートの改善例</h3>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">項目</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">改善前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">改善後</th>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">サマリー</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">「売上は720万円でした」</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">「セール効果で売上8%増。新規よりリピーターが好調」</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">分析</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">数値の羅列のみ</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">要因分析と因果関係の説明</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">提案</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">なし</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">具体的なアクション項目を3つ提示</td>
+</tr>
+</table></div>
+</section>
+<section id="summary" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">まとめ：AIでデータ活用を加速する</h2>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">成功のポイント</h3>
+<ol style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>背景情報を伝える</strong>：実施した施策や外部要因をGeminiに伝えることで、的確な解釈ができる</li>
+<li style="margin-bottom: 0.5rem;"><strong>出力形式を指定</strong>：サマリー・分析・提案など、構成を指定すると使いやすいコメントが得られる</li>
+<li style="margin-bottom: 0.5rem;"><strong>経営層の視点を意識</strong>：「経営層向け」と指定することで、適切な粒度のコメントになる</li>
+<li style="margin-bottom: 0.5rem;"><strong>定型化する</strong>：よく使うプロンプトはテンプレート化して効率化</li>
+</ol>
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">今後の展開</h3>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">日次レポートの自動配信</li>
+<li style="margin-bottom: 0.5rem;">異常値検知とアラートの自動化</li>
+<li style="margin-bottom: 0.5rem;">予測分析への拡張</li>
+</ul>
+<div class="highlight-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">KPIレポート作成にお悩みの企業様へ</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">「数値はあるけど活かせていない」「レポート作成に時間がかかりすぎる」という悩みは、AIで解決できます。Geminiを活用して、データドリブンな経営を加速しませんか？</p>
+</div>
+</section>
+      </div>
     </article>
+
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

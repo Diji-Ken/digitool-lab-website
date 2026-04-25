@@ -3,770 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>議事録作成から関連業務まで自動化。3ツール連携で会議後の工数をほぼゼロに - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="Google Meet・Gemini・NotebookLMの連携で議事録工数をほぼゼロに。16名コンサル会社が会議後の関連業務まで自動化した実践事例。">
-    <meta name="keywords" content="Google Meet, Gemini, NotebookLM, 議事録, AI活用, 業務効率化, 中小企業, コンサルティング">
-    <title>Meet×Gemini×NotebookLMで議事録工数をほぼゼロに - 16名コンサル会社の自動化事例 | AI活用事例</title>
-    <style>
-        :root {
-            --primary-color: #00796B;
-            --primary-light: #E0F2F1;
-            --primary-dark: #004D40;
-            --accent-color: #26A69A;
-            --text-primary: #212121;
-            --text-secondary: #616161;
-            --bg-light: #FAFAFA;
-            --white: #FFFFFF;
-            --shadow: 0 2px 12px rgba(0,121,107,0.10);
-            --shadow-hover: 0 4px 20px rgba(0,121,107,0.18);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-primary);
-            background-color: var(--bg-light);
-        }
-        
-        .header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Crect x='25' y='25' width='10' height='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .header-content {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .header-label {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-            backdrop-filter: blur(8px);
-        }
-        
-        .header h1 {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: 0.02em;
-        }
-        
-        .header-description {
-            font-size: 1.05rem;
-            opacity: 0.92;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .company-profile {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 36px;
-            border-left: 5px solid var(--primary-color);
-            box-shadow: var(--shadow);
-        }
-        
-        .company-profile h2 {
-            color: var(--primary-color);
-            font-size: 1.15rem;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .company-profile h2::before {
-            content: '💼';
-        }
-        
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-        }
-        
-        .profile-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            background: var(--white);
-            border-radius: 8px;
-            font-size: 0.95rem;
-        }
-        
-        .profile-item .label {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-        
-        .profile-item .value {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .section {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 28px;
-            box-shadow: var(--shadow);
-        }
-        
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 22px;
-            padding-bottom: 14px;
-            border-bottom: 2px solid var(--primary-light);
-        }
-        
-        .section-number {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            color: var(--white);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-        
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        
-        .section p {
-            color: var(--text-secondary);
-            margin-bottom: 18px;
-            text-align: justify;
-        }
-        
-        .challenge-box {
-            background: #FFF3E0;
-            border-left: 4px solid #FF9800;
-            border-radius: 0 10px 10px 0;
-            padding: 18px 22px;
-            margin: 20px 0;
-        }
-        
-        .challenge-box h4 {
-            color: #E65100;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .challenge-box ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .challenge-box li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #5D4037;
-        }
-        
-        .challenge-box li::before {
-            content: '△';
-            position: absolute;
-            left: 0;
-            color: #FF9800;
-            font-weight: bold;
-        }
-        
-        .solution-box {
-            background: var(--primary-light);
-            border-radius: 10px;
-            padding: 22px;
-            margin: 20px 0;
-        }
-        
-        .solution-box h4 {
-            color: var(--primary-dark);
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-        
-        .flow-diagram {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        
-        .flow-step {
-            background: var(--white);
-            border: 2px solid var(--primary-color);
-            border-radius: 10px;
-            padding: 12px 18px;
-            text-align: center;
-            min-width: 120px;
-        }
-        
-        .flow-step .icon {
-            font-size: 1.5rem;
-            margin-bottom: 6px;
-        }
-        
-        .flow-step .name {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--primary-color);
-        }
-        
-        .flow-arrow {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin: 24px 0;
-        }
-        
-        .result-card {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            color: var(--white);
-            padding: 22px;
-            border-radius: 14px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .result-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .result-card .metric {
-            font-size: 2.2rem;
-            font-weight: 800;
-            display: block;
-            margin-bottom: 6px;
-        }
-        
-        .result-card .unit {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-        
-        .result-card .description {
-            font-size: 0.85rem;
-            opacity: 0.85;
-            margin-top: 8px;
-        }
-        
-        .voice-box {
-            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
-            border-radius: 14px;
-            padding: 24px;
-            margin: 24px 0;
-            position: relative;
-        }
-        
-        .voice-box::before {
-            content: '"';
-            font-size: 4rem;
-            color: #388E3C;
-            opacity: 0.2;
-            position: absolute;
-            top: 5px;
-            left: 15px;
-            font-family: Georgia, serif;
-        }
-        
-        .voice-box p {
-            font-style: italic;
-            color: var(--text-primary);
-            padding-left: 35px;
-            margin-bottom: 10px;
-        }
-        
-        .voice-box .role {
-            text-align: right;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-style: normal;
-        }
-        
-        .point-box {
-            background: #E3F2FD;
-            border-radius: 10px;
-            padding: 18px 22px;
-            margin: 20px 0;
-        }
-        
-        .point-box h4 {
-            color: #1565C0;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .point-box p {
-            font-size: 0.95rem;
-            color: #37474F;
-            margin: 0;
-        }
-        
-        .automation-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        
-        .automation-list li {
-            background: var(--bg-light);
-            padding: 16px 20px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-        
-        .automation-list li .num {
-            background: var(--primary-color);
-            color: var(--white);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-        
-        .automation-list li .content h5 {
-            color: var(--text-primary);
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-        
-        .automation-list li .content p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin: 0;
-        }
-        
-        .summary-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
-            color: var(--white);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 28px;
-        }
-        
-        .summary-section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .summary-section h2::before {
-            content: '📋';
-        }
-        
-        .summary-section p {
-            opacity: 0.95;
-            margin-bottom: 16px;
-        }
-        
-        .key-points {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .key-points li {
-            background: rgba(255,255,255,0.15);
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            backdrop-filter: blur(4px);
-        }
-        
-        .key-points li::before {
-            content: '★';
-            color: #FFEB3B;
-        }
-        
-        .cta-section {
-            text-align: center;
-            padding: 36px 20px;
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-        }
-        
-        .cta-section h3 {
-            font-size: 1.25rem;
-            color: var(--text-primary);
-            margin-bottom: 14px;
-        }
-        
-        .cta-section p {
-            color: var(--text-secondary);
-            margin-bottom: 22px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            color: var(--white);
-            padding: 14px 36px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,121,107,0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,121,107,0.4);
-        }
-        
-        .tool-tag {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-right: 8px;
-            margin-bottom: 6px;
-        }
-        
-        .benefit-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .benefit-list li {
-            padding: 12px 0;
-            border-bottom: 1px dashed var(--primary-light);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-        
-        .benefit-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .benefit-list li::before {
-            content: '◎';
-            color: var(--accent-color);
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        
-        @media (max-width: 600px) {
-            .header {
-                padding: 40px 16px;
-            }
-            
-            .container {
-                padding: 24px 16px;
-            }
-            
-            .section {
-                padding: 24px 18px;
-            }
-            
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .result-card .metric {
-                font-size: 1.9rem;
-            }
-            
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .flow-diagram {
-                flex-direction: column;
-            }
-            
-            .flow-arrow {
-                transform: rotate(90deg);
-            }
-        }
-    </style>
+    <meta name="keywords" content="ITサービス業, AI活用, 業務効率化, Gemini, NotebookLM, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-meet-gemini-minutes.html">
+    <meta property="og:title" content="議事録作成から関連業務まで自動化。3ツール連携で会議後の工数をほぼゼロに | デジタルツール研究所">
+    <meta property="og:description" content="Google Meet・Gemini・NotebookLMの連携で議事録工数をほぼゼロに。16名コンサル会社が会議後の関連業務まで自動化した実践事例。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-meet-gemini-minutes.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-120.png">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <span class="header-label">📝 AI活用事例 #38</span>
-            <h1>Meet×Gemini×NotebookLMで<br>議事録工数をほぼゼロに</h1>
-            <p class="header-description">会議の議事録作成から情報共有、次回議題作成まで、会議後の関連業務をすべて自動化したコンサルティング会社の実践事例</p>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
         </div>
-    </header>
-    
-    <main class="container">
-        <section class="company-profile">
-            <h2>導入企業プロフィール</h2>
-            <div class="profile-grid">
-                <div class="profile-item">
-                    <div>
-                        <span class="label">業種</span><br>
-                        <span class="value">経営コンサルティング</span>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <div>
-                        <span class="label">従業員数</span><br>
-                        <span class="value">16名</span>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <div>
-                        <span class="label">課題</span><br>
-                        <span class="value">議事録・情報共有の負担</span>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <div>
-                        <span class="label">使用ツール</span><br>
-                        <span class="value">Meet + Gemini + NotebookLM</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <div class="section-header">
-                <span class="section-number">1</span>
-                <h2 class="section-title">抱えていた課題</h2>
-            </div>
-            
-            <p>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">ITサービス業の事例</span>
+      </div>
+    </nav>
+
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--cyan-100); color: var(--cyan-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">ITサービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-03-21</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">議事録作成から関連業務まで自動化。3ツール連携で会議後の工数をほぼゼロに</h1>
+
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=NotebookLM" class="article-tag">NotebookLM</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-120.png" alt="議事録作成から関連業務まで自動化。3ツール連携で会議後の工数をほぼゼロに" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section class="company-profile" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">導入企業プロフィール</h2>
+<div class="profile-grid" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="profile-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div>
+<span class="label">業種</span><br/>
+<span class="value">経営コンサルティング</span>
+</div>
+</div>
+<div class="profile-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div>
+<span class="label">従業員数</span><br/>
+<span class="value">16名</span>
+</div>
+</div>
+<div class="profile-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div>
+<span class="label">課題</span><br/>
+<span class="value">議事録・情報共有の負担</span>
+</div>
+</div>
+<div class="profile-item" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div>
+<span class="label">使用ツール</span><br/>
+<span class="value">Meet + Gemini + NotebookLM</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="section-number">1</span>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">抱えていた課題</h2>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                 経営コンサルティングを手がける16名規模の企業では、クライアントとのオンライン会議が毎日複数回発生します。会議後の議事録作成、欠席者への情報共有、上長への報告、次回議題の準備など、会議に付随する業務が大きな負担となっていました。
             </p>
-            
-            <div class="challenge-box">
-                <h4>⚠️ 具体的な課題</h4>
-                <ul>
-                    <li>1時間の会議に対して、議事録作成に30分〜1時間かかっていた</li>
-                    <li>欠席者への情報共有のため、議事録を別途整理する必要があった</li>
-                    <li>上長への報告用に、要点をまとめ直す作業が発生していた</li>
-                    <li>次回会議の議題作成が属人化し、引き継ぎが困難だった</li>
-                    <li>本業のコンサルティング業務に集中したいメンバーにとって大きなストレス</li>
-                </ul>
-            </div>
-            
-            <p>
+<div class="challenge-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">⚠️ 具体的な課題</h4>
+<ul style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">1時間の会議に対して、議事録作成に30分〜1時間かかっていた</li>
+<li style="margin-bottom: 0.5rem;">欠席者への情報共有のため、議事録を別途整理する必要があった</li>
+<li style="margin-bottom: 0.5rem;">上長への報告用に、要点をまとめ直す作業が発生していた</li>
+<li style="margin-bottom: 0.5rem;">次回会議の議題作成が属人化し、引き継ぎが困難だった</li>
+<li style="margin-bottom: 0.5rem;">本業のコンサルティング業務に集中したいメンバーにとって大きなストレス</li>
+</ul>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                 「議事録作成はルーティンながらも軽視できないタスク」という認識はあったものの、本業に集中したいメンバーにとっては、毎回の手作業が大きな心理的負担となっていました。
             </p>
-        </section>
-        
-        <section class="section">
-            <div class="section-header">
-                <span class="section-number">2</span>
-                <h2 class="section-title">実施した施策</h2>
-            </div>
-            
-            <p>
-                <span class="tool-tag">Google Meet</span><span class="tool-tag">Gemini</span><span class="tool-tag">NotebookLM</span>
+</section>
+<section class="section" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="section-number">2</span>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">実施した施策</h2>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+<span class="tool-tag">Google Meet</span><span class="tool-tag">Gemini</span><span class="tool-tag">NotebookLM</span>
                 3つのGoogleツールを連携させ、会議の文字起こしから議事録作成、情報蓄積までを一気通貫で自動化する仕組みを構築しました。
             </p>
-            
-            <div class="flow-diagram">
-                <div class="flow-step">
-                    <div class="icon">🎥</div>
-                    <div class="name">Google Meet<br>文字起こし</div>
-                </div>
-                <span class="flow-arrow">→</span>
-                <div class="flow-step">
-                    <div class="icon">✨</div>
-                    <div class="name">Gemini<br>要約・整理</div>
-                </div>
-                <span class="flow-arrow">→</span>
-                <div class="flow-step">
-                    <div class="icon">📚</div>
-                    <div class="name">NotebookLM<br>蓄積・活用</div>
-                </div>
-            </div>
-            
-            <div class="solution-box">
-                <h4>📌 自動化の流れ</h4>
-                <ul class="automation-list">
-                    <li>
-                        <span class="num">1</span>
-                        <div class="content">
-                            <h5>会議の文字起こし</h5>
-                            <p>Google Meetの自動文字起こし機能をONにして会議を実施。発言内容がリアルタイムでテキスト化される</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="num">2</span>
-                        <div class="content">
-                            <h5>Geminiによる要約・議事録化</h5>
-                            <p>文字起こしデータをGeminiに渡し、「議事録形式でまとめて」「決定事項とアクションアイテムを抽出して」と指示</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="num">3</span>
-                        <div class="content">
-                            <h5>NotebookLMへの蓄積</h5>
-                            <p>作成された議事録をNotebookLMに登録。過去の議事録を横断検索したり、質問形式で情報を引き出せる状態に</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="num">4</span>
-                        <div class="content">
-                            <h5>次回議題の自動生成</h5>
-                            <p>NotebookLMに「今回の積み残し課題と次回までのアクションをまとめて」と質問し、次回議題の素案を自動作成</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="point-box">
-                <h4>💡 工夫したポイント</h4>
-                <p>
+<div class="flow-diagram" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="flow-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">🎥</div>
+<div class="name" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">Google Meet<br/>文字起こし</div>
+</div>
+<span class="flow-arrow">&rarr;</span>
+<div class="flow-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">✨</div>
+<div class="name" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">Gemini<br/>要約・整理</div>
+</div>
+<span class="flow-arrow">&rarr;</span>
+<div class="flow-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">📚</div>
+<div class="name" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">NotebookLM<br/>蓄積・活用</div>
+</div>
+</div>
+<div class="solution-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">📌 自動化の流れ</h4>
+<ul class="automation-list" style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">
+<span class="num">1</span>
+<div class="content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>会議の文字起こし</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">Google Meetの自動文字起こし機能をONにして会議を実施。発言内容がリアルタイムでテキスト化される</p>
+</div>
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span class="num">2</span>
+<div class="content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>Geminiによる要約・議事録化</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">文字起こしデータをGeminiに渡し、「議事録形式でまとめて」「決定事項とアクションアイテムを抽出して」と指示</p>
+</div>
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span class="num">3</span>
+<div class="content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>NotebookLMへの蓄積</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">作成された議事録をNotebookLMに登録。過去の議事録を横断検索したり、質問形式で情報を引き出せる状態に</p>
+</div>
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span class="num">4</span>
+<div class="content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h5>次回議題の自動生成</h5>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">NotebookLMに「今回の積み残し課題と次回までのアクションをまとめて」と質問し、次回議題の素案を自動作成</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="point-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">💡 工夫したポイント</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     Geminiへの指示テンプレートを社内で統一し、誰が議事録を作成しても同じフォーマットになるようにしました。また、NotebookLMにはクライアントごとにプロジェクトを分けて議事録を蓄積することで、「このクライアントとの過去の議論で〇〇について話したのはいつ？」といった質問にも即座に回答できる環境を整えました。
                 </p>
-            </div>
-        </section>
-        
-        <section class="section">
-            <div class="section-header">
-                <span class="section-number">3</span>
-                <h2 class="section-title">得られた成果</h2>
-            </div>
-            
-            <div class="results-grid">
-                <div class="result-card">
-                    <span class="metric">95%</span>
-                    <span class="unit">削減</span>
-                    <span class="description">議事録作成時間</span>
-                </div>
-                <div class="result-card">
-                    <span class="metric">ほぼ0</span>
-                    <span class="unit">分</span>
-                    <span class="description">手作業による議事録作成</span>
-                </div>
-                <div class="result-card">
-                    <span class="metric">100%</span>
-                    <span class="unit">解消</span>
-                    <span class="description">情報共有の抜け漏れ</span>
-                </div>
-            </div>
-            
-            <div class="voice-box">
-                <p>
+</div>
+</section>
+<section class="section" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="section-number">3</span>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">得られた成果</h2>
+</div>
+<div class="results-grid" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<div class="result-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="metric">95%</span>
+<span class="unit">削減</span>
+<span class="description">議事録作成時間</span>
+</div>
+<div class="result-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="metric">ほぼ0</span>
+<span class="unit">分</span>
+<span class="description">手作業による議事録作成</span>
+</div>
+<div class="result-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="metric">100%</span>
+<span class="unit">解消</span>
+<span class="description">情報共有の抜け漏れ</span>
+</div>
+</div>
+<div class="voice-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     「会議後の議事録作成や情報共有のストレスが完全に解消されました！もう手作業には戻れません。NotebookLMに蓄積された過去の議事録から、必要な情報をすぐに引き出せるのも便利です。」
                 </p>
-                <span class="role">— コンサルタント Dさん</span>
-            </div>
-            
-            <h3 style="font-size: 1.1rem; margin: 28px 0 16px; color: var(--text-primary);">自動化された関連業務</h3>
-            <ul class="benefit-list">
-                <li>議事録の作成・フォーマット整形</li>
-                <li>欠席者への情報共有（議事録URLの送付のみで完了）</li>
-                <li>上長への報告（要約版の自動生成）</li>
-                <li>次回会議の議題作成（積み残し課題の自動抽出）</li>
-                <li>過去の議論内容の検索・参照</li>
-            </ul>
-        </section>
-        
-        <section class="section">
-            <div class="section-header">
-                <span class="section-number">4</span>
-                <h2 class="section-title">導入のポイント</h2>
-            </div>
-            
-            <p>
+<span class="role">&mdash; コンサルタント Dさん</span>
+</div>
+<h3 style="font-size: 1.1rem; margin: 28px 0 16px; color: var(--text-primary); font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">自動化された関連業務</h3>
+<ul class="benefit-list" style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">議事録の作成・フォーマット整形</li>
+<li style="margin-bottom: 0.5rem;">欠席者への情報共有（議事録URLの送付のみで完了）</li>
+<li style="margin-bottom: 0.5rem;">上長への報告（要約版の自動生成）</li>
+<li style="margin-bottom: 0.5rem;">次回会議の議題作成（積み残し課題の自動抽出）</li>
+<li style="margin-bottom: 0.5rem;">過去の議論内容の検索・参照</li>
+</ul>
+</section>
+<section class="section" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<span class="section-number">4</span>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">導入のポイント</h2>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                 この自動化の仕組みは、Google Workspaceを利用している企業であれば、追加コストなしで導入できます。特別なシステム開発は不要で、既存のツールの機能を組み合わせるだけで実現可能です。
             </p>
-            
-            <div class="point-box">
-                <h4>🚀 段階的な導入がおすすめ</h4>
-                <p>
+<div class="point-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan-500); margin: 2rem 0;">
+<h4 style="font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin: 1.5rem 0 0.75rem;">🚀 段階的な導入がおすすめ</h4>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     まずはGoogle Meetの文字起こし機能だけを有効にし、その出力をGeminiで整形する運用から始めましょう。慣れてきたらNotebookLMへの蓄積を追加し、最終的には次回議題の自動生成まで拡張していくのがスムーズです。一度にすべてを導入しようとすると定着しづらいため、段階的なアプローチをお勧めします。
                 </p>
-            </div>
-        </section>
-        
-        <section class="summary-section">
-            <h2>まとめ</h2>
-            <p>
+</div>
+</section>
+<section class="summary-section" style="margin-bottom: 3rem;">
+<h2 style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--cyan-500); padding-left: 1rem;">まとめ</h2>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                 16名規模のコンサルティング会社において、Google Meet・Gemini・NotebookLMの連携により、議事録作成に関わる工数をほぼゼロにすることができました。会議後の関連業務まで自動化することで、コンサルタントが本業に集中できる環境が整いました。
             </p>
-            <ul class="key-points">
-                <li>Google Meetの文字起こし→Geminiの要約→NotebookLMの蓄積という流れを構築</li>
-                <li>議事録作成だけでなく、情報共有・報告・次回議題作成まで自動化</li>
-                <li>過去の議事録を横断検索できる「会議ナレッジベース」が構築された</li>
-                <li>追加コストなし、Google Workspaceの既存機能の組み合わせで実現</li>
-            </ul>
-        </section>
-        
-        <section class="cta-section">
-            <h3>会議関連業務の効率化を検討していますか？</h3>
-            <p>議事録自動化の導入について、お気軽にご相談ください。</p>
-            <a href="/contact" class="cta-button">無料相談を予約する</a>
-        </section>
-    </main>
+<ul class="key-points" style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">Google Meetの文字起こし&rarr;Geminiの要約&rarr;NotebookLMの蓄積という流れを構築</li>
+<li style="margin-bottom: 0.5rem;">議事録作成だけでなく、情報共有・報告・次回議題作成まで自動化</li>
+<li style="margin-bottom: 0.5rem;">過去の議事録を横断検索できる「会議ナレッジベース」が構築された</li>
+<li style="margin-bottom: 0.5rem;">追加コストなし、Google Workspaceの既存機能の組み合わせで実現</li>
+</ul>
+</section>
+<section class="cta-section" style="margin-bottom: 3rem;">
+<h3 style="font-size: 1.25rem; font-weight: 700; color: var(--cyan-600); margin: 2rem 0 1rem;">会議関連業務の効率化を検討していますか？</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">議事録自動化の導入について、お気軽にご相談ください。</p>
+<a class="cta-button" href="/contact" style="color: var(--cyan-600); font-weight: 600;">無料相談を予約する</a>
+</section>
+      </div>
+    </article>
+
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

@@ -3,963 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【実践事例】Geminiで複雑な人事データを自動整理！データ読み解き時間ゼロで資料作成を大幅効率化 - ご支援事例 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="Geminiを活用して複雑な人事異動データを自動整理。グループ化・期間結合・並び替えをAIが処理し、資料作成時間を大幅短縮した中小企業の成功事例をご紹介します。">
-    <meta name="keywords" content="Gemini, 人事データ, データ整理, 人事異動, AI活用, 業務効率化, 資料作成, 中小企業DX, データ自動整理">
-    <title>【実践事例】Geminiで複雑な人事データを自動整理！データ読み解き時間ゼロで資料作成を大幅効率化 | AI活用事例</title>
-
-    <style>
-        :root {
-            --primary-color: #5E35B1;
-            --primary-light: #7E57C2;
-            --primary-dark: #4527A0;
-            --accent-color: #00BCD4;
-            --accent-light: #4DD0E1;
-            --text-color: #263238;
-            --text-light: #546E7A;
-            --bg-color: #FAFAFA;
-            --bg-accent: #EDE7F6;
-            --white: #FFFFFF;
-            --shadow-sm: 0 2px 8px rgba(94, 53, 177, 0.08);
-            --shadow-md: 0 4px 16px rgba(94, 53, 177, 0.12);
-            --shadow-lg: 0 8px 32px rgba(94, 53, 177, 0.16);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* ヘッダースタイル */
-        .article-header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--primary-light) 100%);
-            color: var(--white);
-            padding: 60px 40px;
-            border-radius: var(--border-radius);
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            right: -5%;
-            width: 280px;
-            height: 280px;
-            background: radial-gradient(circle, rgba(0,188,212,0.25) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .article-header::after {
-            content: '';
-            position: absolute;
-            bottom: -40%;
-            left: 10%;
-            width: 220px;
-            height: 220px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .header-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-label::before {
-            content: '📊';
-        }
-
-        .article-header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-description {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-        }
-
-        /* メインビジュアル */
-        .main-visual {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-md);
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .visual-grid {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .visual-box {
-            background: var(--bg-accent);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            text-align: center;
-        }
-
-        .visual-box.before {
-            border: 2px dashed #BDBDBD;
-            background: #FAFAFA;
-        }
-
-        .visual-box.after {
-            border: 2px solid var(--primary-color);
-            background: linear-gradient(135deg, #EDE7F6 0%, #D1C4E9 100%);
-        }
-
-        .visual-box-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .visual-box-label {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .visual-box-value {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-
-        .visual-box.before .visual-box-value {
-            color: #E53935;
-        }
-
-        .visual-box.after .visual-box-value {
-            color: var(--primary-dark);
-        }
-
-        .visual-arrow {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* 企業紹介カード */
-        .company-profile {
-            background: linear-gradient(145deg, var(--white) 0%, #F5F5F5 100%);
-            border-radius: var(--border-radius);
-            padding: 35px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(94, 53, 177, 0.1);
-        }
-
-        .company-profile-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--bg-accent);
-        }
-
-        .company-profile-title::before {
-            content: '🏢';
-            font-size: 1.4rem;
-        }
-
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .profile-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .profile-item-icon {
-            width: 42px;
-            height: 42px;
-            background: var(--bg-accent);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .profile-item-content {
-            flex: 1;
-        }
-
-        .profile-item-label {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-bottom: 4px;
-        }
-
-        .profile-item-value {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-color);
-        }
-
-        /* セクションスタイル */
-        .content-section {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--bg-accent);
-        }
-
-        .section-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.3rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .section-title-group {
-            flex: 1;
-        }
-
-        .section-subtitle {
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-
-        .section-content p {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        /* 課題カード */
-        .challenge-card {
-            background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 25px 0;
-            border-left: 5px solid #E53935;
-        }
-
-        .challenge-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            color: #C62828;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        .challenge-title::before {
-            content: '⚠️';
-        }
-
-        .challenge-list {
-            list-style: none;
-        }
-
-        .challenge-list li {
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            border-bottom: 1px dashed rgba(198, 40, 40, 0.2);
-        }
-
-        .challenge-list li:last-child {
-            border-bottom: none;
-        }
-
-        .challenge-list li::before {
-            content: '✗';
-            position: absolute;
-            left: 0;
-            color: #C62828;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        /* ソリューションボックス */
-        .solution-box {
-            background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 25px 0;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .solution-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            color: #00838F;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        .solution-title::before {
-            content: '💡';
-        }
-
-        /* データ整理の例示 */
-        .data-example {
-            background: #263238;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            margin: 25px 0;
-            color: #ECEFF1;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 0.85rem;
-            position: relative;
-            overflow-x: auto;
-        }
-
-        .data-example::before {
-            content: attr(data-label);
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: var(--accent-color);
-            color: var(--text-color);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .data-row {
-            display: flex;
-            gap: 20px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .data-row:last-child {
-            border-bottom: none;
-        }
-
-        .data-row.highlight {
-            background: rgba(0, 188, 212, 0.2);
-            margin: 0 -15px;
-            padding: 8px 15px;
-            border-radius: 6px;
-        }
-
-        /* プロセス表示 */
-        .process-flow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-            padding: 30px;
-            background: #F5F5F5;
-            border-radius: var(--border-radius);
-        }
-
-        .process-step {
-            background: var(--white);
-            padding: 20px 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            min-width: 130px;
-        }
-
-        .process-step.ai {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
-            color: var(--white);
-        }
-
-        .process-step-icon {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .process-step-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .process-arrow {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        /* 機能リスト */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .feature-card {
-            background: var(--bg-accent);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .feature-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-color);
-            margin-bottom: 8px;
-        }
-
-        .feature-description {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        /* 成果メトリクス */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .metric-card {
-            background: linear-gradient(145deg, var(--white) 0%, var(--bg-accent) 100%);
-            border-radius: var(--border-radius);
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid rgba(94, 53, 177, 0.2);
-            transition: var(--transition);
-        }
-
-        .metric-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .metric-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .metric-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* 声ボックス */
-        .voice-box {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 25px 0;
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--primary-color);
-            position: relative;
-        }
-
-        .voice-box::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--bg-accent);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .voice-content {
-            position: relative;
-            z-index: 1;
-            padding-left: 30px;
-            font-style: italic;
-            color: var(--text-color);
-            line-height: 1.8;
-        }
-
-        .voice-author {
-            margin-top: 15px;
-            padding-left: 30px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-style: normal;
-        }
-
-        /* ポイントカード */
-        .point-card {
-            background: linear-gradient(135deg, var(--bg-accent) 0%, #D1C4E9 100%);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 25px 0;
-        }
-
-        .point-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        .point-title::before {
-            content: '💎';
-        }
-
-        /* コードブロック風 */
-        .prompt-box {
-            background: #263238;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            margin: 25px 0;
-            color: #ECEFF1;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 0.9rem;
-            position: relative;
-            overflow-x: auto;
-        }
-
-        .prompt-box::before {
-            content: 'Geminiへのプロンプト例';
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: var(--accent-color);
-            color: var(--text-color);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .prompt-text {
-            color: #80CBC4;
-            white-space: pre-wrap;
-            line-height: 1.8;
-        }
-
-        /* CTAボックス */
-        .cta-box {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            border-radius: var(--border-radius);
-            padding: 50px 40px;
-            text-align: center;
-            color: var(--white);
-            margin: 40px 0;
-        }
-
-        .cta-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .cta-description {
-            font-size: 1.05rem;
-            opacity: 0.95;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--accent-color);
-            color: var(--text-color);
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-        }
-
-        /* 比較テーブル */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 15px 20px;
-            text-align: left;
-            border-bottom: 1px solid rgba(94, 53, 177, 0.1);
-        }
-
-        .comparison-table th {
-            background: var(--primary-color);
-            color: var(--white);
-            font-weight: 600;
-        }
-
-        .comparison-table tr:nth-child(even) {
-            background: var(--bg-accent);
-        }
-
-        .comparison-table tr:hover {
-            background: rgba(94, 53, 177, 0.08);
-        }
-
-        /* ヒントボックス */
-        .hint-box {
-            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            margin: 25px 0;
-            border: 2px solid #FFB300;
-        }
-
-        .hint-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            color: #F57F17;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-
-        .hint-title::before {
-            content: '💡';
-        }
-
-        /* スクロール効果 */
-        .scroll-fade {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .scroll-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* レスポンシブ対応 */
-        @media (max-width: 768px) {
-            .article-container {
-                padding: 15px;
-            }
-
-            .article-header {
-                padding: 40px 25px;
-            }
-
-            .article-header h1 {
-                font-size: 1.6rem;
-            }
-
-            .main-visual {
-                padding: 25px;
-            }
-
-            .visual-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .visual-arrow {
-                transform: rotate(90deg);
-            }
-
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .content-section {
-                padding: 25px;
-            }
-
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-flow {
-                flex-direction: column;
-            }
-
-            .process-arrow {
-                transform: rotate(90deg);
-            }
-        }
-    </style>
+    <meta name="keywords" content="サービス業, AI活用, 業務効率化, Gemini, DX推進, デジタルツール研究所">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://digitool-lab.com/blog/ai-gemini-hr-data-organization.html">
+    <meta property="og:title" content="【実践事例】Geminiで複雑な人事データを自動整理！データ読み解き時間ゼロで資料作成を大幅効率化 | デジタルツール研究所">
+    <meta property="og:description" content="Geminiを活用して複雑な人事異動データを自動整理。グループ化・期間結合・並び替えをAIが処理し、資料作成時間を大幅短縮した中小企業の成功事例をご紹介します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://digitool-lab.com/blog/ai-gemini-hr-data-organization.html">
+    <meta property="og:image" content="https://digitool-lab.com/images/case-studies/case-097.png">
+    <link rel="stylesheet" href="../css/style.css?v=2024120513">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BFWCDFQXC8", {
+      "anonymize_ip": true,
+      "allow_google_signals": false,
+      "allow_ad_personalization_signals": false
+    });
+  </script>
 </head>
 <body>
-    <article class="article-container">
-        <!-- ヘッダー -->
-        <header class="article-header">
-            <div class="header-label">データ整理の自動化</div>
-            <h1>Geminiで複雑な人事データを自動整理！<br>データ読み解き時間ゼロで<br>資料作成を大幅効率化</h1>
-            <p class="header-description">
-                人事異動に伴う膨大なデータ整理をGeminiが自動化。グループ化・期間結合・並び替えを
-                AIが瞬時に処理し、本来注力すべき資料作成に集中できる環境を実現した事例をご紹介します。
-            </p>
-        </header>
-
-        <!-- メインビジュアル -->
-        <div class="main-visual scroll-fade">
-            <div class="visual-grid">
-                <div class="visual-box before">
-                    <div class="visual-box-icon">📑</div>
-                    <div class="visual-box-label">導入前</div>
-                    <div class="visual-box-value">データ読み解きに<br>3時間以上</div>
-                </div>
-                <div class="visual-arrow">→</div>
-                <div class="visual-box after">
-                    <div class="visual-box-icon">⚡</div>
-                    <div class="visual-box-label">導入後</div>
-                    <div class="visual-box-value">整理完了まで<br>わずか5分</div>
-                </div>
-            </div>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所 ロゴ">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about.html">私たちについて</a>
+          <a href="../service.html">事業内容</a>
+          <a href="../case-studies.html" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact.html" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
         </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about.html">私たちについて</a>
+        <a href="../service.html">事業内容</a>
+        <a href="../case-studies.html" class="active">ご支援事例</a>
+        <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-        <!-- 企業プロフィール -->
-        <div class="company-profile scroll-fade">
-            <div class="company-profile-title">導入企業プロフィール</div>
-            <div class="profile-grid">
-                <div class="profile-item">
-                    <div class="profile-item-icon">🏭</div>
-                    <div class="profile-item-content">
-                        <div class="profile-item-label">業種</div>
-                        <div class="profile-item-value">人材サービス業</div>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <div class="profile-item-icon">👥</div>
-                    <div class="profile-item-content">
-                        <div class="profile-item-label">従業員数</div>
-                        <div class="profile-item-value">22名</div>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <div class="profile-item-icon">🎯</div>
-                    <div class="profile-item-content">
-                        <div class="profile-item-label">対象業務</div>
-                        <div class="profile-item-value">人事異動データの整理・資料化</div>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <div class="profile-item-icon">🔧</div>
-                    <div class="profile-item-content">
-                        <div class="profile-item-label">使用ツール</div>
-                        <div class="profile-item-value">Gemini</div>
-                    </div>
-                </div>
-            </div>
+  <main class="flex-grow">
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../index.html" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <a href="../case-studies.html" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">&gt;</span>
+        <span style="color: var(--gray-800);">サービス業の事例</span>
+      </div>
+    </nav>
+
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--green-100); color: var(--green-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">サービス業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-01-23</time>
         </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">【実践事例】Geminiで複雑な人事データを自動整理！データ読み解き時間ゼロで資料作成を大幅効率化</h1>
 
-        <!-- 課題セクション -->
-        <section class="content-section scroll-fade">
-            <div class="section-header">
-                <div class="section-number">1</div>
-                <div class="section-title-group">
-                    <div class="section-subtitle">Challenge</div>
-                    <h2 class="section-title">抱えていた課題</h2>
-                </div>
-            </div>
-            <div class="section-content">
-                <p>
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <a href="../case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="../case-studies.html?tag=Gemini" class="article-tag">Gemini</a>
+            <a href="../case-studies.html?tag=DX%E6%8E%A8%E9%80%B2" class="article-tag">DX推進</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-studies/case-097.png" alt="【実践事例】Geminiで複雑な人事データを自動整理！データ読み解き時間ゼロで資料作成を大幅効率化" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+<section class="content-section scroll-fade" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">1</div>
+<div class="section-title-group" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-subtitle" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">Challenge</div>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">抱えていた課題</h2>
+</div>
+</div>
+<div class="section-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     同社では、派遣スタッフの人事異動に関するデータを取りまとめ、クライアント向けの
                     報告資料を作成する業務がありました。しかし、このデータ整理作業には様々な課題が
                     ありました。
                 </p>
-
-                <div class="challenge-card">
-                    <div class="challenge-title">従来のデータ整理における問題点</div>
-                    <ul class="challenge-list">
-                        <li>人事異動データが複雑で、内容を読み解くだけで膨大な時間がかかる</li>
-                        <li>同一人物のデータが期間の重複や分割により煩雑化し、整理が困難</li>
-                        <li>時系列での並び替えや、連続する期間の結合が手作業では限界がある</li>
-                        <li>データ整理に集中するあまり、資料の中身を作り込む時間が取れない</li>
-                        <li>人為的ミスが発生しやすく、チェック作業にも時間がかかる</li>
-                    </ul>
-                </div>
-
-                <p>
+<div class="challenge-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="challenge-title" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">従来のデータ整理における問題点</div>
+<ul class="challenge-list" style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">人事異動データが複雑で、内容を読み解くだけで膨大な時間がかかる</li>
+<li style="margin-bottom: 0.5rem;">同一人物のデータが期間の重複や分割により煩雑化し、整理が困難</li>
+<li style="margin-bottom: 0.5rem;">時系列での並び替えや、連続する期間の結合が手作業では限界がある</li>
+<li style="margin-bottom: 0.5rem;">データ整理に集中するあまり、資料の中身を作り込む時間が取れない</li>
+<li style="margin-bottom: 0.5rem;">人為的ミスが発生しやすく、チェック作業にも時間がかかる</li>
+</ul>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     特に難易度が高かったのは、「同じ対象であっても期間の重複や分割によってデータが
                     煩雑になっている」という点でした。例えば、同一人物の所属部署の変遷を追う際、
                     別々のレコードとして記録されているデータを手動で紐付け、連続する期間を結合する
                     作業は、非常に手間がかかり、ミスも起こりやすい状況でした。
                 </p>
-
-                <div class="data-example" data-label="整理前のデータ（例）">
-                    <div class="data-row">田中太郎 | 営業部 | 2023/04/01 - 2023/06/30</div>
-                    <div class="data-row">田中太郎 | 営業部 | 2023/07/01 - 2023/09/30</div>
-                    <div class="data-row">田中太郎 | 企画部 | 2023/10/01 - 2024/03/31</div>
-                    <div class="data-row">鈴木花子 | 総務部 | 2023/04/01 - 2024/03/31</div>
-                    <div class="data-row">田中太郎 | 企画部 | 2024/04/01 - 現在</div>
-                </div>
-
-                <div class="voice-box">
-                    <div class="voice-content">
+<div class="data-example" data-label="整理前のデータ（例）" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">田中太郎 | 営業部 | 2023/04/01 - 2023/06/30</div>
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">田中太郎 | 営業部 | 2023/07/01 - 2023/09/30</div>
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">田中太郎 | 企画部 | 2023/10/01 - 2024/03/31</div>
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">鈴木花子 | 総務部 | 2023/04/01 - 2024/03/31</div>
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">田中太郎 | 企画部 | 2024/04/01 - 現在</div>
+</div>
+<div class="voice-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="voice-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
                         「データを時系列に並べ替えたり、連続する期間をまとめたりする作業の難易度が
                         とても高くて...。同じ人のデータなのに、バラバラに記録されているので、
                         毎回パズルを解くような気持ちで作業していました。」
                     </div>
-                    <div class="voice-author">― 人事・総務担当者</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 施策セクション -->
-        <section class="content-section scroll-fade">
-            <div class="section-header">
-                <div class="section-number">2</div>
-                <div class="section-title-group">
-                    <div class="section-subtitle">Solution</div>
-                    <h2 class="section-title">実施した施策</h2>
-                </div>
-            </div>
-            <div class="section-content">
-                <p>
+<div class="voice-author" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">&horbar; 人事・総務担当者</div>
+</div>
+</div>
+</section>
+<section class="content-section scroll-fade" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">2</div>
+<div class="section-title-group" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-subtitle" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">Solution</div>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">実施した施策</h2>
+</div>
+</div>
+<div class="section-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     同社では、Geminiにデータを読み込ませ、データの整理・整形を自動化しました。
                     人間が手作業で行っていた「データの読み解き」という最も時間のかかる工程を
                     AIに任せることで、劇的な効率化を実現しました。
                 </p>
-
-                <div class="solution-box">
-                    <div class="solution-title">Geminiによるデータ整理の自動化</div>
-                    <p>
+<div class="solution-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="solution-title" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">Geminiによるデータ整理の自動化</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                         Geminiにデータをそのまま貼り付け、「同じ対象のグループ化」「連続する期間の結合」
                         「開始日順での並び替え」などを指示。データを読み解く作業がなくなり、
                         資料作成全体のスピードが向上しました。
                     </p>
-                </div>
-
-                <h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark);">
+</div>
+<h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark); font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">
                     📋 Geminiに依頼した処理内容
                 </h3>
-
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">👥</div>
-                        <div class="feature-name">グループ化</div>
-                        <div class="feature-description">同一人物のデータを自動的にまとめて表示</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔗</div>
-                        <div class="feature-name">期間結合</div>
-                        <div class="feature-description">連続する同一部署の期間を1つにマージ</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <div class="feature-name">並び替え</div>
-                        <div class="feature-description">開始日順に時系列で整列</div>
-                    </div>
-                </div>
-
-                <div class="prompt-box">
-                    <div class="prompt-text">以下の人事異動データを整理してください。
+<div class="feature-grid" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="feature-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="feature-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">👥</div>
+<div class="feature-name" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">グループ化</div>
+<div class="feature-description" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">同一人物のデータを自動的にまとめて表示</div>
+</div>
+<div class="feature-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="feature-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">🔗</div>
+<div class="feature-name" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">期間結合</div>
+<div class="feature-description" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">連続する同一部署の期間を1つにマージ</div>
+</div>
+<div class="feature-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="feature-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">📅</div>
+<div class="feature-name" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">並び替え</div>
+<div class="feature-description" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">開始日順に時系列で整列</div>
+</div>
+</div>
+<div class="prompt-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="prompt-text" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">以下の人事異動データを整理してください。
 
 【データ整理の条件】
 1. 同一人物のデータをグループ化する
@@ -969,217 +208,265 @@
 
 【整理後の出力形式】
 - 人物名
-  └ 部署A: YYYY/MM/DD - YYYY/MM/DD
-  └ 部署B: YYYY/MM/DD - 現在
+  &boxur; 部署A: YYYY/MM/DD - YYYY/MM/DD
+  &boxur; 部署B: YYYY/MM/DD - 現在
 
 【対象データ】
 （ここにデータを貼り付け）</div>
-                </div>
-
-                <div class="data-example" data-label="整理後のデータ（Gemini出力）">
-                    <div class="data-row highlight">■ 田中太郎</div>
-                    <div class="data-row">  └ 営業部: 2023/04/01 - 2023/09/30（6ヶ月）</div>
-                    <div class="data-row">  └ 企画部: 2023/10/01 - 現在（継続中）</div>
-                    <div class="data-row" style="margin-top: 15px;"></div>
-                    <div class="data-row highlight">■ 鈴木花子</div>
-                    <div class="data-row">  └ 総務部: 2023/04/01 - 2024/03/31（12ヶ月）</div>
-                </div>
-
-                <h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark);">
+</div>
+<div class="data-example" data-label="整理後のデータ（Gemini出力）" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="data-row highlight" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">■ 田中太郎</div>
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">  &boxur; 営業部: 2023/04/01 - 2023/09/30（6ヶ月）</div>
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">  &boxur; 企画部: 2023/10/01 - 現在（継続中）</div>
+<div class="data-row" style="margin-top: 15px; background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;"></div>
+<div class="data-row highlight" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">■ 鈴木花子</div>
+<div class="data-row" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">  &boxur; 総務部: 2023/04/01 - 2024/03/31（12ヶ月）</div>
+</div>
+<h3 style="font-size: 1.2rem; margin: 30px 0 20px; color: var(--primary-dark); font-size: 1.25rem; font-weight: 700; color: var(--green-600); margin: 2rem 0 1rem;">
                     🔄 データ整理のワークフロー
                 </h3>
-
-                <div class="process-flow">
-                    <div class="process-step">
-                        <div class="process-step-icon">📄</div>
-                        <div class="process-step-label">生データ<br>コピー</div>
-                    </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-step ai">
-                        <div class="process-step-icon">✨</div>
-                        <div class="process-step-label">Gemini<br>自動整理</div>
-                    </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-step">
-                        <div class="process-step-icon">📊</div>
-                        <div class="process-step-label">整理済み<br>データ取得</div>
-                    </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-step">
-                        <div class="process-step-icon">📝</div>
-                        <div class="process-step-label">資料作成<br>に活用</div>
-                    </div>
-                </div>
-
-                <div class="hint-box">
-                    <div class="hint-title">ポイント：「読み解く作業」をなくす</div>
-                    <p>
-                        従来は「データを見て→理解して→整理して→資料に落とす」という流れでしたが、
-                        Geminiを使うことで「データを貼り付けて→整理済みデータを受け取って→資料に落とす」
+<div class="process-flow" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="process-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="process-step-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">📄</div>
+<div class="process-step-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">生データ<br/>コピー</div>
+</div>
+<div class="process-arrow" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">&rarr;</div>
+<div class="process-step ai" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="process-step-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">✨</div>
+<div class="process-step-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">Gemini<br/>自動整理</div>
+</div>
+<div class="process-arrow" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">&rarr;</div>
+<div class="process-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="process-step-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">📊</div>
+<div class="process-step-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">整理済み<br/>データ取得</div>
+</div>
+<div class="process-arrow" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">&rarr;</div>
+<div class="process-step" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="process-step-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">📝</div>
+<div class="process-step-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">資料作成<br/>に活用</div>
+</div>
+</div>
+<div class="hint-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="hint-title" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">ポイント：「読み解く作業」をなくす</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+                        従来は「データを見て&rarr;理解して&rarr;整理して&rarr;資料に落とす」という流れでしたが、
+                        Geminiを使うことで「データを貼り付けて&rarr;整理済みデータを受け取って&rarr;資料に落とす」
                         という流れに変わりました。最も時間のかかる「読み解き」がなくなったことで、
                         本来注力すべき「資料の中身を作り込む」作業に集中できるようになりました。
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 成果セクション -->
-        <section class="content-section scroll-fade">
-            <div class="section-header">
-                <div class="section-number">3</div>
-                <div class="section-title-group">
-                    <div class="section-subtitle">Results</div>
-                    <h2 class="section-title">得られた成果</h2>
-                </div>
-            </div>
-            <div class="section-content">
-                <p>
+</div>
+</div>
+</section>
+<section class="content-section scroll-fade" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">3</div>
+<div class="section-title-group" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-subtitle" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">Results</div>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">得られた成果</h2>
+</div>
+</div>
+<div class="section-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     Geminiによるデータ整理の自動化により、資料作成業務全体の効率が大幅に向上しました。
                     特にデータを読み解く時間が削減されたことで、より質の高い資料作成が可能になりました。
                 </p>
-
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-icon">⏱️</div>
-                        <div class="metric-value">90%削減</div>
-                        <div class="metric-label">データ整理時間<br>3時間→15分</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon">🎯</div>
-                        <div class="metric-value">ゼロ</div>
-                        <div class="metric-label">整理ミス発生<br>人為的エラー解消</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon">📈</div>
-                        <div class="metric-value">2倍</div>
-                        <div class="metric-label">資料作成に使える時間<br>品質向上へ</div>
-                    </div>
-                </div>
-
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>比較項目</th>
-                            <th>導入前</th>
-                            <th>導入後</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>データ読み解き</td>
-                            <td>2〜3時間（手動）</td>
-                            <td>不要（AIが自動処理）</td>
-                        </tr>
-                        <tr>
-                            <td>データ整理・整形</td>
-                            <td>30分〜1時間</td>
-                            <td>5分（プロンプト入力のみ）</td>
-                        </tr>
-                        <tr>
-                            <td>チェック作業</td>
-                            <td>30分（ダブルチェック必須）</td>
-                            <td>10分（目視確認のみ）</td>
-                        </tr>
-                        <tr>
-                            <td>資料作成</td>
-                            <td>残り時間で急いで作成</td>
-                            <td>余裕を持って作り込み可能</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="point-card">
-                    <div class="point-title">副次的な効果</div>
-                    <ul style="margin-left: 20px; line-height: 2;">
-                        <li>データ整理作業のストレスが大幅に軽減</li>
-                        <li>急な依頼にも短時間で対応できるようになった</li>
-                        <li>整理済みデータの形式が統一され、後からの参照も容易に</li>
-                        <li>他のデータ整理業務にも応用し、業務改善が加速</li>
-                    </ul>
-                </div>
-
-                <div class="voice-box">
-                    <div class="voice-content">
+<div class="metrics-grid" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="metric-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="metric-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">⏱️</div>
+<div class="metric-value" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">90%削減</div>
+<div class="metric-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">データ整理時間<br/>3時間&rarr;15分</div>
+</div>
+<div class="metric-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="metric-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">🎯</div>
+<div class="metric-value" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">ゼロ</div>
+<div class="metric-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">整理ミス発生<br/>人為的エラー解消</div>
+</div>
+<div class="metric-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="metric-icon" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">📈</div>
+<div class="metric-value" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">2倍</div>
+<div class="metric-label" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">資料作成に使える時間<br/>品質向上へ</div>
+</div>
+</div>
+<div data-table-wrapper="true" style="overflow-x: auto; margin: 2rem 0;"><table class="comparison-table" style="width: 100%; border-collapse: collapse; background-color: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+<thead>
+<tr>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">比較項目</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入前</th>
+<th style="padding: 1rem; text-align: left; border: 1px solid var(--gray-200); font-weight: 600; background-color: var(--gray-100);">導入後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">データ読み解き</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">2〜3時間（手動）</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">不要（AIが自動処理）</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">データ整理・整形</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">30分〜1時間</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">5分（プロンプト入力のみ）</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">チェック作業</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">30分（ダブルチェック必須）</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">10分（目視確認のみ）</td>
+</tr>
+<tr>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">資料作成</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">残り時間で急いで作成</td>
+<td style="padding: 1rem; border: 1px solid var(--gray-200);">余裕を持って作り込み可能</td>
+</tr>
+</tbody>
+</table></div>
+<div class="point-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="point-title" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">副次的な効果</div>
+<ul style="margin-left: 20px; line-height: 2; font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;">データ整理作業のストレスが大幅に軽減</li>
+<li style="margin-bottom: 0.5rem;">急な依頼にも短時間で対応できるようになった</li>
+<li style="margin-bottom: 0.5rem;">整理済みデータの形式が統一され、後からの参照も容易に</li>
+<li style="margin-bottom: 0.5rem;">他のデータ整理業務にも応用し、業務改善が加速</li>
+</ul>
+</div>
+<div class="voice-box" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="voice-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
                         「これまで手作業で時間をかけていた細かいデータ整理をGeminiが一瞬で片付けて
                         くれるので、本来注力すべき資料の中身の作成に集中できるようになりました。
                         正直、もっと早く使い始めればよかったと思っています。」
                     </div>
-                    <div class="voice-author">― 人事・総務担当者</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- まとめセクション -->
-        <section class="content-section scroll-fade">
-            <div class="section-header">
-                <div class="section-number">4</div>
-                <div class="section-title-group">
-                    <div class="section-subtitle">Summary</div>
-                    <h2 class="section-title">まとめ</h2>
-                </div>
-            </div>
-            <div class="section-content">
-                <p>
+<div class="voice-author" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">&horbar; 人事・総務担当者</div>
+</div>
+</div>
+</section>
+<section class="content-section scroll-fade" style="margin-bottom: 3rem;">
+<div class="section-header" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-number" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">4</div>
+<div class="section-title-group" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="section-subtitle" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">Summary</div>
+<h2 class="section-title" style="font-size: 1.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; border-left: 4px solid var(--green-500); padding-left: 1rem;">まとめ</h2>
+</div>
+</div>
+<div class="section-content" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     本事例は、「データを読み解く」という一見地味だけれど非常に時間のかかる作業を
                     AIに任せることで、業務全体の効率を飛躍的に向上させた好例です。
                 </p>
-
-                <div class="point-card">
-                    <div class="point-title">成功のポイント</div>
-                    <ul style="margin-left: 20px; line-height: 2;">
-                        <li><strong>「最も時間がかかる工程」を特定</strong> - データ読み解きがボトルネックと認識</li>
-                        <li><strong>明確な整理条件の指示</strong> - グループ化・期間結合・並び替えを具体的に依頼</li>
-                        <li><strong>出力形式の指定</strong> - 資料作成に使いやすい形式を事前に定義</li>
-                        <li><strong>人間は「作り込み」に集中</strong> - 機械的な作業はAI、創造的な作業は人間という役割分担</li>
-                    </ul>
-                </div>
-
-                <p>
+<div class="point-card" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">
+<div class="point-title" style="background-color: var(--gray-50); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--green-500); margin: 2rem 0;">成功のポイント</div>
+<ul style="margin-left: 20px; line-height: 2; font-size: 1.05rem; line-height: 1.8; margin: 1rem 0 1.5rem 1.5rem;">
+<li style="margin-bottom: 0.5rem;"><strong>「最も時間がかかる工程」を特定</strong> - データ読み解きがボトルネックと認識</li>
+<li style="margin-bottom: 0.5rem;"><strong>明確な整理条件の指示</strong> - グループ化・期間結合・並び替えを具体的に依頼</li>
+<li style="margin-bottom: 0.5rem;"><strong>出力形式の指定</strong> - 資料作成に使いやすい形式を事前に定義</li>
+<li style="margin-bottom: 0.5rem;"><strong>人間は「作り込み」に集中</strong> - 機械的な作業はAI、創造的な作業は人間という役割分担</li>
+</ul>
+</div>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     Geminiによるデータ整理は、人事データに限らず、売上データの集計、顧客リストの整理、
                     アンケート結果の分析など、様々な業務に応用可能です。「手作業で地道にやるしかない」と
                     思い込んでいたデータ整理作業も、AIを活用することで劇的に効率化できる可能性があります。
                 </p>
-
-                <p>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
                     まずは「どんなデータ整理に時間がかかっているか」を洗い出し、
                     その作業をGeminiに依頼してみることから始めてみてはいかがでしょうか。
                     データを貼り付けて条件を指示するだけで、驚くほど短時間で整理が完了するはずです。
                 </p>
-            </div>
-        </section>
-
-        <!-- CTAセクション -->
-        <div class="cta-box scroll-fade">
-            <div class="cta-title">データ整理の自動化、試してみませんか？</div>
-            <p class="cta-description">
-                Geminiを活用したデータ整理の自動化で、業務効率を大幅に向上させましょう。
-                まずは無料相談で、貴社のデータ整理業務の改善可能性を探ってみませんか。
-            </p>
-            <a href="#contact" class="cta-button">
-                <span>無料相談を申し込む</span>
-                <span>→</span>
-            </a>
-        </div>
+</div>
+</section>
+      </div>
     </article>
 
-    <script>
-        // スクロールアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies.html" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/企業ロゴ最終.png" alt="株式会社デジタルツール研究所" class="footer-logo">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒110-0004<br>
+          東京都台東区下谷2丁目23番8号<br>
+          リベール上野4F</p>
+        </div>
+      </div>
 
-        document.querySelectorAll('.scroll-fade').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting.html">DX伴走サポート</a></li>
+          <li><a href="../services/training.html">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development.html">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies.html">ご支援事例</a></li>
+          <li><a href="../about.html">会社情報</a></li>
+          <li><a href="../service.html">サービス一覧</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
