@@ -6,13 +6,15 @@
 
     RewriteCond %{HTTP_HOST} ^www\.digitool-lab\.com$ [NC]
     RewriteRule ^(.*)$ https://digitool-lab.com/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} \s/+index(?:\.html)?[\s?] [NC]
+    RewriteRule ^index(?:\.html)?/?$ https://digitool-lab.com/ [L,R=301]
 </IfModule>
 # END HTTP to HTTPS Redirect
 
 # BEGIN 301 Redirects for Case Studies
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RedirectMatch 301 ^/index(?:\.html)?/?$ https://digitool-lab.com/
     RedirectMatch 301 ^/service-otomo(?:\.html)?/?$ https://digitool-lab.com/services/consulting
     Redirect 301 /case-001.html https://digitool-lab.com/blog/restaurant-order-system-cost-reduction.html
     Redirect 301 /case-002.html https://digitool-lab.com/blog/restaurant-recipe-standardization.html
