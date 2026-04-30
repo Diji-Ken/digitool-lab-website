@@ -417,6 +417,14 @@ RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 # END Security Headers
 
+# BEGIN Cache Headers
+<IfModule mod_headers.c>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+# END Cache Headers
+
 # ファイルアップロードの制限
 <Files "*.php">
     <IfModule mod_rewrite.c>
