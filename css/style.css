@@ -1150,7 +1150,7 @@ footer {
   
   /* ハンバーガーボタンの調整 */
   .menu-button {
-    margin-right: -12px; /* より大きくマイナスマージン */
+    margin-right: 0;
     padding: 8px; /* パディングを小さく */
     min-width: 40px;
     min-height: 40px;
@@ -2363,6 +2363,50 @@ footer {
   color: var(--orange-700) !important;
 }
 
+.enhanced-case-article blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--orange-500);
+  border-radius: 0 8px 8px 0;
+  background: var(--orange-50);
+  color: var(--gray-800);
+}
+
+.enhanced-case-article blockquote p {
+  margin: 0 !important;
+  line-height: 1.8 !important;
+}
+
+.article-data-table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--white);
+  font-size: 0.96rem;
+}
+
+.article-data-table th,
+.article-data-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: left;
+  line-height: 1.65;
+  vertical-align: top;
+}
+
+.article-data-table th {
+  background: var(--gray-50);
+  color: var(--gray-900);
+  font-weight: 800;
+}
+
+.article-data-table tr:last-child td {
+  border-bottom: 0;
+}
+
 .article-trust-panel {
   padding: 1.75rem;
   margin: 3rem 0 0;
@@ -2443,8 +2487,20 @@ footer {
   margin-top: 1.5rem;
 }
 
-.article-consult-actions .btn-outline {
+.article-consult-actions .btn-primary {
   border-color: var(--white);
+  background: var(--white);
+  color: var(--orange-700);
+}
+
+.article-consult-actions .btn-primary:hover {
+  background: var(--orange-50);
+  color: var(--orange-800);
+}
+
+.article-consult-actions .btn-outline {
+  border-color: rgba(255, 255, 255, 0.86);
+  background: transparent;
   color: var(--white);
 }
 
@@ -2508,6 +2564,13 @@ footer {
 
   .article-impact-card strong {
     font-size: 1.15rem;
+  }
+
+  .article-data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.9rem;
   }
 }
 
