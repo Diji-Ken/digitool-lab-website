@@ -78,7 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const selector = this.getAttribute('href');
+        if (!selector || selector === '#') return;
+
+        const target = document.querySelector(selector);
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
@@ -140,7 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.setAttribute('data-processed', 'true');
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const selector = this.getAttribute('href');
+      if (!selector || selector === '#') return;
+
+      const target = document.querySelector(selector);
       if (target) {
         target.scrollIntoView({
           behavior: 'smooth',
@@ -149,6 +155,95 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  function sendAnalyticsEvent(eventName, params = {}) {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+    }
+
+    window.gtag('event', eventName, {
+      event_category: 'lead',
+      page_path: window.location.pathname,
+      page_title: document.title,
+      transport_type: 'beacon',
+      ...params
+    });
+  }
+
+  function trackLinkClick(link) {
+    const href = link.getAttribute('href') || '';
+    const absoluteHref = link.href || href;
+    const linkText = link.textContent.trim().replace(/\s+/g, ' ').slice(0, 80);
+    const eventParams = {
+      link_url: absoluteHref,
+      link_text: linkText
+    };
+
+    if (link.matches('.open-download-modal, #header-download-button, #bottom-download-button, #article-download-button')) {
+      sendAnalyticsEvent('download_click', eventParams);
+      return;
+    }
+
+    if (absoluteHref.includes('timerex.net')) {
+      sendAnalyticsEvent('timerex_click', eventParams);
+      return;
+    }
+
+    if (absoluteHref.includes('/line/open/') || absoluteHref.includes('line.me') || absoluteHref.includes('lin.ee')) {
+      sendAnalyticsEvent('line_click', eventParams);
+      return;
+    }
+
+    if (absoluteHref.includes('/contact.html') || absoluteHref.endsWith('/contact')) {
+      sendAnalyticsEvent('contact_click', eventParams);
+    }
+  }
+
+  function handleTrackedClick(e) {
+    if (e.__cvTracked) return;
+
+    const target = e.target instanceof Element ? e.target : null;
+    if (!target) return;
+
+    const link = target.closest('a');
+    if (!link) return;
+
+    e.__cvTracked = true;
+    trackLinkClick(link);
+  }
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', handleTrackedClick, true);
+  });
+
+  document.addEventListener('click', (e) => {
+    handleTrackedClick(e);
+  }, true);
+  window.__cvTrackingReady = true;
+
+  document.addEventListener('submit', (e) => {
+    const form = e.target;
+    if (!(form instanceof HTMLFormElement)) return;
+
+    if (form.id === 'download-form') {
+      sendAnalyticsEvent('file_download', {
+        form_id: form.id,
+        file_name: 'digitool-lab-service-guide.pdf'
+      });
+      return;
+    }
+
+    const action = form.getAttribute('action') || '';
+    if (action.includes('contact_form') || window.location.pathname.endsWith('/contact.html')) {
+      sendAnalyticsEvent('generate_lead', {
+        form_id: form.id || 'contact-form',
+        form_action: action
+      });
+    }
+  }, true);
 
   // Animate On Scroll
   if (window.AOS) {

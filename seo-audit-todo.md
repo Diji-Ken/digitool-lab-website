@@ -22,7 +22,7 @@
 - [x] `/it-tantou-outsourcing/` を制作する
 - [x] `/internal-portal-development/` を制作する
 - [x] 既存事例20〜30本から新LPへ内部リンクを張る
-- [ ] 資料DL、無料相談、LINE、TimerexクリックをCV計測できるようにする
+- [x] 資料DL、無料相談、LINE、TimerexクリックをCV計測できるようにする
 
 ## 60日以内
 

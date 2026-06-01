@@ -106,12 +106,13 @@ Web経由の問い合わせ、資料DL、無料相談を増やすために、検
 
 ### 1. すぐやる
 
-- GSC現状クエリとCV導線を確認する
+- GSC現状クエリ確認は未実施。CVクリック計測は実装済み
 - 事例一覧ページの静的HTML初期カード、課題別導線、URL条件連動を公開済み
 - `/dx-support-saitama/` を作る
 - `/it-tantou-outsourcing/` を作る
 - `/internal-portal-development/` を作る
 - 主要30事例から上記LPへ内部リンクを追加済み
+- 資料DL、無料相談、LINE、Timerex、問い合わせフォーム送信のGA4イベントを実装済み
 
 ### 2. 次にやる
 
