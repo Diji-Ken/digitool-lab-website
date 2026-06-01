@@ -10,12 +10,15 @@
 
 # 主要サービス
 - DX伴走サポート
+- 埼玉・さいたま市の中小企業向けDX伴走支援
+- IT担当者がいない会社向け社外IT担当
+- 社内ポータル開発・導入支援
 - フルオーダーメイドAI研修
 - 開発・デジタル支援
 - 半社員型デジタル支援サービス
 
 # 主要キーワード
-DX支援, AI研修, システム開発, DX伴走, 半社員型支援, デジタル化, 業務効率化, 自動化, 中小企業DX
+DX支援, DX支援 埼玉, DX支援 さいたま市, IT担当者がいない会社, IT担当 外注, 社外IT担当, 情シス代行 中小企業, 社内ポータル 開発, AI研修, システム開発, DX伴走, 半社員型支援, デジタル化, 業務効率化, 自動化, 中小企業DX
 
 # 対象業界
 飲食店, 美容院, ホテル, 小売業, 製造業, サービス業
@@ -32,5 +35,8 @@ AI, 機械学習, 自動化, データ分析, システム開発, クラウド, 
 # 連絡先
 ウェブサイト: https://digitool-lab.com
 サービス: https://digitool-lab.com/service
+DX伴走支援: https://digitool-lab.com/dx-support-saitama/
+社外IT担当: https://digitool-lab.com/it-tantou-outsourcing/
+社内ポータル開発: https://digitool-lab.com/internal-portal-development/
 支援事例: https://digitool-lab.com/case-studies
 お問い合わせ: https://digitool-lab.com/contact

@@ -425,6 +425,14 @@ RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 # END Cache Headers
 
+# BEGIN Internal Document Index Control
+<IfModule mod_headers.c>
+    <FilesMatch "\.md$">
+        Header set X-Robots-Tag "noindex, nofollow"
+    </FilesMatch>
+</IfModule>
+# END Internal Document Index Control
+
 # ファイルアップロードの制限
 <Files "*.php">
     <IfModule mod_rewrite.c>

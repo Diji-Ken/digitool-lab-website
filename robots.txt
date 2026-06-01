@@ -1,37 +1,61 @@
 User-agent: *
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 # AI Crawlers
 User-agent: GPTBot
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 User-agent: CCBot
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 User-agent: anthropic-ai
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 User-agent: Claude-Web
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 # Google AI
 User-agent: Google-Extended
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 # Bing AI
 User-agent: BingBot
 Allow: /
 Disallow: /apps/
+Disallow: /backup_20250703_112022/
+Disallow: /article-workspace/
+Disallow: /posts-management/
 
 # Sitemap
 Sitemap: https://digitool-lab.com/sitemap.xml
