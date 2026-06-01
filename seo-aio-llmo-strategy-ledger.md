@@ -37,8 +37,8 @@ Web経由の問い合わせ、資料DL、無料相談を増やすために、検
 | SEO-05 | A | 企業向け生成AI研修を探す | AI研修 企業、生成AI研修 企業、ChatGPT研修 法人、AI研修 埼玉 | `/ai-training-saitama/` | AI研修カリキュラム例、社内ルール作成記事 | note、YouTube、セミナー資料 | カリキュラム相談、AI活用チェックリストDL | 対象部署別FAQ、研修後定着設計 | 相談CV、DL率 | 60日内制作 |
 | SEO-06 | A | Excel/紙/属人化をやめたい | Excel 業務 効率化、紙業務 デジタル化、属人化 解消、日報 自動化 | `/excel-paper-dx/` | Excelを残す/システム化する判断基準 | Qiita、GitHubテンプレート | 業務棚卸しシートDL | 判断表、Before/After事例、FAQ | DL率、記事流入 | 60日内制作 |
 | SEO-07 | A | 補助金を使ってDX/AI/システム導入したい | システム開発 補助金、AI導入 補助金、DX 補助金 埼玉 | `/subsidy-dx-ai-system/` | 補助金前提で失敗しない要件整理、公式要領確認記事 | showroom補助金ページ、note | 補助金前提相談、制度確認チェックリストDL | 注意書き、公式確認導線、FAQ | showroom遷移、相談CV | 60日内制作 |
-| SEO-08 | S | 事例から近い課題を探す | 業務効率化 事例、AI活用 事例、中小企業 DX 事例 | `/case-studies` | 業種別/課題別/成果別カード | 内部リンク、SNS再投稿 | 同じ課題を相談、該当LPへ遷移 | CollectionPage、ItemList | 事例ページ回遊、LP遷移 | 静的HTML化 |
-| SEO-09 | S | 既存事例から問い合わせへ進めたい | 個別事例ごとの課題KW | 各ブログ記事 | 下部CTA差し替え、関連記事 | X/LinkedIn再投稿 | 同じ課題の相談、該当LP | Article、FAQ、関連LPリンク | LP遷移、CV補助 | 20〜30本内部リンク |
+| SEO-08 | S | 事例から近い課題を探す | 業務効率化 事例、AI活用 事例、中小企業 DX 事例 | `/case-studies` | 業種別/課題別/成果別カード | 内部リンク、SNS再投稿 | 同じ課題を相談、該当LPへ遷移 | CollectionPage、ItemList | 事例ページ回遊、LP遷移 | 公開後GSC確認・成果別改善 |
+| SEO-09 | S | 既存事例から問い合わせへ進めたい | 個別事例ごとの課題KW | 各ブログ記事 | 下部CTA差し替え、関連記事 | X/LinkedIn再投稿 | 同じ課題の相談、該当LP | Article、FAQ、関連LPリンク | LP遷移、CV補助 | 主要30本反映済み・追加対象選定 |
 | SEO-10 | A | 費用感・比較・進め方を知りたい | DX支援 費用、AI研修 費用、業務システム 開発費用、IT担当 採用 外注 比較 | 各LP + FAQ記事群 | 費用記事、比較記事、導入手順記事 | note、LinkedIn | 無料相談、概算相談 | 表、FAQ、短い結論 | CTR、滞在、相談CV | 記事6〜10本 |
 | SEO-11 | A | AI検索に引用されやすい会社情報を整える | デジタルツール研究所、OToMo、松岡哲平 DX | `llms.txt`、`llms_full.txt`、会社情報 | 代表プロフィール、事例要約 | LinkedIn、Wantedly | 問い合わせ、資料DL | Organization、Person、更新日 | 指名検索、AI経由兆候 | llms更新 |
 | SEO-12 | A | 外部媒体から認知と被リンクを得る | もう一人のIT担当、中小企業DX、社内ポータル設計 | 自社主要LP | note4本、Qiita/Zenn2本、YouTube2本 | note、Qiita、Zenn、YouTube、LinkedIn | 各LP、資料DL | 要約ではなく切り口違い | 参照流入、被リンク | 初期投稿計画 |
@@ -107,11 +107,11 @@ Web経由の問い合わせ、資料DL、無料相談を増やすために、検
 ### 1. すぐやる
 
 - GSC現状クエリとCV導線を確認する
-- 事例一覧ページを静的HTML化する
+- 事例一覧ページの静的HTML初期カード、課題別導線、URL条件連動を公開済み
 - `/dx-support-saitama/` を作る
 - `/it-tantou-outsourcing/` を作る
 - `/internal-portal-development/` を作る
-- 既存事例20〜30本から上記LPへ内部リンクを張る
+- 主要30事例から上記LPへ内部リンクを追加済み
 
 ### 2. 次にやる
 

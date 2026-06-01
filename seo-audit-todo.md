@@ -17,11 +17,11 @@
 - [ ] NAP棚卸し、旧住所/旧電話の残存確認、JSON-LD、canonical、主要テンプレートを再確認する
 - [ ] Google Search Consoleで現状クエリ、表示回数、CTR、CVページを確認し、初期SEOダッシュボードを作る
 - [ ] Googleビジネスプロフィールの現状確認と、電話番号変更後に更新する項目を事前整理する
-- [ ] 事例一覧ページを静的HTML化し、業種・課題・成果で探せる状態にする
+- [x] 事例一覧ページを静的HTML化し、業種・課題・成果で探せる状態にする
 - [x] `/dx-support-saitama/` を制作する
 - [x] `/it-tantou-outsourcing/` を制作する
 - [x] `/internal-portal-development/` を制作する
-- [ ] 既存事例20〜30本から新LPへ内部リンクを張る
+- [x] 既存事例20〜30本から新LPへ内部リンクを張る
 - [ ] 資料DL、無料相談、LINE、TimerexクリックをCV計測できるようにする
 
 ## 60日以内

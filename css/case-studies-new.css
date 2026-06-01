@@ -212,6 +212,107 @@ body {
     /* Styles for the container of filter groups */
 }
 
+.case-topic-routes {
+    background: #FFFFFF;
+    padding: 52px 0 44px;
+    border-bottom: 1px solid #E8DDD5;
+}
+
+.case-topic-heading {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.case-topic-heading span {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #FF8C42;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.case-topic-heading h2 {
+    margin: 0 0 12px;
+    color: #2B3E50;
+    font-size: clamp(1.65rem, 3vw, 2.2rem);
+    line-height: 1.35;
+}
+
+.case-topic-heading p {
+    margin: 0;
+    color: #5A6C7D;
+    line-height: 1.85;
+}
+
+.case-route-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.case-route-card {
+    display: flex;
+    min-height: 148px;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 22px;
+    border: 1px solid #E8DDD5;
+    border-radius: 8px;
+    background: #FFFDFC;
+    color: #2B3E50;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(43, 62, 80, 0.06);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-route-card:hover {
+    border-color: #FF8C42;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(43, 62, 80, 0.1);
+}
+
+.case-route-card strong {
+    color: #1E2F42;
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+.case-route-card span {
+    color: #5A6C7D;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.case-result-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.case-result-shortcuts a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: 0 16px;
+    border: 1px solid #E8DDD5;
+    border-radius: 999px;
+    background: #FAFAFA;
+    color: #2B3E50;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.case-result-shortcuts a:hover {
+    border-color: #FF8C42;
+    color: #FF7A2B;
+}
+
 .case-consult-strip {
     background: #2B3E50;
     color: white;
@@ -468,6 +569,18 @@ body {
 
 /* Mobile-specific styles */
 @media (max-width: 768px) {
+    .case-topic-routes {
+        padding: 36px 0 32px;
+    }
+
+    .case-topic-heading {
+        text-align: left;
+    }
+
+    .case-route-grid {
+        grid-template-columns: 1fr;
+    }
+
     .filter-tabs-container {
         display: none; /* Hide tabs on mobile */
     }

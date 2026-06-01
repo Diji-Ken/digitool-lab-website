@@ -42,8 +42,20 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Case studies grid not found.');
             return;
         }
+        readInitialFiltersFromUrl();
         fetchData();
         addEventListeners();
+    }
+
+    function readInitialFiltersFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const tag = params.get('tag') || params.get('category');
+        const industry = params.get('industry');
+        const keyword = params.get('keyword') || params.get('q');
+
+        if (tag) state.activeCategory = tag;
+        if (industry) state.activeIndustry = industry;
+        if (keyword) state.activeKeyword = keyword.trim().toLowerCase();
     }
 
     function fetchData() {
@@ -56,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 state.allCases = data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 state.filteredCases = [...state.allCases];
                 populateFilters();
-                render();
+                syncFilterControls();
+                applyFilters({ preserveUrl: true });
             })
             .catch(error => {
                 console.error('Error fetching case studies:', error);
@@ -83,6 +96,41 @@ document.addEventListener('DOMContentLoaded', function() {
         
         populateDropdown(elements.mobileCategoryDropdown, sortedCategories, '課題');
         populateDropdown(elements.mobileIndustryDropdown, sortedIndustries, '業界');
+    }
+
+    function syncFilterControls() {
+        if (elements.keywordInput && state.activeKeyword) {
+            elements.keywordInput.value = state.activeKeyword;
+        }
+
+        syncTagControls('category', state.activeCategory);
+        syncTagControls('industry', state.activeIndustry);
+
+        if (elements.mobileCategoryDropdown && dropdownHasValue(elements.mobileCategoryDropdown, state.activeCategory)) {
+            elements.mobileCategoryDropdown.value = state.activeCategory;
+        }
+        if (elements.mobileIndustryDropdown && dropdownHasValue(elements.mobileIndustryDropdown, state.activeIndustry)) {
+            elements.mobileIndustryDropdown.value = state.activeIndustry;
+        }
+    }
+
+    function dropdownHasValue(selectElement, value) {
+        return Array.from(selectElement.options).some(option => option.value === value);
+    }
+
+    function syncTagControls(type, value) {
+        const container = type === 'category' ? elements.categoryTagsContainer : elements.industryTagsContainer;
+        if (!container) return;
+        let matched = false;
+        container.querySelectorAll('.filter-tag').forEach(tag => {
+            const active = tag.dataset.value === value;
+            tag.classList.toggle('active', active);
+            if (active) matched = true;
+        });
+        if (!matched) {
+            const allTag = container.querySelector('.filter-tag[data-value="all"]');
+            if (allTag) allTag.classList.add('active');
+        }
     }
 
     function populateTags(container, items, type) {
@@ -237,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
         applyFilters();
     }
 
-    function applyFilters() {
+    function applyFilters(options = {}) {
         const { activeKeyword, activeCategory, activeIndustry } = state;
 
         state.filteredCases = state.allCases.filter(c => {
@@ -253,7 +301,21 @@ document.addEventListener('DOMContentLoaded', function() {
             return keywordMatch && categoryMatch && industryMatch;
         });
         state.currentPage = 1; // フィルター変更時はページを1に戻す
+        if (!options.preserveUrl) {
+            updateUrlFromState();
+        }
         render();
+    }
+
+    function updateUrlFromState() {
+        const params = new URLSearchParams();
+        if (state.activeKeyword) params.set('keyword', state.activeKeyword);
+        if (state.activeCategory !== 'all') params.set('tag', state.activeCategory);
+        if (state.activeIndustry !== 'all') params.set('industry', state.activeIndustry);
+
+        const query = params.toString();
+        const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+        window.history.replaceState({}, '', nextUrl);
     }
 
     function render() {

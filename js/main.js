@@ -151,9 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Animate On Scroll
-  AOS.init({
-    duration: 800, // アニメーションの時間を800msに設定
-    once: true, // アニメーションを1回だけ実行
-    offset: 200 // アニメーションが始まるトリガーポイント
-  });
-}); 
+  if (window.AOS) {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 200
+    });
+  }
+});
