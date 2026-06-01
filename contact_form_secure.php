@@ -206,8 +206,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $body_customer .= "今後とも株式会社デジタルツール研究所をよろしくお願いいたします。\n\n";
         $body_customer .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
         $body_customer .= "株式会社デジタルツール研究所\n";
-        $body_customer .= "〒110-0004\n";
-        $body_customer .= "東京都台東区下谷2丁目23番8号 リベール上野4F\n";
+        $body_customer .= "〒331-0821\n";
+        $body_customer .= "埼玉県さいたま市北区別所町738-3\n";
         $body_customer .= "E-mail: contact@digitool-lab.com\n";
         $body_customer .= "Website: https://digitool-lab.com/\n";
         $body_customer .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
@@ -271,4 +271,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </body>
 </html>
-
