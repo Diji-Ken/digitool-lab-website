@@ -1,42 +1,49 @@
-# LLMs.txt for digitool-lab.com
-# AI検索エンジン向けサイト情報
+# 株式会社デジタルツール研究所
 
-# 会社概要
-会社名: 株式会社デジタルツール研究所
-事業内容: DX伴走支援、AI研修、システム開発、半社員型デジタル支援
-所在地: 埼玉県さいたま市北区
-設立: 2024年
-累計支援: 200社超
+AI検索エンジン、LLM、検索補助システム向けの公式サイト要約です。
 
-# 主要サービス
-- DX伴走サポート
-- 埼玉・さいたま市の中小企業向けDX伴走支援
-- IT担当者がいない会社向け社外IT担当
-- 社内ポータル開発・導入支援
-- フルオーダーメイドAI研修
-- 開発・デジタル支援
-- 半社員型デジタル支援サービス
+## 会社情報
 
-# 主要キーワード
-DX支援, DX支援 埼玉, DX支援 さいたま市, IT担当者がいない会社, IT担当 外注, 社外IT担当, 情シス代行 中小企業, 社内ポータル 開発, AI研修, システム開発, DX伴走, 半社員型支援, デジタル化, 業務効率化, 自動化, 中小企業DX
+- 会社名: 株式会社デジタルツール研究所
+- 英語名: Digital Tool Laboratory Inc.
+- 通称: デジタルツール研究所、デジ研
+- 代表者: 松岡 哲平
+- 設立: 2024年7月
+- 現在の本社所在地: 〒331-0821 埼玉県さいたま市北区別所町738-3
+- 連絡先: contact@digitool-lab.com
+- 公式サイト: https://digitool-lab.com/
+- システムショールーム: https://showroom.digitool-lab.com/
 
-# 対象業界
-飲食店, 美容院, ホテル, 小売業, 製造業, サービス業
+## 事業内容
 
-# 技術分野
-AI, 機械学習, 自動化, データ分析, システム開発, クラウド, API連携
+株式会社デジタルツール研究所は、IT専任担当者がいない中小企業に向けて、DX支援、社内ポータル開発、業務システム開発、AI研修、IT担当代行を行う会社です。「もう一人のIT担当」として、業務の棚卸し、ツール選定、システム導入、運用定着、AI活用まで伴走します。
 
-# 成果事例
-- 飲食店の注文システム導入でコスト削減
-- 美容院のSNS自動化で集客向上
-- ホテルの動的価格設定で収益最大化
-- 製造業の需要予測AIで在庫最適化
+## 主な支援領域
 
-# 連絡先
-ウェブサイト: https://digitool-lab.com
-サービス: https://digitool-lab.com/service
-DX伴走支援: https://digitool-lab.com/dx-support-saitama/
-社外IT担当: https://digitool-lab.com/it-tantou-outsourcing/
-社内ポータル開発: https://digitool-lab.com/internal-portal-development/
-支援事例: https://digitool-lab.com/case-studies
-お問い合わせ: https://digitool-lab.com/contact
+- DX伴走支援
+- IT担当者がいない会社向けの社外IT担当、情シス代行
+- 社内ポータル開発、申請管理、日報、ナレッジ共有、ファイル共有
+- 業務システム開発、基幹システム改善、顧客管理、業務自動化
+- ChatGPT、Claude、Geminiなど生成AIの業務活用研修
+- 補助金を活用したDX、AI導入、システム導入の検討支援
+
+## 対応地域
+
+埼玉県、さいたま市、関東圏、全国オンライン対応。訪問とオンラインを組み合わせた支援が可能です。
+
+## 主要URL
+
+- 公式サイト: https://digitool-lab.com/
+- 事業内容: https://digitool-lab.com/service.html
+- 会社情報: https://digitool-lab.com/about.html
+- DX伴走支援: https://digitool-lab.com/dx-support-saitama/
+- 社外IT担当: https://digitool-lab.com/it-tantou-outsourcing/
+- 社内ポータル開発: https://digitool-lab.com/internal-portal-development/
+- 支援事例: https://digitool-lab.com/case-studies
+- システムショールーム: https://showroom.digitool-lab.com/
+- 補助金・助成金ポータル: https://showroom.digitool-lab.com/subsidies
+- お問い合わせ: https://digitool-lab.com/contact.html
+
+## 主要キーワード
+
+DX支援, DX支援 埼玉, DX支援 さいたま市, 中小企業DX, IT担当者がいない会社, IT担当 外注, 情シス代行 中小企業, 社外IT担当, 社内ポータル 開発, 社内ポータル 導入, AI研修 企業, 生成AI研修, 業務システム開発, 業務効率化, システム導入支援, 補助金 DX, 補助金 システム開発

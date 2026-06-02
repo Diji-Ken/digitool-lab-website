@@ -14,7 +14,10 @@
 
 ## 30日以内
 
-- [ ] NAP棚卸し、旧住所/旧電話の残存確認、JSON-LD、canonical、主要テンプレートを再確認する
+- [x] NAP棚卸し、旧住所/旧電話の残存確認、JSON-LD、canonical、主要テンプレートを再確認する
+- [x] トップページ本文・meta・OGP・Twitter descriptionを現在の本社所在地「埼玉県さいたま市北区」に寄せる
+- [x] Organization / LocalBusiness / WebSite / WebPage / Service のJSON-LDを統合し、本社所在地と主要サービスを明確化する
+- [x] robots.txtで公開ルートのMarkdown監査メモと `/scripts/` をクロール除外する
 - [x] Google Search Consoleで現状クエリ、表示回数、CTR、CVページを確認し、初期SEOダッシュボードを作る
 - [ ] Googleビジネスプロフィールの現状確認と、電話番号変更後に更新する項目を事前整理する
 - [x] 事例一覧ページを静的HTML化し、業種・課題・成果で探せる状態にする
@@ -38,7 +41,7 @@
 - [ ] FAQ記事、費用記事、比較記事を6〜10本作る
 - [ ] note 4本、Qiita/Zenn 2本、YouTube 2本を初期公開する
 - [ ] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る
-- [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、事例要約を反映する
+- [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
 
 ## 90日以内
 

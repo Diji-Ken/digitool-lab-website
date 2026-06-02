@@ -4,6 +4,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 # AI Crawlers
 User-agent: GPTBot
@@ -12,6 +14,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 User-agent: ChatGPT-User
 Allow: /
@@ -19,6 +23,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 User-agent: CCBot
 Allow: /
@@ -26,6 +32,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 User-agent: anthropic-ai
 Allow: /
@@ -33,6 +41,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 User-agent: Claude-Web
 Allow: /
@@ -40,6 +50,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 # Google AI
 User-agent: Google-Extended
@@ -48,6 +60,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 # Bing AI
 User-agent: BingBot
@@ -56,6 +70,8 @@ Disallow: /apps/
 Disallow: /backup_20250703_112022/
 Disallow: /article-workspace/
 Disallow: /posts-management/
+Disallow: /scripts/
+Disallow: /*.md$
 
 # Sitemap
 Sitemap: https://digitool-lab.com/sitemap.xml

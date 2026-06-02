@@ -115,6 +115,23 @@ Web経由の問い合わせ、資料DL、無料相談を増やすために、検
 - 資料DL、無料相談、LINE、Timerex、問い合わせフォーム送信のGA4イベントを実装済み
 - `generate_lead` など独自イベントはGA4の最近のイベントに出た後、キーイベント/探索レポートへ追加する
 
+## 2026-06-02 AIO/LLMO/NAP 追加対応
+
+### 実施内容
+
+- トップページのmeta description、OGP description、Twitter descriptionを「埼玉県さいたま市北区のDX支援専門会社」に更新した
+- トップページ本文に「株式会社デジタルツール研究所について」セクションを追加し、現在の本社所在地、支援領域、対象企業を明示した
+- トップページのJSON-LDを `@graph` に統合し、Organization、Person、LocalBusiness、WebSite、WebPage、Serviceを同一ID体系で整理した
+- Organization / LocalBusiness の主住所は本社「〒331-0821 埼玉県さいたま市北区別所町738-3」として明示した
+- `llms.txt` / `llms_full.txt` を現在の本社所在地、代表者、主サービス、showroom、補助金ポータル、主要LPを含む内容に更新した
+- `robots.txt` で公開ルートのMarkdown監査メモと `/scripts/` を全クローラー・AIクローラーから除外した
+- 公開対象から除外したバックアップ/記事素材を除き、旧所在地系の文字列が残っていないことを `rg` で確認した
+- ブラウザでトップページを確認し、会社情報セクション表示、旧所在地文字列なし、JSON-LD 1件を確認した
+
+### Googleスニペットについて
+
+Google検索結果に古い地域情報が残る場合、現在のHTMLではなく過去クロールや外部サイテーション由来のスニペットである可能性が高い。トップページ公開後にSearch ConsoleでトップページのURL検査とインデックス登録リクエストを行い、数日〜数週間単位で反映を確認する。
+
 ## 2026-06-02 GSC/GA4 初期確認
 
 ### Search Console
@@ -149,7 +166,8 @@ Web経由の問い合わせ、資料DL、無料相談を増やすために、検
 - `/excel-paper-dx/` を作る
 - `/subsidy-dx-ai-system/` を作る
 - FAQ/費用/比較記事を作る
-- `llms.txt` / `llms_full.txt` を更新する
+- トップページ公開後、Search Consoleで `/` のURL検査とインデックス登録リクエストを行う
+- 公開後に `https://digitool-lab.com/llms.txt` / `https://digitool-lab.com/llms_full.txt` / `https://digitool-lab.com/robots.txt` の反映を確認する
 
 ### 3. 外部展開
 

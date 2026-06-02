@@ -384,6 +384,14 @@ nav.mobile-nav a.active {
 .solution-text h3 { font-size: 1.75rem; color: var(--orange-600); }
 .solution-text p { margin-bottom: 1rem; }
 
+/* Company Facts Section (index.html) */
+.company-facts-section { background: var(--white); padding-top: 4rem; }
+.company-facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+.company-fact { border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.5rem; background: var(--gray-50); }
+.company-fact span { display: block; color: var(--orange-600); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.company-fact strong { display: block; font-size: 1.25rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--gray-900); }
+.company-fact p { margin: 0; color: var(--gray-600); line-height: 1.7; }
+
 /* Service & Case Promo Section (index.html) */
 .service-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .promo-card { background: var(--gray-50); padding: 2rem; border-radius: 8px; }
@@ -991,6 +999,7 @@ footer {
 @media (max-width: 992px) {
   .problem-grid { grid-template-columns: 1fr; }
   .solution-section { flex-direction: column; }
+  .company-facts-grid { grid-template-columns: 1fr; }
   .service-case-grid { grid-template-columns: 1fr; }
   .header-right-panel { display: none; }
   

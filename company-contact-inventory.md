@@ -1,6 +1,6 @@
 # 会社連絡先・住所更新メモ
 
-最終更新: 2026-06-01
+最終更新: 2026-06-02
 
 ## 現在の公開表記
 
@@ -27,6 +27,7 @@
 - `data-deletion.html`, `facebook-data-deletion.html`, `facebook-data-deletion`: 住所表記
 - `contact_form.php`, `contact_form_secure.php`: 自動返信メール署名
 - `llms.txt`, `llms_full.txt`: AI向け会社情報
+- `robots.txt`: 内部監査メモ、Markdown、scriptsのクロール除外
 - `blog/*.html`: 記事フッター
 - `apps/*.html`, `services/*.html`: 派生ページ
 - `scripts/unify_blog_case_templates.py`: ブログテンプレート内フッター
@@ -34,8 +35,8 @@
 ## 棚卸しコマンド
 
 ```bash
-cd /Users/m/Workspace/mirai/50_Reference/digitool-lab.com/public_html
+ cd /Users/m/Workspace/mirai/50_Reference/digitool-lab.com/public_html
 ./scripts/audit-company-contact.sh
 ```
 
-旧住所が残っていないかだけ確認する場合も、上記スクリプトの `Deprecated address check` を見る。
+旧住所系の具体文字列は公開ルート内に保存しない方針。旧住所残存確認は、非公開メモまたは作業時の一時検索クエリで実施し、公開ファイルへ旧住所文字列を再保存しない。
