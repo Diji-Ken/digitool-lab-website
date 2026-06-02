@@ -15,7 +15,7 @@
 ## 30日以内
 
 - [ ] NAP棚卸し、旧住所/旧電話の残存確認、JSON-LD、canonical、主要テンプレートを再確認する
-- [ ] Google Search Consoleで現状クエリ、表示回数、CTR、CVページを確認し、初期SEOダッシュボードを作る
+- [x] Google Search Consoleで現状クエリ、表示回数、CTR、CVページを確認し、初期SEOダッシュボードを作る
 - [ ] Googleビジネスプロフィールの現状確認と、電話番号変更後に更新する項目を事前整理する
 - [x] 事例一覧ページを静的HTML化し、業種・課題・成果で探せる状態にする
 - [x] `/dx-support-saitama/` を制作する
@@ -23,9 +23,14 @@
 - [x] `/internal-portal-development/` を制作する
 - [x] 既存事例20〜30本から新LPへ内部リンクを張る
 - [x] 資料DL、無料相談、LINE、TimerexクリックをCV計測できるようにする
+- [x] `digitool-lab.com` と `showroom.digitool-lab.com` のサイトマップをSearch Consoleで再送信する
+- [x] 新規LPと事例一覧のURL検査を実施し、未登録URLのインデックス登録をリクエストする
+- [x] GA4で `form_submit` をキーイベント化し、GA4とSearch Consoleを連携する
 
 ## 60日以内
 
+- [ ] GA4で `generate_lead`、`file_download`、`timerex_click`、`line_click` が実データとして出たらキーイベント/探索レポートに追加する
+- [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
 - [ ] `/business-system-development/` を制作する
 - [ ] `/ai-training-saitama/` を制作する
 - [ ] `/excel-paper-dx/` を制作する

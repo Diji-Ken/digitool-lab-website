@@ -146,7 +146,8 @@
 - [x] **関連記事リンク修正**: ブログ137件と事例一覧のローカルリンク切れを検査し、旧関連記事リンク・プライバシーポリシーリンクを修正済み
 
 #### 次に見ること
-- GSCで事例一覧、主要30事例、新LP3本の表示回数・CTR・遷移状況を確認する
+- GSCで事例一覧、主要30事例、新LP3本の表示回数・CTR・遷移状況を継続確認する
+- 2026-06-02時点で `/it-tantou-outsourcing/` と `/internal-portal-development/` は登録済み、`/dx-support-saitama/` と `/case-studies` は登録リクエスト済み
 - 反応が出たテーマから、費用記事・比較記事・FAQ記事へ展開する
 
 ### 8. CVイベント計測
@@ -157,10 +158,12 @@
 - [x] **無料相談クリック**: `contact_click` / `timerex_click` をGA4へ送信
 - [x] **LINEクリック**: `line_click` をGA4へ送信
 - [x] **問い合わせ送信**: `generate_lead` をGA4へ送信
+- [x] **GA4キーイベント初期設定**: GA4で観測済みの `form_submit` をキーイベント化
+- [x] **GA4-GSC連携**: `digitool-lab.com` のSearch ConsoleプロパティとGA4メインサイトストリームを連携
 
 #### 注意
 - GA4へ送る値はURL、ボタン文言、ページパス、ページタイトルのみ。氏名、メール、電話番号などの個人情報は送らない。
-- GA4管理画面側で主要イベントに設定する作業は別途必要。
+- `generate_lead`、`file_download`、`timerex_click`、`line_click` は実データとしてGA4の最近のイベントに出た後、必要に応じてキーイベント化する。
 
 ---
 

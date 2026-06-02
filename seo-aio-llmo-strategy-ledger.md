@@ -106,13 +106,41 @@ Web経由の問い合わせ、資料DL、無料相談を増やすために、検
 
 ### 1. すぐやる
 
-- GSC現状クエリ確認は未実施。CVクリック計測は実装済み
+- GSC現状クエリ確認、サイトマップ再送信、主要URL検査、GA4キーイベント初期設定は実施済み
 - 事例一覧ページの静的HTML初期カード、課題別導線、URL条件連動を公開済み
 - `/dx-support-saitama/` を作る
 - `/it-tantou-outsourcing/` を作る
 - `/internal-portal-development/` を作る
 - 主要30事例から上記LPへ内部リンクを追加済み
 - 資料DL、無料相談、LINE、Timerex、問い合わせフォーム送信のGA4イベントを実装済み
+- `generate_lead` など独自イベントはGA4の最近のイベントに出た後、キーイベント/探索レポートへ追加する
+
+## 2026-06-02 GSC/GA4 初期確認
+
+### Search Console
+
+- `https://digitool-lab.com/`
+  - 3か月データ: クリック188、表示回数5,190、CTR 3.6%、平均掲載順位16.8
+  - 上位クエリ: デジタルツール研究所、株式会社デジタルツール研究所、松岡哲平、facebook データ削除、notebooklm slack 連携
+  - 非ブランドで表示が出ている候補: 警備業務効率化 ai活用事例、日報 自動化、ai 離職予測システム、離職 予測 ai
+  - 上位ページ: `/`、`/about`、`/facebook-data-deletion`、`/blog/hr-turnover-prediction-ai`、`/service`
+  - サイトマップ: `/sitemap.xml` を再送信。検出ページ数149から152、ステータス成功
+  - URL検査: `/it-tantou-outsourcing/` と `/internal-portal-development/` は登録済み。`/dx-support-saitama/` は「検出 - インデックス未登録」だったため登録リクエスト済み。`/case-studies` は過去クロールでnoindex扱いだったが、ライブテストでは登録可能になったため登録リクエスト済み
+  - 手動対策、セキュリティ問題: どちらも問題なし
+  - 外部リンク: 合計15件。主なリンク元は note.com 8、scamadviser.com 2、timewell.jp 2
+  - 内部リンク: Search Console上は合計12件。内部リンク強化余地あり
+- `https://showroom.digitool-lab.com/`
+  - サイトマップ: `/sitemap.xml` を再送信。検出ページ数536から538、ステータス成功
+  - GSCサマリー上は登録済み217、未登録9,542。補助金詳細ページが多いため、優先表示・canonical・noindex方針は継続確認する
+
+### GA4
+
+- プロパティ: `Default Account for Firebase / intrepid-stock-458907-v1`
+- 直近7日: アクティブユーザー48、イベント数256、Organic Search 33セッション
+- キーイベント: 0件だったため、最近のイベントに出ていた `form_submit` をキーイベント化済み
+- 実装済み独自イベント: `download_click`、`file_download`、`timerex_click`、`line_click`、`contact_click`、`generate_lead`
+- 注意: 独自イベントはまだGA4の「最近のイベント」に出ていないため、実データ出現後にキーイベント/探索レポートへ追加する
+- Search Console連携: `https://digitool-lab.com/` とGA4 Webストリーム「デジタルツール研究所メインサイト」を2026-06-02にリンク済み
 
 ### 2. 次にやる
 
