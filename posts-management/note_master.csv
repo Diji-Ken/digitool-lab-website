@@ -1,1 +1,5 @@
 Note_ID,Source_Nos,Title,Content_File_Path,Status,Publish_Date,Note_URL
+N001,SEO-01,"中小企業のDXが定着しない理由。ツール導入より先に整理すべきこと",posts-management/contents/note/N001.md,draft,,
+N002,SEO-02,"「もう一人のIT担当」という考え方。IT担当者がいない会社の現実的なDX",posts-management/contents/note/N002.md,draft,,
+N003,SEO-03,"社内ポータルを作る前に整理すべき業務。日報・申請・ナレッジ共有の入口設計",posts-management/contents/note/N003.md,draft,,
+N004,SEO-07,"補助金ありきのDXが失敗しやすい理由。制度より先に決めるべき導入範囲",posts-management/contents/note/N004.md,draft,,

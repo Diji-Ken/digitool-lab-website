@@ -199,6 +199,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (absoluteHref.includes('/contact.html') || absoluteHref.endsWith('/contact')) {
       sendAnalyticsEvent('contact_click', eventParams);
+      return;
+    }
+
+    if (absoluteHref.includes('showroom.digitool-lab.com')) {
+      sendAnalyticsEvent('showroom_click', eventParams);
+      return;
+    }
+
+    try {
+      const destination = new URL(absoluteHref, window.location.href);
+      const isExternal = destination.hostname && destination.hostname !== window.location.hostname && !destination.hostname.endsWith('.digitool-lab.com');
+      if (isExternal) {
+        sendAnalyticsEvent('outbound_click', {
+          ...eventParams,
+          outbound_domain: destination.hostname
+        });
+      }
+    } catch (error) {
+      // Ignore malformed URLs used for local anchors or script-driven links.
     }
   }
 

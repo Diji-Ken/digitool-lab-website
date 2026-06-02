@@ -160,6 +160,8 @@
 - [x] **問い合わせ送信**: `generate_lead` をGA4へ送信
 - [x] **GA4キーイベント初期設定**: GA4で観測済みの `form_submit` をキーイベント化
 - [x] **GA4-GSC連携**: `digitool-lab.com` のSearch ConsoleプロパティとGA4メインサイトストリームを連携
+- [x] **showroom遷移**: `showroom_click` をGA4へ送信
+- [x] **外部リンククリック**: `outbound_click` をGA4へ送信
 
 #### 注意
 - GA4へ送る値はURL、ボタン文言、ページパス、ページタイトルのみ。氏名、メール、電話番号などの個人情報は送らない。
@@ -178,6 +180,22 @@
 
 #### 注意
 - Google検索結果の古い地域スニペットは、HTML修正後も即時には消えない。2026-06-02にSearch Consoleでインデックス登録リクエスト済み。反映は数日〜数週間単位で確認する。
+
+### 10. 固定LP・外部導線追加
+
+#### 改善アクション
+- [x] **業務システム開発LP**: `/business-system-development/` を追加
+- [x] **AI研修LP**: `/ai-training-saitama/` を追加
+- [x] **Excel・紙業務DX LP**: `/excel-paper-dx/` を追加
+- [x] **補助金DX相談LP**: `/subsidy-dx-ai-system/` を追加し、showroom補助金ポータルへ接続
+- [x] **無料資料ページ**: `/downloads/` を追加
+- [x] **外部記事下書き**: note 4本、Qiita/Zenn 2本の下書きを作成
+- [x] **サイトマップ**: 新規URL5件を追加
+- [x] **サービス一覧**: 新規LPへの内部リンクを追加
+
+#### 次アクション
+- 本番反映後にSearch Consoleでサイトマップ再送信と主要URL検査を行う
+- note/Qiita/Zennの下書きを確認し、公開後にURLを台帳へ記録する
 
 ---
 

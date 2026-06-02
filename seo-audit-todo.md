@@ -35,12 +35,15 @@
 
 - [ ] GA4で `generate_lead`、`file_download`、`timerex_click`、`line_click` が実データとして出たらキーイベント/探索レポートに追加する
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
-- [ ] `/business-system-development/` を制作する
-- [ ] `/ai-training-saitama/` を制作する
-- [ ] `/excel-paper-dx/` を制作する
-- [ ] `/subsidy-dx-ai-system/` を制作し、showroom補助金ページと接続する
+- [x] `/business-system-development/` を制作する
+- [x] `/ai-training-saitama/` を制作する
+- [x] `/excel-paper-dx/` を制作する
+- [x] `/subsidy-dx-ai-system/` を制作し、showroom補助金ページと接続する
+- [x] `/downloads/` を制作し、DX診断・社内ポータル要件・補助金確認・AI活用・業務棚卸しの無料チェックリスト導線を作る
+- [x] showroom遷移と外部リンククリックをGA4イベント化する
 - [ ] FAQ記事、費用記事、比較記事を6〜10本作る
 - [ ] note 4本、Qiita/Zenn 2本、YouTube 2本を初期公開する
+- [x] note 4本、Qiita/Zenn 2本の初期下書きを作成する
 - [ ] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る
 - [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
 
