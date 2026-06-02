@@ -28,6 +28,7 @@
 - [x] 資料DL、無料相談、LINE、TimerexクリックをCV計測できるようにする
 - [x] `digitool-lab.com` と `showroom.digitool-lab.com` のサイトマップをSearch Consoleで再送信する
 - [x] 新規LPと事例一覧のURL検査を実施し、未登録URLのインデックス登録をリクエストする
+- [x] トップページ更新後、Search Consoleで `https://digitool-lab.com/` のインデックス登録をリクエストする
 - [x] GA4で `form_submit` をキーイベント化し、GA4とSearch Consoleを連携する
 
 ## 60日以内
