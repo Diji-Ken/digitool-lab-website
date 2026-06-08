@@ -1477,7 +1477,7 @@ index.html
 ```json
 "contactPoint": {
   "@type": "ContactPoint",
-  "telephone": "+81-48-606-4504",
+  "telephone": "+81-48-700-7030",
   "contactType": "customer service",
   "email": "contact@digitool-lab.com"
 }
@@ -1491,7 +1491,7 @@ index.html
   "@type": "LocalBusiness",
   "name": "株式会社デジタルツール研究所",
   "image": "https://digitool-lab.com/images/企業ロゴ最終.png",
-  "telephone": "+81-48-606-4504",
+  "telephone": "+81-48-700-7030",
   "email": "contact@digitool-lab.com",
   "url": "https://digitool-lab.com/"
 }

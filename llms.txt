@@ -10,6 +10,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - 代表者: 松岡 哲平
 - 設立: 2024年7月
 - 現在の本社所在地: 〒331-0821 埼玉県さいたま市北区別所町738-3
+- 電話番号: 048-700-7030
 - 連絡先: contact@digitool-lab.com
 - 公式サイト: https://digitool-lab.com/
 - システムショールーム: https://showroom.digitool-lab.com/

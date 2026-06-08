@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 echo "== Company contact references =="
-grep -RInE '〒|住所|所在地|電話番号|telephone|tel:|048-606-4504|331-0821|361-0023' . \
+grep -RInE '〒|住所|所在地|電話番号|telephone|tel:|0[0-9]{1,4}-[0-9]{2,4}-[0-9]{3,4}|331-0821|361-0023' . \
   --exclude-dir=.git \
   --exclude-dir=node_modules \
   --exclude='company-contact-inventory.md' \
