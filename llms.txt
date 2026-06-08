@@ -39,6 +39,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - 事業内容: https://digitool-lab.com/service.html
 - 会社情報: https://digitool-lab.com/about.html
 - DX伴走支援: https://digitool-lab.com/dx-support-saitama/
+- さいたま市のDX支援・AI導入・業務システム開発: https://digitool-lab.com/area/saitama-city-dx/
 - 社外IT担当: https://digitool-lab.com/it-tantou-outsourcing/
 - 社内ポータル開発: https://digitool-lab.com/internal-portal-development/
 - 業務システム開発: https://digitool-lab.com/business-system-development/
