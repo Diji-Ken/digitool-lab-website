@@ -36,7 +36,7 @@
 - [ ] GA4で `generate_lead`、`file_download`、`timerex_click`、`line_click` が実データとして出たらキーイベント/探索レポートに追加する
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
 - [x] 新規SEO記事3本と `/area/saitama-city-dx/` のURL検査・インデックス登録リクエスト・sitemap再送信を実施する
-- [ ] Search Consoleの1日割り当て量解除後に `/excel-paper-dx/` のURL検査とインデックス登録リクエストを実施する
+- [ ] Search Console側のreCAPTCHA接続エラー解消後に `/excel-paper-dx/` のインデックス登録リクエストを再実施する（URL検査では取得成功・インデックス許可を確認済み）
 - [x] `/business-system-development/` を制作する
 - [x] `/ai-training-saitama/` を制作する
 - [x] `/excel-paper-dx/` を制作する
