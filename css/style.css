@@ -445,6 +445,17 @@ footer {
   line-height: 1.5;
 }
 
+.footer-company-info a {
+  color: var(--gray-300);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-company-info a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
 .footer-right {
   display: contents;
 }
