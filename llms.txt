@@ -52,6 +52,12 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - 補助金・助成金ポータル: https://showroom.digitool-lab.com/subsidies
 - お問い合わせ: https://digitool-lab.com/contact.html
 
+## 相談前に確認できる記事
+
+- DX支援の費用の考え方: https://digitool-lab.com/blog/dx-support-cost
+- IT担当者の採用と外注比較: https://digitool-lab.com/blog/it-person-outsourcing-vs-hiring
+- 業務システム開発費用の考え方: https://digitool-lab.com/blog/business-system-development-cost
+
 ## 主要キーワード
 
 DX支援, DX支援 埼玉, DX支援 さいたま市, 中小企業DX, IT担当者がいない会社, IT担当 外注, 情シス代行 中小企業, 社外IT担当, 社内ポータル 開発, 社内ポータル 導入, AI研修 企業, 生成AI研修, ChatGPT研修 法人, 業務システム開発, 基幹システム 開発 中小企業, Excel 業務 効率化, 紙業務 デジタル化, 属人化 解消, 日報 自動化, 業務効率化, システム導入支援, 補助金 DX, 補助金 システム開発, AI導入 補助金
