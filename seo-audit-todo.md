@@ -4,6 +4,14 @@
 元資料: `/Users/m/Downloads/digitool-lab-seo-aio-llmo-meo-strategy-20260601.docx`
 追加資料: `/Users/m/Workspace/mirai/00_knowledge/clients/OToMo/projects/ai-showcase/research/leadgen-materials-20260609/`
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
+全体ロードマップ: `seo-aio-llmo-execution-roadmap.md`
+
+## 現在の実行方針
+
+- 自社HPをSEO/AIO/LLMOの主戦場にする。
+- note、SNS、Qiita/Zenn、YouTube、地域媒体は、自社HPへ戻すための外部導線・言及・被リンク補助にする。
+- noteでもSEO/MEO/AIO記事は作るが、自社HPと同じ内容を転載せず、読み物・実務メモ・考え方として公開する。
+- 以後の全体像は `seo-aio-llmo-execution-roadmap.md` を優先して見る。
 
 ## 方針
 
