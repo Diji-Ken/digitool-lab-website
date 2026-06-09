@@ -1,7 +1,8 @@
 # SEO/AIO/LLMO/MEO 実行TODO - 株式会社デジタルツール研究所
 
-更新日: 2026-06-08
+更新日: 2026-06-09
 元資料: `/Users/m/Downloads/digitool-lab-seo-aio-llmo-meo-strategy-20260601.docx`
+追加資料: `/Users/m/Workspace/mirai/00_knowledge/clients/OToMo/projects/ai-showcase/research/leadgen-materials-20260609/`
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
 
 ## 方針
@@ -46,8 +47,10 @@
 - [ ] FAQ記事、費用記事、比較記事を6〜10本作る（初期5本: DX支援費用、IT担当採用/外注比較、業務システム開発費用、AI研修費用、社内ポータル開発費用）
 - [ ] note 4本、Qiita/Zenn 2本、YouTube 2本を初期公開する
 - [x] note 4本、Qiita/Zenn 2本の初期下書きを作成する
+- [x] 法人集客資料を保存し、MEO・サイテーション、AIO・LLMO、広告入稿前チェックリストの導線を `/downloads/` と `llms.txt` 系へ反映する
 - [ ] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る
 - [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
+- [ ] `ai-training-cost` と `internal-portal-development-cost` のGSC URL検査・インデックス登録リクエスト完了を確認する
 
 ## 90日以内
 
@@ -55,6 +58,7 @@
 - [ ] 行田市、上尾市、伊奈町、桶川市は実績・相談・地域情報が揃ったものから独立ページ化を判断する
 - [ ] 事例を課題別に再編集し、課題別事例ハブを作る
 - [ ] DX診断シート、社内ポータル要件定義シート、補助金チェックリスト等の無料DL資産を公開する
+- [ ] 保存資料をもとに、MEO・サイテーション、AIO・LLMO、広告入稿前確認の実チェックリストを自社用に作成する
 - [ ] セミナー/ウェビナーを1回企画し、動画・スライド・記事に二次利用する
 - [ ] GSC/GBPデータを見てタイトル、FAQ、内部リンク、投稿内容を調整する
 
