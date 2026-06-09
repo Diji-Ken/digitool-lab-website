@@ -49,6 +49,8 @@
 - [x] note 4本、Qiita/Zenn 2本の初期下書きを作成する
 - [x] 法人集客資料を保存し、MEO・サイテーション、AIO・LLMO、広告入稿前チェックリストの導線を `/downloads/` と `llms.txt` 系へ反映する
 - [x] 資料DLフォームを `send_lead.php` に送信する流れへ修正し、サービス詳細資料・相談前チェックリストPDFを作成する
+- [x] AI検索・MEO・サイテーション対策記事を追加し、sitemap、llms、無料資料ページから内部リンクする
+- [x] note下書き `N005` を追加する
 - [ ] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る
 - [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
 - [ ] `ai-training-cost` と `internal-portal-development-cost` のGSC URL検査・インデックス登録リクエスト完了を確認する

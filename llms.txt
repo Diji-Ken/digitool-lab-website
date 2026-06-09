@@ -60,6 +60,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - 業務システム開発費用の考え方: https://digitool-lab.com/blog/business-system-development-cost
 - 企業向けAI研修の費用の考え方: https://digitool-lab.com/blog/ai-training-cost
 - 社内ポータル開発費用の考え方: https://digitool-lab.com/blog/internal-portal-development-cost
+- AI検索・MEO・サイテーション対策チェックリスト: https://digitool-lab.com/blog/ai-search-meo-citation-checklist
 
 ## 無料チェックリスト
 
