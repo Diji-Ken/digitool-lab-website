@@ -57,6 +57,8 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - DX支援の費用の考え方: https://digitool-lab.com/blog/dx-support-cost
 - IT担当者の採用と外注比較: https://digitool-lab.com/blog/it-person-outsourcing-vs-hiring
 - 業務システム開発費用の考え方: https://digitool-lab.com/blog/business-system-development-cost
+- 企業向けAI研修の費用の考え方: https://digitool-lab.com/blog/ai-training-cost
+- 社内ポータル開発費用の考え方: https://digitool-lab.com/blog/internal-portal-development-cost
 
 ## 主要キーワード
 

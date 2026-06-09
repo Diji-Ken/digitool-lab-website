@@ -4,7 +4,7 @@
 FTP_SERVER="sv16039.xserver.jp"
 FTP_USER="digitalai"
 FTP_PASS="Mirai0524"
-REMOTE_DIR="/public_html"
+REMOTE_DIR="/digitool-lab.com/public_html"
 
 echo "🚀 全ファイルの自動アップロードを開始します..."
 

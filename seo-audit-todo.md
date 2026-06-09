@@ -36,14 +36,14 @@
 - [ ] GA4で `generate_lead`、`file_download`、`timerex_click`、`line_click` が実データとして出たらキーイベント/探索レポートに追加する
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
 - [x] 新規SEO記事3本と `/area/saitama-city-dx/` のURL検査・インデックス登録リクエスト・sitemap再送信を実施する
-- [ ] Search Console側のreCAPTCHA接続エラー解消後に `/excel-paper-dx/` のインデックス登録リクエストを再実施する（URL検査では取得成功・インデックス許可を確認済み）
+- [x] `/excel-paper-dx/` は2026-06-09にGSCで登録済みを確認する（HTTPS・パンくずリスト・FAQも有効検出）
 - [x] `/business-system-development/` を制作する
 - [x] `/ai-training-saitama/` を制作する
 - [x] `/excel-paper-dx/` を制作する
 - [x] `/subsidy-dx-ai-system/` を制作し、showroom補助金ページと接続する
 - [x] `/downloads/` を制作し、DX診断・社内ポータル要件・補助金確認・AI活用・業務棚卸しの無料チェックリスト導線を作る
 - [x] showroom遷移と外部リンククリックをGA4イベント化する
-- [ ] FAQ記事、費用記事、比較記事を6〜10本作る（初期3本: DX支援費用、IT担当採用/外注比較、業務システム開発費用）
+- [ ] FAQ記事、費用記事、比較記事を6〜10本作る（初期5本: DX支援費用、IT担当採用/外注比較、業務システム開発費用、AI研修費用、社内ポータル開発費用）
 - [ ] note 4本、Qiita/Zenn 2本、YouTube 2本を初期公開する
 - [x] note 4本、Qiita/Zenn 2本の初期下書きを作成する
 - [ ] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る
