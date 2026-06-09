@@ -43,7 +43,10 @@ const DOWNLOAD_MODAL_HTML = `
         <select id="modal-interest" name="interest">
           <option value="">選択してください</option>
           <option value="dx-consulting">DX伴走サポート</option>
+          <option value="internal-portal">社内ポータル・業務システム開発</option>
           <option value="ai-training">AI研修</option>
+          <option value="subsidy">補助金を活用したDX・AI導入</option>
+          <option value="web-leadgen">Web集客・MEO・AIO/LLMO</option>
           <option value="development">開発・デジタル支援</option>
           <option value="all">すべてのサービス</option>
         </select>
@@ -114,29 +117,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Handle form submission
+    // Allow the server-side lead handler to receive the form, then redirect to the thank-you page.
     const downloadForm = document.getElementById('download-form');
     if (downloadForm) {
       downloadForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Show success message
-        const formData = new FormData(downloadForm);
-        const name = formData.get('name');
-        
-        alert(`ありがとうございます、${name}様。\n資料のダウンロードを開始します。`);
-        
-        // Close modal
-        closeModal();
-        
-        // Start download
-        const downloadLink = document.createElement('a');
-        downloadLink.href = 'https://digitool-lab.com/documents/digitool-lab-service-guide.pdf';
-        downloadLink.download = 'デジタルツール研究所_サービス詳細資料.pdf';
-        downloadLink.click();
-        
-        // Reset form
-        downloadForm.reset();
+        const submitButton = downloadForm.querySelector('button[type="submit"]');
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = '送信中...';
+        }
       });
     }
   }
