@@ -84,6 +84,7 @@
 | 優先 | 対象 | 作業 | タイミング |
 |---:|---|---|---|
 | 1 | GSC | 404検証結果、インデックス状況、11〜20位クエリ確認 | 数日後 |
+| 1 | GSC | FAQ増強後の `/it-tantou-outsourcing/`、`/ai-training-saitama/`、`/business-system-development/` URL検査 | Chrome再接続後 |
 | 1 | GA4 | `generate_lead`、`file_download`、`timerex_click`、`line_click` の実データ確認 | 実イベント発生後 |
 | 2 | GSC | 表示回数が出てCTRが低いページのtitle/description改善 | 月次 |
 | 2 | Lighthouse | 古い記事・追加LPの速度、画像、JS確認 | 月次 |
