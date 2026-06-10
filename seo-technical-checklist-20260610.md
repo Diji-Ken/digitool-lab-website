@@ -132,6 +132,14 @@ noindexにした、または既存noindexを維持したページ:
 - フッターのロゴ画像に `loading="lazy"` を追加
 - `.htaccess` に画像、CSS、JS、フォントのブラウザキャッシュ設定を追加
 - ローカルブラウザでトップページを確認し、`hero-dx-support.webp`、ロゴ、`top1.webp` が200で読み込まれることを確認
+- 表示用ロゴを `images/logo-160.webp` に差し替え、元の大きいロゴは構造化データ等の会社ロゴ参照として維持
+- トップページからGoogle Fonts、未使用のFont Awesome/AOS外部読み込み、`style.css` の外部CSS `@import` を削除
+- トップページの画像比率、色コントラスト、見出し順を修正
+- ローカルLighthouseでトップページを再確認
+  - Performance: 56 -> 98
+  - Accessibility: 93 -> 100
+  - Best Practices: 92 -> 100
+  - SEO: 100 -> 100
 
 ## 2026-06-10 Search Console確認
 
@@ -162,7 +170,7 @@ noindexにした、または既存noindexを維持したページ:
 ### P1
 
 - PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認する。2026-06-10時点ではAPI 429のため後日またはブラウザ画面で確認する
-- 大きい画像、CSS、外部JSの読み込みを見直す
+- 主要LP、記事、資料DLページでもLighthouse確認を広げ、ページ固有の大きい画像、CSS、外部JSの読み込みを見直す
 - 主要LPと記事の内部リンクを増やす
 - 古い記事のtitle、H2、FAQ、CTA、更新日を順に見直す
 - リンク切れチェックを月1回実施する

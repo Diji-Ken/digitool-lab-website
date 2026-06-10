@@ -1,6 +1,3 @@
-@import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
-@import url("https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css");
-
 /* Global Styles */
 :root {
   --primary-color: #f97316;
@@ -279,8 +276,8 @@ nav.mobile-nav a.active {
     transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 2px solid transparent;
 }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
-.btn-primary { background-color: var(--orange-500); color: var(--white); }
-.btn-primary:hover { background-color: var(--orange-600); }
+.btn-primary { background-color: var(--orange-700); color: var(--white); }
+.btn-primary:hover { background-color: #9a3412; }
 .btn-light { background-color: var(--white); color: var(--orange-600); }
 .btn-light:hover { background-color: var(--gray-50); }
 .btn-sm { 
@@ -306,15 +303,15 @@ nav.mobile-nav a.active {
 .btn-outline:hover { background-color: var(--gray-50); }
 .btn-block { display: block; width: 100%; }
 
-.btn-outline-primary { 
+.btn-outline-primary {
   background-color: transparent; 
-  color: var(--orange-600); 
-  border: 2px solid var(--orange-500);
+  color: var(--orange-700);
+  border: 2px solid var(--orange-600);
 }
 .btn-outline-primary:hover { 
-  background-color: var(--orange-500); 
+  background-color: var(--orange-700);
   color: var(--white);
-  border-color: var(--orange-500);
+  border-color: var(--orange-700);
 }
 
 /* --- Page-specific sections --- */
@@ -379,7 +376,7 @@ nav.mobile-nav a.active {
 /* Solution Section (index.html) */
 .solution-section { display: flex; align-items: center; gap: 3rem; max-width: 1200px; margin: 0 auto; }
 .solution-image { flex: 1; }
-.solution-image img { max-width: 100%; border-radius: 8px; }
+.solution-image img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 .solution-text { flex: 1; }
 .solution-text h3 { font-size: 1.75rem; color: var(--orange-600); }
 .solution-text p { margin-bottom: 1rem; }
@@ -388,7 +385,7 @@ nav.mobile-nav a.active {
 .company-facts-section { background: var(--white); padding-top: 4rem; }
 .company-facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
 .company-fact { border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.5rem; background: var(--gray-50); }
-.company-fact span { display: block; color: var(--orange-600); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.company-fact span { display: block; color: var(--orange-700); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
 .company-fact strong { display: block; font-size: 1.25rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--gray-900); }
 .company-fact p { margin: 0; color: var(--gray-600); line-height: 1.7; }
 
@@ -560,7 +557,7 @@ footer {
   padding-top: 1.5rem;
   text-align: center;
   font-size: 0.875rem;
-  color: var(--gray-500);
+  color: var(--gray-300);
 }
 
 /* CTA バナー（ページ下部） */
@@ -598,7 +595,7 @@ footer {
 
 .bottom-cta-buttons .btn {
   background-color: var(--white);
-  color: var(--orange-600);
+  color: var(--orange-700);
   border: 2px solid var(--white);
 }
 
@@ -616,7 +613,7 @@ footer {
 
 .bottom-cta-buttons .btn-outline-white:hover {
   background-color: var(--white);
-  color: var(--orange-600);
+  color: var(--orange-700);
 }
 
 /* --- Styles for sub-pages --- */
@@ -1590,7 +1587,7 @@ footer {
   text-transform: uppercase;
 }
 
-.testimonial-info h4 {
+.testimonial-info h3 {
   margin: 0 0 0.25rem;
   font-size: 1.125rem;
   color: var(--gray-900);
