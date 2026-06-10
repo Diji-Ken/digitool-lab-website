@@ -57,6 +57,7 @@ GBPドラフト: `gbp-operation-drafts-20260610.md`
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
 - [x] 2026-06-10の技術SEO整理後、Search Consoleでサイトマップを再送信し、ページインデックス、手動対策、セキュリティ問題を確認する
 - [ ] PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認し、画像・CSS・外部JSの改善点を洗い出す
+  - 2026-06-10: PageSpeed Insights APIは429で実行不可。ローカル監査では主要5ページのcanonical/meta description/h1/JSON-LD/画像altは問題なし。大容量画像は事例画像に集中しているため、次回PageSpeedまたはLighthouseで実測してから圧縮対象を決める
 - [x] トップページの重い下部画像をWebP化し、画像サイズ指定・遅延読み込み・静的資産キャッシュ設定を追加する
 - [x] トップページをLighthouseで確認し、表示ロゴWebP化、Google Fonts外し、不要外部CSS/JS削除、コントラスト/見出し/画像比率を改善する
 - [x] 主要SEO受け皿ページ、費用記事、資料DLページをローカルLighthouseで確認し、LP共通CSSのコントラスト、CTA背景、スマホ時LCP、H1改行を改善する
@@ -78,9 +79,9 @@ GBPドラフト: `gbp-operation-drafts-20260610.md`
 - [x] 資料DLフォームを `send_lead.php` に送信する流れへ修正し、サービス詳細資料・相談前チェックリストPDFを作成する
 - [x] AI検索・MEO・サイテーション対策記事を追加し、sitemap、llms、無料資料ページから内部リンクする
 - [x] note下書き `N005` を追加する
-- [ ] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る（サイテーション登録とは別に、被リンク/共催候補として扱う）
+- [x] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る（サイテーション登録とは別に、被リンク/共催候補として扱う）
 - [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
-- [ ] `ai-training-cost` と `internal-portal-development-cost` のGSC URL検査・インデックス登録リクエスト完了を確認する
+- [x] `ai-training-cost` と `internal-portal-development-cost` のGSC URL検査・インデックス登録リクエスト完了を確認する
 - [x] 2026-06-10にFAQ増強した `/it-tantou-outsourcing/`、`/ai-training-saitama/`、`/business-system-development/` のGSC URL検査とインデックス登録リクエストを再実施する
 
 ## 90日以内
