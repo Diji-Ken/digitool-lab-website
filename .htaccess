@@ -76,6 +76,11 @@
 # HTML拡張子の非表示化
 RewriteEngine On
 
+# Redirect legacy root article URLs directly before generic .html cleanup
+RewriteRule ^ai-notebooklm-podcast-knowledge\.html$ https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge [R=301,L]
+RewriteRule ^ai-gemini-document-comparison\.html$ https://digitool-lab.com/blog/ai-gemini-document-comparison [R=301,L]
+RewriteRule ^ai-notebooklm-law-podcast\.html$ https://digitool-lab.com/blog/ai-notebooklm-law-podcast [R=301,L]
+
 # Redirect .html extension to clean URLs (external requests only)
 RewriteCond %{THE_REQUEST} \s/+([^?\s]*?)\.html[\s?] [NC]
 RewriteCond %{REQUEST_URI} !\.php$
