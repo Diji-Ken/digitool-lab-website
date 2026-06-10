@@ -26,6 +26,9 @@
 | 6 | 記事 | IT担当者がいない会社のシステム導入チェックリスト | IT担当不在で外注検討 | `/it-tantou-outsourcing/`、無料相談 | 作成済み: `/blog/it-personless-system-introduction-checklist.html` |
 | 7 | 記事 | 業務システム開発を外注する前に決めること | 業務システム開発前の要件整理 | `/business-system-development/`、概算相談 | 作成済み: `/blog/business-system-outsourcing-before-requirements.html` |
 | 8 | 記事 | Excel業務をシステム化するか残すかの判断基準 | Excel脱却・紙業務DX | `/excel-paper-dx/`、業務棚卸しDL | 作成済み: `/blog/excel-to-system-decision-guide.html` |
+| 9 | 記事 | AI検索に引用されやすい会社情報の整え方 | AIO/LLMO/会社情報整備 | `/downloads/`、AI検索/MEO記事 | 作成済み: `/blog/ai-search-company-information-checklist.html` |
+| 10 | 記事 | MEOとサイテーションで最初に揃えるNAPチェックリスト | MEO対策、自分でやりたい | `/downloads/`、サイテーション作業 | 作成済み: `/blog/meo-citation-nap-checklist.html` |
+| 11 | 記事 | 月額DX伴走支援で依頼できること | DX伴走の中身を知りたい | `/dx-support-saitama/`、無料相談 | 作成済み: `/blog/dx-consulting-monthly-support.html` |
 
 ## 後続で検討するハブ
 

@@ -47,9 +47,9 @@
 |---:|---|---|---|---|
 | 6 | `/blog/business-system-outsourcing-before-requirements` | 業務システム開発を外注する前に決めること | 開発会社相談前の整理 | 作成済み |
 | 7 | `/blog/excel-to-system-decision-guide` | Excel業務をシステム化するか残すかの判断基準 | Excel脱却・紙業務DX | 作成済み |
-| 8 | `/blog/ai-search-company-information-checklist` | AI検索に引用されやすい会社情報の整え方 | AIO/LLMO/会社情報整備 | `/blog/ai-search-meo-citation-checklist` |
-| 9 | `/blog/meo-citation-nap-checklist` | MEOとサイテーションで最初に揃えるNAPチェックリスト | MEO対策、自分でやりたい | `/downloads/` |
-| 10 | `/blog/dx-consulting-monthly-support` | 月額DX伴走支援で依頼できること | DX伴走の中身を知りたい | `/dx-support-saitama/` |
+| 8 | `/blog/ai-search-company-information-checklist` | AI検索に引用されやすい会社情報の整え方 | AIO/LLMO/会社情報整備 | 作成済み |
+| 9 | `/blog/meo-citation-nap-checklist` | MEOとサイテーションで最初に揃えるNAPチェックリスト | MEO対策、自分でやりたい | 作成済み |
+| 10 | `/blog/dx-consulting-monthly-support` | 月額DX伴走支援で依頼できること | DX伴走の中身を知りたい | 作成済み |
 
 ## 固定ページ・ハブで作るべきもの
 
