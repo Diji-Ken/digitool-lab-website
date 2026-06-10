@@ -65,6 +65,11 @@
     Redirect 301 /case-022.html https://digitool-lab.com/blog/management-data-aggregation-ai.html
     Redirect 301 /case-023.html https://digitool-lab.com/blog/manufacturing-demand-forecasting-ai.html
     Redirect 301 /case-025.html https://digitool-lab.com/blog/internal-idea-generation-ai.html
+    RedirectMatch 301 ^/case-009/?$ https://digitool-lab.com/blog/recruitment-ai-copywriting
+    RedirectMatch 301 ^/case-016/?$ https://digitool-lab.com/blog/retail-pop-automation
+    RedirectMatch 301 ^/ai-notebooklm-podcast-knowledge(?:\.html)?/?$ https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge
+    RedirectMatch 301 ^/ai-gemini-document-comparison(?:\.html)?/?$ https://digitool-lab.com/blog/ai-gemini-document-comparison
+    RedirectMatch 301 ^/ai-notebooklm-law-podcast(?:\.html)?/?$ https://digitool-lab.com/blog/ai-notebooklm-law-podcast
 </IfModule>
 # END 301 Redirects
 
