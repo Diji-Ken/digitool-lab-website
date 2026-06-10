@@ -141,6 +141,19 @@ noindexにした、または既存noindexを維持したページ:
   - Best Practices: 92 -> 100
   - SEO: 100 -> 100
 
+## 2026-06-10 主要SEOページのLighthouse追加確認
+
+- 主要LP、費用記事、資料DLページでローカルLighthouseを確認
+- `seo-lp.css` が参照していた `--navy-900` を共通CSS変数に追加し、LP下部CTAの背景が確実に効くよう修正
+- SEOページの小見出しアクセントを `--orange-700` に変更し、コントラスト指摘を解消
+- スマホ幅のヒーロー余白、本文行間、パネル密度を調整し、資料DLページのLCPを改善
+- 長い日本語H1がデスクトップ幅で細かく折れないよう、SEOページ共通のヒーロー見出し上限を調整
+- ローカルブラウザで `/downloads/` を確認し、横スクロールなし、ロゴWebP読み込み、ヒーロー改行を確認
+- ローカルLighthouse結果
+  - `/dx-support-saitama/`: Performance 98、Accessibility 100、Best Practices 100、SEO 100
+  - `/blog/dx-support-cost.html`: Performance 99、Accessibility 100、Best Practices 100、SEO 100
+  - `/downloads/`: Performance 86 -> 99、Accessibility 100、Best Practices 100、SEO 100
+
 ## 2026-06-10 Search Console確認
 
 - URLプレフィックスプロパティ `https://digitool-lab.com/` を確認
@@ -170,7 +183,7 @@ noindexにした、または既存noindexを維持したページ:
 ### P1
 
 - PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認する。2026-06-10時点ではAPI 429のため後日またはブラウザ画面で確認する
-- 主要LP、記事、資料DLページでもLighthouse確認を広げ、ページ固有の大きい画像、CSS、外部JSの読み込みを見直す
+- 主要LP、記事、資料DLページのLighthouse確認は初回実施済み。今後は追加LP・古い記事へ範囲を広げる
 - 主要LPと記事の内部リンクを増やす
 - 古い記事のtitle、H2、FAQ、CTA、更新日を順に見直す
 - リンク切れチェックを月1回実施する
