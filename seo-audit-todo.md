@@ -1,6 +1,6 @@
 # SEO/AIO/LLMO/MEO 実行TODO - 株式会社デジタルツール研究所
 
-更新日: 2026-06-10
+更新日: 2026-06-11
 元資料: `/Users/m/Downloads/digitool-lab-seo-aio-llmo-meo-strategy-20260601.docx`
 追加資料: `/Users/m/Workspace/mirai/00_knowledge/clients/OToMo/projects/ai-showcase/research/leadgen-materials-20260609/`
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
@@ -10,6 +10,7 @@
 コンテンツ/外部導線キュー: `seo-content-and-external-action-queue-20260610.md`
 サイテーション表記統一: `meo-citation-handoff-20260610.md`
 GBPドラフト: `gbp-operation-drafts-20260610.md`
+外部発信管理: `https://plat.digitool-lab.com/portal/external-publications`
 
 ## 現在の実行方針
 
@@ -80,6 +81,7 @@ GBPドラフト: `gbp-operation-drafts-20260610.md`
 - [x] AI検索・MEO・サイテーション対策記事を追加し、sitemap、llms、無料資料ページから内部リンクする
 - [x] note下書き `N005` を追加する
 - [x] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る（サイテーション登録とは別に、被リンク/共催候補として扱う）
+- [x] note、Qiita/Zenn、LinkedIn、GBP投稿、被リンク候補を `plat.digitool-lab.com` の外部発信管理ページに集約する
 - [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
 - [x] `ai-training-cost` と `internal-portal-development-cost` のGSC URL検査・インデックス登録リクエスト完了を確認する
 - [x] 2026-06-10にFAQ増強した `/it-tantou-outsourcing/`、`/ai-training-saitama/`、`/business-system-development/` のGSC URL検査とインデックス登録リクエストを再実施する
