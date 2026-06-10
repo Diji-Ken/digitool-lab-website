@@ -1,10 +1,11 @@
 # SEO/AIO/LLMO/MEO 実行TODO - 株式会社デジタルツール研究所
 
-更新日: 2026-06-09
+更新日: 2026-06-10
 元資料: `/Users/m/Downloads/digitool-lab-seo-aio-llmo-meo-strategy-20260601.docx`
 追加資料: `/Users/m/Workspace/mirai/00_knowledge/clients/OToMo/projects/ai-showcase/research/leadgen-materials-20260609/`
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
 全体ロードマップ: `seo-aio-llmo-execution-roadmap.md`
+技術SEOチェック: `seo-technical-checklist-20260610.md`
 
 ## 現在の実行方針
 
@@ -29,6 +30,8 @@
 - [x] robots.txtで公開ルートのMarkdown監査メモと `/scripts/` をクロール除外する
 - [x] Google Search Consoleで現状クエリ、表示回数、CTR、CVページを確認し、初期SEOダッシュボードを作る
 - [x] Googleビジネスプロフィールの現状確認と、電話番号変更後に更新する項目を事前整理する
+- [x] 共有SEOチェックリストを技術SEO監査へ反映し、index対象ページのtitle、description、canonical、H1、JSON-LD、画像alt不足を0件にする
+- [x] テスト、テンプレート、完了画面、旧統合ページ、データ削除補助ページをnoindex整理し、noindex対象をサイトマップから外す
 - [x] 事例一覧ページを静的HTML化し、業種・課題・成果で探せる状態にする
 - [x] `/dx-support-saitama/` を制作する
 - [x] `/it-tantou-outsourcing/` を制作する
@@ -44,6 +47,8 @@
 
 - [ ] GA4で `generate_lead`、`file_download`、`timerex_click`、`line_click` が実データとして出たらキーイベント/探索レポートに追加する
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
+- [ ] 2026-06-10の技術SEO整理後、Search Consoleでサイトマップを再送信し、ページインデックス、手動対策、セキュリティ問題を確認する
+- [ ] PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認し、画像・CSS・外部JSの改善点を洗い出す
 - [x] 新規SEO記事3本と `/area/saitama-city-dx/` のURL検査・インデックス登録リクエスト・sitemap再送信を実施する
 - [x] `/excel-paper-dx/` は2026-06-09にGSCで登録済みを確認する（HTTPS・パンくずリスト・FAQも有効検出）
 - [x] `/business-system-development/` を制作する

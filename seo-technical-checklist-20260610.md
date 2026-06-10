@@ -1,0 +1,148 @@
+# 技術SEOチェックリスト反映メモ
+
+更新日: 2026-06-10
+
+参照資料:
+
+- `/Users/m/Downloads/IMG_0460.JPG`
+- `/Users/m/Downloads/IMG_0461.JPG`
+- `/Users/m/Downloads/IMG_0462.JPG`
+- `/Users/m/Downloads/IMG_0463.JPG`
+
+## 目的
+
+共有されたSEOチェックリストを、自社HP `https://digitool-lab.com/` の技術SEO、AIO、LLMOの実行項目へ落とし込む。
+
+今回の方針は、検索に出すべきページを強くし、検索に出すべきではない薄い補助ページは明確にnoindexにすること。市町村名やキーワードを増やす前に、クロール、正規URL、構造化データ、メタ情報の土台を整える。
+
+## チェックリスト要点
+
+### URL・ドメイン
+
+- 独自ドメインを使う
+- URLは簡潔で、意味が分かる英数字にする
+- URLは不要に変えない
+- PC/スマホで同一URLにする
+- HTTPSに統一する
+- `www` ありなし、`index.html`、`.html` の揺れを統一する
+- リニューアル時は過去URLから適切に301リダイレクトする
+
+### キーワード・サイト構造
+
+- 主要ページごとに狙う検索意図とキーワードを割り当てる
+- 同じ検索意図のキーワードは1つのページ群にまとめる
+- 地域名は実体・事例・対応可能性があるものだけ使う
+- サイト全体を親子階層で設計する
+- グローバルナビとフッターから重要ページへの導線を確保する
+- 関連ページへの内部リンクを本文中にも配置する
+
+### コンテンツ・見出し
+
+- 1ページ1テーマにする
+- 200字程度の薄いページを大量に作らない
+- タイトルだけ、リンクだけのページを作らない
+- H1は原則1つにする
+- H1とtitleは近い内容にする
+- H2〜H4で構造化する
+- 狙うキーワードは自然に入れる
+- キーワード出現率だけを目的にしない
+- 長いページは目次や内部リンクを置く
+
+### 画像・リンク・モバイル
+
+- メインの重要テキストを画像だけにしない
+- 画像altは内容を表すものにする
+- 説明画像はcaptionやfigure構成を検討する
+- ブログ等では遅延読み込みを使う
+- アンカーテキストはリンク先の内容が分かる表現にする
+- リンクは静的な `a href` を基本にする
+- ボタン・リンクはクリックできると分かるデザインにする
+- PC/スマホで表示内容を原則同じにする
+- 画面範囲外に要素を飛ばさない
+- 隠しテキスト、過度なインタースティシャルは使わない
+
+### クロール・インデックス・構造化
+
+- `sitemap.xml` を生成する
+- パンくずリストを設置する
+- 構造化データを設置する
+- 検索結果ページ、テストページ、完了画面はnoindexにする
+- `robots.txt` は必要な場合だけ使い、noindexと矛盾させない
+- canonicalは基本的に自分自身の正規URLへ向ける
+- 重複や旧ページはcanonical、noindex、301を使い分ける
+- HTTPステータスを適切に返す
+- ユーザー向けとGooglebot向けで違う内容を返さない
+- JavaScriptだけに依存する重要コンテンツを避ける
+- リンク切れを定期的に確認する
+- 古いコンテンツは更新日と内容を見直す
+- Search Consoleでエラー、手動対策、セキュリティ問題を見る
+- 被リンク購入や低品質リンク施策はしない
+- 外部掲載と同一内容を自社サイトに載せる場合は重複扱いを避ける
+- ウイルス感染、スパム汚染を定期的に確認する
+
+## 2026-06-10監査結果
+
+対象:
+
+- 公開HTML 175件
+- 除外: `backup_20250703_112022/`, `article-workspace/`, `posts-management/`, `apps/`
+
+対応後の結果:
+
+- title未設定: 0件
+- index対象ページのmeta description不足: 0件
+- index対象ページのcanonical不足: 0件
+- index対象ページのH1異常: 0件
+- index対象ページのJSON-LD不足: 0件
+- 画像alt不足ページ: 0件
+- noindex明示: 12件
+
+noindexにした、または既存noindexを維持したページ:
+
+- `case.html`
+- `contact_secure.html`
+- `download_thanks.html`
+- `case-template.html`
+- `debug-mobile.html`
+- `data-deletion.html`
+- `service-otomo.html`
+- `facebook-data-deletion.html`
+- `contact_success.html`
+- `test-cards.html`
+- `analytics-template.html`
+- `google-analytics-setup.html`
+
+## 今回実施したこと
+
+- 主要な公開ページにcanonicalを追加
+- 主要な公開ページにmeta descriptionを追加
+- 旧事例ページ `case.html` は `/case-studies` に正規化しつつnoindex化
+- 統合済み旧サービス `service-otomo.html` は `/services/consulting` に正規化しつつnoindex化
+- テスト、テンプレート、送信完了、計測設定系ページをnoindex化
+- データ削除系の補助ページをnoindex化し、サイトマップから除外
+- `privacy-policy`, `terms-of-service`, `tokutei`, `presentation` にWebPage構造化データを追加
+- `sitemap.xml` の法律系ページ更新日を2026-06-10に更新
+
+## 継続TODO
+
+### P0
+
+- Search Consoleで `sitemap.xml` を再送信する
+- Search Consoleで手動対策、セキュリティ問題、ページインデックスのエラーを確認する
+- `noindex` へ変更したページがサイトマップに残っていないことを本番反映後も確認する
+
+### P1
+
+- PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認する
+- 大きい画像、CSS、外部JSの読み込みを見直す
+- 主要LPと記事の内部リンクを増やす
+- 古い記事のtitle、H2、FAQ、CTA、更新日を順に見直す
+- リンク切れチェックを月1回実施する
+
+### P2
+
+- 画像サイトマップが必要か判断する
+- FAQPage、Service、Article、BreadcrumbListの設計を既存記事全体で再点検する
+- 表示回数が出たがCTRが低いページをGSCで抽出し、title/descriptionを改善する
+- AI検索で引用されやすい会社情報、代表情報、支援範囲、FAQを外部媒体と一致させる
+

@@ -1,6 +1,6 @@
 # SEO/AIO/LLMO/MEO 実行ロードマップ
 
-更新日: 2026-06-09
+更新日: 2026-06-10
 
 ## 結論
 
@@ -69,6 +69,11 @@ noteはやる。ただし、noteを主戦場にしない。
 - 資料DLフォームをリード送信できる流れに修正
 - note下書き5本作成
 - GSC/GA4初期連携、主要URL検査の一部実施
+- 技術SEOチェックリスト反映
+  - index対象ページのtitle、description、canonical、H1、JSON-LD、画像altの不足0件を確認
+  - テスト、テンプレート、完了画面、旧統合ページ、データ削除補助ページをnoindex整理
+  - 法律系ページと会社紹介資料にWebPage構造化データを追加
+  - 詳細: `seo-technical-checklist-20260610.md`
 
 ## 優先TODO
 
@@ -79,6 +84,7 @@ noteはやる。ただし、noteを主戦場にしない。
   - `https://digitool-lab.com/blog/internal-portal-development-cost`
   - `https://digitool-lab.com/blog/ai-search-meo-citation-checklist`
 - [ ] `https://digitool-lab.com/sitemap.xml` をGSCで再送信する
+- [ ] 2026-06-10の技術SEO整理後、Search Consoleでサイトマップ再送信とページインデックスのエラー確認を行う
 - [ ] note下書き5本を公開するか、公開前にタイトル/CTAだけ最終確認する
 - [ ] GBP投稿を1本作る
   - テーマ: さいたま市の中小企業向けDX支援・AI検索/MEOチェックリスト
@@ -157,5 +163,6 @@ noteはやる。ただし、noteを主戦場にしない。
 - `seo-audit-todo.md`
 - `seo-aio-llmo-strategy-ledger.md`
 - `seo-strategy-guide.md`
+- `seo-technical-checklist-20260610.md`
 - `posts-management/note_master.csv`
 - `research/leadgen-materials-20260609/action-plan.md`
