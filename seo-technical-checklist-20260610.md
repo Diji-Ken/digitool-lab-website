@@ -123,6 +123,16 @@ noindexにした、または既存noindexを維持したページ:
 - `privacy-policy`, `terms-of-service`, `tokutei`, `presentation` にWebPage構造化データを追加
 - `sitemap.xml` の法律系ページ更新日を2026-06-10に更新
 
+## 2026-06-10 速度・画像まわりの追加対応
+
+- PageSpeed Insights APIは429で取得できなかったため、資産サイズとローカルブラウザ確認を優先
+- トップページ下部で読み込んでいた `images/top1.jpg` 1.4MBを `images/top1.webp` 72KBへ変換
+- トップページの該当画像をWebPへ差し替え、`width`、`height`、`loading="lazy"`、`decoding="async"` を追加
+- サイト全体で使用しているロゴ画像に `width`、`height`、`decoding="async"` を追加
+- フッターのロゴ画像に `loading="lazy"` を追加
+- `.htaccess` に画像、CSS、JS、フォントのブラウザキャッシュ設定を追加
+- ローカルブラウザでトップページを確認し、`hero-dx-support.webp`、ロゴ、`top1.webp` が200で読み込まれることを確認
+
 ## 継続TODO
 
 ### P0
@@ -133,7 +143,7 @@ noindexにした、または既存noindexを維持したページ:
 
 ### P1
 
-- PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認する
+- PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認する。2026-06-10時点ではAPI 429のため後日またはブラウザ画面で確認する
 - 大きい画像、CSS、外部JSの読み込みを見直す
 - 主要LPと記事の内部リンクを増やす
 - 古い記事のtitle、H2、FAQ、CTA、更新日を順に見直す
@@ -145,4 +155,3 @@ noindexにした、または既存noindexを維持したページ:
 - FAQPage、Service、Article、BreadcrumbListの設計を既存記事全体で再点検する
 - 表示回数が出たがCTRが低いページをGSCで抽出し、title/descriptionを改善する
 - AI検索で引用されやすい会社情報、代表情報、支援範囲、FAQを外部媒体と一致させる
-
