@@ -48,6 +48,9 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - Excel・紙業務DX: https://digitool-lab.com/excel-paper-dx/
 - 補助金DX・AI・システム相談: https://digitool-lab.com/subsidy-dx-ai-system/
 - 無料チェックリスト: https://digitool-lab.com/downloads/
+- 課題別DX・AI活用事例ハブ: https://digitool-lab.com/case-themes/
+- 業種別DX・AI活用支援ハブ: https://digitool-lab.com/industries/
+- AI検索・MEO・サイテーション情報整備支援: https://digitool-lab.com/ai-search-meo-support/
 - 支援事例: https://digitool-lab.com/case-studies
 - システムショールーム: https://showroom.digitool-lab.com/
 - 補助金・助成金ポータル: https://showroom.digitool-lab.com/subsidies
@@ -86,4 +89,4 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 
 ## 主要キーワード
 
-DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX支援 会社 比較, DX支援 埼玉, DX支援 さいたま市, さいたま市 中小企業 DX, 中小企業DX, IT担当者がいない会社, IT担当 外注, 情シス代行 中小企業, 社外IT担当, システム導入 チェックリスト, 社内ポータル 開発, 社内ポータル 導入, 社内ポータル 失敗, AI研修 企業, 生成AI研修, ChatGPT研修 法人, AI研修 定着しない, 生成AI研修 社内定着, 業務システム開発, 業務システム開発 外注, 業務システム 要件整理, 基幹システム 開発 中小企業, Excel 業務 効率化, Excel システム化 判断基準, Excel 脱却, 紙業務 デジタル化, 属人化 解消, 日報 自動化, 業務効率化, システム導入支援, 補助金 DX, 補助金 システム開発, AI導入 補助金, DX 補助金 要件整理, MEO さいたま市, サイテーション, NAP 統一, AIO, LLMO, AI検索対策, AI検索 会社情報
+DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX支援 会社 比較, DX支援 埼玉, DX支援 さいたま市, さいたま市 中小企業 DX, 中小企業DX, IT担当者がいない会社, IT担当 外注, 情シス代行 中小企業, 社外IT担当, システム導入 チェックリスト, 社内ポータル 開発, 社内ポータル 導入, 社内ポータル 失敗, AI研修 企業, 生成AI研修, ChatGPT研修 法人, AI研修 定着しない, 生成AI研修 社内定着, 業務システム開発, 業務システム開発 外注, 業務システム 要件整理, 基幹システム 開発 中小企業, Excel 業務 効率化, Excel システム化 判断基準, Excel 脱却, 紙業務 デジタル化, 属人化 解消, 日報 自動化, 業務効率化, システム導入支援, 課題別 DX事例, 業種別 DX支援, 補助金 DX, 補助金 システム開発, AI導入 補助金, DX 補助金 要件整理, MEO さいたま市, MEO支援, サイテーション, サイテーション支援, NAP 統一, AIO, LLMO, AI検索対策, AI検索 会社情報
