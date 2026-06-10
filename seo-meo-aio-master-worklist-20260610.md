@@ -18,9 +18,9 @@
 
 | 優先 | 領域 | 作業 | Codexで今日できること | 人間確認 |
 |---:|---|---|---|---|
-| 1 | SEO記事 | 補助金を使う前のDX要件整理記事 | 記事作成、sitemap、llms、内部リンク、検証 | なし |
-| 2 | SEO記事 | さいたま市の中小企業がDXで最初に見直す業務 | 記事作成、地域LPへ内部リンク、検証 | なし |
-| 3 | SEO記事 | 社内ポータル導入で失敗しやすいパターン | 記事作成、社内ポータルLPへ内部リンク、検証 | なし |
+| 1 | SEO記事 | 補助金を使う前のDX要件整理記事 | 作成済み。sitemap、llms、内部リンク、検証対象 | なし |
+| 2 | SEO記事 | さいたま市の中小企業がDXで最初に見直す業務 | 作成済み。地域LPへ内部リンク、検証対象 | なし |
+| 3 | SEO記事 | 社内ポータル導入で失敗しやすいパターン | 作成済み。社内ポータルLPへ内部リンク、検証対象 | なし |
 | 4 | 既存LP | `/internal-portal-development/` のFAQ増強 | FAQ追加、構造化データ更新、内部リンク | なし |
 | 5 | 既存LP | `/it-tantou-outsourcing/` のチェックリスト導線強化 | 資料DL誘導、FAQ追加 | なし |
 | 6 | MEO | GBP投稿・Q&Aの公開前整形 | `gbp-operation-drafts-20260610.md` を投稿しやすく整備 | 公開時に必要 |
@@ -35,9 +35,9 @@
 
 | 優先 | URL案 | タイトル案 | 主な検索意図 | つなぐ先 |
 |---:|---|---|---|---|
-| 1 | `/blog/dx-subsidy-requirements-before-application` | 補助金を使う前に整理すべきDX要件 | 補助金でシステム開発やAI導入を検討 | `/subsidy-dx-ai-system/`, showroom補助金 |
-| 2 | `/blog/saitama-small-business-dx-first-steps` | さいたま市の中小企業がDXで最初に見直す業務 | 地域×DXの情報収集 | `/area/saitama-city-dx/`, `/dx-support-saitama/` |
-| 3 | `/blog/internal-portal-failure-patterns` | 社内ポータル導入で失敗しやすいパターン | 社内ポータル導入前の不安 | `/internal-portal-development/` |
+| 1 | `/blog/dx-subsidy-requirements-before-application` | 補助金を使う前に整理すべきDX要件 | 補助金でシステム開発やAI導入を検討 | 作成済み |
+| 2 | `/blog/saitama-small-business-dx-first-steps` | さいたま市の中小企業がDXで最初に見直す業務 | 地域×DXの情報収集 | 作成済み |
+| 3 | `/blog/internal-portal-failure-patterns` | 社内ポータル導入で失敗しやすいパターン | 社内ポータル導入前の不安 | 作成済み |
 | 4 | `/blog/ai-training-not-used-after-workshop` | AI研修後に社内定着しない理由 | AI研修の失敗・定着課題 | `/ai-training-saitama/` |
 | 5 | `/blog/it-personless-system-introduction-checklist` | IT担当者がいない会社のシステム導入チェックリスト | IT担当不在で外注検討 | `/it-tantou-outsourcing/` |
 
@@ -148,10 +148,10 @@
 
 ## 今日の推奨実行順
 
-1. `補助金を使う前に整理すべきDX要件` の記事を作る
-2. `さいたま市の中小企業がDXで最初に見直す業務` の記事を作る
-3. `社内ポータル導入で失敗しやすいパターン` の記事を作る
-4. 3本を `sitemap.xml`、`llms.txt`、`llms_full.txt`、関連LPに接続する
+1. `補助金を使う前に整理すべきDX要件` の記事を作る: 完了
+2. `さいたま市の中小企業がDXで最初に見直す業務` の記事を作る: 完了
+3. `社内ポータル導入で失敗しやすいパターン` の記事を作る: 完了
+4. 3本を `sitemap.xml`、`llms.txt`、`llms_full.txt`、関連LPに接続する: 完了
 5. ブラウザでPC/スマホ確認する
 6. 本番反映する
 7. 時間が余れば、GBP投稿ドラフトとサイテーション記録表をさらに実務用に整える

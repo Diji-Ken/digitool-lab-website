@@ -19,9 +19,9 @@
 | 優先 | 種別 | 仮タイトル | 検索意図 | 受け皿/CTA | 状態 |
 |---:|---|---|---|---|---|
 | 1 | 記事 | DX支援会社の選び方。中小企業が見るべき比較ポイント | DX支援会社を比較したい | `/dx-support-saitama/`、無料相談 | 作成済み: `/blog/how-to-choose-dx-support-company.html` |
-| 2 | 記事 | 補助金を使う前に整理すべきDX要件 | 補助金ありきでシステム導入を検討 | `/subsidy-dx-ai-system/`、showroom補助金 | 未着手 |
-| 3 | 記事 | さいたま市の中小企業がDXで最初に見直す業務 | 地域×DXの情報収集 | `/area/saitama-city-dx/`、DX診断DL | 未着手 |
-| 4 | 記事 | 社内ポータル導入で失敗しやすいパターン | 社内ポータル導入前の不安 | `/internal-portal-development/`、要件定義DL | 未着手 |
+| 2 | 記事 | 補助金を使う前に整理すべきDX要件 | 補助金ありきでシステム導入を検討 | `/subsidy-dx-ai-system/`、showroom補助金 | 作成済み: `/blog/dx-subsidy-requirements-before-application.html` |
+| 3 | 記事 | さいたま市の中小企業がDXで最初に見直す業務 | 地域×DXの情報収集 | `/area/saitama-city-dx/`、DX診断DL | 作成済み: `/blog/saitama-small-business-dx-first-steps.html` |
+| 4 | 記事 | 社内ポータル導入で失敗しやすいパターン | 社内ポータル導入前の不安 | `/internal-portal-development/`、要件定義DL | 作成済み: `/blog/internal-portal-failure-patterns.html` |
 | 5 | 記事 | AI研修後に社内定着しない理由 | AI研修の失敗・定着課題 | `/ai-training-saitama/`、AI活用チェックリスト | 未着手 |
 | 6 | 記事 | IT担当者がいない会社のシステム導入チェックリスト | IT担当不在で外注検討 | `/it-tantou-outsourcing/`、無料相談 | 未着手 |
 | 7 | 記事 | 業務システム開発を外注する前に決めること | 業務システム開発前の要件整理 | `/business-system-development/`、概算相談 | 未着手 |
