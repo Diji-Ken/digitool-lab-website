@@ -6,6 +6,10 @@
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
 全体ロードマップ: `seo-aio-llmo-execution-roadmap.md`
 技術SEOチェック: `seo-technical-checklist-20260610.md`
+出典別トレース: `seo-source-traceability-20260610.md`
+コンテンツ/外部導線キュー: `seo-content-and-external-action-queue-20260610.md`
+サイテーション表記統一: `meo-citation-handoff-20260610.md`
+GBPドラフト: `gbp-operation-drafts-20260610.md`
 
 ## 現在の実行方針
 
@@ -30,6 +34,10 @@
 - [x] robots.txtで公開ルートのMarkdown監査メモと `/scripts/` をクロール除外する
 - [x] Google Search Consoleで現状クエリ、表示回数、CTR、CVページを確認し、初期SEOダッシュボードを作る
 - [x] Googleビジネスプロフィールの現状確認と、電話番号変更後に更新する項目を事前整理する
+- [x] 共有資料、GPT Pro用資料、法人集客資料、Clippings、SEOチェック画像、キーワード調査、既存台帳を出典別に棚卸しする
+- [x] 次に作るページ、既存ページ改善、外部媒体、被リンク、計測改善を1つのキューに整理する
+- [x] サイテーション作業用のNAP統一ハンドオフを作る
+- [x] GBP投稿、Q&A、写真追加候補の公開前ドラフトを作る
 - [x] 共有SEOチェックリストを技術SEO監査へ反映し、index対象ページのtitle、description、canonical、H1、JSON-LD、画像alt不足を0件にする
 - [x] テスト、テンプレート、完了画面、旧統合ページ、データ削除補助ページをnoindex整理し、noindex対象をサイトマップから外す
 - [x] 事例一覧ページを静的HTML化し、業種・課題・成果で探せる状態にする
@@ -62,7 +70,7 @@
 - [x] `/subsidy-dx-ai-system/` を制作し、showroom補助金ページと接続する
 - [x] `/downloads/` を制作し、DX診断・社内ポータル要件・補助金確認・AI活用・業務棚卸しの無料チェックリスト導線を作る
 - [x] showroom遷移と外部リンククリックをGA4イベント化する
-- [ ] FAQ記事、費用記事、比較記事を6〜10本作る（初期5本: DX支援費用、IT担当採用/外注比較、業務システム開発費用、AI研修費用、社内ポータル開発費用）
+- [ ] FAQ記事、費用記事、比較記事を6〜10本作る（初期6本: DX支援費用、DX支援会社の選び方、IT担当採用/外注比較、業務システム開発費用、AI研修費用、社内ポータル開発費用）
 - [ ] note 4本、Qiita/Zenn 2本、YouTube 2本を初期公開する
 - [x] note 4本、Qiita/Zenn 2本の初期下書きを作成する
 - [x] 法人集客資料を保存し、MEO・サイテーション、AIO・LLMO、広告入稿前チェックリストの導線を `/downloads/` と `llms.txt` 系へ反映する
