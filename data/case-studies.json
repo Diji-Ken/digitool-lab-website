@@ -1,5 +1,21 @@
 [
   {
+    "id": "case-138",
+    "title": "従業員45名の建設・不動産会社／経理確認を40-60%削減した話",
+    "summary": "建設・不動産業 × 経理担当 × 従業員45名の事例",
+    "industry": "hp",
+    "date": "2026-06-10",
+    "tags": [
+      "hp",
+      "case-study",
+      "ai",
+      "system",
+      "nocode"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-138.webp",
+    "url": "blog/hp-construction-accounting-20260526.html"
+  },
+  {
     "id": "case-137",
     "title": "従業員12名・中国地域の鉄道貨物会社 ─ 運行記録のデジタル化で安全管理80%改善",
     "summary": "中国地域の鉄道貨物会社が、運行記録の紙台帳を写真・音声入力・自動分類に置き換えた事例。月20時間の集計作業を3時間に短縮し、事故予兆の発見数も3倍に改善。",
