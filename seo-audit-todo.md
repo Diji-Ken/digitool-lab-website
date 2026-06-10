@@ -81,7 +81,7 @@ GBPドラフト: `gbp-operation-drafts-20260610.md`
 - [ ] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る（サイテーション登録とは別に、被リンク/共催候補として扱う）
 - [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
 - [ ] `ai-training-cost` と `internal-portal-development-cost` のGSC URL検査・インデックス登録リクエスト完了を確認する
-- [ ] 2026-06-10にFAQ増強した `/it-tantou-outsourcing/`、`/ai-training-saitama/`、`/business-system-development/` のGSC URL検査とインデックス登録リクエストを再実施する
+- [x] 2026-06-10にFAQ増強した `/it-tantou-outsourcing/`、`/ai-training-saitama/`、`/business-system-development/` のGSC URL検査とインデックス登録リクエストを再実施する
 
 ## 90日以内
 
