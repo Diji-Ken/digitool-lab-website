@@ -11,6 +11,9 @@
 サイテーション表記統一: `meo-citation-handoff-20260610.md`
 GBPドラフト: `gbp-operation-drafts-20260610.md`
 外部発信管理: `https://plat.digitool-lab.com/portal/external-publications`
+外部プロフィール文: `posts-management/external-media-profile-drafts-20260611.md`
+掲載相談テンプレート: `posts-management/outreach-message-templates-20260611.md`
+GBP週次投稿カレンダー: `posts-management/gbp-weekly-calendar-20260611.md`
 
 ## 現在の実行方針
 
@@ -39,6 +42,7 @@ GBPドラフト: `gbp-operation-drafts-20260610.md`
 - [x] 次に作るページ、既存ページ改善、外部媒体、被リンク、計測改善を1つのキューに整理する
 - [x] サイテーション作業用のNAP統一ハンドオフを作る
 - [x] GBP投稿、Q&A、写真追加候補の公開前ドラフトを作る
+- [x] GBP週次投稿カレンダー、外部媒体プロフィール文、被リンク/共催相談メッセージを作成する
 - [x] 共有SEOチェックリストを技術SEO監査へ反映し、index対象ページのtitle、description、canonical、H1、JSON-LD、画像alt不足を0件にする
 - [x] テスト、テンプレート、完了画面、旧統合ページ、データ削除補助ページをnoindex整理し、noindex対象をサイトマップから外す
 - [x] 事例一覧ページを静的HTML化し、業種・課題・成果で探せる状態にする

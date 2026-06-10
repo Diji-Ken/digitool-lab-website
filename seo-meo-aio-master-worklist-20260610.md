@@ -16,6 +16,8 @@
 
 外部媒体、GBP投稿、被リンク候補の公開前確認は `https://plat.digitool-lab.com/portal/external-publications` に集約済み。サイテーション登録は別PC作業として分ける。
 
+実作業用の文面は `posts-management/external-media-profile-drafts-20260611.md`、`posts-management/outreach-message-templates-20260611.md`、`posts-management/gbp-weekly-calendar-20260611.md` を使う。
+
 ## 今日すぐ進められる優先順
 
 | 優先 | 領域 | 作業 | Codexで今日できること | 人間確認 |
@@ -85,6 +87,7 @@
 - GBP Q&Aの質問・回答追加案作成
 - 写真追加候補のリスト化
 - サービス項目の説明文作成
+- GBP週次投稿カレンダーの作成
 - サイテーション登録記録表の作成（別作業で実施）
 - NAP表記のチェックリスト化
 - 口コミ依頼文の安全なテンプレ作成

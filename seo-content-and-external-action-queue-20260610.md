@@ -7,6 +7,9 @@
 次に作るページ、改善する既存ページ、公開する外部媒体、被リンク・サイテーションに関わる対外作業を1つのキューにまとめる。自社HPを主戦場にし、外部媒体は公式HPへ戻す導線として使う。
 
 外部媒体、Googleビジネスプロフィール投稿、被リンク候補の実務確認画面: `https://plat.digitool-lab.com/portal/external-publications`
+外部プロフィール文: `posts-management/external-media-profile-drafts-20260611.md`
+掲載相談テンプレート: `posts-management/outreach-message-templates-20260611.md`
+GBP週次投稿カレンダー: `posts-management/gbp-weekly-calendar-20260611.md`
 
 ## 優先順位の前提
 
@@ -75,6 +78,8 @@
 ## 被リンク・外部掲載キュー
 
 候補と初回連絡文は `backlink-outreach-candidates-20260610.md` に整理済み。サイテーション登録ではなく、事例提供、共催、資料提供、支援者候補登録可否の確認として進める。
+
+送信用の相手別テンプレートは `posts-management/outreach-message-templates-20260611.md` を使う。
 
 | 優先 | 種別 | 候補 | 狙い | 人間確認 |
 |---:|---|---|---|---|
