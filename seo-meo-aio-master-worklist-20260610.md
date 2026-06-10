@@ -38,15 +38,15 @@
 | 1 | `/blog/dx-subsidy-requirements-before-application` | 補助金を使う前に整理すべきDX要件 | 補助金でシステム開発やAI導入を検討 | 作成済み |
 | 2 | `/blog/saitama-small-business-dx-first-steps` | さいたま市の中小企業がDXで最初に見直す業務 | 地域×DXの情報収集 | 作成済み |
 | 3 | `/blog/internal-portal-failure-patterns` | 社内ポータル導入で失敗しやすいパターン | 社内ポータル導入前の不安 | 作成済み |
-| 4 | `/blog/ai-training-not-used-after-workshop` | AI研修後に社内定着しない理由 | AI研修の失敗・定着課題 | `/ai-training-saitama/` |
-| 5 | `/blog/it-personless-system-introduction-checklist` | IT担当者がいない会社のシステム導入チェックリスト | IT担当不在で外注検討 | `/it-tantou-outsourcing/` |
+| 4 | `/blog/ai-training-not-used-after-workshop` | AI研修後に社内定着しない理由 | AI研修の失敗・定着課題 | 作成済み |
+| 5 | `/blog/it-personless-system-introduction-checklist` | IT担当者がいない会社のシステム導入チェックリスト | IT担当不在で外注検討 | 作成済み |
 
 ### 次点
 
 | 優先 | URL案 | タイトル案 | 主な検索意図 | つなぐ先 |
 |---:|---|---|---|---|
-| 6 | `/blog/business-system-outsourcing-before-requirements` | 業務システム開発を外注する前に決めること | 開発会社相談前の整理 | `/business-system-development/` |
-| 7 | `/blog/excel-to-system-decision-guide` | Excel業務をシステム化するか残すかの判断基準 | Excel脱却・紙業務DX | `/excel-paper-dx/` |
+| 6 | `/blog/business-system-outsourcing-before-requirements` | 業務システム開発を外注する前に決めること | 開発会社相談前の整理 | 作成済み |
+| 7 | `/blog/excel-to-system-decision-guide` | Excel業務をシステム化するか残すかの判断基準 | Excel脱却・紙業務DX | 作成済み |
 | 8 | `/blog/ai-search-company-information-checklist` | AI検索に引用されやすい会社情報の整え方 | AIO/LLMO/会社情報整備 | `/blog/ai-search-meo-citation-checklist` |
 | 9 | `/blog/meo-citation-nap-checklist` | MEOとサイテーションで最初に揃えるNAPチェックリスト | MEO対策、自分でやりたい | `/downloads/` |
 | 10 | `/blog/dx-consulting-monthly-support` | 月額DX伴走支援で依頼できること | DX伴走の中身を知りたい | `/dx-support-saitama/` |
@@ -152,9 +152,11 @@
 2. `さいたま市の中小企業がDXで最初に見直す業務` の記事を作る: 完了
 3. `社内ポータル導入で失敗しやすいパターン` の記事を作る: 完了
 4. 3本を `sitemap.xml`、`llms.txt`、`llms_full.txt`、関連LPに接続する: 完了
-5. ブラウザでPC/スマホ確認する
-6. 本番反映する
-7. 時間が余れば、GBP投稿ドラフトとサイテーション記録表をさらに実務用に整える
+5. `AI研修後に社内定着しない理由`、`IT担当不在のシステム導入チェックリスト`、`業務システム外注前に決めること`、`Excelシステム化判断基準` の4本を作る: 完了
+6. 4本を `sitemap.xml`、`llms.txt`、`llms_full.txt`、関連LPに接続する: 完了
+7. ブラウザでPC/スマホ確認する
+8. 本番反映する
+9. 時間が余れば、GBP投稿ドラフトとサイテーション記録表をさらに実務用に整える
 
 ## 優先しないこと
 

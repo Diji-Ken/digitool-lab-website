@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>業務システム開発を外注する前に決めること｜要件整理・見積比較のチェックリスト</title>
+  <meta name="description" content="業務システム開発を外注する前に決めるべき項目を解説。対象業務、利用者、権限、データ、帳票、予算、運用体制を整理し、見積比較しやすい状態を作ります。">
+  <meta name="keywords" content="業務システム開発 外注,業務システム 要件整理,システム開発 見積 比較,中小企業 システム開発,業務システム 開発前">
+  <meta name="author" content="株式会社デジタルツール研究所">
+  <meta name="robots" content="index, follow">
+  <meta name="date" content="2026-06-10">
+  <link rel="canonical" href="https://digitool-lab.com/blog/business-system-outsourcing-before-requirements">
+  <meta property="og:title" content="業務システム開発を外注する前に決めること">
+  <meta property="og:description" content="業務システム開発の見積もり前に整理するべき対象業務、権限、データ、運用体制を解説します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://digitool-lab.com/blog/business-system-outsourcing-before-requirements">
+  <meta property="og:image" content="https://digitool-lab.com/images/hero-dx-support.webp">
+  <meta property="og:site_name" content="株式会社デジタルツール研究所">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="業務システム開発を外注する前に決めること">
+  <meta name="twitter:description" content="中小企業がシステム開発会社へ相談する前に整理したい要件をまとめます。">
+  <meta name="twitter:image" content="https://digitool-lab.com/images/hero-dx-support.webp">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css?v=2026061002">
+  <link rel="stylesheet" href="../css/seo-lp.css?v=2026061002">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "業務システム開発を外注する前に決めること",
+    "description": "業務システム開発を外注する前に決めるべき項目を解説。対象業務、利用者、権限、データ、帳票、予算、運用体制を整理し、見積比較しやすい状態を作ります。",
+    "datePublished": "2026-06-10",
+    "dateModified": "2026-06-10",
+    "author": { "@type": "Person", "name": "松岡 哲平", "url": "https://digitool-lab.com/about.html" },
+    "publisher": { "@type": "Organization", "name": "株式会社デジタルツール研究所", "logo": { "@type": "ImageObject", "url": "https://digitool-lab.com/images/企業ロゴ最終.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://digitool-lab.com/blog/business-system-outsourcing-before-requirements" },
+    "inLanguage": "ja-JP",
+    "articleSection": "業務システム開発",
+    "keywords": ["業務システム開発 外注", "業務システム 要件整理", "システム開発 見積 比較", "中小企業 システム開発"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://digitool-lab.com/" },
+      { "@type": "ListItem", "position": 2, "name": "お役立ち記事", "item": "https://digitool-lab.com/blog/business-system-outsourcing-before-requirements" },
+      { "@type": "ListItem", "position": 3, "name": "業務システム開発を外注する前に決めること", "item": "https://digitool-lab.com/blog/business-system-outsourcing-before-requirements" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "業務システム開発を外注する前に何を決めるべきですか？", "acceptedAnswer": { "@type": "Answer", "text": "対象業務、利用者、入力項目、権限、帳票、既存データ、予算、導入後の運用担当を先に整理します。" } },
+      { "@type": "Question", "name": "要件が固まっていない段階でも相談できますか？", "acceptedAnswer": { "@type": "Answer", "text": "相談できます。むしろ要件が曖昧な段階では、開発前の業務棚卸しと優先順位付けから進めることが重要です。" } },
+      { "@type": "Question", "name": "見積もりを比較する時の注意点は何ですか？", "acceptedAnswer": { "@type": "Answer", "text": "機能一覧だけでなく、要件整理、設計、テスト、データ移行、マニュアル、保守、改善対応が含まれているか確認します。" } }
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFWCDFQXC8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-BFWCDFQXC8",{"anonymize_ip":true,"allow_google_signals":false,"allow_ad_personalization_signals":false});</script>
+</head>
+<body class="seo-lp">
+<div class="flex flex-col min-h-screen">
+  <header><div class="container"><a href="../index.html" class="logo"><img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所 ロゴ" width="160" height="160" decoding="async"></a><div class="header-right-panel"><nav class="desktop-nav"><a href="../about.html">私たちについて</a><a href="../service.html" class="active">事業内容</a><a href="../case-studies.html">ご支援事例</a></nav><div class="header-buttons"><a href="#" class="btn btn-sm btn-primary open-download-modal"><span>資料ダウンロード</span></a><a href="../contact.html" class="btn btn-sm btn-dark"><span>お問い合わせ</span></a></div></div><button class="menu-button" id="mobile-menu-button" aria-label="メニューを開く"><span></span><span></span><span></span></button></div><nav class="mobile-nav" id="mobile-menu"><a href="../about.html">私たちについて</a><a href="../service.html" class="active">事業内容</a><a href="../case-studies.html">ご支援事例</a><div class="mobile-cta-button"><a href="../contact.html" class="btn btn-primary">お問い合わせ</a></div></nav></header>
+
+  <main>
+    <section class="seo-hero"><div class="container"><div><span class="seo-eyebrow">REQUIREMENTS BEFORE OUTSOURCING</span><h1>業務システム開発を外注する前に決めること</h1><p>業務システム開発は、見積もりを取る前の要件整理で成否が決まります。対象業務、利用者、権限、帳票、既存データ、導入後の運用を先に整理します。</p><div class="seo-hero-actions"><a href="../contact.html" class="btn btn-primary">開発前の整理を相談する</a><a href="../business-system-development/" class="btn btn-outline-white">業務システム開発を見る</a></div></div><aside class="seo-hero-panel"><h2>外注前の確認項目</h2><ul><li>対象業務と目的</li><li>利用者、管理者、権限</li><li>入力項目、帳票、データ移行</li><li>予算、納期、運用体制</li></ul></aside></div></section>
+
+    <section class="seo-answer"><div class="seo-answer-card"><h2>結論: 見積もり依頼の前に「何を作るか」ではなく「どの業務をどう変えるか」を決める</h2><p>画面数や機能数だけで相談すると、見積もりの前提が揃わず比較できません。業務の流れ、使う人、データ、承認、帳票、運用まで整理してから外注先と話すと、無駄な開発を減らせます。</p></div></section>
+
+    <section class="seo-section"><div class="container"><div class="seo-section-head"><span>CHECKLIST</span><h2>外注前に決めるチェックリスト</h2></div><div class="seo-grid">
+      <div class="seo-card"><h3>1. 解決したい業務課題</h3><p>転記、集計、承認、検索、共有、属人化など、何を改善したいのかを明確にします。</p></div>
+      <div class="seo-card"><h3>2. 利用者と利用頻度</h3><p>毎日使う人、月次で見る人、承認だけする人など、利用パターンを分けます。</p></div>
+      <div class="seo-card"><h3>3. 入力項目と必須項目</h3><p>現場が入力できる項目と、管理上必要な項目を分けます。項目が多すぎると定着しません。</p></div>
+      <div class="seo-card"><h3>4. 権限と承認フロー</h3><p>閲覧、編集、承認、削除、エクスポートの権限を整理します。</p></div>
+      <div class="seo-card"><h3>5. 帳票と出力</h3><p>見積書、請求書、報告書、CSV、月次集計など、出力が必要なものを確認します。</p></div>
+      <div class="seo-card"><h3>6. 導入後の保守</h3><p>社員追加、項目変更、不具合対応、改善依頼を誰が担当するか決めます。</p></div>
+    </div></div></section>
+
+    <section class="seo-section alt"><div class="container"><div class="seo-section-head"><span>ESTIMATE</span><h2>見積もり比較で見るべき点</h2></div><div class="seo-steps">
+      <div class="seo-step"><strong>1</strong><div><h3>要件整理が含まれているか</h3><p>ヒアリングや設計を含まない見積もりは、後から追加費用が出やすくなります。</p></div></div>
+      <div class="seo-step"><strong>2</strong><div><h3>テストと修正の範囲</h3><p>動作確認、現場確認、修正回数、受け入れ条件が明確か確認します。</p></div></div>
+      <div class="seo-step"><strong>3</strong><div><h3>データ移行と初期設定</h3><p>既存Excelや顧客データをどう移すか、誰が整形するかを確認します。</p></div></div>
+      <div class="seo-step"><strong>4</strong><div><h3>運用支援と改善対応</h3><p>公開後の問い合わせ、マニュアル、改善相談、保守契約の有無を見ます。</p></div></div>
+    </div></div></section>
+
+    <section class="seo-section"><div class="container"><div class="seo-section-head"><span>AVOID</span><h2>外注前に避けたい進め方</h2></div><div class="seo-grid">
+      <div class="seo-card"><h3>現行Excelをそのまま画面化する</h3><p>今の不便な運用まで引き継ぐ可能性があります。業務フローから見直します。</p></div>
+      <div class="seo-card"><h3>全部を一度に作る</h3><p>最初から大規模にすると、確認範囲が広がり、公開前に止まりやすくなります。</p></div>
+      <div class="seo-card"><h3>社内確認者を決めない</h3><p>現場確認と経営判断の役割が曖昧だと、仕様決定が遅れます。</p></div>
+    </div></div></section>
+
+    <section class="seo-section alt"><div class="container"><div class="seo-section-head"><span>RELATED</span><h2>関連ページ</h2></div><div class="seo-related-links"><a href="../business-system-development/">業務システム開発</a><a href="./business-system-development-cost">業務システム開発費用</a><a href="../excel-paper-dx/">Excel・紙業務DX</a><a href="../internal-portal-development/">社内ポータル開発</a><a href="https://showroom.digitool-lab.com/">システムショールーム</a><a href="../downloads/">相談前チェックリスト</a></div></div></section>
+
+    <section class="seo-section"><div class="container"><div class="seo-section-head"><span>FAQ</span><h2>よくある質問</h2></div><div class="seo-faq">
+      <details open><summary>業務システム開発を外注する前に何を決めるべきですか？</summary><p>対象業務、利用者、入力項目、権限、帳票、既存データ、予算、導入後の運用担当を先に整理します。</p></details>
+      <details><summary>要件が固まっていない段階でも相談できますか？</summary><p>相談できます。むしろ要件が曖昧な段階では、開発前の業務棚卸しと優先順位付けから進めることが重要です。</p></details>
+      <details><summary>見積もりを比較する時の注意点は何ですか？</summary><p>機能一覧だけでなく、要件整理、設計、テスト、データ移行、マニュアル、保守、改善対応が含まれているか確認します。</p></details>
+    </div></div></section>
+
+    <section class="seo-cta"><div class="container"><div><h2>外注先に相談する前に、要件のたたき台を作りましょう。</h2><p>業務棚卸し、優先順位、概算範囲を整理し、見積もり比較しやすい状態にします。</p></div><div class="seo-cta-actions"><a href="../contact.html" class="btn btn-primary">開発前に相談する</a><a href="../business-system-development/" class="btn btn-outline-white">支援内容を見る</a></div></div></section>
+  </main>
+
+  <footer><div class="footer-content"><div class="footer-company"><img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所" class="footer-logo" width="160" height="160" decoding="async" loading="lazy"><div class="footer-company-info"><h3>株式会社デジタルツール研究所</h3><p>〒331-0821<br>埼玉県さいたま市北区別所町738-3<br>TEL: <a href="tel:0487007030">048-700-7030</a></p></div></div><div></div><div></div><div></div><div class="footer-services"><h4>事業内容</h4><ul><li><a href="../business-system-development/">業務システム開発</a></li><li><a href="../excel-paper-dx/">Excel・紙業務DX</a></li><li><a href="../dx-support-saitama/">DX伴走支援</a></li></ul></div><div class="footer-site-links"><ul><li><a href="../case-studies.html">ご支援事例</a></li><li><a href="../about.html">会社情報</a></li><li><a href="../service.html">サービス一覧</a></li><li><a href="../contact.html">お問い合わせ</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p></div></footer>
+</div>
+<script src="../js/modal-template.js?v=2026042503"></script>
+<script src="../js/main.js?v=2026060207"></script>
+</body>
+</html>
