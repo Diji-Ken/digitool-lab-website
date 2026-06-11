@@ -18,6 +18,8 @@
 
 実作業用の文面は `posts-management/external-media-profile-drafts-20260611.md`、`posts-management/outreach-message-templates-20260611.md`、`posts-management/gbp-weekly-calendar-20260611.md` を使う。
 
+公開直前の順番、UTM、記録表、GBP短縮文は `posts-management/external-publication-execution-plan-20260611.md`、`posts-management/external-publication-utm-links-20260611.md`、`posts-management/external-publication-log-20260611.csv`、`posts-management/gbp-short-copy-bank-20260611.md` を使う。
+
 ## 今日すぐ進められる優先順
 
 | 優先 | 領域 | 作業 | Codexで今日できること | 人間確認 |
@@ -127,6 +129,7 @@
 - 掲載依頼メールの雛形
 - 共同事例掲載依頼の雛形
 - note、Qiita/Zenn、LinkedInの投稿URL記録表
+- UTM付きURL一覧と公開後記録CSV
 - Speaker Deck用の資料構成案
 
 ### 人間確認が必要

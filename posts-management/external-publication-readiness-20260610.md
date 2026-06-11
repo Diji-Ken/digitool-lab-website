@@ -1,6 +1,16 @@
 # 外部媒体公開前チェック表
 
-更新日: 2026-06-10
+更新日: 2026-06-11
+
+## 関連資料
+
+- 実行順: `posts-management/external-publication-execution-plan-20260611.md`
+- UTM付きURL: `posts-management/external-publication-utm-links-20260611.md`
+- 公開記録CSV: `posts-management/external-publication-log-20260611.csv`
+- GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
+- GBP週次カレンダー: `posts-management/gbp-weekly-calendar-20260611.md`
+- 外部媒体プロフィール文: `posts-management/external-media-profile-drafts-20260611.md`
+- 掲載相談テンプレート: `posts-management/outreach-message-templates-20260611.md`
 
 ## 方針
 
@@ -46,3 +56,5 @@
 - 初回反応
 - GSC/GA4で確認した参照流入
 - 次に自社HPへ反映するFAQや記事テーマ
+
+記録先は `posts-management/external-publication-log-20260611.csv` を使う。

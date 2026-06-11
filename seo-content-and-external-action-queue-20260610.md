@@ -10,6 +10,10 @@
 外部プロフィール文: `posts-management/external-media-profile-drafts-20260611.md`
 掲載相談テンプレート: `posts-management/outreach-message-templates-20260611.md`
 GBP週次投稿カレンダー: `posts-management/gbp-weekly-calendar-20260611.md`
+外部発信実行順: `posts-management/external-publication-execution-plan-20260611.md`
+UTM付きURL一覧: `posts-management/external-publication-utm-links-20260611.md`
+外部公開記録CSV: `posts-management/external-publication-log-20260611.csv`
+GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 
 ## 優先順位の前提
 
@@ -61,6 +65,8 @@ GBP週次投稿カレンダー: `posts-management/gbp-weekly-calendar-20260611.m
 ## 外部媒体公開キュー
 
 公開前のステータス、リンク先LP、注意点、元ファイルパスは `plat` の外部発信管理ページで確認する。公開後は投稿URL、投稿日、リンク先、初回反応をこのキューまたはポータル側へ戻す。
+
+実際の公開順は `posts-management/external-publication-execution-plan-20260611.md`、公開時のリンクは `posts-management/external-publication-utm-links-20260611.md`、公開後の記録は `posts-management/external-publication-log-20260611.csv` を使う。
 
 | 優先 | 媒体 | 対象 | 状態 | 人間確認 |
 |---:|---|---|---|---|
