@@ -2,9 +2,12 @@ User-agent: *
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 # AI Crawlers
@@ -12,45 +15,60 @@ User-agent: GPTBot
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 User-agent: CCBot
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 User-agent: anthropic-ai
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 User-agent: Claude-Web
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 # Google AI
@@ -58,9 +76,12 @@ User-agent: Google-Extended
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 # Bing AI
@@ -68,9 +89,12 @@ User-agent: BingBot
 Allow: /
 Disallow: /apps/
 Disallow: /backup_20250703_112022/
+Disallow: /backup_images_20250727_213226/
+Disallow: /backup_images_20250727_213230/
 Disallow: /article-workspace/
 Disallow: /posts-management/
 Disallow: /scripts/
+Disallow: /*.bak$
 Disallow: /*.md$
 
 # Sitemap

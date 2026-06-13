@@ -12,6 +12,15 @@
 </IfModule>
 # END HTTP to HTTPS Redirect
 
+# BEGIN SEO Canonical Safety
+<IfModule mod_alias.c>
+    RedirectMatch gone ^/(backup_20250703_112022|backup_images_20250727_213230|backup_images_20250727_213226|article-workspace|posts-management|scripts)(?:/|$)
+    RedirectMatch gone ^/.*\.(?:bak|md)$
+    RedirectMatch 301 ^/privacy(?:\.html)?/?$ https://digitool-lab.com/privacy-policy
+    RedirectMatch 301 ^/terms(?:\.html)?/?$ https://digitool-lab.com/terms-of-service
+</IfModule>
+# END SEO Canonical Safety
+
 # BEGIN Static Asset Cache
 <IfModule mod_expires.c>
     ExpiresActive On

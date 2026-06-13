@@ -1,6 +1,6 @@
 # SEO/AIO/LLMO/MEO 実行TODO - 株式会社デジタルツール研究所
 
-更新日: 2026-06-11
+更新日: 2026-06-13
 元資料: `/Users/m/Downloads/digitool-lab-seo-aio-llmo-meo-strategy-20260601.docx`
 追加資料: `/Users/m/Workspace/mirai/00_knowledge/clients/OToMo/projects/ai-showcase/research/leadgen-materials-20260609/`
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
@@ -25,6 +25,17 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - note、SNS、Qiita/Zenn、YouTube、地域媒体は、自社HPへ戻すための外部導線・言及・被リンク補助にする。
 - noteでもSEO/MEO/AIO記事は作るが、自社HPと同じ内容を転載せず、読み物・実務メモ・考え方として公開する。
 - 以後の全体像は `seo-aio-llmo-execution-roadmap.md` を優先して見る。
+
+## 2026-06-13 フォローアップ
+
+- 公開URLでトップ、主要LP、ブログ、資料DL、showroom補助金ページの200応答を再確認した。
+- `sitemap.xml` は176 URLを確認し、HTTP 4xx/5xxの登録URLは0件だった。
+- 主要ページのtitle、description、canonical、H1、JSON-LD、現住所、現電話番号の表示を再確認した。
+- 公開検索で `/business-system-development/`、`/ai-training-saitama/`、`/internal-portal-development/`、費用記事、資料DLページの検索結果表示を確認した。
+- 公開検索では `/ai-search-meo-support/`、`/blog/ai-search-company-information-checklist`、`/blog/meo-citation-nap-checklist` はまだ確認しきれないため、Search ConsoleのURL検査で再確認する。
+- PageSpeed Insights APIは2026-06-13時点でも429で実行不可。ローカル資産確認では主要LPに大容量画像は見当たらず、実測はAPI回復後またはブラウザ画面で再実施する。
+- Chrome DevTools接続のSearch Consoleは未ログイン画面に戻るため、GSC/GA4/GBPの数値確認、URL検査、サイトマップ再送信は人間ログインが必要。
+- 旧電話番号を含む `backup_20250703_112022/`、`.bak`、内部Markdownが公開URLとして到達可能な可能性があったため、バックアップ系、`.bak`、`.md`、`posts-management/`、`scripts/` を410化し、`/privacy.html` と `/terms.html` を正規法務URLへ301化する。
 
 ## 方針
 
@@ -68,6 +79,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [x] 2026-06-10の技術SEO整理後、Search Consoleでサイトマップを再送信し、ページインデックス、手動対策、セキュリティ問題を確認する
 - [ ] PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認し、画像・CSS・外部JSの改善点を洗い出す
   - 2026-06-10: PageSpeed Insights APIは429で実行不可。ローカル監査では主要5ページのcanonical/meta description/h1/JSON-LD/画像altは問題なし。大容量画像は事例画像に集中しているため、次回PageSpeedまたはLighthouseで実測してから圧縮対象を決める
+  - 2026-06-13: PageSpeed Insights APIは429で継続不可。トップ、主要LP、資料DLのHTML資産確認では追加の大容量画像問題なし
 - [x] トップページの重い下部画像をWebP化し、画像サイズ指定・遅延読み込み・静的資産キャッシュ設定を追加する
 - [x] トップページをLighthouseで確認し、表示ロゴWebP化、Google Fonts外し、不要外部CSS/JS削除、コントラスト/見出し/画像比率を改善する
 - [x] 主要SEO受け皿ページ、費用記事、資料DLページをローカルLighthouseで確認し、LP共通CSSのコントラスト、CTA背景、スマホ時LCP、H1改行を改善する

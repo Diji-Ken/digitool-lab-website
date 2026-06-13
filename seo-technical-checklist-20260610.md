@@ -173,11 +173,22 @@ noindexにした、または既存noindexを維持したページ:
 - Search Consoleで「見つかりませんでした（404）」の修正検証を開始
   - 開始日: 2026/06/10
 
+## 2026-06-13 公開再確認
+
+- `https://digitool-lab.com/`、主要LP、ブログ記事、資料DLページ、`https://showroom.digitool-lab.com/subsidies` の200応答を確認
+- `sitemap.xml` の176 URLを確認し、HTTP 4xx/5xxは0件
+- 主要ページのtitle、description、canonical、H1、JSON-LD、現住所、現電話番号の表示を確認
+- Search Consoleは接続Chromeが未ログイン状態のため、GSC画面上でのURL検査、サイトマップ再送信、手動対策、セキュリティ問題の再確認は人間ログイン後に実施
+- PageSpeed Insights APIは429で実測不可。主要ページの資産確認では、追加で圧縮すべき大容量画像は確認されなかった
+- 旧電話番号を含むバックアップディレクトリが公開URLとして到達可能だったため、`backup_20250703_112022/`、`backup_images_20250727_213226/`、`backup_images_20250727_213230/`、`article-workspace/`、`posts-management/`、`scripts/`、`.bak`、`.md` を410化
+- `privacy.html` と `terms.html` は自然流入・外部掲載で使われやすいため、正規URL `privacy-policy`、`terms-of-service` へ301リダイレクト
+
 ## 継続TODO
 
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
+- Search Consoleにログインした状態で、2026-06-13に公開検索で未確認だった `/ai-search-meo-support/`、`/blog/ai-search-company-information-checklist`、`/blog/meo-citation-nap-checklist` のURL検査とインデックス登録リクエストを行う
 - `noindex` へ変更したページがサイトマップに再混入していないことを継続確認する
 
 ### P1
