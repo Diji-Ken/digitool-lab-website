@@ -1,5 +1,21 @@
 [
   {
+    "id": "case-138",
+    "title": "従業員40名の梱包・包装業／配送確認10分を2分に短縮した話",
+    "summary": "梱包・包装業の運行管理で、配送状況確認、配車調整、顧客連絡、クレーム記録をGoogleフォーム、GAS、ChatGPTで整えたHP事例。",
+    "industry": "物流",
+    "date": "2026-06-13",
+    "tags": [
+      "物流",
+      "配送管理",
+      "運行管理",
+      "Googleフォーム",
+      "GAS"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-138.webp",
+    "url": "blog/logistics-delivery-management-google-form-case-228.html"
+  },
+  {
     "id": "case-137",
     "title": "従業員12名・中国地域の鉄道貨物会社 ─ 運行記録のデジタル化で安全管理80%改善",
     "summary": "中国地域の鉄道貨物会社が、運行記録の紙台帳を写真・音声入力・自動分類に置き換えた事例。月20時間の集計作業を3時間に短縮し、事故予兆の発見数も3倍に改善。",
