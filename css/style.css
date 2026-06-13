@@ -84,8 +84,8 @@ nav.desktop-nav a {
   border-radius: 6px; 
   transition: background-color 0.2s, color 0.2s; 
 }
-nav.desktop-nav a:hover { background-color: var(--gray-100); color: var(--orange-600); }
-nav.desktop-nav a.active { font-weight: 700; color: var(--orange-500); }
+nav.desktop-nav a:hover { background-color: var(--gray-100); color: var(--orange-700); }
+nav.desktop-nav a.active { font-weight: 700; color: var(--orange-700); }
 
 /* ドロップダウンメニュー */
 .nav-dropdown {
@@ -118,7 +118,7 @@ nav.desktop-nav a.active { font-weight: 700; color: var(--orange-500); }
 
 .dropdown-content a:hover {
   background-color: var(--orange-100);
-  color: var(--orange-600);
+  color: var(--orange-700);
 }
 
 .nav-dropdown:hover .dropdown-content {

@@ -184,12 +184,28 @@ noindexにした、または既存noindexを維持したページ:
 - `privacy.html` と `terms.html` は自然流入・外部掲載で使われやすいため、正規URL `privacy-policy`、`terms-of-service` へ301リダイレクト
 - 本番反映後、バックアップURL、`.bak`、`.md` が410、`privacy.html` と `terms.html` が正規URLへ301、トップ・法務ページ・サイトマップ・AI検索/MEO LP・資料DLページが200で返ることを確認
 
+## 2026-06-14 Chromeログイン確認
+
+- Chrome拡張経由で `info@digitool-lab.com` のログイン状態を確認
+- Search Consoleのドメインプロパティ `sc-domain:digitool-lab.com` は権限なし。URLプレフィックス `https://digitool-lab.com/` は閲覧・操作可能
+- Search Consoleサマリー: 直近表示でクリック260、未登録55、登録済み140、HTTPS 23、パンくず19、FAQ18
+- `/sitemap.xml` を再送信。送信日は2026/06/14に更新。最終読み込みはGoogle側処理待ちで2026/06/10のまま
+- `/ai-search-meo-support/`、`/blog/ai-search-company-information-checklist`、`/blog/meo-citation-nap-checklist` はいずれも「検出 - インデックス未登録」だったため、3URLすべてインデックス登録をリクエスト済み
+- ページインデックス: 未登録55、登録済み140、404は5件で検証開始状態
+- 手動による対策、セキュリティの問題はいずれも問題なし
+- GA4 `intrepid-stock-458907-v1` を確認。過去7日でアクティブユーザー99、イベント848、キーイベント9、Organic Search 49セッション、AI Assistant 1セッション
+- GA4イベント詳細の過去28日: `form_submit` 16、`generate_lead` 10、`contact_click` 11を確認
+- Google検索のGBP表示で、住所 `〒331-0821 埼玉県さいたま市北区別所町738-3`、電話 `048-700-7030` を確認
+- 検索結果にYahoo!マップの旧台東区住所が残っていたため、サイテーション修正の優先候補にする
+- PageSpeed Insightsをブラウザ経由で確認。トップページはモバイル Performance 89、desktop Performance 99、Accessibility/Best Practices/SEOはいずれも100
+- `/business-system-development/` のdesktopは Performance 99、SEO 100、Accessibility 92。原因候補は白背景上の明るいオレンジ文字だったため、ナビ active/hover の文字色を `--orange-700` に変更し、`style.css` のキャッシュバージョンを `2026061401` に更新
+
 ## 継続TODO
 
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
-- Search Consoleにログインした状態で、2026-06-13に公開検索で未確認だった `/ai-search-meo-support/`、`/blog/ai-search-company-information-checklist`、`/blog/meo-citation-nap-checklist` のURL検査とインデックス登録リクエストを行う
+- Search Consoleで2026-06-14にインデックス登録リクエストした `/ai-search-meo-support/`、`/blog/ai-search-company-information-checklist`、`/blog/meo-citation-nap-checklist` の登録状況を3〜7日後に確認する
 - `noindex` へ変更したページがサイトマップに再混入していないことを継続確認する
 
 ### P1
