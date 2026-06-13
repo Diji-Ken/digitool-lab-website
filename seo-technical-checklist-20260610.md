@@ -182,6 +182,7 @@ noindexにした、または既存noindexを維持したページ:
 - PageSpeed Insights APIは429で実測不可。主要ページの資産確認では、追加で圧縮すべき大容量画像は確認されなかった
 - 旧電話番号を含むバックアップディレクトリが公開URLとして到達可能だったため、`backup_20250703_112022/`、`backup_images_20250727_213226/`、`backup_images_20250727_213230/`、`article-workspace/`、`posts-management/`、`scripts/`、`.bak`、`.md` を410化
 - `privacy.html` と `terms.html` は自然流入・外部掲載で使われやすいため、正規URL `privacy-policy`、`terms-of-service` へ301リダイレクト
+- 本番反映後、バックアップURL、`.bak`、`.md` が410、`privacy.html` と `terms.html` が正規URLへ301、トップ・法務ページ・サイトマップ・AI検索/MEO LP・資料DLページが200で返ることを確認
 
 ## 継続TODO
 
