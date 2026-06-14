@@ -1,5 +1,20 @@
 [
   {
+    "id": "case-140",
+    "title": "従業員12名の電子部品製造業／紙の依頼メモを整えて事務作業を半分にした話",
+    "summary": "電子部品製造業の紙メモ、口頭確認、転記作業を入力画面と自動確認表で整えた事例。",
+    "industry": "HP",
+    "date": "2026-06-14",
+    "tags": [
+      "HP",
+      "製造業",
+      "事務効率化",
+      "AI活用"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-140.webp",
+    "url": "blog/manufacturing-admin-memo-ai-20260614.html"
+  },
+  {
     "id": "case-139",
     "title": "従業員3名の福祉用具事業所／相談記録と情報共有を整えて週8時間を削減した話",
     "summary": "福祉用具事業所で、紙ファイル検索、支援計画、家族連絡、職員間共有をGoogleフォーム、GAS、ChatGPTで整理したHP事例。",
