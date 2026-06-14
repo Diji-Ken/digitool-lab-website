@@ -200,17 +200,31 @@ noindexにした、または既存noindexを維持したページ:
 - PageSpeed Insightsをブラウザ経由で確認。トップページはモバイル Performance 89、desktop Performance 99、Accessibility/Best Practices/SEOはいずれも100
 - `/business-system-development/` のdesktopは Performance 99、SEO 100、Accessibility 92。原因候補は白背景上の明るいオレンジ文字だったため、ナビ active/hover の文字色を `--orange-700` に変更し、`style.css` のキャッシュバージョンを `2026061401` に更新
 
+## 2026-06-14 追加確認
+
+- PageSpeed Insights APIは日次クォータ上限が継続しており、API経由の再計測は不可
+- Chrome DevTools Lighthouseで公開URLを再監査
+  - `https://digitool-lab.com/`: Accessibility 100、Best Practices 100、SEO 100
+  - `https://digitool-lab.com/business-system-development/`: Accessibility 100、Best Practices 100、SEO 100
+- 前回 `/business-system-development/` で出ていたコントラスト指摘は、公開反映後のDevTools Lighthouseでは解消済み
+- Agentic Browsing監査で `llms.txt is missing or incomplete` が残っていた。原因は `llms.txt` 内の主要URLがMarkdownリンク形式ではなかったため
+- `llms.txt` の主要URL・相談前記事URLをMarkdownリンク形式へ修正し、AI検索・LLMO向けに主要ページを機械的にたどれる形へ改善
+- Chrome拡張は現在選択中のChromeプロファイル `Profile 8` では無効状態。Yahoo!マップ修正、Search Consoleドメインプロパティの別アカウント確認は、Codex Chrome Extensionを有効化または対象Googleアカウントのプロファイルに切替後に実施する
+
 ## 継続TODO
 
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
 - Search Consoleで2026-06-14にインデックス登録リクエストした `/ai-search-meo-support/`、`/blog/ai-search-company-information-checklist`、`/blog/meo-citation-nap-checklist` の登録状況を3〜7日後に確認する
+- Yahoo!マップに残る旧台東区住所を修正する。Chrome拡張が現在選択中プロファイルで無効のため、拡張有効化またはログイン済みプロファイル切替後に対応する
+- Search Consoleドメインプロパティ `sc-domain:digitool-lab.com` は別Googleアカウントの可能性があるため、権限のあるアカウントで再確認する
 - `noindex` へ変更したページがサイトマップに再混入していないことを継続確認する
 
 ### P1
 
-- PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認する。2026-06-10時点ではAPI 429のため後日またはブラウザ画面で確認する
+- PageSpeed Insights APIでトップ、主要LP、記事、資料DLページを確認する。2026-06-14時点でもAPI 429のため、DevTools Lighthouseで代替確認済み
+- `llms.txt` 修正後に本番反映し、Agentic Browsing監査の `llms-txt` 指摘が消えるか確認する
 - 主要LP、記事、資料DLページのLighthouse確認は初回実施済み。今後は追加LP・古い記事へ範囲を広げる
 - 主要LPと記事の内部リンクを増やす
 - 古い記事のtitle、H2、FAQ、CTA、更新日を順に見直す

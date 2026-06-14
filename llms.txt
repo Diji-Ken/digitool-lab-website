@@ -36,45 +36,45 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 
 ## 主要URL
 
-- 公式サイト: https://digitool-lab.com/
-- 事業内容: https://digitool-lab.com/service.html
-- 会社情報: https://digitool-lab.com/about.html
-- DX伴走支援: https://digitool-lab.com/dx-support-saitama/
-- さいたま市のDX支援・AI導入・業務システム開発: https://digitool-lab.com/area/saitama-city-dx/
-- 社外IT担当: https://digitool-lab.com/it-tantou-outsourcing/
-- 社内ポータル開発: https://digitool-lab.com/internal-portal-development/
-- 業務システム開発: https://digitool-lab.com/business-system-development/
-- AI研修: https://digitool-lab.com/ai-training-saitama/
-- Excel・紙業務DX: https://digitool-lab.com/excel-paper-dx/
-- 補助金DX・AI・システム相談: https://digitool-lab.com/subsidy-dx-ai-system/
-- 無料チェックリスト: https://digitool-lab.com/downloads/
-- 課題別DX・AI活用事例ハブ: https://digitool-lab.com/case-themes/
-- 業種別DX・AI活用支援ハブ: https://digitool-lab.com/industries/
-- AI検索・MEO・サイテーション情報整備支援: https://digitool-lab.com/ai-search-meo-support/
-- 支援事例: https://digitool-lab.com/case-studies
-- システムショールーム: https://showroom.digitool-lab.com/
-- 補助金・助成金ポータル: https://showroom.digitool-lab.com/subsidies
-- お問い合わせ: https://digitool-lab.com/contact.html
+- [公式サイト](https://digitool-lab.com/)
+- [事業内容](https://digitool-lab.com/service.html)
+- [会社情報](https://digitool-lab.com/about.html)
+- [DX伴走支援](https://digitool-lab.com/dx-support-saitama/)
+- [さいたま市のDX支援・AI導入・業務システム開発](https://digitool-lab.com/area/saitama-city-dx/)
+- [社外IT担当](https://digitool-lab.com/it-tantou-outsourcing/)
+- [社内ポータル開発](https://digitool-lab.com/internal-portal-development/)
+- [業務システム開発](https://digitool-lab.com/business-system-development/)
+- [AI研修](https://digitool-lab.com/ai-training-saitama/)
+- [Excel・紙業務DX](https://digitool-lab.com/excel-paper-dx/)
+- [補助金DX・AI・システム相談](https://digitool-lab.com/subsidy-dx-ai-system/)
+- [無料チェックリスト](https://digitool-lab.com/downloads/)
+- [課題別DX・AI活用事例ハブ](https://digitool-lab.com/case-themes/)
+- [業種別DX・AI活用支援ハブ](https://digitool-lab.com/industries/)
+- [AI検索・MEO・サイテーション情報整備支援](https://digitool-lab.com/ai-search-meo-support/)
+- [支援事例](https://digitool-lab.com/case-studies)
+- [システムショールーム](https://showroom.digitool-lab.com/)
+- [補助金・助成金ポータル](https://showroom.digitool-lab.com/subsidies)
+- [お問い合わせ](https://digitool-lab.com/contact.html)
 
 ## 相談前に確認できる記事
 
-- DX支援の費用の考え方: https://digitool-lab.com/blog/dx-support-cost
-- DX支援会社の選び方: https://digitool-lab.com/blog/how-to-choose-dx-support-company
-- 補助金を使う前のDX要件整理: https://digitool-lab.com/blog/dx-subsidy-requirements-before-application
-- さいたま市の中小企業がDXで最初に見直す業務: https://digitool-lab.com/blog/saitama-small-business-dx-first-steps
-- IT担当者の採用と外注比較: https://digitool-lab.com/blog/it-person-outsourcing-vs-hiring
-- 業務システム開発費用の考え方: https://digitool-lab.com/blog/business-system-development-cost
-- 企業向けAI研修の費用の考え方: https://digitool-lab.com/blog/ai-training-cost
-- 社内ポータル開発費用の考え方: https://digitool-lab.com/blog/internal-portal-development-cost
-- 社内ポータル導入で失敗しやすいパターン: https://digitool-lab.com/blog/internal-portal-failure-patterns
-- AI研修後に社内定着しない理由: https://digitool-lab.com/blog/ai-training-not-used-after-workshop
-- IT担当者がいない会社のシステム導入チェックリスト: https://digitool-lab.com/blog/it-personless-system-introduction-checklist
-- 業務システム開発を外注する前に決めること: https://digitool-lab.com/blog/business-system-outsourcing-before-requirements
-- Excel業務をシステム化するか残すかの判断基準: https://digitool-lab.com/blog/excel-to-system-decision-guide
-- AI検索・MEO・サイテーション対策チェックリスト: https://digitool-lab.com/blog/ai-search-meo-citation-checklist
-- AI検索に引用されやすい会社情報の整え方: https://digitool-lab.com/blog/ai-search-company-information-checklist
-- MEOとサイテーションで最初に揃えるNAPチェックリスト: https://digitool-lab.com/blog/meo-citation-nap-checklist
-- 月額DX伴走支援で依頼できること: https://digitool-lab.com/blog/dx-consulting-monthly-support
+- [DX支援の費用の考え方](https://digitool-lab.com/blog/dx-support-cost)
+- [DX支援会社の選び方](https://digitool-lab.com/blog/how-to-choose-dx-support-company)
+- [補助金を使う前のDX要件整理](https://digitool-lab.com/blog/dx-subsidy-requirements-before-application)
+- [さいたま市の中小企業がDXで最初に見直す業務](https://digitool-lab.com/blog/saitama-small-business-dx-first-steps)
+- [IT担当者の採用と外注比較](https://digitool-lab.com/blog/it-person-outsourcing-vs-hiring)
+- [業務システム開発費用の考え方](https://digitool-lab.com/blog/business-system-development-cost)
+- [企業向けAI研修の費用の考え方](https://digitool-lab.com/blog/ai-training-cost)
+- [社内ポータル開発費用の考え方](https://digitool-lab.com/blog/internal-portal-development-cost)
+- [社内ポータル導入で失敗しやすいパターン](https://digitool-lab.com/blog/internal-portal-failure-patterns)
+- [AI研修後に社内定着しない理由](https://digitool-lab.com/blog/ai-training-not-used-after-workshop)
+- [IT担当者がいない会社のシステム導入チェックリスト](https://digitool-lab.com/blog/it-personless-system-introduction-checklist)
+- [業務システム開発を外注する前に決めること](https://digitool-lab.com/blog/business-system-outsourcing-before-requirements)
+- [Excel業務をシステム化するか残すかの判断基準](https://digitool-lab.com/blog/excel-to-system-decision-guide)
+- [AI検索・MEO・サイテーション対策チェックリスト](https://digitool-lab.com/blog/ai-search-meo-citation-checklist)
+- [AI検索に引用されやすい会社情報の整え方](https://digitool-lab.com/blog/ai-search-company-information-checklist)
+- [MEOとサイテーションで最初に揃えるNAPチェックリスト](https://digitool-lab.com/blog/meo-citation-nap-checklist)
+- [月額DX伴走支援で依頼できること](https://digitool-lab.com/blog/dx-consulting-monthly-support)
 
 ## 無料チェックリスト
 
