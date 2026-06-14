@@ -209,6 +209,7 @@ noindexにした、または既存noindexを維持したページ:
 - 前回 `/business-system-development/` で出ていたコントラスト指摘は、公開反映後のDevTools Lighthouseでは解消済み
 - Agentic Browsing監査で `llms.txt is missing or incomplete` が残っていた。原因は `llms.txt` 内の主要URLがMarkdownリンク形式ではなかったため
 - `llms.txt` の主要URL・相談前記事URLをMarkdownリンク形式へ修正し、AI検索・LLMO向けに主要ページを機械的にたどれる形へ改善
+- `llms.txt` 修正を本番反映後、トップページのChrome DevTools Lighthouseで Accessibility 100、Best Practices 100、SEO 100、Agentic Browsing 100、失敗0を確認
 - Chrome拡張は現在選択中のChromeプロファイル `Profile 8` では無効状態。Yahoo!マップ修正、Search Consoleドメインプロパティの別アカウント確認は、Codex Chrome Extensionを有効化または対象Googleアカウントのプロファイルに切替後に実施する
 
 ## 継続TODO
@@ -224,7 +225,6 @@ noindexにした、または既存noindexを維持したページ:
 ### P1
 
 - PageSpeed Insights APIでトップ、主要LP、記事、資料DLページを確認する。2026-06-14時点でもAPI 429のため、DevTools Lighthouseで代替確認済み
-- `llms.txt` 修正後に本番反映し、Agentic Browsing監査の `llms-txt` 指摘が消えるか確認する
 - 主要LP、記事、資料DLページのLighthouse確認は初回実施済み。今後は追加LP・古い記事へ範囲を広げる
 - 主要LPと記事の内部リンクを増やす
 - 古い記事のtitle、H2、FAQ、CTA、更新日を順に見直す
