@@ -1,5 +1,21 @@
 [
   {
+    "id": "case-139",
+    "title": "従業員3名の福祉用具事業所／相談記録と情報共有を整えて週8時間を削減した話",
+    "summary": "福祉用具事業所で、紙ファイル検索、支援計画、家族連絡、職員間共有をGoogleフォーム、GAS、ChatGPTで整理したHP事例。",
+    "industry": "福祉用具",
+    "date": "2026-06-14",
+    "tags": [
+      "福祉用具",
+      "介護",
+      "記録支援",
+      "Googleフォーム",
+      "ChatGPT"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-139.webp",
+    "url": "blog/welfare-tools-record-sharing-case-138.html"
+  },
+  {
     "id": "case-138",
     "title": "従業員40名の梱包・包装業／配送確認10分を2分に短縮した話",
     "summary": "梱包・包装業の運行管理で、配送状況確認、配車調整、顧客連絡、クレーム記録をGoogleフォーム、GAS、ChatGPTで整えたHP事例。",
