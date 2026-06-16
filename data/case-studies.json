@@ -1,5 +1,21 @@
 [
   {
+    "id": "case-142",
+    "title": "従業員45名の建設・不動産会社／経理の確認作業を月20時間→9時間に減らした話",
+    "summary": "建設・不動産業 × 経理担当 × 従業員45名の事例",
+    "industry": "hp",
+    "date": "2026-06-16",
+    "tags": [
+      "hp",
+      "case-study",
+      "ai",
+      "system",
+      "nocode"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-142.webp",
+    "url": "blog/hp-construction-accounting-20260526.html"
+  },
+  {
     "id": "case-141",
     "title": "従業員12名の野菜農家／作業記録と販売記録を整えて品質管理を安定させた話",
     "summary": "北海道の野菜農家が、作業記録・販売記録・問い合わせを入力画面と自動集計で整え、収益把握と品質管理を改善した事例。",
