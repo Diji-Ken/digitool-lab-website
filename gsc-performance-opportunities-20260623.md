@@ -66,3 +66,6 @@
 
 - `/case-studies` のtitle、description、OGP、Twitter、JSON-LD description、H1、冒頭説明を、社内ポータル・業務システム開発・AI活用の事例一覧として具体化した
 - `/blog/hr-turnover-prediction-ai` のtitle、description、OGP、Twitter、JSON-LD headline/description、H1、冒頭回答、画像altを、GSCで表示が出ている `離職率 改善 ai`、`離職 予測 ai`、`ai 離職予測システム` に寄せた
+- `/blog/management-data-aggregation-ai` の壊れていたTwitter title属性を修正し、title、description、OGP、Twitter、JSON-LD、H1、冒頭回答、FAQを `経営分析レポート 自動作成` に寄せた
+- `/blog/ai-chatgpt-faq-creation` のtitle、description、OGP、Twitter、JSON-LD、H1、冒頭回答、FAQ、関連リンクを `FAQシステム ChatGPT`、`社内FAQ`、`ナレッジ` に寄せた
+- `/blog/security-property-management-dx` のtitle、description、OGP、Twitter、JSON-LD、H1、冒頭回答、FAQを `警備DX 導入事例` に寄せた
