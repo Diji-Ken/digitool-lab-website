@@ -15,6 +15,9 @@ jobs:
 
     - name: Run SEO link audit
       run: node scripts/audit-seo-links.mjs
+
+    - name: Run SEO indexability audit
+      run: node scripts/audit-seo-indexability.mjs
     
     - name: Deploy to Xserver via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.4.0
