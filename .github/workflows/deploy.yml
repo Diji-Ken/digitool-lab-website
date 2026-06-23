@@ -22,6 +22,9 @@ jobs:
     - name: Run noindex intent audit
       run: node scripts/audit-noindex-intent.mjs
 
+    - name: Run markdown artifact audit
+      run: node scripts/audit-markdown-artifacts.mjs
+
     - name: Run structured data audit
       run: node scripts/audit-structured-data.mjs
 

@@ -110,6 +110,7 @@ GSCドメインプロパティで `digitool-lab.com` 全体を見られるよう
 - 未登録/noindex系の実行として、検索流入に使える実事例8ページをindex対象へ昇格。`index, follow`、canonical、BlogPosting/BreadcrumbList JSON-LD、sitemap掲載、`case-studies` からの内部リンクを追加した。
 - 意図しないnoindex再発を防ぐため、`scripts/audit-noindex-intent.mjs` を追加し、Xserverデプロイ前CIで「許可リスト外のnoindex」を検知するようにした。
 - 昇格した8ページについて、Markdown記号が本文に残る状態を解消し、成果表のHTMLテーブル化、FAQ/FAQPage、関連サービス導線を追加した。GSCで登録状況を確認する前に、検索結果・AI回答に出ても最低限読める品質へ整えた。
+- `scripts/audit-markdown-artifacts.mjs` を追加し、sitemap掲載ページの見える本文にMarkdown見出し・引用記号・表記号・画像生成メモが残る状態をCIで検知するようにした。初回検知で `/blog/ai-gemini-slack-summary` のSlack表示例を修正した。
 
 ## GSCで新しくできること
 
@@ -279,6 +280,7 @@ TODO:
 
 ## 管理先
 
+- 実行ボード: `gsc-domain-action-board-20260624.md`
 - 全体台帳: `seo-audit-todo.md`
 - GSCドメイン運用: `gsc-domain-property-action-plan-20260623.md`
 - 未登録仕分け: `gsc-index-coverage-triage-20260623.md`

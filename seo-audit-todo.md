@@ -9,6 +9,7 @@
 GSC未登録仕分け: `gsc-index-coverage-triage-20260623.md`
 GSCドメインプロパティ運用TODO: `gsc-domain-property-action-plan-20260623.md`
 GSCドメイン全体活用TODO: `gsc-domain-full-todo-20260623.md`
+GSCドメイン実行ボード: `gsc-domain-action-board-20260624.md`
 GSC公開後チェックリスト: `gsc-post-release-checklist-20260623.md`
 GSC技術ヘルス/リンク確認: `gsc-technical-health-20260623.md`
 出典別トレース: `seo-source-traceability-20260610.md`
@@ -95,6 +96,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: 未登録代表URLだった `/blog/ai-search-meo-citation-checklist` と `/blog/meo-citation-nap-checklist` を追加改善。AI検索対策・MEO・サイテーションの違い、進める順番、住所/電話変更後のNAP確認、FAQ/JSON-LDを増強した。
   - 2026-06-24: 実事例として検索に出せる8ページがnoindexのまま残っていたため、index対象へ昇格。canonical、BlogPosting/BreadcrumbList JSON-LD、sitemap、`case-studies` からの内部リンクを追加し、`scripts/audit-noindex-intent.mjs` をCIに組み込んだ。
   - 2026-06-24: 上記8ページの本文構造も追加改善。Markdown記号の露出を解消し、成果表をHTMLテーブル化、FAQ/FAQPage、業務システム開発・社内ポータル開発・DX伴走支援への関連導線を追加した。
+  - 2026-06-24: `scripts/audit-markdown-artifacts.mjs` を追加し、sitemap掲載ページにMarkdown見出し、引用記号、表記号、画像生成メモが見える形で残る場合にCIで検知するようにした。初回検知で `/blog/ai-gemini-slack-summary` のSlack表示例に残っていた `##` を修正。
 - [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
   - 2026-06-23: `gsc-performance-opportunities-20260623.md` に初回抽出結果を保存。`case-studies` と `blog/hr-turnover-prediction-ai` のtitle、description、H1、構造化データ、冒頭回答を改善し本番反映。
   - 2026-06-23: 追加で `management-data-aggregation-ai`、`ai-chatgpt-faq-creation`、`security-property-management-dx` をGSC表示クエリに合わせて改善。経営分析レポート自動作成、FAQシステム/ChatGPT、警備DX導入事例の検索意図へ寄せた。
