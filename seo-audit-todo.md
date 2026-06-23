@@ -85,6 +85,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [ ] GSCの未登録985件を、改善対象、noindexで正しいもの、リダイレクトで正しいもの、削除/410対象に仕分ける
   - 2026-06-23: `gsc-index-coverage-triage-20260623.md` にカテゴリ単位の初回仕分けを作成。次はGSCのURL例を抽出し、URL単位の重要/放置/削除候補へ細分化する。
   - 2026-06-23: GSCの各未登録理由から代表URL例を抽出。`case-studies`、MEO/AIO記事、showroom主要カテゴリを優先改善、http/www/index.html/旧URL301、shop robots、低優先補助金noindexは対応不要に分類した。
+  - 2026-06-23: 公開HTML全体の内部リンク正規化を実施。内部 `href` に残る `.html` を0件化し、一部ブログ/補助金記事の相対リンク、CSS、画像参照切れも修正。内部参照チェック0件を確認。
 - [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
   - 2026-06-23: `gsc-performance-opportunities-20260623.md` に初回抽出結果を保存。`case-studies` と `blog/hr-turnover-prediction-ai` のtitle、description、H1、構造化データ、冒頭回答を改善し本番反映。
   - 2026-06-23: 追加で `management-data-aggregation-ai`、`ai-chatgpt-faq-creation`、`security-property-management-dx` をGSC表示クエリに合わせて改善。経営分析レポート自動作成、FAQシステム/ChatGPT、警備DX導入事例の検索意図へ寄せた。
@@ -93,6 +94,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: 外部リンク12件、内部リンク202件を確認。内部リンクはトップページ152件に偏り、AIO/MEO系記事の露出が弱かったため、トップ、事業内容、DX伴走、さいたま市、社内ポータル、業務システム、関連ブログから `ai-search-meo-support` とAIO/MEO関連記事への導線を追加。
 - [ ] GSCの手動対策、セキュリティ問題、robots.txt、サイトマップ最終読み込み日、HTTPS、パンくずリストを月次チェックする
   - 2026-06-23: 手動対策なし、セキュリティ問題なし、HTTPS重大問題なし、パンくず無効0/有効25、`showroom` sitemap成功564、`digitool-lab.com` sitemap成功176を確認。
+  - 2026-06-23: 内部リンク正規化に伴い、変更された公開HTMLのうちsitemap掲載155 URLの `lastmod` を更新。
 - [ ] GSCドメインプロパティの不明な確認済みオーナー5件は、ユーザー確認後に削除する
 - [x] `plat.digitool-lab.com/robots.txt` の本番404を解消する
   - 2026-06-23: `digiken-platform` に `/robots.txt` ルートを追加し、VPS本番を `914c2b4` へ更新。`https://plat.digitool-lab.com/robots.txt` は200応答。GSCのrobots重大エラー消失は後日確認する。

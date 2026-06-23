@@ -28,6 +28,7 @@
 - [x] `tokutei.html` のリダイレクトエラーを本番で301到達確認
 - [x] `case-studies` とshowroom主要ページへの内部リンクを増やす
 - [x] 主要内部リンクの `.html` 表記を正規URLへ寄せる
+- [x] 公開HTML全体の内部 `.html` hrefを0件化し、相対リンク・CSS・画像参照の切れを修正する
 - [x] `plat.digitool-lab.com/robots.txt` の本番404を解消する
 - [x] 手動対策、セキュリティ、HTTPS、パンくず、サイトマップ、リンクレポートの初回ヘルスチェックを実施する
 
