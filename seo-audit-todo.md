@@ -86,6 +86,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: `gsc-index-coverage-triage-20260623.md` にカテゴリ単位の初回仕分けを作成。次はGSCのURL例を抽出し、URL単位の重要/放置/削除候補へ細分化する。
   - 2026-06-23: GSCの各未登録理由から代表URL例を抽出。`case-studies`、MEO/AIO記事、showroom主要カテゴリを優先改善、http/www/index.html/旧URL301、shop robots、低優先補助金noindexは対応不要に分類した。
   - 2026-06-23: 公開HTML全体の内部リンク正規化を実施。内部 `href` に残る `.html` を0件化し、一部ブログ/補助金記事の相対リンク、CSS、画像参照切れも修正。内部参照チェック0件を確認。
+  - 2026-06-23: `scripts/audit-seo-links.mjs` を追加し、GitHub ActionsのXserverデプロイ前に内部 `.html` href と内部 `href/src` 参照切れを自動検査するようにした。
 - [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
   - 2026-06-23: `gsc-performance-opportunities-20260623.md` に初回抽出結果を保存。`case-studies` と `blog/hr-turnover-prediction-ai` のtitle、description、H1、構造化データ、冒頭回答を改善し本番反映。
   - 2026-06-23: 追加で `management-data-aggregation-ai`、`ai-chatgpt-faq-creation`、`security-property-management-dx` をGSC表示クエリに合わせて改善。経営分析レポート自動作成、FAQシステム/ChatGPT、警備DX導入事例の検索意図へ寄せた。
