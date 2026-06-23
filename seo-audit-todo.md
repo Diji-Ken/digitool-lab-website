@@ -9,6 +9,7 @@
 GSC未登録仕分け: `gsc-index-coverage-triage-20260623.md`
 GSCドメインプロパティ運用TODO: `gsc-domain-property-action-plan-20260623.md`
 GSCドメイン全体活用TODO: `gsc-domain-full-todo-20260623.md`
+GSC公開後チェックリスト: `gsc-post-release-checklist-20260623.md`
 GSC技術ヘルス/リンク確認: `gsc-technical-health-20260623.md`
 出典別トレース: `seo-source-traceability-20260610.md`
 コンテンツ/外部導線キュー: `seo-content-and-external-action-queue-20260610.md`
@@ -101,11 +102,13 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: `/blog/internal-portal-development-cost` と `/blog/business-system-development-cost` を追加改善。`中小企業向け料金目安`、`見積前チェック`、`いくらから検討できるか` のFAQと費用レンジを追加し、費用検索のクリック前不安に回答した。
 - [x] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
   - 2026-06-23: 外部リンク12件、内部リンク202件を確認。内部リンクはトップページ152件に偏り、AIO/MEO系記事の露出が弱かったため、トップ、事業内容、DX伴走、さいたま市、社内ポータル、業務システム、関連ブログから `ai-search-meo-support` とAIO/MEO関連記事への導線を追加。
+  - 2026-06-23: `scripts/audit-priority-internal-links.mjs` を追加し、問い合わせに近いLP、費用記事、AIO/MEO記事、資料DL、事例ハブの内部リンク元数をCIで監査するようにした。月額DX伴走記事は費用記事クラスタからの関連リンクを追加。
 - [ ] GSCの手動対策、セキュリティ問題、robots.txt、サイトマップ最終読み込み日、HTTPS、パンくずリストを月次チェックする
   - 2026-06-23: 手動対策なし、セキュリティ問題なし、HTTPS重大問題なし、パンくず無効0/有効25、`showroom` sitemap成功564、`digitool-lab.com` sitemap成功176を確認。
   - 2026-06-23: 内部リンク正規化に伴い、変更された公開HTMLのうちsitemap掲載155 URLの `lastmod` を更新。
   - 2026-06-23: sitemap掲載176 URLについて、ローカルHTML存在、canonical一致、noindex混入なし、title/description/H1、lastmod形式を監査し、CIへ組み込んだ。
   - 2026-06-23: `scripts/audit-structured-data.mjs` を追加し、sitemap掲載176 URLのJSON-LD存在、構文、`@graph`、BreadcrumbList、FAQPage、Article/BlogPosting、Service、Organizationの基本項目をCIで監査するようにした。初回監査は503ブロック確認でエラー0件。
+  - 2026-06-23: `gsc-post-release-checklist-20260623.md` を追加し、新規LP・記事公開後のsitemap再送信、URL検査、3〜7日後確認、週次/月次確認を固定化した。
 - [ ] GSCドメインプロパティの不明な確認済みオーナー5件は、ユーザー確認後に削除する
 - [x] `plat.digitool-lab.com/robots.txt` の本番404を解消する
   - 2026-06-23: `digiken-platform` に `/robots.txt` ルートを追加し、VPS本番を `914c2b4` へ更新。`https://plat.digitool-lab.com/robots.txt` は200応答。GSCのrobots重大エラー消失は後日確認する。

@@ -63,6 +63,8 @@ Internal links:
 - Added links between AIO/MEO supporting articles.
 - Updated `sitemap.xml` lastmod for modified pages.
 - Normalized `llms.txt` and `llms_full.txt` main links from `.html` variants to canonical URLs.
+- Added `scripts/audit-priority-internal-links.mjs` to CI so important LPs, cost articles, AIO/MEO articles, downloads, and case hubs keep enough internal link sources.
+- Added related links from the cost cluster to `blog/dx-consulting-monthly-support` because it had fewer referring pages than the other priority cost pages.
 
 ## Next Check
 

@@ -91,6 +91,8 @@ GSCドメインプロパティで `digitool-lab.com` 全体を見られるよう
 - URL検査: `https://showroom.digitool-lab.com/pricing` は `検出 - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
 - 検索パフォーマンス上位クエリ: `デジタルツール研究所` 47クリック/62表示、`株式会社デジタルツール研究所` 27クリック/58表示、`松岡哲平` 10クリック/143表示、`facebook データ削除` 3クリック/54表示、`gemini スクリプト` 1クリック/45表示、`デジタルツール` 0クリック/153表示、`警備業務効率化 ai活用事例` 0クリック/143表示。
 - 検索パフォーマンス上位ページ: `/` 102クリック/771表示、`/blog/ai-gemini-gas-file-rename` 32クリック/258表示、`/about` 27クリック/624表示、`/facebook-data-deletion` 10クリック/571表示、`/blog/hr-turnover-prediction-ai` 7クリック/1,114表示、`/service` 7クリック/303表示。
+- 内部リンク運用化: `scripts/audit-priority-internal-links.mjs` を追加し、重要LP、費用記事、AIO/MEO記事、資料DL、事例ハブの内部リンク元数をCIで監査するようにした。月額DX伴走記事は費用記事クラスタからの関連リンクを追加。
+- 公開後運用化: `gsc-post-release-checklist-20260623.md` を追加し、新規LP・記事公開時のsitemap、URL検査、3〜7日後確認、週次/月次確認を固定化した。
 
 ## GSCで新しくできること
 
