@@ -292,6 +292,25 @@ noindexにした、または既存noindexを維持したページ:
 - Search Consoleドメインプロパティのユーザーと権限を再確認。`info@digitool-lab.com` 以外の確認済みオーナー5件は残存
 - `plat.digitool-lab.com/robots.txt` は本番で引き続き404。ソース追加とbuildは完了済みだが、VPS反映はSSH/デプロイ権限待ち
 
+## 2026-06-23 GSC低CTRクエリ追加対応
+
+- GSCドメインプロパティの検索パフォーマンスを100件表示で確認
+- クリック0かつ表示回数がまとまっているクエリクラスタを追加抽出
+  - 離職予測AI系: `離職率 改善 ai` 84、`離職 予測 ai` 83、`ai 離職予測システム` 81、`離職防止 ai` 66、`離職 予測` 65
+  - 製造業需要予測系: `ai 需要 予測 製造 業` 78、`消費財メーカー 需要予測 ai` 35
+  - 小売在庫管理系: `在庫管理 小売業` 51、`小売 在庫 管理` 45、`小売 在庫管理` 42、`在庫 管理 システム 小売` 14〜22
+- 対応記事
+  - `blog/hr-turnover-prediction-ai.html`
+  - `blog/manufacturing-demand-forecasting-ai.html`
+  - `blog/retail-inventory-optimization.html`
+- 実施内容
+  - title、description、H1、OGP、Twitter meta、Article JSON-LD、FAQ JSON-LDを検索意図に合わせて更新
+  - 既存の不正な `twitter:title` 属性を修正
+  - 製造業記事のJSON-LD headlineに別事例見出しが残っていたため修正
+  - 本文冒頭の要点、インパクトカード、FAQ、CTA、関連相談先リンクを更新
+  - `business-system-development/`、`dx-support-saitama/`、`ai-training-saitama/`、`subsidy-dx-ai-system/` への内部リンクを追加
+  - `data/case-studies.json` と `sitemap.xml` の `lastmod` を更新
+
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
