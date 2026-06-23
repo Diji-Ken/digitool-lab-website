@@ -103,6 +103,11 @@ GSC URL検査:
 - `.htaccess` の旧事例URL `/case-001.html` などが、一部 `*.html` 付き記事URLへ301され、その後に拡張子なしURLへ再301される2段階になっていたため、正規の拡張子なしURLへ直接301するように修正した。
 - GSC上では旧URLが「ページにリダイレクトがあります」に残るのは正常だが、不要なリダイレクトチェーンを減らし、クロール効率と検証の見通しを改善した。
 
+2026-06-23 MEO/AIO記事の未登録対策:
+- `https://digitool-lab.com/blog/ai-search-meo-citation-checklist` は `検出 - インデックス未登録` だったため、title、description、H1を `AI検索対策` へ寄せ、AI検索対策・MEO・サイテーションの違い、進める順番、禁止事項、FAQ/FAQPage JSON-LDを追加した。
+- `https://digitool-lab.com/blog/meo-citation-nap-checklist` は `クロール済み - インデックス未登録` の代表例だったため、title、description、H1を `MEO・サイテーションのNAP統一` へ寄せ、住所・電話番号変更後の確認順、表記ゆれ、管理表のFAQ/FAQPage JSON-LDを追加した。
+- 両URLともsitemap lastmodは2026-06-23で更新済み。次回GSCでインデックス状況と検索パフォーマンスを確認する。
+
 ## カテゴリ別判断
 
 ### リダイレクト 424件
