@@ -28,7 +28,7 @@ Google公式の位置づけでは、Search Consoleはクロール、インデッ
 
 ## 現在の初期値
 
-- 初回検索パフォーマンス: クリック322、表示8,663、CTR3.7%、平均順位15.8
+- 初回検索パフォーマンス: クリック322、表示8,660、CTR3.7%、平均順位15.8
 - インデックス登録済み: 228件
 - 未登録: 985件
 - リダイレクト: 424件
@@ -96,6 +96,17 @@ GSCドメインプロパティで `digitool-lab.com` 全体を見られるよう
 - URL検査: `https://digitool-lab.com/about` は `URL は Google に登録されています`、HTTPS有効、パンくず有効を確認し、インデックス登録リクエスト済み。
 - 低CTR/上位ページ改善: `/service` を、DX伴走支援、社内ポータル開発、業務システム開発、AI研修のサービスハブとしてtitle、description、H1、主要サービス要約、FAQ、WebPage/Organization/Service/ItemList JSON-LDを改善した。
 - Core Web Vitals/LCP改善: PageSpeed Insights APIは429継続。トップと `seo-hero` を使う主要LP/記事29ページへ `hero-dx-support.webp` のpreload + `fetchpriority="high"` を追加し、CI監査 `scripts/audit-hero-preload.mjs` を追加した。
+
+## 2026-06-24 実行ログ
+
+- GSCドメインプロパティ `sc-domain:digitool-lab.com` をChromeログイン済み状態で再確認。サマリー、検索パフォーマンス、ページインデックス、サイトマップ、リンクレポートを確認できた。
+- 検索パフォーマンス: クリック322、表示8,660、CTR3.7%、平均掲載順位15.8、最終更新6時間前。クエリ数252、ページ数246。
+- 上位クエリ: `デジタルツール研究所` 47クリック/62表示、`株式会社デジタルツール研究所` 27クリック/58表示、`松岡哲平` 10クリック/143表示、`facebook データ削除` 3クリック/54表示、`gemini スクリプト` 1クリック/45表示、`デジタルツール` 0クリック/153表示、`警備業務効率化 ai活用事例` 0クリック/143表示。
+- 上位ページ: `/` 102クリック/771表示、`/blog/ai-gemini-gas-file-rename` 32クリック/258表示、`/about` 27クリック/624表示、`/facebook-data-deletion` 10クリック/571表示、`/blog/hr-turnover-prediction-ai` 7クリック/1,114表示、`/service` 7クリック/303表示。
+- ページインデックス: 登録済み228、未登録985。未登録はリダイレクト424、noindex203、クロール済み - インデックス未登録289、検出 - インデックス未登録53、404が5、リダイレクトエラー1。
+- サイトマップ: `https://digitool-lab.com/sitemap.xml` は176 URL、`https://showroom.digitool-lab.com/sitemap.xml` は564 URL。どちらも2026/06/23最終読み込み・成功。
+- リンク: 外部リンク12件、内部リンク202件。外部リンク元は `note.com` 5件、`scamadviser.com` 2件、`timewell.jp` 2件など。内部リンクはトップ152件に偏っているため、CVに近いLP・記事への導線増強を継続する。
+- 今日以降の最優先は、ホスト別検索露出の保存、未登録URLの重要度仕分け、404/リダイレクト検証結果の再確認、低CTR/11〜20位クエリの改善。
 
 ## GSCで新しくできること
 
