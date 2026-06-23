@@ -62,6 +62,13 @@
 - 生成AI専用レポートはGSCサイドバーに未表示。通常の検索パフォーマンス内に「AI を使用してパフォーマンス レポートをカスタマイズする」は表示。
 - `ai-search-meo-citation-checklist`、showroomの `subsidies/internal-portal`、`subsidies/system-development`、`cases`、`pricing` をURL検査。`system-development` はリクエスト済み表示が安定しないため、次回再確認する。
 
+## 2026-06-23 DNS反映後確認
+
+- `digitool-lab.com` のDNS TXTに `google-site-verification` レコードが公開されていることを確認。
+- Chromeログイン済みGSCで `sc-domain:digitool-lab.com` のサマリー画面を開けることを確認。
+- サマリー上で検索パフォーマンス322クリック、未登録985件、登録済み228件、HTTPS 31件、パンくず有効25件を確認。
+- 以後はURLプレフィックスではなく、原則ドメインプロパティを正本として公式HP、showroom、plat、shop、www/httpを横断確認する。
+
 ## P2: 週次で見る
 
 | TODO | 理由 | 改善アクション |
