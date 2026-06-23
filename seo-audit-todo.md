@@ -97,6 +97,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: `/blog/ai-training-cost` を `AI研修の費用相場` に寄せ、費用の分け方、FAQ、FAQPage JSON-LDを追加。`dx-support-cost`、`internal-portal-development-cost`、`business-system-development-cost`、`ai-training-cost` の相互リンクも強化した。
   - 2026-06-23: `/blog/management-data-aggregation-ai` を追加改善。`経営分析レポートの自動作成`、`AI・Power BI`、`月次レポート自動化` にtitle、description、H1、FAQ、JSON-LD、内部リンクを寄せた。
   - 2026-06-23: `/blog/hr-turnover-prediction-ai` を追加改善。`AIで離職率改善`、`離職予測システム` にtitle、description、H1、FAQ、JSON-LD、内部リンクを寄せ、個人情報の扱いと始め方の即答を追加した。
+  - 2026-06-23: `/blog/internal-portal-development-cost` と `/blog/business-system-development-cost` を追加改善。`中小企業向け料金目安`、`見積前チェック`、`いくらから検討できるか` のFAQと費用レンジを追加し、費用検索のクリック前不安に回答した。
 - [x] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
   - 2026-06-23: 外部リンク12件、内部リンク202件を確認。内部リンクはトップページ152件に偏り、AIO/MEO系記事の露出が弱かったため、トップ、事業内容、DX伴走、さいたま市、社内ポータル、業務システム、関連ブログから `ai-search-meo-support` とAIO/MEO関連記事への導線を追加。
 - [ ] GSCの手動対策、セキュリティ問題、robots.txt、サイトマップ最終読み込み日、HTTPS、パンくずリストを月次チェックする
