@@ -7,6 +7,7 @@
 全体ロードマップ: `seo-aio-llmo-execution-roadmap.md`
 技術SEOチェック: `seo-technical-checklist-20260610.md`
 GSC未登録仕分け: `gsc-index-coverage-triage-20260623.md`
+GSCドメインプロパティ運用TODO: `gsc-domain-property-action-plan-20260623.md`
 出典別トレース: `seo-source-traceability-20260610.md`
 コンテンツ/外部導線キュー: `seo-content-and-external-action-queue-20260610.md`
 サイテーション表記統一: `meo-citation-handoff-20260610.md`
@@ -85,7 +86,8 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [ ] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
 - [ ] GSCの手動対策、セキュリティ問題、robots.txt、サイトマップ最終読み込み日、HTTPS、パンくずリストを月次チェックする
 - [ ] GSCドメインプロパティの不明な確認済みオーナー5件は、ユーザー確認後に削除する
-- [ ] `plat.digitool-lab.com/robots.txt` の本番404を解消し、GSCのrobots重大エラーが消えるか確認する
+- [x] `plat.digitool-lab.com/robots.txt` の本番404を解消する
+  - 2026-06-23: `digiken-platform` に `/robots.txt` ルートを追加し、VPS本番を `914c2b4` へ更新。`https://plat.digitool-lab.com/robots.txt` は200応答。GSCのrobots重大エラー消失は後日確認する。
 - [ ] `showroom.digitool-lab.com` の補助金詳細は、社内ポータル、業務システム、AI/DX、省力化に近いURLだけindex強化し、それ以外はnoindex方針を維持する
 - [x] 費用・相場系クエリ（DX支援費用、社内ポータル費用、業務システム費用、DXコンサル費用、伴走型コンサルティング）をGSC優先クラスタとして既存記事を追加改善する
   - 2026-06-23: `dx-support-cost`、`internal-portal-development-cost`、`business-system-development-cost`、`dx-consulting-monthly-support` のtitle、description、H1、FAQ、JSON-LD、内部リンク、sitemap/llms表記を更新。本番反映後、4URLともGSCでインデックス登録リクエスト済み。`dx-consulting-monthly-support` は検査時点で未登録のため後日再確認する。
