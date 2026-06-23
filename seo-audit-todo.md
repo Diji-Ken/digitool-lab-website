@@ -92,6 +92,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
   - 2026-06-23: `gsc-performance-opportunities-20260623.md` に初回抽出結果を保存。`case-studies` と `blog/hr-turnover-prediction-ai` のtitle、description、H1、構造化データ、冒頭回答を改善し本番反映。
   - 2026-06-23: 追加で `management-data-aggregation-ai`、`ai-chatgpt-faq-creation`、`security-property-management-dx` をGSC表示クエリに合わせて改善。経営分析レポート自動作成、FAQシステム/ChatGPT、警備DX導入事例の検索意図へ寄せた。
+  - 2026-06-23: GSCドメインプロパティで `警備業務効率化 ai活用事例` が143表示/0クリックだったため、`security-property-management-dx` のtitle、description、H1、FAQ、JSON-LDを `警備業務効率化のAI活用事例` へ再調整。
   - 2026-06-23: `/ai-training-saitama/` をAI研修系クエリと地域検索向けに改善。title、description、OGP、Twitter、JSON-LD、H1、冒頭回答で `埼玉・さいたま市` を明示した。
 - [x] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
   - 2026-06-23: 外部リンク12件、内部リンク202件を確認。内部リンクはトップページ152件に偏り、AIO/MEO系記事の露出が弱かったため、トップ、事業内容、DX伴走、さいたま市、社内ポータル、業務システム、関連ブログから `ai-search-meo-support` とAIO/MEO関連記事への導線を追加。

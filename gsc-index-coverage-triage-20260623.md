@@ -91,6 +91,14 @@ GSC URL検査:
 - `https://showroom.digitool-lab.com/cases`
 - `https://showroom.digitool-lab.com/pricing`
 
+2026-06-23 追加実行:
+- `https://digitool-lab.com/blog/ai-search-meo-citation-checklist`: `検出 - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- `https://showroom.digitool-lab.com/subsidies/internal-portal`: `クロール済み - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- `https://showroom.digitool-lab.com/subsidies/system-development`: `クロール済み - インデックス未登録`。リクエスト操作は実施したが、最終表示で「リクエスト済み」が安定しないため次回再確認対象。
+- `https://showroom.digitool-lab.com/cases`: `検出 - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- `https://showroom.digitool-lab.com/pricing`: `検出 - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- GSCページインデックスレポートの最終更新日は2026/06/12のまま。404 5件とリダイレクトエラー1件は検証開始状態。
+
 ## カテゴリ別判断
 
 ### リダイレクト 424件

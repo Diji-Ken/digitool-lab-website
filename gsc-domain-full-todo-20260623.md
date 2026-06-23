@@ -45,6 +45,21 @@ Google公式の位置づけでは、Search Consoleはクロール、インデッ
 - 外部リンク: 12件
 - 内部リンク: 202件。トップページ偏重は一部是正済み
 
+## 2026-06-23 実行ログ
+
+- GSCサマリー確認: 検索パフォーマンスはクリック322、表示8,660、CTR3.7%、平均順位15.8。最終更新は3.5時間前。
+- 生成AI専用レポート確認: サイドバーに `Generative AI` / `AI features` / `AI Overviews` / `AI Mode` の専用レポートはまだ表示されていない。通常の検索パフォーマンス内には「AI を使用してパフォーマンス レポートをカスタマイズする」が表示されている。
+- ページインデックス確認: 最終更新日は2026/06/12のまま。404 5件とリダイレクトエラー1件は検証開始状態で、修正反映はまだGSC側に出ていない。
+- sitemap再送信: `https://digitool-lab.com/sitemap.xml` を再送信し、送信日2026/06/23、最終読み込み2026/06/23、成功、検出176件を確認。
+- sitemap確認: `https://showroom.digitool-lab.com/sitemap.xml` は送信日2026/06/23、最終読み込み2026/06/23、成功、検出564件を確認。
+- URL検査: `https://digitool-lab.com/blog/ai-search-meo-citation-checklist` は `検出 - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- URL検査: `https://showroom.digitool-lab.com/subsidies/internal-portal` は `クロール済み - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- URL検査: `https://showroom.digitool-lab.com/subsidies/system-development` は `クロール済み - インデックス未登録`。リクエスト操作は実施したが、最終表示で「リクエスト済み」が安定表示されないため次回再確認対象。
+- URL検査: `https://showroom.digitool-lab.com/cases` は `検出 - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- URL検査: `https://showroom.digitool-lab.com/pricing` は `検出 - インデックス未登録`。インデックス登録リクエスト済み表示を確認。
+- 検索パフォーマンス上位クエリ: `デジタルツール研究所` 47クリック/62表示、`株式会社デジタルツール研究所` 27クリック/58表示、`松岡哲平` 10クリック/143表示、`facebook データ削除` 3クリック/54表示、`gemini スクリプト` 1クリック/45表示、`デジタルツール` 0クリック/153表示、`警備業務効率化 ai活用事例` 0クリック/143表示。
+- 検索パフォーマンス上位ページ: `/` 102クリック/771表示、`/blog/ai-gemini-gas-file-rename` 32クリック/258表示、`/about` 27クリック/624表示、`/facebook-data-deletion` 10クリック/571表示、`/blog/hr-turnover-prediction-ai` 7クリック/1,114表示、`/service` 7クリック/303表示。
+
 ## GSCで新しくできること
 
 ### 1. ドメイン全体の検索パフォーマンスを取れる
@@ -172,9 +187,9 @@ TODO:
 
 ### P0: 次にGSCを開いたらすぐやる
 
-- [ ] 生成AIパフォーマンスレポートが出ているか確認する
+- [x] 生成AIパフォーマンスレポートが出ているか確認する
 - [ ] 検索パフォーマンスをホスト別にCSV出力する
-- [ ] `ai-search-meo-citation-checklist` とshowroom重要5URLをURL検査する
+- [x] `ai-search-meo-citation-checklist` とshowroom重要5URLをURL検査する
 - [ ] 404 5件とリダイレクトエラー1件の修正検証結果を確認する
 - [ ] `plat.digitool-lab.com/robots.txt` のGSC側エラー消失を確認する
 
@@ -219,4 +234,3 @@ TODO:
 - 技術ヘルス: `gsc-technical-health-20260623.md`
 - パフォーマンス改善: `gsc-performance-opportunities-20260623.md`
 - 外部発信管理: `https://plat.digitool-lab.com/portal/external-publications`
-

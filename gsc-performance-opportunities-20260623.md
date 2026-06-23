@@ -69,4 +69,13 @@
 - `/blog/management-data-aggregation-ai` の壊れていたTwitter title属性を修正し、title、description、OGP、Twitter、JSON-LD、H1、冒頭回答、FAQを `経営分析レポート 自動作成` に寄せた
 - `/blog/ai-chatgpt-faq-creation` のtitle、description、OGP、Twitter、JSON-LD、H1、冒頭回答、FAQ、関連リンクを `FAQシステム ChatGPT`、`社内FAQ`、`ナレッジ` に寄せた
 - `/blog/security-property-management-dx` のtitle、description、OGP、Twitter、JSON-LD、H1、冒頭回答、FAQを `警備DX 導入事例` に寄せた
+
+## 2026-06-23 追加改善
+
+GSCドメインプロパティの検索パフォーマンスで、`警備業務効率化 ai活用事例` が143表示・0クリックだったため、既存受け皿ページ `/blog/security-property-management-dx` をさらに実クエリへ寄せた。
+
+- title、OGP、Twitter、meta descriptionを `警備業務効率化のAI活用事例` へ変更
+- H1、画像alt、冒頭回答を `警備業務効率化` と `AI活用事例` の検索意図へ寄せた
+- FAQ本文とFAQPage JSON-LDに「警備業の業務効率化では何から始めますか？」を追加
+- 既存の `警備DX` 表現は本文文脈として残しつつ、検索結果に出る主要要素では実クエリの語順を優先した
 - `/ai-training-saitama/` のtitle、description、OGP、Twitter、JSON-LD、H1、冒頭回答を、GSCで表示が出ているAI研修系クエリと地域検索に合わせて `埼玉・さいたま市` を明示した

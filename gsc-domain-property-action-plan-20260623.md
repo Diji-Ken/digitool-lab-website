@@ -55,6 +55,13 @@
 | GSCの404/リダイレクトエラー検証結果を確認 | 修正済みでもGSC反映に時間差がある | ページのインデックス登録 > 検証結果 |
 | `plat.digitool-lab.com/robots.txt` の重大エラー消失を確認 | 本番200化済み。GSC側の再クロール待ち | robots.txtレポート/ページのインデックス登録 |
 
+## 2026-06-23 追加実行
+
+- `digitool-lab.com/sitemap.xml` をGSCで再送信。送信日/最終読み込み日時ともに2026/06/23、成功、検出176件を確認。
+- `showroom.digitool-lab.com/sitemap.xml` は送信日/最終読み込み日時ともに2026/06/23、成功、検出564件を確認。
+- 生成AI専用レポートはGSCサイドバーに未表示。通常の検索パフォーマンス内に「AI を使用してパフォーマンス レポートをカスタマイズする」は表示。
+- `ai-search-meo-citation-checklist`、showroomの `subsidies/internal-portal`、`subsidies/system-development`、`cases`、`pricing` をURL検査。`system-development` はリクエスト済み表示が安定しないため、次回再確認する。
+
 ## P2: 週次で見る
 
 | TODO | 理由 | 改善アクション |
