@@ -310,6 +310,10 @@ noindexにした、または既存noindexを維持したページ:
   - 本文冒頭の要点、インパクトカード、FAQ、CTA、関連相談先リンクを更新
   - `business-system-development/`、`dx-support-saitama/`、`ai-training-saitama/`、`subsidy-dx-ai-system/` への内部リンクを追加
   - `data/case-studies.json` と `sitemap.xml` の `lastmod` を更新
+- 本番反映後、GSC URL検査で3URLともインデックス登録をリクエスト済み
+  - `hr-turnover-prediction-ai`: Google登録済み、リクエスト済み
+  - `manufacturing-demand-forecasting-ai`: 検査時点では未登録扱い、リクエスト済み
+  - `retail-inventory-optimization`: Google登録済み、リクエスト済み
 
 ### P0
 
