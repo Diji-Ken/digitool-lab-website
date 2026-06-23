@@ -62,7 +62,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - [DX支援会社の選び方](https://digitool-lab.com/blog/how-to-choose-dx-support-company)
 - [補助金を使う前のDX要件整理](https://digitool-lab.com/blog/dx-subsidy-requirements-before-application)
 - [さいたま市の中小企業がDXで最初に見直す業務](https://digitool-lab.com/blog/saitama-small-business-dx-first-steps)
-- [IT担当者の採用と外注比較](https://digitool-lab.com/blog/it-person-outsourcing-vs-hiring)
+- [IT担当を採用するか外注するか](https://digitool-lab.com/blog/it-person-outsourcing-vs-hiring)
 - [業務システム開発の費用相場](https://digitool-lab.com/blog/business-system-development-cost)
 - [企業向けAI研修の費用の考え方](https://digitool-lab.com/blog/ai-training-cost)
 - [社内ポータル開発の費用相場](https://digitool-lab.com/blog/internal-portal-development-cost)

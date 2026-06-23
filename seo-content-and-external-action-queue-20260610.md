@@ -57,7 +57,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 | 1 | `/internal-portal-development/` | 権限設計、既存ツール連携、運用定着FAQ、資料DL導線を追加済み | 社内ポータル開発の主受け皿 |
 | 1 | `/downloads/` | 個別資料PDF化、資料別サンクス導線 | CV受け皿 |
 | 2 | `/blog/dx-support-cost.html` | GSCクエリに合わせてFAQ追加 | 費用検索はCVに近い |
-| 2 | `/blog/it-person-outsourcing-vs-hiring.html` | 比較表とCTAを強化 | 採用/外注比較は高確度 |
+| 2 | `/blog/it-person-outsourcing-vs-hiring.html` | 比較表、費用感、採用前チェック、FAQ、月額DX伴走導線を追加済み | 採用/外注比較は高確度 |
 | 2 | `/blog/business-system-development-cost.html` | 費用相場、見積もり前チェックを補強 | 業務システム開発の相談前検索 |
 | 2 | `/blog/ai-search-meo-citation-checklist.html` | GBP/サイテーション実例を追記 | MEO/LLMO導線 |
 | 3 | 古い事例記事 | 関連LP、資料DL、FAQ、更新日を順次追加 | 事例資産の回遊改善。次の自社HP内タスク |
