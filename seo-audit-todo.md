@@ -105,6 +105,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: 手動対策なし、セキュリティ問題なし、HTTPS重大問題なし、パンくず無効0/有効25、`showroom` sitemap成功564、`digitool-lab.com` sitemap成功176を確認。
   - 2026-06-23: 内部リンク正規化に伴い、変更された公開HTMLのうちsitemap掲載155 URLの `lastmod` を更新。
   - 2026-06-23: sitemap掲載176 URLについて、ローカルHTML存在、canonical一致、noindex混入なし、title/description/H1、lastmod形式を監査し、CIへ組み込んだ。
+  - 2026-06-23: `scripts/audit-structured-data.mjs` を追加し、sitemap掲載176 URLのJSON-LD存在、構文、`@graph`、BreadcrumbList、FAQPage、Article/BlogPosting、Service、Organizationの基本項目をCIで監査するようにした。初回監査は503ブロック確認でエラー0件。
 - [ ] GSCドメインプロパティの不明な確認済みオーナー5件は、ユーザー確認後に削除する
 - [x] `plat.digitool-lab.com/robots.txt` の本番404を解消する
   - 2026-06-23: `digiken-platform` に `/robots.txt` ルートを追加し、VPS本番を `914c2b4` へ更新。`https://plat.digitool-lab.com/robots.txt` は200応答。GSCのrobots重大エラー消失は後日確認する。

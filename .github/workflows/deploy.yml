@@ -18,6 +18,9 @@ jobs:
 
     - name: Run SEO indexability audit
       run: node scripts/audit-seo-indexability.mjs
+
+    - name: Run structured data audit
+      run: node scripts/audit-structured-data.mjs
     
     - name: Deploy to Xserver via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.4.0
