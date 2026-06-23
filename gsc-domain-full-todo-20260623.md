@@ -93,6 +93,8 @@ GSCドメインプロパティで `digitool-lab.com` 全体を見られるよう
 - 検索パフォーマンス上位ページ: `/` 102クリック/771表示、`/blog/ai-gemini-gas-file-rename` 32クリック/258表示、`/about` 27クリック/624表示、`/facebook-data-deletion` 10クリック/571表示、`/blog/hr-turnover-prediction-ai` 7クリック/1,114表示、`/service` 7クリック/303表示。
 - 内部リンク運用化: `scripts/audit-priority-internal-links.mjs` を追加し、重要LP、費用記事、AIO/MEO記事、資料DL、事例ハブの内部リンク元数をCIで監査するようにした。月額DX伴走記事は費用記事クラスタからの関連リンクを追加。
 - 公開後運用化: `gsc-post-release-checklist-20260623.md` を追加し、新規LP・記事公開時のsitemap、URL検査、3〜7日後確認、週次/月次確認を固定化した。
+- URL検査: `https://digitool-lab.com/about` は `URL は Google に登録されています`、HTTPS有効、パンくず有効を確認し、インデックス登録リクエスト済み。
+- 低CTR/上位ページ改善: `/service` を、DX伴走支援、社内ポータル開発、業務システム開発、AI研修のサービスハブとしてtitle、description、H1、主要サービス要約、FAQ、WebPage/Organization/Service/ItemList JSON-LDを改善した。
 
 ## GSCで新しくできること
 

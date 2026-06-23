@@ -61,6 +61,8 @@
 - `showroom.digitool-lab.com/sitemap.xml` は送信日/最終読み込み日時ともに2026/06/23、成功、検出564件を確認。
 - 生成AI専用レポートはGSCサイドバーに未表示。通常の検索パフォーマンス内に「AI を使用してパフォーマンス レポートをカスタマイズする」は表示。
 - `ai-search-meo-citation-checklist`、showroomの `subsidies/internal-portal`、`subsidies/system-development`、`cases`、`pricing` をURL検査。`system-development` はリクエスト済み表示が安定しないため、次回再確認する。
+- `/about` はURL検査でGoogle登録済み、HTTPS/パンくず有効を確認し、インデックス登録リクエスト済み。
+- `/service` はGSCで検索露出が出ているため、サービスハブとしてtitle、description、H1、主要サービス要約、FAQ、WebPage/Organization/Service/ItemList JSON-LDを改善。次回GSCでCTRとクエリ変化を確認する。
 
 ## 2026-06-23 DNS反映後確認
 
