@@ -40,36 +40,34 @@
 # BEGIN 301 Redirects for Case Studies
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RedirectMatch 301 ^/service-otomo(?:\.html)?/?$ https://digitool-lab.com/services/consulting
-    Redirect 301 /case-001.html https://digitool-lab.com/blog/restaurant-order-system-cost-reduction
-    Redirect 301 /case-002.html https://digitool-lab.com/blog/restaurant-recipe-standardization
-    Redirect 301 /case-003.html https://digitool-lab.com/blog/salon-sns-automation
-    Redirect 301 /case-004.html https://digitool-lab.com/blog/restaurant-promotion-automation
-    Redirect 301 /case-005.html https://digitool-lab.com/blog/retail-inventory-optimization
-    Redirect 301 /case-006.html https://digitool-lab.com/blog/service-line-step-delivery
-    Redirect 301 /case-007.html https://digitool-lab.com/blog/restaurant-shift-management
-    Redirect 301 /case-008.html https://digitool-lab.com/blog/service-review-improvement
-    Redirect 301 /case-009.html https://digitool-lab.com/blog/recruitment-ai-copywriting
-    Redirect 301 /case-010.html https://digitool-lab.com/blog/service-manual-systematization
-    Redirect 301 /case-011.html https://digitool-lab.com/blog/service-daily-report-automation
-    Redirect 301 /case-012.html https://digitool-lab.com/blog/restaurant-waste-cost-reduction
-    Redirect 301 /case-013.html https://digitool-lab.com/blog/restaurant-staff-support-system
-    Redirect 301 /case-014.html https://digitool-lab.com/blog/restaurant-ai-training-upsell
-    Redirect 301 /case-015.html https://digitool-lab.com/blog/service-complaint-handling-ai
-    Redirect 301 /case-016.html https://digitool-lab.com/blog/retail-pop-automation
-    Redirect 301 /case-017.html https://digitool-lab.com/blog/beauty-salon-ai-training
-    Redirect 301 /case-018.html https://digitool-lab.com/blog/hotel-dynamic-pricing
-    Redirect 301 /case-019.html https://digitool-lab.com/blog/hotel-service-standardization
-    Redirect 301 /case-020.html https://digitool-lab.com/blog/sales-customer-analysis-ai
-    Redirect 301 /case-021.html https://digitool-lab.com/blog/hr-turnover-prediction-ai
-    Redirect 301 /case-022.html https://digitool-lab.com/blog/management-data-aggregation-ai
-    Redirect 301 /case-023.html https://digitool-lab.com/blog/manufacturing-demand-forecasting-ai
-    Redirect 301 /case-025.html https://digitool-lab.com/blog/internal-idea-generation-ai
-    RedirectMatch 301 ^/case-009/?$ https://digitool-lab.com/blog/recruitment-ai-copywriting
-    RedirectMatch 301 ^/case-016/?$ https://digitool-lab.com/blog/retail-pop-automation
-    RedirectMatch 301 ^/ai-notebooklm-podcast-knowledge(?:\.html)?/?$ https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge
-    RedirectMatch 301 ^/ai-gemini-document-comparison(?:\.html)?/?$ https://digitool-lab.com/blog/ai-gemini-document-comparison
-    RedirectMatch 301 ^/ai-notebooklm-law-podcast(?:\.html)?/?$ https://digitool-lab.com/blog/ai-notebooklm-law-podcast
+    RewriteRule ^service-otomo(?:\.html)?/?$ https://digitool-lab.com/services/consulting [R=301,L]
+    RewriteRule ^case-001(?:\.html)?/?$ https://digitool-lab.com/blog/restaurant-order-system-cost-reduction [R=301,L]
+    RewriteRule ^case-002(?:\.html)?/?$ https://digitool-lab.com/blog/restaurant-recipe-standardization [R=301,L]
+    RewriteRule ^case-003(?:\.html)?/?$ https://digitool-lab.com/blog/salon-sns-automation [R=301,L]
+    RewriteRule ^case-004(?:\.html)?/?$ https://digitool-lab.com/blog/restaurant-promotion-automation [R=301,L]
+    RewriteRule ^case-005(?:\.html)?/?$ https://digitool-lab.com/blog/retail-inventory-optimization [R=301,L]
+    RewriteRule ^case-006(?:\.html)?/?$ https://digitool-lab.com/blog/service-line-step-delivery [R=301,L]
+    RewriteRule ^case-007(?:\.html)?/?$ https://digitool-lab.com/blog/restaurant-shift-management [R=301,L]
+    RewriteRule ^case-008(?:\.html)?/?$ https://digitool-lab.com/blog/service-review-improvement [R=301,L]
+    RewriteRule ^case-009(?:\.html)?/?$ https://digitool-lab.com/blog/recruitment-ai-copywriting [R=301,L]
+    RewriteRule ^case-010(?:\.html)?/?$ https://digitool-lab.com/blog/service-manual-systematization [R=301,L]
+    RewriteRule ^case-011(?:\.html)?/?$ https://digitool-lab.com/blog/service-daily-report-automation [R=301,L]
+    RewriteRule ^case-012(?:\.html)?/?$ https://digitool-lab.com/blog/restaurant-waste-cost-reduction [R=301,L]
+    RewriteRule ^case-013(?:\.html)?/?$ https://digitool-lab.com/blog/restaurant-staff-support-system [R=301,L]
+    RewriteRule ^case-014(?:\.html)?/?$ https://digitool-lab.com/blog/restaurant-ai-training-upsell [R=301,L]
+    RewriteRule ^case-015(?:\.html)?/?$ https://digitool-lab.com/blog/service-complaint-handling-ai [R=301,L]
+    RewriteRule ^case-016(?:\.html)?/?$ https://digitool-lab.com/blog/retail-pop-automation [R=301,L]
+    RewriteRule ^case-017(?:\.html)?/?$ https://digitool-lab.com/blog/beauty-salon-ai-training [R=301,L]
+    RewriteRule ^case-018(?:\.html)?/?$ https://digitool-lab.com/blog/hotel-dynamic-pricing [R=301,L]
+    RewriteRule ^case-019(?:\.html)?/?$ https://digitool-lab.com/blog/hotel-service-standardization [R=301,L]
+    RewriteRule ^case-020(?:\.html)?/?$ https://digitool-lab.com/blog/sales-customer-analysis-ai [R=301,L]
+    RewriteRule ^case-021(?:\.html)?/?$ https://digitool-lab.com/blog/hr-turnover-prediction-ai [R=301,L]
+    RewriteRule ^case-022(?:\.html)?/?$ https://digitool-lab.com/blog/management-data-aggregation-ai [R=301,L]
+    RewriteRule ^case-023(?:\.html)?/?$ https://digitool-lab.com/blog/manufacturing-demand-forecasting-ai [R=301,L]
+    RewriteRule ^case-025(?:\.html)?/?$ https://digitool-lab.com/blog/internal-idea-generation-ai [R=301,L]
+    RewriteRule ^ai-notebooklm-podcast-knowledge(?:\.html)?/?$ https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge [R=301,L]
+    RewriteRule ^ai-gemini-document-comparison(?:\.html)?/?$ https://digitool-lab.com/blog/ai-gemini-document-comparison [R=301,L]
+    RewriteRule ^ai-notebooklm-law-podcast(?:\.html)?/?$ https://digitool-lab.com/blog/ai-notebooklm-law-podcast [R=301,L]
 </IfModule>
 # END 301 Redirects
 
@@ -83,11 +81,6 @@ RewriteRule ^.*\.(?:bak|md)$ - [G,L]
 # Common legal-page aliases should resolve to the canonical legal URLs.
 RewriteRule ^privacy(?:\.html)?/?$ https://digitool-lab.com/privacy-policy [R=301,L]
 RewriteRule ^terms(?:\.html)?/?$ https://digitool-lab.com/terms-of-service [R=301,L]
-
-# Redirect legacy root article URLs directly before generic .html cleanup
-RewriteRule ^ai-notebooklm-podcast-knowledge\.html$ https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge [R=301,L]
-RewriteRule ^ai-gemini-document-comparison\.html$ https://digitool-lab.com/blog/ai-gemini-document-comparison [R=301,L]
-RewriteRule ^ai-notebooklm-law-podcast\.html$ https://digitool-lab.com/blog/ai-notebooklm-law-podcast [R=301,L]
 
 # Redirect .html extension to clean URLs (external requests only)
 RewriteCond %{THE_REQUEST} \s/+([^?\s]*?)\.html[\s?] [NC]
