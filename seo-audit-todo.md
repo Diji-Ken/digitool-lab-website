@@ -6,6 +6,7 @@
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
 全体ロードマップ: `seo-aio-llmo-execution-roadmap.md`
 技術SEOチェック: `seo-technical-checklist-20260610.md`
+GSC未登録仕分け: `gsc-index-coverage-triage-20260623.md`
 出典別トレース: `seo-source-traceability-20260610.md`
 コンテンツ/外部導線キュー: `seo-content-and-external-action-queue-20260610.md`
 サイテーション表記統一: `meo-citation-handoff-20260610.md`
@@ -78,6 +79,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
 - [ ] GSCドメインプロパティ `sc-domain:digitool-lab.com` で、`digitool-lab.com` / `showroom.digitool-lab.com` / `plat.digitool-lab.com` / `shop.digitool-lab.com` を横断して監視する
 - [ ] GSCの未登録985件を、改善対象、noindexで正しいもの、リダイレクトで正しいもの、削除/410対象に仕分ける
+  - 2026-06-23: `gsc-index-coverage-triage-20260623.md` にカテゴリ単位の初回仕分けを作成。次はGSCのURL例を抽出し、URL単位の重要/放置/削除候補へ細分化する。
 - [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
 - [ ] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
 - [ ] GSCの手動対策、セキュリティ問題、robots.txt、サイトマップ最終読み込み日、HTTPS、パンくずリストを月次チェックする
