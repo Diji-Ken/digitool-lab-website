@@ -88,6 +88,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-24: ドメインプロパティを再確認。検索パフォーマンスはクリック322、表示8,660、CTR3.7%、平均順位15.8。登録済み228、未登録985。サイトマップは本体176 URL、showroom 564 URLで成功。外部リンク12件、内部リンク202件を確認。
   - 2026-06-24: 次の実行TODOは、ホスト別露出保存、未登録URLの重要度仕分け、404/リダイレクト検証結果確認、低CTR/11〜20位クエリ改善、内部リンク下位の重要LP補強。
   - 2026-06-24: `scripts/analyze-gsc-performance.mjs` を追加し、GSCのクエリCSV/ページCSVからホスト別露出、低CTR、8〜20位、重点クラスタを自動でMarkdown化できるようにした。CSV保存先は `data/gsc/`。
+  - 2026-06-24: `data/gsc/` は検索クエリを含むため公開URLでは410、gitでは `.gitkeep` 以外をignoreし、`scripts/audit-private-seo-data.mjs` でCI監査するようにした。
 - [ ] GSCの未登録985件を、改善対象、noindexで正しいもの、リダイレクトで正しいもの、削除/410対象に仕分ける
   - 2026-06-23: `gsc-index-coverage-triage-20260623.md` にカテゴリ単位の初回仕分けを作成。次はGSCのURL例を抽出し、URL単位の重要/放置/削除候補へ細分化する。
   - 2026-06-23: GSCの各未登録理由から代表URL例を抽出。`case-studies`、MEO/AIO記事、showroom主要カテゴリを優先改善、http/www/index.html/旧URL301、shop robots、低優先補助金noindexは対応不要に分類した。

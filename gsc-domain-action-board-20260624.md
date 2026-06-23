@@ -56,6 +56,8 @@ mkdir -p data/gsc
 node scripts/analyze-gsc-performance.mjs data/gsc/<gsc-export.csv> --out data/gsc/gsc-performance-report-YYYYMMDD.md
 ```
 
+`data/gsc/` はGSCの検索クエリやURLを含む運用データ置き場。公開URLでは410にし、gitには `.gitkeep` 以外を入れない。`scripts/audit-private-seo-data.mjs` でこの状態をCI監査する。
+
 このスクリプトで自動抽出するもの:
 
 - ページCSVの場合: ホスト別露出、低CTR URL、8〜20位URL

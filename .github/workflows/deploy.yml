@@ -36,6 +36,9 @@ jobs:
 
     - name: Run hero preload audit
       run: node scripts/audit-hero-preload.mjs
+
+    - name: Run private SEO data audit
+      run: node scripts/audit-private-seo-data.mjs
     
     - name: Deploy to Xserver via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.4.0

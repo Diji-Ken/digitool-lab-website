@@ -75,7 +75,7 @@
 RewriteEngine On
 
 # Keep non-public working files out of crawlable public URLs.
-RewriteRule ^(backup_20250703_112022|backup_images_20250727_213230|backup_images_20250727_213226|article-workspace|posts-management|scripts)(?:/|$) - [G,L]
+RewriteRule ^(backup_20250703_112022|backup_images_20250727_213230|backup_images_20250727_213226|article-workspace|posts-management|scripts|data/gsc)(?:/|$) - [G,L]
 RewriteRule ^.*\.(?:bak|md)$ - [G,L]
 
 # Common legal-page aliases should resolve to the canonical legal URLs.
