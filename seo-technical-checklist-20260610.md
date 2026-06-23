@@ -283,18 +283,30 @@ noindexにした、または既存noindexを維持したページ:
 
 ## 継続TODO
 
+## 2026-06-23 追加実行ログ
+
+- `blog/security-property-management-dx` は本番でtitle、description、H1、FAQ、内部リンク、構造化データの反映を確認
+- 同記事の `sitemap.xml` `lastmod` が誤ってトップページ側だけ更新されていたため、該当URLを `2026-06-23` に修正し、本番反映を確認
+- Search Console URL検査で `https://digitool-lab.com/blog/security-property-management-dx` は「URL は Google に登録されています」を確認
+- 同記事は内容更新後に「インデックス登録をリクエスト済み」。GSC表示: `URL を優先クロール キューに追加しました`
+- Search Consoleドメインプロパティのユーザーと権限を再確認。`info@digitool-lab.com` 以外の確認済みオーナー5件は残存
+- `plat.digitool-lab.com/robots.txt` は本番で引き続き404。ソース追加とbuildは完了済みだが、VPS反映はSSH/デプロイ権限待ち
+
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
 - Search Consoleドメインプロパティの不明な確認済みオーナー5件を、ユーザー確認後に削除する
 - `plat.digitool-lab.com/robots.txt` を本番反映し、GSC robots重大エラーが消えるか確認する
+- `sitemap.xml` のGSC最終読み込み日が `2026/06/14` から更新されるか確認する
 - Yahoo!マップに残る旧台東区住所を修正する。Chrome拡張は有効化済みだが、修正提案の送信にはYahoo! JAPAN IDログインが必要
 - `noindex` へ変更したページがサイトマップに再混入していないことを継続確認する
 
 ### P1
 
 - GSCドメインプロパティの検索クエリを月次で抽出し、表示回数が多くCTRが低いページからtitle/descriptionを調整する
+- `警備業務効率化 ai活用事例` 以外にも、表示回数100以上・クリック0〜低CTRのクエリを抽出し、既存記事のtitle/H1/導入文/FAQを順に改善する
 - `showroom` の補助金詳細は、全件indexではなく社内ポータル・業務システム・AI/DX・省力化に近いURLだけindexする方針を維持し、重要URLの本文量を増やす
+- `showroom` の重要補助金URLは、補助金名だけでなく「社内ポータル」「業務システム」「AI導入」「省力化」「DX」文脈の説明を増やす
 - PageSpeed Insights APIは2026-06-23時点でも429。ブラウザ版PageSpeed InsightsとDevTools Lighthouseで代替確認済み
 - 主要LP、記事、資料DLページのLighthouse確認は初回実施済み。今後は追加LP・古い記事へ範囲を広げる
 - 主要LPと記事の内部リンクを増やす
