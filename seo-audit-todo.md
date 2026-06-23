@@ -94,6 +94,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: `digiken-platform` に `/robots.txt` ルートを追加し、VPS本番を `914c2b4` へ更新。`https://plat.digitool-lab.com/robots.txt` は200応答。GSCのrobots重大エラー消失は後日確認する。
 - [x] `showroom.digitool-lab.com` の補助金詳細は、社内ポータル、業務システム、AI/DX、省力化に近いURLだけindex強化し、それ以外はnoindex方針を維持する
   - 2026-06-23: `dtl-system-showroom` 側で `getSubsidySeoIndexDecision` を追加し、closed/低関連制度は `noindex,follow`、関連度40点以上の制度のみ `index,follow` に統一。`docs/subsidy-seo-index-policy.md` を追加し、sitemapは564URLで本番反映済み。
+  - 2026-06-23: GSCドメインプロパティで `https://showroom.digitool-lab.com/sitemap.xml` を再送信。送信日は2026/06/23に更新、最終読み込みと検出ページ数は次回処理待ち。
 - [x] 費用・相場系クエリ（DX支援費用、社内ポータル費用、業務システム費用、DXコンサル費用、伴走型コンサルティング）をGSC優先クラスタとして既存記事を追加改善する
   - 2026-06-23: `dx-support-cost`、`internal-portal-development-cost`、`business-system-development-cost`、`dx-consulting-monthly-support` のtitle、description、H1、FAQ、JSON-LD、内部リンク、sitemap/llms表記を更新。本番反映後、4URLともGSCでインデックス登録リクエスト済み。`dx-consulting-monthly-support` は検査時点で未登録のため後日再確認する。
 - [x] 2026-06-10の技術SEO整理後、Search Consoleでサイトマップを再送信し、ページインデックス、手動対策、セキュリティ問題を確認する
