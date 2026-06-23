@@ -337,6 +337,11 @@ noindexにした、または既存noindexを維持したページ:
   - 関連ページの内部リンクを追加し、DX伴走支援、業務システム開発、社内ポータル開発、費用記事同士の接続を強化
   - `sitemap.xml` の4URLの `lastmod` を `2026-06-23` に更新
   - `llms.txt` / `llms_full.txt` の記事表記を最新titleへ更新
+- 本番反映後、GSC URL検査で4URLともインデックス登録をリクエスト済み
+  - `dx-support-cost`: Google登録済み、リクエスト済み
+  - `internal-portal-development-cost`: Google登録済み、リクエスト済み
+  - `business-system-development-cost`: Google登録済み、リクエスト済み
+  - `dx-consulting-monthly-support`: 検査時点では未登録、リクエスト済み
 
 ### P0
 

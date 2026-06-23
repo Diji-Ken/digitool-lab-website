@@ -85,7 +85,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [ ] `plat.digitool-lab.com/robots.txt` の本番404を解消し、GSCのrobots重大エラーが消えるか確認する
 - [ ] `showroom.digitool-lab.com` の補助金詳細は、社内ポータル、業務システム、AI/DX、省力化に近いURLだけindex強化し、それ以外はnoindex方針を維持する
 - [x] 費用・相場系クエリ（DX支援費用、社内ポータル費用、業務システム費用、DXコンサル費用、伴走型コンサルティング）をGSC優先クラスタとして既存記事を追加改善する
-  - 2026-06-23: `dx-support-cost`、`internal-portal-development-cost`、`business-system-development-cost`、`dx-consulting-monthly-support` のtitle、description、H1、FAQ、JSON-LD、内部リンク、sitemap/llms表記を更新。GSC URL検査は本番反映後に実施する。
+  - 2026-06-23: `dx-support-cost`、`internal-portal-development-cost`、`business-system-development-cost`、`dx-consulting-monthly-support` のtitle、description、H1、FAQ、JSON-LD、内部リンク、sitemap/llms表記を更新。本番反映後、4URLともGSCでインデックス登録リクエスト済み。`dx-consulting-monthly-support` は検査時点で未登録のため後日再確認する。
 - [x] 2026-06-10の技術SEO整理後、Search Consoleでサイトマップを再送信し、ページインデックス、手動対策、セキュリティ問題を確認する
 - [ ] PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認し、画像・CSS・外部JSの改善点を洗い出す
   - 2026-06-10: PageSpeed Insights APIは429で実行不可。ローカル監査では主要5ページのcanonical/meta description/h1/JSON-LD/画像altは問題なし。大容量画像は事例画像に集中しているため、次回PageSpeedまたはLighthouseで実測してから圧縮対象を決める
