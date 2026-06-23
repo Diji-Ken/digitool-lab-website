@@ -101,6 +101,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: `/blog/hr-turnover-prediction-ai` を追加改善。`AIで離職率改善`、`離職予測システム` にtitle、description、H1、FAQ、JSON-LD、内部リンクを寄せ、個人情報の扱いと始め方の即答を追加した。
   - 2026-06-23: `/blog/internal-portal-development-cost` と `/blog/business-system-development-cost` を追加改善。`中小企業向け料金目安`、`見積前チェック`、`いくらから検討できるか` のFAQと費用レンジを追加し、費用検索のクリック前不安に回答した。
   - 2026-06-23: `/blog/it-person-outsourcing-vs-hiring` を追加改善。`IT担当 外注`、`情シス代行 中小企業`、`社外IT担当`、`IT担当 外注 費用` に合わせてtitle、description、比較表、採用前チェック、FAQ、BreadcrumbList JSON-LD、月額DX伴走/無料チェックリスト導線を強化した。
+  - 2026-06-23: `/ai-training-saitama/` に `AI研修の費用を考える前に決めること` セクションとFAQ/FAQPage JSON-LDを追加し、`ai 研修 費用`、`AI研修 埼玉`、`生成AI研修 企業` の検索意図から費用記事・定着記事・無料チェックリストへ接続した。
 - [x] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
   - 2026-06-23: 外部リンク12件、内部リンク202件を確認。内部リンクはトップページ152件に偏り、AIO/MEO系記事の露出が弱かったため、トップ、事業内容、DX伴走、さいたま市、社内ポータル、業務システム、関連ブログから `ai-search-meo-support` とAIO/MEO関連記事への導線を追加。
   - 2026-06-23: `scripts/audit-priority-internal-links.mjs` を追加し、問い合わせに近いLP、費用記事、AIO/MEO記事、資料DL、事例ハブの内部リンク元数をCIで監査するようにした。月額DX伴走記事は費用記事クラスタからの関連リンクを追加。
