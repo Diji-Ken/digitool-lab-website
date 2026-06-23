@@ -212,19 +212,41 @@ noindexにした、または既存noindexを維持したページ:
 - `llms.txt` 修正を本番反映後、トップページのChrome DevTools Lighthouseで Accessibility 100、Best Practices 100、SEO 100、Agentic Browsing 100、失敗0を確認
 - Chrome拡張は現在選択中のChromeプロファイル `Profile 8` では無効状態。Yahoo!マップ修正、Search Consoleドメインプロパティの別アカウント確認は、Codex Chrome Extensionを有効化または対象Googleアカウントのプロファイルに切替後に実施する
 
+## 2026-06-23 経過確認
+
+- Chrome拡張は `Profile 8` で有効化済み。GSCとYahoo!マップのブラウザ確認が可能な状態
+- Search Console URLプレフィックス `https://digitool-lab.com/` を確認
+  - サマリー: ウェブ検索クリック316、未登録59、登録済み148、HTTPS 27、パンくず23
+  - `/sitemap.xml`: 送信日2026/06/14、最終読み込み2026/06/14、成功、検出ページ176
+  - ページインデックス: リダイレクト17、リダイレクトエラー1、重複1、クロール済み未登録32、検出未登録3、404が5
+  - 404検証は引き続き「開始」状態
+- 2026-06-14にインデックス登録リクエストした3URLはすべてGoogle登録済み
+  - `https://digitool-lab.com/ai-search-meo-support/`
+  - `https://digitool-lab.com/blog/ai-search-company-information-checklist`
+  - `https://digitool-lab.com/blog/meo-citation-nap-checklist`
+- 手動による対策、セキュリティの問題はいずれも問題なし
+- Search Consoleドメインプロパティ `sc-domain:digitool-lab.com` は、Chromeにログイン済みの複数Googleアカウントで確認しても全て権限なし
+- Yahoo!マップの該当掲載 `https://map.yahoo.co.jp/place?gid=q67CJgiK-l6` は旧住所 `東京都台東区下谷2丁目23-8` のまま
+  - `掲載情報の修正・報告` から住所修正フォームへ進めるが、送信にはYahoo! JAPAN IDログインが必須
+  - 現在のChrome状態ではYahoo!未ログインのため、修正提案の送信は未完了
+- PageSpeed Insights APIは引き続き429。ブラウザ版PageSpeed Insightsでは再計測可能
+  - トップページ mobile: Performance 83、Accessibility 100、Best Practices 100、SEO 100、Agentic Browsing 3/3
+  - `/business-system-development/` desktop: Performance 99、Accessibility 100、Best Practices 100、SEO 100
+  - PageSpeed画面では同LPのAgentic Browsingが一時的に2/3、`llms.txt を取得できませんでした` と表示
+  - ただし `https://digitool-lab.com/llms.txt` はHTTP 200、H1あり、Markdownリンク36件で取得可能。Chrome DevTools Lighthouseでは同LPも Agentic Browsing 100、失敗0
+
 ## 継続TODO
 
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
-- Search Consoleで2026-06-14にインデックス登録リクエストした `/ai-search-meo-support/`、`/blog/ai-search-company-information-checklist`、`/blog/meo-citation-nap-checklist` の登録状況を3〜7日後に確認する
-- Yahoo!マップに残る旧台東区住所を修正する。Chrome拡張が現在選択中プロファイルで無効のため、拡張有効化またはログイン済みプロファイル切替後に対応する
-- Search Consoleドメインプロパティ `sc-domain:digitool-lab.com` は別Googleアカウントの可能性があるため、権限のあるアカウントで再確認する
+- Yahoo!マップに残る旧台東区住所を修正する。Chrome拡張は有効化済みだが、修正提案の送信にはYahoo! JAPAN IDログインが必要
+- Search Consoleドメインプロパティ `sc-domain:digitool-lab.com` は複数Googleアカウントでも権限なし。DNS所有権確認または所有者からの権限付与を行う
 - `noindex` へ変更したページがサイトマップに再混入していないことを継続確認する
 
 ### P1
 
-- PageSpeed Insights APIでトップ、主要LP、記事、資料DLページを確認する。2026-06-14時点でもAPI 429のため、DevTools Lighthouseで代替確認済み
+- PageSpeed Insights APIは2026-06-23時点でも429。ブラウザ版PageSpeed InsightsとDevTools Lighthouseで代替確認済み
 - 主要LP、記事、資料DLページのLighthouse確認は初回実施済み。今後は追加LP・古い記事へ範囲を広げる
 - 主要LPと記事の内部リンクを増やす
 - 古い記事のtitle、H2、FAQ、CTA、更新日を順に見直す
