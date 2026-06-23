@@ -37,8 +37,8 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 ## 主要URL
 
 - [公式サイト](https://digitool-lab.com/)
-- [事業内容](https://digitool-lab.com/service.html)
-- [会社情報](https://digitool-lab.com/about.html)
+- [事業内容](https://digitool-lab.com/service)
+- [会社情報](https://digitool-lab.com/about)
 - [DX伴走支援](https://digitool-lab.com/dx-support-saitama/)
 - [さいたま市のDX支援・AI導入・業務システム開発](https://digitool-lab.com/area/saitama-city-dx/)
 - [社外IT担当](https://digitool-lab.com/it-tantou-outsourcing/)
@@ -54,7 +54,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - [支援事例](https://digitool-lab.com/case-studies)
 - [システムショールーム](https://showroom.digitool-lab.com/)
 - [補助金・助成金ポータル](https://showroom.digitool-lab.com/subsidies)
-- [お問い合わせ](https://digitool-lab.com/contact.html)
+- [お問い合わせ](https://digitool-lab.com/contact)
 
 ## 相談前に確認できる記事
 
