@@ -79,6 +79,36 @@
               "item": "https://digitool-lab.com/blog/welfare-tools-record-sharing-case-138"
             }
           ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://digitool-lab.com/blog/welfare-tools-record-sharing-case-138#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "同じような業務改善やAI活用は相談できますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい。業種や従業員規模が違っても、業務の棚卸し、入力画面、集計、AI下書き、運用定着まで相談できます。最初は小さな業務から始める前提で整理します。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "既存のGoogleフォームやスプレッドシートから始められますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可能です。いきなり大きなシステムを作るのではなく、既存ツールで流れを整え、必要に応じて社内ポータルや業務システムへ広げる進め方を取れます。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "AIに判断を任せる形になりますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "判断をAIに丸投げする形にはしません。AIは下書き、分類、確認観点の整理に使い、最終判断や対外的な説明は人が確認する運用にします。"
+              }
+            }
+          ]
         }
       ]
     }
@@ -164,13 +194,14 @@
     </div>
 
     <!-- 記事本文 -->
-    <article style="padding: 3rem 1rem;">
+    <article class="enhanced-case-article" style="padding: 3rem 1rem;">
       <div class="container" style="max-width: 800px;">
 
         <section style="margin-bottom: 3rem;">
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"># 従業員3名の福祉用具事業所／相談記録と情報共有を整えて週8時間を削減した話</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 医療・介護・福祉業 × 福祉用具事業所 × 相談員の事例</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 東北地域の小規模事業所で、紙ファイル中心の相談記録と職員間共有を整えたケースです。</p>
+<blockquote>
+<p>医療・介護・福祉業 × 福祉用具事業所 × 相談員の事例</p>
+<p>東北地域の小規模事業所で、紙ファイル中心の相談記録と職員間共有を整えたケースです。</p>
+</blockquote>
 <h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">課題：利用者情報を探すだけで1件10分かかっていた</h2>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">福祉用具事業所の仕事は、単に用具を届けるだけではありません。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">利用者さんの身体状況、家族の希望、住宅環境、ケアマネジャーとのやり取り、過去の相談内容。</p>
@@ -214,13 +245,18 @@
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">利用者さんの大切な情報を扱う業務では、便利さより先に安全な運用が必要です。</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">成果：記録と共有の時間が大きく減り、確認漏れも減った</h2>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">導入後、最も効果が出たのは情報共有の時間でした。</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 項目 | Before | After |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">|------|--------|-------|</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 体調・相談記録 | 1件8分 | 1件3分 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 情報共有時間 | 週12時間 | 週4時間 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 支援計画作成 | 週10時間 | 週4時間 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 関係機関連絡 | 週8時間 | 週3時間 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| ヒヤリハット件数 | 月3件 | 月2件 |</p>
+<table class="article-data-table">
+  <thead>
+    <tr><th>項目</th><th>Before</th><th>After</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>体調・相談記録</td><td>1件8分</td><td>1件3分</td></tr>
+    <tr><td>情報共有時間</td><td>週12時間</td><td>週4時間</td></tr>
+    <tr><td>支援計画作成</td><td>週10時間</td><td>週4時間</td></tr>
+    <tr><td>関係機関連絡</td><td>週8時間</td><td>週3時間</td></tr>
+    <tr><td>ヒヤリハット件数</td><td>月3件</td><td>月2件</td></tr>
+  </tbody>
+</table>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">数字だけで見ると、週8時間以上の削減です。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ただ、現場で一番喜ばれたのは別の点でした。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「前回どこまで話したかがすぐ分かるので、利用者さんとの会話に集中できます」</p>
@@ -273,16 +309,53 @@
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最後にAIで下書きや確認メモを作る。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この順番なら、小規模事業所でも始めやすくなります。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初の対象は、全利用者さんの記録ではなく、連絡や確認が多いケースだけでも構いません。小さく始めて、職員が安心して使える範囲を確認しながら広げる方が定着しやすくなります。</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">---</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">気になる業務があれば、お気軽にお声がけください。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">弊社では中小企業のAI活用・システム開発の伴走支援を行っています。</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="https://digitool-lab.com/contact" target="_blank" rel="noopener">無料相談はこちら</a></p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><!-- IMAGE_PLANS: [{"role":"hero","position":0,"size":"1600x900","prompt":"福祉用具事業所の相談員が明るい事務所で利用者ファイルとノートPCを確認している写真風シーン。日本の小規模福祉事業所、温かく清潔な雰囲気。文字やロゴなし。"},{"role":"inline","position":1,"prompt":"相談記録、家族連絡、ケアマネ共有が1つの一覧にまとまるフローチャート。柔らかい色調、オレンジアクセント。"},{"role":"inline","position":2,"prompt":"記録時間8分から3分、共有時間週12時間から4時間へのBefore/After図解。"}] --></p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="../contact">無料相談はこちら</a></p>
 
+
+<div class="article-related-services" data-codex-enhancement="case-service-routes">
+  <h2>この事例に近い相談先</h2>
+  <p>同じような業務改善を検討する場合は、目的に近い支援内容から確認できます。</p>
+  <div class="article-related-service-grid">
+    <a href="../business-system-development">
+      <strong>業務システム開発</strong>
+      <span>見積、記録、報告、管理表を専用の業務画面に整えたい方向け。</span>
+    </a>
+    <a href="../internal-portal-development">
+      <strong>社内ポータル開発</strong>
+      <span>情報共有、申請、ナレッジ、現場の確認事項を一箇所にまとめたい方向け。</span>
+    </a>
+    <a href="../dx-support-saitama">
+      <strong>DX伴走支援</strong>
+      <span>ツール選定、AI活用、運用定着まで継続して相談したい方向け。</span>
+    </a>
+  </div>
+</div>
 </section>
 
       </div>
     </article>
+
+    <section class="article-faq-section" data-codex-enhancement="case-faq">
+      <div class="container">
+        <h2>従業員3名の福祉用具事業所／相談記録と情報共有を整えて週8時間を削減した話についてよくある質問</h2>
+        <div class="article-faq-list">
+          <div>
+            <h3>同じような業務改善やAI活用は相談できますか？</h3>
+            <p>はい。業種や従業員規模が違っても、業務の棚卸し、入力画面、集計、AI下書き、運用定着まで相談できます。最初は小さな業務から始める前提で整理します。</p>
+          </div>
+          <div>
+            <h3>既存のGoogleフォームやスプレッドシートから始められますか？</h3>
+            <p>可能です。いきなり大きなシステムを作るのではなく、既存ツールで流れを整え、必要に応じて社内ポータルや業務システムへ広げる進め方を取れます。</p>
+          </div>
+          <div>
+            <h3>AIに判断を任せる形になりますか？</h3>
+            <p>判断をAIに丸投げする形にはしません。AIは下書き、分類、確認観点の整理に使い、最終判断や対外的な説明は人が確認する運用にします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 関連事例・CTA -->
     <section style="background-color: var(--gray-50); padding: 3rem 1rem;">

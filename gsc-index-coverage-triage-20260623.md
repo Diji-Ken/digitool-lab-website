@@ -113,6 +113,7 @@ GSC URL検査:
 - 対象は、百貨店、ホームセンター、家電量販店、野菜農家、梱包・包装業、電子部品製造業、税理士事務所、福祉用具事業所の8件。
 - 各ページに `index, follow`、canonical、BlogPosting/BreadcrumbList JSON-LD、sitemap掲載を追加し、`case-studies` から業種別新着事例として内部リンクを追加した。
 - 今後、実コンテンツが誤ってnoindexのまま残ることを防ぐため、`scripts/audit-noindex-intent.mjs` を追加し、CIで意図したnoindexページだけに限定して監査する。
+- 追加で、8件の本文に残っていたMarkdown見出し、引用、表、区切り線、画像生成メモをHTMLとして整形し、FAQ/FAQPage、関連サービス導線を追加した。検索対象にしたページとして、本文品質、AI回答向けのQ&A、CV導線を最低限そろえた。
 
 ## カテゴリ別判断
 

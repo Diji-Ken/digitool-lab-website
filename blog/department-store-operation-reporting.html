@@ -79,6 +79,36 @@
               "item": "https://digitool-lab.com/blog/department-store-operation-reporting"
             }
           ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://digitool-lab.com/blog/department-store-operation-reporting#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "同じような業務改善やAI活用は相談できますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい。業種や従業員規模が違っても、業務の棚卸し、入力画面、集計、AI下書き、運用定着まで相談できます。最初は小さな業務から始める前提で整理します。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "既存のGoogleフォームやスプレッドシートから始められますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可能です。いきなり大きなシステムを作るのではなく、既存ツールで流れを整え、必要に応じて社内ポータルや業務システムへ広げる進め方を取れます。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "AIに判断を任せる形になりますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "判断をAIに丸投げする形にはしません。AIは下書き、分類、確認観点の整理に使い、最終判断や対外的な説明は人が確認する運用にします。"
+              }
+            }
+          ]
         }
       ]
     }
@@ -165,12 +195,13 @@
     </div>
 
     <!-- 記事本文 -->
-    <article style="padding: 3rem 1rem;">
+    <article class="enhanced-case-article" style="padding: 3rem 1rem;">
       <div class="container" style="max-width: 800px;">
 
         <section style="margin-bottom: 3rem;">
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"># 従業員25名の百貨店／店舗運営の確認作業を整えて在庫と売場判断を速くした話</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 小売業・百貨店・店舗運営責任者・従業員25名の事例</p>
+<blockquote>
+<p>小売業・百貨店・店舗運営責任者・従業員25名の事例</p>
+</blockquote>
 <h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">課題：売場の状況確認が人づてで、判断がいつも遅れていた</h2>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">新潟県の地方百貨店では、店舗運営責任者が毎朝の売場確認、在庫確認、スタッフからの報告、催事準備、売上集計を一人で抱えていました。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">売場担当者はそれぞれ状況を把握しています。ただ、その情報が店全体の判断に使える形になっていませんでした。</p>
@@ -178,9 +209,11 @@
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">責任者の方は最初、そう話していました。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">しかし実際には、担当者が休みの日は状況が分からない。紙のメモは売場ごとに書き方が違う。閉店後にExcelへ転記するため、翌朝まで数字が見えない。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">特に困っていたのは、次の3つです。</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">1. 在庫の確認に時間がかかる</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">2. 売場ごとの報告内容がばらばら</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">3. 催事やセール前の準備漏れが起きる</p>
+<ol style="font-size:1.05rem;line-height:1.8;margin:0 0 1.2rem 1.5rem;">
+  <li>在庫の確認に時間がかかる</li>
+  <li>売場ごとの報告内容がばらばら</li>
+  <li>催事やセール前の準備漏れが起きる</li>
+</ol>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">担当者からは、こんな声もありました。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「売れている商品は分かるけど、他の売場と比べるところまでは見られません」</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">責任者は、売場を回って聞き取り、メモを集め、閉店後に数字を確認していました。1日あたり約90分、月にすると30時間以上が確認と転記に使われていました。</p>
@@ -209,13 +242,18 @@
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">AIに判断を丸投げするのではなく、見落としを減らす補助として使いました。</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">成果：確認時間が半分以下になり、売場判断が早くなった</h2>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">導入から2か月で、確認作業の時間が大きく減りました。</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 項目 | Before | After | 変化 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">|------|--------|-------|------|</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 売場報告の回収 | 紙と口頭で毎日45分 | 入力画面で毎日10分確認 | 35分削減 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 在庫確認 | 売場ごとに聞き取り60分 | 一覧表で20分 | 40分削減 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 閉店後の転記 | 1日30分 | ほぼ不要 | 月10時間以上削減 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 欠品の見落とし | 月8件前後 | 月3件前後 | 約60%減 |</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 売場会議の準備 | 週2時間 | 週45分 | 半分以下 |</p>
+<table class="article-data-table">
+  <thead>
+    <tr><th>項目</th><th>Before</th><th>After</th><th>変化</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>売場報告の回収</td><td>紙と口頭で毎日45分</td><td>入力画面で毎日10分確認</td><td>35分削減</td></tr>
+    <tr><td>在庫確認</td><td>売場ごとに聞き取り60分</td><td>一覧表で20分</td><td>40分削減</td></tr>
+    <tr><td>閉店後の転記</td><td>1日30分</td><td>ほぼ不要</td><td>月10時間以上削減</td></tr>
+    <tr><td>欠品の見落とし</td><td>月8件前後</td><td>月3件前後</td><td>約60%減</td></tr>
+    <tr><td>売場会議の準備</td><td>週2時間</td><td>週45分</td><td>半分以下</td></tr>
+  </tbody>
+</table>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">数字以上に大きかったのは、責任者の判断が早くなったことです。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">以前は「担当者に聞いてから考える」状態でした。導入後は、朝の時点で店全体の状況を見て、優先順位を決められるようになりました。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">責任者はこう話していました。</p>
@@ -249,13 +287,51 @@
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">AIも、判断を代わりにするものではなく、見落としを減らし、振り返りを速くする補助として使いました。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">気になる業務があれば、お気軽にお声がけください。</p>
 <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">弊社では中小企業のAI活用・システム開発の伴走支援を行っています。</p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="https://digitool-lab.com/contact" target="_blank" rel="noopener">無料相談はこちら</a></p>
-<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><!-- IMAGE_PLANS: [{"role":"hero","position":0,"size":"1600x900","prompt":"横長画像 1600x900。地方百貨店の明るい売場バックヤードで、40代の店舗運営責任者がノートPCとタブレットで売場報告と在庫表を確認している写真風。自然光、日本の小売現場、文字やロゴなし。"},{"role":"inline","position":1,"prompt":"売場ごとの紙メモがスマホ入力画面に変わり、スプレッドシートへ集まる流れを示す図解。"},{"role":"inline","position":2,"prompt":"Before/After表を視覚化。確認時間90分から30分へ、欠品見落とし月8件から3件へ。"},{"role":"inline","position":3,"prompt":"朝礼で責任者が一覧表を見ながら売場担当者へ共有している写真風イメージ。"}] --></p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="../contact">無料相談はこちら</a></p>
 
+
+<div class="article-related-services" data-codex-enhancement="case-service-routes">
+  <h2>この事例に近い相談先</h2>
+  <p>同じような業務改善を検討する場合は、目的に近い支援内容から確認できます。</p>
+  <div class="article-related-service-grid">
+    <a href="../business-system-development">
+      <strong>業務システム開発</strong>
+      <span>見積、記録、報告、管理表を専用の業務画面に整えたい方向け。</span>
+    </a>
+    <a href="../internal-portal-development">
+      <strong>社内ポータル開発</strong>
+      <span>情報共有、申請、ナレッジ、現場の確認事項を一箇所にまとめたい方向け。</span>
+    </a>
+    <a href="../dx-support-saitama">
+      <strong>DX伴走支援</strong>
+      <span>ツール選定、AI活用、運用定着まで継続して相談したい方向け。</span>
+    </a>
+  </div>
+</div>
 </section>
 
       </div>
     </article>
+
+    <section class="article-faq-section" data-codex-enhancement="case-faq">
+      <div class="container">
+        <h2>従業員25名の百貨店／店舗運営の確認作業を整えて在庫と売場判断を速くした話についてよくある質問</h2>
+        <div class="article-faq-list">
+          <div>
+            <h3>同じような業務改善やAI活用は相談できますか？</h3>
+            <p>はい。業種や従業員規模が違っても、業務の棚卸し、入力画面、集計、AI下書き、運用定着まで相談できます。最初は小さな業務から始める前提で整理します。</p>
+          </div>
+          <div>
+            <h3>既存のGoogleフォームやスプレッドシートから始められますか？</h3>
+            <p>可能です。いきなり大きなシステムを作るのではなく、既存ツールで流れを整え、必要に応じて社内ポータルや業務システムへ広げる進め方を取れます。</p>
+          </div>
+          <div>
+            <h3>AIに判断を任せる形になりますか？</h3>
+            <p>判断をAIに丸投げする形にはしません。AIは下書き、分類、確認観点の整理に使い、最終判断や対外的な説明は人が確認する運用にします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 関連事例・CTA -->
     <section style="background-color: var(--gray-50); padding: 3rem 1rem;">

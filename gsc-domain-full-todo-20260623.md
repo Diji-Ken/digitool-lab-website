@@ -109,6 +109,7 @@ GSCドメインプロパティで `digitool-lab.com` 全体を見られるよう
 - 今日以降の最優先は、ホスト別検索露出の保存、未登録URLの重要度仕分け、404/リダイレクト検証結果の再確認、低CTR/11〜20位クエリの改善。
 - 未登録/noindex系の実行として、検索流入に使える実事例8ページをindex対象へ昇格。`index, follow`、canonical、BlogPosting/BreadcrumbList JSON-LD、sitemap掲載、`case-studies` からの内部リンクを追加した。
 - 意図しないnoindex再発を防ぐため、`scripts/audit-noindex-intent.mjs` を追加し、Xserverデプロイ前CIで「許可リスト外のnoindex」を検知するようにした。
+- 昇格した8ページについて、Markdown記号が本文に残る状態を解消し、成果表のHTMLテーブル化、FAQ/FAQPage、関連サービス導線を追加した。GSCで登録状況を確認する前に、検索結果・AI回答に出ても最低限読める品質へ整えた。
 
 ## GSCで新しくできること
 
