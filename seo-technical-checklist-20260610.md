@@ -235,13 +235,25 @@ noindexにした、または既存noindexを維持したページ:
   - PageSpeed画面では同LPのAgentic Browsingが一時的に2/3、`llms.txt を取得できませんでした` と表示
   - ただし `https://digitool-lab.com/llms.txt` はHTTP 200、H1あり、Markdownリンク36件で取得可能。Chrome DevTools Lighthouseでは同LPも Agentic Browsing 100、失敗0
 
+## 2026-06-23 ドメインプロパティ認証
+
+- Xserver DNSに `google-site-verification=fSO-fqfwKEyylvVbSCkfArYC7sNGRW2HwTtBd_lxkec` が追加されたことを確認
+- `dig +trace TXT digitool-lab.com` で権威DNS `ns3.xserver.jp` から該当TXTが返ることを確認
+- Search Consoleで `sc-domain:digitool-lab.com` のドメインプロパティにアクセスできることを確認
+- ドメインプロパティのサマリー確認値
+  - ウェブ検索クリック: 322
+  - 登録済みページ: 228
+  - 未登録ページ: 985
+  - HTTPS: 28
+  - パンくずリスト: 24
+- ドメインプロパティはサブドメインやURLバリエーションを含むため、URLプレフィックス `https://digitool-lab.com/` より未登録数が多く表示される
+
 ## 継続TODO
 
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
 - Yahoo!マップに残る旧台東区住所を修正する。Chrome拡張は有効化済みだが、修正提案の送信にはYahoo! JAPAN IDログインが必要
-- Search Consoleドメインプロパティ `sc-domain:digitool-lab.com` は複数Googleアカウントでも権限なし。DNS所有権確認または所有者からの権限付与を行う
 - `noindex` へ変更したページがサイトマップに再混入していないことを継続確認する
 
 ### P1
