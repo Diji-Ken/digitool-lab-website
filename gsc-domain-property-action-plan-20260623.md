@@ -2,6 +2,7 @@
 
 作成日: 2026-06-23
 対象: `sc-domain:digitool-lab.com`
+状態: DNS TXT認証済み。2026-06-23にSearch Consoleのドメインプロパティサマリー表示を確認済み。
 
 ## できるようになったこと
 
@@ -22,6 +23,7 @@
 
 ## P0: すでに着手・解消済み
 
+- [x] GSCドメインプロパティ `sc-domain:digitool-lab.com` を確認済みにする
 - [x] GSC 404例5件を本番で301到達確認
 - [x] `tokutei.html` のリダイレクトエラーを本番で301到達確認
 - [x] `case-studies` とshowroom主要ページへの内部リンクを増やす

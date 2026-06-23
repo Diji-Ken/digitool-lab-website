@@ -79,10 +79,12 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [ ] GA4で `generate_lead`、`file_download`、`timerex_click`、`line_click` が実データとして出たらキーイベント/探索レポートに追加する
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
 - [ ] GSCドメインプロパティ `sc-domain:digitool-lab.com` で、`digitool-lab.com` / `showroom.digitool-lab.com` / `plat.digitool-lab.com` / `shop.digitool-lab.com` を横断して監視する
+  - 2026-06-23: DNS TXT認証済み。Search Consoleのドメインプロパティサマリー表示を確認し、検索パフォーマンスCSVを取得。クリック322、表示8,663、CTR3.7%、平均順位15.8を初期値として記録。
 - [ ] GSCの未登録985件を、改善対象、noindexで正しいもの、リダイレクトで正しいもの、削除/410対象に仕分ける
   - 2026-06-23: `gsc-index-coverage-triage-20260623.md` にカテゴリ単位の初回仕分けを作成。次はGSCのURL例を抽出し、URL単位の重要/放置/削除候補へ細分化する。
   - 2026-06-23: GSCの各未登録理由から代表URL例を抽出。`case-studies`、MEO/AIO記事、showroom主要カテゴリを優先改善、http/www/index.html/旧URL301、shop robots、低優先補助金noindexは対応不要に分類した。
 - [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
+  - 2026-06-23: `gsc-performance-opportunities-20260623.md` に初回抽出結果を保存。`case-studies` と `blog/hr-turnover-prediction-ai` のtitle、description、H1、構造化データ、冒頭回答を改善し本番反映。
 - [ ] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
 - [ ] GSCの手動対策、セキュリティ問題、robots.txt、サイトマップ最終読み込み日、HTTPS、パンくずリストを月次チェックする
 - [ ] GSCドメインプロパティの不明な確認済みオーナー5件は、ユーザー確認後に削除する
