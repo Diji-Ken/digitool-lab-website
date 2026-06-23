@@ -10,6 +10,7 @@ function fail(message, findings = []) {
 const findings = [];
 const htaccess = fs.readFileSync('.htaccess', 'utf8');
 const gitignore = fs.readFileSync('.gitignore', 'utf8');
+const deployWorkflow = fs.readFileSync('.github/workflows/deploy.yml', 'utf8');
 
 if (!/RewriteRule \^\([^)]*\|data\/gsc\)\(\?:\/\|\$\) - \[G,L\]/.test(htaccess)) {
   findings.push('.htaccess must return 410 Gone for data/gsc operational exports.');
@@ -17,6 +18,10 @@ if (!/RewriteRule \^\([^)]*\|data\/gsc\)\(\?:\/\|\$\) - \[G,L\]/.test(htaccess))
 
 if (!/^data\/gsc\/\*$/m.test(gitignore) || !/^!data\/gsc\/\.gitkeep$/m.test(gitignore)) {
   findings.push('.gitignore must ignore data/gsc/* while keeping data/gsc/.gitkeep.');
+}
+
+if (!/^\s+\*\*\/data\/gsc\/\*\*$/m.test(deployWorkflow) || !/^\s+data\/gsc\/\*\*$/m.test(deployWorkflow)) {
+  findings.push('Deploy workflow must exclude data/gsc/** from FTP upload.');
 }
 
 const trackedGscFiles = execFileSync('git', ['ls-files', 'data/gsc'], { encoding: 'utf8' })

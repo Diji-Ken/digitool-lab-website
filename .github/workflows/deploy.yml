@@ -56,3 +56,5 @@ jobs:
           **/README.md
           **/tools/**
           **/upload-all.sh
+          **/data/gsc/**
+          data/gsc/**
