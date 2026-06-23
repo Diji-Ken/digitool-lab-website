@@ -248,16 +248,53 @@ noindexにした、または既存noindexを維持したページ:
   - パンくずリスト: 24
 - ドメインプロパティはサブドメインやURLバリエーションを含むため、URLプレフィックス `https://digitool-lab.com/` より未登録数が多く表示される
 
+## 2026-06-23 GSCドメインプロパティ横断監査
+
+- サイトマップ
+  - `https://digitool-lab.com/sitemap.xml`: 送信日2026/06/14、最終読み込み2026/06/14、成功、検出ページ176
+  - `https://showroom.digitool-lab.com/sitemap.xml`: 送信日2026/06/02、最終読み込み2026/06/21、成功、検出ページ64
+- ページインデックス
+  - 未登録985、登録済み228
+  - 主な未登録理由: リダイレクト424、noindex203、クロール済み未登録289、検出未登録53、404が5、リダイレクトエラー1
+  - 404の5件は本番で正規URLへ301済みのため、GSCで修正検証を開始（開始日: 2026/06/23）
+  - `tokutei.html` のリダイレクトエラー1件は本番で `/tokutei` が200到達するため、GSCで修正検証を開始（開始日: 2026/06/23）
+  - `showroom.digitool-lab.com` の補助金詳細は、システム開発・AI/DX関連性が高いURLだけindexし、それ以外はnoindexにする設計。noindex対象サンプルは現行サイトマップには混入していないことを確認
+  - `showroom` の補助金詳細でクロール済み未登録のURLがあるため、今後は重要URLだけ内部リンク・説明量・FAQを増やす
+- robots.txt
+  - GSC robots.txtレポートで `https://plat.digitool-lab.com/robots.txt` の404が重大エラーとして表示
+  - `digiken-platform/public/robots.txt` を追加し、ローカル `pnpm build` は成功
+  - 本番VPS `162.43.25.149` へのSSH接続は現在の鍵では不可。`plat` のrobots本番反映は接続権限またはデプロイ経路の確認待ち
+  - `shop.digitool-lab.com` はrobotsでブロックされているため、GSC上の2件は放置可。ECを再開する場合のみ別途index方針を決める
+- 検索パフォーマンス
+  - 直近値: クリック322、表示8,660、CTR3.7%、平均掲載順位15.8
+  - 上位クリック: `デジタルツール研究所` 47、`株式会社デジタルツール研究所` 27、`松岡哲平` 10
+  - 改善候補: `警備業務効率化 ai活用事例` は表示143/クリック0。該当記事 `blog/security-property-management-dx.html` のtitle、description、H1、JSON-LD、事例データ、sitemap lastmodを更新
+  - 同記事に `business-system-development/`、`dx-support-saitama/`、`ai-search-meo-support/` への関連相談先リンクを追加し、GSCで弱い主要LPへの内部リンクを補強
+- リンク
+  - 外部リンク合計12。主なリンク元はnote.com 5、scamadviser.com 2、timewell.jp 2
+  - 内部リンク合計202。トップページへの内部リンクが152と偏っており、主要LP・記事への内部リンク追加が継続課題
+- エクスペリエンス/拡張
+  - HTTPS: 非HTTPS URL 0、HTTPS URL 28、直近90日で問題なし
+  - Core Web Vitals: モバイル/PCともデータ不足
+  - パンくずリスト: 有効24、無効0
+- 権限
+  - GSCドメインプロパティに `info@digitool-lab.com` 以外の確認済みオーナー5件が残存
+  - 不明アカウントの削除は権限変更のため、ユーザー確認後に実施する
+
 ## 継続TODO
 
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
+- Search Consoleドメインプロパティの不明な確認済みオーナー5件を、ユーザー確認後に削除する
+- `plat.digitool-lab.com/robots.txt` を本番反映し、GSC robots重大エラーが消えるか確認する
 - Yahoo!マップに残る旧台東区住所を修正する。Chrome拡張は有効化済みだが、修正提案の送信にはYahoo! JAPAN IDログインが必要
 - `noindex` へ変更したページがサイトマップに再混入していないことを継続確認する
 
 ### P1
 
+- GSCドメインプロパティの検索クエリを月次で抽出し、表示回数が多くCTRが低いページからtitle/descriptionを調整する
+- `showroom` の補助金詳細は、全件indexではなく社内ポータル・業務システム・AI/DX・省力化に近いURLだけindexする方針を維持し、重要URLの本文量を増やす
 - PageSpeed Insights APIは2026-06-23時点でも429。ブラウザ版PageSpeed InsightsとDevTools Lighthouseで代替確認済み
 - 主要LP、記事、資料DLページのLighthouse確認は初回実施済み。今後は追加LP・古い記事へ範囲を広げる
 - 主要LPと記事の内部リンクを増やす
