@@ -146,6 +146,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - [x] 地域団体、士業、金融機関、パートナー候補への掲載・共催相談リストを作る（サイテーション登録とは別に、被リンク/共催候補として扱う）
 - [x] note、Qiita/Zenn、LinkedIn、GBP投稿、被リンク候補を `plat.digitool-lab.com` の外部発信管理ページに集約する
 - [x] `llms.txt` / `llms_full.txt` に主要LP、showroom、代表/著者情報、現在の本社所在地、事例要約を反映する
+  - 2026-06-23: `scripts/audit-llms.mjs` を追加し、`llms.txt` / `llms_full.txt` の現住所・電話・主要URL・主要サービス・旧住所/旧電話混入・`.html` 旧URL混入をCIで監査するようにした。`llms_full.txt` に残っていた `contact.html` を正規URLへ修正。
 - [x] `ai-training-cost` と `internal-portal-development-cost` のGSC URL検査・インデックス登録リクエスト完了を確認する
 - [x] 2026-06-10にFAQ増強した `/it-tantou-outsourcing/`、`/ai-training-saitama/`、`/business-system-development/` のGSC URL検査とインデックス登録リクエストを再実施する
 

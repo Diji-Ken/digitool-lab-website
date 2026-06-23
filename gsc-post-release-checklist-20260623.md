@@ -21,6 +21,7 @@
 - `node scripts/audit-seo-links.mjs`
 - `node scripts/audit-seo-indexability.mjs`
 - `node scripts/audit-structured-data.mjs`
+- `node scripts/audit-llms.mjs`
 - `node scripts/audit-priority-internal-links.mjs`
 
 ## 公開直後にGSCで確認する
