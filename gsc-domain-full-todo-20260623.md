@@ -45,6 +45,38 @@ Google公式の位置づけでは、Search Consoleはクロール、インデッ
 - 外部リンク: 12件
 - 内部リンク: 202件。トップページ偏重は一部是正済み
 
+## TODO化サマリー
+
+GSCドメインプロパティで `digitool-lab.com` 全体を見られるようになったことで、次の10系統を継続運用できる。
+
+| 系統 | できること | 優先度 | 主な作業先 |
+|---|---|---:|---|
+| 検索パフォーマンス | クエリ、ページ、国、デバイスをドメイン全体・ホスト別に確認する | P0 | GSC、`gsc-performance-opportunities-20260623.md` |
+| 低CTR改善 | 表示はあるがクリックされないtitle、description、H1、冒頭回答、FAQを直す | P0 | 公式HP、ブログ、LP |
+| 8〜20位改善 | もう少しで上位化できるクエリに本文補強と内部リンクを入れる | P0 | 公式HP、ブログ、LP |
+| 未登録URL仕分け | indexすべきURLと、noindex/リダイレクト/除外でよいURLを分ける | P0 | GSC、`gsc-index-coverage-triage-20260623.md` |
+| sitemap/canonical監視 | Googleがsitemapを読めているか、canonicalやnoindex混入がないかを見る | P1 | GSC、CI監査 |
+| URL検査 | 重要LP、費用記事、showroom主要ページの登録状況を個別確認する | P1 | GSC |
+| 内部リンク | Googleが重要ページとして認識できるよう、LP・記事・資料DL導線を調整する | P1 | 公式HP、showroom |
+| 外部リンク確認 | サイテーションや外部発信後に、リンクとして増えたものを追う | P2 | GSC、外部公開ログ |
+| Core Web Vitals | 実ユーザー指標とLighthouseで速度・体験の悪化を検知する | P2 | GSC、PageSpeed/Lighthouse |
+| AI検索/AIO | 生成AIレポートが出たらAI露出ページを保存し、導線・本文・FAQへ反映する | P2 | GSC、AIO/LLMO台帳 |
+
+### ポータルTODOへ同期する実行単位
+
+既存TODOと重複しないよう、ポータル側は以下の粒度で管理する。
+
+- GSC検索パフォーマンスをホスト別CSVで保存する
+- 表示回数が多くCTRが低いページを改善する
+- 8〜20位の惜しいクエリを改善する
+- 未登録URLを重要/放置/削除候補へ仕分ける
+- sitemap、robots、404、リダイレクト検証結果を確認する
+- Core Web Vitals、HTTPS、パンくず、構造化データ、手動対策、セキュリティを月次確認する
+- GSC外部リンクとサイテーション/外部発信ログを照合する
+- GSC生成AI/AI features系レポートが表示されたか確認する
+- GA4のCVページとGSCクエリを突き合わせ、問い合わせに近いページを増強する
+- `plat`、`shop`、`showroom`、`www/http` の露出URLを見て、SEO対象/対象外を整理する
+
 ## 2026-06-23 実行ログ
 
 - GSCサマリー確認: 検索パフォーマンスはクリック322、表示8,660、CTR3.7%、平均順位15.8。最終更新は3.5時間前。
