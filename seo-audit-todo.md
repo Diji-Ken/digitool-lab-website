@@ -8,6 +8,7 @@
 技術SEOチェック: `seo-technical-checklist-20260610.md`
 GSC未登録仕分け: `gsc-index-coverage-triage-20260623.md`
 GSCドメインプロパティ運用TODO: `gsc-domain-property-action-plan-20260623.md`
+GSCドメイン全体活用TODO: `gsc-domain-full-todo-20260623.md`
 GSC技術ヘルス/リンク確認: `gsc-technical-health-20260623.md`
 出典別トレース: `seo-source-traceability-20260610.md`
 コンテンツ/外部導線キュー: `seo-content-and-external-action-queue-20260610.md`
