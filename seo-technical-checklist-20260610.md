@@ -315,6 +315,29 @@ noindexにした、または既存noindexを維持したページ:
   - `manufacturing-demand-forecasting-ai`: 検査時点では未登録扱い、リクエスト済み
   - `retail-inventory-optimization`: Google登録済み、リクエスト済み
 
+## 2026-06-23 GSC費用・相場系クエリ対応
+
+- GSCで表示があり、問い合わせ意図に近い費用・相場系クエリを既存記事へ反映
+  - `DX支援 費用`
+  - `DXコンサルティング 費用`
+  - `DX コンサル 費用`
+  - `社内ポータル 費用`
+  - `社内ポータル 費用相場`
+  - `業務システム 費用`
+  - `伴走型 コンサルティング`
+  - `伴走支援 コンサルティング`
+- 対応記事
+  - `blog/dx-support-cost.html`
+  - `blog/internal-portal-development-cost.html`
+  - `blog/business-system-development-cost.html`
+  - `blog/dx-consulting-monthly-support.html`
+- 実施内容
+  - title、description、H1、OGP、Twitter meta、BlogPosting JSON-LD、FAQ JSON-LDを更新
+  - 「費用相場」「DXコンサルティング費用」「社内ポータル費用相場」「業務システム費用」「伴走型コンサルティング」を自然な表現で追加
+  - 関連ページの内部リンクを追加し、DX伴走支援、業務システム開発、社内ポータル開発、費用記事同士の接続を強化
+  - `sitemap.xml` の4URLの `lastmod` を `2026-06-23` に更新
+  - `llms.txt` / `llms_full.txt` の記事表記を最新titleへ更新
+
 ### P0
 
 - Search Consoleの404検証結果を数日後に確認する
