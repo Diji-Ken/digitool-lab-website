@@ -1,6 +1,6 @@
 # SEO/AIO/LLMO/MEO 実行TODO - 株式会社デジタルツール研究所
 
-更新日: 2026-06-13
+更新日: 2026-06-23
 元資料: `/Users/m/Downloads/digitool-lab-seo-aio-llmo-meo-strategy-20260601.docx`
 追加資料: `/Users/m/Workspace/mirai/00_knowledge/clients/OToMo/projects/ai-showcase/research/leadgen-materials-20260609/`
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
@@ -76,6 +76,15 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 
 - [ ] GA4で `generate_lead`、`file_download`、`timerex_click`、`line_click` が実データとして出たらキーイベント/探索レポートに追加する
 - [ ] GSCの新規LPインデックス状況を3〜7日後に再確認する
+- [ ] GSCドメインプロパティ `sc-domain:digitool-lab.com` で、`digitool-lab.com` / `showroom.digitool-lab.com` / `plat.digitool-lab.com` / `shop.digitool-lab.com` を横断して監視する
+- [ ] GSCの未登録985件を、改善対象、noindexで正しいもの、リダイレクトで正しいもの、削除/410対象に仕分ける
+- [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
+- [ ] GSCリンクレポートで、主要LPと問い合わせに近い記事への内部リンク不足を確認し、トップ偏重を減らす
+- [ ] GSCの手動対策、セキュリティ問題、robots.txt、サイトマップ最終読み込み日、HTTPS、パンくずリストを月次チェックする
+- [ ] GSCドメインプロパティの不明な確認済みオーナー5件は、ユーザー確認後に削除する
+- [ ] `plat.digitool-lab.com/robots.txt` の本番404を解消し、GSCのrobots重大エラーが消えるか確認する
+- [ ] `showroom.digitool-lab.com` の補助金詳細は、社内ポータル、業務システム、AI/DX、省力化に近いURLだけindex強化し、それ以外はnoindex方針を維持する
+- [ ] 費用・相場系クエリ（DX支援費用、社内ポータル費用、業務システム費用、DXコンサル費用、伴走型コンサルティング）をGSC優先クラスタとして既存記事を追加改善する
 - [x] 2026-06-10の技術SEO整理後、Search Consoleでサイトマップを再送信し、ページインデックス、手動対策、セキュリティ問題を確認する
 - [ ] PageSpeed Insightsでトップ、主要LP、記事、資料DLページを確認し、画像・CSS・外部JSの改善点を洗い出す
   - 2026-06-10: PageSpeed Insights APIは429で実行不可。ローカル監査では主要5ページのcanonical/meta description/h1/JSON-LD/画像altは問題なし。大容量画像は事例画像に集中しているため、次回PageSpeedまたはLighthouseで実測してから圧縮対象を決める
