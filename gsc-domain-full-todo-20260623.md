@@ -95,6 +95,7 @@ GSCドメインプロパティで `digitool-lab.com` 全体を見られるよう
 - 公開後運用化: `gsc-post-release-checklist-20260623.md` を追加し、新規LP・記事公開時のsitemap、URL検査、3〜7日後確認、週次/月次確認を固定化した。
 - URL検査: `https://digitool-lab.com/about` は `URL は Google に登録されています`、HTTPS有効、パンくず有効を確認し、インデックス登録リクエスト済み。
 - 低CTR/上位ページ改善: `/service` を、DX伴走支援、社内ポータル開発、業務システム開発、AI研修のサービスハブとしてtitle、description、H1、主要サービス要約、FAQ、WebPage/Organization/Service/ItemList JSON-LDを改善した。
+- Core Web Vitals/LCP改善: PageSpeed Insights APIは429継続。トップと `seo-hero` を使う主要LP/記事29ページへ `hero-dx-support.webp` のpreload + `fetchpriority="high"` を追加し、CI監査 `scripts/audit-hero-preload.mjs` を追加した。
 
 ## GSCで新しくできること
 

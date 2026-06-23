@@ -27,6 +27,9 @@ jobs:
 
     - name: Run priority internal link audit
       run: node scripts/audit-priority-internal-links.mjs
+
+    - name: Run hero preload audit
+      run: node scripts/audit-hero-preload.mjs
     
     - name: Deploy to Xserver via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.4.0

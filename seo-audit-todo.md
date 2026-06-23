@@ -127,6 +127,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-10: PageSpeed Insights APIは429で実行不可。ローカル監査では主要5ページのcanonical/meta description/h1/JSON-LD/画像altは問題なし。大容量画像は事例画像に集中しているため、次回PageSpeedまたはLighthouseで実測してから圧縮対象を決める
   - 2026-06-13: PageSpeed Insights APIは429で継続不可。トップ、主要LP、資料DLのHTML資産確認では追加の大容量画像問題なし
   - 2026-06-23: PageSpeed Insights APIは429で継続不可。ローカルLighthouseでトップ、業務システムLP、社内ポータルLPをモバイル実測。SEO/アクセシビリティ/ベストプラクティスは全て100、Performanceは83〜85、LCPは4.0〜4.1秒。詳細は `lighthouse-summary-20260623.md`。
+  - 2026-06-24: PageSpeed Insights APIは引き続き429。トップと `seo-hero` を使う主要LP/記事29ページへ `hero-dx-support.webp` のpreload + `fetchpriority="high"` を追加し、`scripts/audit-hero-preload.mjs` をCIに組み込んだ。
 - [x] トップページの重い下部画像をWebP化し、画像サイズ指定・遅延読み込み・静的資産キャッシュ設定を追加する
 - [x] トップページをLighthouseで確認し、表示ロゴWebP化、Google Fonts外し、不要外部CSS/JS削除、コントラスト/見出し/画像比率を改善する
 - [x] 主要SEO受け皿ページ、費用記事、資料DLページをローカルLighthouseで確認し、LP共通CSSのコントラスト、CTA背景、スマホ時LCP、H1改行を改善する
