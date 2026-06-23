@@ -107,6 +107,8 @@ GSCドメインプロパティで `digitool-lab.com` 全体を見られるよう
 - サイトマップ: `https://digitool-lab.com/sitemap.xml` は176 URL、`https://showroom.digitool-lab.com/sitemap.xml` は564 URL。どちらも2026/06/23最終読み込み・成功。
 - リンク: 外部リンク12件、内部リンク202件。外部リンク元は `note.com` 5件、`scamadviser.com` 2件、`timewell.jp` 2件など。内部リンクはトップ152件に偏っているため、CVに近いLP・記事への導線増強を継続する。
 - 今日以降の最優先は、ホスト別検索露出の保存、未登録URLの重要度仕分け、404/リダイレクト検証結果の再確認、低CTR/11〜20位クエリの改善。
+- 未登録/noindex系の実行として、検索流入に使える実事例8ページをindex対象へ昇格。`index, follow`、canonical、BlogPosting/BreadcrumbList JSON-LD、sitemap掲載、`case-studies` からの内部リンクを追加した。
+- 意図しないnoindex再発を防ぐため、`scripts/audit-noindex-intent.mjs` を追加し、Xserverデプロイ前CIで「許可リスト外のnoindex」を検知するようにした。
 
 ## GSCで新しくできること
 

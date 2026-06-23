@@ -19,6 +19,9 @@ jobs:
     - name: Run SEO indexability audit
       run: node scripts/audit-seo-indexability.mjs
 
+    - name: Run noindex intent audit
+      run: node scripts/audit-noindex-intent.mjs
+
     - name: Run structured data audit
       run: node scripts/audit-structured-data.mjs
 

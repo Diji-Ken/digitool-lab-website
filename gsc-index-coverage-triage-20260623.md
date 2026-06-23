@@ -108,6 +108,12 @@ GSC URL検査:
 - `https://digitool-lab.com/blog/meo-citation-nap-checklist` は `クロール済み - インデックス未登録` の代表例だったため、title、description、H1を `MEO・サイテーションのNAP統一` へ寄せ、住所・電話番号変更後の確認順、表記ゆれ、管理表のFAQ/FAQPage JSON-LDを追加した。
 - 両URLともsitemap lastmodは2026-06-23で更新済み。次回GSCでインデックス状況と検索パフォーマンスを確認する。
 
+2026-06-24 実事例ページのnoindex解除:
+- 本文量があり検索流入の受け皿にできる実事例8件が、`noindex, nofollow`、canonicalなし、JSON-LDなし、sitemap未掲載、内部リンクなしの状態で残っていたため、検索対象ページへ昇格した。
+- 対象は、百貨店、ホームセンター、家電量販店、野菜農家、梱包・包装業、電子部品製造業、税理士事務所、福祉用具事業所の8件。
+- 各ページに `index, follow`、canonical、BlogPosting/BreadcrumbList JSON-LD、sitemap掲載を追加し、`case-studies` から業種別新着事例として内部リンクを追加した。
+- 今後、実コンテンツが誤ってnoindexのまま残ることを防ぐため、`scripts/audit-noindex-intent.mjs` を追加し、CIで意図したnoindexページだけに限定して監査する。
+
 ## カテゴリ別判断
 
 ### リダイレクト 424件

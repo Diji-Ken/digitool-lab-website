@@ -1,6 +1,6 @@
 # SEO/AIO/LLMO/MEO 実行TODO - 株式会社デジタルツール研究所
 
-更新日: 2026-06-23
+更新日: 2026-06-24
 元資料: `/Users/m/Downloads/digitool-lab-seo-aio-llmo-meo-strategy-20260601.docx`
 追加資料: `/Users/m/Workspace/mirai/00_knowledge/clients/OToMo/projects/ai-showcase/research/leadgen-materials-20260609/`
 実行台帳: `seo-aio-llmo-strategy-ledger.md`
@@ -93,6 +93,7 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
   - 2026-06-23: `scripts/audit-seo-links.mjs` を追加し、GitHub ActionsのXserverデプロイ前に内部 `.html` href と内部 `href/src` 参照切れを自動検査するようにした。
   - 2026-06-23: `scripts/audit-seo-indexability.mjs` を追加し、sitemap掲載URLの存在、canonical一致、noindex混入、title/description/H1、lastmod形式をデプロイ前に自動検査するようにした。
   - 2026-06-23: 未登録代表URLだった `/blog/ai-search-meo-citation-checklist` と `/blog/meo-citation-nap-checklist` を追加改善。AI検索対策・MEO・サイテーションの違い、進める順番、住所/電話変更後のNAP確認、FAQ/JSON-LDを増強した。
+  - 2026-06-24: 実事例として検索に出せる8ページがnoindexのまま残っていたため、index対象へ昇格。canonical、BlogPosting/BreadcrumbList JSON-LD、sitemap、`case-studies` からの内部リンクを追加し、`scripts/audit-noindex-intent.mjs` をCIに組み込んだ。
 - [ ] GSCの低CTR・表示回数多めクエリを月次抽出し、title、description、H1、冒頭回答、FAQ、内部リンクを改善する
   - 2026-06-23: `gsc-performance-opportunities-20260623.md` に初回抽出結果を保存。`case-studies` と `blog/hr-turnover-prediction-ai` のtitle、description、H1、構造化データ、冒頭回答を改善し本番反映。
   - 2026-06-23: 追加で `management-data-aggregation-ai`、`ai-chatgpt-faq-creation`、`security-property-management-dx` をGSC表示クエリに合わせて改善。経営分析レポート自動作成、FAQシステム/ChatGPT、警備DX導入事例の検索意図へ寄せた。
