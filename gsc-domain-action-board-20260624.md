@@ -56,7 +56,7 @@ mkdir -p data/gsc
 node scripts/analyze-gsc-performance.mjs data/gsc/<gsc-export.csv> --out data/gsc/gsc-performance-report-YYYYMMDD.md
 ```
 
-`data/gsc/` はGSCの検索クエリやURLを含む運用データ置き場。公開URLでは410にし、FTPデプロイ対象から除外し、gitには `.gitkeep` 以外を入れない。`scripts/audit-private-seo-data.mjs` でこの状態をCI監査する。
+`data/gsc/` はGSCの検索クエリやURLを含む運用データ置き場。公開URLでは `RedirectMatch 410` と `RewriteRule [G]` で410にし、FTPデプロイ対象から除外し、gitには `.gitkeep` 以外を入れない。`scripts/audit-private-seo-data.mjs` でこの状態をCI監査する。
 
 このスクリプトで自動抽出するもの:
 

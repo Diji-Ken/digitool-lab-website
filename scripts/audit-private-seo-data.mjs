@@ -12,6 +12,10 @@ const htaccess = fs.readFileSync('.htaccess', 'utf8');
 const gitignore = fs.readFileSync('.gitignore', 'utf8');
 const deployWorkflow = fs.readFileSync('.github/workflows/deploy.yml', 'utf8');
 
+if (!htaccess.includes('RedirectMatch 410 ^/data/gsc(?:/|$)')) {
+  findings.push('.htaccess must explicitly RedirectMatch 410 for /data/gsc before rewrite handling.');
+}
+
 if (!/RewriteRule \^\([^)]*\|data\/gsc\)\(\?:\/\|\$\) - \[G,L\]/.test(htaccess)) {
   findings.push('.htaccess must return 410 Gone for data/gsc operational exports.');
 }
