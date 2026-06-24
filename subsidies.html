@@ -80,6 +80,22 @@
       .subsidy-meta-row strong { color: var(--gray-800); font-weight: 700; }
       .subsidy-amount { color: var(--blue-700); }
       .card-content .card-summary { color: var(--gray-600); }
+      /* 画像が無い記事のサムネ枠（コーポレートブルーのグラデーション＋補助金アイコン） */
+      .subsidy-thumb-placeholder {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--blue-600, #2563eb), var(--blue-800, #1e40af));
+      }
+      .subsidy-thumb-placeholder svg {
+        width: 30%;
+        max-width: 96px;
+        height: auto;
+        color: rgba(255, 255, 255, 0.92);
+        opacity: 0.95;
+      }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -295,7 +311,8 @@
 
   function cardHTML(item, badge) {
     var url = item.url || (item.slug ? 'blog/' + item.slug + '.html' : '#');
-    var img = item.image || item.thumbnail || 'images/hero-dx-support.webp';
+    // サムネは JSON の thumbnail（無ければ image）を優先。どちらも無ければ後段でプレースホルダを描画
+    var thumb = item.thumbnail || item.image || '';
     var amount = item.max_amount || item.maxAmount || '';
     var region = item.prefecture || item.region || '';
     var org = item.organization || item.org || '';
@@ -306,10 +323,22 @@
     if (region) metaBits += '<span>地域: <strong>' + esc(region) + '</strong></span>';
     if (org) metaBits += '<span>実施: <strong>' + esc(org) + '</strong></span>';
 
+    // サムネ画像 or プレースホルダ（コーポレートブルー＋補助金アイコン）
+    var thumbInner = thumb
+      ? '<img src="' + esc(thumb) + '" alt="' + esc(item.title || '') + '" width="800" height="450" loading="lazy" decoding="async">'
+      : '<div class="subsidy-thumb-placeholder" aria-hidden="true">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+            '<rect x="2" y="6" width="20" height="13" rx="2"></rect>' +
+            '<circle cx="12" cy="12.5" r="3"></circle>' +
+            '<path d="M12 11v3M10.6 12.5h2.8"></path>' +
+            '<path d="M6 6V4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5V6"></path>' +
+          '</svg>' +
+        '</div>';
+
     return '' +
       '<a href="' + esc(url) + '" class="case-study-card">' +
-        '<div class="card-image-wrapper">' +
-          '<img src="' + esc(img) + '" alt="' + esc(item.title || '') + '" width="800" height="450" loading="lazy" decoding="async">' +
+        '<div class="card-image-wrapper" style="position: relative;">' +
+          thumbInner +
         '</div>' +
         '<div class="card-content">' +
           '<div class="card-meta">' +
