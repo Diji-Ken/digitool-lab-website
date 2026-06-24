@@ -6,6 +6,16 @@
     <title>{{TITLE}}｜補助金情報 - 株式会社デジタルツール研究所</title>
     <meta name="description" content="{{META_DESCRIPTION}}">
     <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:site_name" content="株式会社デジタルツール研究所">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -22,6 +32,7 @@
   "@type": "Article",
   "headline": "{{TITLE}}",
   "description": "{{META_DESCRIPTION}}",
+  "image": "{{OG_IMAGE}}",
   "datePublished": "{{DATE}}",
   "author": {
     "@type": "Organization",
@@ -127,6 +138,9 @@
         </div>
       </div>
     </div>
+
+    <!-- 記事hero画像（画像がある記事のみ publish 側が差し込む） -->
+    {{HERO_IMAGE_BLOCK}}
 
     <!-- 記事本文 -->
     <article style="padding: 3rem 1rem;">
