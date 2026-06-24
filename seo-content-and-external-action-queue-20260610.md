@@ -14,6 +14,9 @@ GBP週次投稿カレンダー: `posts-management/gbp-weekly-calendar-20260611.m
 UTM付きURL一覧: `posts-management/external-publication-utm-links-20260611.md`
 外部公開記録CSV: `posts-management/external-publication-log-20260611.csv`
 GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
+100本記事制作方針: `seo-100-article-direction-20260624.md`
+100本記事Oracleレビュー: `posts-management/oracle-prompts/seo-100-article-plan-oracle-result-20260624.md`
+直近確認スナップショット: `seo-verification-snapshot-20260624.md`
 
 ## 優先順位の前提
 
@@ -22,6 +25,9 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 3. 市町村名だけ差し替えたページは作らない
 4. noteやSNSは公式HPと同じ内容の転載にしない
 5. AI検索向けには、冒頭回答、FAQ、構造化データ、会社情報、外部言及を揃える
+6. 100本規模で増やす場合も、既存approvedドラフト、GSC表示クエリ、CV直結検索意図を優先し、重複記事を増やさない
+7. Oracleレビュー後は、HP70本・外部30本を採用する。P0/P1はHP、P2はGSC判断、Externalはnote/Qiita/Zenn/GBP/LinkedInへ回す
+8. 外部媒体はHP記事の転載ではなく、公式HPへ戻す別切り口の導線にする
 
 ## 次に作る自社HPページ
 

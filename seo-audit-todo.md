@@ -10,6 +10,9 @@ GSC未登録仕分け: `gsc-index-coverage-triage-20260623.md`
 GSCドメインプロパティ運用TODO: `gsc-domain-property-action-plan-20260623.md`
 GSCドメイン全体活用TODO: `gsc-domain-full-todo-20260623.md`
 GSCドメイン実行ボード: `gsc-domain-action-board-20260624.md`
+確認スナップショット: `seo-verification-snapshot-20260624.md`
+100本記事制作方針: `seo-100-article-direction-20260624.md`
+100本記事Oracleレビュー: `posts-management/oracle-prompts/seo-100-article-plan-oracle-result-20260624.md`
 GSC公開後チェックリスト: `gsc-post-release-checklist-20260623.md`
 GSC技術ヘルス/リンク確認: `gsc-technical-health-20260623.md`
 出典別トレース: `seo-source-traceability-20260610.md`
@@ -30,6 +33,8 @@ GBP短縮投稿文: `posts-management/gbp-short-copy-bank-20260611.md`
 - 自社HPをSEO/AIO/LLMOの主戦場にする。
 - note、SNS、Qiita/Zenn、YouTube、地域媒体は、自社HPへ戻すための外部導線・言及・被リンク補助にする。
 - noteでもSEO/MEO/AIO記事は作るが、自社HPと同じ内容を転載せず、読み物・実務メモ・考え方として公開する。
+- 100本規模の記事制作は、既存 `article_drafts` のapproved HP記事を優先し、ゼロから本文を大量生成しない。
+- Oracleレビュー後の採用方針は、HP70本・外部30本。P0 10本はすぐ公開/改善、P1 30本は10本ずつ公開品質化、P2 30本はGSCデータで判断、External 30本はnote/Qiita/Zenn/GBP/LinkedInへ回す。
 - 以後の全体像は `seo-aio-llmo-execution-roadmap.md` を優先して見る。
 
 ## 2026-06-13 フォローアップ
