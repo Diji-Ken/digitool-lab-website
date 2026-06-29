@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員40名の軽貨物運送会社／配車確認を整えて連絡時間を減らした話 - ご支援事例 - 株式会社デジタルツール研究所</title>
+    <meta name="description" content="配車係が電話と紙メモで配送状況を追っていた軽貨物運送会社で、入力画面と共有表を整え、配車・ルート作成時間と車両点検記録を短縮した事例。">
+    <meta name="robots" content="noindex, nofollow">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="css/style.css?v=2026061401">
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="./" class="logo">
+        <img src="images/logo-160.webp" alt="株式会社デジタルツール研究所 ロゴ" width="160" height="160" decoding="async">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="./about">私たちについて</a>
+          <a href="./service">事業内容</a>
+          <a href="./case-studies" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="./contact" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="./about">私たちについて</a>
+        <a href="./service">事業内容</a>
+        <a href="./case-studies" class="active">ご支援事例</a>
+        <a href="./contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <!-- パンくずナビ -->
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="./" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="./case-studies" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">運輸物流の事例</span>
+      </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--orange-100); color: var(--orange-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">運輸物流</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-06-29</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">従業員40名の軽貨物運送会社／配車確認を整えて連絡時間を減らした話</h1>
+
+        <!-- タグ表示エリア -->
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="case-studies.html?tag=%E9%81%8B%E8%BC%B8%E7%89%A9%E6%B5%81" class="article-tag">運輸物流</a>
+            <a href="case-studies.html?tag=%E9%85%8D%E8%BB%8A%E7%AE%A1%E7%90%86" class="article-tag">配車管理</a>
+            <a href="case-studies.html?tag=%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96" class="article-tag">業務効率化</a>
+            <a href="case-studies.html?tag=AI%E6%B4%BB%E7%94%A8" class="article-tag">AI活用</a>
+            <!-- タグは手動で以下の形式で追加してください -->
+            <!-- <a href="case-studies?tag=タグ名" class="article-tag">タグ名</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メイン画像 -->
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="images/case-placeholder.svg" alt="従業員40名の軽貨物運送会社／配車確認を整えて連絡時間を減らした話" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <!-- 記事本文 -->
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+
+        <section style="margin-bottom: 3rem;">
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"># 従業員40名の軽貨物運送会社／配車確認を整えて連絡時間を減らした話</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 運輸・物流業／軽貨物運送／配車係／従業員40名規模の事例</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">課題：配送状況を確認するたびに電話と紙メモへ戻っていた</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">関東の軽貨物運送会社では、毎朝の配車と日中の配送状況確認に大きな時間がかかっていました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配車係の方は、朝からドライバーの予定、荷物の種類、納品先、車両の状態を確認します。そこまではどの運送会社でも普通の業務です。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">問題は、その情報が電話、紙メモ、個人のスマホ、事務所の表に分かれていたことでした。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配車係の方は、最初のヒアリングでこう話していました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「誰がどこまで行っているか、結局電話しないと分からないんです」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配送中のドライバーへ何度も確認する。戻ってきたメモを事務所で転記する。車両点検の記録は紙で残す。急な依頼が入ると、どの車両が近いかを頭の中で探す。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">一つひとつは小さな確認です。しかし、毎日積み重なると大きな負担になります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">当初の状況は次の通りでした。</p>
+<ul style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li>配車・ルート作成に朝だけで約2時間</li>
+<li>配送状況確認は1日12回前後</li>
+<li>車両点検記録は1台あたり約20分</li>
+<li>急な変更時、事務所内で確認が重複</li>
+<li>配送後の振り返りが残りにくい</li>
+</ul>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配車係の方は「忙しい日は、配車をしているのか、確認電話をしているのか分からなくなる」と言っていました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">これでは、配送品質を上げるための改善に時間を使えません。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">施策：入力する画面と共有表を作り、確認の流れを一本化した</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">弊社で行ったことは、大きなシステムを入れることではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">まず、今ある業務の流れを整理しました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">誰が、いつ、何を確認しているのか。どの情報が配車判断に必要なのか。どの確認は電話でなくてもよいのか。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">そこを配車係、ドライバー、管理者の3つの立場に分けて見直しました。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ1：配送前に必要な情報を決める</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初に、朝の配車で必要な項目を絞りました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">荷物の種類、配送先エリア、希望時間帯、車両、担当ドライバー、注意事項。この6項目を中心に、事務所側が入力する画面を準備しました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ここで大事なのは、入力項目を増やしすぎないことです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">以前は、念のために多くのメモを残していました。しかし、毎朝使う画面が重いと誰も続きません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「この6つだけなら朝でも入れられます」と配車係の方が言えるところまで削りました。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ2：配送中の確認を短い報告に変える</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">次に、配送中の報告を短くしました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ドライバーがスマホから、出発、到着、完了、遅れそう、確認必要の5つを選べるようにしました。長文入力は任意です。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">これにより、事務所は全員に電話しなくても、現在の状態を一覧で確認できます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">専門的に言えば情報をためておく場所を作った形ですが、現場にはそう説明していません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「配送状況が一枚の表に集まるようにします」と伝えました。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ3：点検記録と日報を後から見返せる形にする</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最後に、車両点検と日報も同じ流れに入れました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">紙の点検表をそのまま置き換えるのではなく、よく見る項目だけを先に入力画面化しました。異常なしの場合は短く終わり、気になる点がある時だけ写真とメモを残します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">管理者は、後から日付、車両、ドライバーで確認できます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">これにより、「あの時のメモはどこだっけ」という探す時間が減りました。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">成果：朝の配車が短くなり、日中の確認電話も減った</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">導入後、まず変わったのは朝の空気でした。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配車係の方は、以前より早く全体を見渡せるようになりました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「電話をかける前に、まず一覧を見る癖がつきました」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この一言が大きな変化でした。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">数字でも、次のような効果が出ました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 項目 | Before | After | 変化 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">|------|--------|-------|------|</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 配車・ルート作成時間 | 約2時間 | 約45分 | 約70%削減 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 配送状況確認 | 1日12回前後の電話確認 | 一覧確認中心 | 電話の重複を削減 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 車両点検記録 | 20分/台 | 8分/台 | 約60%短縮 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 顧客満足度 | 85% | 90% | 5ポイント改善 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 燃費 | 基準値 | 8%改善 | ルート見直しの効果 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">もちろん、全てが初日からうまくいったわけではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初の1週間は、報告を忘れるドライバーもいました。入力が面倒だという声もありました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">そこで、入力画面をさらに短くし、事務所側からも「報告してくれて助かった」と伝えるようにしました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">現場に定着するには、仕組みだけでなく、使う理由が必要です。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">なぜ効果が出たか：配車係の頭の中にあった情報を共有できたから</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">今回のポイントは、AIを使ったことそのものではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配車係の頭の中に集まっていた情報を、事務所全体で見られる形にしたことです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">以前は、配車係が休むと状況が分かりにくくなっていました。急な問い合わせが来ても、担当者に聞かないと答えられない場面がありました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">入力画面と共有表を整えることで、確認の入口がそろいました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">AIは、その後の改善で使えます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">たとえば、遅れやすいエリアを見つける。点検メモからよく出る不具合をまとめる。過去の配送実績をもとに、無理のある予定を事前に知らせる。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ただし、最初からAIに配車判断を丸投げしたわけではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">まず人が判断しやすい形に情報を整える。そのうえで、AIに補助させる。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この順番が現実的です。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">他の運送会社でも応用できること</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">軽貨物運送に限らず、同じ考え方は多くの現場で使えます。</p>
+<ul style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li>配送業：配送状況と点検記録の共有</li>
+<li>設備工事業：現場到着、作業完了、写真報告の整理</li>
+<li>清掃業：担当現場と作業報告の確認</li>
+<li>訪問サービス業：訪問予定と完了報告の共有</li>
+<li>小売配送：店舗別納品状況の見える化</li>
+</ul>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">大切なのは、最初から完璧な管理画面を作ろうとしないことです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">毎日使う確認を1つ選び、そこだけを短くする。現場が入力しやすい形にする。管理者が一覧で見られるようにする。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この小さな改善だけでも、連絡の重複はかなり減ります。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">導入時に気をつけたこと：ドライバーの負担を増やさない</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この事例で特に気をつけたのは、ドライバー側の入力を増やしすぎないことです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">事務所は情報が多いほど安心します。しかし、現場で入力する人にとっては、項目が1つ増えるだけでも負担になります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">そこで、最初の運用では「出発」「到着」「完了」「遅れそう」「確認必要」の5つを中心にしました。細かいメモは任意です。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">また、入力忘れを責めるのではなく、入力があると事務所からの電話が減ることを伝えました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配車係の方も、毎朝の確認で「昨日の報告があったから助かりました」と声をかけるようにしました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">こうした小さな声かけが、仕組みの定着には重要です。業務効率化は画面を作るだけでは続きません。使う人が「自分にも得がある」と感じられるようにする必要があります。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">まとめ：配車の改善は、電話を減らすことから始められる</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">今回の軽貨物運送会社では、配車そのものをAIに任せたわけではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">まず、電話と紙メモに分かれていた情報を整えました。ドライバーが短く報告できるようにし、事務所が一覧で確認できるようにしました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">その結果、朝の配車時間は約2時間から45分へ短縮し、車両点検記録も20分から8分へ短くなりました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">配車係の方は最後にこう話していました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「全部を覚えていなくても、まず表を見れば話ができるようになりました」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この状態を作ることが、現場の業務効率化の第一歩です。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">---</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">気になる業務があれば、お気軽にお声がけください。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">弊社では中小企業のAI活用・システム開発の伴走支援を行っています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="https://digitool-lab.com/contact.html" target="_blank" rel="noopener">無料相談はこちら</a></p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><!-- IMAGE_PLANS: [{"role":"hero","position":0,"size":"1600x900","prompt":"横長画像 1600x900。シーン: 軽貨物運送会社の配車係が配送予定と車両点検記録をパソコンで確認している場面。日本の現場・事務所の雰囲気、自然光、写実寄りだが柔らかい、文字やロゴは入れない。"},{"role":"inline","position":1,"prompt":"横長の本文差し込み画像。電話と紙メモで状況確認していたBeforeシーン。Before/Afterが直感的に伝わる、写真風または落ち着いた図解、文字は最小限。"},{"role":"inline","position":2,"prompt":"横長の本文差し込み画像。配送状況が一覧表に集まり、配車係が確認しているAfterシーン。Before/Afterが直感的に伝わる、写真風または落ち着いた図解、文字は最小限。"},{"role":"inline","position":3,"prompt":"横長の本文差し込み画像。配車時間と点検記録時間のBefore/After比較図。Before/Afterが直感的に伝わる、写真風または落ち着いた図解、文字は最小限。"}] --></p>
+
+</section>
+
+      </div>
+    </article>
+
+    <!-- 関連事例・CTA -->
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="./case-studies" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="./contact" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="images/logo-160.webp" alt="株式会社デジタルツール研究所" class="footer-logo" width="160" height="160" decoding="async" loading="lazy">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒331-0821<br>
+          埼玉県さいたま市北区別所町738-3<br>
+          TEL: <a href="tel:0487007030">048-700-7030</a></p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="./services/consulting">DX伴走サポート</a></li>
+          <li><a href="./services/training">フルオーダーメイドAI研修</a></li>
+          <li><a href="./services/development">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="./case-studies">ご支援事例</a></li>
+          <li><a href="./about">会社情報</a></li>
+          <li><a href="./service">サービス一覧</a></li>
+          <li><a href="./contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25a29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Download Modal (全ページ共通) -->
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js?v=2026060207"></script>
+</body>
+</html>
+
+
+
