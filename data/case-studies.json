@@ -1,5 +1,20 @@
 [
   {
+    "id": "case-150",
+    "title": "従業員32名の金属加工業／顧客管理を整えて受注率を25%から35%へ上げた話",
+    "summary": "金属加工業で商談メモと次回連絡を整え、営業会議とフォロー漏れを改善した事例。",
+    "industry": "hp",
+    "date": "2026-06-30",
+    "tags": [
+      "hp",
+      "case-study",
+      "金属加工業",
+      "営業効率化"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-150.webp",
+    "url": "blog/hp-metal-sales-customer-management-20260701.html"
+  },
+  {
     "id": "case-149",
     "title": "従業員40名の軽貨物運送会社／配車確認を整えて連絡時間を減らした話",
     "summary": "配車係が電話と紙メモで配送状況を追っていた軽貨物運送会社で、入力画面と共有表を整え、配車・ルート作成時間と車両点検記録を短縮した事例。",
