@@ -1,5 +1,20 @@
 [
   {
+    "id": "case-155",
+    "title": "従業員26名の訪問看護ステーション／報告書作成を1時間から5分に短縮した話",
+    "summary": "訪問看護の記録、報告書、郵送手配を同じ流れに整え、AIで下書きを作るHP向け事例記事。",
+    "industry": "訪問看護",
+    "date": "2026-07-06",
+    "tags": [
+      "訪問看護",
+      "AI活用",
+      "報告書作成",
+      "医療介護DX"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-155.webp",
+    "url": "blog/visit-nursing-ai-report-portal.html"
+  },
+  {
     "id": "case-154",
     "title": "従業員14名の調査会社／アンケート集計を整えて報告書作成を65%減らした話",
     "summary": "自由記述分類と報告書たたき台作成をAIで補助し、調査レポート作成を18時間から6時間へ短縮した事例。",
