@@ -1,5 +1,21 @@
 [
   {
+    "id": "case-158",
+    "title": "従業員18名の観光施設／手書き点検を整えて設備不具合を75%減らした話",
+    "summary": "観光施設の施設管理者が、紙の点検表を入力画面と写真付き一覧に変え、点検時間と設備不具合を減らした事例。",
+    "industry": "観光施設",
+    "date": "2026-07-11",
+    "tags": [
+      "観光施設",
+      "施設点検",
+      "Googleフォーム",
+      "GAS",
+      "業務効率化"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-158.webp",
+    "url": "blog/tourism-inspection-google-form-gas.html"
+  },
+  {
     "id": "case-157",
     "title": "生徒75名の音楽教室／レッスン調整を月20時間から6時間に減らした話",
     "summary": "音楽教室が生徒情報と希望条件を整理し、AIで候補案を作ってレッスン調整と発表会準備を軽くした事例。",
