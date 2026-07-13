@@ -1,5 +1,22 @@
 [
   {
+    "id": "case-160",
+    "title": "従業員15名の印刷業／案件管理を12時間から5時間に短縮した話",
+    "summary": "印刷業の案件受付、進捗管理、確認漏れ防止を入力画面とスプレッドシート、AI確認で整えた事例。",
+    "industry": "HP",
+    "date": "2026-07-13",
+    "tags": [
+      "HP",
+      "印刷業",
+      "案件管理",
+      "Googleフォーム",
+      "GAS",
+      "ChatGPT"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-160.webp",
+    "url": "blog/printing-case-management-20260710.html"
+  },
+  {
     "id": "case-159",
     "title": "従業員8名のビストロ／企業向けランチ契約を月8件から20件に増やした話",
     "summary": "企業向けランチ営業の聞き取り項目と提案の型を整え、契約数・継続率・平日売上を改善した飲食店事例。",
