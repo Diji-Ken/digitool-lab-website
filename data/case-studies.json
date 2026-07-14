@@ -1,5 +1,21 @@
 [
   {
+    "id": "case-161",
+    "title": "従業員12名の内装会社／壁紙確認の移動を月9時間減らした話",
+    "summary": "壁紙確認に平均1〜3時間かかっていた従業員12名の内装会社が、熟練者の判断を画像とルールに整理し、営業1人あたり月9時間・138kmの移動を減らした事例。",
+    "industry": "内装業",
+    "date": "2026-07-14",
+    "tags": [
+      "内装業",
+      "職人技",
+      "AI活用",
+      "データ化",
+      "case-study"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-161.webp",
+    "url": "blog/hp-interior-wallpaper-ai-identification-20260715.html"
+  },
+  {
     "id": "case-160",
     "title": "従業員15名の印刷業／案件管理を12時間から5時間に短縮した話",
     "summary": "印刷業の案件受付、進捗管理、確認漏れ防止を入力画面とスプレッドシート、AI確認で整えた事例。",
