@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">事務担当者の確認画面例</title>
+  <desc id="desc">納期順の一覧と変更、確認待ち、確認済みを分け、人が確認して確定する画面</desc>
+  <rect width="1200" height="675" rx="32" fill="#F2F4F7"/>
+  <rect x="28" y="28" width="1144" height="619" rx="26" fill="#FFFFFF" stroke="#D0D5DD"/>
+  <rect x="28" y="28" width="218" height="619" rx="26" fill="#162033"/>
+  <circle cx="72" cy="72" r="18" fill="#F97316"/><text x="102" y="79" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">依頼確認</text>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="14">
+    <rect x="48" y="122" width="178" height="44" rx="10" fill="#22304A"/><text x="70" y="149" font-weight="800" fill="#FFFFFF">本日の確認</text><rect x="188" y="132" width="25" height="24" rx="12" fill="#F97316"/><text x="200" y="149" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">3</text>
+    <text x="70" y="205" fill="#CBD5E1">すべての依頼</text><text x="70" y="250" fill="#CBD5E1">変更あり</text><text x="70" y="295" fill="#CBD5E1">確認済み</text>
+  </g>
+  <text x="290" y="82" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="26" font-weight="800" fill="#162033">今日、確認が必要な依頼</text>
+  <text x="290" y="112" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="14" fill="#667085">全件を探さず、変更と曖昧な記述から確認できます</text>
+  <rect x="935" y="66" width="194" height="42" rx="12" fill="#FFF7ED"/><circle cx="960" cy="87" r="8" fill="#F97316"/><text x="978" y="92" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#C2410C">AI候補 2件</text>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="290" y="148" width="839" height="52" rx="10" fill="#F8FAFC"/>
+    <text x="310" y="180" font-size="12" font-weight="800" fill="#667085">納期</text><text x="405" y="180" font-size="12" font-weight="800" fill="#667085">取引先 / 型番</text><text x="650" y="180" font-size="12" font-weight="800" fill="#667085">変更内容・備考</text><text x="974" y="180" font-size="12" font-weight="800" fill="#667085">状態</text>
+    <rect x="290" y="208" width="839" height="94" rx="12" fill="#FFF7ED" stroke="#FDBA74"/>
+    <text x="310" y="248" font-size="14" font-weight="800" fill="#C2410C">7/24</text><text x="405" y="241" font-size="14" font-weight="800" fill="#162033">〇〇工業</text><text x="405" y="266" font-size="13" fill="#667085">AB-120　数量 12</text><rect x="650" y="229" width="250" height="32" rx="8" fill="#FFFFFF"/><text x="665" y="250" font-size="13" fill="#344054">「梱包は前回と同じ」</text><text x="650" y="282" font-size="12" font-weight="700" fill="#C2410C">AI: 前回仕様の確認が必要そうです</text><rect x="974" y="235" width="124" height="36" rx="18" fill="#F97316"/><text x="1036" y="258" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">人に確認</text>
+    <rect x="290" y="314" width="839" height="84" rx="12" fill="#FFFFFF" stroke="#E4E7EC"/>
+    <text x="310" y="351" font-size="14" font-weight="800" fill="#162033">7/26</text><text x="405" y="346" font-size="14" font-weight="800" fill="#162033">△△電機</text><text x="405" y="371" font-size="13" fill="#667085">CD-082　数量 40</text><text x="650" y="355" font-size="13" fill="#344054">数量 30 → 40へ変更</text><rect x="974" y="338" width="124" height="36" rx="18" fill="#FEF3F2"/><text x="1036" y="361" text-anchor="middle" font-size="13" font-weight="800" fill="#B42318">変更あり</text>
+    <rect x="290" y="410" width="839" height="84" rx="12" fill="#FFFFFF" stroke="#E4E7EC"/>
+    <text x="310" y="447" font-size="14" font-weight="800" fill="#162033">7/29</text><text x="405" y="442" font-size="14" font-weight="800" fill="#162033">□□製作所</text><text x="405" y="467" font-size="13" fill="#667085">EF-310　数量 8</text><text x="650" y="451" font-size="13" fill="#344054">変更なし・入力項目そろっています</text><rect x="974" y="434" width="124" height="36" rx="18" fill="#ECFDF3"/><text x="1036" y="457" text-anchor="middle" font-size="13" font-weight="800" fill="#027A48">確認済み</text>
+  </g>
+  <rect x="290" y="526" width="839" height="84" rx="16" fill="#162033"/>
+  <circle cx="333" cy="568" r="20" fill="#F97316"/><path d="m324 568 6 6 13-15" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="370" y="558" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">最終判断は人が行う</text>
+  <text x="370" y="584" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="13" fill="#CBD5E1">AIは見落としやすい箇所を示すだけ。納期・数量・仕様を勝手に確定しません。</text>
+</svg>

@@ -5,6 +5,22 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const allowedNoindexFiles = new Set([
+  // Case articles remain noindex until sources and numerical claims are verified.
+  'blog/bistro-corporate-lunch-sales-810.html',
+  'blog/case-karaoke-event-planning.html',
+  'blog/case-logistics-dispatch-confirmation.html',
+  'blog/clinic-records-ai-form-20260628.html',
+  'blog/coffee-shop-ai-service-proposal-20260705.html',
+  'blog/fitness-club-member-ai-support-20260628.html',
+  'blog/hp-interior-wallpaper-ai-identification-20260715.html',
+  'blog/hp-metal-sales-customer-management-20260701.html',
+  'blog/izakaya-food-cost-ai-management-20260628.html',
+  'blog/music-school-lesson-schedule-ai.html',
+  'blog/printing-case-management-20260710.html',
+  'blog/research-company-survey-report-65-percent.html',
+  'blog/ryokan-plan-ai-70percent.html',
+  'blog/tourism-inspection-google-form-gas.html',
+  'blog/visit-nursing-ai-report-portal.html',
   'analytics-template.html',
   'apps/index.html',
   'apps/privacy.html',
