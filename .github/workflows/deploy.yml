@@ -68,3 +68,88 @@ jobs:
           **/upload-all.sh
           **/data/gsc/**
           data/gsc/**
+
+  # デプロイが失敗したらIssueを立てて気づけるようにする。
+  # 2026-07-23〜08-01の9日間、CIが落ち続けていたのに誰も気づかず記事が本番404のままだった。
+  # Chatwork通知にはトークンをSecretへ置く必要があり、漏洩の置き場所を増やしたくないため、
+  # GITHUB_TOKEN だけで完結するIssue作成にしている（Issueが立てばGitHubの標準通知でメールが届く）。
+  notify-failure:
+    needs: deploy
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const title = '🚨 本番デプロイが失敗しています';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'deploy-failure',
+            });
+            const body = [
+              '本番デプロイが失敗しました。**記事が公開されていません。**',
+              '',
+              `- 失敗した実行: ${runUrl}`,
+              `- ブランチ: \`${context.ref}\``,
+              `- コミット: ${context.sha.slice(0, 7)}`,
+              '',
+              '## 確認の手順',
+              '1. 上のリンクでログを開き、どのステップで落ちたか見る',
+              '2. 監査系（audit-*）で落ちた場合はリンク切れやnoindexを疑う',
+              '3. FTPで落ちた場合は `docs/ftp-deploy-recovery-20260802.md` を読む',
+              '',
+              '直ってデプロイが成功したら、このIssueは自動で閉じます。',
+            ].join('\n');
+            if (existing.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.data[0].number,
+                body: `また失敗しました（${new Date().toISOString().slice(0, 16)}）: ${runUrl}`,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['deploy-failure'],
+              });
+            }
+
+  # 復旧したら、開いている失敗Issueを閉じる
+  close-failure-issue:
+    needs: deploy
+    if: success()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'deploy-failure',
+            });
+            for (const issue of open.data) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `デプロイが成功したので閉じます（${new Date().toISOString().slice(0, 16)}）。`,
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+              });
+            }
