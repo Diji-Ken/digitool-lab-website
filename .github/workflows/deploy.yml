@@ -51,6 +51,11 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        # 2026-08-01: 平文FTPだと GitHub Actions から接続できずタイムアウトするようになった
+        #   （手元の国内回線からは 220 応答あり。サーバーは AUTH TLS successful を返すためFTPS対応）
+        #   接続に30秒かかる場合もあるため timeout も延長する
+        protocol: ftps
+        timeout: 120000
         server-dir: /digitool-lab.com/public_html/
         local-dir: ./
         exclude: |
