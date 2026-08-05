@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員12名の養鶏農家／作業記録60分を15分に短縮した話 - ご支援事例 - 株式会社デジタルツール研究所</title>
+    <meta name="description" content="手書きの作業・出荷・販売記録を入力画面と自動集計へまとめ、養鶏農家が日々の記録と月末の収益確認を短くした再構成事例です。">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+<link rel="stylesheet" href="../css/style.css?v=2026061401">
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../" class="logo">
+        <img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所 ロゴ" width="160" height="160" decoding="async">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about">私たちについて</a>
+          <a href="../service">事業内容</a>
+          <a href="../case-studies" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about">私たちについて</a>
+        <a href="../service">事業内容</a>
+        <a href="../case-studies" class="active">ご支援事例</a>
+        <a href="../contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <!-- パンくずナビ -->
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="../case-studies" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">養鶏の事例</span>
+      </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--orange-100); color: var(--orange-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">養鶏</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-08-05</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">従業員12名の養鶏農家／作業記録60分を15分に短縮した話</h1>
+
+        <!-- タグ表示エリア -->
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies?tag=%E9%A4%8A%E9%B6%8F" class="article-tag">養鶏</a>
+            <a href="../case-studies?tag=%E4%BD%9C%E6%A5%AD%E8%A8%98%E9%8C%B2" class="article-tag">作業記録</a>
+            <a href="../case-studies?tag=%E5%87%BA%E8%8D%B7%E7%AE%A1%E7%90%86" class="article-tag">出荷管理</a>
+            <a href="../case-studies?tag=%E8%BE%B2%E6%A5%ADDX" class="article-tag">農業DX</a>
+            <a href="../case-studies?tag=%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD" class="article-tag">中小企業</a>
+            <!-- タグは手動で以下の形式で追加してください -->
+            <!-- <a href="../case-studies?tag=タグ名" class="article-tag">タグ名</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メイン画像 -->
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-placeholder.svg" alt="従業員12名の養鶏農家／作業記録60分を15分に短縮した話" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <!-- 記事本文 -->
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+
+        <section style="margin-bottom: 3rem;">
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"># 従業員12名の養鶏農家／作業記録60分を15分に短縮した話</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 関東地方・従業員12名の養鶏農家／現場担当の事例</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">※本記事の業務場面と会話は、2025年7月時点の事例データに記録された課題・施策・数値をもとに、個社を特定できない形で編集部が再構成しています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">養鶏の現場では、飼育、清掃、健康確認、採卵、出荷、販売まで、毎日の記録が経営と品質を支えます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">紙の記録は現場ですぐ書ける一方、後から比べる時に時間がかかります。作業日誌、出荷伝票、販売メモが別々だと、月末に収益を確認するまで全体が見えません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">今回の事例は、関東地方の従業員12名の養鶏農家です。事例データの定量的効果欄には、作業記録60分から15分、出荷記録15分から8分、収益把握3時間から30分という変化が記録されています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">改善に使ったのは、現場で入力できる画面、自動集計、AIによる報告文の下書きです。機械やセンサーを追加するのではなく、すでに人が確認している内容を同じ形で残しました。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">課題：紙には残っているのに、月末まで比べられない</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">改善前は、作業内容を手書きの日誌へ記録していました。担当者によって書き方が違い、同じ作業でも表現がそろいません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">現場担当者は「記録はあります。でも先月と比べるには、紙を並べて読み直す必要がありました」と話していました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">出荷記録も別の紙です。数量、出荷先、日付は分かりますが、作業日誌や販売情報とつながっていないため、どの時期に作業が増え、出荷や収益がどう変わったかを確認しにくい状態でした。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">顧客からの問い合わせ対応には一件平均15分という課題記録もあります。商品の説明、在庫、出荷予定を担当者へ確認してから返事をするためです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">品質管理の記録は、経験者の判断へ依存していました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「異常があれば分かる。でも、後から別の人へ理由を説明できる記録になっていない」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この悩みを解くため、紙をなくすことではなく、比較に使える項目をそろえることから始めました。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">施策：現場入力と月末集計を一つの流れにした</h2>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ1：記録の目的を三つに分ける</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初に、作業、出荷・販売、品質確認を分けました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">作業記録には、日付、担当、作業区分、時間、気づきを入れます。出荷記録には、数量、出荷先、予定日、完了を入れます。品質確認には、人が見た状態と追加対応を残します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">すべてを一つの長い入力画面にしません。現場で必要な画面だけを開けるようにし、一回の入力を短くしました。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ2：スマートフォンからその場で入力する</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">作業後に事務所へ戻って紙へ書くのではなく、現場でスマートフォンから入力します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ただし、操作へ慣れるまでは紙も残し、二週間ほど並行して抜けを確認しました。入力を強制して現場を止めるのではなく、使いにくい項目を毎日直します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">担当者は「選ぶ項目が多すぎないので、作業の区切りで残せるようになった」と振り返ります。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ3：出荷と販売を同じ番号でつなぐ</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">出荷には記録番号を付け、出荷先、数量、日付、販売確認をつなぎました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">月末に紙を集めなくても、未確認の出荷と販売状況を一覧で見られます。数字が合わない場合は、元の記録番号へ戻って確認します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">金額の修正や請求確定は自動にしません。担当者が伝票と照合し、確認者を残します。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ4：AIは要約と問い合わせ下書きへ使う</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">AIは、一週間の作業記録を要約し、増えた作業や未確認項目を示す役割です。顧客からの問い合わせには、確認済みの出荷情報をもとに返信の下書きを作ります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">鶏の健康、品質、出荷可否をAIが決めるわけではありません。現場担当者が実物を確認し、必要に応じて専門家へ相談します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「文章は作ってもらえる。でも品質の判断は現場でしかできません」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この境界を決めたことで、AIのもっともらしい文章を事実確認なしで送ることを避けました。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ5：週に一度、記録と実績を比べる</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">毎週見るのは、作業時間、出荷数量、未確認記録、問い合わせ内容です。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">数字が変わった理由を、作業担当者の責任だけにしません。季節、注文、作業内容、入力漏れなど複数の要因を確認します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">記録項目を増やす場合も、「次の判断に使うか」を基準にします。使わない情報を集めると、現場の入力負担だけが増えます。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ6：二か月かけて段階的に広げる</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">事例データでは、現状分析4日、設計5日、入力画面と自動集計6日、AI支援3日、研修1週間、段階運用2週間を含む二か月の導入が記録されています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初から全作業を切り替えず、作業記録、出荷、問い合わせの順に広げました。各段階で入力時間と確認漏れを測ります。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">成果：記録が短くなり、収益確認を月末の一仕事にしなくなった</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">事例データの定量的効果欄には、次の変化が記録されています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 項目 | Before | After |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">|---|---:|---:|</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 作業記録時間 | 60分 | 15分 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 出荷記録時間 | 15分 | 8分 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 収益把握時間 | 3時間 | 30分 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 品質安定性 | 90％ | 95％ |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 顧客満足度 | 80％ | 88％ |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">品質安定性や顧客満足度は、記録の仕組みだけで決まるものではありません。飼育環境、商品、担当者、顧客構成、調査方法などの影響を受けます。自社で試す場合は、同じ定義で基準値を取ります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">現場では、月末の収益確認が短くなったことで、数字の違いを翌月まで持ち越しにくくなりました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「紙を減らしたことより、先週と今週をすぐ比べられることが助かった」という声が出ました。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">なぜ効果が出たのか</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">第一に、紙をデジタルへ置き換えることだけを目的にしませんでした。作業、出荷、品質という用途を分け、比較に使う項目をそろえました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">第二に、現場で短く入力できる形にしました。後でまとめて入力する運用では、記憶違いと負担が増えます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">第三に、記録番号で出荷と販売をつなぎました。月末集計のために別の表へ転記する回数を減らせます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">第四に、AIの役割を要約と下書きへ限定しました。健康、品質、出荷可否は人が判断します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">第五に、空いた時間を記録件数の追加だけへ使わず、品質確認と顧客説明へ戻しました。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">他の業種でも応用できる</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同じ流れは、現場記録と出荷・販売が分かれている小規模事業へ応用できます。</p>
+<ul style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li>農産物生産：作業、収穫、出荷、販売をつなぐ</li>
+<li>食品製造：製造記録、品質確認、出荷を同じ番号で追う</li>
+<li>菓子店：仕込み、製造数、廃棄、販売を比べる</li>
+<li>花卉農家：作業、出荷、注文、在庫を整理する</li>
+</ul>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">いずれも、AIへ品質判断を任せず、記録の整理と報告下書きから始めます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">導入前に確認したい4点</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">誰が入力するか、誰が修正できるか、品質判断を誰が行うか、30日後に何を測るかを決めます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">測る数字は、作業記録時間だけではありません。入力漏れ、確認時間、出荷記録の修正、問い合わせの回答時間も見ます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">また、現場の通信が不安定な場合や手袋を外しにくい作業では、入力のタイミングを無理に固定しません。紙の簡易メモや後入力を残し、業務を止めない方法を選びます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">まとめ</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">養鶏農家の作業記録を60分から15分へ変えたのは、AIが飼育を判断したからではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">作業、出荷、販売、品質の記録項目をそろえる。現場で短く入力する。AIは要約と問い合わせ下書きへ使い、品質と出荷は人が確認する。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この順番が、日々の記録を月末の集計ではなく、翌日の改善へ使える情報に変えます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">気になる業務があれば、お気軽にお声がけください。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">弊社では中小企業のAI活用・システム開発の伴走支援を行っています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="https://digitool-lab.com/contact" target="_blank" rel="noopener">無料相談はこちら</a></p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><!-- IMAGE_PLANS: [{"role":"hero","position":0,"size":"1600x900","prompt":"関東地方の小規模養鶏農家。日本人の作業担当者が鶏舎の外でスマートフォンに作業と出荷の記録を入力し、同僚が卵の出荷箱を確認している。清潔で自然な農場、写真風、機械センサー・文字・ロゴなし。"},{"role":"inline","position":1,"size":"1200x675","prompt":"養鶏農家のBefore場面。手書き作業日誌、出荷伝票、販売メモが別々に置かれ、担当者が月末集計に困っている。日本の農場事務所、写真風、文字なし。"},{"role":"inline","position":2,"size":"1200x675","prompt":"作業入力、出荷記録、自動集計、AIによる要約候補、人の品質確認という流れを示す横長図解。オレンジ#FF9000、白、ダークグレー。鶏の健康・品質判断は人が行うことを表現。"}] --></p>
+
+</section>
+
+      </div>
+    </article>
+
+    <!-- 関連事例・CTA -->
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所" class="footer-logo" width="160" height="160" decoding="async" loading="lazy">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒331-0821<br>
+          埼玉県さいたま市北区別所町738-3<br>
+          TEL: <a href="tel:0487007030">048-700-7030</a></p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting">DX伴走サポート</a></li>
+          <li><a href="../services/training">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies">ご支援事例</a></li>
+          <li><a href="../about">会社情報</a></li>
+          <li><a href="../service">サービス一覧</a></li>
+          <li><a href="../contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25a29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Download Modal (全ページ共通) -->
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js?v=2026060207"></script>
+</body>
+</html>
+
+
+
