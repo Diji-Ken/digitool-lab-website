@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員数非公開の林業会社／免税軽油の月次集計を約3時間から30分以下へ短縮した話 - ご支援事例 - 株式会社デジタルツール研究所</title>
+    <meta name="description" content="愛知県の林業会社が、山中の紙記録とExcel転記を見直し、3つの現場アプリを3日で作成。免税軽油の月次集計を約3時間から30分以下へ短縮した公開事例を、現場定着の順番から解説します。">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+<link rel="stylesheet" href="../css/style.css?v=2026061401">
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../" class="logo">
+        <img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所 ロゴ" width="160" height="160" decoding="async">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about">私たちについて</a>
+          <a href="../service">事業内容</a>
+          <a href="../case-studies" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about">私たちについて</a>
+        <a href="../service">事業内容</a>
+        <a href="../case-studies" class="active">ご支援事例</a>
+        <a href="../contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <!-- パンくずナビ -->
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="../case-studies" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">林業の事例</span>
+      </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--orange-100); color: var(--orange-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">林業</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-08-22</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">従業員数非公開の林業会社／免税軽油の月次集計を約3時間から30分以下へ短縮した話</h1>
+
+        <!-- タグ表示エリア -->
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies?tag=%E6%9E%97%E6%A5%AD" class="article-tag">林業</a>
+            <a href="../case-studies?tag=%E7%8F%BE%E5%A0%B4%E3%82%A2%E3%83%97%E3%83%AA" class="article-tag">現場アプリ</a>
+            <a href="../case-studies?tag=%E3%83%8E%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89" class="article-tag">ノーコード</a>
+            <a href="../case-studies?tag=%E7%B4%99%E6%A5%AD%E5%8B%99%E6%94%B9%E5%96%84" class="article-tag">紙業務改善</a>
+            <!-- タグは手動で以下の形式で追加してください -->
+            <!-- <a href="../case-studies?tag=タグ名" class="article-tag">タグ名</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メイン画像 -->
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-placeholder.svg" alt="従業員数非公開の林業会社／免税軽油の月次集計を約3時間から30分以下へ短縮した話" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <!-- 記事本文 -->
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+
+        <section style="margin-bottom: 3rem;">
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"># 従業員数非公開の林業会社／免税軽油の月次集計を約3時間から30分以下へ短縮した話</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 林業 × 免税軽油管理・作業日報・安全報告 × 従業員数非公開の公開事例</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">愛知県豊田市で木材の伐採、搬出、出荷を行う丸兼林業有限会社では、山中で重機へ給油した量を紙へ記録していました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">免税軽油の申請に必要な数字ですが、作業場所は電波が届きにくく、雨や泥もあります。給油後に移動車へ戻ってノートへ書くため、メーター値を忘れる、紙が汚れる、記入が抜けるという問題が起きていました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">さらに社長が記録をExcelへ入力し直し、年間<strong>40〜50時間</strong>を転記と集計へ使用。月次集計だけでも約<strong>3時間</strong>かかっていました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同社は、プログラムを書かずに入力画面を作れるツールを使い、免税軽油管理、作業日報、ヒヤリハット報告の3つのアプリを<strong>3日</strong>で作成。月次集計を<strong>30分以下</strong>へ短縮し、事務工数を約<strong>80％削減</strong>しました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">これはアステリアが2026年7月24日に公表した導入事例です。従業員数は公開資料で確認できないため、本記事では「従業員数非公開」としています。また、同じ時間削減が他社でも再現されることを保証するものではありません。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">課題：紙へ書く場所と、数字を使う場所が離れていた</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">問題は紙そのものだけではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">給油する場所は山中。申請用に集計する場所は事務所です。その間を人が記憶と紙でつないでいました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">公開資料をもとに状況を会話形式へ再構成すると、次のようになります。理解を助けるための再構成であり、実際の発言ではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 現場担当：「給油後すぐ別の作業へ移ると、車へ戻った時に数字があいまいになります」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 事務担当：「紙がそろうまで集計できず、抜けがあると現場へ確認し直します」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">> 経営者：「入力し直すだけで年40〜50時間かかり、数字を改善へ使うところまで進みません」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">現場の努力で補っている間は、記入漏れも確認作業も「仕方ない仕事」に見えます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">しかし流れを分けると、同じ数字を二度扱っていることが分かります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">1回目は現場の紙。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">2回目は事務所のExcel。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ここが改善の入口でした。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">施策：現場で一度入力し、その数字を集計まで使った</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同社の取り組みは、紙をスマートフォンへ置き換えただけではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">入力場所、通信環境、項目の選び方、その後の使い道まで一緒に見直しています。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ1：申請に本当に必要な項目へ絞る</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初に、機械、担当者、日付、アワーメーター値、給油量など、免税軽油の記録に必要な項目を整理します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">自由記述を増やしすぎると、表記が人によって変わり、集計時に直す仕事が残ります。機械名などは選択式にし、現場が迷わない形へそろえました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">通常と違う給油や修理中の機械など、選択肢へ入らない例外は備考へ残し、月次確認で項目追加が必要か判断します。例外を無理に通常項目へ押し込まないことも、数字の信頼性を守ります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">月末には入力漏れだけでなく、前月と比べて給油量が大きく変わった機械も確認します。数字がそろうことと、数字に説明がつくことを別々に確かめます。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ2：電波がない場所でも入力できるようにする</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">林業の現場では、常に通信できるとは限りません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">そのため、電波が届かない時も端末へ入力を残し、通信できる場所へ戻った後に送れる仕組みを使いました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">事務所では便利でも山で動かない画面では、紙へ戻ってしまいます。利用場所を先に確認したことが重要です。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ3：一度入力した数字を月次集計へ流す</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">現場で入力した給油量を、そのまま月別に合計できるようにしました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">事務担当が同じ数字をExcelへ写し直さないため、転記ミスと確認の往復を減らせます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ただし、申請前の最終確認は人が行います。異常な数値、入力漏れ、機械との対応を確認し、必要な証拠をそろえて確定します。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ4：日報と安全報告も同じ考え方で作る</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">免税軽油管理で入力が定着した後、作業日報とヒヤリハット報告にも広げました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">日報は全社員が入力し、生産量や燃費を共有。危険箇所は写真と一緒に残し、月次の振り返りへ使っています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">一つの巨大な仕組みを作るのではなく、目的ごとに小さな入力画面を分けています。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">ステップ5：現場から出た改善案を一つずつ反映する</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">公開資料では、利用後に「作業ごとの累計が見たい」といった提案が社員から出るようになったと紹介されています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初から完成を目指さず、使って初めて分かった不便を直す。社内で項目を変更できる範囲を残したため、改善が続きます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">成果：転記の時間を減らし、数字を振り返りへ使えるようになった</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">公開資料で確認できる変化は次の通りです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 項目 | Before | After | 変化 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">|---|---|---|---|</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 免税軽油の記録 | 山中で給油後、紙へ手書き | 現場の端末へ入力 | 記憶と紙への依存を削減 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| Excelへの転記 | 社長が年間40〜50時間 | 原則不要 | 二重入力を解消 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 月次集計 | 約3時間 | 30分以下 | <strong>2時間30分以上短縮</strong> |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 事務工数 | 導入前を基準 | 導入後 | <strong>約80％削減</strong> |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">| 作成期間 | 専用画面なし | 3アプリを3日で作成 | 小さく開始 |</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">短縮した時間は、単なる余白ではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">生産量や燃費を見て、作業方法を振り返る時間へ変えられます。若手がベテランへ数字を確認し、月次会議で改善を話す場面も生まれたと、同社代表はコメントしています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">一方で、公開値はこの会社の環境と運用で得られた結果です。利用人数、入力件数、申請方法、通信環境、契約費用により成果は変わります。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">なぜ効果が出たか：紙をなくすより、二度書く流れをなくした</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この事例の中心は「スマートフォンを配ったこと」ではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">現場で発生した数字を、その場で一度だけ入力し、集計と振り返りへ使える流れを作ったことです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">また、選択式の項目、通信できない時の入力、写真付き安全報告など、現場の条件に合わせています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">事務所だけで設計すると、入力項目が多すぎたり、通信できず止まったりします。同社は働く場所から逆算しました。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">横展開：屋外・移動・紙記録が重なる業種で応用できる</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同じ考え方は、次の業務にも応用できます。</p>
+<ul style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li>建設業：現場日報、資材使用量、危険箇所の報告</li>
+<li>造園業：作業時間、薬剤・燃料の使用、写真報告</li>
+<li>設備点検：点検結果、部品交換、異常写真</li>
+<li>配送業：車両点検、給油、荷待ち時間</li>
+<li>農業：収穫量、資材使用、圃場ごとの作業記録</li>
+</ul>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初の一歩は、紙を全部なくすことではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">一週間だけ記録し、「同じ数字を別の場所へ写している業務」を一つ選びます。その数字を現場で入力し、集計までつなげます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">まとめ：現場の一回入力を、申請と改善へつなげる</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">丸兼林業の事例では、免税軽油、日報、安全報告の3アプリを3日で作り、免税軽油の月次集計を約3時間から30分以下へ短縮しました。年間40〜50時間かかっていたExcel転記も解消し、事務工数を約80％削減しています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">成果を支えたのは、紙を否定したことではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">現場の通信環境と入力負担を見て、必要項目へ絞り、一度入れた数字を次の仕事へ流したことです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">気になる紙記録や二重入力があれば、お気軽にお声がけください。弊社では、現場の業務整理から入力画面づくり、集計、定着まで伴走しています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="https://digitool-lab.com/contact" target="_blank" rel="noopener">無料相談はこちら</a></p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><!-- IMAGE_PLANS: [{"role":"hero","position":0,"size":"1600x900","prompt":"横長1600×900。日本の山林作業現場で、林業会社の作業員が重機のそばでスマートフォンへ給油量を入力している自然な写真風シーン。安全装備を着用し、雨上がりの山間部。画面や機械に実在ロゴ、文字、個人情報を描かない。"},{"role":"inline","position":1,"size":"1200x675","prompt":"Beforeは山中で紙へ記録して事務所でExcelへ転記、Afterは現場で一度入力して月次集計へ流れる違いを示す平易な日本語図解。"},{"role":"inline","position":2,"size":"1200x675","prompt":"月次集計が約3時間から30分以下、事務工数約80％削減、3アプリを3日で作成という公開値を正確に示す日本語インフォグラフィック。"},{"role":"inline","position":3,"size":"1200x675","prompt":"免税軽油、作業日報、ヒヤリハット報告の3つの小さな入力画面が、集計、月次会議、安全改善へつながる日本語業務フロー図。"}] --></p>
+
+</section>
+
+      </div>
+    </article>
+
+    <!-- 関連事例・CTA -->
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所" class="footer-logo" width="160" height="160" decoding="async" loading="lazy">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒331-0821<br>
+          埼玉県さいたま市北区別所町738-3<br>
+          TEL: <a href="tel:0487007030">048-700-7030</a></p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting">DX伴走サポート</a></li>
+          <li><a href="../services/training">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies">ご支援事例</a></li>
+          <li><a href="../about">会社情報</a></li>
+          <li><a href="../service">サービス一覧</a></li>
+          <li><a href="../contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25a29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Download Modal (全ページ共通) -->
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js?v=2026060207"></script>
+</body>
+</html>
+
+
+
