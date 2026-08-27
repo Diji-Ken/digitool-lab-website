@@ -282,6 +282,61 @@ Excel、紙、LINE、口頭、手作業の転記が増えている業務を棚�
 
 DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX支援 会社 比較, DX支援 埼玉, DX支援 さいたま市, さいたま市 中小企業 DX, 中小企業DX, IT担当者がいない会社, IT担当 外注, 情シス代行 中小企業, 社外IT担当, IT顧問 埼玉, システム導入 チェックリスト, 社内ポータル 開発, 社内ポータル 導入, 社内ポータル 失敗, ナレッジ共有 システム, 申請管理 ポータル, 業務システム開発, 業務システム開発 外注, 業務システム 要件整理, 基幹システム 開発 中小企業, 顧客管理システム 開発, AI研修 企業, 生成AI研修 企業, ChatGPT研修 法人, AI研修 埼玉, AI研修 定着しない, 生成AI研修 社内定着, Excel 業務 効率化, Excel システム化 判断基準, Excel 脱却, 紙業務 デジタル化, 属人化 解消, 日報 自動化, 業務効率化, 業務自動化, システム導入支援, 課題別 DX事例, 業種別 DX支援, 補助金 DX, 補助金 システム開発, AI導入 補助金, DX 補助金 要件整理, MEO さいたま市, MEO支援, サイテーション, サイテーション支援, NAP 統一, AIO, LLMO, AI検索対策, AI検索 会社情報, もう一人のIT担当, 半社員型支援, OToMo
 
+<!-- AUTO-LATEST-CASES:START -->
+## 最新の支援事例
+
+- https://digitool-lab.com/blog/confectionery-multisite-meeting-20260822 - 5店舗の老舗菓子店／拠点会議の交通費と移動時間を月50万円以上削減した話。岩手県の老舗菓子店が、5店舗と複数営業所の連絡・会議をMicrosoft 365へ段階移行。交通費と移動時間を合わせて月50万円以上削減した公開事例を、世代をまたぐ定着の順番から解説します。
+- https://digitool-lab.com/blog/bicycle-maintenance-ai-20260823 - 従業員13名の自転車店／診断・提案を45分から20分へ短縮した話。従業員13名の自転車店が、AIの確認候補と整備士の実車判断を分け、診断・提案を45分から20分へ短縮した内部導入記録です。
+- https://digitool-lab.com/blog/architecture-design-change-ai-20260823 - 従業員12名の建築設計事務所／設計変更を8時間から2.5時間へ短縮した話。従業員12名の建築設計事務所が、設計変更の影響候補と専門家承認を分け、対応時間を8時間から2.5時間へ短縮した内部導入記録です。
+- https://digitool-lab.com/blog/wine-bar-pairing-ai-20260823 - 従業員7名のワインバー／1組の注文を1.8杯から3.2杯へ伸ばした話。従業員7名のワインバーが、AIの提案候補とスタッフの最終判断を分け、1組の注文を1.8杯から3.2杯へ伸ばした内部導入記録です。
+- https://digitool-lab.com/blog/forestry-tax-exempt-diesel-app-20260822 - 従業員数非公開の林業会社／免税軽油の月次集計を約3時間から30分以下へ短縮した話。愛知県の林業会社が、山中の紙記録とExcel転記を見直し、3つの現場アプリを3日で作成。免税軽油の月次集計を約3時間から30分以下へ短縮した公開事例を、現場定着の順番から解説します。
+- https://digitool-lab.com/blog/florist-order-management-app-20260822 - 従業員10名の生花店／注文管理を3日でアプリ化し工数を90％削減した話。年間約1万枚の紙注文書を扱う生花店が、基本情報はデータ、花のデザイン画は写真として残す注文管理アプリを3日で作成。工数を90％削減した公開事例を、紙を残す判断から解説します。
+- https://digitool-lab.com/blog/visit-nursing-ai-portal-20260821 - 3拠点の訪問看護会社／アセスメント作成を約1時間から5分へ短縮した話。3拠点の訪問看護会社が社内情報の入口を整え、生成AIを下書きへ使って新規利用者アセスメントを約1時間から約5分へ短縮した公開事例です。
+- https://digitool-lab.com/blog/visit-care-schedule-ict-20260820 - 従業員数非公開の訪問介護事業所／シフト連絡を月23時間減らし、ケア相談を月10時間増やした話。訪問介護事業所がシフトと連絡の流れをICT化し、サービス提供責任者の連絡調整を月23時間減らしてケア相談を一人あたり月10時間増やした公開事例です。
+- https://digitool-lab.com/blog/poultry-work-records-60-to-15-minutes - 従業員12名の養鶏農家／作業記録60分を15分に短縮した話。手書きの作業・出荷・販売記録を入力画面と自動集計へまとめ、養鶏農家が日々の記録と月末の収益確認を短くした再構成事例です。
+- https://digitool-lab.com/blog/transport-paper-slips-sales-summary-30-percent - 従業員43名の運送会社／売上集計を30％以上短縮した紙伝票の一元化。従業員43名の運送会社が、Excelと手書き伝票に分かれていた売上・入金・請求を一元化し、売上集計を30％以上短縮した公開事例です。
+- https://digitool-lab.com/blog/small-builder-estimate-45-days-to-5-days - 従業員3名の工務店／見積作成を約1.5か月から最短5日に短縮。従業員3名の工務店が、プラン・提案・積算・見積・設計確認を一つにつなぎ、見積作成を約1.5か月から最短5日に短縮した公開事例です。
+- https://digitool-lab.com/blog/farmstay-reservation-management-60-percent-20260801 - 従業員4名の農泊事業／予約管理の手間を6割減らした話。電話受付とExcel転記に頼っていた従業員4名の農泊事業が、インターネット予約とアンケートの電子化で予約管理の手間を6割減らし、事務効率を2倍にした公開事例を再構成します。
+- https://digitool-lab.com/blog/costume-rental-data-integration-overtime-20260801 - 従業員45名の貸衣装会社／残業を約10分の1に減らした話。衣装、付属品、顧客、接客、請求の情報が分かれていた従業員45名の貸衣装会社が、業界向け管理システムへまとめ、残業時間を約10分の1に減らした公開事例を再構成します。
+- https://digitool-lab.com/blog/healthfood-sales-slip-integration-20260801 - 従業員9名の健康食品会社／伝票発行を6分の1にした話。約5万件の販売データと手書き伝票に限界が出ていた従業員9名の健康食品会社が、販売管理と指定伝票の仕組みをつなぎ、伝票発行を6分の1、顧客数を2割増やした公開事例を再構成します。
+- https://digitool-lab.com/blog/construction-payroll-5-days-to-1-day - 従業員25名の建設会社／給与処理を5日から1日、担当を最大3名から1名へ。従業員25名の建設会社が、勤怠・給与計算・振込をつなぎ、給与処理を5日から1日、必要人員を最大3名から1名へ減らした公開事例です。
+- https://digitool-lab.com/blog/financial-planner-proposal-4-hours-to-1-hour - 従業員12名のファイナンシャルプランナー／資料作成4時間を1時間に短縮した話。相談履歴、案件の進み具合、提案資料、請求確認を一つの流れへ整え、ファイナンシャルプランナーが資料作成と案件管理の負担を減らした再構成事例です。
+- https://digitool-lab.com/blog/metal-factory-payroll-ai-25-to-7-hours - 従業員18名の金属加工業・総務／給与計算25時間を7時間に短縮した話。複雑な勤務形態と手当を整理し、AIを異常候補の抽出と説明下書きへ限定。給与計算を月25時間から7時間へ短縮し、計算ミス月3件を0件にした再構成事例。
+- https://digitool-lab.com/blog/manufacturing-daily-report-5-minutes - 従業員約60名の製造業／手書き日報の集計を3〜4日から5分にした話。従業員約60名の製造業が、手書き日報と表計算への再入力を見直し、作業終了5分後に改善対象を確認できるようにした公開事例です。
+- https://digitool-lab.com/blog/disability-support-records-2h-to-60min - 従業員30名の障害者支援施設／記録作成を2時間から60分に短縮した話。従業員30名の障害者支援施設で、記録項目と承認を整理。記録作成を2時間から60分、利用者情報検索を12分から3分へ短縮した再構成事例です。
+- https://digitool-lab.com/blog/metal-manufacturing-delivery-answer-app - 従業員8名の金属製品製造業／納期回答時間を90%削減した事例。紙と担当者の記憶に頼っていた案件管理を2〜3週間の小さな試作からアプリ化し、納期回答を早めた公的事例を読み解きます。
+- https://digitool-lab.com/blog/senior-housing-information-sharing-30 - 従業員30名の高齢者向け住宅／情報共有を週10時間から3時間に減らした話。紙と口頭に分かれていた体調・申し送り記録をスマートフォン入力と一覧表示にまとめ、情報共有を週10時間から3時間へ短縮。確認漏れも減らした高齢者向け住宅の事例です。
+- https://digitool-lab.com/blog/nail-salon-reservation-workflow-case - 従業員20名のネイルサロン／予約管理3時間を45分に減らした話。中国地方のネイルサロンが、予約・顧客メモ・売上集計を同じ入力画面と一覧へまとめ、予約管理を3時間から45分、月次売上集計を16時間から2時間へ短縮した支援事例です。
+- https://digitool-lab.com/blog/home-care-support-records-8 - 従業員8名の居宅介護支援／記録作成を2.5時間から45分に減らした話。居宅介護支援事業所が記録・利用者情報・ケアプランの下書きを一つの流れへ整理し、記録作成を2.5時間から45分、情報検索を10分から3分へ短縮した事例です。
+- https://digitool-lab.com/blog/printing-sales-proposal-20260719 - 従業員22名の印刷会社／提案資料4時間を1時間に減らした事例。関西の従業員22名の印刷会社で、顧客への聞き取りと過去の成功提案を整理し、AIによる提案の下書き支援を導入。資料作成は4時間から1時間、受注率は35%から44%へ改善した事例です。
+- https://digitool-lab.com/blog/machine-technical-translation-20260719 - 従業員25名の機械製造業／技術翻訳2〜3週間を1日にした事例。中部地方の従業員25名の機械製造会社で、確認済みの対訳と専門用語を整理し、AI翻訳の初稿と人の承認を組み合わせた事例。翻訳期間は2〜3週間から1日、年間費用は200万円から40万円へ改善しました。
+- https://digitool-lab.com/blog/hp-teishoku-recipe-standardization-20260620 - 従業員8名の定食屋／レシピを整えて味のばらつきを減らした話。家庭料理定食屋で、口伝に頼っていた調理手順と品質基準を整理し、調理品質と教育時間を改善した事例。
+- https://digitool-lab.com/blog/hp-homecenter-display-optimization-20260620 - 従業員20名のホームセンター／売場の陳列判断を整えて変更時間を半分にした話。ホームセンターで、季節商品や売れ筋変化に合わせた陳列判断を整え、作業時間と売場品質のばらつきを減らした事例。
+- https://digitool-lab.com/blog/hp-kaden-estimate-automation-20260620 - 従業員15名の家電量販店／大型家電の見積を整えて回答時間を短くした話。地域家電量販店で、工事費・配送費・保証・下取りを含む見積作成を整え、営業担当の確認時間とミスを減らした事例。
+- https://digitool-lab.com/blog/tax-office-monthly-report-ai - 従業員12名の税理士事務所／月次報告を翌月20日から10日に早めた話。税理士事務所が顧客ごとの処理ルールとAI下書きを整え、月次処理時間と報告タイミングを改善した事例。
+- https://digitool-lab.com/blog/department-store-operation-reporting - 従業員25名の百貨店／店舗運営の確認作業を整えて在庫と売場判断を速くした話。百貨店の売場報告・在庫確認・週次振り返りを整えた事例。
+- https://digitool-lab.com/blog/hp-vegetable-farm-quality-records-20260615 - 従業員12名の野菜農家／作業記録と販売記録を整えて品質管理を安定させた話。北海道の野菜農家が、作業記録・販売記録・問い合わせを入力画面と自動集計で整え、収益把握と品質管理を改善した事例。
+- https://digitool-lab.com/blog/manufacturing-admin-memo-ai-20260614 - 従業員12名の電子部品製造業／紙の依頼メモを整えて事務作業を半分にした話。電子部品製造業の紙メモ、口頭確認、転記作業を入力画面と自動確認表で整えた事例。
+- https://digitool-lab.com/blog/welfare-tools-record-sharing-case-138 - 従業員3名の福祉用具事業所／相談記録と情報共有を整えて週8時間を削減した話。福祉用具事業所で、紙ファイル検索、支援計画、家族連絡、職員間共有をGoogleフォーム、GAS、ChatGPTで整理したHP事例。
+- https://digitool-lab.com/blog/logistics-delivery-management-google-form-case-228 - 従業員40名の梱包・包装業／配送確認10分を2分に短縮した話。梱包・包装業の運行管理で、配送状況確認、配車調整、顧客連絡、クレーム記録をGoogleフォーム、GAS、ChatGPTで整えたHP事例。
+- https://digitool-lab.com/blog/12-80 - 従業員12名・中国地域の鉄道貨物会社 ─ 運行記録のデジタル化で安全管理80%改善。中国地域の鉄道貨物会社が、運行記録の紙台帳を写真・音声入力・自動分類に置き換えた事例。月20時間の集計作業を3時間に短縮し、事故予兆の発見数も3倍に改善。
+- https://digitool-lab.com/blog/kanto-metal-payroll-zero-error - 従業員18名・関東の金属加工業──月3件あった給与計算ミスがゼロになった話。勤務形態がバラバラな金属加工業の総務担当が、AIで給与計算を自動化した事例
+- https://digitool-lab.com/blog/sports-store-gpts-crm-case - 【従業員12名・スポーツ用品店】500名の顧客履歴をAIに読ませたら、リピート率が35%→49%に上がった話。東北地方のスポーツ用品専門店（従業員12名・販売担当）が、GPTsカスタムAIで顧客フォローを自動化。リピート率40%向上、月間リピート売上150万→210万円。
+- https://digitool-lab.com/blog/nail-salon-customer-management - 従業員20名の中国ネイルサロンがGoogleフォーム+GAS活用で業務効率50%向上。ネイルサロンが50%の業務効率化を実現。Googleフォーム+GAS+ChatGPTの組み合わせで予約管理・顧客管理の課題を解決し、リピート率を大幅改善した成功事例。
+- https://digitool-lab.com/blog/ai-video-glossary-creation - 新人が「わからない用語」で躓かない。研修動画からAIが用語集を自動作成。社内研修動画をGeminiに読み込ませるだけで専門用語集を自動生成。新人の理解度向上と教育担当者の負担軽減を同時に実現した事例をご紹介。
+- https://digitool-lab.com/blog/ai-review-analysis-report - 週次の口コミレポートを自動生成。ネット上の評判調査が4時間→30分に。GeminiのDeepResearch機能でネット上の口コミを網羅的に調査・分析。週次報告レポートの作成時間を87%削減した事例をご紹介。
+- https://digitool-lab.com/blog/ai-research-report-efficiency - レポート作成が4時間から30分に。AIリサーチ活用で調査業務を劇的効率化。市場調査や競合分析のレポート作成に毎回4時間以上かかっていた企業が、GeminiのDeep Research機能を活用して作業時間を87%削減した事例をご紹介。
+- https://digitool-lab.com/blog/ai-notebooklm-website-research - Webサイト調査が10分の1に。NotebookLMで情報収集を劇的効率化。競合調査や市場リサーチでWebサイトを何十件も確認していた作業が、NotebookLMの活用で大幅に効率化。情報収集時間を90%削減した事例をご紹介。
+- https://digitool-lab.com/blog/ai-notebooklm-website-reference - NotebookLMで法令参照を爆速化 - 15名製造業が月10時間→2時間に短縮した方法。NotebookLMでWebサイトの法令・ガイドライン参照を爆速化。15名製造業が法令遵守業務を月10時間から2時間に短縮した実践事例をご紹介。
+- https://digitool-lab.com/blog/ai-notebooklm-strategy-review - NotebookLMで施策振り返りを効率化！過去の成功・失敗パターンを分析。NotebookLMを活用して過去の施策資料を分析し、効果的な振り返りを行う方法。複数の施策を横断的に比較分析し、次の施策に活かした事例を解説します。
+- https://digitool-lab.com/blog/ai-notebooklm-slack-reaction - 出欠確認・投票結果を秒速で集計。NotebookLM画像認識でスタンプ数え作業が不要に。NotebookLMの画像認識機能を活用してSlackスタンプ（絵文字リアクション）の集計を自動化。目視確認が不要になり、集計作業が数秒で完了する方法を解説します。
+- https://digitool-lab.com/blog/ai-notebooklm-slack-reaction-analysis - Slackスタンプでチームの空気を可視化。NotebookLMで感情傾向を分析。Slackのリアクションスタンプデータを活用し、チームの感情やエンゲージメントを可視化。NotebookLMで傾向分析を行った中小企業の事例。
+- https://digitool-lab.com/blog/ai-notebooklm-podcast-knowledge - 社内ルールや業界知識を「聴いて学べる」形式に。NotebookLMで音声ナレッジ化。難解な業界規制やマニュアルをAIポッドキャストに変換。移動中や作業中にも学習でき、新人教育の時間を半減させた事例をご紹介。
+- https://digitool-lab.com/blog/ai-notebooklm-mindmap-validation - NotebookLMのマインドマップで企画ロジックを検証！説得力のある提案書を作成。NotebookLMのマインドマップ機能を活用して企画のロジックを検証する方法。新規事業の企画書作成前に論理構造を可視化し、説得力のある提案を作成した事例を解説します。
+- https://digitool-lab.com/blog/ai-notebooklm-law-podcast - NotebookLMで法令情報をポッドキャスト化！移動時間で規制をキャッチアップ。NotebookLMの音声ポッドキャスト機能で法令・規制情報を効率的に学習する方法。移動時間を活用して改正法令をキャッチアップした事例を解説します。
+- https://digitool-lab.com/blog/ai-notebooklm-knowledge-base - 【NotebookLM×社内ナレッジ】マニュアル・規程をAIに学習させて「いつでも聞ける」環境を構築した介護事業者の事例。NotebookLMで社内マニュアルや規程を読み込ませ、従業員がいつでも質問できるAIナレッジベースを構築。介護事業者の導入事例をご紹介します。
+<!-- AUTO-LATEST-CASES:END -->
+
 ## 更新日
 
-2026-06-23
+2026-08-28
