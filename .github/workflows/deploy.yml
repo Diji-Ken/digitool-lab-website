@@ -17,6 +17,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v5
+      with:
+        # IndexNowへ今回変更したURLだけを通知できるよう、直前のmainも取得する
+        fetch-depth: 2
 
     - name: Run SEO link audit
       run: node scripts/audit-seo-links.mjs
@@ -68,6 +71,15 @@ jobs:
           **/upload-all.sh
           **/data/gsc/**
           data/gsc/**
+
+    - name: Notify IndexNow about changed pages
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      continue-on-error: true
+      timeout-minutes: 2
+      run: >-
+        node scripts/submit-indexnow.mjs
+        --before "${{ github.event.before }}"
+        --after "${{ github.sha }}"
 
   # デプロイが失敗したらIssueを立てて気づけるようにする。
   # 2026-07-23〜08-01の9日間、CIが落ち続けていたのに誰も気づかず記事が本番404のままだった。
