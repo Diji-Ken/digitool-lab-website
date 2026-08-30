@@ -81,6 +81,31 @@
       "url": "blog/hp-homecenter-display-optimization-20260620",
       "status": "unverified",
       "reasonCode": "case-csv-only"
+    },
+    {
+      "url": "blog/printing-sales-proposal-20260719",
+      "status": "unverified",
+      "reasonCode": "case-csv-only"
+    },
+    {
+      "url": "blog/machine-technical-translation-20260719",
+      "status": "unverified",
+      "reasonCode": "case-csv-only"
+    },
+    {
+      "url": "blog/bicycle-maintenance-ai-20260823",
+      "status": "unverified",
+      "reasonCode": "case-csv-only"
+    },
+    {
+      "url": "blog/architecture-design-change-ai-20260823",
+      "status": "unverified",
+      "reasonCode": "case-csv-only"
+    },
+    {
+      "url": "blog/wine-bar-pairing-ai-20260823",
+      "status": "unverified",
+      "reasonCode": "case-csv-only"
     }
   ]
 }
