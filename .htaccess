@@ -1,11 +1,10 @@
 # BEGIN HTTP to HTTPS Redirect
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    RewriteCond %{HTTP_HOST} ^www\.digitool-lab\.com$ [NC]
-    RewriteRule ^(.*)$ https://digitool-lab.com/$1 [L,R=301]
+    # Send HTTP and non-canonical hosts directly to the HTTPS apex URL in one hop.
+    RewriteCond %{HTTPS} !=on [OR]
+    RewriteCond %{HTTP_HOST} !^digitool-lab\.com$ [NC]
+    RewriteRule ^ https://digitool-lab.com%{REQUEST_URI} [L,R=301,NE]
 
     RewriteCond %{THE_REQUEST} \s/+index(?:\.html)?[\s?] [NC]
     RewriteRule ^index(?:\.html)?/?$ https://digitool-lab.com/ [L,R=301]

@@ -24,6 +24,9 @@ jobs:
     - name: Run SEO link audit
       run: node scripts/audit-seo-links.mjs
 
+    - name: Run canonical host redirect audit
+      run: node scripts/audit-canonical-host-redirect.mjs
+
     - name: Run title length audit
       run: node scripts/audit-title-length.mjs
 
