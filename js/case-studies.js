@@ -59,13 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fetchData() {
-        fetch('data/case-studies.json?v=2026043001')
+        fetch('data/case-studies.json?v=2026083101')
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok.');
                 return response.json();
             })
             .then(data => {
-                state.allCases = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                state.allCases = data
+                    .filter(item => item.evidenceStatus !== 'unverified')
+                    .sort((a, b) => new Date(b.date) - new Date(a.date));
                 state.filteredCases = [...state.allCases];
                 populateFilters();
                 syncFilterControls();

@@ -1,0 +1,86 @@
+{
+  "reviewedAt": "2026-08-31",
+  "policy": "公開URLの出典または一次情報確認がない数値実績ページは、確認が完了するまで検索結果と事例一覧から除外する。",
+  "entries": [
+    {
+      "url": "blog/ai-gemini-survey-test",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/ai-gemini-pdf-search",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/ai-review-analysis-report",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/reform-quality-improvement",
+      "status": "unverified",
+      "reasonCode": "legacy-case-csv-only"
+    },
+    {
+      "url": "blog/ai-gemini-table-cleanup",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/ai-notebooklm-slack-reaction",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/restaurant-promotion-automation",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/sales-customer-analysis-ai",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/ai-gemini-document-toc",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/ai-gemini-document-proofreading",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/078_gemini-invoice-data",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/ai-gemini-copilot-slides",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/retail-pop-automation",
+      "status": "unverified",
+      "reasonCode": "missing-documented-source"
+    },
+    {
+      "url": "blog/manufacturing-backoffice-optimization",
+      "status": "unverified",
+      "reasonCode": "legacy-case-csv-only"
+    },
+    {
+      "url": "blog/apartment-management-dx",
+      "status": "unverified",
+      "reasonCode": "legacy-case-csv-only"
+    },
+    {
+      "url": "blog/hp-homecenter-display-optimization-20260620",
+      "status": "unverified",
+      "reasonCode": "case-csv-only"
+    }
+  ]
+}
