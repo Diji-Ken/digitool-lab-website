@@ -27,6 +27,9 @@ jobs:
     - name: Run canonical host redirect audit
       run: node scripts/audit-canonical-host-redirect.mjs
 
+    - name: Run local business consistency audit
+      run: node scripts/audit-local-business-consistency.mjs
+
     - name: Run title length audit
       run: node scripts/audit-title-length.mjs
 
