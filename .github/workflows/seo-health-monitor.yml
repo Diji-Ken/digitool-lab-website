@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - scripts/verify-production-seo-health.mjs
+      - 'scripts/verify-*.mjs'
       - .github/workflows/seo-health-monitor.yml
 
 permissions:
@@ -35,7 +35,6 @@ jobs:
           node scripts/audit-noindex-intent.mjs
           node scripts/audit-case-evidence.mjs
           node scripts/audit-case-public-sources.mjs
-          node --check scripts/verify-case-public-sources.mjs
           node scripts/audit-markdown-artifacts.mjs
           node scripts/audit-structured-data.mjs
           node scripts/audit-llms.mjs
@@ -44,18 +43,30 @@ jobs:
           node scripts/audit-hero-preload.mjs
           node scripts/audit-private-seo-data.mjs
           node scripts/audit-public-file-exposure.mjs
+          node --check scripts/verify-public-file-exposure.mjs
+          node --check scripts/verify-case-public-sources.mjs
+          node --check scripts/verify-production-local-business-consistency.mjs
+          node --check scripts/verify-production-seo-health.mjs
 
-      - name: Verify production public file policy
-        run: node scripts/verify-public-file-exposure.mjs
-
-      - name: Verify production case sources
-        run: node scripts/verify-case-public-sources.mjs
-
-      - name: Verify production local business consistency
-        run: node scripts/verify-production-local-business-consistency.mjs
-
-      - name: Verify production SEO/AIO/MEO health
-        run: node scripts/verify-production-seo-health.mjs
+      # Pull requests validate code and local invariants only. Production availability
+      # is monitored by scheduled/manual runs so transient Xserver network filtering
+      # does not make an otherwise safe PR impossible to review.
+      - name: Verify production SEO/AIO/MEO suite with retry
+        if: github.event_name != 'pull_request'
+        run: |
+          for attempt in 1 2 3; do
+            if node scripts/verify-public-file-exposure.mjs \
+              && node scripts/verify-case-public-sources.mjs \
+              && node scripts/verify-production-local-business-consistency.mjs \
+              && node scripts/verify-production-seo-health.mjs; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              echo "Production verification attempt $attempt failed; retrying after $((attempt * 30)) seconds."
+              sleep $((attempt * 30))
+            fi
+          done
+          exit 1
 
   notify-failure:
     needs: seo-health
