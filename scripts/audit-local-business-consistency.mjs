@@ -8,6 +8,16 @@ const mapsUrl = 'https://www.google.com/maps?cid=8108471246907015775';
 const yahooMapUrl = 'https://map.yahoo.co.jp/v3/place/q67CJbOIEcc';
 const gbizUrl = 'https://info.gbiz.go.jp/hojin/ichiran?hojinBango=9030001161292';
 const corporateNumber = '9030001161292';
+const currentPostalCode = '331-0821';
+const currentAddress = '埼玉県さいたま市北区別所町738-3';
+const staleNapFragments = [
+  '110-0004',
+  '東京都台東区',
+  '台東区下谷',
+  '下谷2丁目23',
+  'リベール上野',
+  '埼玉県比企郡川島町',
+];
 const excludedDirectories = new Set([
   '.git',
   'node_modules',
@@ -46,6 +56,7 @@ requireText('llms.txt', [mapsUrl, yahooMapUrl, gbizUrl, corporateNumber], findin
 requireText('llms_full.txt', [mapsUrl, yahooMapUrl, gbizUrl, corporateNumber], findings);
 requireText('data-deletion.html', ['営業時間: 平日 10:00-18:00'], findings);
 requireText('facebook-data-deletion.html', ['営業時間: 平日 10:00-18:00'], findings);
+requireText('privacy-policy.html', [currentPostalCode, currentAddress], findings);
 
 for (const filePath of htmlFiles(root)) {
   const source = fs.readFileSync(filePath, 'utf8');
@@ -59,6 +70,11 @@ for (const filePath of htmlFiles(root)) {
   if (source.includes('<p>平日 9:00-18:00</p>')) {
     findings.push(`${relativePath}: stale footer business hours`);
   }
+  for (const fragment of staleNapFragments) {
+    if (source.includes(fragment)) {
+      findings.push(`${relativePath}: stale NAP fragment: ${fragment}`);
+    }
+  }
 }
 
 if (findings.length) {
@@ -67,4 +83,4 @@ if (findings.length) {
   process.exit(1);
 }
 
-console.log('Local business consistency audit passed: hours and entity references match the verified GBP listing.');
+console.log(`Local business consistency audit passed: hours, entity references, and ${staleNapFragments.length} stale NAP fragments checked.`);
