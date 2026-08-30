@@ -508,3 +508,23 @@ Google検索結果に古い地域情報が残る場合、現在のHTMLではな�
 - 公式サイトのLocalBusiness JSON-LDと5ページの問い合わせ表示に残っていた平日9:00〜18:00を、GBP正本の10:00〜18:00へ統一
 - Organization JSON-LDへ法人番号、Googleマップ、Gビズインフォ、Yahoo!マップを追加し、`llms.txt` / `llms_full.txt`にも同じ公式参照先を記録
 - 営業時間と企業参照URLの再不一致をCIで検知する `audit-local-business-consistency.mjs` を追加
+
+### GSC実検索クエリからの商用ページ改善
+
+- 直近3か月のGSCクエリと流入ページを1件ずつ照合し、表示はあるがクリック0の商用クエリを優先した
+  - `社内ポータル 費用`: 82表示、平均10.0位、`/blog/internal-portal-development-cost`
+  - `DX支援 費用`: 49表示、平均8.8位、`/blog/dx-support-cost`
+  - `埼玉 AI研修`: 73表示、平均8.5位、`/ai-training-saitama/`
+  - `NAP MEO`: 141表示、平均22.8位、`/blog/meo-citation-nap-checklist`
+  - `埼玉 DXコンサル`: 48表示、平均31.7位。47表示は`/dx-support-saitama/`
+  - `生成AI研修 費用`: 19表示、平均26.1位、`/blog/ai-training-cost`
+  - `AI研修 中小企業 費用`: 58表示、平均31.8位、同じAI研修費用記事
+- `/dx-support-saitama/` はtitle、H1、本文、FAQ、Service JSON-LDを `埼玉・さいたま市のDXコンサル・伴走支援` に合わせ、公開済み正本と一致する `月額10万円から` の料金とOfferを追加した
+- `/blog/dx-support-cost` は当社料金と一般的な費用変動要因を分け、単発相談・月額伴走・開発の比較と公式料金ページへの導線を追加した
+- `/ai-training-saitama/` はtitleを短くし、さいたま市北区拠点、埼玉県内の訪問・オンライン・ハイブリッド研修、事例導線を追加した
+- `/blog/ai-training-cost` は中小企業向けの見積項目を、事前設計、当日実施、成果物、定着支援の4項目に分けた
+- `/blog/internal-portal-development-cost` は、数十万円台、100万円台〜300万円台以上、300万円超の3段階をtitle、description、冒頭回答で直接示した
+- `/blog/meo-citation-nap-checklist` は `NAPとは？` をtitle・H1の先頭へ出し、Name・Address・Phoneの定義とMEOで揃える対象を冒頭回答へ追加した
+- `llms.txt` / `llms_full.txt` に料金、DXコンサル、埼玉の生成AI研修、費用、NAPの回答を反映した
+- `audit-gsc-priority-intent.mjs` をCIへ追加し、6ページの検索意図、公開料金の整合、AIO要約の退行を検知する
+- 263 HTML、213 sitemap URL、544 JSON-LD、31 noindexを含む全SEO監査とローカル表示確認に合格した
