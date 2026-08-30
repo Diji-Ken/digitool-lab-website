@@ -42,6 +42,9 @@ jobs:
     - name: Run case evidence audit
       run: node scripts/audit-case-evidence.mjs
 
+    - name: Run case public source audit
+      run: node scripts/audit-case-public-sources.mjs
+
     - name: Run markdown artifact audit
       run: node scripts/audit-markdown-artifacts.mjs
 
