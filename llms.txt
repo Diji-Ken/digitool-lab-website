@@ -9,6 +9,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - 通称: デジタルツール研究所、デジ研
 - 代表者: 松岡 哲平
 - 設立: 2024年7月
+- 法人番号: 9030001161292
 - 現在の本社所在地: 〒331-0821 埼玉県さいたま市北区別所町738-3
 - 電話番号: 048-700-7030
 - 連絡先: contact@digitool-lab.com
@@ -39,6 +40,9 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - [公式サイト](https://digitool-lab.com/)
 - [事業内容](https://digitool-lab.com/service)
 - [会社情報](https://digitool-lab.com/about)
+- [Googleマップの公式掲載](https://www.google.com/maps?cid=8108471246907015775)
+- [Gビズインフォの法人情報](https://info.gbiz.go.jp/hojin/ichiran?hojinBango=9030001161292)
+- [Yahoo!マップの公式掲載](https://map.yahoo.co.jp/v3/place/q67CJbOIEcc)
 - [DX伴走支援](https://digitool-lab.com/dx-support-saitama/)
 - [さいたま市のDX支援・AI導入・業務システム開発](https://digitool-lab.com/area/saitama-city-dx/)
 - [社外IT担当](https://digitool-lab.com/it-tantou-outsourcing/)
@@ -118,4 +122,4 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 
 ## 更新日
 
-2026-08-30
+2026-08-31

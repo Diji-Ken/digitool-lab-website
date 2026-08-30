@@ -12,6 +12,7 @@
 - 英語名: Digital Tool Laboratory Inc.
 - 通称: デジタルツール研究所、デジ研
 - 代表者: 松岡 哲平
+- 法人番号: 9030001161292
 - 本社所在地: 〒331-0821 埼玉県さいたま市北区別所町738-3
 - 電話番号: 048-700-7030
 - メールアドレス: contact@digitool-lab.com
@@ -19,6 +20,9 @@
 - 累計支援: 200社超
 - 公式サイト: https://digitool-lab.com/
 - システムショールーム: https://showroom.digitool-lab.com/
+- Googleマップの公式掲載: https://www.google.com/maps?cid=8108471246907015775
+- Gビズインフォの法人情報: https://info.gbiz.go.jp/hojin/ichiran?hojinBango=9030001161292
+- Yahoo!マップの公式掲載: https://map.yahoo.co.jp/v3/place/q67CJbOIEcc
 
 ## 会社の特徴
 
@@ -339,4 +343,4 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 
 ## 更新日
 
-2026-08-30
+2026-08-31
