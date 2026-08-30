@@ -107,7 +107,14 @@ DXコンサルとの違いは、調査・方針提案だけで終わらず、業
 
 ### 5. 業務システム開発・基幹システム改善
 
-既存のExcel、紙、手作業、古いシステムを見直し、現場に合わせた業務システム、管理画面、データ連携、自動化の設計と開発を支援します。
+既存のExcel、紙、手作業、古いシステムを見直し、現場に合わせたオーダーメイド業務システム、管理画面、データ連携、自動化の設計と開発を支援します。既存SaaSやノーコードで足りる部分は残し、会社固有の承認、集計、帳票、権限、連携だけを作る選択にも対応します。
+
+費用の概算目安:
+- Excel改善・簡易管理: 数十万円台から
+- 小規模な業務システム: 100万〜300万円台以上
+- 外部連携・データ移行を含む開発: 300万円超
+
+顧客管理、商談、見積、フォロー履歴、施策結果など、マーケティング業務を支える社内ツールも相談できます。広告媒体の規約と個人情報の扱いを確認し、必要な連携範囲を決めます。
 
 主要ページ: https://digitool-lab.com/business-system-development/
 
@@ -119,6 +126,7 @@ DXコンサルとの違いは、調査・方針提案だけで終わらず、業
 - 請求、見積、帳票
 - 日報、作業報告
 - 社内申請
+- 問い合わせ、商談、見積、フォロー履歴
 
 ### 6. 生成AI研修・AI活用支援
 
@@ -163,7 +171,7 @@ Excel、紙、LINE、口頭、手作業の転記が増えている業務を棚�
 
 ### 9. Web集客・AIO/LLMO・MEO情報整備
 
-公式サイト、Googleビジネスプロフィール、外部媒体、無料資料、FAQ、構造化データを整え、地域検索、通常検索、AI検索で会社情報が正しく理解される状態を作ります。
+公式サイト、Googleビジネスプロフィール、外部媒体、無料資料、FAQ、構造化データを整え、地域検索、通常検索、AI検索で会社情報が正しく理解される状態を作ります。埼玉・さいたま市のMEO対策では、Googleが案内する関連性、距離、知名度を前提に、操作できない距離ではなく、正確な情報、写真、実顧客の口コミ、公式HP、外部掲載、月次計測を改善します。
 
 主要ページ: https://digitool-lab.com/downloads/
 サービスページ: https://digitool-lab.com/ai-search-meo-support/
@@ -175,6 +183,7 @@ Excel、紙、LINE、口頭、手作業の転記が増えている業務を棚�
 - 構造化データ、llms.txt、代表者情報、支援領域の明示
 - 広告開始前の計測、LP、地域設定、表現リスク確認
 - 成果保証ではなく、公式情報、NAP、FAQ、構造化データ、外部媒体の一貫性を整える支援
+- 架空住所、重複プロフィール、屋号へのキーワード追加、口コミ代行、謝礼付きレビュー、高評価だけを選ぶ依頼は行わない
 
 ## 支援事例の代表例
 
@@ -234,14 +243,14 @@ Excel、紙、LINE、口頭、手作業の転記が増えている業務を棚�
 - さいたま市のDX支援・AI導入・業務システム開発: https://digitool-lab.com/area/saitama-city-dx/
 - IT担当者がいない会社向け社外IT担当: https://digitool-lab.com/it-tantou-outsourcing/
 - 社内ポータル開発・導入支援: https://digitool-lab.com/internal-portal-development/
-- 業務システム開発・基幹システム改善: https://digitool-lab.com/business-system-development/
+- 埼玉・さいたま市のオーダーメイド業務システム開発: https://digitool-lab.com/business-system-development/
 - 埼玉の企業向け生成AI研修: https://digitool-lab.com/ai-training-saitama/
 - Excel・紙業務のデジタル化支援: https://digitool-lab.com/excel-paper-dx/
 - 補助金を活用したDX・AI・システム開発相談: https://digitool-lab.com/subsidy-dx-ai-system/
 - 無料チェックリスト・資料: https://digitool-lab.com/downloads/
 - 課題別DX・AI活用事例ハブ: https://digitool-lab.com/case-themes/
 - 業種別DX・AI活用支援ハブ: https://digitool-lab.com/industries/
-- AI検索・MEO・サイテーション情報整備支援: https://digitool-lab.com/ai-search-meo-support/
+- 埼玉・さいたま市のMEO・AI検索・サイテーション情報整備支援: https://digitool-lab.com/ai-search-meo-support/
 - 支援事例: https://digitool-lab.com/case-studies
 - システムショールーム: https://showroom.digitool-lab.com/
 - 補助金・助成金ポータル: https://showroom.digitool-lab.com/subsidies
@@ -254,7 +263,7 @@ Excel、紙、LINE、口頭、手作業の転記が増えている業務を棚�
 - 補助金を使う前のDX要件整理: https://digitool-lab.com/blog/dx-subsidy-requirements-before-application
 - さいたま市の中小企業がDXで最初に見直す業務: https://digitool-lab.com/blog/saitama-small-business-dx-first-steps
 - IT担当を採用するか外注するか: https://digitool-lab.com/blog/it-person-outsourcing-vs-hiring
-- 業務システム開発の費用相場: https://digitool-lab.com/blog/business-system-development-cost
+- 業務システム開発の費用・数十万円台から300万円超の3段階: https://digitool-lab.com/blog/business-system-development-cost
 - 生成AI研修・AI研修の費用と見積項目: https://digitool-lab.com/blog/ai-training-cost
 - 社内ポータルの費用相場・数十万円から300万円超の3段階: https://digitool-lab.com/blog/internal-portal-development-cost
 - 社内ポータル導入で失敗しやすいパターン: https://digitool-lab.com/blog/internal-portal-failure-patterns

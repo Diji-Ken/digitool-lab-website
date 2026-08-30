@@ -528,3 +528,19 @@ Google検索結果に古い地域情報が残る場合、現在のHTMLではな�
 - `llms.txt` / `llms_full.txt` に料金、DXコンサル、埼玉の生成AI研修、費用、NAPの回答を反映した
 - `audit-gsc-priority-intent.mjs` をCIへ追加し、6ページの検索意図、公開料金の整合、AIO要約の退行を検知する
 - 263 HTML、213 sitemap URL、544 JSON-LD、31 noindexを含む全SEO監査とローカル表示確認に合格した
+
+### GSC実検索クエリからの第2弾改善（2026-08-31）
+
+- GSCの直近3か月をページ単位で再集計し、未改善の商用受け皿を特定した
+  - `/business-system-development/`: 37表示、0クリック、平均35.7位
+  - 同ページの開示対象クエリ: `オーダーメイドシステム開発 マーケティングツール` 19表示、`オーダーメイドシステム開発` 1表示
+  - `/blog/business-system-development-cost`: 116表示、0クリック、平均12.9位
+  - 同記事の開示対象クエリ: `業務システム 費用` 94表示、0クリック
+  - `/ai-search-meo-support/`: 17表示、0クリック、平均5.2位。低ボリュームのためGSCのクエリ表は非開示
+  - サイト全体では `meo対策 埼玉` 3表示、1クリック、平均16.0位
+- `/business-system-development/` はtitle、H1、Service schema、FAQを `埼玉・さいたま市` と `オーダーメイドシステム開発` に合わせ、既存SaaS・新規開発・併用の判断、顧客管理・マーケティング業務ツールの相談例を追加した
+- `/blog/business-system-development-cost` は、数十万円台、100万〜300万円台以上、300万円超の3段階をtitle、description、冒頭回答、早見表に明示し、見積内訳6項目と比較条件を追加した
+- `/ai-search-meo-support/` はtitleとH1を `埼玉・さいたま市のMEO対策` に合わせ、Google公式の関連性・距離・知名度、初期整備の成果物、月次計測、行わない施策を追加した
+- Google公式のローカル順位、ビジネス情報、口コミポリシーへ直接リンクし、順位保証、架空住所、重複プロフィール、口コミ代行、評価誘導を明確に除外した
+- `llms.txt` / `llms_full.txt` とsitemap lastmodを同じ検索意図・費用・方針へ更新した
+- `audit-gsc-priority-intent.mjs` を9ページ対応へ拡張し、オーダーメイド、費用3段階、MEO公式方針の退行をCIで検知する
