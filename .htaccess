@@ -78,7 +78,10 @@ RedirectMatch 410 ^/data/gsc(?:/|$)
 RewriteRule ^(backup_20250703_112022|backup_images_20250727_213230|backup_images_20250727_213226|article-workspace|posts-management|scripts|data/gsc)(?:/|$) - [G,L]
 RewriteRule ^.*\.(?:bak|conf|csv|md|py|sh)$ - [G,L,NC]
 RewriteRule ^(?:analytics_code|spam_log|rate_limit_[^/]+)\.txt$ - [G,L,NC]
-RewriteRule ^(?:enhanced_spam_protection|spam_admin|spam_protection_config|test_spam_protection)\.php$ - [G,L,NC]
+
+<FilesMatch "^(?:enhanced_spam_protection|spam_admin|spam_protection_config|test_spam_protection)\.php$">
+    Require all denied
+</FilesMatch>
 
 # Common legal-page aliases should resolve to the canonical legal URLs.
 RewriteRule ^privacy(?:\.html)?/?$ https://digitool-lab.com/privacy-policy [R=301,L]
