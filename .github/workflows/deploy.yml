@@ -24,6 +24,9 @@ jobs:
     - name: Run SEO link audit
       run: node scripts/audit-seo-links.mjs
 
+    - name: Run title length audit
+      run: node scripts/audit-title-length.mjs
+
     - name: Run SEO indexability audit
       run: node scripts/audit-seo-indexability.mjs
 
@@ -49,6 +52,7 @@ jobs:
       run: node scripts/audit-private-seo-data.mjs
     
     - name: Deploy to Xserver via FTP
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: SamKirkland/FTP-Deploy-Action@v4.4.0
       with:
         server: ${{ secrets.FTP_SERVER }}
@@ -87,7 +91,7 @@ jobs:
   # GITHUB_TOKEN だけで完結するIssue作成にしている（Issueが立てばGitHubの標準通知でメールが届く）。
   notify-failure:
     needs: deploy
-    if: failure()
+    if: failure() && github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -137,7 +141,7 @@ jobs:
   # 復旧したら、開いている失敗Issueを閉じる
   close-failure-issue:
     needs: deploy
-    if: success()
+    if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       issues: write
