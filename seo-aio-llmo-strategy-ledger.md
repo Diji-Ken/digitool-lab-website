@@ -469,8 +469,9 @@ Google検索結果に古い地域情報が残る場合、現在のHTMLではな�
 ### Bing Webmaster
 
 - 2026-08-28 Site Scan: 210ページ、エラー0、警告11。警告対象titleはPR #90で修正済み
-- `Digital Tool Lab SEO Scan 2026-08-31` を213 URLで作成。2026-08-31 01:00時点はQueuedで、完了扱いにしない
-- IndexNowは各本番デプロイ後に成功
+- `Digital Tool Lab SEO Scan 2026-08-31` は213ページ、エラー0、警告0で完了。前回11件のtitle警告が解消したことを確認
+- IndexNowは直近16時間で26 URLをSelfソースから受付。`/ai-search-meo-support/` と `/business-system-development/` は2026-08-31 00:58にクロール済み・Indexed
+- Bing AI Performanceの直近3か月はTotal Citations 0、Avg. Cited Pages 0。検索パフォーマンス、被リンク、Site Explorerは登録直後のためデータ準備中
 
 ### Googleビジネスプロフィール・地域順位
 
@@ -497,7 +498,7 @@ Google検索結果に古い地域情報が残る場合、現在のHTMLではな�
 
 - Search Consoleサイトマップ再送信、重要3 URLの個別インデックス再登録、会社情報DX訂正メール送信は外部操作の最終確認待ち
 - Bing Places、Apple Business Connectはログイン・本人確認が必要。GBPの住所表示・サービス地域は、別所町738-3で顧客来訪を受け付けられるか確定するまで変更しない
-- 月曜9:00の「デジ研 SEO・AIO・MEO 週次監視」をACTIVEにし、GSC、GBP、Bing、外部掲載を前回値と比較する
+- 月曜9:00の「デジ研 SEO・AIO・MEO 週次監視」をACTIVEにし、GSC、GBP、Bing、外部掲載を前回値と比較する。Bing AI引用、IndexNowのクロール・インデックス、GBP写真数、営業時間一致も監視対象に追加
 
 ### 追加監査: GBP写真・営業時間・企業エンティティ
 
