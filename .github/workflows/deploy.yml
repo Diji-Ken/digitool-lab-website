@@ -62,6 +62,9 @@ jobs:
 
     - name: Run private SEO data audit
       run: node scripts/audit-private-seo-data.mjs
+
+    - name: Run public file exposure audit
+      run: node scripts/audit-public-file-exposure.mjs
     
     - name: Deploy to Xserver via FTP
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -83,10 +86,24 @@ jobs:
           **/node_modules/**
           **/.DS_Store
           **/README.md
+          **/*.conf
+          **/*.csv
+          **/*.md
+          **/*.py
+          **/*.sh
           **/tools/**
           **/upload-all.sh
+          **/analytics_code.txt
+          **/spam_admin.php
+          **/spam_log.txt
+          **/test_spam_protection.php
+          **/rate_limit_*.txt
           **/data/gsc/**
           data/gsc/**
+
+    - name: Verify public file exposure policy after deploy
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: node scripts/verify-public-file-exposure.mjs
 
     - name: Notify IndexNow about changed pages
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
