@@ -15,7 +15,10 @@ if (!htaccess.includes('RewriteRule ^(?:analytics_code|spam_log|rate_limit_[^/]+
   findings.push('.htaccess must return 410 for analytics snippets, spam logs and legacy rate-limit files.');
 }
 
-if (!htaccess.includes('RewriteRule ^(?:enhanced_spam_protection|spam_admin|spam_protection_config|test_spam_protection)\\.php$ - [G,L,NC]')) {
+const privatePhpBlock = `<FilesMatch "^(?:enhanced_spam_protection|spam_admin|spam_protection_config|test_spam_protection)\\.php$">
+    Require all denied
+</FilesMatch>`;
+if (!htaccess.includes(privatePhpBlock)) {
   findings.push('.htaccess must block direct HTTP access to internal spam-protection PHP files.');
 }
 
