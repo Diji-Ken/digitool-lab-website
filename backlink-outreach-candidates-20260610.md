@@ -1,5 +1,7 @@
 # 被リンク・外部導線候補リスト - 2026-06-10
 
+> 2026-08-31再確認: 埼玉DXパートナーは新規候補ではなく、既に `https://www.saitamadx.com/dx-partner/solution/389/` で公開済み。現ページは旧住所、旧料金、文字化けがあるため、最優先を「新規登録」から「基本情報・紹介ページの訂正」に変更した。詳細は `external-citation-action-board-20260831.md` を参照。
+
 ## 位置づけ
 
 サイテーション登録ではなく、自然な被リンク、外部導線、共同発信、登壇、事例掲載につながる候補を整理する。目的はSEOだけでなく、さいたま市・埼玉県内の中小企業からの相談導線を増やすこと。
@@ -15,7 +17,7 @@
 
 | 優先 | 候補 | URL | 狙い | 提案切り口 | リンク先候補 | 次アクション |
 |---:|---|---|---|---|---|---|
-| 1 | 埼玉県DX推進支援ネットワーク | https://www.saitamadx.com/ | 埼玉県内DX支援の信頼導線 | 社内ポータル、業務システム、AI研修の事例提供。支援者/事例/イベント掲載可否を確認 | `/dx-support-saitama/`, `/case-studies.html`, `/ai-search-meo-support/` | 問い合わせ窓口と掲載条件を確認 |
+| 1 | 埼玉県DX推進支援ネットワーク | https://www.saitamadx.com/dx-partner/solution/389/ | 埼玉県内DX支援の信頼導線 | 登録済みページを、現住所、月額10万円からの料金、社内ポータル、業務システム、AI研修、社外IT担当へ更新 | `/dx-support-saitama/`, `/business-system-development/`, `/ai-training-saitama/` | 基本情報変更と紹介ページ更新の2フォームを送信 |
 | 1 | 埼玉県DX推進支援ネットワーク 県ページ | https://www.pref.saitama.lg.jp/dx-portal/info/dxpromonw.html | 県公式施策との接続 | 埼玉DX大賞、事例横展開、支援情報への接続可否を確認 | `/case-studies.html`, `/case-themes/` | 事例応募・情報掲載の時期を確認 |
 | 1 | 埼玉県産業振興公社 中小企業DX推進支援事業 | https://www.saitama-j.or.jp/pages/245/ | 県内中小企業支援の接点 | セミナー講師、相談支援、DX事例提供 | `/dx-support-saitama/`, `/ai-training-saitama/` | メールニュース/セミナー/相談員系の掲載可能性を確認 |
 | 1 | さいたま市産業創造財団 DX推進事業 | https://www.sozo-saitama.or.jp/about/digitaltransformation/ | さいたま市内の相談導線 | 守りのDX、社内ポータル、補助金前の要件整理 | `/area/saitama-city-dx/`, `/internal-portal-development/` | 相談・セミナー・補助金関連の連携余地を確認 |
