@@ -51,6 +51,9 @@ jobs:
     - name: Run priority internal link audit
       run: node scripts/audit-priority-internal-links.mjs
 
+    - name: Run GSC priority intent audit
+      run: node scripts/audit-gsc-priority-intent.mjs
+
     - name: Run hero preload audit
       run: node scripts/audit-hero-preload.mjs
 
