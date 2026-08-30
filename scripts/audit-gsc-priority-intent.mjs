@@ -12,6 +12,9 @@ const pages = {
   aiCost: "blog/ai-training-cost.html",
   portalCost: "blog/internal-portal-development-cost.html",
   nap: "blog/meo-citation-nap-checklist.html",
+  businessSystem: "business-system-development/index.html",
+  businessSystemCost: "blog/business-system-development-cost.html",
+  meoLocal: "ai-search-meo-support/index.html",
   consulting: "services/consulting.html",
   llms: "llms.txt",
   llmsFull: "llms_full.txt",
@@ -69,6 +72,26 @@ requireAll("nap", [
   "NAPはName・Address・Phoneの略",
   "MEOでは公式HP・GBP・外部媒体で揃えます",
 ]);
+requireAll("businessSystem", [
+  "<title>埼玉・さいたま市の業務システム開発",
+  "オーダーメイドシステム開発とは何ですか？",
+  "顧客管理・マーケティング業務向けツールの相談例",
+  "既存SaaSが向く範囲",
+]);
+requireAll("businessSystemCost", [
+  "<title>業務システム開発の費用はいくら？",
+  "数十万円台から",
+  "100万〜300万円台以上",
+  "300万円超",
+  "業務システムの見積に含める6項目",
+]);
+requireAll("meoLocal", [
+  "<title>埼玉・さいたま市のMEO対策",
+  "関連性・距離・知名度",
+  "行わないMEO対策",
+  "実顧客の口コミ",
+  "https://support.google.com/business/answer/7091?hl=ja",
+]);
 requireAll("llms", [
   "DX伴走支援「OToMo」: 月額10万円から",
   "DXコンサル 埼玉",
@@ -86,4 +109,4 @@ if (findings.length) {
   process.exit(1);
 }
 
-console.log("GSC priority intent audit passed: 6 query-led pages and pricing/AIO summaries checked.");
+console.log("GSC priority intent audit passed: 9 query-led pages and pricing/AIO summaries checked.");
