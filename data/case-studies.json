@@ -19,18 +19,21 @@
   },
   {
     "id": "case-188",
-    "title": "従業員47名の事務用品商社／年間2,000時間の移動を減らし、個人営業からチーム営業へ変えた話",
-    "summary": "営業情報を会社の共有資産へ変え、移動時間削減と売上総利益向上を実現した従業員47名の商社の公開事例。",
-    "industry": "営業管理",
+    "title": "事務用品商社／RPAで年間約2,000時間を削減し、チーム営業を強化した話",
+    "summary": "札幌市の事務用品商社がSFA・CRM・MAとRPAを活用し、年間約2,000時間を削減。DX支援受注を2022年度272件から2025年度617件へ伸ばした公開事例です。",
+    "industry": "事務用品商社",
     "date": "2026-08-29",
     "tags": [
-      "営業管理",
-      "情報共有",
+      "営業DX",
+      "RPA",
       "チーム営業",
-      "中小企業事例"
+      "中小企業DX"
     ],
     "thumbnail": "images/case-studies/thumbs/case-188.webp",
-    "url": "blog/office-supplier-team-sales-47"
+    "url": "blog/office-supplier-team-sales-47",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 3
   },
   {
     "id": "case-187",
