@@ -51,6 +51,9 @@ jobs:
       - name: Verify production case sources
         run: node scripts/verify-case-public-sources.mjs
 
+      - name: Verify production local business consistency
+        run: node scripts/verify-production-local-business-consistency.mjs
+
       - name: Verify production SEO/AIO/MEO health
         run: node scripts/verify-production-seo-health.mjs
 
