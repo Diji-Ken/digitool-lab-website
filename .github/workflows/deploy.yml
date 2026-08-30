@@ -45,6 +45,9 @@ jobs:
     - name: Run case public source audit
       run: node scripts/audit-case-public-sources.mjs
 
+    - name: Check case source production verifier
+      run: node --check scripts/verify-case-public-sources.mjs
+
     - name: Run markdown artifact audit
       run: node scripts/audit-markdown-artifacts.mjs
 
@@ -107,6 +110,10 @@ jobs:
     - name: Verify public file exposure policy after deploy
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: node scripts/verify-public-file-exposure.mjs
+
+    - name: Verify case public sources after deploy
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: node scripts/verify-case-public-sources.mjs
 
     - name: Notify IndexNow about changed pages
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
