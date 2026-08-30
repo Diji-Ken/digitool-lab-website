@@ -1,0 +1,73 @@
+{
+  "reviewedAt": "2026-08-31",
+  "policy": "公開事例の数値条件は、読者が確認できる公開URLを本文と構造化データに表示する。出典の事実と当社による整理・解説は区別して伝える。",
+  "entries": [
+    {
+      "url": "blog/visit-care-schedule-ict-20260820",
+      "sources": [
+        {
+          "title": "厚生労働省「介護分野における生産性向上 取組事例（令和6年度改訂・事例60）」",
+          "url": "https://www.mhlw.go.jp/content/12300000/001545563.pdf#page=75"
+        }
+      ]
+    },
+    {
+      "url": "blog/visit-nursing-ai-portal-20260821",
+      "sources": [
+        {
+          "title": "IPA DX SQUARE「離職率83.3%からの組織再生。訪問看護プーラビダが実践した『人を守るDX』」",
+          "url": "https://dx.ipa.go.jp/interview-puravida"
+        }
+      ]
+    },
+    {
+      "url": "blog/florist-order-management-app-20260822",
+      "sources": [
+        {
+          "title": "Platio導入事例「株式会社花工房あげたけ 様」",
+          "url": "https://plat.io/ja/case/agetake"
+        },
+        {
+          "title": "アステリア株式会社 プレスリリース「生花販売の花工房あげたけ（鳥取県）がPlatio導入」",
+          "url": "https://jp.asteria.com/news/2024092519499/"
+        }
+      ]
+    },
+    {
+      "url": "blog/forestry-tax-exempt-diesel-app-20260822",
+      "sources": [
+        {
+          "title": "アステリア株式会社 プレスリリース「丸兼林業（本社：豊田市）が『Platio』を導入」",
+          "url": "https://jp.asteria.com/news/2026072444200/"
+        }
+      ]
+    },
+    {
+      "url": "blog/confectionery-multisite-meeting-20260822",
+      "sources": [
+        {
+          "title": "中小企業基盤整備機構 ここからアプリ「老舗菓子店の一体感を高めるグループウェア」",
+          "url": "https://digiwith.smrj.go.jp/cocoapp/case/cp577f0000004mnt.html"
+        }
+      ]
+    },
+    {
+      "url": "blog/printing-monthly-report-20260820",
+      "sources": [
+        {
+          "title": "株式会社G-gen 導入事例「株式会社ブンカ様」",
+          "url": "https://g-gen.co.jp/case-studies/bunka/"
+        }
+      ]
+    },
+    {
+      "url": "blog/driving-school-support-dx",
+      "sources": [
+        {
+          "title": "IPA DX SQUARE「創業73年、エンジニア0人。自動車学校が進めた『管理型から支援型』のDX」",
+          "url": "https://dx.ipa.go.jp/interview-humangroup"
+        }
+      ]
+    }
+  ]
+}

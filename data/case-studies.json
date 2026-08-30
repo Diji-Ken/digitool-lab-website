@@ -12,7 +12,10 @@
       "業務改善"
     ],
     "thumbnail": "images/case-studies/thumbs/case-189.webp",
-    "url": "blog/driving-school-support-dx"
+    "url": "blog/driving-school-support-dx",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 1
   },
   {
     "id": "case-188",
@@ -40,12 +43,13 @@
       "月次集計",
       "データ活用",
       "業務改善",
-      "経営管理",
-      "freshness:2026-08-20",
-      "source-count:2"
+      "経営管理"
     ],
     "thumbnail": "images/case-studies/thumbs/case-187.webp",
-    "url": "blog/printing-monthly-report-20260820"
+    "url": "blog/printing-monthly-report-20260820",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 1
   },
   {
     "id": "case-186",
@@ -60,7 +64,10 @@
       "オンライン会議"
     ],
     "thumbnail": "images/case-studies/thumbs/case-186.webp",
-    "url": "blog/confectionery-multisite-meeting-20260822"
+    "url": "blog/confectionery-multisite-meeting-20260822",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 1
   },
   {
     "id": "case-185",
@@ -135,7 +142,10 @@
       "紙業務改善"
     ],
     "thumbnail": "images/case-studies/thumbs/case-182.webp",
-    "url": "blog/forestry-tax-exempt-diesel-app-20260822"
+    "url": "blog/forestry-tax-exempt-diesel-app-20260822",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 1
   },
   {
     "id": "case-181",
@@ -150,7 +160,10 @@
       "紙とデジタル"
     ],
     "thumbnail": "images/case-studies/thumbs/case-181.webp",
-    "url": "blog/florist-order-management-app-20260822"
+    "url": "blog/florist-order-management-app-20260822",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 2
   },
   {
     "id": "case-180",
@@ -163,12 +176,13 @@
       "生成AI",
       "社内ポータル",
       "アセスメント",
-      "業務改善",
-      "freshness:2026-08-21",
-      "source-count:2"
+      "業務改善"
     ],
     "thumbnail": "images/case-studies/thumbs/case-180.webp",
-    "url": "blog/visit-nursing-ai-portal-20260821"
+    "url": "blog/visit-nursing-ai-portal-20260821",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 1
   },
   {
     "id": "case-179",
@@ -181,12 +195,13 @@
       "シフト管理",
       "介護ICT",
       "業務改善",
-      "サービス提供責任者",
-      "freshness:2026-08-20",
-      "source-count:2"
+      "サービス提供責任者"
     ],
     "thumbnail": "images/case-studies/thumbs/case-179.webp",
-    "url": "blog/visit-care-schedule-ict-20260820"
+    "url": "blog/visit-care-schedule-ict-20260820",
+    "evidenceStatus": "verified",
+    "evidenceReviewedAt": "2026-08-31",
+    "publicSourceCount": 1
   },
   {
     "id": "case-178",
