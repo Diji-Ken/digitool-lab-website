@@ -78,7 +78,9 @@
       "source-count:1"
     ],
     "thumbnail": "images/case-studies/thumbs/case-185.webp",
-    "url": "blog/bicycle-maintenance-ai-20260823"
+    "url": "blog/bicycle-maintenance-ai-20260823",
+    "evidenceStatus": "unverified",
+    "evidenceReviewedAt": "2026-08-31"
   },
   {
     "id": "case-184",
@@ -96,7 +98,9 @@
       "source-count:1"
     ],
     "thumbnail": "images/case-studies/thumbs/case-184.webp",
-    "url": "blog/architecture-design-change-ai-20260823"
+    "url": "blog/architecture-design-change-ai-20260823",
+    "evidenceStatus": "unverified",
+    "evidenceReviewedAt": "2026-08-31"
   },
   {
     "id": "case-183",
@@ -114,7 +118,9 @@
       "source-count:1"
     ],
     "thumbnail": "images/case-studies/thumbs/case-183.webp",
-    "url": "blog/wine-bar-pairing-ai-20260823"
+    "url": "blog/wine-bar-pairing-ai-20260823",
+    "evidenceStatus": "unverified",
+    "evidenceReviewedAt": "2026-08-31"
   },
   {
     "id": "case-182",
@@ -433,7 +439,9 @@
       "AI活用"
     ],
     "thumbnail": "images/case-studies/thumbs/case-163.webp",
-    "url": "blog/printing-sales-proposal-20260719"
+    "url": "blog/printing-sales-proposal-20260719",
+    "evidenceStatus": "unverified",
+    "evidenceReviewedAt": "2026-08-31"
   },
   {
     "id": "case-162",
@@ -449,7 +457,9 @@
       "AI活用"
     ],
     "thumbnail": "images/case-studies/thumbs/case-162.webp",
-    "url": "blog/machine-technical-translation-20260719"
+    "url": "blog/machine-technical-translation-20260719",
+    "evidenceStatus": "unverified",
+    "evidenceReviewedAt": "2026-08-31"
   },
   {
     "id": "case-161",
