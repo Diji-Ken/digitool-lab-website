@@ -15,6 +15,9 @@ const pages = {
   businessSystem: "business-system-development/index.html",
   businessSystemCost: "blog/business-system-development-cost.html",
   meoLocal: "ai-search-meo-support/index.html",
+  serviceHub: "service.html",
+  dxProvider: "blog/how-to-choose-dx-support-company.html",
+  aioCompanyInfo: "blog/ai-search-company-information-checklist.html",
   consulting: "services/consulting.html",
   llms: "llms.txt",
   llmsFull: "llms_full.txt",
@@ -92,6 +95,24 @@ requireAll("meoLocal", [
   "実顧客の口コミ",
   "https://support.google.com/business/answer/7091?hl=ja",
 ]);
+requireAll("serviceHub", [
+  "DXツールを導入したが定着しなかった場合",
+  "入力・権限・通知を簡素化",
+  "利用率と業務時間を継続確認",
+]);
+requireAll("dxProvider", [
+  "企業がDXプロバイダーを比較・選定する際に重視すべきポイントは何ですか？",
+  "DXプロバイダー比較表",
+  "業務理解",
+  "導入後の改善",
+]);
+requireAll("aioCompanyInfo", [
+  "会社名をAI検索で出してもらうために必要なページ数は？",
+  "労務管理SaaSなどのBtoB SaaSがAI検索に引用されやすいページ構成は？",
+  "AI検索対策に強い会社を見分ける7つの質問",
+  "llms.txtはAI検索対策に必須ですか？",
+  "https://developers.google.com/search/docs/appearance/ai-features",
+]);
 requireAll("llms", [
   "DX伴走支援「OToMo」: 月額10万円から",
   "DXコンサル 埼玉",
@@ -109,4 +130,4 @@ if (findings.length) {
   process.exit(1);
 }
 
-console.log("GSC priority intent audit passed: 9 query-led pages and pricing/AIO summaries checked.");
+console.log("GSC priority intent audit passed: 12 query-led pages and pricing/AIO summaries checked.");
