@@ -304,6 +304,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/watch-repair-customer-portal - 4店舗の時計修理会社／約15万件の履歴を生かし受付転記をゼロへ。年間2万件超の修理を扱う時計修理会社が、受付フォーム、顧客マイページ、社内管理を一意IDでつないだ公開事例です。
 - https://digitool-lab.com/blog/building-maintenance-portal-accounting - 約150現場のビルメンテナンス会社／経理2名の決算期残業をほぼゼロへ。高齢スタッフが多く複雑な契約を扱う会社が、小さな案件管理から始め、案件・契約・請求・会計をつないだ公開事例です。
 - https://digitool-lab.com/blog/driving-school-support-dx - 従業員65名の自動車学校／社内電話を約90％減らし、離職率を12％から3％へ。専任エンジニアのいない自動車学校が、大規模開発の失敗後に5〜6人の試行から現場内製へ切り替え、電話連絡や期限管理を支援型へ変えたIPA掲載事例を解説します。
 - https://digitool-lab.com/blog/office-supplier-team-sales-47 - 事務用品商社／RPAで年間約2,000時間を削減し、チーム営業を強化した話。札幌市の事務用品商社がSFA・CRM・MAとRPAを活用し、年間約2,000時間を削減。DX支援受注を2022年度272件から2025年度617件へ伸ばした公開事例です。
@@ -353,9 +354,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/hp-kaden-estimate-automation-20260620 - 従業員15名の家電量販店／大型家電の見積を整えて回答時間を短くした話。地域家電量販店で、工事費・配送費・保証・下取りを含む見積作成を整え、営業担当の確認時間とミスを減らした事例。
 - https://digitool-lab.com/blog/tax-office-monthly-report-ai - 従業員12名の税理士事務所／月次報告を翌月20日から10日に早めた話。税理士事務所が顧客ごとの処理ルールとAI下書きを整え、月次処理時間と報告タイミングを改善した事例。
 - https://digitool-lab.com/blog/department-store-operation-reporting - 従業員25名の百貨店／店舗運営の確認作業を整えて在庫と売場判断を速くした話。百貨店の売場報告・在庫確認・週次振り返りを整えた事例。
-- https://digitool-lab.com/blog/hp-vegetable-farm-quality-records-20260615 - 従業員12名の野菜農家／作業記録と販売記録を整えて品質管理を安定させた話。北海道の野菜農家が、作業記録・販売記録・問い合わせを入力画面と自動集計で整え、収益把握と品質管理を改善した事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-08-31
+2026-09-01

@@ -106,6 +106,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [4店舗の時計修理会社／約15万件の履歴を生かし受付転記をゼロへ](https://digitool-lab.com/blog/watch-repair-customer-portal) - 年間2万件超の修理を扱う時計修理会社が、受付フォーム、顧客マイページ、社内管理を一意IDでつないだ公開事例です。
 - [約150現場のビルメンテナンス会社／経理2名の決算期残業をほぼゼロへ](https://digitool-lab.com/blog/building-maintenance-portal-accounting) - 高齢スタッフが多く複雑な契約を扱う会社が、小さな案件管理から始め、案件・契約・請求・会計をつないだ公開事例です。
 - [従業員65名の自動車学校／社内電話を約90％減らし、離職率を12％から3％へ](https://digitool-lab.com/blog/driving-school-support-dx) - 専任エンジニアのいない自動車学校が、大規模開発の失敗後に5〜6人の試行から現場内製へ切り替え、電話連絡や期限管理を支援型へ変えたIPA掲載事例を解説します。
 - [事務用品商社／RPAで年間約2,000時間を削減し、チーム営業を強化した話](https://digitool-lab.com/blog/office-supplier-team-sales-47) - 札幌市の事務用品商社がSFA・CRM・MAとRPAを活用し、年間約2,000時間を削減。DX支援受注を2022年度272件から2025年度617件へ伸ばした公開事例です。
@@ -125,9 +126,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員45名の貸衣装会社／残業を約10分の1に減らした話](https://digitool-lab.com/blog/costume-rental-data-integration-overtime-20260801) - 衣装、付属品、顧客、接客、請求の情報が分かれていた従業員45名の貸衣装会社が、業界向け管理システムへまとめ、残業時間を約10分の1に減らした公開事例を再構成します。
 - [従業員9名の健康食品会社／伝票発行を6分の1にした話](https://digitool-lab.com/blog/healthfood-sales-slip-integration-20260801) - 約5万件の販売データと手書き伝票に限界が出ていた従業員9名の健康食品会社が、販売管理と指定伝票の仕組みをつなぎ、伝票発行を6分の1、顧客数を2割増やした公開事例を再構成します。
 - [従業員25名の建設会社／給与処理を5日から1日、担当を最大3名から1名へ](https://digitool-lab.com/blog/construction-payroll-5-days-to-1-day) - 従業員25名の建設会社が、勤怠・給与計算・振込をつなぎ、給与処理を5日から1日、必要人員を最大3名から1名へ減らした公開事例です。
-- [従業員12名のファイナンシャルプランナー／資料作成4時間を1時間に短縮した話](https://digitool-lab.com/blog/financial-planner-proposal-4-hours-to-1-hour) - 相談履歴、案件の進み具合、提案資料、請求確認を一つの流れへ整え、ファイナンシャルプランナーが資料作成と案件管理の負担を減らした再構成事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-08-31
+2026-09-01
