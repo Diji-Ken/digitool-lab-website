@@ -304,6 +304,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/daily-improvement-ai-training-business - 従業員数原本未記載の情報通信会社／毎日1改善を26社・売上390万円の研修事業へ育てた話。エヌエスケーケーの公式発表から、社内の小さな改善を記録し、見学会で反応を確かめ、生成AI勉強会という外販事業へ育てた順番を紹介する。
 - https://digitool-lab.com/blog/metalworking-company-memory-ai-inhouse - 従業員数原本未記載の精密加工会社／月約6,000枚の紙と月400〜500時間を減らした話。岡田研磨の公開事例から、紙探しを減らすところから始め、社内アプリと手順書を自社で育て、作業削減と会社の記憶づくりを両立した流れを紹介する。
 - https://digitool-lab.com/blog/watch-repair-customer-portal - 4店舗の時計修理会社／約15万件の履歴を生かし受付転記をゼロへ。年間2万件超の修理を扱う時計修理会社が、受付フォーム、顧客マイページ、社内管理を一意IDでつないだ公開事例です。
 - https://digitool-lab.com/blog/building-maintenance-portal-accounting - 約150現場のビルメンテナンス会社／経理2名の決算期残業をほぼゼロへ。高齢スタッフが多く複雑な契約を扱う会社が、小さな案件管理から始め、案件・契約・請求・会計をつないだ公開事例です。
@@ -353,9 +354,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/hp-teishoku-recipe-standardization-20260620 - 従業員8名の定食屋／レシピを整えて味のばらつきを減らした話。家庭料理定食屋で、口伝に頼っていた調理手順と品質基準を整理し、調理品質と教育時間を改善した事例。
 - https://digitool-lab.com/blog/hp-homecenter-display-optimization-20260620 - 従業員20名のホームセンター／売場の陳列判断を整えて変更時間を半分にした話。ホームセンターで、季節商品や売れ筋変化に合わせた陳列判断を整え、作業時間と売場品質のばらつきを減らした事例。
 - https://digitool-lab.com/blog/hp-kaden-estimate-automation-20260620 - 従業員15名の家電量販店／大型家電の見積を整えて回答時間を短くした話。地域家電量販店で、工事費・配送費・保証・下取りを含む見積作成を整え、営業担当の確認時間とミスを減らした事例。
-- https://digitool-lab.com/blog/tax-office-monthly-report-ai - 従業員12名の税理士事務所／月次報告を翌月20日から10日に早めた話。税理士事務所が顧客ごとの処理ルールとAI下書きを整え、月次処理時間と報告タイミングを改善した事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-02
+2026-09-03
