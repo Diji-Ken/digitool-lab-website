@@ -106,6 +106,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員22名のラベル印刷会社／受注入力を1日約50点から約300点へ](https://digitool-lab.com/blog/label-printing-order-entry-50-to-300) - ラベル印刷会社が販売・生産・在庫の情報を段階的につなぎ、受注入力能力と顧客対応を改善した公開事例。
 - [従業員数原本未記載の情報通信会社／毎日1改善を26社・売上390万円の研修事業へ育てた話](https://digitool-lab.com/blog/daily-improvement-ai-training-business) - エヌエスケーケーの公式発表から、社内の小さな改善を記録し、見学会で反応を確かめ、生成AI勉強会という外販事業へ育てた順番を紹介する。
 - [従業員数原本未記載の精密加工会社／月約6,000枚の紙と月400〜500時間を減らした話](https://digitool-lab.com/blog/metalworking-company-memory-ai-inhouse) - 岡田研磨の公開事例から、紙探しを減らすところから始め、社内アプリと手順書を自社で育て、作業削減と会社の記憶づくりを両立した流れを紹介する。
 - [4店舗の時計修理会社／約15万件の履歴を生かし受付転記をゼロへ](https://digitool-lab.com/blog/watch-repair-customer-portal) - 年間2万件超の修理を扱う時計修理会社が、受付フォーム、顧客マイページ、社内管理を一意IDでつないだ公開事例です。
@@ -125,9 +126,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員43名の運送会社／売上集計を30％以上短縮した紙伝票の一元化](https://digitool-lab.com/blog/transport-paper-slips-sales-summary-30-percent) - 従業員43名の運送会社が、Excelと手書き伝票に分かれていた売上・入金・請求を一元化し、売上集計を30％以上短縮した公開事例です。
 - [従業員3名の工務店／見積作成を約1.5か月から最短5日に短縮](https://digitool-lab.com/blog/small-builder-estimate-45-days-to-5-days) - 従業員3名の工務店が、プラン・提案・積算・見積・設計確認を一つにつなぎ、見積作成を約1.5か月から最短5日に短縮した公開事例です。
 - [従業員4名の農泊事業／予約管理の手間を6割減らした話](https://digitool-lab.com/blog/farmstay-reservation-management-60-percent-20260801) - 電話受付とExcel転記に頼っていた従業員4名の農泊事業が、インターネット予約とアンケートの電子化で予約管理の手間を6割減らし、事務効率を2倍にした公開事例を再構成します。
-- [従業員45名の貸衣装会社／残業を約10分の1に減らした話](https://digitool-lab.com/blog/costume-rental-data-integration-overtime-20260801) - 衣装、付属品、顧客、接客、請求の情報が分かれていた従業員45名の貸衣装会社が、業界向け管理システムへまとめ、残業時間を約10分の1に減らした公開事例を再構成します。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-03
+2026-09-04
