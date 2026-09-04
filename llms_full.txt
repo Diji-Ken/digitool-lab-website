@@ -304,6 +304,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/one-person-crepe-pos-accounting - 従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話。一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。
 - https://digitool-lab.com/blog/label-printing-order-entry-50-to-300 - 従業員22名のラベル印刷会社／受注入力を1日約50点から約300点へ。ラベル印刷会社が販売・生産・在庫の情報を段階的につなぎ、受注入力能力と顧客対応を改善した公開事例。
 - https://digitool-lab.com/blog/daily-improvement-ai-training-business - 従業員数原本未記載の情報通信会社／毎日1改善を26社・売上390万円の研修事業へ育てた話。エヌエスケーケーの公式発表から、社内の小さな改善を記録し、見学会で反応を確かめ、生成AI勉強会という外販事業へ育てた順番を紹介する。
 - https://digitool-lab.com/blog/metalworking-company-memory-ai-inhouse - 従業員数原本未記載の精密加工会社／月約6,000枚の紙と月400〜500時間を減らした話。岡田研磨の公開事例から、紙探しを減らすところから始め、社内アプリと手順書を自社で育て、作業削減と会社の記憶づくりを両立した流れを紹介する。
@@ -353,9 +354,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/izakaya-food-cost-ai-management-20260628 - 従業員15名の海鮮居酒屋／原価計算を週12時間から2時間に減らした話。魚価変動と150種類のメニューで原価管理が難しかった居酒屋で、仕入価格とレシピ情報を整理し、利益率とロスを改善した事例。
 - https://digitool-lab.com/blog/clinic-records-ai-form-20260628 - 従業員15名の個人クリニック／紙の記録を整えてケア記録時間を60%減らした話。紙の記録、予約、問診メモが分かれていた個人クリニックで、入力画面とAIへの指示文を整え、記録時間と検索時間を減らした事例。
 - https://digitool-lab.com/blog/hp-teishoku-recipe-standardization-20260620 - 従業員8名の定食屋／レシピを整えて味のばらつきを減らした話。家庭料理定食屋で、口伝に頼っていた調理手順と品質基準を整理し、調理品質と教育時間を改善した事例。
-- https://digitool-lab.com/blog/hp-homecenter-display-optimization-20260620 - 従業員20名のホームセンター／売場の陳列判断を整えて変更時間を半分にした話。ホームセンターで、季節商品や売れ筋変化に合わせた陳列判断を整え、作業時間と売場品質のばらつきを減らした事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-04
+2026-09-05

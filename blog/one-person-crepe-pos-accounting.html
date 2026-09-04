@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話｜デジタルツール研究所</title>
+    <meta name="description" content="一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+<link rel="stylesheet" href="../css/style.css?v=2026061401">
+<!-- AUTO-ARTICLE-SEO:START -->
+    <link rel="canonical" href="https://digitool-lab.com/blog/one-person-crepe-pos-accounting">
+    <meta name="author" content="株式会社デジタルツール研究所">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="株式会社デジタルツール研究所">
+    <meta property="og:title" content="従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話">
+    <meta property="og:description" content="一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。">
+    <meta property="og:url" content="https://digitool-lab.com/blog/one-person-crepe-pos-accounting">
+    <meta property="og:image" content="https://digitool-lab.com/images/logo-160.webp">
+    <meta property="article:published_time" content="2026-09-05">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話">
+    <meta name="twitter:description" content="一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。">
+    <meta name="twitter:image" content="https://digitool-lab.com/images/logo-160.webp">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://digitool-lab.com/blog/one-person-crepe-pos-accounting#article","headline":"従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話","description":"一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。","mainEntityOfPage":"https://digitool-lab.com/blog/one-person-crepe-pos-accounting","datePublished":"2026-09-05","dateModified":"2026-09-05","inLanguage":"ja-JP","image":["https://digitool-lab.com/images/logo-160.webp"],"keywords":"飲食店DX, POSレジ, 会計連携, 一人経営","author":{"@type":"Organization","name":"株式会社デジタルツール研究所","url":"https://digitool-lab.com"},"publisher":{"@type":"Organization","name":"株式会社デジタルツール研究所","url":"https://digitool-lab.com","logo":{"@type":"ImageObject","url":"https://digitool-lab.com/images/logo-160.webp"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://digitool-lab.com/"},{"@type":"ListItem","position":2,"name":"ご支援事例","item":"https://digitool-lab.com/case-studies"},{"@type":"ListItem","position":3,"name":"従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話","item":"https://digitool-lab.com/blog/one-person-crepe-pos-accounting"}]}]}</script>
+    <!-- AUTO-ARTICLE-SEO:END -->
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+  <header>
+    <div class="container">
+      <a href="../" class="logo">
+        <img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所 ロゴ" width="160" height="160" decoding="async">
+      </a>
+      <div class="header-right-panel">
+        <nav class="desktop-nav">
+          <a href="../about">私たちについて</a>
+          <a href="../service">事業内容</a>
+          <a href="../case-studies" class="active">ご支援事例</a>
+        </nav>
+        <div class="header-buttons">
+          <a href="#" id="header-download-button" class="btn btn-sm btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="10 16 12 18 14 16"></polyline></svg>
+            <span>資料ダウンロード</span>
+          </a>
+          <a href="../contact" class="btn btn-sm btn-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>お問い合わせ</span>
+          </a>
+        </div>
+      </div>
+      <button class="menu-button" id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu">
+        <a href="../about">私たちについて</a>
+        <a href="../service">事業内容</a>
+        <a href="../case-studies" class="active">ご支援事例</a>
+        <a href="../contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow">
+    <!-- パンくずナビ -->
+    <nav class="breadcrumb" style="padding: 1rem; background-color: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <a href="../" style="color: var(--gray-600); text-decoration: none;">ホーム</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <a href="../case-studies" style="color: var(--gray-600); text-decoration: none;">ご支援事例</a>
+        <span style="margin: 0 0.5rem; color: var(--gray-400);">></span>
+        <span style="color: var(--gray-800);">飲食店DXの事例</span>
+      </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <div class="page-header" style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div style="margin-bottom: 1rem;">
+          <span style="background-color: var(--orange-100); color: var(--orange-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">飲食店DX</span>
+          <time style="margin-left: 1rem; color: var(--gray-600); font-size: 0.875rem;">2026-09-05</time>
+        </div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; line-height: 1.3; margin: 0;">従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話</h1>
+
+        <!-- タグ表示エリア -->
+        <div class="article-tags" style="margin-top: 1.5rem;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="../case-studies?tag=%E9%A3%B2%E9%A3%9F%E5%BA%97DX" class="article-tag">飲食店DX</a>
+            <a href="../case-studies?tag=POS%E3%83%AC%E3%82%B8" class="article-tag">POSレジ</a>
+            <a href="../case-studies?tag=%E4%BC%9A%E8%A8%88%E9%80%A3%E6%90%BA" class="article-tag">会計連携</a>
+            <a href="../case-studies?tag=%E4%B8%80%E4%BA%BA%E7%B5%8C%E5%96%B6" class="article-tag">一人経営</a>
+            <!-- タグは手動で以下の形式で追加してください -->
+            <!-- <a href="../case-studies?tag=タグ名" class="article-tag">タグ名</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メイン画像 -->
+    <div style="background-color: var(--gray-100); padding: 2rem 0;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <img src="../images/case-placeholder.svg" alt="従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話" style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <!-- 記事本文 -->
+    <article style="padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px;">
+
+        <section style="margin-bottom: 3rem;">
+<blockquote style="margin:1.25rem 0;padding:1rem 1.25rem;border-left:4px solid var(--orange-400);background:var(--orange-50);"><strong>飲食業 × 経理・売上分析 × 1人運営のクレープ専門店の事例</strong></blockquote>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「会計ソフトとレジをつないだのに、数字が合わない」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">便利にするためのデータ連携が、かえって二重入力や原因不明の差額を生むことがあります。1人で店を運営していれば、営業中に原因を調べる時間は取れません。確定申告が近づくほど、不安だけが大きくなります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">中小企業基盤整備機構が2025年3月に公開した事例では、愛媛県新居浜市のクレープ専門店「＃クレープ」が、POSレジと青色申告ソフトの不具合を見直した過程が紹介されています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同店は2023年4月に開業し、経営者が1人で運営。支援者と画面を一緒に確認し、自動取込みと手入力の重複を特定しました。入力ルールを直した結果、約3か月で連携不具合を解消し、半年後には前年同月の売上を商品企画へ使えるようになりました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">新しい道具を買い足した話ではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><strong>今ある二つの道具へ、正しい役割を一つずつ戻した話</strong>です。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">課題：自動取込みと手入力が同じ取引を記録していた</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">店舗ではAirレジを使い、その後MFクラウド青色申告を導入していました。しかし、連携後も数字が合いません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">支援者がタブレット画面を確認すると、レジから自動で取り込まれたデータと、経営者が直接入力した仕訳に重複が見つかりました。個人用の家計アプリから仕事用の経費データを移したことも影響した可能性がありました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">公開資料をもとに会話を再構成すると、次のような状態です。実際の発言をそのまま引用したものではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「売上はレジから入っています。でも念のため会計にも入力しました」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「同じ取引が二つ登録されているため、数字が合わなくなっています」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「どちらを消せばよいか分からず、触れませんでした」</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">自動化の失敗は、システムが止まることだけではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">動いているように見えて、同じ情報が二つ入ることもあります。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">Before／After：数字を直す段階から、数字を使う段階へ</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">公表資料には導入前後の経理時間が記載されていません。そこで、確認できる変化だけを比較します。</p>
+<div style="overflow-x:auto;margin:1.5rem 0;"><table style="width:100%;border-collapse:collapse;">
+<thead><tr><th style="padding:0.75rem;border:1px solid var(--gray-200);text-align:left;">項目</th><th style="padding:0.75rem;border:1px solid var(--gray-200);text-align:left;">Before</th><th style="padding:0.75rem;border:1px solid var(--gray-200);text-align:left;">After</th></tr></thead>
+<tbody><tr><td style="padding:0.75rem;border:1px solid var(--gray-200);">売上の記録</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">自動取込みと直接入力が重複</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">取込み方法と登録ルールを統一</td></tr>
+<tr><td style="padding:0.75rem;border:1px solid var(--gray-200);">経費データ</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">個人用アプリからの移行も混在</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">仕事用データの扱いを整理</td></tr>
+<tr><td style="padding:0.75rem;border:1px solid var(--gray-200);">仕訳の確認</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">どこが違うか分からない</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">証拠書類と取込み結果を順に確認</td></tr>
+<tr><td style="padding:0.75rem;border:1px solid var(--gray-200);">解決まで</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">原因を自力で特定できない</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">約3か月で連携不具合を解消</td></tr>
+<tr><td style="padding:0.75rem;border:1px solid var(--gray-200);">データ活用</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">経営数値を正しく見られない</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">半年後に前年同月を分析</td></tr>
+<tr><td style="padding:0.75rem;border:1px solid var(--gray-200);">経営への利用</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">確定申告への不安</td><td style="padding:0.75rem;border:1px solid var(--gray-200);">季節限定商品の企画へ活用</td></tr></tbody>
+</table></div>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「3か月」「半年」は同店の公開事例です。データ量、不具合の範囲、過去の登録状況によって必要期間は変わります。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">施策1：新しい連携を止め、入口を全部書き出した</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">数字が合わない時、すぐに別の会計ソフトへ移ると、原因も一緒に持ち越すことがあります。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">最初に確認するのは、取引がどこから入るかです。</p>
+<ul style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li>POSレジからの自動取込み</li>
+<li>銀行・カードからの取込み</li>
+<li>手入力</li>
+<li>個人用アプリから移した過去データ</li>
+<li>現金売上や経費の追加登録</li>
+</ul>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">入口ごとに、対象期間、件数、登録者を並べます。同じ日付、金額、取引先が二つないかを少量から確認します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ここでAIや表計算を使うなら、重複候補を並べる補助に留めます。どちらが正しい仕訳かは、レシート、請求書、通帳などの証拠書類と照らして人が決めます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">施策2：自動で入るものは、手で重ねない</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同店の支援では、自動仕訳データの取込みルールと、証拠書類の確認方法を見直しました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">ルールは難しくする必要がありません。</p>
+<ol style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li>レジ売上はPOSから取り込む</li>
+<li>同じ売上を会計へ直接入力しない</li>
+<li>取込み失敗だけを例外一覧へ出す</li>
+<li>経費は証拠書類と一件ずつ照合する</li>
+<li>不明な科目は落ち着いた時間にまとめて確認する</li>
+</ol>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">経営者が1人で営業しているため、判断が必要な仕訳を営業時間中に処理しない流れも提案されました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">道具に仕事を合わせるのではなく、接客を止めない時間帯へ経理作業を寄せた点が現実的です。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">施策3：いきなり全期間を直さず、一つの月で確かめた</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">過去データをまとめて直すと、削除しすぎた場合に戻せません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">まず一つの月を選びます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">レジの日計。現金残高。銀行入金。カード決済。会計ソフトの売上。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この五つを照らし、どこで差が生まれたかを確認します。重複候補は別表へ出し、削除前のデータを保管します。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">一つの月で手順が固まったら、別の月へ広げます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">担当者が複数いる会社なら、修正者と確認者を分けます。1人会社なら、修正日、理由、元資料を記録し、翌日に見直すだけでも誤削除を減らせます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">施策4：直った数字を、売れる商品の判断へ使った</h2>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">不具合を直す目的は、確定申告だけではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同店では、半年後に売上データを分析できるようになり、前年同月の売れ筋を季節限定商品の開発へ生かしました。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">数字が正しくなった後は、次の三つから始められます。</p>
+<ul style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li>曜日別の売上と来客数</li>
+<li>商品別の販売数と廃棄</li>
+<li>前年同月に伸びた季節商品</li>
+</ul>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">分析項目を増やしすぎる必要はありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">「来月、何をどれだけ仕込むか」という一つの判断につながる数字を選びます。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">AIを使う場合も、売上データから傾向の候補を出すところまで。価格変更や仕入れ量は、天候、イベント、原価、現場の感覚を加えて人が決めます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">小規模店舗で同じ問題を防ぐ月1回の確認</h2>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">1. 新しい連携先を確認する</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">レジ、会計、銀行、カード、予約、通販のうち、増えた入口がないか見ます。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">2. 重複候補を10件だけ見る</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">同日・同額の取引を一覧にし、実際の二重登録か、別の取引かを確認します。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">3. 取込みエラーを残す</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">失敗したデータを黙って飛ばさず、未処理一覧へ出します。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">4. 修正履歴を残す</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">誰が、いつ、なぜ直したかを記録します。</p>
+<h3 style="font-size:1.2rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--orange-600);">5. 経営判断を一つ行う</h3>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">売れ筋、仕入れ、営業時間など、整えた数字を一つの行動へつなげます。</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;border-left:4px solid var(--orange-500);padding-left:1rem;">飲食店以外にも使える考え方</h2>
+<ul style="margin:1rem 0 1rem 1.5rem;line-height:1.8;">
+<li><strong>小売店</strong>：POSと通販、会計の重複を防ぐ</li>
+<li><strong>美容室</strong>：予約、来店、会計を同じ顧客へ結びつける</li>
+<li><strong>教室</strong>：申込、月謝、振込の二重登録を整理する</li>
+<li><strong>士業</strong>：請求、入金、会計の入口を統一する</li>
+</ul>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">この事例の成果は、特別なAIを導入したことではありません。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">画面を一緒に見て、二重になった入口を見つけ、営業を止めない登録ルールへ直したことです。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">データ連携で数字が合わない場合は、別の道具を増やす前に、「同じ取引がどこから何回入るか」を一枚にしてみてください。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;">気になる業務があれば、お気軽にお声がけください。弊社では、レジ、会計、予約、販売管理など、複数の道具に分かれたデータの整理と業務システム化を支援しています。</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.2rem;"><a href="https://digitool-lab.com/contact">無料相談はこちら</a></p>
+</section>
+
+      </div>
+    </article>
+
+    <!-- 関連事例・CTA -->
+    <section style="background-color: var(--gray-50); padding: 3rem 1rem;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">他の事例も見る</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="../case-studies" class="btn btn-outline" style="margin-bottom: 1rem;">事例一覧に戻る</a>
+          <a href="../contact" class="btn btn-primary" style="margin-bottom: 1rem;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-company">
+        <img src="../images/logo-160.webp" alt="株式会社デジタルツール研究所" class="footer-logo" width="160" height="160" decoding="async" loading="lazy">
+        <div class="footer-company-info">
+          <h3>株式会社デジタルツール研究所</h3>
+          <p>〒331-0821<br>
+          埼玉県さいたま市北区別所町738-3<br>
+          TEL: <a href="tel:0487007030">048-700-7030</a></p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div class="footer-services">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="../services/consulting">DX伴走サポート</a></li>
+          <li><a href="../services/training">フルオーダーメイドAI研修</a></li>
+          <li><a href="../services/development">開発・デジタル支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site-links">
+        <ul>
+          <li><a href="../case-studies">ご支援事例</a></li>
+          <li><a href="../about">会社情報</a></li>
+          <li><a href="../service">サービス一覧</a></li>
+          <li><a href="../contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>SNS</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/digiken_dx/" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37-1.63-1.63a2 2 0 0 0-2.83 0L9 12.37V16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.63z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@%E3%83%87%E3%82%B8%E7%A0%94DX" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25a29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon>
+            </svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 株式会社デジタルツール研究所. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Download Modal (全ページ共通) -->
+<div id="download-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>サービス詳細資料</h3>
+    <p>フォームにご入力いただくと、資料のダウンロードリンクをメールでお送りします。（実際には送信されず、すぐにダウンロードが始まります）</p>
+    <form id="download-form">
+      <div class="form-group">
+        <label for="modal-name">お名前 *</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">メールアドレス *</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ダウンロード</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js?v=2026060207"></script>
+</body>
+</html>
+
+
+
