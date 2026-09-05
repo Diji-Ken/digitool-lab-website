@@ -304,6 +304,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/odabou-fire-safety-field-knowledge-dx - 10名体制の消防設備会社｜現場3名の危機から売上約2倍・物件数約5倍へ。紙・電話・担当者の記憶に頼っていた消防設備会社が、3年の試行と6か月のデータ整備を経て、教育・報告・引き継ぎを改善した公開事例です。
 - https://digitool-lab.com/blog/one-person-crepe-pos-accounting - 従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話。一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。
 - https://digitool-lab.com/blog/label-printing-order-entry-50-to-300 - 従業員22名のラベル印刷会社／受注入力を1日約50点から約300点へ。ラベル印刷会社が販売・生産・在庫の情報を段階的につなぎ、受注入力能力と顧客対応を改善した公開事例。
 - https://digitool-lab.com/blog/daily-improvement-ai-training-business - 従業員数原本未記載の情報通信会社／毎日1改善を26社・売上390万円の研修事業へ育てた話。エヌエスケーケーの公式発表から、社内の小さな改善を記録し、見学会で反応を確かめ、生成AI勉強会という外販事業へ育てた順番を紹介する。
@@ -353,9 +354,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/case-logistics-dispatch-confirmation - 従業員40名の軽貨物運送会社／配車確認を整えて連絡時間を減らした話。配車係が電話と紙メモで配送状況を追っていた軽貨物運送会社で、入力画面と共有表を整え、配車・ルート作成時間と車両点検記録を短縮した事例。
 - https://digitool-lab.com/blog/izakaya-food-cost-ai-management-20260628 - 従業員15名の海鮮居酒屋／原価計算を週12時間から2時間に減らした話。魚価変動と150種類のメニューで原価管理が難しかった居酒屋で、仕入価格とレシピ情報を整理し、利益率とロスを改善した事例。
 - https://digitool-lab.com/blog/clinic-records-ai-form-20260628 - 従業員15名の個人クリニック／紙の記録を整えてケア記録時間を60%減らした話。紙の記録、予約、問診メモが分かれていた個人クリニックで、入力画面とAIへの指示文を整え、記録時間と検索時間を減らした事例。
-- https://digitool-lab.com/blog/hp-teishoku-recipe-standardization-20260620 - 従業員8名の定食屋／レシピを整えて味のばらつきを減らした話。家庭料理定食屋で、口伝に頼っていた調理手順と品質基準を整理し、調理品質と教育時間を改善した事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-05
+2026-09-06
