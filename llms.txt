@@ -106,6 +106,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [10名体制の消防設備会社｜現場3名の危機から売上約2倍・物件数約5倍へ](https://digitool-lab.com/blog/odabou-fire-safety-field-knowledge-dx) - 紙・電話・担当者の記憶に頼っていた消防設備会社が、3年の試行と6か月のデータ整備を経て、教育・報告・引き継ぎを改善した公開事例です。
 - [従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話](https://digitool-lab.com/blog/one-person-crepe-pos-accounting) - 一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。
 - [従業員22名のラベル印刷会社／受注入力を1日約50点から約300点へ](https://digitool-lab.com/blog/label-printing-order-entry-50-to-300) - ラベル印刷会社が販売・生産・在庫の情報を段階的につなぎ、受注入力能力と顧客対応を改善した公開事例。
 - [従業員数原本未記載の情報通信会社／毎日1改善を26社・売上390万円の研修事業へ育てた話](https://digitool-lab.com/blog/daily-improvement-ai-training-business) - エヌエスケーケーの公式発表から、社内の小さな改善を記録し、見学会で反応を確かめ、生成AI勉強会という外販事業へ育てた順番を紹介する。
@@ -125,9 +126,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員数非公開の訪問介護事業所／シフト連絡を月23時間減らし、ケア相談を月10時間増やした話](https://digitool-lab.com/blog/visit-care-schedule-ict-20260820) - 訪問介護事業所がシフトと連絡の流れをICT化し、サービス提供責任者の連絡調整を月23時間減らしてケア相談を一人あたり月10時間増やした公開事例です。
 - [従業員12名の養鶏農家／作業記録60分を15分に短縮した話](https://digitool-lab.com/blog/poultry-work-records-60-to-15-minutes) - 手書きの作業・出荷・販売記録を入力画面と自動集計へまとめ、養鶏農家が日々の記録と月末の収益確認を短くした再構成事例です。
 - [従業員43名の運送会社／売上集計を30％以上短縮した紙伝票の一元化](https://digitool-lab.com/blog/transport-paper-slips-sales-summary-30-percent) - 従業員43名の運送会社が、Excelと手書き伝票に分かれていた売上・入金・請求を一元化し、売上集計を30％以上短縮した公開事例です。
-- [従業員3名の工務店／見積作成を約1.5か月から最短5日に短縮](https://digitool-lab.com/blog/small-builder-estimate-45-days-to-5-days) - 従業員3名の工務店が、プラン・提案・積算・見積・設計確認を一つにつなぎ、見積作成を約1.5か月から最短5日に短縮した公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-05
+2026-09-06
