@@ -11,6 +11,7 @@ const findings = [];
 const concurrency = 4;
 
 const priorityPages = [
+  { url: 'articles/', file: 'articles/index.html' },
   { url: 'dx-support-saitama/', file: 'dx-support-saitama/index.html' },
   { url: 'blog/dx-support-cost', file: 'blog/dx-support-cost.html' },
   { url: 'ai-training-saitama/', file: 'ai-training-saitama/index.html' },
@@ -165,6 +166,23 @@ await mapWithConcurrency(priorityPages, async (page) => {
     }
 
     const production = pageSignals(productionHtml);
+    if (page.url === 'articles/') {
+      const visibleHtml = productionHtml.replace(/<!--[\s\S]*?-->/g, '')
+        .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+      const linked = new Set(matchingTags(visibleHtml, 'a').flatMap(({ attributes }) => {
+        if (!attributes.href || attributes.rel?.split(/\s+/).includes('nofollow')) return [];
+        try { return [new URL(decodeHtml(attributes.href), new URL(page.url, baseUrl)).href]; }
+        catch { return []; }
+      }));
+      const missing = [...sitemapUrls(productionSitemap)]
+        .filter((url) => url !== new URL(page.url, baseUrl).href && !linked.has(url));
+      if (missing.length) findings.push(`articles/: ${missing.length} sitemap page(s) missing from live HTML links.`);
+      for (const entry of evidenceGate.entries ?? []) {
+        if (linked.has(new URL(entry.url, baseUrl).href)) {
+          findings.push(`articles/: excluded legacy page is publicly linked: ${entry.url}`);
+        }
+      }
+    }
     for (const signal of ['title', 'description', 'canonical', 'h1']) {
       const countKey = `${signal}Count`;
       if (production[countKey] !== 1) findings.push(`${label}: expected one ${signal}, found ${production[countKey]}.`);
@@ -232,6 +250,39 @@ await mapWithConcurrency(discoveryFiles, async (file) => {
     }
   } catch (error) {
     findings.push(`${file}: production fetch failed: ${error.message}`);
+  }
+});
+
+// Explicit /index aliases must consolidate to the directory URL in one hop.
+// Canonical directory fetches above also catch accidental DirectoryIndex loops.
+const directoryAliases = [
+  'dx-support-saitama/', 'ai-training-saitama/',
+  'business-system-development/', 'area/saitama-city-dx/', 'articles/',
+].flatMap((directory) => ['index', 'index.html'].map((index) => ({
+  alias: `${directory}${index}`, canonical: new URL(directory, baseUrl).href,
+})));
+await mapWithConcurrency(directoryAliases, async ({ alias, canonical }) => {
+  try {
+    const url = new URL(alias, baseUrl);
+    url.searchParams.set('seo_health_check', stamp);
+    const response = await fetch(url, {
+      redirect: 'manual', signal: AbortSignal.timeout(15_000),
+      headers: { 'user-agent': 'DigitalToolLabSeoHealthMonitor/1.0' },
+    });
+    const location = response.headers.get('location');
+    if (response.status !== 301 || !location) {
+      findings.push(`${alias}: expected a 301 redirect to ${canonical}, received ${response.status}.`);
+    } else {
+      const target = new URL(location, url);
+      const expected = new URL(canonical);
+      expected.search = url.search;
+      if (target.href !== expected.href) {
+        findings.push(`${alias}: expected ${expected.href}, received ${target.href}.`);
+      }
+    }
+    await response.body?.cancel();
+  } catch (error) {
+    findings.push(`${alias}: redirect fetch failed: ${error.message}`);
   }
 });
 

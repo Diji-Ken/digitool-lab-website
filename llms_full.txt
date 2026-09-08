@@ -134,7 +134,12 @@ ChatGPT、Claude、Geminiなどを業務に合わせて活用できるよう、�
 
 さいたま市北区を拠点に、埼玉県内の訪問研修、オンライン研修、ハイブリッド研修へ対応します。費用は対象人数、業務テーマ、教材・成果物、研修後の定着支援に合わせて個別に見積もります。
 
+基本プログラムは3名から、全6回。研修終了後3か月の無制限チャットサポートを含みます。1day研修は別オプションです。料金や演習内容は個別に確認します。費用ガイドに掲載する他主催者の公開講座料金は比較の参考であり、当社の販売価格ではありません。
+
 主要ページ: https://digitool-lab.com/ai-training-saitama/
+基本プログラムの詳細: https://digitool-lab.com/services/training
+費用と見積項目: https://digitool-lab.com/blog/ai-training-cost
+DX・AI活用の記事一覧: https://digitool-lab.com/articles/
 
 扱うテーマ:
 - 文章作成、メール作成、議事録作成

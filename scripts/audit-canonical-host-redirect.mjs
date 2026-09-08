@@ -17,6 +17,15 @@ const hasOneHopRule = firstRule >= 0
   && lines[firstRule + 2] === expected[2];
 
 const findings = [];
+const directoryRule = 'RewriteRule ^(.+/)index(?:\\.html)?$ https://digitool-lab.com/$1 [R=301,L,NE]';
+const directoryRuleIndex = lines.indexOf(directoryRule);
+const extensionRuleIndex = lines.indexOf('RewriteRule ^ /%1? [R=301,L]');
+if (directoryRuleIndex < 2
+  || lines[directoryRuleIndex - 2] !== 'RewriteCond %{THE_REQUEST} \\s/+[^\\s?]+/index(?:\\.html)?[\\s?] [NC]'
+  || lines[directoryRuleIndex - 1] !== 'RewriteCond %{DOCUMENT_ROOT}/$1index.html -f'
+  || extensionRuleIndex < directoryRuleIndex) {
+  findings.push('.htaccess must normalize explicit directory index URLs before generic .html handling, without redirecting internal DirectoryIndex requests or missing files.');
+}
 if (!hasOneHopRule) {
   findings.push('.htaccess must redirect HTTP and non-canonical hosts directly to the HTTPS apex URL in one hop.');
 }
@@ -38,4 +47,4 @@ if (findings.length) {
   process.exit(1);
 }
 
-console.log('Canonical host redirect audit passed: HTTP and www requests use a one-hop HTTPS apex redirect.');
+console.log('Canonical host redirect audit passed: HTTPS apex host and existing directory index aliases are normalized.');

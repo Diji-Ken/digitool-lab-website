@@ -21,6 +21,14 @@ jobs:
         # IndexNowへ今回変更したURLだけを通知できるよう、直前のmainも取得する
         fetch-depth: 2
 
+    # Rebuild before validation so normal article publishing does not require a
+    # second manual update of this derived navigation page.
+    - name: Generate static article navigation
+      run: node scripts/generate-article-index.mjs
+
+    - name: Audit static crawl reachability
+      run: node scripts/audit-crawl-reachability.mjs
+
     - name: Run SEO link audit
       run: node scripts/audit-seo-links.mjs
 
