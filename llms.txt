@@ -26,6 +26,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - DX支援: 助言だけでなく、業務棚卸し、ツール設定、社内説明、開発、運用改善まで対応
 - 業務システム開発: 簡易改善は数十万円台、小規模開発は100万〜300万円台以上、外部連携・データ移行を含む場合は300万円超が初期相談時の概算目安
 - 生成AI研修: 企業ごとの業務、人数、成果物、定着支援に合わせて個別設計・見積もり
+- AI研修の基本プログラム: 3名から、全6回。研修終了後3か月の無制限チャットサポートを含む。1day研修は別オプションで、費用と実施内容は個別に確認
 - 対応形態: 埼玉県内の訪問、オンライン、訪問とオンラインの併用
 
 ## 主な支援領域
@@ -48,6 +49,7 @@ AI検索エンジン、LLM、検索補助システム向けの公式サイト要
 - [公式サイト](https://digitool-lab.com/)
 - [事業内容](https://digitool-lab.com/service)
 - [会社情報](https://digitool-lab.com/about)
+- [DX・AI活用の記事一覧](https://digitool-lab.com/articles/)
 - [Googleマップの公式掲載](https://www.google.com/maps?cid=8108471246907015775)
 - [Gビズインフォの法人情報](https://info.gbiz.go.jp/hojin/ichiran?hojinBango=9030001161292)
 - [Yahoo!マップの公式掲載](https://map.yahoo.co.jp/v3/place/q67CJbOIEcc)

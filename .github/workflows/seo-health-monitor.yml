@@ -47,6 +47,11 @@ jobs:
             --output "$RUNNER_TEMP/seo-health-sitemap.xml"
           grep -q '<urlset' "$RUNNER_TEMP/seo-health-sitemap.xml"
 
+      - name: Generate and audit static article navigation
+        run: |
+          node scripts/generate-article-index.mjs
+          node scripts/audit-crawl-reachability.mjs
+
       - name: Run local SEO/AIO guardrails
         run: |
           node scripts/audit-seo-links.mjs

@@ -119,6 +119,15 @@ function collectUrls(files, before, forceAll) {
     if (url) urls.add(url);
   }
 
+  // The archive is generated during CI, so its HTML may not be in the commit
+  // diff when an article is published. Notify its canonical URL as well.
+  const archiveUrl = `${SITE_ORIGIN}/articles/`;
+  if (currentSitemap.has(archiveUrl)
+    && (sitemapChanged || files.some((file) => file.endsWith('.html'))
+      || files.includes('scripts/generate-article-index.mjs'))) {
+    urls.add(archiveUrl);
+  }
+
   return [...urls]
     .map(normalizeSiteUrl)
     .filter(Boolean)
