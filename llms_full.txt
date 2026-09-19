@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/electrical-construction-cloud-overtime-20260819 - 従業員24名の電気工事会社／社員提案のクラウド活用で残業を1年で約23％削減した話。従業員24名の電気工事会社が、全社員で候補を確かめて施工管理と案件共有の仕組みを導入し、1年間で残業時間を約23％削減した公開事例です。
 - https://digitool-lab.com/blog/printing-core-system-inhouse-20260821 - 10人規模の印刷会社／更新200万円超を避け、運用費を約5分の1にした話。10人規模の印刷会社が200万円超の単純更新を避け、外部の専門設計と社内の画面改善を分けて、運用費を従来の約5分の1へ抑えた公開事例です。
 - https://digitool-lab.com/blog/odabou-fire-safety-field-knowledge-dx - 10名体制の消防設備会社｜現場3名の危機から売上約2倍・物件数約5倍へ。紙・電話・担当者の記憶に頼っていた消防設備会社が、3年の試行と6か月のデータ整備を経て、教育・報告・引き継ぎを改善した公開事例です。
 - https://digitool-lab.com/blog/one-person-crepe-pos-accounting - 従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話。一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/case-karaoke-event-planning - 従業員16名のカラオケ店／イベント企画を整えて集客を増やした話。店長の経験頼みだったイベント企画を、過去実績・客層・季節情報を整理する仕組みに変え、企画時間を短縮し集客を改善した事例。
 - https://digitool-lab.com/blog/hp-metal-sales-customer-management-20260701 - 従業員32名の金属加工業／顧客管理を整えて受注率を25%から35%へ上げた話。金属加工業で商談メモと次回連絡を整え、営業会議とフォロー漏れを改善した事例。
 - https://digitool-lab.com/blog/case-logistics-dispatch-confirmation - 従業員40名の軽貨物運送会社／配車確認を整えて連絡時間を減らした話。配車係が電話と紙メモで配送状況を追っていた軽貨物運送会社で、入力画面と共有表を整え、配車・ルート作成時間と車両点検記録を短縮した事例。
-- https://digitool-lab.com/blog/izakaya-food-cost-ai-management-20260628 - 従業員15名の海鮮居酒屋／原価計算を週12時間から2時間に減らした話。魚価変動と150種類のメニューで原価管理が難しかった居酒屋で、仕入価格とレシピ情報を整理し、利益率とロスを改善した事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-19
+2026-09-20
