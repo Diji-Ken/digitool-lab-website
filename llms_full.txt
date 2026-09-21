@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/metal-mold-production-planning-system - 従業員113名の金型メーカー／8人の管理職を毎日2時間の日産計画から解放した話。従業員113名の金型メーカーが、管理職8人の毎日2時間の日産計画を生産管理システムへ移し、リードタイムを8週間から6週間へ短縮した公開事例です。
 - https://digitool-lab.com/blog/rice-collection-voice-ai-line - 従業員154名の農業会社／米集荷の受付を1日30分から5分へ短縮した話。従業員154名の農業会社が、電話・紙・再入力を伴う米集荷受付を音声AIとLINEでつなぎ、一日30分から5分へ短縮した公開事例です。
 - https://digitool-lab.com/blog/electrical-construction-cloud-overtime-20260819 - 従業員24名の電気工事会社／社員提案のクラウド活用で残業を1年で約23％削減した話。従業員24名の電気工事会社が、全社員で候補を確かめて施工管理と案件共有の仕組みを導入し、1年間で残業時間を約23％削減した公開事例です。
 - https://digitool-lab.com/blog/printing-core-system-inhouse-20260821 - 10人規模の印刷会社／更新200万円超を避け、運用費を約5分の1にした話。10人規模の印刷会社が200万円超の単純更新を避け、外部の専門設計と社内の画面改善を分けて、運用費を従来の約5分の1へ抑えた公開事例です。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/coffee-shop-ai-service-proposal-20260705 - 従業員4名のコーヒー専門店／接客提案を整えて客単価を2倍にした話。コーヒー専門店で接客時の聞き取りと提案パターンを整え、顧客満足度と客単価を改善するHP事例。
 - https://digitool-lab.com/blog/ryokan-plan-ai-70percent - 従業員25名の温泉旅館／宿泊プラン企画を週10時間から3時間に減らした話。温泉旅館が予約傾向とスタッフの声を整理し、AIで宿泊プラン案を作る流れを整えて企画時間を約70%削減した事例。
 - https://digitool-lab.com/blog/case-karaoke-event-planning - 従業員16名のカラオケ店／イベント企画を整えて集客を増やした話。店長の経験頼みだったイベント企画を、過去実績・客層・季節情報を整理する仕組みに変え、企画時間を短縮し集客を改善した事例。
-- https://digitool-lab.com/blog/hp-metal-sales-customer-management-20260701 - 従業員32名の金属加工業／顧客管理を整えて受注率を25%から35%へ上げた話。金属加工業で商談メモと次回連絡を整え、営業会議とフォロー漏れを改善した事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-21
+2026-09-22
