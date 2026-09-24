@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/restaurant-ai-ordering-inventory-case - 従業員20名の飲食店／発注作業を2〜2.5時間から約5分に短縮した話。約200品のレシピ、売上、在庫をつなぐAI発注支援により、発注作業を2〜2.5時間から約5分、在庫を約30万円から15〜16万円へ改善した飲食店事例。
 - https://digitool-lab.com/blog/case-construction-estimation-time - 従業員数非公開の小規模建設会社／積算を1〜2時間から10〜20分へ短縮した話。専任積算担当がいない小規模建設会社が、設計図書の読み取り支援と人の確認で積算時間を短縮した公開事例。
 - https://digitool-lab.com/blog/case-wholesale-five-copy-slip-dx - 従業員約20名の手芸用品卸売会社／5枚複写伝票を見直し年間5,760時間を削減した話。約20名・平均年齢約70歳の手芸用品卸売会社が、5枚複写伝票を起点に業務を段階的に改善した公開事例。
 - https://digitool-lab.com/blog/metal-mold-production-planning-system - 従業員113名の金型メーカー／8人の管理職を毎日2時間の日産計画から解放した話。従業員113名の金型メーカーが、管理職8人の毎日2時間の日産計画を生産管理システムへ移し、リードタイムを8週間から6週間へ短縮した公開事例です。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/fitness-club-member-ai-support-20260628 - 従業員18名のスポーツクラブ／会員メモを整えて継続率を55%から80%へ改善した話。会員情報がスタッフの記憶に分散していたスポーツクラブで、目標・体力・利用履歴を整理し、継続率を改善した事例。
 - https://digitool-lab.com/blog/visit-nursing-ai-report-portal - 従業員26名の訪問看護ステーション／報告書作成を1時間から5分に短縮した話。訪問看護の記録、報告書、郵送手配を同じ流れに整え、AIで下書きを作るHP向け事例記事。
 - https://digitool-lab.com/blog/research-company-survey-report-65-percent - 従業員14名の調査会社／アンケート集計を整えて報告書作成を65%減らした話。自由記述分類と報告書たたき台作成をAIで補助し、調査レポート作成を18時間から6時間へ短縮した事例。
-- https://digitool-lab.com/blog/coffee-shop-ai-service-proposal-20260705 - 従業員4名のコーヒー専門店／接客提案を整えて客単価を2倍にした話。コーヒー専門店で接客時の聞き取りと提案パターンを整え、顧客満足度と客単価を改善するHP事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-24
+2026-09-25
