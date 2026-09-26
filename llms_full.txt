@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/iwadate-electric-internal-portal - 従業員74名の電気工事会社／社内情報を一か所に集め完全週休2日制へ。従業員74名・5拠点の電気工事会社が、社内ポータルへ経営情報と業務連絡をまとめ、働き方を改善した進め方を解説。
 - https://digitool-lab.com/blog/construction-hotel-checkin-automation - 従業員21名の建設会社／ホテルのチェックイン業務8割を自動化した話。従業員21名の建設会社がホテル運営で、予約、本人確認、鍵の受け渡しを見直し、通常業務の約8割を自動化した進め方を中小企業向けに解説。
 - https://digitool-lab.com/blog/restaurant-ai-ordering-inventory-case - 従業員20名の飲食店／発注作業を2〜2.5時間から約5分に短縮した話。約200品のレシピ、売上、在庫をつなぐAI発注支援により、発注作業を2〜2.5時間から約5分、在庫を約30万円から15〜16万円へ改善した飲食店事例。
 - https://digitool-lab.com/blog/case-construction-estimation-time - 従業員数非公開の小規模建設会社／積算を1〜2時間から10〜20分へ短縮した話。専任積算担当がいない小規模建設会社が、設計図書の読み取り支援と人の確認で積算時間を短縮した公開事例。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/tourism-inspection-google-form-gas - 従業員18名の観光施設／手書き点検を整えて設備不具合を75%減らした話。観光施設の施設管理者が、紙の点検表を入力画面と写真付き一覧に変え、点検時間と設備不具合を減らした事例。
 - https://digitool-lab.com/blog/music-school-lesson-schedule-ai - 生徒75名の音楽教室／レッスン調整を月20時間から6時間に減らした話。音楽教室が生徒情報と希望条件を整理し、AIで候補案を作ってレッスン調整と発表会準備を軽くした事例。
 - https://digitool-lab.com/blog/fitness-club-member-ai-support-20260628 - 従業員18名のスポーツクラブ／会員メモを整えて継続率を55%から80%へ改善した話。会員情報がスタッフの記憶に分散していたスポーツクラブで、目標・体力・利用履歴を整理し、継続率を改善した事例。
-- https://digitool-lab.com/blog/visit-nursing-ai-report-portal - 従業員26名の訪問看護ステーション／報告書作成を1時間から5分に短縮した話。訪問看護の記録、報告書、郵送手配を同じ流れに整え、AIで下書きを作るHP向け事例記事。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-26
+2026-09-27
