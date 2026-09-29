@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員数非公開の歯科医院／患者数を維持したまま営業時間を1日1時間短縮した話](https://digitool-lab.com/blog/dental-reservation-hours-20260820) - 歯科医院が約10年続いた紙と表計算中心の運用を見直し、クラウド予約と会計をつないで、患者数を維持したまま営業時間を一日1時間短縮した公開事例です。
 - [従業員170名の製造会社｜500超の業務画面と5年分の改善知識を活用](https://digitool-lab.com/blog/monovate-manufacturing-daily-report-ai-search) - 共有PCへの日報入力待ちと管理者の深夜確認を、現場でのスマートフォン入力へ転換。蓄積した改善提案を検索AIで生かす公開事例です。
 - [従業員34名の建設会社／見積提出を年間450件から1,263件へ増やした話](https://digitool-lab.com/blog/suzuya-construction-estimate-management) - 従業員34名の建設会社が見積・受注・施工管理を一つの流れへまとめ、見積提出件数と人材育成期間を改善した過程を中小企業向けに解説。
 - [従業員74名の電気工事会社／社内情報を一か所に集め完全週休2日制へ](https://digitool-lab.com/blog/iwadate-electric-internal-portal) - 従業員74名・5拠点の電気工事会社が、社内ポータルへ経営情報と業務連絡をまとめ、働き方を改善した進め方を解説。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [4店舗の時計修理会社／約15万件の履歴を生かし受付転記をゼロへ](https://digitool-lab.com/blog/watch-repair-customer-portal) - 年間2万件超の修理を扱う時計修理会社が、受付フォーム、顧客マイページ、社内管理を一意IDでつないだ公開事例です。
 - [約150現場のビルメンテナンス会社／経理2名の決算期残業をほぼゼロへ](https://digitool-lab.com/blog/building-maintenance-portal-accounting) - 高齢スタッフが多く複雑な契約を扱う会社が、小さな案件管理から始め、案件・契約・請求・会計をつないだ公開事例です。
 - [従業員65名の自動車学校／社内電話を約90％減らし、離職率を12％から3％へ](https://digitool-lab.com/blog/driving-school-support-dx) - 専任エンジニアのいない自動車学校が、大規模開発の失敗後に5〜6人の試行から現場内製へ切り替え、電話連絡や期限管理を支援型へ変えたIPA掲載事例を解説します。
-- [事務用品商社／RPAで年間約2,000時間を削減し、チーム営業を強化した話](https://digitool-lab.com/blog/office-supplier-team-sales-47) - 札幌市の事務用品商社がSFA・CRM・MAとRPAを活用し、年間約2,000時間を削減。DX支援受注を2022年度272件から2025年度617件へ伸ばした公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-29
+2026-09-30
