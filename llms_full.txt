@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/manufacturing-internal-information-ai-rpa - 従業員180名の製造会社／社内情報の更新を月30時間から最終確認中心へ変えた話。従業員180名の製造会社が、月約100件・約20種類の社内情報配信を生成AIとRPAで自動化し、月30時間の運用を最終確認中心へ変えた公開事例です。
 - https://digitool-lab.com/blog/dental-reservation-hours-20260820 - 従業員数非公開の歯科医院／患者数を維持したまま営業時間を1日1時間短縮した話。歯科医院が約10年続いた紙と表計算中心の運用を見直し、クラウド予約と会計をつないで、患者数を維持したまま営業時間を一日1時間短縮した公開事例です。
 - https://digitool-lab.com/blog/monovate-manufacturing-daily-report-ai-search - 従業員170名の製造会社｜500超の業務画面と5年分の改善知識を活用。共有PCへの日報入力待ちと管理者の深夜確認を、現場でのスマートフォン入力へ転換。蓄積した改善提案を検索AIで生かす公開事例です。
 - https://digitool-lab.com/blog/suzuya-construction-estimate-management - 従業員34名の建設会社／見積提出を年間450件から1,263件へ増やした話。従業員34名の建設会社が見積・受注・施工管理を一つの流れへまとめ、見積提出件数と人材育成期間を改善した過程を中小企業向けに解説。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/machine-technical-translation-20260719 - 従業員25名の機械製造業／技術翻訳2〜3週間を1日にした事例。中部地方の従業員25名の機械製造会社で、確認済みの対訳と専門用語を整理し、AI翻訳の初稿と人の承認を組み合わせた事例。翻訳期間は2〜3週間から1日、年間費用は200万円から40万円へ改善しました。
 - https://digitool-lab.com/blog/hp-interior-wallpaper-ai-identification-20260715 - 従業員12名の内装会社／壁紙確認の移動を月9時間減らした話。壁紙確認に平均1〜3時間かかっていた従業員12名の内装会社が、熟練者の判断を画像とルールに整理し、営業1人あたり月9時間・138kmの移動を減らした事例。
 - https://digitool-lab.com/blog/printing-case-management-20260710 - 従業員15名の印刷業／案件管理を12時間から5時間に短縮した話。印刷業の案件受付、進捗管理、確認漏れ防止を入力画面とスプレッドシート、AI確認で整えた事例。
-- https://digitool-lab.com/blog/bistro-corporate-lunch-sales-810 - 従業員8名のビストロ／企業向けランチ契約を月8件から20件に増やした話。企業向けランチ営業の聞き取り項目と提案の型を整え、契約数・継続率・平日売上を改善した飲食店事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-09-30
+2026-10-01
