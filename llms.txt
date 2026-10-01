@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員17名の金属加工会社／不良率5％以下を維持し、採用3名につなげた話](https://digitool-lab.com/blog/small-metal-factory-quality-sharing-recruiting) - 従業員17名の金属加工会社が、不良原因の共有と対応ルールを社員で整え、不良率5％以下を維持。採用問い合わせ7件、3名採用にもつなげた公開事例です。
 - [従業員180名の製造会社／社内情報の更新を月30時間から最終確認中心へ変えた話](https://digitool-lab.com/blog/manufacturing-internal-information-ai-rpa) - 従業員180名の製造会社が、月約100件・約20種類の社内情報配信を生成AIとRPAで自動化し、月30時間の運用を最終確認中心へ変えた公開事例です。
 - [従業員数非公開の歯科医院／患者数を維持したまま営業時間を1日1時間短縮した話](https://digitool-lab.com/blog/dental-reservation-hours-20260820) - 歯科医院が約10年続いた紙と表計算中心の運用を見直し、クラウド予約と会計をつないで、患者数を維持したまま営業時間を一日1時間短縮した公開事例です。
 - [従業員170名の製造会社｜500超の業務画面と5年分の改善知識を活用](https://digitool-lab.com/blog/monovate-manufacturing-daily-report-ai-search) - 共有PCへの日報入力待ちと管理者の深夜確認を、現場でのスマートフォン入力へ転換。蓄積した改善提案を検索AIで生かす公開事例です。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員数原本未記載の情報通信会社／毎日1改善を26社・売上390万円の研修事業へ育てた話](https://digitool-lab.com/blog/daily-improvement-ai-training-business) - エヌエスケーケーの公式発表から、社内の小さな改善を記録し、見学会で反応を確かめ、生成AI勉強会という外販事業へ育てた順番を紹介する。
 - [従業員数原本未記載の精密加工会社／月約6,000枚の紙と月400〜500時間を減らした話](https://digitool-lab.com/blog/metalworking-company-memory-ai-inhouse) - 岡田研磨の公開事例から、紙探しを減らすところから始め、社内アプリと手順書を自社で育て、作業削減と会社の記憶づくりを両立した流れを紹介する。
 - [4店舗の時計修理会社／約15万件の履歴を生かし受付転記をゼロへ](https://digitool-lab.com/blog/watch-repair-customer-portal) - 年間2万件超の修理を扱う時計修理会社が、受付フォーム、顧客マイページ、社内管理を一意IDでつないだ公開事例です。
-- [約150現場のビルメンテナンス会社／経理2名の決算期残業をほぼゼロへ](https://digitool-lab.com/blog/building-maintenance-portal-accounting) - 高齢スタッフが多く複雑な契約を扱う会社が、小さな案件管理から始め、案件・契約・請求・会計をつないだ公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-01
+2026-10-02
