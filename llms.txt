@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員7名の菓子店／フォロワー数を追うのをやめ、売上を2.5倍にした話](https://digitool-lab.com/blog/confectionery-7-data-sales-25x) - 菓子製造・販売の小規模店が、来店客アンケートと検索・売上データを組み合わせ、売上2.5倍・原価率50％から32％を実現した事例。
 - [従業員12名の設備点検会社／顧客管理を絞り込み紹介件数を14件から238件へ伸ばした話](https://digitool-lab.com/blog/case-equipment-inspection-small-crm) - 従業員12名の設備点検会社が、多機能システムの失敗後に顧客管理を絞り込み、現場定着へつなげた公開事例。
 - [従業員8名の時計卸売会社／会計データを共有し、4カ月で新商品90本超を納入した話](https://digitool-lab.com/blog/watch-wholesaler-accounting-data-sales-strategy) - 従業員8名の時計卸売会社が、会計データと粗利目標を社内で共有し、販売戦略を見直して新商品を4カ月で90本以上納入した公開事例です。
 - [従業員17名の金属加工会社／不良率5％以下を維持し、採用3名につなげた話](https://digitool-lab.com/blog/small-metal-factory-quality-sharing-recruiting) - 従業員17名の金属加工会社が、不良原因の共有と対応ルールを社員で整え、不良率5％以下を維持。採用問い合わせ7件、3名採用にもつなげた公開事例です。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [10名体制の消防設備会社｜現場3名の危機から売上約2倍・物件数約5倍へ](https://digitool-lab.com/blog/odabou-fire-safety-field-knowledge-dx) - 紙・電話・担当者の記憶に頼っていた消防設備会社が、3年の試行と6か月のデータ整備を経て、教育・報告・引き継ぎを改善した公開事例です。
 - [従業員1名のクレープ店／POSと会計の二重仕訳を3か月で解消した話](https://digitool-lab.com/blog/one-person-crepe-pos-accounting) - 一人で運営するクレープ店が、POSと会計の自動連携に手入力を重ねて生じた二重仕訳を解消し、数字を経営判断に使えるまでの過程を解説。
 - [従業員22名のラベル印刷会社／受注入力を1日約50点から約300点へ](https://digitool-lab.com/blog/label-printing-order-entry-50-to-300) - ラベル印刷会社が販売・生産・在庫の情報を段階的につなぎ、受注入力能力と顧客対応を改善した公開事例。
-- [従業員数原本未記載の情報通信会社／毎日1改善を26社・売上390万円の研修事業へ育てた話](https://digitool-lab.com/blog/daily-improvement-ai-training-business) - エヌエスケーケーの公式発表から、社内の小さな改善を記録し、見学会で反応を確かめ、生成AI勉強会という外販事業へ育てた順番を紹介する。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-04
+2026-10-05

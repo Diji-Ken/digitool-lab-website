@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/confectionery-7-data-sales-25x - 従業員7名の菓子店／フォロワー数を追うのをやめ、売上を2.5倍にした話。菓子製造・販売の小規模店が、来店客アンケートと検索・売上データを組み合わせ、売上2.5倍・原価率50％から32％を実現した事例。
 - https://digitool-lab.com/blog/case-equipment-inspection-small-crm - 従業員12名の設備点検会社／顧客管理を絞り込み紹介件数を14件から238件へ伸ばした話。従業員12名の設備点検会社が、多機能システムの失敗後に顧客管理を絞り込み、現場定着へつなげた公開事例。
 - https://digitool-lab.com/blog/watch-wholesaler-accounting-data-sales-strategy - 従業員8名の時計卸売会社／会計データを共有し、4カ月で新商品90本超を納入した話。従業員8名の時計卸売会社が、会計データと粗利目標を社内で共有し、販売戦略を見直して新商品を4カ月で90本以上納入した公開事例です。
 - https://digitool-lab.com/blog/small-metal-factory-quality-sharing-recruiting - 従業員17名の金属加工会社／不良率5％以下を維持し、採用3名につなげた話。従業員17名の金属加工会社が、不良原因の共有と対応ルールを社員で整え、不良率5％以下を維持。採用問い合わせ7件、3名採用にもつなげた公開事例です。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/senior-housing-information-sharing-30 - 従業員30名の高齢者向け住宅／情報共有を週10時間から3時間に減らした話。紙と口頭に分かれていた体調・申し送り記録をスマートフォン入力と一覧表示にまとめ、情報共有を週10時間から3時間へ短縮。確認漏れも減らした高齢者向け住宅の事例です。
 - https://digitool-lab.com/blog/nail-salon-reservation-workflow-case - 従業員20名のネイルサロン／予約管理3時間を45分に減らした話。中国地方のネイルサロンが、予約・顧客メモ・売上集計を同じ入力画面と一覧へまとめ、予約管理を3時間から45分、月次売上集計を16時間から2時間へ短縮した支援事例です。
 - https://digitool-lab.com/blog/home-care-support-records-8 - 従業員8名の居宅介護支援／記録作成を2.5時間から45分に減らした話。居宅介護支援事業所が記録・利用者情報・ケアプランの下書きを一つの流れへ整理し、記録作成を2.5時間から45分、情報検索を10分から3分へ短縮した事例です。
-- https://digitool-lab.com/blog/printing-sales-proposal-20260719 - 従業員22名の印刷会社／提案資料4時間を1時間に減らした事例。関西の従業員22名の印刷会社で、顧客への聞き取りと過去の成功提案を整理し、AIによる提案の下書き支援を導入。資料作成は4時間から1時間、受注率は35%から44%へ改善した事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-04
+2026-10-05
