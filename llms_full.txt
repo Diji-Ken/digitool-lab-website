@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/small-team-daily-differential-backup - 従業員5名のテスト支援会社／週次に日次差分を加え重要データを守る運用へ。取引先の高い安全要求へ対応する少人数企業が、専門家の点検を受け、共有ルール、暗号化、週次と日次差分の保存を整えた公的事例です。
 - https://digitool-lab.com/blog/regional-hotel-accounting-rag-kawaroku - 売上30億円規模の地方ホテル／経理をパート1名・週3日・完全在宅へ変えた話。川六の公式発表から、経理情報の一元管理と現場向け支配人AIを別々にせず、他拠点へ移せる運営モデルにした流れを紹介する。
 - https://digitool-lab.com/blog/confectionery-7-data-sales-25x - 従業員7名の菓子店／フォロワー数を追うのをやめ、売上を2.5倍にした話。菓子製造・販売の小規模店が、来店客アンケートと検索・売上データを組み合わせ、売上2.5倍・原価率50％から32％を実現した事例。
 - https://digitool-lab.com/blog/case-equipment-inspection-small-crm - 従業員12名の設備点検会社／顧客管理を絞り込み紹介件数を14件から238件へ伸ばした話。従業員12名の設備点検会社が、多機能システムの失敗後に顧客管理を絞り込み、現場定着へつなげた公開事例。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/disability-support-records-2h-to-60min - 従業員30名の障害者支援施設／記録作成を2時間から60分に短縮した話。従業員30名の障害者支援施設で、記録項目と承認を整理。記録作成を2時間から60分、利用者情報検索を12分から3分へ短縮した再構成事例です。
 - https://digitool-lab.com/blog/metal-manufacturing-delivery-answer-app - 従業員8名の金属製品製造業／納期回答時間を90%削減した事例。紙と担当者の記憶に頼っていた案件管理を2〜3週間の小さな試作からアプリ化し、納期回答を早めた公的事例を読み解きます。
 - https://digitool-lab.com/blog/senior-housing-information-sharing-30 - 従業員30名の高齢者向け住宅／情報共有を週10時間から3時間に減らした話。紙と口頭に分かれていた体調・申し送り記録をスマートフォン入力と一覧表示にまとめ、情報共有を週10時間から3時間へ短縮。確認漏れも減らした高齢者向け住宅の事例です。
-- https://digitool-lab.com/blog/nail-salon-reservation-workflow-case - 従業員20名のネイルサロン／予約管理3時間を45分に減らした話。中国地方のネイルサロンが、予約・顧客メモ・売上集計を同じ入力画面と一覧へまとめ、予約管理を3時間から45分、月次売上集計を16時間から2時間へ短縮した支援事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-06
+2026-10-07
