@@ -1,0 +1,132 @@
+/* About page: information security. Reuse the site's typography and color tokens. */
+#information-security {
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  scroll-margin-top: 110px;
+  color: var(--gray-800);
+  overflow-wrap: anywhere;
+}
+
+#information-security p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+#information-security .security-introduction p + p {
+  margin-top: 1rem;
+}
+
+#information-security h4 {
+  margin: 0 0 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--gray-900);
+}
+
+#information-security .security-lead {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+}
+
+#information-security .security-lead-details {
+  margin: 0;
+}
+
+#information-security .security-lead-details > div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+}
+
+#information-security .security-lead-details > div + div {
+  margin-top: 0.875rem;
+}
+
+#information-security dt {
+  color: var(--gray-600);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+#information-security dd {
+  min-width: 0;
+  margin: 0;
+  line-height: 1.7;
+}
+
+#information-security .security-lead-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+#information-security .security-lead-role {
+  font-weight: 600;
+}
+
+#information-security .security-practices-heading {
+  margin-top: 2rem;
+}
+
+#information-security .security-practices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#information-security .security-practices > li {
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  background: var(--gray-50);
+}
+
+#information-security .security-practices > li:last-child {
+  grid-column: 1 / -1;
+}
+
+#information-security h5 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--gray-900);
+}
+
+#information-security .security-practice-number {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  #information-security .security-practices {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #information-security .security-lead,
+  #information-security .security-practices > li {
+    padding: 1rem;
+  }
+
+  #information-security .security-lead-details > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.125rem;
+  }
+
+  #information-security .security-lead-details > div + div {
+    margin-top: 1rem;
+  }
+}
