@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/screw-manufacturer-digital-marketing-crm - 従業員88名のねじメーカー／月200〜300社の新規顧客獲得へ。展示会依存からデジタル集客と顧客情報の共有へ移り、製造現場の情報化まで広げた公開事例。
 - https://digitool-lab.com/blog/sendai-support-consultation-records-dx - 職員約55名の支援機関｜2万8千件の相談記録を約1か月で一元化。年間約6,000件の相談を扱う支援機関が、5年分約2万8,000件の記録を一元化し、FAQ整備と段階研修まで進めた公開事例を解説します。
 - https://digitool-lab.com/blog/small-team-daily-differential-backup - 従業員5名のテスト支援会社／週次に日次差分を加え重要データを守る運用へ。取引先の高い安全要求へ対応する少人数企業が、専門家の点検を受け、共有ルール、暗号化、週次と日次差分の保存を整えた公的事例です。
 - https://digitool-lab.com/blog/regional-hotel-accounting-rag-kawaroku - 売上30億円規模の地方ホテル／経理をパート1名・週3日・完全在宅へ変えた話。川六の公式発表から、経理情報の一元管理と現場向け支配人AIを別々にせず、他拠点へ移せる運営モデルにした流れを紹介する。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/metal-factory-payroll-ai-25-to-7-hours - 従業員18名の金属加工業・総務／給与計算25時間を7時間に短縮した話。複雑な勤務形態と手当を整理し、AIを異常候補の抽出と説明下書きへ限定。給与計算を月25時間から7時間へ短縮し、計算ミス月3件を0件にした再構成事例。
 - https://digitool-lab.com/blog/manufacturing-daily-report-5-minutes - 従業員約60名の製造業／手書き日報の集計を3〜4日から5分にした話。従業員約60名の製造業が、手書き日報と表計算への再入力を見直し、作業終了5分後に改善対象を確認できるようにした公開事例です。
 - https://digitool-lab.com/blog/disability-support-records-2h-to-60min - 従業員30名の障害者支援施設／記録作成を2時間から60分に短縮した話。従業員30名の障害者支援施設で、記録項目と承認を整理。記録作成を2時間から60分、利用者情報検索を12分から3分へ短縮した再構成事例です。
-- https://digitool-lab.com/blog/metal-manufacturing-delivery-answer-app - 従業員8名の金属製品製造業／納期回答時間を90%削減した事例。紙と担当者の記憶に頼っていた案件管理を2〜3週間の小さな試作からアプリ化し、納期回答を早めた公的事例を読み解きます。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-19
+2026-10-20
