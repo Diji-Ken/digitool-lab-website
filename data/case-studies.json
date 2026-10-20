@@ -1,5 +1,20 @@
 [
   {
+    "id": "case-218",
+    "title": "従業員143名の金属加工会社／品目を約半減し利益率を約3割改善",
+    "summary": "原価と進捗をデータでそろえ、低採算品の整理、利益改善、賃上げへつなげた公開事例。",
+    "industry": "金属加工",
+    "date": "2026-10-21",
+    "tags": [
+      "金属加工",
+      "原価管理",
+      "経営判断",
+      "中小企業事例"
+    ],
+    "thumbnail": "images/case-studies/thumbs/case-218.webp",
+    "url": "blog/metal-processing-cost-data-profit-improvement"
+  },
+  {
     "id": "case-217",
     "title": "従業員88名のねじメーカー／月200〜300社の新規顧客獲得へ",
     "summary": "展示会依存からデジタル集客と顧客情報の共有へ移り、製造現場の情報化まで広げた公開事例。",
