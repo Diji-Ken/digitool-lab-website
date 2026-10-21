@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員数非公開の金属加工会社／ばらばらの仕組みを4つの経営指標で見直した話](https://digitool-lab.com/blog/metal-dx-kpi-strategy) - 金属加工会社・道央メタルが、顧客の信頼を軸に現場データ、経営判断、情報管理をつなぎ、4つの経営指標と段階計画を整えたIPA公式事例を解説します。
 - [従業員143名の金属加工会社／品目を約半減し利益率を約3割改善](https://digitool-lab.com/blog/metal-processing-cost-data-profit-improvement) - 原価と進捗をデータでそろえ、低採算品の整理、利益改善、賃上げへつなげた公開事例。
 - [従業員88名のねじメーカー／月200〜300社の新規顧客獲得へ](https://digitool-lab.com/blog/screw-manufacturer-digital-marketing-crm) - 展示会依存からデジタル集客と顧客情報の共有へ移り、製造現場の情報化まで広げた公開事例。
 - [職員約55名の支援機関｜2万8千件の相談記録を約1か月で一元化](https://digitool-lab.com/blog/sendai-support-consultation-records-dx) - 年間約6,000件の相談を扱う支援機関が、5年分約2万8,000件の記録を一元化し、FAQ整備と段階研修まで進めた公開事例を解説します。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員数非公開の小規模建設会社／積算を1〜2時間から10〜20分へ短縮した話](https://digitool-lab.com/blog/case-construction-estimation-time) - 専任積算担当がいない小規模建設会社が、設計図書の読み取り支援と人の確認で積算時間を短縮した公開事例。
 - [従業員約20名の手芸用品卸売会社／5枚複写伝票を見直し年間5,760時間を削減した話](https://digitool-lab.com/blog/case-wholesale-five-copy-slip-dx) - 約20名・平均年齢約70歳の手芸用品卸売会社が、5枚複写伝票を起点に業務を段階的に改善した公開事例。
 - [従業員113名の金型メーカー／8人の管理職を毎日2時間の日産計画から解放した話](https://digitool-lab.com/blog/metal-mold-production-planning-system) - 従業員113名の金型メーカーが、管理職8人の毎日2時間の日産計画を生産管理システムへ移し、リードタイムを8週間から6週間へ短縮した公開事例です。
-- [従業員154名の農業会社／米集荷の受付を1日30分から5分へ短縮した話](https://digitool-lab.com/blog/rice-collection-voice-ai-line) - 従業員154名の農業会社が、電話・紙・再入力を伴う米集荷受付を音声AIとLINEでつなぎ、一日30分から5分へ短縮した公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-21
+2026-10-22
