@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [家族3名の米・加工品販売／売上1千万円から3千万円台へ伸ばした受注管理の話](https://digitool-lab.com/blog/family-food-ec-order-management-case) - 電話・FAX・ECの注文転記と送り状作成を見直し、家族3名の体制で売上約1千万円から2千万円、3千万円台へ伸ばした食品販売事例を2018年公開情報から解説。
 - [従業員数非公開の金属加工会社／ばらばらの仕組みを4つの経営指標で見直した話](https://digitool-lab.com/blog/metal-dx-kpi-strategy) - 金属加工会社・道央メタルが、顧客の信頼を軸に現場データ、経営判断、情報管理をつなぎ、4つの経営指標と段階計画を整えたIPA公式事例を解説します。
 - [従業員143名の金属加工会社／品目を約半減し利益率を約3割改善](https://digitool-lab.com/blog/metal-processing-cost-data-profit-improvement) - 原価と進捗をデータでそろえ、低採算品の整理、利益改善、賃上げへつなげた公開事例。
 - [従業員88名のねじメーカー／月200〜300社の新規顧客獲得へ](https://digitool-lab.com/blog/screw-manufacturer-digital-marketing-crm) - 展示会依存からデジタル集客と顧客情報の共有へ移り、製造現場の情報化まで広げた公開事例。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員20名の飲食店／発注作業を2〜2.5時間から約5分に短縮した話](https://digitool-lab.com/blog/restaurant-ai-ordering-inventory-case) - 約200品のレシピ、売上、在庫をつなぐAI発注支援により、発注作業を2〜2.5時間から約5分、在庫を約30万円から15〜16万円へ改善した飲食店事例。
 - [従業員数非公開の小規模建設会社／積算を1〜2時間から10〜20分へ短縮した話](https://digitool-lab.com/blog/case-construction-estimation-time) - 専任積算担当がいない小規模建設会社が、設計図書の読み取り支援と人の確認で積算時間を短縮した公開事例。
 - [従業員約20名の手芸用品卸売会社／5枚複写伝票を見直し年間5,760時間を削減した話](https://digitool-lab.com/blog/case-wholesale-five-copy-slip-dx) - 約20名・平均年齢約70歳の手芸用品卸売会社が、5枚複写伝票を起点に業務を段階的に改善した公開事例。
-- [従業員113名の金型メーカー／8人の管理職を毎日2時間の日産計画から解放した話](https://digitool-lab.com/blog/metal-mold-production-planning-system) - 従業員113名の金型メーカーが、管理職8人の毎日2時間の日産計画を生産管理システムへ移し、リードタイムを8週間から6週間へ短縮した公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-22
+2026-10-23
