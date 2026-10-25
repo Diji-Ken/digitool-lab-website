@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員100名の製造会社／紙の日報転記を月62時間削減した話](https://digitool-lab.com/blog/manufacturing-daily-report-20260824) - 田中製作所がノーコードで工程・出荷・日報を見える化した公的事例から、紙をそのまま画面化せず、転記と確認待ちを消す製造業DXの進め方を解説。
 - [従業員数非公開の製造会社・管理部門／32業務を棚卸し、夜の資料作りを減らした話](https://digitool-lab.com/blog/back-office-ai-inventory) - 製造業の管理部門で32業務を棚卸しした個人事例から、AIを質問役と初稿作成役に使い、やめる・任せる・自動化するへ分けて上位5件から改善する手順を紹介します。
 - [従業員1名の研修会社／作業効率を30％高め、商圏を全国へ広げた話](https://digitool-lab.com/blog/20260802-one-person-training-company-online) - 従業員1名の研修会社が情報を一つにまとめ、オンライン研修と商談を整備。作業効率30％向上、商圏全国化、週1日の計画休暇を実現した公開事例です。
 - [家族3名の米・加工品販売／売上1千万円から3千万円台へ伸ばした受注管理の話](https://digitool-lab.com/blog/family-food-ec-order-management-case) - 電話・FAX・ECの注文転記と送り状作成を見直し、家族3名の体制で売上約1千万円から2千万円、3千万円台へ伸ばした食品販売事例を2018年公開情報から解説。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員34名の建設会社／見積提出を年間450件から1,263件へ増やした話](https://digitool-lab.com/blog/suzuya-construction-estimate-management) - 従業員34名の建設会社が見積・受注・施工管理を一つの流れへまとめ、見積提出件数と人材育成期間を改善した過程を中小企業向けに解説。
 - [従業員74名の電気工事会社／社内情報を一か所に集め完全週休2日制へ](https://digitool-lab.com/blog/iwadate-electric-internal-portal) - 従業員74名・5拠点の電気工事会社が、社内ポータルへ経営情報と業務連絡をまとめ、働き方を改善した進め方を解説。
 - [従業員21名の建設会社／ホテルのチェックイン業務8割を自動化した話](https://digitool-lab.com/blog/construction-hotel-checkin-automation) - 従業員21名の建設会社がホテル運営で、予約、本人確認、鍵の受け渡しを見直し、通常業務の約8割を自動化した進め方を中小企業向けに解説。
-- [従業員20名の飲食店／発注作業を2〜2.5時間から約5分に短縮した話](https://digitool-lab.com/blog/restaurant-ai-ordering-inventory-case) - 約200品のレシピ、売上、在庫をつなぐAI発注支援により、発注作業を2〜2.5時間から約5分、在庫を約30万円から15〜16万円へ改善した飲食店事例。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-25
+2026-10-26
