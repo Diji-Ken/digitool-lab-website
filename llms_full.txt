@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/food-wholesale-web-orders-20260824 - 従業員90名の食品卸・製造会社／Web受注率25％から39％へ。柳川冷凍食品の基幹システム刷新事例から、業務の見える化、RFP、並行稼働、教育までを分け、Web受注率・残業・受注入力の改善を再現手順へ落とし込む。
 - https://digitool-lab.com/blog/manufacturing-daily-report-20260824 - 従業員100名の製造会社／紙の日報転記を月62時間削減した話。田中製作所がノーコードで工程・出荷・日報を見える化した公的事例から、紙をそのまま画面化せず、転記と確認待ちを消す製造業DXの進め方を解説。
 - https://digitool-lab.com/blog/back-office-ai-inventory - 従業員数非公開の製造会社・管理部門／32業務を棚卸し、夜の資料作りを減らした話。製造業の管理部門で32業務を棚卸しした個人事例から、AIを質問役と初稿作成役に使い、やめる・任せる・自動化するへ分けて上位5件から改善する手順を紹介します。
 - https://digitool-lab.com/blog/20260802-one-person-training-company-online - 従業員1名の研修会社／作業効率を30％高め、商圏を全国へ広げた話。従業員1名の研修会社が情報を一つにまとめ、オンライン研修と商談を整備。作業効率30％向上、商圏全国化、週1日の計画休暇を実現した公開事例です。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/transport-paper-slips-sales-summary-30-percent - 従業員43名の運送会社／売上集計を30％以上短縮した紙伝票の一元化。従業員43名の運送会社が、Excelと手書き伝票に分かれていた売上・入金・請求を一元化し、売上集計を30％以上短縮した公開事例です。
 - https://digitool-lab.com/blog/small-builder-estimate-45-days-to-5-days - 従業員3名の工務店／見積作成を約1.5か月から最短5日に短縮。従業員3名の工務店が、プラン・提案・積算・見積・設計確認を一つにつなぎ、見積作成を約1.5か月から最短5日に短縮した公開事例です。
 - https://digitool-lab.com/blog/farmstay-reservation-management-60-percent-20260801 - 従業員4名の農泊事業／予約管理の手間を6割減らした話。電話受付とExcel転記に頼っていた従業員4名の農泊事業が、インターネット予約とアンケートの電子化で予約管理の手間を6割減らし、事務効率を2倍にした公開事例を再構成します。
-- https://digitool-lab.com/blog/costume-rental-data-integration-overtime-20260801 - 従業員45名の貸衣装会社／残業を約10分の1に減らした話。衣装、付属品、顧客、接客、請求の情報が分かれていた従業員45名の貸衣装会社が、業界向け管理システムへまとめ、残業時間を約10分の1に減らした公開事例を再構成します。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-26
+2026-10-27
