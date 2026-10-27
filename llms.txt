@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員数非公開の老舗菓子店／習得に約5年かかる提案をAIで支え、OJTを1日約75分短縮した話](https://digitool-lab.com/blog/confectionery-ai-knowledge-ojt-20260819) - 老舗菓子店が約5年かかる商品提案の知識をAIアプリへ整理し、初期利用5人のOJTを合計1日約75分短縮した公開事例を、全社展開前という条件も含めて解説します。
 - [従業員90名の食品卸・製造会社／Web受注率25％から39％へ](https://digitool-lab.com/blog/food-wholesale-web-orders-20260824) - 柳川冷凍食品の基幹システム刷新事例から、業務の見える化、RFP、並行稼働、教育までを分け、Web受注率・残業・受注入力の改善を再現手順へ落とし込む。
 - [従業員100名の製造会社／紙の日報転記を月62時間削減した話](https://digitool-lab.com/blog/manufacturing-daily-report-20260824) - 田中製作所がノーコードで工程・出荷・日報を見える化した公的事例から、紙をそのまま画面化せず、転記と確認待ちを消す製造業DXの進め方を解説。
 - [従業員数非公開の製造会社・管理部門／32業務を棚卸し、夜の資料作りを減らした話](https://digitool-lab.com/blog/back-office-ai-inventory) - 製造業の管理部門で32業務を棚卸しした個人事例から、AIを質問役と初稿作成役に使い、やめる・任せる・自動化するへ分けて上位5件から改善する手順を紹介します。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員数非公開の歯科医院／患者数を維持したまま営業時間を1日1時間短縮した話](https://digitool-lab.com/blog/dental-reservation-hours-20260820) - 歯科医院が約10年続いた紙と表計算中心の運用を見直し、クラウド予約と会計をつないで、患者数を維持したまま営業時間を一日1時間短縮した公開事例です。
 - [従業員170名の製造会社｜500超の業務画面と5年分の改善知識を活用](https://digitool-lab.com/blog/monovate-manufacturing-daily-report-ai-search) - 共有PCへの日報入力待ちと管理者の深夜確認を、現場でのスマートフォン入力へ転換。蓄積した改善提案を検索AIで生かす公開事例です。
 - [従業員34名の建設会社／見積提出を年間450件から1,263件へ増やした話](https://digitool-lab.com/blog/suzuya-construction-estimate-management) - 従業員34名の建設会社が見積・受注・施工管理を一つの流れへまとめ、見積提出件数と人材育成期間を改善した過程を中小企業向けに解説。
-- [従業員74名の電気工事会社／社内情報を一か所に集め完全週休2日制へ](https://digitool-lab.com/blog/iwadate-electric-internal-portal) - 従業員74名・5拠点の電気工事会社が、社内ポータルへ経営情報と業務連絡をまとめ、働き方を改善した進め方を解説。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-27
+2026-10-28
