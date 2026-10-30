@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員53名の精密板金会社／8社共同開発で労働時間を15.9％削減](https://digitool-lab.com/blog/metalwork-shared-production-system-20260824) - 広島メタルワークが同じ課題を持つ8社で生産管理ソフトを共同開発した公的事例から、要件の共通化、費用負担、現場定着の順番を中小製造業向けに解説。
 - [従業員14名の配食サービス／未経験者も午前・午後とも35〜40食を届けられる体制へ変えた話](https://digitool-lab.com/blog/meal-delivery-route-customer-info-system) - 従業員14名の配食サービスが、紙地図と土地勘に頼る配達を見直し、未経験者を含む全担当者が午前・午後とも35〜40食を届けられる体制へ変えた公開事例です。
 - [従業員数非公開の老舗菓子店／習得に約5年かかる提案をAIで支え、OJTを1日約75分短縮した話](https://digitool-lab.com/blog/confectionery-ai-knowledge-ojt-20260819) - 老舗菓子店が約5年かかる商品提案の知識をAIアプリへ整理し、初期利用5人のOJTを合計1日約75分短縮した公開事例を、全社展開前という条件も含めて解説します。
 - [従業員90名の食品卸・製造会社／Web受注率25％から39％へ](https://digitool-lab.com/blog/food-wholesale-web-orders-20260824) - 柳川冷凍食品の基幹システム刷新事例から、業務の見える化、RFP、並行稼働、教育までを分け、Web受注率・残業・受注入力の改善を再現手順へ落とし込む。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員17名の金属加工会社／不良率5％以下を維持し、採用3名につなげた話](https://digitool-lab.com/blog/small-metal-factory-quality-sharing-recruiting) - 従業員17名の金属加工会社が、不良原因の共有と対応ルールを社員で整え、不良率5％以下を維持。採用問い合わせ7件、3名採用にもつなげた公開事例です。
 - [従業員180名の製造会社／社内情報の更新を月30時間から最終確認中心へ変えた話](https://digitool-lab.com/blog/manufacturing-internal-information-ai-rpa) - 従業員180名の製造会社が、月約100件・約20種類の社内情報配信を生成AIとRPAで自動化し、月30時間の運用を最終確認中心へ変えた公開事例です。
 - [従業員数非公開の歯科医院／患者数を維持したまま営業時間を1日1時間短縮した話](https://digitool-lab.com/blog/dental-reservation-hours-20260820) - 歯科医院が約10年続いた紙と表計算中心の運用を見直し、クラウド予約と会計をつないで、患者数を維持したまま営業時間を一日1時間短縮した公開事例です。
-- [従業員170名の製造会社｜500超の業務画面と5年分の改善知識を活用](https://digitool-lab.com/blog/monovate-manufacturing-daily-report-ai-search) - 共有PCへの日報入力待ちと管理者の深夜確認を、現場でのスマートフォン入力へ転換。蓄積した改善提案を検索AIで生かす公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-29
+2026-10-30
