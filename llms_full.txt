@@ -309,6 +309,7 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- https://digitool-lab.com/blog/metalwork-shared-production-system-20260824 - 従業員53名の精密板金会社／8社共同開発で労働時間を15.9％削減。広島メタルワークが同じ課題を持つ8社で生産管理ソフトを共同開発した公的事例から、要件の共通化、費用負担、現場定着の順番を中小製造業向けに解説。
 - https://digitool-lab.com/blog/meal-delivery-route-customer-info-system - 従業員14名の配食サービス／未経験者も午前・午後とも35〜40食を届けられる体制へ変えた話。従業員14名の配食サービスが、紙地図と土地勘に頼る配達を見直し、未経験者を含む全担当者が午前・午後とも35〜40食を届けられる体制へ変えた公開事例です。
 - https://digitool-lab.com/blog/confectionery-ai-knowledge-ojt-20260819 - 従業員数非公開の老舗菓子店／習得に約5年かかる提案をAIで支え、OJTを1日約75分短縮した話。老舗菓子店が約5年かかる商品提案の知識をAIアプリへ整理し、初期利用5人のOJTを合計1日約75分短縮した公開事例を、全社展開前という条件も含めて解説します。
 - https://digitool-lab.com/blog/food-wholesale-web-orders-20260824 - 従業員90名の食品卸・製造会社／Web受注率25％から39％へ。柳川冷凍食品の基幹システム刷新事例から、業務の見える化、RFP、並行稼働、教育までを分け、Web受注率・残業・受注入力の改善を再現手順へ落とし込む。
@@ -358,9 +359,8 @@ DX支援, 月額 DX伴走支援, DX伴走 月額, DX支援会社 選び方, DX�
 - https://digitool-lab.com/blog/visit-nursing-ai-portal-20260821 - 3拠点の訪問看護会社／アセスメント作成を約1時間から5分へ短縮した話。3拠点の訪問看護会社が社内情報の入口を整え、生成AIを下書きへ使って新規利用者アセスメントを約1時間から約5分へ短縮した公開事例です。
 - https://digitool-lab.com/blog/visit-care-schedule-ict-20260820 - 従業員数非公開の訪問介護事業所／シフト連絡を月23時間減らし、ケア相談を月10時間増やした話。訪問介護事業所がシフトと連絡の流れをICT化し、サービス提供責任者の連絡調整を月23時間減らしてケア相談を一人あたり月10時間増やした公開事例です。
 - https://digitool-lab.com/blog/poultry-work-records-60-to-15-minutes - 従業員12名の養鶏農家／作業記録60分を15分に短縮した話。手書きの作業・出荷・販売記録を入力画面と自動集計へまとめ、養鶏農家が日々の記録と月末の収益確認を短くした再構成事例です。
-- https://digitool-lab.com/blog/transport-paper-slips-sales-summary-30-percent - 従業員43名の運送会社／売上集計を30％以上短縮した紙伝票の一元化。従業員43名の運送会社が、Excelと手書き伝票に分かれていた売上・入金・請求を一元化し、売上集計を30％以上短縮した公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-29
+2026-10-30
