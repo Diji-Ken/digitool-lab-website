@@ -108,6 +108,7 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 <!-- AUTO-LATEST-CASES:START -->
 ## 最新の支援事例
 
+- [従業員48名の金属製品会社／テレワークを全社に広げ、休職・時短要請をなくした話](https://digitool-lab.com/blog/metal-company-48-telework-retention) - 金属製品会社が予定表・チャット・社内掲示板と運用ルールを組み合わせ、事務職の休職・時短要請をなくし、勤務地を限定しない人材を7名へ増やした事例。
 - [従業員100名以上300名未満の港運会社／点検紙1万枚を減らし、月次集計を約2時間にした話](https://digitool-lab.com/blog/port-inspection-paperless-20260819) - 従業員100名以上300名未満の港運会社が、66台の始業前点検を画面へ移し、年間約1万枚の紙を減らして月次集計を数日から約2時間へ短縮した公開事例です。
 - [従業員53名の精密板金会社／8社共同開発で労働時間を15.9％削減](https://digitool-lab.com/blog/metalwork-shared-production-system-20260824) - 広島メタルワークが同じ課題を持つ8社で生産管理ソフトを共同開発した公的事例から、要件の共通化、費用負担、現場定着の順番を中小製造業向けに解説。
 - [従業員14名の配食サービス／未経験者も午前・午後とも35〜40食を届けられる体制へ変えた話](https://digitool-lab.com/blog/meal-delivery-route-customer-info-system) - 従業員14名の配食サービスが、紙地図と土地勘に頼る配達を見直し、未経験者を含む全担当者が午前・午後とも35〜40食を届けられる体制へ変えた公開事例です。
@@ -127,9 +128,8 @@ DX支援, DXコンサル 埼玉, DXコンサル さいたま市, 月額 DX伴走
 - [従業員12名の設備点検会社／顧客管理を絞り込み紹介件数を14件から238件へ伸ばした話](https://digitool-lab.com/blog/case-equipment-inspection-small-crm) - 従業員12名の設備点検会社が、多機能システムの失敗後に顧客管理を絞り込み、現場定着へつなげた公開事例。
 - [従業員8名の時計卸売会社／会計データを共有し、4カ月で新商品90本超を納入した話](https://digitool-lab.com/blog/watch-wholesaler-accounting-data-sales-strategy) - 従業員8名の時計卸売会社が、会計データと粗利目標を社内で共有し、販売戦略を見直して新商品を4カ月で90本以上納入した公開事例です。
 - [従業員17名の金属加工会社／不良率5％以下を維持し、採用3名につなげた話](https://digitool-lab.com/blog/small-metal-factory-quality-sharing-recruiting) - 従業員17名の金属加工会社が、不良原因の共有と対応ルールを社員で整え、不良率5％以下を維持。採用問い合わせ7件、3名採用にもつなげた公開事例です。
-- [従業員180名の製造会社／社内情報の更新を月30時間から最終確認中心へ変えた話](https://digitool-lab.com/blog/manufacturing-internal-information-ai-rpa) - 従業員180名の製造会社が、月約100件・約20種類の社内情報配信を生成AIとRPAで自動化し、月30時間の運用を最終確認中心へ変えた公開事例です。
 <!-- AUTO-LATEST-CASES:END -->
 
 ## 更新日
 
-2026-10-31
+2026-11-01
